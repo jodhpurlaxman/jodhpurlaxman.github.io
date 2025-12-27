@@ -155,8 +155,8 @@ const wrongList = document.getElementById('wrongList');
 
 async function loadQuestionsFromFile() {
   try {
-    const r = await fetch('qa_export_converted.json');
-    if(!r.ok) throw new Error('Failed to fetch qa_export_converted.json');
+    const r = await fetch('qa_export.json');
+    if(!r.ok) throw new Error('Failed to fetch qa_export.json');
     const data = await r.json();
     questions = [];
 
@@ -200,7 +200,7 @@ async function loadQuestionsFromFile() {
     // Sort by numeric id when possible
     questions.sort((x,y)=>parseInt(x.id)-parseInt(y.id));
     if (questions.length===0) {
-      qText.textContent = 'No questions found in qa_export_converted.json';
+      qText.textContent = 'No questions found in qa_export.json';
       return;
     }
 
@@ -237,7 +237,7 @@ async function loadQuestionsFromFile() {
 
     loadQuestion(currentIndex || 0);
   } catch (err) {
-    qText.textContent = 'Error loading questions: ' + err.message + '\nEnsure file qa_export1.json is served over HTTP.';
+    qText.textContent = 'Error loading questions: ' + err.message + '\nEnsure file qa_export.json is served over HTTP.';
   }
 }
 
@@ -663,3 +663,4 @@ loadQuestionsFromFile();
 </script>
 </body>
 </html>
+
