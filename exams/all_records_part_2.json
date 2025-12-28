@@ -4,7 +4,7 @@
       "id": "51",
       "question": "A company is developing an application that provides order shipping statistics for retrieval by a REST API. The company wants to extract the shipping statistics, organize the data into an easy-to-read HTML format, and send the report to several email addresses at the same time every morning. Which combination of steps should A solutions architect take to meet these requirements? (Choose two.)",
       "options": {
-        "A": "ConFigure the application to send the data to Amazon Kinesis Data Firehose.",
+        "A": "Configure the application to send the data to Amazon Kinesis Data Firehose.",
         "B": "Use Amazon Simple Email Service (Amazon SES) to format the data and to send the report by email.",
         "C": "Create an Amazon EventBridge (Amazon CloudWatch Events) scheduled event that invokes an AWS Glue job to query the application's API for the data.",
         "D": "Create an Amazon EventBridge (Amazon CloudWatch Events) scheduled event that invokes an AWS Lambda function to query the application's API for the data.",
@@ -67,7 +67,7 @@
       "options": {
         "A": "Create stage variables in API Gateway with Name=\"Endpoint-URL\" and Value=\"Company Domain Name\" to overwrite the default URL. Import the public certiFicate associated with the company's domain name into AWS CertiFicate Manager (ACM).",
         "B": "Create Route 53 DNS records with the company's domain name. Point the alias record to the Regional API Gateway stage endpoint. Import the public certiFicate associated with the company's domain name into AWS CertiFicate Manager (ACM) in the us-east-1 Region.",
-        "C": "Create a Regional API Gateway endpoint. Associate the API Gateway endpoint with the company's domain name. Import the public certiFicate associated with the company's domain name into AWS CertiFicate Manager (ACM) in the same Region. Attach the certiFicate to the API Gateway endpoint. ConFigure Route 53 to route traFic to the API Gateway endpoint.",
+        "C": "Create a Regional API Gateway endpoint. Associate the API Gateway endpoint with the company's domain name. Import the public certiFicate associated with the company's domain name into AWS CertiFicate Manager (ACM) in the same Region. Attach the certiFicate to the API Gateway endpoint. Configure Route 53 to route traFic to the API Gateway endpoint.",
         "D": "Create a Regional API Gateway endpoint. Associate the API Gateway endpoint with the company's domain name. Import the public certiFicate associated with the company's domain name into AWS CertiFicate Manager (ACM) in the us-east-1 Region. Attach the certiFicate to the API Gateway APIs. Create Route 53 DNS records with the company's domain name. Point an A record to the company's domain name."
       },
       "correct_answer": "C",
@@ -149,7 +149,7 @@
       "id": "63",
       "question": "A company runs its infrastructure on AWS and has aregistered base of 700,000 users for its document management application. The company intends to create aproduct that converts large .pdf Files to .jpg image Files. The .pdf Files average 5 MB in size. The company needs to store the original Files and the converted Files. A solutions architect must design ascalable solution to accommodate demand that will grow rapidly over time. Which solution meets these requirements MOST cost-effectively?",
       "options": {
-        "A": "Save the .pdf Files to Amazon S3. ConFigure an S3 PUT event to invoke an AWS Lambda function to convert the Files to .jpg format and store them back in Amazon S3.",
+        "A": "Save the .pdf Files to Amazon S3. Configure an S3 PUT event to invoke an AWS Lambda function to convert the Files to .jpg format and store them back in Amazon S3.",
         "B": "Save the .pdf Files to Amazon DynamoDUse the DynamoDB Streams feature to invoke an AWS Lambda function to convert the Files to .jpg format and store them back in DynamoDB.",
         "C": "Upload the .pdf Files to an AWS Elastic Beanstalk application that includes Amazon EC2 instances, Amazon Elastic Block Store (Amazon EBS) storage, and an Auto Scaling group. Use a program in the EC2 instances to convert the Files to .jpg format. Save the .pdf Files and the .jpg Files in the EBS store.",
         "D": "Upload the .pdf Files to an AWS Elastic Beanstalk application that includes Amazon EC2 instances, Amazon Elastic File System (Amazon EFS) storage, and an Auto Scaling group. Use a program in the EC2 instances to convert the File to .jpg format. Save the .pdf Files and the .jpg Files in the EBS store."
@@ -164,7 +164,7 @@
         "A": "Deploy and conFigure Amazon FSx for Windows File Server on AWS. Move the on-premises File data to FSx for Windows File Server. ReconFigure the workloads to use FSx for Windows File Server on AWS.",
         "B": "Deploy and conFigure an Amazon S3 File Gateway on premises. Move the on-premises File data to the S3 File Gateway. ReconFigure the on- premises workloads and the cloud workloads to use the S3 File Gateway.",
         "C": "Deploy and conFigure an Amazon S3 File Gateway on premises. Move the on-premises File data to Amazon S3. ReconFigure the workloads to use either Amazon S3 directly or the S3 File Gateway. depending on each workload's location.",
-        "D": "Deploy and conFigure Amazon FSx for Windows File Server on AWS. Deploy and conFigure an Amazon FSx File Gateway on premises. Move the on-premises File data to the FSx File Gateway. ConFigure the cloud workloads to use FSx for Windows File Server on AWS. ConFigure the on- premises workloads to use the FSx File Gateway."
+        "D": "Deploy and conFigure Amazon FSx for Windows File Server on AWS. Deploy and conFigure an Amazon FSx File Gateway on premises. Move the on-premises File data to the FSx File Gateway. Configure the cloud workloads to use FSx for Windows File Server on AWS. Configure the on- premises workloads to use the FSx File Gateway."
       },
       "correct_answer": "D",
       "explanation": "Deploy and configure Amazon FSx for Windows File Server on AWS. Deploy and configure an Amazon FSx File Gateway on premises. Move the on-premises file data to the FSx File Gateway. Configure the cloud workloads to use FSx for Windows File Server on AWS. Configure the on-premises workloads to use the FSx File Gateway."
@@ -222,9 +222,9 @@
       "question": "A company is running abusiness-critical web application on Amazon EC2 instances behind an Application Load Balancer. The EC2 instances are in an Auto Scaling group. The application uses an Amazon Aurora PostgreSQL database that is deployed in a single Availability Zone. The company wants the application to be highly available with minimum downtime and minimum loss of data. Which solution will meet these requirements with the LEAST operational effort?",
       "options": {
         "A": "Place the EC2 instances in different AWS Regions. Use Amazon Route 53 health checks to redirect traFic. Use Aurora PostgreSQL Cross- Region Replication.",
-        "B": "ConFigure the Auto Scaling group to use multiple Availability Zones. ConFigure the database as Multi-AZ. ConFigure an Amazon RDS Proxy instance for the database.",
-        "C": "ConFigure the Auto Scaling group to use one Availability Zone. Generate hourly snapshots of the database. Recover the database from the snapshots in the event of a failure.",
-        "D": "ConFigure the Auto Scaling group to use multiple AWS Regions. Write the data from the application to Amazon S3. Use S3 Event NotiFications to launch an AWS Lambda function to write the data to the database."
+        "B": "Configure the Auto Scaling group to use multiple Availability Zones. Configure the database as Multi-AZ. Configure an Amazon RDS Proxy instance for the database.",
+        "C": "Configure the Auto Scaling group to use one Availability Zone. Generate hourly snapshots of the database. Recover the database from the snapshots in the event of a failure.",
+        "D": "Configure the Auto Scaling group to use multiple AWS Regions. Write the data from the application to Amazon S3. Use S3 Event NotiFications to launch an AWS Lambda function to write the data to the database."
       },
       "correct_answer": "B",
       "explanation": "Configure the Auto Scaling group to use multiple Availability Zones. Configure the database as Multi-AZ. Configure an Amazon RDS Proxy instance for the database."
@@ -235,8 +235,8 @@
       "options": {
         "A": "Enable HTTP health checks on the NLB, supplying the URL of the company's application.",
         "B": "Add a cron job to the EC2 instances to check the local application's logs once each minute. If HTTP errors are detected. the application will restart.",
-        "C": "Replace the NLB with an Application Load Balancer. Enable HTTP health checks by supplying the URL of the company's application. ConFigure an Auto Scaling action to replace unhealthy instances.",
-        "D": "Create an Amazon Cloud Watch alarm that monitors the UnhealthyHostCount metric for the NLB. ConFigure an Auto Scaling action to replace unhealthy instances when the alarm is in the ALARM state."
+        "C": "Replace the NLB with an Application Load Balancer. Enable HTTP health checks by supplying the URL of the company's application. Configure an Auto Scaling action to replace unhealthy instances.",
+        "D": "Create an Amazon Cloud Watch alarm that monitors the UnhealthyHostCount metric for the NLB. Configure an Auto Scaling action to replace unhealthy instances when the alarm is in the ALARM state."
       },
       "correct_answer": "C",
       "explanation": "Replace the NLB with an Application Load Balancer. Enable HTTP health checks by supplying the URL of the company's application. Configure an Auto Scaling action to replace unhealthy instances."
@@ -245,8 +245,8 @@
       "id": "71",
       "question": "A company runs ashopping application that uses Amazon DynamoDB to store customer information. In case of data corruption, A solutions architect needs to design asolution that meets arecovery point objective (RPO) of 15 minutes and arecovery time objective (RTO) of 1 hour. What should the solutions architect recommend to meet these requirements?",
       "options": {
-        "A": "ConFigure DynamoDB global tables. For RPO recovery, point the application to a different AWS Region.",
-        "B": "ConFigure DynamoDB point-in-time recovery. For RPO recovery, restore to the desired point in time.",
+        "A": "Configure DynamoDB global tables. For RPO recovery, point the application to a different AWS Region.",
+        "B": "Configure DynamoDB point-in-time recovery. For RPO recovery, restore to the desired point in time.",
         "C": "Export the DynamoDB data to Amazon S3 Glacier on a daily basis. For RPO recovery, import the data from S3 Glacier to DynamoDB.",
         "D": "Schedule Amazon Elastic Block Store (Amazon EBS) snapshots for the DynamoDB table every 15 minutes. For RPO recovery, restore the DynamoDB table by using the EBS snapshot."
       },
@@ -282,11 +282,11 @@
       "id": "74",
       "question": "A solutions architect is designing atwo-tier web application. The application consists of a public-facing web tier hosted on Amazon EC2 in public subnets. The database tier consists of Microsoft SQL Server running on Amazon EC2 in a private subnet. Security is a high priority for the company. How should security groups be configured in this situation? (Choose two.)",
       "options": {
-        "A": "ConFigure the security group for the web tier to allow inbound traFic on port 443 from 0.0.0.0/0.",
-        "B": "ConFigure the security group for the web tier to allow outbound traFic on port 443 from 0.0.0.0/0.",
-        "C": "ConFigure the security group for the database tier to allow inbound traFic on port 1433 from the security group for the web tier.",
-        "D": "ConFigure the security group for the database tier to allow outbound traFic on ports 443 and 1433 to the security group for the web tier.",
-        "E": "ConFigure the security group for the database tier to allow inbound traFic on ports 443 and 1433 from the security group for the web tier."
+        "A": "Configure the security group for the web tier to allow inbound traFic on port 443 from 0.0.0.0/0.",
+        "B": "Configure the security group for the web tier to allow outbound traFic on port 443 from 0.0.0.0/0.",
+        "C": "Configure the security group for the database tier to allow inbound traFic on port 1433 from the security group for the web tier.",
+        "D": "Configure the security group for the database tier to allow outbound traFic on ports 443 and 1433 to the security group for the web tier.",
+        "E": "Configure the security group for the database tier to allow inbound traFic on ports 443 and 1433 from the security group for the web tier."
       },
       "correct_answer": "AC",
       "explanation": "A. Configure the security group for the web tier to allow inbound traffic on port 443 from 0.0.0.0/0.\nC. Configure the security group for the database tier to allow inbound traffic on port 1433 from the security group for the web tier.\nIMP"
@@ -321,8 +321,8 @@
       "options": {
         "A": "Deploy an Amazon EC2 instance to host an API that sends data to an Amazon Kinesis data stream. Create an Amazon Kinesis Data Firehose delivery stream that uses the Kinesis data stream as a data source. Use AWS Lambda functions to transform the data. Use the Kinesis Data Firehose delivery stream to send the data to Amazon S3.",
         "B": "Deploy an Amazon EC2 instance to host an API that sends data to AWS Glue. Stop source/destination checking on the EC2 instance. Use AWS Glue to transform the data and to send the data to Amazon S3.",
-        "C": "ConFigure an Amazon API Gateway API to send data to an Amazon Kinesis data stream. Create an Amazon Kinesis Data Firehose delivery stream that uses the Kinesis data stream as a data source. Use AWS Lambda functions to transform the data. Use the Kinesis Data Firehose delivery stream to send the data to Amazon S3.",
-        "D": "ConFigure an Amazon API Gateway API to send data to AWS Glue. Use AWS Lambda functions to transform the data. Use AWS Glue to send the data to Amazon S3."
+        "C": "Configure an Amazon API Gateway API to send data to an Amazon Kinesis data stream. Create an Amazon Kinesis Data Firehose delivery stream that uses the Kinesis data stream as a data source. Use AWS Lambda functions to transform the data. Use the Kinesis Data Firehose delivery stream to send the data to Amazon S3.",
+        "D": "Configure an Amazon API Gateway API to send data to AWS Glue. Use AWS Lambda functions to transform the data. Use AWS Glue to send the data to Amazon S3."
       },
       "correct_answer": "C",
       "explanation": "Configure an Amazon API Gateway API to send data to an Amazon Kinesis data stream. Create an Amazon Kinesis Data Firehose delivery stream that uses the Kinesis data stream as a data source. Use AWS Lambda functions to transform the data. Use the Kinesis Data Firehose delivery stream to send the data to Amazon S3."
@@ -334,7 +334,7 @@
         "A": "Use DynamoDB point-in-time recovery to back up the table continuously.",
         "B": "Use AWS Backup to create backup schedules and retention policies for the table.",
         "C": "Create an on-demand backup of the table by using the DynamoDB console. Store the backup in an Amazon S3 bucket. Set an S3 Lifecycle conFiguration for the S3 bucket.",
-        "D": "Create an Amazon EventBridge (Amazon CloudWatch Events) rule to invoke an AWS Lambda function. ConFigure the Lambda function to back up the table and to store the backup in an Amazon S3 bucket. Set an S3 Lifecycle conFiguration for the S3 bucket."
+        "D": "Create an Amazon EventBridge (Amazon CloudWatch Events) rule to invoke an AWS Lambda function. Configure the Lambda function to back up the table and to store the backup in an Amazon S3 bucket. Set an S3 Lifecycle conFiguration for the S3 bucket."
       },
       "correct_answer": "B",
       "explanation": "Use AWS Backup to create backup schedules and retention policies for the table."
@@ -380,9 +380,9 @@
       "question": "A company hosts its web applications in the AWS Cloud. The company configures Elastic Load Balancers to use certificates that are imported into AWS Certificate Manager (ACM). The company'ssecurity team must be notified 30 days before the expiration of each certificate. What should A solutions architect recommend to meet this requirement?",
       "options": {
         "A": "Add a rule in ACM to publish a custom message to an Amazon Simple NotiFication Service (Amazon SNS) topic every day, beginning 30 days before any certiFicate will expire.",
-        "B": "Create an AWS ConFig rule that checks for certiFicates that will expire within 30 days. ConFigure Amazon EventBridge (Amazon CloudWatch Events) to invoke a custom alert by way of Amazon Simple NotiFication Service (Amazon SNS) when AWS ConFig reports a noncompliant resource.",
-        "C": "Use AWS Trusted Advisor to check for certiFicates that will expire within 30 days. Create an Amazon CloudWatch alarm that is based on Trusted Advisor metrics for check status changes. ConFigure the alarm to send a custom alert by way of Amazon Simple NotiFication Service (Amazon SNS).",
-        "D": "Create an Amazon EventBridge (Amazon CloudWatch Events) rule to detect any certiFicates that will expire within 30 days. ConFigure the rule to invoke an AWS Lambda function. ConFigure the Lambda function to send a custom alert by way of Amazon Simple NotiFication Service (Amazon SNS)."
+        "B": "Create an AWS ConFig rule that checks for certiFicates that will expire within 30 days. Configure Amazon EventBridge (Amazon CloudWatch Events) to invoke a custom alert by way of Amazon Simple NotiFication Service (Amazon SNS) when AWS ConFig reports a noncompliant resource.",
+        "C": "Use AWS Trusted Advisor to check for certiFicates that will expire within 30 days. Create an Amazon CloudWatch alarm that is based on Trusted Advisor metrics for check status changes. Configure the alarm to send a custom alert by way of Amazon Simple NotiFication Service (Amazon SNS).",
+        "D": "Create an Amazon EventBridge (Amazon CloudWatch Events) rule to detect any certiFicates that will expire within 30 days. Configure the rule to invoke an AWS Lambda function. Configure the Lambda function to send a custom alert by way of Amazon Simple NotiFication Service (Amazon SNS)."
       },
       "correct_answer": "D",
       "explanation": "Create an Amazon EventBridge (Amazon CloudWatch Events) rule to detect any certificates that will expire within 30 days. Configure the rule to invoke an AWS Lambda function. Configure the Lambda function to send a custom alert by way of Amazon Simple Notification Service (Amazon SNS)."
@@ -416,8 +416,8 @@
       "question": "A company has aproduction web application in which users upload documents through a web interface or amobile app. According to anew regulatory requirement. new documents cannot be modified or deleted after they are stored. What should A solutions architect do to meet this requirement?",
       "options": {
         "A": "Store the uploaded documents in an Amazon S3 bucket with S3 Versioning and S3 Object Lock enabled.",
-        "B": "Store the uploaded documents in an Amazon S3 bucket. ConFigure an S3 Lifecycle policy to archive the documents periodically.",
-        "C": "Store the uploaded documents in an Amazon S3 bucket with S3 Versioning enabled. ConFigure an ACL to restrict all access to read-only.",
+        "B": "Store the uploaded documents in an Amazon S3 bucket. Configure an S3 Lifecycle policy to archive the documents periodically.",
+        "C": "Store the uploaded documents in an Amazon S3 bucket with S3 Versioning enabled. Configure an ACL to restrict all access to read-only.",
         "D": "Store the uploaded documents on an Amazon Elastic File System (Amazon EFS) volume. Access the data by mounting the volume in read- only mode."
       },
       "correct_answer": "A",
@@ -439,9 +439,9 @@
       "id": "87",
       "question": "A company hosts an application on AWS Lambda functions that are invoked by an Amazon API Gateway API. The Lambda functions save customer data to an Amazon Aurora MySQL database. Whenever the company upgrades the database, the Lambda functions fail to establish database connections until the upgrade is complete. The result is that customer data is not recorded for some of the event. A solutions architect needs to design asolution that stores customer data that is created during database upgrades. Which solution will meet these requirements?",
       "options": {
-        "A": "Provision an Amazon RDS proxy to sit between the Lambda functions and the database. ConFigure the Lambda functions to connect to the RDS proxy.",
+        "A": "Provision an Amazon RDS proxy to sit between the Lambda functions and the database. Configure the Lambda functions to connect to the RDS proxy.",
         "B": "Increase the run time of the Lambda functions to the maximum. Create a retry mechanism in the code that stores the customer data in the database.",
-        "C": "Persist the customer data to Lambda local storage. ConFigure new Lambda functions to scan the local storage to save the customer data to the database.",
+        "C": "Persist the customer data to Lambda local storage. Configure new Lambda functions to scan the local storage to save the customer data to the database.",
         "D": "Store the customer data in an Amazon Simple Queue Service (Amazon SQS) FIFO queue. Create a new Lambda function that polls the queue and stores the customer data in the database."
       },
       "correct_answer": "A",
@@ -451,10 +451,10 @@
       "id": "88",
       "question": "Asurvey company has gathered data for several years from areas in the United States. The company hosts the data in an Amazon S3 bucket that is 3 TB in size and growing. The company has started to share the data with aEuropean marketing Firm that has S3 buckets. The company wants to ensure that its data transfer costs remain as low as possible. Which solution will meet these requirements?",
       "options": {
-        "A": "ConFigure the Requester Pays feature on the company's S3 bucket.",
-        "B": "ConFigure S3 Cross-Region Replication from the company's S3 bucket to one of the marketing Firm's S3 buckets.",
-        "C": "ConFigure cross-account access for the marketing Firm so that the marketing Firm has access to the company's S3 bucket.",
-        "D": "ConFigure the company's S3 bucket to use S3 Intelligent-Tiering. Sync the S3 bucket to one of the marketing Firm's S3 buckets."
+        "A": "Configure the Requester Pays feature on the company's S3 bucket.",
+        "B": "Configure S3 Cross-Region Replication from the company's S3 bucket to one of the marketing Firm's S3 buckets.",
+        "C": "Configure cross-account access for the marketing Firm so that the marketing Firm has access to the company's S3 bucket.",
+        "D": "Configure the company's S3 bucket to use S3 Intelligent-Tiering. Sync the S3 bucket to one of the marketing Firm's S3 buckets."
       },
       "correct_answer": "A",
       "explanation": "Configure the Requester Pays feature on the company's S3 bucket."
@@ -476,7 +476,7 @@
       "question": "A company is using aSQL database to store movie data that is publicly accessible. The database runs on an Amazon RDS Single-AZ DB instance. Ascript runs queries at random intervals each day to record the number of new movies that have been added to the database. The script must report aFinal total during business hours. The company'sdevelopment team notices that the database performance is inadequate for development tasks when the script is running. A solutions architect must recommend asolution to resolve this issue. Which solution will meet this requirement with the LEAST operational overhead?",
       "options": {
         "A": "Modify the DB instance to be a Multi-AZ deployment.",
-        "B": "Create a read replica of the database. ConFigure the script to query only the read replica.",
+        "B": "Create a read replica of the database. Configure the script to query only the read replica.",
         "C": "Instruct the development team to manually export the entries in the database at the end of each day.",
         "D": "Use Amazon ElastiCache to cache the common queries that the script runs against the database."
       },
@@ -487,10 +487,10 @@
       "id": "91",
       "question": "A company has applications that run on Amazon EC2 instances in a VPC. One of the applications needs to call the Amazon S3 API to store and read objects. According to the company'ssecurity regulations, no trafic from the applications is allowed to travel across the internet. Which solution will meet these requirements?",
       "options": {
-        "A": "ConFigure an S3 gateway endpoint.",
+        "A": "Configure an S3 gateway endpoint.",
         "B": "Create an S3 bucket in a private subnet.",
         "C": "Create an S3 bucket in the same AWS Region as the EC2 instances.",
-        "D": "ConFigure a NAT gateway in the same subnet as the EC2 instances."
+        "D": "Configure a NAT gateway in the same subnet as the EC2 instances."
       },
       "correct_answer": "A",
       "explanation": "Configure an S3 gateway endpoint."
@@ -499,7 +499,7 @@
       "id": "92",
       "question": "A company is storing sensitive user information in an Amazon S3 bucket. The company wants to provide secure access to this bucket from the application tier running on Amazon EC2 instances inside a VPC. Which combination of steps should A solutions architect take to accomplish this? (Choose two.)",
       "options": {
-        "A": "ConFigure a VPC gateway endpoint for Amazon S3 within the VPC.",
+        "A": "Configure a VPC gateway endpoint for Amazon S3 within the VPC.",
         "B": "Create a bucket policy to make the objects in the S3 bucket public.",
         "C": "Create a bucket policy that limits access to only the application tier running in the VPC.",
         "D": "Create an IAM user with an S3 access policy and copy the IAM credentials to the EC2 instance.",
@@ -524,10 +524,10 @@
       "id": "94",
       "question": "A company is designing an application where users upload small Files into Amazon S3. After auser uploads aFile, the File requires one-time simple processing to transform the data and save the data in JSON format for later analysis. Each File must be processed as quickly as possible after it is uploaded. Demand will vary. On some days, users will upload a high number of Files. On other days, users will upload afew Files or no Files. Which solution meets these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "ConFigure Amazon EMR to read text Files from Amazon S3. Run processing scripts to transform the data. Store the resulting JSON File in an Amazon Aurora DB cluster.",
-        "B": "ConFigure Amazon S3 to send an event notiFication to an Amazon Simple Queue Service (Amazon SQS) queue. Use Amazon EC2 instances to read from the queue and process the data. Store the resulting JSON File in Amazon DynamoDB.",
-        "C": "ConFigure Amazon S3 to send an event notiFication to an Amazon Simple Queue Service (Amazon SQS) queue. Use an AWS Lambda function to read from the queue and process the data. Store the resulting JSON File in Amazon DynamoDB.",
-        "D": "ConFigure Amazon EventBridge (Amazon CloudWatch Events) to send an event to Amazon Kinesis Data Streams when a new File is uploaded. Use an AWS Lambda function to consume the event from the stream and process the data. Store the resulting JSON File in an Amazon Aurora DB cluster."
+        "A": "Configure Amazon EMR to read text Files from Amazon S3. Run processing scripts to transform the data. Store the resulting JSON File in an Amazon Aurora DB cluster.",
+        "B": "Configure Amazon S3 to send an event notiFication to an Amazon Simple Queue Service (Amazon SQS) queue. Use Amazon EC2 instances to read from the queue and process the data. Store the resulting JSON File in Amazon DynamoDB.",
+        "C": "Configure Amazon S3 to send an event notiFication to an Amazon Simple Queue Service (Amazon SQS) queue. Use an AWS Lambda function to read from the queue and process the data. Store the resulting JSON File in Amazon DynamoDB.",
+        "D": "Configure Amazon EventBridge (Amazon CloudWatch Events) to send an event to Amazon Kinesis Data Streams when a new File is uploaded. Use an AWS Lambda function to consume the event from the stream and process the data. Store the resulting JSON File in an Amazon Aurora DB cluster."
       },
       "correct_answer": "C",
       "explanation": "Configure Amazon S3 to send an event notification to an Amazon Simple Queue Service (Amazon SQS) queue. Use an AWS Lambda function to read from the queue and process the data. Store the resulting JSON file in Amazon DynamoDB."
@@ -538,8 +538,8 @@
       "options": {
         "A": "Change the existing database to a Multi-AZ deployment. Serve the read requests from the primary Availability Zone.",
         "B": "Change the existing database to a Multi-AZ deployment. Serve the read requests from the secondary Availability Zone.",
-        "C": "Create read replicas for the database. ConFigure the read replicas with half of the compute and storage resources as the source database.",
-        "D": "Create read replicas for the database. ConFigure the read replicas with the same compute and storage resources as the source database."
+        "C": "Create read replicas for the database. Configure the read replicas with half of the compute and storage resources as the source database.",
+        "D": "Create read replicas for the database. Configure the read replicas with the same compute and storage resources as the source database."
       },
       "correct_answer": "D",
       "explanation": "Create read replicas for the database. Configure the read replicas with the same compute and storage resources as the source database."
@@ -560,7 +560,7 @@
       "id": "97",
       "question": "A company has a large Microsoft Sharepoint deployment running on-premises that requires Microsoft Windows shared File storage. The company wants to migrate this workload to the AWS Cloud and is considering various storage options. The storage solution must be highly available and integrated with Active Directory for access control. Which solution will satisfy these requirements?",
       "options": {
-        "A": "ConFigure Amazon EFS storage and set the Active Directory domain for authentication.",
+        "A": "Configure Amazon EFS storage and set the Active Directory domain for authentication.",
         "B": "Create an SMB File share on an AWS Storage Gateway File gateway in two Availability Zones.",
         "C": "Create an Amazon S3 bucket and conFigure Microsoft Windows Server to mount it as a volume.",
         "D": "Create an Amazon FSx for Windows File Server File system on AWS and set the Active Directory domain for authentication."

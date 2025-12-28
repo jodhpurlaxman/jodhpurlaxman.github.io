@@ -41,9 +41,9 @@
       "question": "A company has deployed a serverless application that invokes an AWS Lambda function when new documents are uploaded to an Amazon S3 bucket. The application uses the Lambda function to process the documents. After arecent marketing campaign, the company noticed that the application did not process many of the documents. What should A solutions architect do to improve the architecture of this application?",
       "options": {
         "A": "Set the Lambda function's runtime timeout value to 15 minutes.",
-        "B": "ConFigure an S3 bucket replication policy. Stage the documents in the S3 bucket for later processing.",
+        "B": "Configure an S3 bucket replication policy. Stage the documents in the S3 bucket for later processing.",
         "C": "Deploy an additional Lambda function. Load balance the processing of the documents across the two Lambda functions.",
-        "D": "Create an Amazon Simple Queue Service (Amazon SQS) queue. Send the requests to the queue. ConFigure the queue as an event source for Lambda."
+        "D": "Create an Amazon Simple Queue Service (Amazon SQS) queue. Send the requests to the queue. Configure the queue as an event source for Lambda."
       },
       "correct_answer": "D",
       "explanation": "Introducing Amazon SQS as a queue allows for better decoupling between the S3 events and the document processing. This ensures that the Lambda function is not overwhelmed with spikes in incoming events, leading to missed document processing."
@@ -90,10 +90,10 @@
       "id": "408",
       "question": "A company runs an application that receives data from thousands of geographically dispersed remote devices that use UDP. The application processes the data immediately and sends amessage back to the device if necessary. No data is stored. The company needs asolution that minimizes latency for the data transmission from the devices. The solution also must provide rapid failover to another AWS Region. Which solution will meet these requirements?",
       "options": {
-        "A": "ConFigure an Amazon Route 53 failover routing policy. Create a Network Load Balancer (NLB) in each of the two Regions. ConFigure the NLB to invoke an AWS Lambda function to process the data.",
+        "A": "Configure an Amazon Route 53 failover routing policy. Create a Network Load Balancer (NLB) in each of the two Regions. Configure the NLB to invoke an AWS Lambda function to process the data.",
         "B": "Use AWS Global Accelerator. Create a Network Load Balancer (NLB) in each of the two Regions as an endpoint. Create an Amazon Elastic Container Service (Amazon ECS) cluster with the Fargate launch type. Create an ECS service on the cluster. Set the ECS service as the target for the NLProcess the data in Amazon ECS.",
         "C": "Use AWS Global Accelerator. Create an Application Load Balancer (ALB) in each of the two Regions as an endpoint. Create an Amazon Elastic Container Service (Amazon ECS) cluster with the Fargate launch type. Create an ECS service on the cluster. Set the ECS service as the target for the ALB. Process the data in Amazon ECS.",
-        "D": "ConFigure an Amazon Route 53 failover routing policy. Create an Application Load Balancer (ALB) in each of the two Regions. Create an Amazon Elastic Container Service (Amazon ECS) cluster with the Fargate launch type. Create an ECS service on the cluster. Set the ECS service as the target for the ALB. Process the data in Amazon ECS."
+        "D": "Configure an Amazon Route 53 failover routing policy. Create an Application Load Balancer (ALB) in each of the two Regions. Create an Amazon Elastic Container Service (Amazon ECS) cluster with the Fargate launch type. Create an ECS service on the cluster. Set the ECS service as the target for the ALB. Process the data in Amazon ECS."
       },
       "correct_answer": "B",
       "explanation": "AWS Global Accelerator: AWS Global Accelerator provides static IP addresses that act as a fixed entry point to your application. It routes traffic over the AWS global network to the optimal AWS endpoint based on health, geography, and routing policies.\nNetwork Load Balancer (NLB): NLB is well-suited for UDP-based traffic, and it's designed for high-performance, low-latency applications. In this case, it can efficiently handle the thousands of geographically dispersed remote devices sending UDP traffic.\nAmazon ECS with Fargate Launch Type: Using ECS with Fargate allows you to deploy and run containers without managing the underlying infrastructure. This setup can efficiently handle the immediate processing of data without the need to manage the underlying servers."
@@ -139,7 +139,7 @@
       "question": "An image-hosting company stores its objects in Amazon S3 buckets. The company wants to avoid accidental exposure of the objects in the S3 buckets to the public. All S3 objects in the entire AWS account need to remain private. Which solution will meet these requirements?",
       "options": {
         "A": "Use Amazon GuardDuty to monitor S3 bucket policies. Create an automatic remediation action rule that uses an AWS Lambda function to remediate any change that makes the objects public.",
-        "B": "Use AWS Trusted Advisor to Find publicly accessible S3 buckets. ConFigure email notiFications in Trusted Advisor when a change is detected. Manually change the S3 bucket policy if it allows public access.",
+        "B": "Use AWS Trusted Advisor to Find publicly accessible S3 buckets. Configure email notiFications in Trusted Advisor when a change is detected. Manually change the S3 bucket policy if it allows public access.",
         "C": "Use AWS Resource Access Manager to Find publicly accessible S3 buckets. Use Amazon Simple NotiFication Service (Amazon SNS) to invoke an AWS Lambda function when a change is detected. Deploy a Lambda function that programmatically remediates the change.",
         "D": "Use the S3 Block Public Access feature on the account level. Use AWS Organizations to create a service control policy (SCP) that prevents IAM users from changing the setting. Apply the SCP to the account."
       },
@@ -151,8 +151,8 @@
       "question": "An ecommerce company is experiencing an increase in user trafic. The company’sstore is deployed on Amazon EC2 instances as atwo-tier web application consisting of a web tier and aseparate database tier. As trafic increases, the company notices that the architecture is causing significant delays in sending timely marketing and order confirmation email to users. The company wants to reduce the time it spends resolving complex email delivery issues and minimize operational overhead. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Create a separate application tier using EC2 instances dedicated to email processing.",
-        "B": "ConFigure the web instance to send email through Amazon Simple Email Service (Amazon SES).",
-        "C": "ConFigure the web instance to send email through Amazon Simple NotiFication Service (Amazon SNS).",
+        "B": "Configure the web instance to send email through Amazon Simple Email Service (Amazon SES).",
+        "C": "Configure the web instance to send email through Amazon Simple NotiFication Service (Amazon SNS).",
         "D": "Create a separate application tier using EC2 instances dedicated to email processing. Place the instances in an Auto Scaling group."
       },
       "correct_answer": "B",
@@ -186,11 +186,11 @@
       "id": "416",
       "question": "A rapidly growing global ecommerce company is hosting its web application on AWS. The web application includes static content and dynamic content. The website stores online transaction processing (OLTP) data in an Amazon RDS database The website’susers are experiencing slow page loads. Which combination of actions should A solutions architect take to resolve this issue? (Choose two.)",
       "options": {
-        "A": "ConFigure an Amazon Redshift cluster.",
+        "A": "Configure an Amazon Redshift cluster.",
         "B": "Set up an Amazon CloudFront distribution.",
         "C": "Host the dynamic web content in Amazon S3.",
         "D": "Create a read replica for the RDS DB instance.",
-        "E": "ConFigure a Multi-AZ deployment for the RDS DB instance."
+        "E": "Configure a Multi-AZ deployment for the RDS DB instance."
       },
       "correct_answer": "BD",
       "explanation": "D. Create a read replica for the RDS DB instance.\nAmazon CloudFront is a content delivery network (CDN) that can improve the performance of a website by caching static content closer to the users. This reduces latency and improves page load times.\nConfigure CloudFront to distribute static content such as images, stylesheets, and JavaScript files. This will offload the serving of static assets from the web servers, improving overall website performance.\nCreating a read replica for the Amazon RDS database allows you to offload read traffic from the primary database, improving the overall database performance."
@@ -321,10 +321,10 @@
       "id": "427",
       "question": "A solutions architect is implementing acomplex Java application with aMySQL database. The Java application must be deployed on Apache Tomcat and must be highly available. What should the solutions architect do to meet these requirements?",
       "options": {
-        "A": "Deploy the application in AWS Lambda. ConFigure an Amazon API Gateway API to connect with the Lambda functions.",
-        "B": "Deploy the application by using AWS Elastic Beanstalk. ConFigure a load-balanced environment and a rolling deployment policy.",
-        "C": "Migrate the database to Amazon ElastiCache. ConFigure the ElastiCache security group to allow access from the application.",
-        "D": "Launch an Amazon EC2 instance. Install a MySQL server on the EC2 instance. ConFigure the application on the server. Create an AMI. Use the AMI to create a launch template with an Auto Scaling group."
+        "A": "Deploy the application in AWS Lambda. Configure an Amazon API Gateway API to connect with the Lambda functions.",
+        "B": "Deploy the application by using AWS Elastic Beanstalk. Configure a load-balanced environment and a rolling deployment policy.",
+        "C": "Migrate the database to Amazon ElastiCache. Configure the ElastiCache security group to allow access from the application.",
+        "D": "Launch an Amazon EC2 instance. Install a MySQL server on the EC2 instance. Configure the application on the server. Create an AMI. Use the AMI to create a launch template with an Auto Scaling group."
       },
       "correct_answer": "B",
       "explanation": "AWS Elastic Beanstalk: It is a fully managed service that simplifies the deployment and operation of applications, including web applications running Apache Tomcat. Elastic Beanstalk handles the deployment details, capacity provisioning, load balancing, auto-scaling, and application health monitoring, making it easier to deploy and manage your applications."
@@ -406,10 +406,10 @@
       "id": "434",
       "question": "A company hosts its application in the AWS Cloud. The application runs on Amazon EC2 instances behind an Elastic Load Balancer in an Auto Scaling group and with an Amazon DynamoDB table. The company wants to ensure the application can be made available in anotherAWS Region with minimal downtime. What should A solutions architect do to meet these requirements with the LEAST amount of downtime?",
       "options": {
-        "A": "Create an Auto Scaling group and a load balancer in the disaster recovery Region. ConFigure the DynamoDB table as a global table. ConFigure DNS failover to point to the new disaster recovery Region's load balancer.",
-        "B": "Create an AWS CloudFormation template to create EC2 instances, load balancers, and DynamoDB tables to be launched when needed ConFigure DNS failover to point to the new disaster recovery Region's load balancer.",
-        "C": "Create an AWS CloudFormation template to create EC2 instances and a load balancer to be launched when needed. ConFigure the DynamoDB table as a global table. ConFigure DNS failover to point to the new disaster recovery Region's load balancer.",
-        "D": "Create an Auto Scaling group and load balancer in the disaster recovery Region. ConFigure the DynamoDB table as a global table. Create an Amazon CloudWatch alarm to trigger an AWS Lambda function that updates Amazon Route 53 pointing to the disaster recovery load balancer."
+        "A": "Create an Auto Scaling group and a load balancer in the disaster recovery Region. Configure the DynamoDB table as a global table. Configure DNS failover to point to the new disaster recovery Region's load balancer.",
+        "B": "Create an AWS CloudFormation template to create EC2 instances, load balancers, and DynamoDB tables to be launched when needed Configure DNS failover to point to the new disaster recovery Region's load balancer.",
+        "C": "Create an AWS CloudFormation template to create EC2 instances and a load balancer to be launched when needed. Configure the DynamoDB table as a global table. Configure DNS failover to point to the new disaster recovery Region's load balancer.",
+        "D": "Create an Auto Scaling group and load balancer in the disaster recovery Region. Configure the DynamoDB table as a global table. Create an Amazon CloudWatch alarm to trigger an AWS Lambda function that updates Amazon Route 53 pointing to the disaster recovery load balancer."
       },
       "correct_answer": "A",
       "explanation": ""
@@ -454,7 +454,7 @@
       "id": "438",
       "question": "A company wants to share accounting data with an external auditor. The data is stored in an Amazon RDS DB instance that resides in a private subnet. The auditor has its own AWS account and requires its own copy of the database. What is the MOST secure way for the company to share the database with the auditor?",
       "options": {
-        "A": "Create a read replica of the database. ConFigure IAM standard database authentication to grant the auditor access.",
+        "A": "Create a read replica of the database. Configure IAM standard database authentication to grant the auditor access.",
         "B": "Export the database contents to text Files. Store the Files in an Amazon S3 bucket. Create a new IAM user for the auditor. Grant the user access to the S3 bucket.",
         "C": "Copy a snapshot of the database to an Amazon S3 bucket. Create an IAM user. Share the user's keys with the auditor to grant access to the object in the S3 bucket.",
         "D": "Create an encrypted snapshot of the database. Share the snapshot with the auditor. Allow access to the AWS Key Management Service (AWS KMS) encryption key."
@@ -529,7 +529,7 @@
       "options": {
         "A": "Delete one EC2 instance and enable termination protection on the other EC2 instance. Update the DB instance to be Multi-AZ, and enable deletion protection.",
         "B": "Update the DB instance to be Multi-AZ, and enable deletion protection. Place the EC2 instances behind an Application Load Balancer, and run them in an EC2 Auto Scaling group across multiple Availability Zones.",
-        "C": "Create an additional DB instance along with an Amazon API Gateway and an AWS Lambda function. ConFigure the application to invoke the Lambda function through API Gateway. Have the Lambda function write the data to the two DB instances.",
+        "C": "Create an additional DB instance along with an Amazon API Gateway and an AWS Lambda function. Configure the application to invoke the Lambda function through API Gateway. Have the Lambda function write the data to the two DB instances.",
         "D": "Place the EC2 instances in an EC2 Auto Scaling group that has multiple subnets located in multiple Availability Zones. Use Spot Instances instead of On-Demand Instances. Set up Amazon CloudWatch alarms to monitor the health of the instances Update the DB instance to be Multi-AZ, and enable deletion protection."
       },
       "correct_answer": "B",
@@ -551,7 +551,7 @@
       "id": "446",
       "question": "A company stores data in PDF format in an Amazon S3 bucket. The company must follow alegal requirement to retain all new and existing data in Amazon S3 for 7 years. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Turn on the S3 Versioning feature for the S3 bucket. ConFigure S3 Lifecycle to delete the data after 7 years. ConFigure multi-factor authentication (MFA) delete for all S3 objects.",
+        "A": "Turn on the S3 Versioning feature for the S3 bucket. Configure S3 Lifecycle to delete the data after 7 years. Configure multi-factor authentication (MFA) delete for all S3 objects.",
         "B": "Turn on S3 Object Lock with governance retention mode for the S3 bucket. Set the retention period to expire after 7 years. Recopy all existing objects to bring the existing data into compliance.",
         "C": "Turn on S3 Object Lock with compliance retention mode for the S3 bucket. Set the retention period to expire after 7 years. Recopy all existing objects to bring the existing data into compliance.",
         "D": "Turn on S3 Object Lock with compliance retention mode for the S3 bucket. Set the retention period to expire after 7 years. Use S3 Batch Operations to bring the existing data into compliance."
@@ -565,7 +565,7 @@
       "options": {
         "A": "Create Amazon Route 53 health checks for each Region. Use an active-active failover conFiguration.",
         "B": "Create an Amazon CloudFront distribution with an origin for each Region. Use CloudFront health checks to route traFic.",
-        "C": "Create a transit gateway. Attach the transit gateway to the API Gateway endpoint in each Region. ConFigure the transit gateway to route requests.",
+        "C": "Create a transit gateway. Attach the transit gateway to the API Gateway endpoint in each Region. Configure the transit gateway to route requests.",
         "D": "Create an Application Load Balancer in the primary Region. Set the target group to point to the API Gateway endpoint hostnames in each Region."
       },
       "correct_answer": "A",

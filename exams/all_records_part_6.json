@@ -4,10 +4,10 @@
       "id": "251",
       "question": "An Amazon EC2 instance is located in a private subnet in anew VPC. This subnet does not have outbound internet access, but the EC2 instance needs the ability to download monthly security updates from an outside vendor. What should A solutions architect do to meet these requirements?",
       "options": {
-        "A": "Create an internet gateway, and attach it to the VPC. ConFigure the private subnet route table to use the internet gateway as the default route.",
-        "B": "Create a NAT gateway, and place it in a public subnet. ConFigure the private subnet route table to use the NAT gateway as the default route.",
-        "C": "Create a NAT instance, and place it in the same subnet where the EC2 instance is located. ConFigure the private subnet route table to use the NAT instance as the default route.",
-        "D": "Create an internet gateway, and attach it to the VPC. Create a NAT instance, and place it in the same subnet where the EC2 instance is located. ConFigure the private subnet route table to use the internet gateway as the default route."
+        "A": "Create an internet gateway, and attach it to the VPC. Configure the private subnet route table to use the internet gateway as the default route.",
+        "B": "Create a NAT gateway, and place it in a public subnet. Configure the private subnet route table to use the NAT gateway as the default route.",
+        "C": "Create a NAT instance, and place it in the same subnet where the EC2 instance is located. Configure the private subnet route table to use the NAT instance as the default route.",
+        "D": "Create an internet gateway, and attach it to the VPC. Create a NAT instance, and place it in the same subnet where the EC2 instance is located. Configure the private subnet route table to use the internet gateway as the default route."
       },
       "correct_answer": "B",
       "explanation": "NAT gateways are designed to provide outbound internet access for instances in private subnets. Placing a NAT gateway in a public subnet and configuring the private subnet's route table to use the NAT gateway as the default route allows the EC2 instance to download security updates while maintaining security."
@@ -52,7 +52,7 @@
       "id": "255",
       "question": "A company has an ecommerce checkout workfiow that writes an order to a database and calls aservice to process the payment. Users are experiencing timeouts during the checkout process. When users resubmit the checkout form, multiple unique orders are created for the same desired transaction. How should A solutions architect refactor this workfiow to prevent the creation of multiple orders?",
       "options": {
-        "A": "ConFigure the web application to send an order message to Amazon Kinesis Data Firehose. Set the payment service to retrieve the message from Kinesis Data Firehose and process the order.",
+        "A": "Configure the web application to send an order message to Amazon Kinesis Data Firehose. Set the payment service to retrieve the message from Kinesis Data Firehose and process the order.",
         "B": "Create a rule in AWS CloudTrail to invoke an AWS Lambda function based on the logged application path request. Use Lambda to query the database, call the payment service, and pass in the order information.",
         "C": "Store the order in the database. Send a message that includes the order number to Amazon Simple NotiFication Service (Amazon SNS). Set the payment service to poll Amazon SNS, retrieve the message, and process the order.",
         "D": "Store the order in the database. Send a message that includes the order number to an Amazon Simple Queue Service (Amazon SQS) FIFO queue. Set the payment service to retrieve the message and process the order. Delete the message from the queue."
@@ -79,8 +79,8 @@
       "options": {
         "A": "Use an Amazon CloudWatch metric stream to send the EC2 Auto Scaling status data to Amazon Kinesis Data Firehose. Store the data in Amazon S3.",
         "B": "Launch an Amazon EMR cluster to collect the EC2 Auto Scaling status data and send the data to Amazon Kinesis Data Firehose. Store the data in Amazon S3.",
-        "C": "Create an Amazon EventBridge rule to invoke an AWS Lambda function on a schedule. ConFigure the Lambda function to send the EC2 Auto Scaling status data directly to Amazon S3.",
-        "D": "Use a bootstrap script during the launch of an EC2 instance to install Amazon Kinesis Agent. ConFigure Kinesis Agent to collect the EC2 Auto Scaling status data and send the data to Amazon Kinesis Data Firehose. Store the data in Amazon S3."
+        "C": "Create an Amazon EventBridge rule to invoke an AWS Lambda function on a schedule. Configure the Lambda function to send the EC2 Auto Scaling status data directly to Amazon S3.",
+        "D": "Use a bootstrap script during the launch of an EC2 instance to install Amazon Kinesis Agent. Configure Kinesis Agent to collect the EC2 Auto Scaling status data and send the data to Amazon Kinesis Data Firehose. Store the data in Amazon S3."
       },
       "correct_answer": "A",
       "explanation": ""
@@ -102,9 +102,9 @@
       "question": "A company is implementing new data retention policies for all databases that run on Amazon RDS DB instances. The company must retain daily backups for aminimum period of 2 years. The backups must be consistent and restorable. Which solution should A solutions architect recommend to meet these requirements?",
       "options": {
         "A": "Create a backup vault in AWS Backup to retain RDS backups. Create a new backup plan with a daily schedule and an expiration period of 2 years after creation. Assign the RDS DB instances to the backup plan.",
-        "B": "ConFigure a backup window for the RDS DB instances for daily snapshots. Assign a snapshot retention policy of 2 years to each RDS DB instance. Use Amazon Data Lifecycle Manager (Amazon DLM) to schedule snapshot deletions.",
-        "C": "ConFigure database transaction logs to be automatically backed up to Amazon CloudWatch Logs with an expiration period of 2 years.",
-        "D": "ConFigure an AWS Database Migration Service (AWS DMS) replication task. Deploy a replication instance, and conFigure a change data capture (CDC) task to stream database changes to Amazon S3 as the target. ConFigure S3 Lifecycle policies to delete the snapshots after 2 years."
+        "B": "Configure a backup window for the RDS DB instances for daily snapshots. Assign a snapshot retention policy of 2 years to each RDS DB instance. Use Amazon Data Lifecycle Manager (Amazon DLM) to schedule snapshot deletions.",
+        "C": "Configure database transaction logs to be automatically backed up to Amazon CloudWatch Logs with an expiration period of 2 years.",
+        "D": "Configure an AWS Database Migration Service (AWS DMS) replication task. Deploy a replication instance, and conFigure a change data capture (CDC) task to stream database changes to Amazon S3 as the target. Configure S3 Lifecycle policies to delete the snapshots after 2 years."
       },
       "correct_answer": "A",
       "explanation": ""
@@ -125,11 +125,11 @@
       "id": "261",
       "question": "A company recently announced the deployment of its retail website to aglobal audience. The website runs on multiple Amazon EC2 instances behind an Elastic Load Balancer. The instances run in an Auto Scaling group across multiple Availability Zones. The company wants to provide its customers with different versions of content based on the devices that the customers use to access the website. Which combination of actions should A solutions architect take to meet these requirements? (Choose two.)",
       "options": {
-        "A": "ConFigure Amazon CloudFront to cache multiple versions of the content.",
-        "B": "ConFigure a host header in a Network Load Balancer to forward traFic to different instances.",
-        "C": "ConFigure a Lambda@Edge function to send speciFic objects to users based on the User-Agent header.",
-        "D": "ConFigure AWS Global Accelerator. Forward requests to a Network Load Balancer (NLB). ConFigure the NLB to set up host-based routing to different EC2 instances.",
-        "E": "ConFigure AWS Global Accelerator. Forward requests to a Network Load Balancer (NLB). ConFigure the NLB to set up path-based routing to different EC2 instances."
+        "A": "Configure Amazon CloudFront to cache multiple versions of the content.",
+        "B": "Configure a host header in a Network Load Balancer to forward traFic to different instances.",
+        "C": "Configure a Lambda@Edge function to send speciFic objects to users based on the User-Agent header.",
+        "D": "Configure AWS Global Accelerator. Forward requests to a Network Load Balancer (NLB). Configure the NLB to set up host-based routing to different EC2 instances.",
+        "E": "Configure AWS Global Accelerator. Forward requests to a Network Load Balancer (NLB). Configure the NLB to set up path-based routing to different EC2 instances."
       },
       "correct_answer": "AC",
       "explanation": "C. Configure a Lambda@Edge function to send specific objects to users based on the User-Agent header.\nAmazon CloudFront is a content delivery network (CDN) service that can cache and deliver content globally.\nConfigure CloudFront to cache different versions of content based on the device type or other criteria.\nLambda@Edge allows you to run code in response to CloudFront events globally.\nUse a Lambda@Edge function to inspect the User-Agent header and dynamically serve different versions of content based on the device type."
@@ -138,10 +138,10 @@
       "id": "262",
       "question": "A company plans to use Amazon Elasticache for its multi-tier web application. A solutions architect creates aCache VPC for the Elasticache cluster and an App VPC for the application’sAmazon EC2 instances. Both VPCs are in the us-east-1 Region. The solutions architect must implement asolution to provide the application’sEC2 instances with access to the Elasticache cluster. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
-        "A": "Create a peering connection between the VPCs. Add a route table entry for the peering connection in both VPCs. ConFigure an inbound rule for the ElastiCache cluster’s security group to allow inbound connection from the application’s security group.",
-        "B": "Create a Transit VPC. Update the VPC route tables in the Cache VPC and the App VPC to route traFic through the Transit VPC. ConFigure an inbound rule for the ElastiCache cluster's security group to allow inbound connection from the application’s security group.",
-        "C": "Create a peering connection between the VPCs. Add a route table entry for the peering connection in both VPCs. ConFigure an inbound rule for the peering connection’s security group to allow inbound connection from the application’s security group.",
-        "D": "Create a Transit VPC. Update the VPC route tables in the Cache VPC and the App VPC to route traFic through the Transit VPC. ConFigure an inbound rule for the Transit VPC’s security group to allow inbound connection from the application’s security group."
+        "A": "Create a peering connection between the VPCs. Add a route table entry for the peering connection in both VPCs. Configure an inbound rule for the ElastiCache cluster’s security group to allow inbound connection from the application’s security group.",
+        "B": "Create a Transit VPC. Update the VPC route tables in the Cache VPC and the App VPC to route traFic through the Transit VPC. Configure an inbound rule for the ElastiCache cluster's security group to allow inbound connection from the application’s security group.",
+        "C": "Create a peering connection between the VPCs. Add a route table entry for the peering connection in both VPCs. Configure an inbound rule for the peering connection’s security group to allow inbound connection from the application’s security group.",
+        "D": "Create a Transit VPC. Update the VPC route tables in the Cache VPC and the App VPC to route traFic through the Transit VPC. Configure an inbound rule for the Transit VPC’s security group to allow inbound connection from the application’s security group."
       },
       "correct_answer": "A",
       "explanation": "Creating a peering connection allows communication between the Cache VPC and the App VPC.\nAdding a route table entry in both VPCs for the peering connection ensures that traffic can flow between them.\nInbound Rule in ElastiCache Security Group:\nConfiguring an inbound rule in the ElastiCache cluster's security group to allow connections from the application's security group enables the EC2 instances in the App VPC to access the ElastiCache cluster."
@@ -175,10 +175,10 @@
       "id": "265",
       "question": "A solutions architect needs to design a highly available application consisting of web, application, and database tiers. HTTPS content delivery should be as close to the edge as possible, with the least delivery time. Which solution meets these requirements and is MOST secure?",
       "options": {
-        "A": "ConFigure a public Application Load Balancer (ALB) with multiple redundant Amazon EC2 instances in public subnets. ConFigure Amazon CloudFront to deliver HTTPS content using the public ALB as the origin.",
-        "B": "ConFigure a public Application Load Balancer with multiple redundant Amazon EC2 instances in private subnets. ConFigure Amazon CloudFront to deliver HTTPS content using the EC2 instances as the origin.",
-        "C": "ConFigure a public Application Load Balancer (ALB) with multiple redundant Amazon EC2 instances in private subnets. ConFigure Amazon CloudFront to deliver HTTPS content using the public ALB as the origin.",
-        "D": "ConFigure a public Application Load Balancer with multiple redundant Amazon EC2 instances in public subnets. ConFigure Amazon CloudFront to deliver HTTPS content using the EC2 instances as the origin."
+        "A": "Configure a public Application Load Balancer (ALB) with multiple redundant Amazon EC2 instances in public subnets. Configure Amazon CloudFront to deliver HTTPS content using the public ALB as the origin.",
+        "B": "Configure a public Application Load Balancer with multiple redundant Amazon EC2 instances in private subnets. Configure Amazon CloudFront to deliver HTTPS content using the EC2 instances as the origin.",
+        "C": "Configure a public Application Load Balancer (ALB) with multiple redundant Amazon EC2 instances in private subnets. Configure Amazon CloudFront to deliver HTTPS content using the public ALB as the origin.",
+        "D": "Configure a public Application Load Balancer with multiple redundant Amazon EC2 instances in public subnets. Configure Amazon CloudFront to deliver HTTPS content using the EC2 instances as the origin."
       },
       "correct_answer": "C",
       "explanation": "Public ALB in Private Subnets:\nDeploy a public Application Load Balancer (ALB) in private subnets. This ensures that the ALB is not directly accessible from the internet, providing an additional layer of security.\nDeploy multiple redundant Amazon EC2 instances in private subnets behind the ALB. The instances host the application and database tiers.\nConfigure Amazon CloudFront to deliver HTTPS content using the public ALB as the origin. CloudFront provides content delivery close to the edge, reducing latency and improving the delivery time for end-users."
@@ -187,10 +187,10 @@
       "id": "266",
       "question": "A company has apopular gaming platform running on AWS. The application is sensitive to latency because latency can impact the user experience and introduce unfair advantages to some players. The application is deployed in every AWS Region. It runs on Amazon EC2 instances that are part of Auto Scaling groups configured behind Application Load Balancers (ALBs). A solutions architect needs to implement amechanism to monitor the health of the application and redirect trafic to healthy endpoints. Which solution meets these requirements?",
       "options": {
-        "A": "ConFigure an accelerator in AWS Global Accelerator. Add a listener for the port that the application listens on, and attach it to a Regional endpoint in each Region. Add the ALB as the endpoint.",
-        "B": "Create an Amazon CloudFront distribution and specify the ALB as the origin server. ConFigure the cache behavior to use origin cache headers. Use AWS Lambda functions to optimize the traFic.",
-        "C": "Create an Amazon CloudFront distribution and specify Amazon S3 as the origin server. ConFigure the cache behavior to use origin cache headers. Use AWS Lambda functions to optimize the traFic.",
-        "D": "ConFigure an Amazon DynamoDB database to serve as the data store for the application. Create a DynamoDB Accelerator (DAX) cluster to act as the in-memory cache for DynamoDB hosting the application data."
+        "A": "Configure an accelerator in AWS Global Accelerator. Add a listener for the port that the application listens on, and attach it to a Regional endpoint in each Region. Add the ALB as the endpoint.",
+        "B": "Create an Amazon CloudFront distribution and specify the ALB as the origin server. Configure the cache behavior to use origin cache headers. Use AWS Lambda functions to optimize the traFic.",
+        "C": "Create an Amazon CloudFront distribution and specify Amazon S3 as the origin server. Configure the cache behavior to use origin cache headers. Use AWS Lambda functions to optimize the traFic.",
+        "D": "Configure an Amazon DynamoDB database to serve as the data store for the application. Create a DynamoDB Accelerator (DAX) cluster to act as the in-memory cache for DynamoDB hosting the application data."
       },
       "correct_answer": "A",
       "explanation": "AWS Global Accelerator is designed to provide static IP addresses for global applications and direct traffic over the AWS global network to optimal AWS endpoints based on health, geography, and routing policies.\nConfigure an accelerator with a listener for the port that the application listens on.\nAttach the listener to a Regional endpoint in each AWS Region where the application is deployed."
@@ -249,7 +249,7 @@
       "options": {
         "A": "Increase the minimum capacity for the Auto Scaling group.",
         "B": "Increase the maximum capacity for the Auto Scaling group.",
-        "C": "ConFigure scheduled scaling to scale up to the desired compute level.",
+        "C": "Configure scheduled scaling to scale up to the desired compute level.",
         "D": "Change the scaling policy to add more EC2 instances during each scaling operation."
       },
       "correct_answer": "C",
@@ -259,9 +259,9 @@
       "id": "272",
       "question": "A company serves adynamic website from aFieet of Amazon EC2 instances behind an Application Load Balancer (ALB). The website needs to support multiple languages to serve customers around the world. The website’sarchitecture is running in the us-west-1 Region and is exhibiting high request latency for users that are located in other parts of the world. The website needs to serve requests quickly and eficiently regardless of auser’slocation. However, the company does not want to recreate the existing architecture across multiple Regions. What should A solutions architect do to meet these requirements?",
       "options": {
-        "A": "Replace the existing architecture with a website that is served from an Amazon S3 bucket. ConFigure an Amazon CloudFront distribution with the S3 bucket as the origin. Set the cache behavior settings to cache based on the Accept-Language request header.",
-        "B": "ConFigure an Amazon CloudFront distribution with the ALB as the origin. Set the cache behavior settings to cache based on the Accept- Language request header.",
-        "C": "Create an Amazon API Gateway API that is integrated with the ALB. ConFigure the API to use the HTTP integration type. Set up an API Gateway stage to enable the API cache based on the Accept-Language request header.",
+        "A": "Replace the existing architecture with a website that is served from an Amazon S3 bucket. Configure an Amazon CloudFront distribution with the S3 bucket as the origin. Set the cache behavior settings to cache based on the Accept-Language request header.",
+        "B": "Configure an Amazon CloudFront distribution with the ALB as the origin. Set the cache behavior settings to cache based on the Accept- Language request header.",
+        "C": "Create an Amazon API Gateway API that is integrated with the ALB. Configure the API to use the HTTP integration type. Set up an API Gateway stage to enable the API cache based on the Accept-Language request header.",
         "D": "Launch an EC2 instance in each additional Region and conFigure NGINX to act as a cache server for that Region. Put all the EC2 instances and the ALB behind an Amazon Route 53 record set with a geolocation routing policy."
       },
       "correct_answer": "B",
@@ -307,11 +307,11 @@
       "id": "276",
       "question": "A company has a multi-tier application deployed on several Amazon EC2 instances in an Auto Scaling group. An Amazon RDS for Oracle instance is the application’ sdata layer that uses Oracle-specific PL/SQL functions. Trafic to the application has been steadily increasing. This is causing the EC2 instances to become overloaded and the RDS instance to run out of storage. The Auto Scaling group does not have any scaling metrics and defines the minimum healthy instance count only. The company predicts that trafic will continue to increase at asteady but unpredictable rate before leveling off. What should A solutions architect do to ensure the system can automatically scale for the increased trafic? (Choose two.)",
       "options": {
-        "A": "ConFigure storage Auto Scaling on the RDS for Oracle instance.",
+        "A": "Configure storage Auto Scaling on the RDS for Oracle instance.",
         "B": "Migrate the database to Amazon Aurora to use Auto Scaling storage.",
-        "C": "ConFigure an alarm on the RDS for Oracle instance for low free storage space.",
-        "D": "ConFigure the Auto Scaling group to use the average CPU as the scaling metric.",
-        "E": "ConFigure the Auto Scaling group to use the average free memory as the scaling metric."
+        "C": "Configure an alarm on the RDS for Oracle instance for low free storage space.",
+        "D": "Configure the Auto Scaling group to use the average CPU as the scaling metric.",
+        "E": "Configure the Auto Scaling group to use the average free memory as the scaling metric."
       },
       "correct_answer": "AD",
       "explanation": "This option allows the RDS instance to automatically scale its storage based on the actual storage usage, ensuring that you don't run out of storage.\nD. Configure the Auto Scaling group to use the average CPU as the scaling metric.\nBy using CPU utilization as a scaling metric, the Auto Scaling group can dynamically adjust the number of EC2 instances based on the application's demand. This helps in handling increased traffic and preventing overload on existing instances."
@@ -334,9 +334,9 @@
       "options": {
         "A": "Use Amazon Redshift to store the employee data in hierarchies. Unload the data to Amazon S3 every month.",
         "B": "Use Amazon DynamoDB to store the employee data in hierarchies. Export the data to Amazon S3 every month.",
-        "C": "ConFigure Amazon Macie for the AWS account. Integrate Macie with Amazon EventBridge to send monthly events to AWS Lambda.",
+        "C": "Configure Amazon Macie for the AWS account. Integrate Macie with Amazon EventBridge to send monthly events to AWS Lambda.",
         "D": "Use Amazon Athena to analyze the employee data in Amazon S3. Integrate Athena with Amazon QuickSight to publish analysis dashboards and share the dashboards with users.",
-        "E": "ConFigure Amazon Macie for the AWS account. Integrate Macie with Amazon EventBridge to send monthly notiFications through an Amazon Simple NotiFication Service (Amazon SNS) subscription."
+        "E": "Configure Amazon Macie for the AWS account. Integrate Macie with Amazon EventBridge to send monthly notiFications through an Amazon Simple NotiFication Service (Amazon SNS) subscription."
       },
       "correct_answer": "BE",
       "explanation": "E. Configure Amazon Macie for the AWS account. Integrate Macie with Amazon EventBridge to send monthly notifications through an Amazon Simple Notification Service (Amazon SNS) subscription.\nAmazon DynamoDB is a highly scalable, low-latency NoSQL database that can efficiently store hierarchical data.\nExporting the data to Amazon S3 every month allows further analysis and integration with other AWS services.\nAmazon Macie is a security service that automatically discovers, classifies, and protects sensitive data.\nIntegrating Macie with EventBridge allows you to set up monthly events and send notifications through Amazon SNS if financial information is detected."
@@ -371,8 +371,8 @@
       "options": {
         "A": "Enable a Multi-AZ deployment for the DB instance.",
         "B": "Enable auto scaling for the DB instance in one Availability Zone.",
-        "C": "ConFigure the DB instance in one Availability Zone, and create multiple read replicas in a separate Availability Zone.",
-        "D": "ConFigure the DB instance in one Availability Zone, and conFigure AWS Database Migration Service (AWS DMS) change data capture (CDC) tasks."
+        "C": "Configure the DB instance in one Availability Zone, and create multiple read replicas in a separate Availability Zone.",
+        "D": "Configure the DB instance in one Availability Zone, and conFigure AWS Database Migration Service (AWS DMS) change data capture (CDC) tasks."
       },
       "correct_answer": "A",
       "explanation": "A Multi-AZ (Availability Zone) deployment for Amazon RDS provides high availability and failover support for DB instances. In a Multi-AZ deployment, Amazon RDS automatically provisions and maintains a synchronous standby replica in a different Availability Zone."
@@ -381,10 +381,10 @@
       "id": "282",
       "question": "A company runs a web application that is deployed on Amazon EC2 instances in the private subnet of a VPC. An Application Load Balancer (ALB) that extends across the public subnets directs web trafic to the EC2 instances. The company wants to implement new security measures to restrict inbound trafic from the ALB to the EC2 instances while preventing access from any other source inside or outside the private subnet of the EC2 instances. Which solution will meet these requirements?",
       "options": {
-        "A": "ConFigure a route in a route table to direct traFic from the internet to the private IP addresses of the EC2 instances.",
-        "B": "ConFigure the security group for the EC2 instances to only allow traFic that comes from the security group for the ALB.",
+        "A": "Configure a route in a route table to direct traFic from the internet to the private IP addresses of the EC2 instances.",
+        "B": "Configure the security group for the EC2 instances to only allow traFic that comes from the security group for the ALB.",
         "C": "Move the EC2 instances into the public subnet. Give the EC2 instances a set of Elastic IP addresses.",
-        "D": "ConFigure the security group for the ALB to allow any TCP traFic on any port."
+        "D": "Configure the security group for the ALB to allow any TCP traFic on any port."
       },
       "correct_answer": "B",
       "explanation": "Security groups act as virtual firewalls for EC2 instances. By configuring the security group for the EC2 instances to only allow traffic from the security group associated with the ALB, you can control and restrict inbound traffic effectively.\nWhen you specify a security group as the source in the inbound rules of another security group, you allow traffic only from instances that are members of that source security group. In this case, you can allow traffic only from the ALB, ensuring that traffic is restricted to the necessary source."
@@ -394,9 +394,9 @@
       "question": "Aresearch company runs experiments that are powered by asimulation application and avisualization application. The simulation application runs on Linux and outputs intermediate data to an NFS share every 5 minutes. The visualization application is aWindows desktop application that displays the simulation output and requires an SMB File system. The company maintains two synchronized File systems. This strategy is causing data duplication and ineficient resource usage. The company needs to migrate the applications to AWS without making code changes to either application. Which solution will meet these requirements?",
       "options": {
         "A": "Migrate both applications to AWS Lambda. Create an Amazon S3 bucket to exchange data between the applications.",
-        "B": "Migrate both applications to Amazon Elastic Container Service (Amazon ECS). ConFigure Amazon FSx File Gateway for storage.",
-        "C": "Migrate the simulation application to Linux Amazon EC2 instances. Migrate the visualization application to Windows EC2 instances. ConFigure Amazon Simple Queue Service (Amazon SQS) to exchange data between the applications.",
-        "D": "Migrate the simulation application to Linux Amazon EC2 instances. Migrate the visualization application to Windows EC2 instances. ConFigure Amazon FSx for NetApp ONTAP for storage."
+        "B": "Migrate both applications to Amazon Elastic Container Service (Amazon ECS). Configure Amazon FSx File Gateway for storage.",
+        "C": "Migrate the simulation application to Linux Amazon EC2 instances. Migrate the visualization application to Windows EC2 instances. Configure Amazon Simple Queue Service (Amazon SQS) to exchange data between the applications.",
+        "D": "Migrate the simulation application to Linux Amazon EC2 instances. Migrate the visualization application to Windows EC2 instances. Configure Amazon FSx for NetApp ONTAP for storage."
       },
       "correct_answer": "D",
       "explanation": ""
@@ -454,9 +454,9 @@
       "question": "A company is migrating aLinux-based web server group to AWS. The web servers must access Files in ashared File store for some content. The company must not make any changes to the application. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Create an Amazon S3 Standard bucket with access to the web servers.",
-        "B": "ConFigure an Amazon CloudFront distribution with an Amazon S3 bucket as the origin.",
+        "B": "Configure an Amazon CloudFront distribution with an Amazon S3 bucket as the origin.",
         "C": "Create an Amazon Elastic File System (Amazon EFS) File system. Mount the EFS File system on all web servers.",
-        "D": "ConFigure a General Purpose SSD (gp3) Amazon Elastic Block Store (Amazon EBS) volume. Mount the EBS volume to all web servers."
+        "D": "Configure a General Purpose SSD (gp3) Amazon Elastic Block Store (Amazon EBS) volume. Mount the EBS volume to all web servers."
       },
       "correct_answer": "C",
       "explanation": "To meet the requirement of providing a shared file store for Linux-based web servers without making changes to the application, you can use Amazon Elastic File System (Amazon EFS). Amazon EFS is a scalable and fully managed file storage service that can be easily mounted on multiple EC2 instances."
@@ -515,7 +515,7 @@
       "id": "293",
       "question": "A company has an on-premises volume backup solution that has reached its end of life. The company wants to use AWS as part of anew backup solution and wants to maintain local access to all the data while it is backed up on AWS. The company wants to ensure that the data backed up on AWS is automatically and securely transferred. Which solution meets these requirements?",
       "options": {
-        "A": "Use AWS Snowball to migrate data out of the on-premises solution to Amazon S3. ConFigure on-premises systems to mount the Snowball S3 endpoint to provide local access to the data.",
+        "A": "Use AWS Snowball to migrate data out of the on-premises solution to Amazon S3. Configure on-premises systems to mount the Snowball S3 endpoint to provide local access to the data.",
         "B": "Use AWS Snowball Edge to migrate data out of the on-premises solution to Amazon S3. Use the Snowball Edge File interface to provide on- premises systems with local access to the data.",
         "C": "Use AWS Storage Gateway and conFigure a cached volume gateway. Run the Storage Gateway software appliance on premises and conFigure a percentage of data to cache locally. Mount the gateway storage volumes to provide local access to the data.",
         "D": "Use AWS Storage Gateway and conFigure a stored volume gateway. Run the Storage Gateway software appliance on premises and map the gateway storage volumes to on-premises storage. Mount the gateway storage volumes to provide local access to the data."
@@ -529,7 +529,7 @@
       "options": {
         "A": "Create a private hosted zone by using Amazon Route 53.",
         "B": "Set up a gateway VPC endpoint for Amazon S3 in the VPC.",
-        "C": "ConFigure the EC2 instances to use a NAT gateway to access the S3 bucket.",
+        "C": "Configure the EC2 instances to use a NAT gateway to access the S3 bucket.",
         "D": "Establish an AWS Site-to-Site VPN connection between the VPC and the S3 bucket."
       },
       "correct_answer": "B",
@@ -566,7 +566,7 @@
         "A": "Create an Amazon CloudWatch alarm that enters the ALARM state when the CPUUtilization metric is less than 20%. Create an AWS Lambda function that the CloudWatch alarm invokes to terminate one of the EC2 instances in the ALB target group.",
         "B": "Create an EC2 Auto Scaling group. Select the existing ALB as the load balancer and the existing target group as the target group. Set a target tracking scaling policy that is based on the ASGAverageCPUUtilization metric. Set the minimum instances to 2, the desired capacity to 3, the maximum instances to 6, and the target value to 50%. Add the EC2 instances to the Auto Scaling group.",
         "C": "Create an EC2 Auto Scaling group. Select the existing ALB as the load balancer and the existing target group as the target group. Set the minimum instances to 2, the desired capacity to 3, and the maximum instances to 6. Add the EC2 instances to the Auto Scaling group.",
-        "D": "Create two Amazon CloudWatch alarms. ConFigure the First CloudWatch alarm to enter the ALARM state when the average CPUUtilization metric is below 20%. ConFigure the second CloudWatch alarm to enter the ALARM state when the average CPUUtilization matric is above 50%. ConFigure the alarms to publish to an Amazon Simple NotiFication Service (Amazon SNS) topic to send an email message. After receiving the message, log in to decrease or increase the number of EC2 instances that are running."
+        "D": "Create two Amazon CloudWatch alarms. Configure the First CloudWatch alarm to enter the ALARM state when the average CPUUtilization metric is below 20%. Configure the second CloudWatch alarm to enter the ALARM state when the average CPUUtilization matric is above 50%. Configure the alarms to publish to an Amazon Simple NotiFication Service (Amazon SNS) topic to send an email message. After receiving the message, log in to decrease or increase the number of EC2 instances that are running."
       },
       "correct_answer": "B",
       "explanation": "Option B utilizes EC2 Auto Scaling, which automatically adjusts the number of EC2 instances in the Auto Scaling group based on the specified target tracking scaling policy.\nBy setting a target tracking scaling policy based on the ASGAverageCPUUtilization metric with a target value of 50%, the Auto Scaling group will dynamically adjust the number of instances to maintain an average CPU utilization close to the target value.\nThis solution provides scalability when needed, ensures that there are enough CPU resources during surges, and optimizes costs by automatically adjusting the capacity based on demand."
@@ -575,10 +575,10 @@
       "id": "298",
       "question": "A company is running a critical business application on Amazon EC2 instances behind an Application Load Balancer. The EC2 instances run in an Auto Scaling group and access an Amazon RDS DB instance. The design did not pass an operational review because the EC2 instances and the DB instance are all located in a single Availability Zone. A solutions architect must update the design to use asecond Availability Zone. Which solution will make the application highly available?",
       "options": {
-        "A": "Provision a subnet in each Availability Zone. ConFigure the Auto Scaling group to distribute the EC2 instances across both Availability Zones. ConFigure the DB instance with connections to each network.",
-        "B": "Provision two subnets that extend across both Availability Zones. ConFigure the Auto Scaling group to distribute the EC2 instances across both Availability Zones. ConFigure the DB instance with connections to each network.",
-        "C": "Provision a subnet in each Availability Zone. ConFigure the Auto Scaling group to distribute the EC2 instances across both Availability Zones. ConFigure the DB instance for Multi-AZ deployment.",
-        "D": "Provision a subnet that extends across both Availability Zones. ConFigure the Auto Scaling group to distribute the EC2 instances across both Availability Zones. ConFigure the DB instance for Multi-AZ deployment."
+        "A": "Provision a subnet in each Availability Zone. Configure the Auto Scaling group to distribute the EC2 instances across both Availability Zones. Configure the DB instance with connections to each network.",
+        "B": "Provision two subnets that extend across both Availability Zones. Configure the Auto Scaling group to distribute the EC2 instances across both Availability Zones. Configure the DB instance with connections to each network.",
+        "C": "Provision a subnet in each Availability Zone. Configure the Auto Scaling group to distribute the EC2 instances across both Availability Zones. Configure the DB instance for Multi-AZ deployment.",
+        "D": "Provision a subnet that extends across both Availability Zones. Configure the Auto Scaling group to distribute the EC2 instances across both Availability Zones. Configure the DB instance for Multi-AZ deployment."
       },
       "correct_answer": "C",
       "explanation": ""

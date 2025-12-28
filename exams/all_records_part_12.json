@@ -6,7 +6,7 @@
       "options": {
         "A": "Use S3 Standard. Use an S3 Lifecycle rule to transition the reports to S3 Glacier after 7 days.",
         "B": "Use S3 Standard. Use an S3 Lifecycle rule to transition the reports to S3 Standard-Infrequent Access (S3 Standard-IA) after 7 days.",
-        "C": "Use S3 Intelligent-Tiering. ConFigure S3 Intelligent-Tiering to transition the reports to S3 Standard-Infrequent Access (S3 Standard-IA) and S3 Glacier.",
+        "C": "Use S3 Intelligent-Tiering. Configure S3 Intelligent-Tiering to transition the reports to S3 Standard-Infrequent Access (S3 Standard-IA) and S3 Glacier.",
         "D": "Use S3 Standard. Use an S3 Lifecycle rule to transition the reports to S3 Glacier Deep Archive after 7 days."
       },
       "correct_answer": "A",
@@ -28,10 +28,10 @@
       "id": "553",
       "question": "A solutions architect needs to review A company'sAmazon S3 buckets to discover personally identifiable information (PII). The company stores the PII data in the us-east-1 Region and us-west-2 Region. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "ConFigure Amazon Macie in each Region. Create a job to analyze the data that is in Amazon S3.",
-        "B": "ConFigure AWS Security Hub for all Regions. Create an AWS ConFig rule to analyze the data that is in Amazon S3.",
-        "C": "ConFigure Amazon Inspector to analyze the data that is in Amazon S3.",
-        "D": "ConFigure Amazon GuardDuty to analyze the data that is in Amazon S3."
+        "A": "Configure Amazon Macie in each Region. Create a job to analyze the data that is in Amazon S3.",
+        "B": "Configure AWS Security Hub for all Regions. Create an AWS ConFig rule to analyze the data that is in Amazon S3.",
+        "C": "Configure Amazon Inspector to analyze the data that is in Amazon S3.",
+        "D": "Configure Amazon GuardDuty to analyze the data that is in Amazon S3."
       },
       "correct_answer": "A",
       "explanation": "Amazon Macie is a managed data security and data privacy service that uses machine learning to automatically discover, classify, and protect sensitive data, including personally identifiable information (PII). By configuring Amazon Macie in each region where the company stores PII data, you can create jobs to analyze the data in Amazon S3 and identify any PII."
@@ -52,9 +52,9 @@
       "id": "555",
       "question": "A company runs an application in a VPC with public and private subnets. The VPC extends across multiple Availability Zones. The application runs on Amazon EC2 instances in private subnets. The application uses an Amazon Simple Queue Service (Amazon SQS) queue. A solutions architect needs to design asecure solution to establish aconnection between the EC2 instances and the SQS queue. Which solution will meet these requirements?",
       "options": {
-        "A": "Implement an interface VPC endpoint for Amazon SQS. ConFigure the endpoint to use the private subnets. Add to the endpoint a security group that has an inbound access rule that allows traFic from the EC2 instances that are in the private subnets.",
-        "B": "Implement an interface VPC endpoint for Amazon SQS. ConFigure the endpoint to use the public subnets. Attach to the interface endpoint a VPC endpoint policy that allows access from the EC2 instances that are in the private subnets.",
-        "C": "Implement an interface VPC endpoint for Amazon SQS. ConFigure the endpoint to use the public subnets. Attach an Amazon SQS access policy to the interface VPC endpoint that allows requests from only a speciFied VPC endpoint.",
+        "A": "Implement an interface VPC endpoint for Amazon SQS. Configure the endpoint to use the private subnets. Add to the endpoint a security group that has an inbound access rule that allows traFic from the EC2 instances that are in the private subnets.",
+        "B": "Implement an interface VPC endpoint for Amazon SQS. Configure the endpoint to use the public subnets. Attach to the interface endpoint a VPC endpoint policy that allows access from the EC2 instances that are in the private subnets.",
+        "C": "Implement an interface VPC endpoint for Amazon SQS. Configure the endpoint to use the public subnets. Attach an Amazon SQS access policy to the interface VPC endpoint that allows requests from only a speciFied VPC endpoint.",
         "D": "Implement a gateway endpoint for Amazon SQS. Add a NAT gateway to the private subnets. Attach an IAM role to the EC2 instances that allows access to the SQS queue."
       },
       "correct_answer": "A",
@@ -174,10 +174,10 @@
       "id": "565",
       "question": "A company has an on-premises MySQL database that handles transactional data. The company is migrating the database to the AWS Cloud. The migrated database must maintain compatibility with the company'sapplications that use the database. The migrated database also must scale automatically during periods of increased demand. Which migration solution will meet these requirements?",
       "options": {
-        "A": "Use native MySQL tools to migrate the database to Amazon RDS for MySQL. ConFigure elastic storage scaling.",
+        "A": "Use native MySQL tools to migrate the database to Amazon RDS for MySQL. Configure elastic storage scaling.",
         "B": "Migrate the database to Amazon Redshift by using the mysqldump utility. Turn on Auto Scaling for the Amazon Redshift cluster.",
         "C": "Use AWS Database Migration Service (AWS DMS) to migrate the database to Amazon Aurora. Turn on Aurora Auto Scaling.",
-        "D": "Use AWS Database Migration Service (AWS DMS) to migrate the database to Amazon DynamoDB. ConFigure an Auto Scaling policy."
+        "D": "Use AWS Database Migration Service (AWS DMS) to migrate the database to Amazon DynamoDB. Configure an Auto Scaling policy."
       },
       "correct_answer": "C",
       "explanation": "AWS DMS is a fully managed service that helps you migrate databases to AWS easily and securely. It supports homogeneous and heterogeneous database migrations.\nAmazon Aurora is a fully managed relational database service that is compatible with MySQL and PostgreSQL. It provides high performance and availability with compatibility for MySQL, making it a seamless choice for migrating MySQL databases."
@@ -246,10 +246,10 @@
       "id": "571",
       "question": "A company is creating a REST API. The company has strict requirements for the use of TLS. The company requires TLSv1.3 on the API endpoints. The company also requires aspecific public third-party certificate authority (CA) to sign the TLS certificate. Which solution will meet these requirements?",
       "options": {
-        "A": "Use a local machine to create a certiFicate that is signed by the third-party CImport the certiFicate into AWS CertiFicate Manager (ACM). Create an HTTP API in Amazon API Gateway with a custom domain. ConFigure the custom domain to use the certiFicate.",
-        "B": "Create a certiFicate in AWS CertiFicate Manager (ACM) that is signed by the third-party CA. Create an HTTP API in Amazon API Gateway with a custom domain. ConFigure the custom domain to use the certiFicate.",
-        "C": "Use AWS CertiFicate Manager (ACM) to create a certiFicate that is signed by the third-party CA. Import the certiFicate into AWS CertiFicate Manager (ACM). Create an AWS Lambda function with a Lambda function URL. ConFigure the Lambda function URL to use the certiFicate.",
-        "D": "Create a certiFicate in AWS CertiFicate Manager (ACM) that is signed by the third-party CA. Create an AWS Lambda function with a Lambda function URL. ConFigure the Lambda function URL to use the certiFicate."
+        "A": "Use a local machine to create a certiFicate that is signed by the third-party CImport the certiFicate into AWS CertiFicate Manager (ACM). Create an HTTP API in Amazon API Gateway with a custom domain. Configure the custom domain to use the certiFicate.",
+        "B": "Create a certiFicate in AWS CertiFicate Manager (ACM) that is signed by the third-party CA. Create an HTTP API in Amazon API Gateway with a custom domain. Configure the custom domain to use the certiFicate.",
+        "C": "Use AWS CertiFicate Manager (ACM) to create a certiFicate that is signed by the third-party CA. Import the certiFicate into AWS CertiFicate Manager (ACM). Create an AWS Lambda function with a Lambda function URL. Configure the Lambda function URL to use the certiFicate.",
+        "D": "Create a certiFicate in AWS CertiFicate Manager (ACM) that is signed by the third-party CA. Create an AWS Lambda function with a Lambda function URL. Configure the Lambda function URL to use the certiFicate."
       },
       "correct_answer": "A",
       "explanation": ""
@@ -270,10 +270,10 @@
       "id": "573",
       "question": "A company wants to use an event-driven programming model with AWS Lambda. The company wants to reduce startup latency for Lambda functions that run on Java 11. The company does not have strict latency requirements for the applications. The company wants to reduce cold starts and outlier latencies when afunction scales up. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
-        "A": "ConFigure Lambda provisioned concurrency.",
+        "A": "Configure Lambda provisioned concurrency.",
         "B": "Increase the timeout of the Lambda functions.",
         "C": "Increase the memory of the Lambda functions.",
-        "D": "ConFigure Lambda SnapStart."
+        "D": "Configure Lambda SnapStart."
       },
       "correct_answer": "D",
       "explanation": "Lambda Cold Start:\nWhen a Lambda function is invoked, it may take a bit of time for the system to set up everything needed to run the function. This initial setup time is called a \"cold start.\" Cold starts can add some delay, especially if the function hasn't been used recently.\nLambda SnapStart:\nSnapStart is a feature in AWS Lambda designed to make these cold starts faster, specifically for functions written in Java. Instead of starting from scratch every time a function is called, SnapStart pre-warms the environment. It's like getting things ready in advance so that when your function is called, it can start quickly without much delay."
@@ -354,9 +354,9 @@
       "id": "580",
       "question": "A company uses locally attached storage to run a latency-sensitive application on premises. The company is using alift and shift method to move the application to the AWS Cloud. The company does not want to change the application architecture. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
-        "A": "ConFigure an Auto Scaling group with an Amazon EC2 instance. Use an Amazon FSx for Lustre File system to run the application.",
+        "A": "Configure an Auto Scaling group with an Amazon EC2 instance. Use an Amazon FSx for Lustre File system to run the application.",
         "B": "Host the application on an Amazon EC2 instance. Use an Amazon Elastic Block Store (Amazon EBS) GP2 volume to run the application.",
-        "C": "ConFigure an Auto Scaling group with an Amazon EC2 instance. Use an Amazon FSx for OpenZFS File system to run the application.",
+        "C": "Configure an Auto Scaling group with an Amazon EC2 instance. Use an Amazon FSx for OpenZFS File system to run the application.",
         "D": "Host the application on an Amazon EC2 instance. Use an Amazon Elastic Block Store (Amazon EBS) GP3 volume to run the application."
       },
       "correct_answer": "D",
@@ -393,7 +393,7 @@
         "A": "Read the data from the tapes on premises. Stage the data in a local NFS storage. Use AWS DataSync to migrate the data to Amazon S3 Glacier Flexible Retrieval.",
         "B": "Use an on-premises backup application to read the data from the tapes and to write directly to Amazon S3 Glacier Deep Archive.",
         "C": "Order multiple AWS Snowball devices that have Tape Gateway. Copy the physical tapes to virtual tapes in Snowball. Ship the Snowball devices to AWS. Create a lifecycle policy to move the tapes to Amazon S3 Glacier Deep Archive.",
-        "D": "ConFigure an on-premises Tape Gateway. Create virtual tapes in the AWS Cloud. Use backup software to copy the physical tape to the virtual tape."
+        "D": "Configure an on-premises Tape Gateway. Create virtual tapes in the AWS Cloud. Use backup software to copy the physical tape to the virtual tape."
       },
       "correct_answer": "C",
       "explanation": "AWS Snowball devices can be more cost-effective than transferring large amounts of data over a 1 Gbps internet connection, especially when dealing with petabytes of data. \nAWS, a lifecycle policy can be configured to move the data to Amazon S3 Glacier Deep Archive, which is a cost-effective storage class designed for long-term archival."
@@ -404,8 +404,8 @@
       "options": {
         "A": "Run the EC2 instances in a spread placement group.",
         "B": "Group the EC2 instances in separate accounts.",
-        "C": "ConFigure the EC2 instances with dedicated tenancy.",
-        "D": "ConFigure the EC2 instances with shared tenancy."
+        "C": "Configure the EC2 instances with dedicated tenancy.",
+        "D": "Configure the EC2 instances with shared tenancy."
       },
       "correct_answer": "A",
       "explanation": "A spread placement group is a logical grouping of instances that are placed on distinct underlying hardware. This ensures that instances within the group are physically separated, reducing the risk of correlated failures. This option is suitable for applications that need to maximize the level of isolation."
@@ -438,10 +438,10 @@
       "id": "587",
       "question": "A company is designing asolution to capture customer activity in different web applications to process analytics and make predictions. Customer activity in the web applications is unpredictable and can increase suddenly. The company requires asolution that integrates with other web applications. The solution must include an authorization step for security purposes. Which solution will meet these requirements?",
       "options": {
-        "A": "ConFigure a Gateway Load Balancer (GWLB) in front of an Amazon Elastic Container Service (Amazon ECS) container instance that stores the information that the company receives in an Amazon Elastic File System (Amazon EFS) File system. Authorization is resolved at the GWLB.",
-        "B": "ConFigure an Amazon API Gateway endpoint in front of an Amazon Kinesis data stream that stores the information that the company receives in an Amazon S3 bucket. Use an AWS Lambda function to resolve authorization.",
-        "C": "ConFigure an Amazon API Gateway endpoint in front of an Amazon Kinesis Data Firehose that stores the information that the company receives in an Amazon S3 bucket. Use an API Gateway Lambda authorizer to resolve authorization.",
-        "D": "ConFigure a Gateway Load Balancer (GWLB) in front of an Amazon Elastic Container Service (Amazon ECS) container instance that stores the information that the company receives on an Amazon Elastic File System (Amazon EFS) File system. Use an AWS Lambda function to resolve authorization."
+        "A": "Configure a Gateway Load Balancer (GWLB) in front of an Amazon Elastic Container Service (Amazon ECS) container instance that stores the information that the company receives in an Amazon Elastic File System (Amazon EFS) File system. Authorization is resolved at the GWLB.",
+        "B": "Configure an Amazon API Gateway endpoint in front of an Amazon Kinesis data stream that stores the information that the company receives in an Amazon S3 bucket. Use an AWS Lambda function to resolve authorization.",
+        "C": "Configure an Amazon API Gateway endpoint in front of an Amazon Kinesis Data Firehose that stores the information that the company receives in an Amazon S3 bucket. Use an API Gateway Lambda authorizer to resolve authorization.",
+        "D": "Configure a Gateway Load Balancer (GWLB) in front of an Amazon Elastic Container Service (Amazon ECS) container instance that stores the information that the company receives on an Amazon Elastic File System (Amazon EFS) File system. Use an AWS Lambda function to resolve authorization."
       },
       "correct_answer": "C",
       "explanation": "Amazon API Gateway: It provides a fully managed service for creating, publishing, maintaining, monitoring, and securing APIs at any scale. It allows you to expose the capabilities of your backend services as APIs.\nAmazon Kinesis Data Firehose: It can capture and load streaming data into storage services such as Amazon S3. It is well-suited for scenarios where you need to ingest and store large volumes of streaming data.\nAPI Gateway Lambda Authorizer: It allows you to control access to your APIs using Lambda functions. It's used to resolve authorization before allowing access to the API."
@@ -524,7 +524,7 @@
       "options": {
         "A": "Launch two or more EC2 On-Demand Instances. Turn on auto scaling features and make the EC2 On-Demand Instances available during the next testing phase.",
         "B": "Launch EC2 Spot Instances to support the application and to scale the application so it is available during the next testing phase.",
-        "C": "Launch the EC2 On-Demand Instances with hibernation turned on. ConFigure EC2 Auto Scaling warm pools during the next testing phase.",
+        "C": "Launch the EC2 On-Demand Instances with hibernation turned on. Configure EC2 Auto Scaling warm pools during the next testing phase.",
         "D": "Launch EC2 On-Demand Instances with Capacity Reservations. Start additional EC2 instances during the next testing phase."
       },
       "correct_answer": "C",
@@ -596,10 +596,10 @@
       "id": "600",
       "question": "A company is planning to migrate aTCP-based application into the company'sVPC. The application is publicly accessible on anonstandard TCP port through ahardware appliance in the company'sdata center. This public endpoint can process up to 3 million requests per second with low latency. The company requires the same level of performance for the new public endpoint in AWS. What should A solutions architect recommend to meet this requirement?",
       "options": {
-        "A": "Deploy a Network Load Balancer (NLB). ConFigure the NLB to be publicly accessible over the TCP port that the application requires.",
-        "B": "Deploy an Application Load Balancer (ALB). ConFigure the ALB to be publicly accessible over the TCP port that the application requires.",
+        "A": "Deploy a Network Load Balancer (NLB). Configure the NLB to be publicly accessible over the TCP port that the application requires.",
+        "B": "Deploy an Application Load Balancer (ALB). Configure the ALB to be publicly accessible over the TCP port that the application requires.",
         "C": "Deploy an Amazon CloudFront distribution that listens on the TCP port that the application requires. Use an Application Load Balancer as the origin.",
-        "D": "Deploy an Amazon API Gateway API that is conFigured with the TCP port that the application requires. ConFigure AWS Lambda functions with provisioned concurrency to process the requests."
+        "D": "Deploy an Amazon API Gateway API that is conFigured with the TCP port that the application requires. Configure AWS Lambda functions with provisioned concurrency to process the requests."
       },
       "correct_answer": "A",
       "explanation": "Network Load Balancer (NLB): It operates at the connection level (Layer 4) and is well-suited for TCP traffic. It can handle millions of requests per second with minimal latency.\nNLB allows you to configure the listener for the specific TCP port that the application requires, ensuring compatibility with the nonstandard TCP port used by the application."

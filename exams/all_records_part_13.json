@@ -40,7 +40,7 @@
       "id": "604",
       "question": "A company will migrate 10 PB of data to Amazon S3 in 6 weeks. The current data center has a 500 Mbps uplink to the internet. Other on-premises applications share the uplink. The company can use 80% of the internet bandwidth for this one-time migration task. Which solution will meet these requirements?",
       "options": {
-        "A": "ConFigure AWS DataSync to migrate the data to Amazon S3 and to automatically verify the data.",
+        "A": "Configure AWS DataSync to migrate the data to Amazon S3 and to automatically verify the data.",
         "B": "Use rsync to transfer the data directly to Amazon S3.",
         "C": "Use the AWS CLI and multiple copy processes to send the data directly to Amazon S3.",
         "D": "Order multiple AWS Snowball devices. Copy the data to the devices. Send the devices to AWS to copy the data to Amazon S3."
@@ -89,9 +89,9 @@
       "question": "A company has an application that serves clients that are deployed in more than 20.000 retail storefront locations around the world. The application consists of backend web services that are exposed over HTTPS on port 443. The application is hosted on Amazon EC2 instances behind an Application Load Balancer (ALB). The retail locations communicate with the web application over the public internet. The company allows each retail location to register the IP address that the retail location has been allocated by its local ISP. The company'ssecurity team recommends to increase the security of the application endpoint by restricting access to only the IP addresses registered by the retail locations. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Associate an AWS WAF web ACL with the ALB. Use IP rule sets on the ALB to Filter traFic. Update the IP addresses in the rule to include the registered IP addresses.",
-        "B": "Deploy AWS Firewall Manager to manage the ALConFigure Firewall rules to restrict traFic to the ALModify the Firewall rules to include the registered IP addresses.",
-        "C": "Store the IP addresses in an Amazon DynamoDB table. ConFigure an AWS Lambda authorization function on the ALB to validate that incoming requests are from the registered IP addresses.",
-        "D": "ConFigure the network ACL on the subnet that contains the public interface of the ALB. Update the ingress rules on the network ACL with entries for each of the registered IP addresses."
+        "B": "Deploy AWS Firewall Manager to manage the ALConfigure Firewall rules to restrict traFic to the ALModify the Firewall rules to include the registered IP addresses.",
+        "C": "Store the IP addresses in an Amazon DynamoDB table. Configure an AWS Lambda authorization function on the ALB to validate that incoming requests are from the registered IP addresses.",
+        "D": "Configure the network ACL on the subnet that contains the public interface of the ALB. Update the ingress rules on the network ACL with entries for each of the registered IP addresses."
       },
       "correct_answer": "A",
       "explanation": ""
@@ -115,7 +115,7 @@
         "A": "Deploy an interface VPC endpoint for Amazon EC2. Create an AWS Site-to-Site VPN connection between the company and the VPC.",
         "B": "Deploy a gateway VPC endpoint for Amazon S3. Set up an AWS Direct Connect connection between the on-premises network and the VPC.",
         "C": "Set up an AWS Transit Gateway connection from the VPC to the S3 buckets. Create an AWS Site-to-Site VPN connection between the company and the VPC.",
-        "D": "Set up proxy EC2 instances that have routes to NAT gateways. ConFigure the proxy EC2 instances to fetch S3 data and feed the application instances."
+        "D": "Set up proxy EC2 instances that have routes to NAT gateways. Configure the proxy EC2 instances to fetch S3 data and feed the application instances."
       },
       "correct_answer": "B",
       "explanation": "A gateway VPC endpoint allows communication between resources in your VPC and Amazon S3 without traversing the public internet.\nAWS Direct Connect provides a dedicated network connection from the on-premises data center to the VPC. This dedicated connection enhances security and ensures a reliable and consistent connection between on-premises servers and the EC2 instances in the VPC."
@@ -136,10 +136,10 @@
       "id": "612",
       "question": "A company has an application that runs on Amazon EC2 instances in a private subnet. The application needs to process sensitive information from an Amazon S3 bucket. The application must not use the internet to connect to the S3 bucket. Which solution will meet these requirements?",
       "options": {
-        "A": "ConFigure an internet gateway. Update the S3 bucket policy to allow access from the internet gateway. Update the application to use the new internet gateway.",
-        "B": "ConFigure a VPN connection. Update the S3 bucket policy to allow access from the VPN connection. Update the application to use the new VPN connection.",
-        "C": "ConFigure a NAT gateway. Update the S3 bucket policy to allow access from the NAT gateway. Update the application to use the new NAT gateway.",
-        "D": "ConFigure a VPC endpoint. Update the S3 bucket policy to allow access from the VPC endpoint. Update the application to use the new VPC endpoint."
+        "A": "Configure an internet gateway. Update the S3 bucket policy to allow access from the internet gateway. Update the application to use the new internet gateway.",
+        "B": "Configure a VPN connection. Update the S3 bucket policy to allow access from the VPN connection. Update the application to use the new VPN connection.",
+        "C": "Configure a NAT gateway. Update the S3 bucket policy to allow access from the NAT gateway. Update the application to use the new NAT gateway.",
+        "D": "Configure a VPC endpoint. Update the S3 bucket policy to allow access from the VPC endpoint. Update the application to use the new VPC endpoint."
       },
       "correct_answer": "D",
       "explanation": "VPC Endpoint for S3: A VPC endpoint allows you to privately connect your VPC to supported AWS services, including Amazon S3, without traversing the public internet. This ensures secure and direct access to S3 from within your VPC."
@@ -160,10 +160,10 @@
       "id": "614",
       "question": "A company is designing anew multi-tier web application that consists of the following components: • Web and application servers that run on Amazon EC2 instances as part of Auto Scaling groups • An Amazon RDS DB instance for data storage A solutions architect needs to limit access to the application servers so that only the web servers can access them. Which solution will meet these requirements?",
       "options": {
-        "A": "Deploy AWS PrivateLink in front of the application servers. ConFigure the network ACL to allow only the web servers to access the application servers.",
-        "B": "Deploy a VPC endpoint in front of the application servers. ConFigure the security group to allow only the web servers to access the application servers.",
-        "C": "Deploy a Network Load Balancer with a target group that contains the application servers' Auto Scaling group. ConFigure the network ACL to allow only the web servers to access the application servers.",
-        "D": "Deploy an Application Load Balancer with a target group that contains the application servers' Auto Scaling group. ConFigure the security group to allow only the web servers to access the application servers."
+        "A": "Deploy AWS PrivateLink in front of the application servers. Configure the network ACL to allow only the web servers to access the application servers.",
+        "B": "Deploy a VPC endpoint in front of the application servers. Configure the security group to allow only the web servers to access the application servers.",
+        "C": "Deploy a Network Load Balancer with a target group that contains the application servers' Auto Scaling group. Configure the network ACL to allow only the web servers to access the application servers.",
+        "D": "Deploy an Application Load Balancer with a target group that contains the application servers' Auto Scaling group. Configure the security group to allow only the web servers to access the application servers."
       },
       "correct_answer": "D",
       "explanation": "An ALB is a load balancer service provided by AWS that allows you to distribute incoming application traffic across multiple targets, such as EC2 instances. In this scenario, the ALB is deployed in front of the application servers.\nThe ALB is configured with a target group that includes the application servers' Auto Scaling group instances. The target group defines where the ALB directs traffic."
@@ -174,8 +174,8 @@
       "options": {
         "A": "Run the Amazon CloudWatch agent in the existing EKS cluster. View the metrics and logs in the CloudWatch console.",
         "B": "Run AWS App Mesh in the existing EKS cluster. View the metrics and logs in the App Mesh console.",
-        "C": "ConFigure AWS CloudTrail to capture data events. Query CloudTrail by using Amazon OpenSearch Service.",
-        "D": "ConFigure Amazon CloudWatch Container Insights in the existing EKS cluster. View the metrics and logs in the CloudWatch console."
+        "C": "Configure AWS CloudTrail to capture data events. Query CloudTrail by using Amazon OpenSearch Service.",
+        "D": "Configure Amazon CloudWatch Container Insights in the existing EKS cluster. View the metrics and logs in the CloudWatch console."
       },
       "correct_answer": "D",
       "explanation": "CloudWatch Container Insights is specifically designed for monitoring containerized applications on Amazon EKS and ECS. It provides visibility into the performance of containers, clusters, and microservices."
@@ -184,10 +184,10 @@
       "id": "616",
       "question": "A company has deployed its newest product on AWS. The product runs in an Auto Scaling group behind aNetwork Load Balancer. The company stores the product’sobjects in an Amazon S3 bucket. The company recently experienced malicious attacks against its systems. The company needs asolution that continuously monitors for malicious activity in the AWS account, workloads, and access patterns to the S3 bucket. The solution must also report suspicious activity and display the information on adashboard. Which solution will meet these requirements?",
       "options": {
-        "A": "ConFigure Amazon Macie to monitor and report Findings to AWS ConFig.",
-        "B": "ConFigure Amazon Inspector to monitor and report Findings to AWS CloudTrail.",
-        "C": "ConFigure Amazon GuardDuty to monitor and report Findings to AWS Security Hub.",
-        "D": "ConFigure AWS ConFig to monitor and report Findings to Amazon EventBridge."
+        "A": "Configure Amazon Macie to monitor and report Findings to AWS ConFig.",
+        "B": "Configure Amazon Inspector to monitor and report Findings to AWS CloudTrail.",
+        "C": "Configure Amazon GuardDuty to monitor and report Findings to AWS Security Hub.",
+        "D": "Configure AWS ConFig to monitor and report Findings to Amazon EventBridge."
       },
       "correct_answer": "C",
       "explanation": "Amazon GuardDuty:\nGuardDuty is a threat detection service that continuously monitors for malicious activity and unauthorized behavior in your AWS account. It analyzes events, such as API calls and network traffic, to detect potentially malicious activity.\nAWS Security Hub:\nAWS Security Hub is a comprehensive security service that aggregates and prioritizes security findings from various AWS services, including GuardDuty. It provides a centralized dashboard for security alerts and findings."
@@ -209,10 +209,10 @@
       "id": "618",
       "question": "A company wants to use Amazon FSx for Windows File Server for its Amazon EC2 instances that have an SMB File share mounted as avolume in the us-east-1 Region. The company has arecovery point objective (RPO) of 5 minutes for planned system maintenance or unplanned service disruptions. The company needs to replicate the File system to the us-west-2 Region. The replicated data must not be deleted by any user for 5 years. Which solution will meet these requirements?",
       "options": {
-        "A": "Create an FSx for Windows File Server File system in us-east-1 that has a Single-AZ 2 deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. ConFigure AWS Backup Vault Lock in compliance mode for a target vault in us-west-2. ConFigure a minimum duration of 5 years.",
-        "B": "Create an FSx for Windows File Server File system in us-east-1 that has a Multi-AZ deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. ConFigure AWS Backup Vault Lock in governance mode for a target vault in us-west-2. ConFigure a minimum duration of 5 years.",
-        "C": "Create an FSx for Windows File Server File system in us-east-1 that has a Multi-AZ deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. ConFigure AWS Backup Vault Lock in compliance mode for a target vault in us-west-2. ConFigure a minimum duration of 5 years.",
-        "D": "Create an FSx for Windows File Server File system in us-east-1 that has a Single-AZ 2 deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. ConFigure AWS Backup Vault Lock in governance mode for a target vault in us-west-2. ConFigure a minimum duration of 5 years."
+        "A": "Create an FSx for Windows File Server File system in us-east-1 that has a Single-AZ 2 deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Configure AWS Backup Vault Lock in compliance mode for a target vault in us-west-2. Configure a minimum duration of 5 years.",
+        "B": "Create an FSx for Windows File Server File system in us-east-1 that has a Multi-AZ deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Configure AWS Backup Vault Lock in governance mode for a target vault in us-west-2. Configure a minimum duration of 5 years.",
+        "C": "Create an FSx for Windows File Server File system in us-east-1 that has a Multi-AZ deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Configure AWS Backup Vault Lock in compliance mode for a target vault in us-west-2. Configure a minimum duration of 5 years.",
+        "D": "Create an FSx for Windows File Server File system in us-east-1 that has a Single-AZ 2 deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Configure AWS Backup Vault Lock in governance mode for a target vault in us-west-2. Configure a minimum duration of 5 years."
       },
       "correct_answer": "C",
       "explanation": "FSx for Windows File Server:\nCreate an FSx for Windows File Server file system in the us-east-1 Region with a Multi-AZ deployment type. The Multi-AZ deployment type ensures high availability.\nAWS Backup:\nUse AWS Backup to create a daily backup plan for the FSx file system. Include a backup rule that copies the backup to the us-west-2 Region. This ensures that a backup is replicated to the us-west-2 Region regularly."
@@ -248,7 +248,7 @@
         "A": "Create a second S3 bucket in us-east-1. Use S3 Cross-Region Replication to copy photos from the existing S3 bucket to the second S3 bucket.",
         "B": "Create a cross-origin resource sharing (CORS) conFiguration of the existing S3 bucket. Specify us-east-1 in the CORS rule's AllowedOrigin element.",
         "C": "Create a second S3 bucket in us-east-1 across multiple Availability Zones. Create an S3 Lifecycle rule to save photos into the second S3 bucket.",
-        "D": "Create a second S3 bucket in us-east-1. ConFigure S3 event notiFications on object creation and update events to invoke an AWS Lambda function to copy photos from the existing S3 bucket to the second S3 bucket."
+        "D": "Create a second S3 bucket in us-east-1. Configure S3 event notiFications on object creation and update events to invoke an AWS Lambda function to copy photos from the existing S3 bucket to the second S3 bucket."
       },
       "correct_answer": "A",
       "explanation": "S3 Cross-Region Replication (CRR) is designed specifically for replicating objects across different AWS regions. It is a fully managed feature that automatically replicates objects from the source bucket to the destination bucket in a different region. This requires minimal operational effort as it is a built-in S3 feature for cross-region replication, and you don't have to manually trigger actions or configure additional services."
@@ -261,7 +261,7 @@
         "B": "Deploy Amazon Aurora as the database solution. Choose the serverless DB engine mode.",
         "C": "Deploy Amazon DynamoDB as the database solution. Ensure that DynamoDB auto scaling is enabled.",
         "D": "Deploy the static content into an Amazon S3 bucket. Provision an Amazon CloudFront distribution with the S3 bucket as the origin.",
-        "E": "Deploy the web servers for static content across a Fieet of Amazon EC2 instances in Auto Scaling groups. ConFigure the instances to periodically refresh the content from an Amazon Elastic File System (Amazon EFS) volume."
+        "E": "Deploy the web servers for static content across a Fieet of Amazon EC2 instances in Auto Scaling groups. Configure the instances to periodically refresh the content from an Amazon Elastic File System (Amazon EFS) volume."
       },
       "correct_answer": "AD",
       "explanation": "DynamoDB auto scaling allows the database to automatically adjust its read and write capacity based on the application's traffic, making it well-suited for varying workloads.\nD. Deploy the static content into an Amazon S3 bucket. Provision an Amazon CloudFront distribution with the S3 bucket as the origin.\nAmazon S3 is a highly scalable and durable object storage service, and using CloudFront, a content delivery network (CDN), helps distribute static content globally, reducing latency and providing scalability."
@@ -270,10 +270,10 @@
       "id": "623",
       "question": "A company uses Amazon API Gateway to manage its REST APIs that third-party service providers access. The company must protect the REST APIs from SQL injection and cross-site scripting attacks. What is the MOST operationally eficient solution that meets these requirements?",
       "options": {
-        "A": "ConFigure AWS Shield.",
-        "B": "ConFigure AWS WAF.",
-        "C": "Set up API Gateway with an Amazon CloudFront distribution. ConFigure AWS Shield in CloudFront.",
-        "D": "Set up API Gateway with an Amazon CloudFront distribution. ConFigure AWS WAF in CloudFront."
+        "A": "Configure AWS Shield.",
+        "B": "Configure AWS WAF.",
+        "C": "Set up API Gateway with an Amazon CloudFront distribution. Configure AWS Shield in CloudFront.",
+        "D": "Set up API Gateway with an Amazon CloudFront distribution. Configure AWS WAF in CloudFront."
       },
       "correct_answer": "B",
       "explanation": "AWS WAF (Web Application Firewall) is specifically designed to protect web applications from common web exploits like SQL injection and cross-site scripting (XSS) attacks. By configuring AWS WAF with API Gateway, you can create rules to filter and allow or block requests based on defined conditions, providing protection against various types of attacks."
@@ -285,7 +285,7 @@
         "A": "Create an IAM user for each user in the company. Attach the appropriate policies to each user.",
         "B": "Use Amazon Cognito with an Active Directory user pool. Create roles with the appropriate policies attached.",
         "C": "DeFine cross-account roles with the appropriate policies attached. Map the roles to the Active Directory groups.",
-        "D": "ConFigure Security Assertion Markup Language (SAML) 2 0-based federation. Create roles with the appropriate policies attached Map the roles to the Active Directory groups."
+        "D": "Configure Security Assertion Markup Language (SAML) 2 0-based federation. Create roles with the appropriate policies attached Map the roles to the Active Directory groups."
       },
       "correct_answer": "D",
       "explanation": "using SAML 2.0-based federation, which allows you to integrate AWS with your existing Active Directory infrastructure. This approach enables single sign-on (SSO) for users, meaning they can use their existing corporate credentials to access both on-premises and AWS resources without maintaining separate identities."
@@ -294,10 +294,10 @@
       "id": "625",
       "question": "A company is hosting a website behind multiple Application Load Balancers. The company has different distribution rights for its content around the world. A solutions architect needs to ensure that users are served the correct content without violating distribution rights. Which configuration should the solutions architect choose to meet these requirements?",
       "options": {
-        "A": "ConFigure Amazon CloudFront with AWS WAF.",
-        "B": "ConFigure Application Load Balancers with AWS WAF",
-        "C": "ConFigure Amazon Route 53 with a geolocation policy",
-        "D": "ConFigure Amazon Route 53 with a geoproximity routing policy"
+        "A": "Configure Amazon CloudFront with AWS WAF.",
+        "B": "Configure Application Load Balancers with AWS WAF",
+        "C": "Configure Amazon Route 53 with a geolocation policy",
+        "D": "Configure Amazon Route 53 with a geoproximity routing policy"
       },
       "correct_answer": "C",
       "explanation": "Geolocation routing in Amazon Route 53 allows you to route traffic based on the geographic location of the user.\nYou can create different records for your website content and associate them with specific geographic locations. This way, users from different regions will be directed to the appropriate servers or load balancers hosting the content that adheres to the distribution rights for that region."
@@ -306,10 +306,10 @@
       "id": "626",
       "question": "A company stores its data on premises. The amount of data is growing beyond the company'savailable capacity. The company wants to migrate its data from the on-premises location to an Amazon S3 bucket. The company needs asolution that will automatically validate the integrity of the data after the transfer. Which solution will meet these requirements?",
       "options": {
-        "A": "Order an AWS Snowball Edge device. ConFigure the Snowball Edge device to perform the online data transfer to an S3 bucket",
-        "B": "Deploy an AWS DataSync agent on premises. ConFigure the DataSync agent to perform the online data transfer to an S3 bucket.",
-        "C": "Create an Amazon S3 File Gateway on premises ConFigure the S3 File Gateway to perform the online data transfer to an S3 bucket",
-        "D": "ConFigure an accelerator in Amazon S3 Transfer Acceleration on premises. ConFigure the accelerator to perform the online data transfer to an S3 bucket."
+        "A": "Order an AWS Snowball Edge device. Configure the Snowball Edge device to perform the online data transfer to an S3 bucket",
+        "B": "Deploy an AWS DataSync agent on premises. Configure the DataSync agent to perform the online data transfer to an S3 bucket.",
+        "C": "Create an Amazon S3 File Gateway on premises Configure the S3 File Gateway to perform the online data transfer to an S3 bucket",
+        "D": "Configure an accelerator in Amazon S3 Transfer Acceleration on premises. Configure the accelerator to perform the online data transfer to an S3 bucket."
       },
       "correct_answer": "B",
       "explanation": "AWS DataSync is a service designed for fast and secure online data transfer between on-premises storage and Amazon S3, Amazon EFS, or Amazon FSx for Windows File Server.\nDataSync automatically performs integrity validation by ensuring that the data transferred to S3 matches the source data. It uses checksums to validate the integrity of the files."
@@ -319,9 +319,9 @@
       "question": "A company wants to migrate two DNS servers to AWS. The servers host atotal of approximately 200 zones and receive 1 million requests each day on average. The company wants to maximize availability while minimizing the operational overhead that is related to the management of the two servers. What should A solutions architect recommend to meet these requirements?",
       "options": {
         "A": "Create 200 new hosted zones in the Amazon Route 53 console Import zone Files.",
-        "B": "Launch a single large Amazon EC2 instance Import zone tiles. ConFigure Amazon CloudWatch alarms and notiFications to alert the company about any downtime.",
-        "C": "Migrate the servers to AWS by using AWS Server Migration Service (AWS SMS). ConFigure Amazon CloudWatch alarms and notiFications to alert the company about any downtime.",
-        "D": "Launch an Amazon EC2 instance in an Auto Scaling group across two Availability Zones. Import zone Files. Set the desired capacity to 1 and the maximum capacity to 3 for the Auto Scaling group. ConFigure scaling alarms to scale based on CPU utilization."
+        "B": "Launch a single large Amazon EC2 instance Import zone tiles. Configure Amazon CloudWatch alarms and notiFications to alert the company about any downtime.",
+        "C": "Migrate the servers to AWS by using AWS Server Migration Service (AWS SMS). Configure Amazon CloudWatch alarms and notiFications to alert the company about any downtime.",
+        "D": "Launch an Amazon EC2 instance in an Auto Scaling group across two Availability Zones. Import zone Files. Set the desired capacity to 1 and the maximum capacity to 3 for the Auto Scaling group. Configure scaling alarms to scale based on CPU utilization."
       },
       "correct_answer": "A",
       "explanation": "Amazon Route 53 is a highly available and scalable domain name system (DNS) web service provided by AWS.\nBy creating 200 new hosted zones in the Amazon Route 53 console and importing the existing zone files, you can take advantage of the fully managed and highly available nature of Route 53 without the need to manage servers."
@@ -330,9 +330,9 @@
       "id": "628",
       "question": "Aglobal company runs its applications in multiple AWS accounts in AWS Organizations. The company'sapplications use multipart uploads to upload data to multiple Amazon S3 buckets across AWS Regions. The company wants to report on incomplete multipart uploads for cost compliance purposes. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "ConFigure AWS ConFig with a rule to report the incomplete multipart upload object count.",
+        "A": "Configure AWS ConFig with a rule to report the incomplete multipart upload object count.",
         "B": "Create a service control policy (SCP) to report the incomplete multipart upload object count.",
-        "C": "ConFigure S3 Storage Lens to report the incomplete multipart upload object count.",
+        "C": "Configure S3 Storage Lens to report the incomplete multipart upload object count.",
         "D": "Create an S3 Multi-Region Access Point to report the incomplete multipart upload object count."
       },
       "correct_answer": "C",
@@ -391,7 +391,7 @@
       "question": "A company manages an application that stores data on an Amazon RDS for PostgreSQL Multi-AZ DB instance. Increases in trafic are causing performance problems. The company determines that database queries are the primary reason for the slow performance. What should A solutions architect do to improve the application'sperformance?",
       "options": {
         "A": "Serve read traFic from the Multi-AZ standby replica.",
-        "B": "ConFigure the DB instance to use Transfer Acceleration.",
+        "B": "Configure the DB instance to use Transfer Acceleration.",
         "C": "Create a read replica from the source DB instance. Serve read traFic from the read replica.",
         "D": "Use Amazon Kinesis Data Firehose between the application and Amazon RDS to increase the concurrency of database requests."
       },
@@ -402,9 +402,9 @@
       "id": "634",
       "question": "A company collects 10 GB of telemetry data daily from various machines. The company stores the data in an Amazon S3 bucket in asource data account. The company has hired several consulting agencies to use this data for analysis. Each agency needs read access to the data for its analysts. The company must share the data from the source data account by choosing asolution that maximizes security and operational eficiency. Which solution will meet these requirements?",
       "options": {
-        "A": "ConFigure S3 global tables to replicate data for each agency.",
+        "A": "Configure S3 global tables to replicate data for each agency.",
         "B": "Make the S3 bucket public for a limited time. Inform only the agencies.",
-        "C": "ConFigure cross-account access for the S3 bucket to the accounts that the agencies own.",
+        "C": "Configure cross-account access for the S3 bucket to the accounts that the agencies own.",
         "D": "Set up an IAM user for each analyst in the source data account. Grant each user access to the S3 bucket."
       },
       "correct_answer": "C",
@@ -428,8 +428,8 @@
       "options": {
         "A": "Create an SNS subscription that processes the event in Amazon Elastic Container Service (Amazon ECS) before the event runs in Lambda.",
         "B": "Create an SNS subscription that processes the event in Amazon Elastic Kubernetes Service (Amazon EKS) before the event runs in Lambda",
-        "C": "Create an SNS subscription that sends the event to Amazon Simple Queue Service (Amazon SQS). ConFigure the SOS queue to trigger a Lambda function.",
-        "D": "Create an SNS subscription that sends the event to AWS Server Migration Service (AWS SMS). ConFigure the Lambda function to poll from the SMS event."
+        "C": "Create an SNS subscription that sends the event to Amazon Simple Queue Service (Amazon SQS). Configure the SOS queue to trigger a Lambda function.",
+        "D": "Create an SNS subscription that sends the event to AWS Server Migration Service (AWS SMS). Configure the Lambda function to poll from the SMS event."
       },
       "correct_answer": "C",
       "explanation": ""
@@ -454,7 +454,7 @@
         "A": "Use an AWS Lambda function to create an S3 presigned URL. Instruct employees to use the URL.",
         "B": "Create an IAM user for each employee. Create an IAM policy for each employee to allow S3 access. Instruct employees to use the AWS Management Console.",
         "C": "Create an S3 File Gateway. Create a share for uploading and a share for downloading. Allow employees to mount shares on their local computers to use S3 File Gateway.",
-        "D": "ConFigure AWS Transfer Family SFTP endpoints. Select the custom identity provider options. Use AWS Secrets Manager to manage the user credentials Instruct employees to use Transfer Family."
+        "D": "Configure AWS Transfer Family SFTP endpoints. Select the custom identity provider options. Use AWS Secrets Manager to manage the user credentials Instruct employees to use Transfer Family."
       },
       "correct_answer": "A",
       "explanation": ""
@@ -552,7 +552,7 @@
         "A": "Use Amazon Elastic File System (Amazon EFS) as a shared File system. Access the dataset from Amazon EFS.",
         "B": "Mount an Amazon S3 bucket to serve as the shared File system. Perform postprocessing directly from the S3 bucket.",
         "C": "Use Amazon FSx for Lustre as a shared File system. Link the File system to an Amazon S3 bucket for postprocessing.",
-        "D": "ConFigure AWS Resource Access Manager to share an Amazon S3 bucket so that it can be mounted to all instances for processing and postprocessing."
+        "D": "Configure AWS Resource Access Manager to share an Amazon S3 bucket so that it can be mounted to all instances for processing and postprocessing."
       },
       "correct_answer": "C",
       "explanation": "FSx for Lustre is designed for high-performance computing workloads that require fast and scalable shared storage. It provides low-latency access to data and is well-suited for parallel processing across multiple instances."
@@ -585,10 +585,10 @@
       "id": "649",
       "question": "An ecommerce company runs aPostgreSQL database on premises. The database stores data by using high IOPS Amazon Elastic Block Store (Amazon EBS) block storage. The daily peak I/Otransactions per second do not exceed 15,000 IOPS. The company wants to migrate the database to Amazon RDS for PostgreSQL and provision disk IOPS performance independent of disk storage capacity. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
-        "A": "ConFigure the General Purpose SSD (gp2) EBS volume storage type and provision 15,000 IOPS.",
-        "B": "ConFigure the Provisioned IOPS SSD (io1) EBS volume storage type and provision 15,000 IOPS.",
-        "C": "ConFigure the General Purpose SSD (gp3) EBS volume storage type and provision 15,000 IOPS.",
-        "D": "ConFigure the EBS magnetic volume type to achieve maximum IOPS."
+        "A": "Configure the General Purpose SSD (gp2) EBS volume storage type and provision 15,000 IOPS.",
+        "B": "Configure the Provisioned IOPS SSD (io1) EBS volume storage type and provision 15,000 IOPS.",
+        "C": "Configure the General Purpose SSD (gp3) EBS volume storage type and provision 15,000 IOPS.",
+        "D": "Configure the EBS magnetic volume type to achieve maximum IOPS."
       },
       "correct_answer": "C",
       "explanation": "Amazon EBS gp3 volumes are designed for general-purpose workloads and offer a balance of price and performance. They allow you to provision IOPS independently of storage capacity, similar to io1 volumes."

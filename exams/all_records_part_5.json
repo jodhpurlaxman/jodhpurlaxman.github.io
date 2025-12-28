@@ -5,7 +5,7 @@
       "question": "A company is developing amarketing communications service that targets mobile app users. The company needs to send confirmation messages with Short Message Service (SMS) to its users. The users must be able to reply to the SMS messages. The company must store the responses for ayear for analysis. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Create an Amazon Connect contact Fiow to send the SMS messages. Use AWS Lambda to process the responses.",
-        "B": "Build an Amazon Pinpoint journey. ConFigure Amazon Pinpoint to send events to an Amazon Kinesis data stream for analysis and archiving.",
+        "B": "Build an Amazon Pinpoint journey. Configure Amazon Pinpoint to send events to an Amazon Kinesis data stream for analysis and archiving.",
         "C": "Use Amazon Simple Queue Service (Amazon SQS) to distribute the SMS messages. Use AWS Lambda to process the responses.",
         "D": "Create an Amazon Simple NotiFication Service (Amazon SNS) FIFO topic. Subscribe an Amazon Kinesis data stream to the SNS topic for analysis and archiving."
       },
@@ -31,7 +31,7 @@
         "A": "Add a DynamoDB Accelerator (DAX) cluster in front of the DynamoDB database.",
         "B": "Add an Amazon API Gateway API in front of the web application that accepts the appointment requests.",
         "C": "Add an Amazon CloudFront distribution. Set the origin as the web application that accepts the appointment requests.",
-        "D": "Add an Auto Scaling group for the application that sends meeting invitations. ConFigure the Auto Scaling group to scale based on the depth of the SQS queue."
+        "D": "Add an Auto Scaling group for the application that sends meeting invitations. Configure the Auto Scaling group to scale based on the depth of the SQS queue."
       },
       "correct_answer": "D",
       "explanation": "To resolve the issue of longer delivery times for meeting invitations, the solutions architect can recommend adding an Auto Scaling group for the application that sends meeting invitations and configuring the Auto Scaling group to scale based on the depth of the SQS queue. This will allow the application to scale up as the number of appointment requests increases, improving the performance and delivery times of the meeting invitations."
@@ -52,10 +52,10 @@
       "id": "205",
       "question": "A company hosts amarketing website in an on-premises data center. The website consists of static documents and runs on a single server. An administrator updates the website content infrequently and uses an SFTP client to upload new documents. The company decides to host its website on AWS and to use Amazon Cloudfront. The company’ssolutions architect creates aCloudfront distribution. The solutions architect must design the most cost-effective and resilient architecture for website hosting to serve as the Cloudfront origin. Which solution will meet these requirements?",
       "options": {
-        "A": "Create a virtual server by using Amazon Lightsail. ConFigure the web server in the Lightsail instance. Upload website content by using an SFTP client.",
+        "A": "Create a virtual server by using Amazon Lightsail. Configure the web server in the Lightsail instance. Upload website content by using an SFTP client.",
         "B": "Create an AWS Auto Scaling group for Amazon EC2 instances. Use an Application Load Balancer. Upload website content by using an SFTP client.",
         "C": "Create a private Amazon S3 bucket. Use an S3 bucket policy to allow access from a CloudFront origin access identity (OAI). Upload website content by using the AWS CLI.",
-        "D": "Create a public Amazon S3 bucket. ConFigure AWS Transfer for SFTP. ConFigure the S3 bucket for website hosting. Upload website content by using the SFTP client."
+        "D": "Create a public Amazon S3 bucket. Configure AWS Transfer for SFTP. Configure the S3 bucket for website hosting. Upload website content by using the SFTP client."
       },
       "correct_answer": "C",
       "explanation": "This option leverages Amazon S3 as the origin for CloudFront. By creating a private S3 bucket and using a bucket policy to allow access from a CloudFront origin access identity (OAI), you ensure that the content is served securely from S3 and that only CloudFront can access the bucket."
@@ -65,9 +65,9 @@
       "question": "A company wants to manage Amazon Machine Images (AMIs). The company currently copies AMIs to the same AWS Region where the AMIs were created. The company needs to design an application that captures AWS API calls and sends alerts whenever the Amazon EC2 Createimage API operation is called within the company’saccount. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Create an AWS Lambda function to query AWS CloudTrail logs and to send an alert when a CreateImage API call is detected.",
-        "B": "ConFigure AWS CloudTrail with an Amazon Simple NotiFication Service (Amazon SNS) notiFication that occurs when updated logs are sent to Amazon S3. Use Amazon Athena to create a new table and to query on CreateImage when an API call is detected.",
-        "C": "Create an Amazon EventBridge (Amazon CloudWatch Events) rule for the CreateImage API call. ConFigure the target as an Amazon Simple NotiFication Service (Amazon SNS) topic to send an alert when a CreateImage API call is detected.",
-        "D": "ConFigure an Amazon Simple Queue Service (Amazon SQS) FIFO queue as a target for AWS CloudTrail logs. Create an AWS Lambda function to send an alert to an Amazon Simple NotiFication Service (Amazon SNS) topic when a CreateImage API call is detected."
+        "B": "Configure AWS CloudTrail with an Amazon Simple NotiFication Service (Amazon SNS) notiFication that occurs when updated logs are sent to Amazon S3. Use Amazon Athena to create a new table and to query on CreateImage when an API call is detected.",
+        "C": "Create an Amazon EventBridge (Amazon CloudWatch Events) rule for the CreateImage API call. Configure the target as an Amazon Simple NotiFication Service (Amazon SNS) topic to send an alert when a CreateImage API call is detected.",
+        "D": "Configure an Amazon Simple Queue Service (Amazon SQS) FIFO queue as a target for AWS CloudTrail logs. Create an AWS Lambda function to send an alert to an Amazon Simple NotiFication Service (Amazon SNS) topic when a CreateImage API call is detected."
       },
       "correct_answer": "C",
       "explanation": "Amazon EventBridge (formerly CloudWatch Events) provides a simple and efficient way to respond to events in AWS services. By creating an EventBridge rule specifically for the CreateImage API call, you can easily configure an SNS topic as the target to send alerts when the event is detected."
@@ -112,10 +112,10 @@
       "id": "210",
       "question": "A company offers afood delivery service that is growing rapidly. Because of the growth, the company’sorder processing system is experiencing scaling problems during peak trafic hours. The current architecture includes the following: • Agroup of Amazon EC2 instances that run in an Amazon EC2 Auto Scaling group to collect orders from the application • Another group of EC2 instances that run in an Amazon EC2 Auto Scaling group to fulfill orders The order collection process occurs quickly, but the order fulfillment process can take longer. Data must not be lost because of ascaling event. A solutions architect must ensure that the order collection process and the order fulfillment process can both scale properly during peak trafic hours. The solution must optimize utilization of the company’sAWS resources. Which solution meets these requirements?",
       "options": {
-        "A": "Use Amazon CloudWatch metrics to monitor the CPU of each instance in the Auto Scaling groups. ConFigure each Auto Scaling group’s minimum capacity according to peak workload values.",
-        "B": "Use Amazon CloudWatch metrics to monitor the CPU of each instance in the Auto Scaling groups. ConFigure a CloudWatch alarm to invoke an Amazon Simple NotiFication Service (Amazon SNS) topic that creates additional Auto Scaling groups on demand.",
-        "C": "Provision two Amazon Simple Queue Service (Amazon SQS) queues: one for order collection and another for order fulFillment. ConFigure the EC2 instances to poll their respective queue. Scale the Auto Scaling groups based on notiFications that the queues send.",
-        "D": "Provision two Amazon Simple Queue Service (Amazon SQS) queues: one for order collection and another for order fulFillment. ConFigure the EC2 instances to poll their respective queue. Create a metric based on a backlog per instance calculation. Scale the Auto Scaling groups based on this metric."
+        "A": "Use Amazon CloudWatch metrics to monitor the CPU of each instance in the Auto Scaling groups. Configure each Auto Scaling group’s minimum capacity according to peak workload values.",
+        "B": "Use Amazon CloudWatch metrics to monitor the CPU of each instance in the Auto Scaling groups. Configure a CloudWatch alarm to invoke an Amazon Simple NotiFication Service (Amazon SNS) topic that creates additional Auto Scaling groups on demand.",
+        "C": "Provision two Amazon Simple Queue Service (Amazon SQS) queues: one for order collection and another for order fulFillment. Configure the EC2 instances to poll their respective queue. Scale the Auto Scaling groups based on notiFications that the queues send.",
+        "D": "Provision two Amazon Simple Queue Service (Amazon SQS) queues: one for order collection and another for order fulFillment. Configure the EC2 instances to poll their respective queue. Create a metric based on a backlog per instance calculation. Scale the Auto Scaling groups based on this metric."
       },
       "correct_answer": "D",
       "explanation": ""
@@ -148,7 +148,7 @@
       "id": "213",
       "question": "A company is developing anew mobile app. The company must implement proper trafic Filtering to protect its Application Load Balancer (ALB) against common application-level attacks, such as cross-site scripting or SQL injection. The company has minimal infrastructure and operational staff. The company needs to reduce its share of the responsibility in managing, updating, and securing servers for its AWS environment. What should A solutions architect recommend to meet these requirements?",
       "options": {
-        "A": "ConFigure AWS WAF rules and associate them with the ALB.",
+        "A": "Configure AWS WAF rules and associate them with the ALB.",
         "B": "Deploy the application using Amazon S3 with public hosting enabled.",
         "C": "Deploy AWS Shield Advanced and add the ALB as a protected resource.",
         "D": "Create a new ALB that directs traFic to an Amazon EC2 instance running a third-party Firewall, which then passes the traFic to the current ALB."
@@ -163,7 +163,7 @@
         "A": "Create an Amazon EMR cluster with Apache Spark installed. Write a Spark application to transform the data. Use EMR File System (EMRFS) to write Files to the transformed data bucket.",
         "B": "Create an AWS Glue crawler to discover the data. Create an AWS Glue extract, transform, and load (ETL) job to transform the data. Specify the transformed data bucket in the output step.",
         "C": "Use AWS Batch to create a job deFinition with Bash syntax to transform the data and output the data to the transformed data bucket. Use the job deFinition to submit a job. Specify an array job as the job type.",
-        "D": "Create an AWS Lambda function to transform the data and output the data to the transformed data bucket. ConFigure an event notiFication for the S3 bucket. Specify the Lambda function as the destination for the event notiFication."
+        "D": "Create an AWS Lambda function to transform the data and output the data to the transformed data bucket. Configure an event notiFication for the S3 bucket. Specify the Lambda function as the destination for the event notiFication."
       },
       "correct_answer": "B",
       "explanation": "AWS Glue is a fully managed extract, transform, and load (ETL) service that makes it easy to prepare and load data for analysis. In this scenario:\nThe AWS Glue crawler can automatically discover the schema of your data stored in Amazon S3, including the .csv files.\nThe AWS Glue ETL job allows you to define the transformation logic easily. You can create a job using a visual interface or script in Python/Spark.\nYou can specify the transformed data bucket as the output location for the ETL job."
@@ -295,10 +295,10 @@
       "id": "225",
       "question": "Amedia company collects and analyzes user activity data on premises. The company wants to migrate this capability to AWS. The user activity data store will continue to grow and will be petabytes in size. The company needs to build a highly available data ingestion solution that facilitates on-demand analytics of existing data and new data with SQL. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Send activity data to an Amazon Kinesis data stream. ConFigure the stream to deliver the data to an Amazon S3 bucket.",
-        "B": "Send activity data to an Amazon Kinesis Data Firehose delivery stream. ConFigure the stream to deliver the data to an Amazon Redshift cluster.",
-        "C": "Place activity data in an Amazon S3 bucket. ConFigure Amazon S3 to run an AWS Lambda function on the data as the data arrives in the S3 bucket.",
-        "D": "Create an ingestion service on Amazon EC2 instances that are spread across multiple Availability Zones. ConFigure the service to forward data to an Amazon RDS Multi-AZ database."
+        "A": "Send activity data to an Amazon Kinesis data stream. Configure the stream to deliver the data to an Amazon S3 bucket.",
+        "B": "Send activity data to an Amazon Kinesis Data Firehose delivery stream. Configure the stream to deliver the data to an Amazon Redshift cluster.",
+        "C": "Place activity data in an Amazon S3 bucket. Configure Amazon S3 to run an AWS Lambda function on the data as the data arrives in the S3 bucket.",
+        "D": "Create an ingestion service on Amazon EC2 instances that are spread across multiple Availability Zones. Configure the service to forward data to an Amazon RDS Multi-AZ database."
       },
       "correct_answer": "B",
       "explanation": "Amazon Kinesis Data Firehose: It is a fully managed service that simplifies the delivery of streaming data to destinations such as Amazon S3, Amazon Redshift, or Amazon Elasticsearch Service. It handles the scaling, buffering, and delivery of data.\nAmazon Redshift: It is a fully managed, petabyte-scale data warehouse service. It is optimized for high-performance analysis using standard SQL queries.\nLeast Operational Overhead: Kinesis Data Firehose takes care of many operational aspects, including scaling and buffering, reducing the operational overhead on your part. Configuring it to deliver data to Amazon Redshift provides a streamlined and managed solution."
@@ -311,7 +311,7 @@
         "B": "Use Amazon Route 53 to route traFic to different EC2 instances.",
         "C": "Add more EC2 instances to accommodate the increasing amount of incoming data.",
         "D": "Send the raw data to Amazon Simple Queue Service (Amazon SQS). Use EC2 instances to process the data.",
-        "E": "Use Amazon API Gateway to send the raw data to an Amazon Kinesis data stream. ConFigure Amazon Kinesis Data Firehose to use the data stream as a source to deliver the data to Amazon S3."
+        "E": "Use Amazon API Gateway to send the raw data to an Amazon Kinesis data stream. Configure Amazon Kinesis Data Firehose to use the data stream as a source to deliver the data to Amazon S3."
       },
       "correct_answer": "AE",
       "explanation": "E. Use Amazon API Gateway to send the raw data to an Amazon Kinesis data stream. Configure Amazon Kinesis Data Firehose to use the data stream as a source to deliver the data to Amazon S3.\nA. It automatically discovers the schema of the data and generates ETL code to transform it.\nE. API Gateway can be used to receive the raw data from the remote devices via RESTful web services. It provides a scalable and managed infrastructure to handle the incoming requests. The data can then be sent to an Amazon Kinesis data stream, which is a highly scalable and durable real-time data streaming service. From there, Amazon Kinesis Data Firehose can be configured to use the data stream as a source and deliver the transformed data to Amazon S3. This combination of services allows for the seamless ingestion and processing of data while minimizing operational overhead."
@@ -320,10 +320,10 @@
       "id": "227",
       "question": "A company needs to retain its AWS Cloudtrail logs for 3 years. The company is enforcing Cloudtrail across aset of AWS accounts by using AWS Organizations from the parent account. The Cloudtrail target S3 bucket is configured with S3 Versioning enabled. An S3 Lifecycle policy is in place to delete current objects after 3 years. After the fourth year of use of the S3 bucket, the S3 bucket metrics show that the number of objects has continued to rise. However, the number of new Cloudtrail logs that are delivered to the S3 bucket has remained consistent. Which solution will delete objects that are older than 3 years in the MOST cost-effective manner?",
       "options": {
-        "A": "ConFigure the organization’s centralized CloudTrail trail to expire objects after 3 years.",
-        "B": "ConFigure the S3 Lifecycle policy to delete previous versions as well as current versions.",
+        "A": "Configure the organization’s centralized CloudTrail trail to expire objects after 3 years.",
+        "B": "Configure the S3 Lifecycle policy to delete previous versions as well as current versions.",
         "C": "Create an AWS Lambda function to enumerate and delete objects from Amazon S3 that are older than 3 years.",
-        "D": "ConFigure the parent account as the owner of all objects that are delivered to the S3 bucket."
+        "D": "Configure the parent account as the owner of all objects that are delivered to the S3 bucket."
       },
       "correct_answer": "B",
       "explanation": "S3 Lifecycle Policy: Enabling S3 versioning allows you to use a lifecycle policy to manage both current and previous versions of objects in the bucket. By configuring the S3 Lifecycle policy to delete objects older than 3 years, it will automatically delete both the current and previous versions that meet the specified criteria."
@@ -333,7 +333,7 @@
       "question": "A company has an API that receives real-time data from aFieet of monitoring devices. The API stores this data in an Amazon RDS DB instance for later analysis. The amount of data that the monitoring devices send to the API Fiuctuates. During periods of heavy trafic, the API often returns timeout errors. After an inspection of the logs, the company determines that the database is not capable of processing the volume of write trafic that comes from the API. A solutions architect must minimize the number of connections to the database and must ensure that data is not lost during periods of heavy trafic. Which solution will meet these requirements?",
       "options": {
         "A": "Increase the size of the DB instance to an instance type that has more available memory.",
-        "B": "Modify the DB instance to be a Multi-AZ DB instance. ConFigure the application to write to all active RDS DB instances.",
+        "B": "Modify the DB instance to be a Multi-AZ DB instance. Configure the application to write to all active RDS DB instances.",
         "C": "Modify the API to write incoming data to an Amazon Simple Queue Service (Amazon SQS) queue. Use an AWS Lambda function that Amazon SQS invokes to write data from the queue to the database.",
         "D": "Modify the API to write incoming data to an Amazon Simple NotiFication Service (Amazon SNS) topic. Use an AWS Lambda function that Amazon SNS invokes to write data from the topic to the database."
       },
@@ -369,7 +369,7 @@
       "question": "An application runs on an Amazon EC2 instance that has an Elastic IP address in VPC A. The application requires access to a database in VPC B. Both VPCs are in the same AWS account. Which solution will provide the required access MOST securely?",
       "options": {
         "A": "Create a DB instance security group that allows all traFic from the public IP address of the application server in VPC A.",
-        "B": "ConFigure a VPC peering connection between VPC A and VPC B.",
+        "B": "Configure a VPC peering connection between VPC A and VPC B.",
         "C": "Make the DB instance publicly accessible. Assign a public IP address to the DB instance.",
         "D": "Launch an EC2 instance with an Elastic IP address into VPC B. Proxy all requests through the new EC2 instance."
       },
@@ -380,10 +380,10 @@
       "id": "232",
       "question": "A company runs demonstration environments for its customers on Amazon EC2 instances. Each environment is isolated in its own VPC. The company’soperations team needs to be notified when RDP or SSH access to an environment has been established.",
       "options": {
-        "A": "ConFigure Amazon CloudWatch Application Insights to create AWS Systems Manager OpsItems when RDP or SSH access is detected.",
-        "B": "ConFigure the EC2 instances with an IAM instance proFile that has an IAM role with the AmazonSSMManagedInstanceCore policy attached.",
+        "A": "Configure Amazon CloudWatch Application Insights to create AWS Systems Manager OpsItems when RDP or SSH access is detected.",
+        "B": "Configure the EC2 instances with an IAM instance proFile that has an IAM role with the AmazonSSMManagedInstanceCore policy attached.",
         "C": "Publish VPC Fiow logs to Amazon CloudWatch Logs. Create required metric Filters. Create an Amazon CloudWatch metric alarm with a notiFication action for when the alarm is in the ALARM state.",
-        "D": "ConFigure an Amazon EventBridge rule to listen for events of type EC2 Instance State-change NotiFication. ConFigure an Amazon Simple NotiFication Service (Amazon SNS) topic as a target. Subscribe the operations team to the topic."
+        "D": "Configure an Amazon EventBridge rule to listen for events of type EC2 Instance State-change NotiFication. Configure an Amazon Simple NotiFication Service (Amazon SNS) topic as a target. Subscribe the operations team to the topic."
       },
       "correct_answer": "B",
       "explanation": "The correct option for notifying the operations team when RDP or SSH access to an environment has been established is:\nC. Publish VPC flow logs to Amazon CloudWatch Logs. Create required metric filters. Create an Amazon CloudWatch metric alarm with a notification action for when the alarm is in the ALARM state.\nHere's why:\nVPC Flow Logs:** VPC flow logs capture information about the IP traffic going to and from network interfaces in your VPC. This includes information about accepted and rejected connections. To monitor RDP or SSH access, you can analyze these logs.\nCloudWatch Logs:** By publishing VPC flow logs to CloudWatch Logs, you can analyze the logs using metric filters to extract relevant information.\nMetric Filters:** Create metric filters to match the patterns corresponding to RDP or SSH access in the CloudWatch Logs. For example, you can create metric filters that look for specific keywords or patterns related to RDP or SSH connections.\nCloudWatch Metric Alarm:** Set up CloudWatch metric alarms based on the metric filters. When the alarm is triggered (indicating that RDP or SSH access has been detected), it can take a notification action, such as sending a notification to the operations team via Amazon SNS."
@@ -453,10 +453,10 @@
       "id": "238",
       "question": "A company wants to experiment with individual AWS accounts for its engineer team. The company wants to be notified as soon as the Amazon EC2 instance usage for agiven month exceeds aspecific threshold for each account. What should A solutions architect do to meet this requirement MOST cost-effectively?",
       "options": {
-        "A": "Use Cost Explorer to create a daily report of costs by service. Filter the report by EC2 instances. ConFigure Cost Explorer to send an Amazon Simple Email Service (Amazon SES) notiFication when a threshold is exceeded.",
-        "B": "Use Cost Explorer to create a monthly report of costs by service. Filter the report by EC2 instances. ConFigure Cost Explorer to send an Amazon Simple Email Service (Amazon SES) notiFication when a threshold is exceeded.",
-        "C": "Use AWS Budgets to create a cost budget for each account. Set the period to monthly. Set the scope to EC2 instances. Set an alert threshold for the budget. ConFigure an Amazon Simple NotiFication Service (Amazon SNS) topic to receive a notiFication when a threshold is exceeded.",
-        "D": "Use AWS Cost and Usage Reports to create a report with hourly granularity. Integrate the report data with Amazon Athena. Use Amazon EventBridge to schedule an Athena query. ConFigure an Amazon Simple NotiFication Service (Amazon SNS) topic to receive a notiFication when a threshold is exceeded."
+        "A": "Use Cost Explorer to create a daily report of costs by service. Filter the report by EC2 instances. Configure Cost Explorer to send an Amazon Simple Email Service (Amazon SES) notiFication when a threshold is exceeded.",
+        "B": "Use Cost Explorer to create a monthly report of costs by service. Filter the report by EC2 instances. Configure Cost Explorer to send an Amazon Simple Email Service (Amazon SES) notiFication when a threshold is exceeded.",
+        "C": "Use AWS Budgets to create a cost budget for each account. Set the period to monthly. Set the scope to EC2 instances. Set an alert threshold for the budget. Configure an Amazon Simple NotiFication Service (Amazon SNS) topic to receive a notiFication when a threshold is exceeded.",
+        "D": "Use AWS Cost and Usage Reports to create a report with hourly granularity. Integrate the report data with Amazon Athena. Use Amazon EventBridge to schedule an Athena query. Configure an Amazon Simple NotiFication Service (Amazon SNS) topic to receive a notiFication when a threshold is exceeded."
       },
       "correct_answer": "C",
       "explanation": "AWS Budgets is a cost management service that allows you to set custom cost and usage budgets that alert you when you exceed your thresholds. In this case, you can create a monthly budget specifically for EC2 instances, and when the usage exceeds the defined threshold, it triggers an alert."
@@ -465,7 +465,7 @@
       "id": "239",
       "question": "A solutions architect needs to design anew microservice for A company’sapplication. Clients must be able to call an HTTPS endpoint to reach the microservice. The microservice also must use AWS Identity and Access Management (IAM) to authenticate calls. The solutions architect will write the logic for this microservice by using a single AWS Lambda function that is written in Go 1.x. Which solution will deploy the function in the MOST operationally eficient way?",
       "options": {
-        "A": "Create an Amazon API Gateway REST API. ConFigure the method to use the Lambda function. Enable IAM authentication on the API.",
+        "A": "Create an Amazon API Gateway REST API. Configure the method to use the Lambda function. Enable IAM authentication on the API.",
         "B": "Create a Lambda function URL for the function. Specify AWS_IAM as the authentication type.",
         "C": "Create an Amazon CloudFront distribution. Deploy the function to Lambda@Edge. Integrate IAM authentication logic into the Lambda@Edge function.",
         "D": "Create an Amazon CloudFront distribution. Deploy the function to CloudFront Functions. Specify AWS_IAM as the authentication type."
@@ -525,10 +525,10 @@
       "id": "244",
       "question": "A company is using acontent management system that runs on a single Amazon EC2 instance. The EC2 instance contains both the web server and the database software. The company must make its website platform highly available and must enable the website to scale to meet user demand. What should A solutions architect recommend to meet these requirements?",
       "options": {
-        "A": "Move the database to Amazon RDS, and enable automatic backups. Manually launch another EC2 instance in the same Availability Zone. ConFigure an Application Load Balancer in the Availability Zone, and set the two instances as targets.",
-        "B": "Migrate the database to an Amazon Aurora instance with a read replica in the same Availability Zone as the existing EC2 instance. Manually launch another EC2 instance in the same Availability Zone. ConFigure an Application Load Balancer, and set the two EC2 instances as targets.",
-        "C": "Move the database to Amazon Aurora with a read replica in another Availability Zone. Create an Amazon Machine Image (AMI) from the EC2 instance. ConFigure an Application Load Balancer in two Availability Zones. Attach an Auto Scaling group that uses the AMI across two Availability Zones.",
-        "D": "Move the database to a separate EC2 instance, and schedule backups to Amazon S3. Create an Amazon Machine Image (AMI) from the original EC2 instance. ConFigure an Application Load Balancer in two Availability Zones. Attach an Auto Scaling group that uses the AMI across two Availability Zones."
+        "A": "Move the database to Amazon RDS, and enable automatic backups. Manually launch another EC2 instance in the same Availability Zone. Configure an Application Load Balancer in the Availability Zone, and set the two instances as targets.",
+        "B": "Migrate the database to an Amazon Aurora instance with a read replica in the same Availability Zone as the existing EC2 instance. Manually launch another EC2 instance in the same Availability Zone. Configure an Application Load Balancer, and set the two EC2 instances as targets.",
+        "C": "Move the database to Amazon Aurora with a read replica in another Availability Zone. Create an Amazon Machine Image (AMI) from the EC2 instance. Configure an Application Load Balancer in two Availability Zones. Attach an Auto Scaling group that uses the AMI across two Availability Zones.",
+        "D": "Move the database to a separate EC2 instance, and schedule backups to Amazon S3. Create an Amazon Machine Image (AMI) from the original EC2 instance. Configure an Application Load Balancer in two Availability Zones. Attach an Auto Scaling group that uses the AMI across two Availability Zones."
       },
       "correct_answer": "C",
       "explanation": "This option provides both high availability and scalability. Using Amazon Aurora with a read replica in another Availability Zone ensures data redundancy and failover capabilities. Configuring an Application Load Balancer across two Availability Zones and using Auto Scaling allows for scalability."
@@ -549,7 +549,7 @@
       "id": "246",
       "question": "A company runs a web application on Amazon EC2 instances in multiple Availability Zones. The EC2 instances are in private subnets. A solutions architect implements an internet-facing Application Load Balancer (ALB) and specifies the EC2 instances as the target group. However, the internet trafic is not reaching the EC2 instances. How should the solutions architect reconfigure the architecture to resolve this issue?",
       "options": {
-        "A": "Replace the ALB with a Network Load Balancer. ConFigure a NAT gateway in a public subnet to allow internet traFic.",
+        "A": "Replace the ALB with a Network Load Balancer. Configure a NAT gateway in a public subnet to allow internet traFic.",
         "B": "Move the EC2 instances to public subnets. Add a rule to the EC2 instances’ security groups to allow outbound traFic to 0.0.0.0/0.",
         "C": "Update the route tables for the EC2 instances’ subnets to send 0.0.0.0/0 traFic through the internet gateway route. Add a rule to the EC2 instances’ security groups to allow outbound traFic to 0.0.0.0/0.",
         "D": "Create public subnets in each Availability Zone. Associate the public subnets with the ALB. Update the route tables for the public subnets with a route to the private subnets."
@@ -577,7 +577,7 @@
         "A": "Create a copy of the instance. Place all instances behind an Application Load Balancer.",
         "B": "Create an S3 VPC endpoint for Amazon S3. Update the software to reference the endpoint.",
         "C": "Stop the EC2 instances. Modify the instance type to one with a more powerful CPU and more memory. Restart the instances.",
-        "D": "Route incoming requests to Amazon Simple Queue Service (Amazon SQS). ConFigure an EC2 Auto Scaling group based on queue size. Update the software to read from the queue."
+        "D": "Route incoming requests to Amazon Simple Queue Service (Amazon SQS). Configure an EC2 Auto Scaling group based on queue size. Update the software to read from the queue."
       },
       "correct_answer": "D",
       "explanation": "This option addresses the issue by offloading incoming requests to an SQS queue, allowing for decoupling of processing and scaling based on queue size. This helps improve system performance and allows for scaling based on user load."
@@ -587,7 +587,7 @@
       "question": "A company is implementing ashared storage solution for amedia application that is hosted in the AWS Cloud. The company needs the ability to use SMB clients to access data. The solution must be fully managed. Which AWS solution meets these requirements?",
       "options": {
         "A": "Create an AWS Storage Gateway volume gateway. Create a File share that uses the required client protocol. Connect the application server to the File share.",
-        "B": "Create an AWS Storage Gateway tape gateway. ConFigure tapes to use Amazon S3. Connect the application server to the tape gateway.",
+        "B": "Create an AWS Storage Gateway tape gateway. Configure tapes to use Amazon S3. Connect the application server to the tape gateway.",
         "C": "Create an Amazon EC2 Windows instance. Install and conFigure a Windows File share role on the instance. Connect the application server to the File share.",
         "D": "Create an Amazon FSx for Windows File Server File system. Attach the File system to the origin server. Connect the application server to the File system."
       },
@@ -599,8 +599,8 @@
       "question": "A company’ssecurity team requests that network trafic be captured in VPC Flow Logs. The logs will be frequently accessed for 90 days and then accessed intermittently. What should A solutions architect do to meet these requirements when configuring the logs?",
       "options": {
         "A": "Use Amazon CloudWatch as the target. Set the CloudWatch log group with an expiration of 90 days",
-        "B": "Use Amazon Kinesis as the target. ConFigure the Kinesis stream to always retain the logs for 90 days.",
-        "C": "Use AWS CloudTrail as the target. ConFigure CloudTrail to save to an Amazon S3 bucket, and enable S3 Intelligent-Tiering.",
+        "B": "Use Amazon Kinesis as the target. Configure the Kinesis stream to always retain the logs for 90 days.",
+        "C": "Use AWS CloudTrail as the target. Configure CloudTrail to save to an Amazon S3 bucket, and enable S3 Intelligent-Tiering.",
         "D": "Use Amazon S3 as the target. Enable an S3 Lifecycle policy to transition the logs to S3 Standard-Infrequent Access (S3 Standard-IA) after 90 days."
       },
       "correct_answer": "D",

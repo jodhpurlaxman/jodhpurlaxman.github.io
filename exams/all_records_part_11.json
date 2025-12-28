@@ -19,8 +19,8 @@
         "A": "Move the website images into an Amazon S3 bucket that is mounted on every EC2 instance",
         "B": "Share the website images by using an NFS share from the primary EC2 instance. Mount this share on the other EC2 instances.",
         "C": "Move the website images onto an Amazon Elastic File System (Amazon EFS) File system that is mounted on every EC2 instance.",
-        "D": "Create an Amazon Machine Image (AMI) from the existing EC2 instance. Use the AMI to provision new instances behind an Application Load Balancer as part of an Auto Scaling group. ConFigure the Auto Scaling group to maintain a minimum of two instances. ConFigure an accelerator in AWS Global Accelerator for the website",
-        "E": "Create an Amazon Machine Image (AMI) from the existing EC2 instance. Use the AMI to provision new instances behind an Application Load Balancer as part of an Auto Scaling group. ConFigure the Auto Scaling group to maintain a minimum of two instances. ConFigure an Amazon CloudFront distribution for the website."
+        "D": "Create an Amazon Machine Image (AMI) from the existing EC2 instance. Use the AMI to provision new instances behind an Application Load Balancer as part of an Auto Scaling group. Configure the Auto Scaling group to maintain a minimum of two instances. Configure an accelerator in AWS Global Accelerator for the website",
+        "E": "Create an Amazon Machine Image (AMI) from the existing EC2 instance. Use the AMI to provision new instances behind an Application Load Balancer as part of an Auto Scaling group. Configure the Auto Scaling group to maintain a minimum of two instances. Configure an Amazon CloudFront distribution for the website."
       },
       "correct_answer": "CE",
       "explanation": "E. Create an Amazon Machine Image (AMI) from the existing EC2 instance. Use the AMI to provision new instances behind an Application Load Balancer as part of an Auto Scaling group. Configure the Auto Scaling group to maintain a minimum of two instances. Configure an Amazon CloudFront distribution for the website.\nOption C provides moving the website images onto an Amazon EFS file system that is mounted on every EC2 instance. Amazon EFS provides a scalable and fully managed file storage solution that can be accessed concurrently from multiple EC2 instances. This ensures that the website images can be accessed efficiently and consistently by all instances, improving performance.\nIn Option E The Auto Scaling group maintains a minimum of two instances, ensuring resilience by automatically replacing any unhealthy instances. Additionally, configuring an Amazon CloudFront distribution for the website further improves performance by caching content at edge locations closer to the end-users, reducing latency and improving content delivery.\nHence combining these actions, the website's performance is improved through efficient image storage and content delivery"
@@ -42,8 +42,8 @@
       "question": "A company needs to connect several VPCs in the us-east-1 Region that span hundreds of AWS accounts. The company'snetworking team has its own AWS account to manage the cloud network. What is the MOST operationally eficient solution to connect the VPCs?",
       "options": {
         "A": "Set up VPC peering connections between each VPC. Update each associated subnet’s route table",
-        "B": "ConFigure a NAT gateway and an internet gateway in each VPC to connect each VPC through the internet",
-        "C": "Create an AWS Transit Gateway in the networking team’s AWS account. ConFigure static routes from each VPC.",
+        "B": "Configure a NAT gateway and an internet gateway in each VPC to connect each VPC through the internet",
+        "C": "Create an AWS Transit Gateway in the networking team’s AWS account. Configure static routes from each VPC.",
         "D": "Deploy VPN gateways in each VPC. Create a transit VPC in the networking team’s AWS account to connect to each VPC."
       },
       "correct_answer": "C",
@@ -90,7 +90,7 @@
       "question": "A company has migrated multiple Microsoft Windows Server workloads to Amazon EC2 instances that run in the us-west-1 Region. The company manually backs up the workloads to create an image as needed. In the event of anatural disaster in the us-west-1 Region, the company wants to recover workloads quickly in the us-west-2 Region. The company wants no more than 24 hours of data loss on the EC2 instances. The company also wants to automate any backups of the EC2 instances. Which solutions will meet these requirements with the LEAST administrative effort? (Choose two.)",
       "options": {
         "A": "Create an Amazon EC2-backed Amazon Machine Image (AMI) lifecycle policy to create a backup based on tags. Schedule the backup to run twice daily. Copy the image on demand.",
-        "B": "Create an Amazon EC2-backed Amazon Machine Image (AMI) lifecycle policy to create a backup based on tags. Schedule the backup to run twice daily. ConFigure the copy to the us-west-2 Region.",
+        "B": "Create an Amazon EC2-backed Amazon Machine Image (AMI) lifecycle policy to create a backup based on tags. Schedule the backup to run twice daily. Configure the copy to the us-west-2 Region.",
         "C": "Create backup vaults in us-west-1 and in us-west-2 by using AWS Backup. Create a backup plan for the EC2 instances based on tag values. Create an AWS Lambda function to run as a scheduled job to copy the backup data to us-west-2.",
         "D": "Create a backup vault by using AWS Backup. Use AWS Backup to create a backup plan for the EC2 instances based on tag values. DeFine the destination for the copy as us-west-2. Specify the backup schedule to run twice daily.",
         "E": "Create a backup vault by using AWS Backup. Use AWS Backup to create a backup plan for the EC2 instances based on tag values. Specify the backup schedule to run twice daily. Copy on demand to us-west-2."
@@ -115,8 +115,8 @@
       "question": "Aglobal marketing company has applications that run in the ap-southeast-2 Region and the eu-west-1 Region. Applications that run in a VPC in eu- west-1 need to communicate securely with databases that run in a VPC in ap-southeast-2. Which network design will meet these requirements?",
       "options": {
         "A": "Create a VPC peering connection between the eu-west-1 VPC and the ap-southeast-2 VPC. Create an inbound rule in the eu-west-1 application security group that allows traFic from the database server IP addresses in the ap-southeast-2 security group.",
-        "B": "ConFigure a VPC peering connection between the ap-southeast-2 VPC and the eu-west-1 VPC. Update the subnet route tables. Create an inbound rule in the ap-southeast-2 database security group that references the security group ID of the application servers in eu-west-1.",
-        "C": "ConFigure a VPC peering connection between the ap-southeast-2 VPC and the eu-west-1 VPUpdate the subnet route tables. Create an inbound rule in the ap-southeast-2 database security group that allows traFic from the eu-west-1 application server IP addresses.",
+        "B": "Configure a VPC peering connection between the ap-southeast-2 VPC and the eu-west-1 VPC. Update the subnet route tables. Create an inbound rule in the ap-southeast-2 database security group that references the security group ID of the application servers in eu-west-1.",
+        "C": "Configure a VPC peering connection between the ap-southeast-2 VPC and the eu-west-1 VPUpdate the subnet route tables. Create an inbound rule in the ap-southeast-2 database security group that allows traFic from the eu-west-1 application server IP addresses.",
         "D": "Create a transit gateway with a peering attachment between the eu-west-1 VPC and the ap-southeast-2 VPC. After the transit gateways are properly peered and routing is conFigured, create an inbound rule in the database security group that references the security group ID of the application servers in eu-west-1."
       },
       "correct_answer": "C",
@@ -126,10 +126,10 @@
       "id": "511",
       "question": "A company is developing software that uses aPostgreSQL database schema. The company needs to configure multiple development environments and databases for the company'sdevelopers. On average, each development environment is used for half of the 8-hour workday. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
-        "A": "ConFigure each development environment with its own Amazon Aurora PostgreSQL database",
-        "B": "ConFigure each development environment with its own Amazon RDS for PostgreSQL Single-AZ DB instances",
-        "C": "ConFigure each development environment with its own Amazon Aurora On-Demand PostgreSQL-Compatible database",
-        "D": "ConFigure each development environment with its own Amazon S3 bucket by using Amazon S3 Object Select"
+        "A": "Configure each development environment with its own Amazon Aurora PostgreSQL database",
+        "B": "Configure each development environment with its own Amazon RDS for PostgreSQL Single-AZ DB instances",
+        "C": "Configure each development environment with its own Amazon Aurora On-Demand PostgreSQL-Compatible database",
+        "D": "Configure each development environment with its own Amazon S3 bucket by using Amazon S3 Object Select"
       },
       "correct_answer": "C",
       "explanation": "Amazon Aurora is designed for high-performance, scalability, and availability.\nIt offers features such as automatic failover, replication, and performance enhancements over traditional PostgreSQL.\nOn-Demand pricing means you pay for the resources you consume, making it a flexible option."
@@ -152,7 +152,7 @@
       "options": {
         "A": "Create a static website hosted in Amazon S3 that invokes AWS Lambda functions to resize the images and store the images in an Amazon S3 bucket.",
         "B": "Create a static website hosted in Amazon CloudFront that invokes AWS Step Functions to resize the images and store the images in an Amazon RDS database.",
-        "C": "Create a dynamic website hosted on a web server that runs on an Amazon EC2 instance. ConFigure a process that runs on the EC2 instance to resize the images and store the images in an Amazon S3 bucket.",
+        "C": "Create a dynamic website hosted on a web server that runs on an Amazon EC2 instance. Configure a process that runs on the EC2 instance to resize the images and store the images in an Amazon S3 bucket.",
         "D": "Create a dynamic website hosted on an automatically scaling Amazon Elastic Container Service (Amazon ECS) cluster that creates a resize job in Amazon Simple Queue Service (Amazon SQS). Set up an image-resizing program that runs on an Amazon EC2 instance to process the resize jobs."
       },
       "correct_answer": "A",
@@ -235,10 +235,10 @@
       "id": "520",
       "question": "A company is designing anew web application that will run on Amazon EC2 Instances. The application will use Amazon DynamoDB for backend data storage. The application trafic will be unpredictable. The company expects that the application read and write throughput to the database will be moderate to high. The company needs to scale in response to application trafic. Which DynamoDB table configuration will meet these requirements MOST cost-effectively?",
       "options": {
-        "A": "ConFigure DynamoDB with provisioned read and write by using the DynamoDB Standard table class. Set DynamoDB auto scaling to a maximum deFined capacity.",
-        "B": "ConFigure DynamoDB in on-demand mode by using the DynamoDB Standard table class.",
-        "C": "ConFigure DynamoDB with provisioned read and write by using the DynamoDB Standard Infrequent Access (DynamoDB Standard-IA) table class. Set DynamoDB auto scaling to a maximum deFined capacity.",
-        "D": "ConFigure DynamoDB in on-demand mode by using the DynamoDB Standard Infrequent Access (DynamoDB Standard-IA) table class."
+        "A": "Configure DynamoDB with provisioned read and write by using the DynamoDB Standard table class. Set DynamoDB auto scaling to a maximum deFined capacity.",
+        "B": "Configure DynamoDB in on-demand mode by using the DynamoDB Standard table class.",
+        "C": "Configure DynamoDB with provisioned read and write by using the DynamoDB Standard Infrequent Access (DynamoDB Standard-IA) table class. Set DynamoDB auto scaling to a maximum deFined capacity.",
+        "D": "Configure DynamoDB in on-demand mode by using the DynamoDB Standard Infrequent Access (DynamoDB Standard-IA) table class."
       },
       "correct_answer": "B",
       "explanation": "On-demand capacity mode allows DynamoDB to automatically scale read and write capacity based on actual application traffic.\nIt eliminates the need for manual provisioning of read and write capacity, making it well-suited for unpredictable workloads.\nDynamoDB Standard Table Class:\nThe DynamoDB Standard table class provides general-purpose storage with consistent, single-digit millisecond latency. It's suitable for a wide range of applications, including those with unpredictable traffic"
@@ -247,10 +247,10 @@
       "id": "521",
       "question": "Aretail company has several businesses. The IT team for each business manages its own AWS account. Each team account is part of an organization in AWS Organizations. Each team monitors its product inventory levels in an Amazon DynamoDB table in the team'sown AWS account. The company is deploying acentral inventory reporting application into ashared AWS account. The application must be able to read items from all the teams' DynamoDB tables. Which authentication option will meet these requirements MOST securely?",
       "options": {
-        "A": "Integrate DynamoDB with AWS Secrets Manager in the inventory application account. ConFigure the application to use the correct secret from Secrets Manager to authenticate and read the DynamoDB table. Schedule secret rotation for every 30 days.",
-        "B": "In every business account, create an IAM user that has programmatic access. ConFigure the application to use the correct IAM user access key ID and secret access key to authenticate and read the DynamoDB table. Manually rotate IAM access keys every 30 days.",
-        "C": "In every business account, create an IAM role named BU_ROLE with a policy that gives the role access to the DynamoDB table and a trust policy to trust a speciFic role in the inventory application account. In the inventory account, create a role named APP_ROLE that allows access to the STS AssumeRole API operation. ConFigure the application to use APP_ROLE and assume the crossaccount role BU_ROLE to read the DynamoDB table.",
-        "D": "Integrate DynamoDB with AWS CertiFicate Manager (ACM). Generate identity certiFicates to authenticate DynamoDB. ConFigure the application to use the correct certiFicate to authenticate and read the DynamoDB table."
+        "A": "Integrate DynamoDB with AWS Secrets Manager in the inventory application account. Configure the application to use the correct secret from Secrets Manager to authenticate and read the DynamoDB table. Schedule secret rotation for every 30 days.",
+        "B": "In every business account, create an IAM user that has programmatic access. Configure the application to use the correct IAM user access key ID and secret access key to authenticate and read the DynamoDB table. Manually rotate IAM access keys every 30 days.",
+        "C": "In every business account, create an IAM role named BU_ROLE with a policy that gives the role access to the DynamoDB table and a trust policy to trust a speciFic role in the inventory application account. In the inventory account, create a role named APP_ROLE that allows access to the STS AssumeRole API operation. Configure the application to use APP_ROLE and assume the crossaccount role BU_ROLE to read the DynamoDB table.",
+        "D": "Integrate DynamoDB with AWS CertiFicate Manager (ACM). Generate identity certiFicates to authenticate DynamoDB. Configure the application to use the correct certiFicate to authenticate and read the DynamoDB table."
       },
       "correct_answer": "C",
       "explanation": ""
@@ -298,7 +298,7 @@
       "options": {
         "A": "Access usage cost-related data by using the AWS Cost Explorer API with pagination.",
         "B": "Access usage cost-related data by using downloadable AWS Cost Explorer report .csv Files.",
-        "C": "ConFigure AWS Budgets actions to send usage cost data to the company through FTP.",
+        "C": "Configure AWS Budgets actions to send usage cost data to the company through FTP.",
         "D": "Create AWS Budgets reports for usage cost data. Send the data to the company through SMTP."
       },
       "correct_answer": "A",
@@ -332,9 +332,9 @@
       "id": "528",
       "question": "Adata analytics company wants to migrate its batch processing system to AWS. The company receives thousands of small data Files periodically during the day through FTP. An on-premises batch job processes the data Files overnight. However, the batch job takes hours to Finish running. The company wants the AWS solution to process incoming data Files as soon as possible with minimal changes to the FTP clients that send the Files. The solution must delete the incoming data Files after the Files have been processed successfully. Processing for each File needs to take 3-8 minutes. Which solution will meet these requirements in the MOST operationally eficient way?",
       "options": {
-        "A": "Use an Amazon EC2 instance that runs an FTP server to store incoming Files as objects in Amazon S3 Glacier Flexible Retrieval. ConFigure a job queue in AWS Batch. Use Amazon EventBridge rules to invoke the job to process the objects nightly from S3 Glacier Flexible Retrieval. Delete the objects after the job has processed the objects.",
-        "B": "Use an Amazon EC2 instance that runs an FTP server to store incoming Files on an Amazon Elastic Block Store (Amazon EBS) volume. ConFigure a job queue in AWS Batch. Use Amazon EventBridge rules to invoke the job to process the Files nightly from the EBS volume. Delete the Files after the job has processed the Files.",
-        "C": "Use AWS Transfer Family to create an FTP server to store incoming Files on an Amazon Elastic Block Store (Amazon EBS) volume. ConFigure a job queue in AWS Batch. Use an Amazon S3 event notiFication when each File arrives to invoke the job in AWS Batch. Delete the Files after the job has processed the Files.",
+        "A": "Use an Amazon EC2 instance that runs an FTP server to store incoming Files as objects in Amazon S3 Glacier Flexible Retrieval. Configure a job queue in AWS Batch. Use Amazon EventBridge rules to invoke the job to process the objects nightly from S3 Glacier Flexible Retrieval. Delete the objects after the job has processed the objects.",
+        "B": "Use an Amazon EC2 instance that runs an FTP server to store incoming Files on an Amazon Elastic Block Store (Amazon EBS) volume. Configure a job queue in AWS Batch. Use Amazon EventBridge rules to invoke the job to process the Files nightly from the EBS volume. Delete the Files after the job has processed the Files.",
+        "C": "Use AWS Transfer Family to create an FTP server to store incoming Files on an Amazon Elastic Block Store (Amazon EBS) volume. Configure a job queue in AWS Batch. Use an Amazon S3 event notiFication when each File arrives to invoke the job in AWS Batch. Delete the Files after the job has processed the Files.",
         "D": "Use AWS Transfer Family to create an FTP server to store incoming Files in Amazon S3 Standard. Create an AWS Lambda function to process the Files and to delete the Files after they are processed. Use an S3 event notiFication to invoke the Lambda function when the Files arrive."
       },
       "correct_answer": "D",
@@ -345,7 +345,7 @@
       "question": "A company is migrating its workloads to AWS. The company has transactional and sensitive data in its databases. The company wants to use AWS Cloud solutions to increase security and reduce operational overhead for the databases. Which solution will meet these requirements?",
       "options": {
         "A": "Migrate the databases to Amazon EC2. Use an AWS Key Management Service (AWS KMS) AWS managed key for encryption.",
-        "B": "Migrate the databases to Amazon RDS ConFigure encryption at rest.",
+        "B": "Migrate the databases to Amazon RDS Configure encryption at rest.",
         "C": "Migrate the data to Amazon S3 Use Amazon Macie for data security and protection",
         "D": "Migrate the database to Amazon RDS. Use Amazon CloudWatch Logs for data security and protection."
       },
@@ -357,8 +357,8 @@
       "question": "A company has an online gaming application that has TCP and UDP multiplayer gaming capabilities. The company uses Amazon Route 53 to point the application trafic to multiple Network Load Balancers (NLBs) in different AWS Regions. The company needs to improve application performance and decrease latency for the online game in preparation for user growth. Which solution will meet these requirements?",
       "options": {
         "A": "Add an Amazon CloudFront distribution in front of the NLBs. Increase the Cache-Control max-age parameter.",
-        "B": "Replace the NLBs with Application Load Balancers (ALBs). ConFigure Route 53 to use latency-based routing.",
-        "C": "Add AWS Global Accelerator in front of the NLBs. ConFigure a Global Accelerator endpoint to use the correct listener ports.",
+        "B": "Replace the NLBs with Application Load Balancers (ALBs). Configure Route 53 to use latency-based routing.",
+        "C": "Add AWS Global Accelerator in front of the NLBs. Configure a Global Accelerator endpoint to use the correct listener ports.",
         "D": "Add an Amazon API Gateway endpoint behind the NLBs. Enable API caching. Override method caching for the different stages."
       },
       "correct_answer": "C",
@@ -465,8 +465,8 @@
       "id": "539",
       "question": "A company wants to use the AWS Cloud to improve its on-premises disaster recovery (DR) configuration. The company'score production business application uses Microsoft SQL Server Standard, which runs on avirtual machine (VM). The application has arecovery point objective (RPO) of 30 seconds or fewer and arecovery time objective (RTO) of 60 minutes. The DR solution needs to minimize costs wherever possible. Which solution will meet these requirements?",
       "options": {
-        "A": "ConFigure a multi-site active/active setup between the on-premises server and AWS by using Microsoft SQL Server Enterprise with Always On availability groups.",
-        "B": "ConFigure a warm standby Amazon RDS for SQL Server database on AWS. ConFigure AWS Database Migration Service (AWS DMS) to use change data capture (CDC).",
+        "A": "Configure a multi-site active/active setup between the on-premises server and AWS by using Microsoft SQL Server Enterprise with Always On availability groups.",
+        "B": "Configure a warm standby Amazon RDS for SQL Server database on AWS. Configure AWS Database Migration Service (AWS DMS) to use change data capture (CDC).",
         "C": "Use AWS Elastic Disaster Recovery conFigured to replicate disk changes to AWS as a pilot light.",
         "D": "Use third-party backup software to capture backups every night. Store a secondary set of backups in Amazon S3."
       },
@@ -541,7 +541,7 @@
       "options": {
         "A": "Update the Route 53 records to use a latency routing policy. Add a static error page that is hosted in an Amazon S3 bucket to the records so that the traFic is sent to the most responsive endpoints.",
         "B": "Set up a Route 53 active-passive failover conFiguration. Direct traFic to a static error page that is hosted in an Amazon S3 bucket when Route 53 health checks determine that the ALB endpoint is unhealthy.",
-        "C": "Set up a Route 53 active-active conFiguration with the ALB and an Amazon EC2 instance that hosts a static error page as endpoints. ConFigure Route 53 to send requests to the instance only if the health checks fail for the ALB.",
+        "C": "Set up a Route 53 active-active conFiguration with the ALB and an Amazon EC2 instance that hosts a static error page as endpoints. Configure Route 53 to send requests to the instance only if the health checks fail for the ALB.",
         "D": "Update the Route 53 records to use a multivalue answer routing policy. Create a health check. Direct traFic to the website if the health check passes. Direct traFic to a static error page that is hosted in Amazon S3 if the health check does not pass."
       },
       "correct_answer": "B",
@@ -589,8 +589,8 @@
       "options": {
         "A": "Deploy a NAT instance in the VPC. Route all the internet-based traFic through the NAT instance.",
         "B": "Deploy a NAT gateway in the public subnets. Modify the private subnet route table to direct all internet-bound traFic to the NAT gateway.",
-        "C": "ConFigure an internet gateway and attach it to the VPModify the private subnet route table to direct internet-bound traFic to the internet gateway.",
-        "D": "ConFigure a virtual private gateway and attach it to the VPC. Modify the private subnet route table to direct internet-bound traFic to the virtual private gateway."
+        "C": "Configure an internet gateway and attach it to the VPModify the private subnet route table to direct internet-bound traFic to the internet gateway.",
+        "D": "Configure a virtual private gateway and attach it to the VPC. Modify the private subnet route table to direct internet-bound traFic to the virtual private gateway."
       },
       "correct_answer": "B",
       "explanation": "A NAT gateway is a fully managed service provided by AWS that allows instances in a private subnet to initiate outbound traffic to the internet while preventing inbound traffic from reaching those instances. It simplifies the process of enabling internet access for instances in private subnets without the need for managing a separate NAT instance."

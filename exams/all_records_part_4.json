@@ -17,10 +17,10 @@
       "id": "152",
       "question": "A company uses athree-tier web application to provide training to new employees. The application is accessed for only 12 hours every day. The company is using an Amazon RDS for MySQL DB instance to store information and wants to minimize costs. What should A solutions architect do to meet these requirements?",
       "options": {
-        "A": "ConFigure an IAM policy for AWS Systems Manager Session Manager. Create an IAM role for the policy. Update the trust relationship of the role. Set up automatic start and stop for the DB instance.",
+        "A": "Configure an IAM policy for AWS Systems Manager Session Manager. Create an IAM role for the policy. Update the trust relationship of the role. Set up automatic start and stop for the DB instance.",
         "B": "Create an Amazon ElastiCache for Redis cache cluster that gives users the ability to access the data from the cache when the DB instance is stopped. Invalidate the cache after the DB instance is started.",
-        "C": "Launch an Amazon EC2 instance. Create an IAM role that grants access to Amazon RDS. Attach the role to the EC2 instance. ConFigure a cron job to start and stop the EC2 instance on the desired schedule.",
-        "D": "Create AWS Lambda functions to start and stop the DB instance. Create Amazon EventBridge (Amazon CloudWatch Events) scheduled rules to invoke the Lambda functions. ConFigure the Lambda functions as event targets for the rules."
+        "C": "Launch an Amazon EC2 instance. Create an IAM role that grants access to Amazon RDS. Attach the role to the EC2 instance. Configure a cron job to start and stop the EC2 instance on the desired schedule.",
+        "D": "Create AWS Lambda functions to start and stop the DB instance. Create Amazon EventBridge (Amazon CloudWatch Events) scheduled rules to invoke the Lambda functions. Configure the Lambda functions as event targets for the rules."
       },
       "correct_answer": "D",
       "explanation": "Create AWS Lambda functions to start and stop the DB instance. Create Amazon EventBridge (Amazon CloudWatch Events) scheduled rules to invoke the Lambda functions. Configure the Lambda functions as event targets for the rules."
@@ -29,9 +29,9 @@
       "id": "153",
       "question": "A company sells ringtones created from clips of popular songs. The Files containing the ringtones are stored in Amazon S3 Standard and are at least 128 KB in size. The company has millions of Files, but downloads are infrequent for ringtones older than 90 days. The company needs to save money on storage while keeping the most accessed Files readily available for its users. Which action should the company take to meet these requirements MOST cost-effectively?",
       "options": {
-        "A": "ConFigure S3 Standard-Infrequent Access (S3 Standard-IA) storage for the initial storage tier of the objects.",
+        "A": "Configure S3 Standard-Infrequent Access (S3 Standard-IA) storage for the initial storage tier of the objects.",
         "B": "Move the Files to S3 Intelligent-Tiering and conFigure it to move objects to a less expensive storage tier after 90 days.",
-        "C": "ConFigure S3 inventory to manage objects and move them to S3 Standard-Infrequent Access (S3 Standard-1A) after 90 days.",
+        "C": "Configure S3 inventory to manage objects and move them to S3 Standard-Infrequent Access (S3 Standard-1A) after 90 days.",
         "D": "Implement an S3 Lifecycle policy that moves the objects from S3 Standard to S3 Standard-Infrequent Access (S3 Standard-1A) after 90 days."
       },
       "correct_answer": "D",
@@ -44,7 +44,7 @@
         "A": "Use S3 Object Lock in governance mode with a legal hold of 1 year.",
         "B": "Use S3 Object Lock in compliance mode with a retention period of 365 days.",
         "C": "Use an IAM role to restrict all users from deleting or changing objects in the S3 bucket. Use an S3 bucket policy to only allow the IAM role.",
-        "D": "ConFigure the S3 bucket to invoke an AWS Lambda function every time an object is added. ConFigure the function to track the hash of the saved object so that modiFied objects can be marked accordingly."
+        "D": "Configure the S3 bucket to invoke an AWS Lambda function every time an object is added. Configure the function to track the hash of the saved object so that modiFied objects can be marked accordingly."
       },
       "correct_answer": "B",
       "explanation": "Use S3 Object Lock in compliance mode with a retention period of 365 days."
@@ -80,8 +80,8 @@
       "options": {
         "A": "Take a manual snapshot of the DB cluster.",
         "B": "Create a lifecycle policy for the automated backups.",
-        "C": "ConFigure automated backup retention for 5 years.",
-        "D": "ConFigure an Amazon CloudWatch Logs export for the DB cluster.",
+        "C": "Configure automated backup retention for 5 years.",
+        "D": "Configure an Amazon CloudWatch Logs export for the DB cluster.",
         "E": "Use AWS Backup to take the backups and to keep the backups for 5 years."
       },
       "correct_answer": "DE",
@@ -164,9 +164,9 @@
       "id": "164",
       "question": "A company has two applications: asender application that sends messages with payloads to be processed and aprocessing application intended to receive the messages with payloads. The company wants to implement an AWS service to handle messages between the two applications. The sender application can send about 1,000 messages each hour. The messages may take up to 2 days to be processed: If the messages fail to process, they must be retained so that they do not impact the processing of any remaining messages. Which solution meets these requirements and is the MOST operationally eficient?",
       "options": {
-        "A": "Set up an Amazon EC2 instance running a Redis database. ConFigure both applications to use the instance. Store, process, and delete the messages, respectively.",
+        "A": "Set up an Amazon EC2 instance running a Redis database. Configure both applications to use the instance. Store, process, and delete the messages, respectively.",
         "B": "Use an Amazon Kinesis data stream to receive the messages from the sender application. Integrate the processing application with the Kinesis Client Library (KCL).",
-        "C": "Integrate the sender and processor applications with an Amazon Simple Queue Service (Amazon SQS) queue. ConFigure a dead-letter queue to collect the messages that failed to process.",
+        "C": "Integrate the sender and processor applications with an Amazon Simple Queue Service (Amazon SQS) queue. Configure a dead-letter queue to collect the messages that failed to process.",
         "D": "Subscribe the processing application to an Amazon Simple NotiFication Service (Amazon SNS) topic to receive notiFications to process. Integrate the sender application to write to the SNS topic."
       },
       "correct_answer": "C",
@@ -176,10 +176,10 @@
       "id": "165",
       "question": "A solutions architect must design asolution that uses Amazon Cloudfront with an Amazon S3 origin to store astatic website. The company’ssecurity policy requires that all website trafic be inspected by AWS WAF. How should the solutions architect comply with these requirements?",
       "options": {
-        "A": "ConFigure an S3 bucket policy to accept requests coming from the AWS WAF Amazon Resource Name (ARN) only.",
-        "B": "ConFigure Amazon CloudFront to forward all incoming requests to AWS WAF before requesting content from the S3 origin.",
-        "C": "ConFigure a security group that allows Amazon CloudFront IP addresses to access Amazon S3 only. Associate AWS WAF to CloudFront.",
-        "D": "ConFigure Amazon CloudFront and Amazon S3 to use an origin access identity (OAI) to restrict access to the S3 bucket. Enable AWS WAF on the distribution."
+        "A": "Configure an S3 bucket policy to accept requests coming from the AWS WAF Amazon Resource Name (ARN) only.",
+        "B": "Configure Amazon CloudFront to forward all incoming requests to AWS WAF before requesting content from the S3 origin.",
+        "C": "Configure a security group that allows Amazon CloudFront IP addresses to access Amazon S3 only. Associate AWS WAF to CloudFront.",
+        "D": "Configure Amazon CloudFront and Amazon S3 to use an origin access identity (OAI) to restrict access to the S3 bucket. Enable AWS WAF on the distribution."
       },
       "correct_answer": "D",
       "explanation": "Configure Amazon CloudFront and Amazon S3 to use an origin access identity (OAI) to restrict access to the S3 bucket. Enable AWS WAF on the distribution."
@@ -225,9 +225,9 @@
       "question": "A company is concerned about the security of its public web application due to recent web attacks. The application uses an Application Load Balancer (ALB). A solutions architect must reduce the risk of DDoS attacks against the application. What should the solutions architect do to meet this requirement?",
       "options": {
         "A": "Add an Amazon Inspector agent to the ALB.",
-        "B": "ConFigure Amazon Macie to prevent attacks.",
+        "B": "Configure Amazon Macie to prevent attacks.",
         "C": "Enable AWS Shield Advanced to prevent attacks.",
-        "D": "ConFigure Amazon GuardDuty to monitor the ALB."
+        "D": "Configure Amazon GuardDuty to monitor the ALB."
       },
       "correct_answer": "C",
       "explanation": "Enable AWS Shield Advanced to prevent attacks."
@@ -236,10 +236,10 @@
       "id": "170",
       "question": "A company’sweb application is running on Amazon EC2 instances behind an Application Load Balancer. The company recently changed its policy, which now requires the application to be accessed from one specific country only. Which configuration will meet this requirement?",
       "options": {
-        "A": "ConFigure the security group for the EC2 instances.",
-        "B": "ConFigure the security group on the Application Load Balancer.",
-        "C": "ConFigure AWS WAF on the Application Load Balancer in a VPC.",
-        "D": "ConFigure the network ACL for the subnet that contains the EC2 instances."
+        "A": "Configure the security group for the EC2 instances.",
+        "B": "Configure the security group on the Application Load Balancer.",
+        "C": "Configure AWS WAF on the Application Load Balancer in a VPC.",
+        "D": "Configure the network ACL for the subnet that contains the EC2 instances."
       },
       "correct_answer": "C",
       "explanation": "Configure AWS WAF on the Application Load Balancer in a VPC."
@@ -260,10 +260,10 @@
       "id": "172",
       "question": "A solutions architect is creating anew Amazon Cloudfront distribution for an application. Some of the information submitted by users is sensitive. The application uses HTTPS but needs another layer of security. The sensitive information should.be protected throughout the entire application stack, and access to the information should be restricted to certain applications. Which action should the solutions architect take?",
       "options": {
-        "A": "ConFigure a CloudFront signed URL.",
-        "B": "ConFigure a CloudFront signed cookie.",
-        "C": "ConFigure a CloudFront Field-level encryption proFile.",
-        "D": "ConFigure CloudFront and set the Origin Protocol Policy setting to HTTPS Only for the Viewer Protocol Policy."
+        "A": "Configure a CloudFront signed URL.",
+        "B": "Configure a CloudFront signed cookie.",
+        "C": "Configure a CloudFront Field-level encryption proFile.",
+        "D": "Configure CloudFront and set the Origin Protocol Policy setting to HTTPS Only for the Viewer Protocol Policy."
       },
       "correct_answer": "D",
       "explanation": "A solutions architect is creating a new Amazon CloudFront distribution for an application. Some of the information submitted by users is sensitive. The application uses HTTPS but needs another layer of security. The sensitive information should.be protected throughout the entire application stack, and access to the information should be restricted to certain applications.\nWhich action should the solutions architect take? \n\n    A. Configure a CloudFront signed URL.\n    B. Configure a CloudFront signed cookie.\n    C. Configure a CloudFront field-level encryption profile.\n    D. Configure CloudFront and set the Origin Protocol Policy setting to HTTPS Only for the Viewer Protocol Policy."
@@ -296,7 +296,7 @@
       "id": "175",
       "question": "An ecommerce company has an order-processing application that uses Amazon API Gateway and an AWS Lambda function. The application stores data in an Amazon Aurora PostgreSQL database. During arecent sales event, asudden surge in customer orders occurred. Some customers experienced timeouts, and the application did not process the orders of those customers. A solutions architect determined that the CPU utilization and memory utilization were high on the database because of a large number of open connections. The solutions architect needs to prevent the timeout errors while making the least possible changes to the application. Which solution will meet these requirements?",
       "options": {
-        "A": "ConFigure provisioned concurrency for the Lambda function. Modify the database to be a global database in multiple AWS Regions.",
+        "A": "Configure provisioned concurrency for the Lambda function. Modify the database to be a global database in multiple AWS Regions.",
         "B": "Use Amazon RDS Proxy to create a proxy for the database. Modify the Lambda function to use the RDS Proxy endpoint instead of the database endpoint.",
         "C": "Create a read replica for the database in a different AWS Region. Use query string parameters in API Gateway to route traFic to the read replica.",
         "D": "Migrate the data from Aurora PostgreSQL to Amazon DynamoDB by using AWS Database Migration Service (AWS DMS). Modify the Lambda function to use the DynamoDB table."
@@ -335,7 +335,7 @@
         "A": "Use AWS Backup to copy EC2 backups and RDS backups to the separate Region.",
         "B": "Use Amazon Data Lifecycle Manager (Amazon DLM) to copy EC2 backups and RDS backups to the separate Region.",
         "C": "Create Amazon Machine Images (AMIs) of the EC2 instances. Copy the AMIs to the separate Region. Create a read replica for the RDS DB instance in the separate Region.",
-        "D": "Create Amazon Elastic Block Store (Amazon EBS) snapshots. Copy the EBS snapshots to the separate Region. Create RDS snapshots. Export the RDS snapshots to Amazon S3. ConFigure S3 Cross-Region Replication (CRR) to the separate Region."
+        "D": "Create Amazon Elastic Block Store (Amazon EBS) snapshots. Copy the EBS snapshots to the separate Region. Create RDS snapshots. Export the RDS snapshots to Amazon S3. Configure S3 Cross-Region Replication (CRR) to the separate Region."
       },
       "correct_answer": "C",
       "explanation": "A company’s infrastructure consists of Amazon EC2 instances and an Amazon RDS DB instance in a single AWS Region. The company wants to back up its data in a separate Region.\nWhich solution will meet these requirements with the LEAST operational overhead? \n\n    A. Use AWS Backup to copy EC2 backups and RDS backups to the separate Region.\n    B. Use Amazon Data Lifecycle Manager (Amazon DLM) to copy EC2 backups and RDS backups to the separate Region.\n    C. Create Amazon Machine Images (AMIs) of the EC2 instances. Copy the AMIs to the separate Region. Create a read replica for the RDS DB instance in the separate Region.\n    D. Create Amazon Elastic Block Store (Amazon EBS) snapshots. Copy the EBS snapshots to the separate Region. Create RDS snapshots. Export the RDS snapshots to Amazon S3. Configure S3 Cross-Region Replication (CRR) to the separate Region."
@@ -393,8 +393,8 @@
       "id": "183",
       "question": "A company is building anew dynamic ordering website. The company wants to minimize server maintenance and patching. The website must be highly available and must scale read and write capacity as quickly as possible to meet changes in user demand. Which solution will meet these requirements?",
       "options": {
-        "A": "Host static content in Amazon S3. Host dynamic content by using Amazon API Gateway and AWS Lambda. Use Amazon DynamoDB with on-demand capacity for the database. ConFigure Amazon CloudFront to deliver the website content.",
-        "B": "Host static content in Amazon S3. Host dynamic content by using Amazon API Gateway and AWS Lambda. Use Amazon Aurora with Aurora Auto Scaling for the database. ConFigure Amazon CloudFront to deliver the website content.",
+        "A": "Host static content in Amazon S3. Host dynamic content by using Amazon API Gateway and AWS Lambda. Use Amazon DynamoDB with on-demand capacity for the database. Configure Amazon CloudFront to deliver the website content.",
+        "B": "Host static content in Amazon S3. Host dynamic content by using Amazon API Gateway and AWS Lambda. Use Amazon Aurora with Aurora Auto Scaling for the database. Configure Amazon CloudFront to deliver the website content.",
         "C": "Host all the website content on Amazon EC2 instances. Create an Auto Scaling group to scale the EC2 instances. Use an Application Load Balancer to distribute traFic. Use Amazon DynamoDB with provisioned write capacity for the database.",
         "D": "Host all the website content on Amazon EC2 instances. Create an Auto Scaling group to scale the EC2 instances. Use an Application Load Balancer to distribute traFic. Use Amazon Aurora with Aurora Auto Scaling for the database."
       },
@@ -405,10 +405,10 @@
       "id": "184",
       "question": "A company has an AWS account used for software engineering. The AWS account has access to the company’son-premises data center through apair of AWS Direct Connect connections. All non-VPC trafic routes to the virtual private gateway. Adevelopment team recently created an AWS Lambda function through the console. The development team needs to allow the function to access a database that runs in a private subnet in the company’sdata center. Which solution will meet these requirements?",
       "options": {
-        "A": "ConFigure the Lambda function to run in the VPC with the appropriate security group.",
+        "A": "Configure the Lambda function to run in the VPC with the appropriate security group.",
         "B": "Set up a VPN connection from AWS to the data center. Route the traFic from the Lambda function through the VPN.",
         "C": "Update the route tables in the VPC to allow the Lambda function to access the on-premises data center through Direct Connect.",
-        "D": "Create an Elastic IP address. ConFigure the Lambda function to send traFic through the Elastic IP address without an elastic network interface."
+        "D": "Create an Elastic IP address. Configure the Lambda function to send traFic through the Elastic IP address without an elastic network interface."
       },
       "correct_answer": "C",
       "explanation": "A company has an AWS account used for software engineering. The AWS account has access to the company’s on-premises data center through a pair of AWS Direct Connect connections. All non-VPC traffic routes to the virtual private gateway.\nA development team recently created an AWS Lambda function through the console. The development team needs to allow the function to access a database that runs in a private subnet in the company’s data center.\nWhich solution will meet these requirements?\n\n    A. Configure the Lambda function to run in the VPC with the appropriate security group.\n    B. Set up a VPN connection from AWS to the data center. Route the traffic from the Lambda function through the VPN.\n    C. Update the route tables in the VPC to allow the Lambda function to access the on-premises data center through Direct Connect.\n    D. Create an Elastic IP address. Configure the Lambda function to send traffic through the Elastic IP address without an elastic network interface."
@@ -429,10 +429,10 @@
       "id": "186",
       "question": "A company has aWindows-based application that must be migrated to AWS. The application requires the use of ashared Windows File system attached to multiple Amazon EC2 Windows instances that are deployed across multiple Availability Zone: What should A solutions architect do to meet this requirement?",
       "options": {
-        "A": "ConFigure AWS Storage Gateway in volume gateway mode. Mount the volume to each Windows instance.",
-        "B": "ConFigure Amazon FSx for Windows File Server. Mount the Amazon FSx File system to each Windows instance.",
-        "C": "ConFigure a File system by using Amazon Elastic File System (Amazon EFS). Mount the EFS File system to each Windows instance.",
-        "D": "ConFigure an Amazon Elastic Block Store (Amazon EBS) volume with the required size. Attach each EC2 instance to the volume. Mount the File system within the volume to each Windows instance."
+        "A": "Configure AWS Storage Gateway in volume gateway mode. Mount the volume to each Windows instance.",
+        "B": "Configure Amazon FSx for Windows File Server. Mount the Amazon FSx File system to each Windows instance.",
+        "C": "Configure a File system by using Amazon Elastic File System (Amazon EFS). Mount the EFS File system to each Windows instance.",
+        "D": "Configure an Amazon Elastic Block Store (Amazon EBS) volume with the required size. Attach each EC2 instance to the volume. Mount the File system within the volume to each Windows instance."
       },
       "correct_answer": "B",
       "explanation": "Amazon FSx for Windows File Server provides a fully managed Windows file system that can be accessed by multiple EC2 instances. It is designed to provide shared file storage for Windows-based applications. It supports the SMB protocol, allowing Windows instances to mount the file system. Amazon FSx for Windows File Server is fully managed, highly available, and provides features like automatic backups and integration with Active Directory."
@@ -468,9 +468,9 @@
       "options": {
         "A": "Store the documents in Amazon S3. Use S3 Object Lock in governance mode.",
         "B": "Store the documents in Amazon S3. Use S3 Object Lock in compliance mode.",
-        "C": "Use server-side encryption with Amazon S3 managed encryption keys (SSE-S3). ConFigure key rotation.",
-        "D": "Use server-side encryption with AWS Key Management Service (AWS KMS) customer managed keys. ConFigure key rotation.",
-        "E": "Use server-side encryption with AWS Key Management Service (AWS KMS) customer provided (imported) keys. ConFigure key rotation."
+        "C": "Use server-side encryption with Amazon S3 managed encryption keys (SSE-S3). Configure key rotation.",
+        "D": "Use server-side encryption with AWS Key Management Service (AWS KMS) customer managed keys. Configure key rotation.",
+        "E": "Use server-side encryption with AWS Key Management Service (AWS KMS) customer provided (imported) keys. Configure key rotation."
       },
       "correct_answer": "BD",
       "explanation": "B. s3 object Lock in compliance mode enforces a \"Write Once, Read Many\" (WORM) model, preventing the objects (contract documents, in this case) from being deleted or overwritten for a specified retention period.\nD. Use server-side encryption with AWS Key Management Service (AWS KMS) customer managed keys. Configure key rotation.\nBy using AWS KMS customer managed keys, you can configure key rotation to automatically rotate encryption keys, meeting the requirement of rotating encryption keys every year."
@@ -528,7 +528,7 @@
       "id": "194",
       "question": "A company needs to run a critical application on AWS. The company needs to use Amazon EC2 for the application’sdatabase. The database must be highly available and must fail over automatically if adisruptive event occurs. Which solution will meet these requirements?",
       "options": {
-        "A": "Launch two EC2 instances, each in a different Availability Zone in the same AWS Region. Install the database on both EC2 instances. ConFigure the EC2 instances as a cluster. Set up database replication.",
+        "A": "Launch two EC2 instances, each in a different Availability Zone in the same AWS Region. Install the database on both EC2 instances. Configure the EC2 instances as a cluster. Set up database replication.",
         "B": "Launch an EC2 instance in an Availability Zone. Install the database on the EC2 instance. Use an Amazon Machine Image (AMI) to back up the data. Use AWS CloudFormation to automate provisioning of the EC2 instance if a disruptive event occurs.",
         "C": "Launch two EC2 instances, each in a different AWS Region. Install the database on both EC2 instances. Set up database replication. Fail over the database to a second Region.",
         "D": "Launch an EC2 instance in an Availability Zone. Install the database on the EC2 instance. Use an Amazon Machine Image (AMI) to back up the data. Use EC2 automatic recovery to recover the instance if a disruptive event occurs."
@@ -542,8 +542,8 @@
       "options": {
         "A": "Move the EC2 instances into an Auto Scaling group. Create an Amazon EventBridge (Amazon CloudWatch Events) rule to target an Amazon Elastic Container Service (Amazon ECS) task.",
         "B": "Move the EC2 instances into an Auto Scaling group behind an Application Load Balancer (ALB). Update the order system to send messages to the ALB endpoint.",
-        "C": "Move the EC2 instances into an Auto Scaling group. ConFigure the order system to send messages to an Amazon Simple Queue Service (Amazon SQS) queue. ConFigure the EC2 instances to consume messages from the queue.",
-        "D": "Create an Amazon Simple NotiFication Service (Amazon SNS) topic. Create an AWS Lambda function, and subscribe the function to the SNS topic. ConFigure the order system to send messages to the SNS topic. Send a command to the EC2 instances to process the messages by using AWS Systems Manager Run Command."
+        "C": "Move the EC2 instances into an Auto Scaling group. Configure the order system to send messages to an Amazon Simple Queue Service (Amazon SQS) queue. Configure the EC2 instances to consume messages from the queue.",
+        "D": "Create an Amazon Simple NotiFication Service (Amazon SNS) topic. Create an AWS Lambda function, and subscribe the function to the SNS topic. Configure the order system to send messages to the SNS topic. Send a command to the EC2 instances to process the messages by using AWS Systems Manager Run Command."
       },
       "correct_answer": "C",
       "explanation": ""
@@ -553,9 +553,9 @@
       "question": "A company runs an application on a large Fieet of Amazon EC2 instances. The application reads and writes entries into an Amazon DynamoDB table. The size of the DynamoDB table continuously grows, but the application needs only data from the last 30 days. The company needs asolution that minimizes cost and development effort. Which solution meets these requirements?",
       "options": {
         "A": "Use an AWS CloudFormation template to deploy the complete solution. Redeploy the CloudFormation stack every 30 days, and delete the original stack.",
-        "B": "Use an EC2 instance that runs a monitoring application from AWS Marketplace. ConFigure the monitoring application to use Amazon DynamoDB Streams to store the timestamp when a new item is created in the table. Use a script that runs on the EC2 instance to delete items that have a timestamp that is older than 30 days.",
-        "C": "ConFigure Amazon DynamoDB Streams to invoke an AWS Lambda function when a new item is created in the table. ConFigure the Lambda function to delete items in the table that are older than 30 days.",
-        "D": "Extend the application to add an attribute that has a value of the current timestamp plus 30 days to each new item that is created in the table. ConFigure DynamoDB to use the attribute as the TTL attribute."
+        "B": "Use an EC2 instance that runs a monitoring application from AWS Marketplace. Configure the monitoring application to use Amazon DynamoDB Streams to store the timestamp when a new item is created in the table. Use a script that runs on the EC2 instance to delete items that have a timestamp that is older than 30 days.",
+        "C": "Configure Amazon DynamoDB Streams to invoke an AWS Lambda function when a new item is created in the table. Configure the Lambda function to delete items in the table that are older than 30 days.",
+        "D": "Extend the application to add an attribute that has a value of the current timestamp plus 30 days to each new item that is created in the table. Configure DynamoDB to use the attribute as the TTL attribute."
       },
       "correct_answer": "D",
       "explanation": "D. Extend the application to add an attribute that has a value of the current timestamp plus 30 days to each new item that is created in the table. Configure DynamoDB to use the attribute as the TTL attribute."
@@ -601,10 +601,10 @@
       "id": "200",
       "question": "A company hosts its application on AWS. The company uses Amazon Cognito to manage users. When users log in to the application, the application fetches required data from Amazon DynamoDB by using a REST API that is hosted in Amazon API Gateway. The company wants an AWS managed solution that will control access to the REST API to reduce development efforts. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "ConFigure an AWS Lambda function to be an authorizer in API Gateway to validate which user made the request.",
+        "A": "Configure an AWS Lambda function to be an authorizer in API Gateway to validate which user made the request.",
         "B": "For each user, create and assign an API key that must be sent with each request. Validate the key by using an AWS Lambda function.",
         "C": "Send the user’s email address in the header with every request. Invoke an AWS Lambda function to validate that the user with that email address has proper access.",
-        "D": "ConFigure an Amazon Cognito user pool authorizer in API Gateway to allow Amazon Cognito to validate each request."
+        "D": "Configure an Amazon Cognito user pool authorizer in API Gateway to allow Amazon Cognito to validate each request."
       },
       "correct_answer": "D",
       "explanation": ""

@@ -53,9 +53,9 @@
       "question": "A company is hosting a web application on AWS using a single Amazon EC2 instance that stores user-uploaded documents in an Amazon EBS volume. For better scalability and availability, the company duplicated the architecture and created asecond EC2 instance and EBS volume in another Availability Zone, placing both behind an Application Load Balancer. After completing this change, users reported that, each time they refreshed the website, they could see one subset of their documents or the other, but never all of the documents at the same time. What should A solutions architect propose to ensure users see all of their documents at once?",
       "options": {
         "A": "Copy the data so both EBS volumes contain all the documents",
-        "B": "ConFigure the Application Load Balancer to direct a user to the server with the documents",
+        "B": "Configure the Application Load Balancer to direct a user to the server with the documents",
         "C": "Copy the data from both EBS volumes to Amazon EFS. Modify the application to save new documents to Amazon EFS",
-        "D": "ConFigure the Application Load Balancer to send the request to both servers. Return each document from the correct server"
+        "D": "Configure the Application Load Balancer to send the request to both servers. Return each document from the correct server"
       },
       "correct_answer": "C",
       "explanation": "Option C, which involves copying the data to Amazon EFS and modifying the application to use Amazon EFS for document storage, is the most appropriate solution to ensure users can see all their documents at once in the duplicated architecture. Amazon EFS provides scalability, availability, and shared access, allowing both EC2 instances to access and synchronize the documents seamlessly. Unlike EBS volumes or snapshots, which cannot be shared in real time across multiple instances and Availability Zones, Amazon EFS allows both EC2 instances to access the same file system simultaneously, ensuring all users see the same set of documents regardless of which instance serves their request."
@@ -76,10 +76,10 @@
       "id": "7",
       "question": "A company has an application that ingests incoming messages. Dozens of other applications and microservices then quickly consume these messages. The number of messages varies drastically and sometimes increases suddenly to 100,000 each second. The company wants to decouple the solution and increase scalability. Which solution meets these requirements?",
       "options": {
-        "A": "Persist the messages to Amazon Kinesis Data Analytics. ConFigure the consumer applications to read and process the messages.",
+        "A": "Persist the messages to Amazon Kinesis Data Analytics. Configure the consumer applications to read and process the messages.",
         "B": "Deploy the ingestion application on Amazon EC2 instances in an Auto Scaling group to scale the number of EC2 instances based on CPU metrics.",
-        "C": "Write the messages to Amazon Kinesis Data Streams with a single shard. Use an AWS Lambda function to preprocess messages and store them in Amazon DynamoDB. ConFigure the consumer applications to read from DynamoDB to process the messages.",
-        "D": "Publish the messages to an Amazon Simple NotiFication Service (Amazon SNS) topic with multiple Amazon Simple Queue Service (Amazon SOS) subscriptions. ConFigure the consumer applications to process the messages from the queues."
+        "C": "Write the messages to Amazon Kinesis Data Streams with a single shard. Use an AWS Lambda function to preprocess messages and store them in Amazon DynamoDB. Configure the consumer applications to read from DynamoDB to process the messages.",
+        "D": "Publish the messages to an Amazon Simple NotiFication Service (Amazon SNS) topic with multiple Amazon Simple Queue Service (Amazon SOS) subscriptions. Configure the consumer applications to process the messages from the queues."
       },
       "correct_answer": "D",
       "explanation": "A good practice is to also add message attributes when publishing to SNS. Each SQS subscription can have a filter policy that matches only the messages it cares about, so that only relevant messages are delivered to each SQS queue, and consumers only see/process what they need.\nan SQS queue can handle a maximum of 3,000 messages per second. However, you can request higher throughput by contacting AWS Support. AWS can increase the message throughput for your queue beyond the default limits in increments of 300 messages per second, up to a maximum of 10,000 messages per second.\nIt's important to note that the maximum number of messages per second that a queue can handle is not the same as the maximum number of requests per second that the SQS API can handle. The SQS API is designed to handle a high volume of requests per second, so it can be used to send messages to your queue at a rate that exceeds the maximum message throughput of the queue."
@@ -88,10 +88,10 @@
       "id": "8",
       "question": "A company is migrating a distributed application to AWS. The application serves variable workloads. The legacy platform consists of a primary server that coordinates jobs across multiple compute nodes. The company wants to modernize the application with asolution that maximizes resiliency and scalability. How should A solutions architect design the architecture to meet these requirements?",
       "options": {
-        "A": "ConFigure an Amazon Simple Queue Service (Amazon SQS) queue as a destination for the jobs. Implement the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. ConFigure EC2 Auto Scaling to use scheduled scaling.",
-        "B": "ConFigure an Amazon Simple Queue Service (Amazon SQS) queue as a destination for the jobs. Implement the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. ConFigure EC2 Auto Scaling based on the size of the queue.",
-        "C": "Implement the primary server and the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. ConFigure AWS CloudTrail as a destination for the jobs. ConFigure EC2 Auto Scaling based on the load on the primary server.",
-        "D": "Implement the primary server and the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. ConFigure Amazon EventBridge (Amazon CloudWatch Events) as a destination for the jobs. ConFigure EC2 Auto Scaling based on the load on the compute nodes."
+        "A": "Configure an Amazon Simple Queue Service (Amazon SQS) queue as a destination for the jobs. Implement the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. Configure EC2 Auto Scaling to use scheduled scaling.",
+        "B": "Configure an Amazon Simple Queue Service (Amazon SQS) queue as a destination for the jobs. Implement the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. Configure EC2 Auto Scaling based on the size of the queue.",
+        "C": "Implement the primary server and the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. Configure AWS CloudTrail as a destination for the jobs. Configure EC2 Auto Scaling based on the load on the primary server.",
+        "D": "Implement the primary server and the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. Configure Amazon EventBridge (Amazon CloudWatch Events) as a destination for the jobs. Configure EC2 Auto Scaling based on the load on the compute nodes."
       },
       "correct_answer": "B",
       "explanation": "Option B: This option provides a decoupled architecture where the jobs are sent to an SQS queue. The compute nodes (EC2 instances in an Auto Scaling group) can then process these jobs. Scaling based on the size of the SQS queue (the number of messages) allows the architecture to adapt to variable workloads, scaling out when the queue depth increases and scaling in when the depth decreases."
@@ -113,9 +113,9 @@
       "question": "A company is building an ecommerce web application on AWS. The application sends information about new orders to an Amazon API Gateway REST API to process. The company wants to ensure that orders are processed in the order that they are received. Which solution will meet these requirements?",
       "options": {
         "A": "Use an API Gateway integration to publish a message to an Amazon Simple NotiFication Service (Amazon SNS) topic when the application receives an order. Subscribe an AWS Lambda function to the topic to perform processing.",
-        "B": "Use an API Gateway integration to send a message to an Amazon Simple Queue Service (Amazon SQS) FIFO queue when the application receives an order. ConFigure the SQS FIFO queue to invoke an AWS Lambda function for processing.",
+        "B": "Use an API Gateway integration to send a message to an Amazon Simple Queue Service (Amazon SQS) FIFO queue when the application receives an order. Configure the SQS FIFO queue to invoke an AWS Lambda function for processing.",
         "C": "Use an API Gateway authorizer to block any requests while the application processes an order.",
-        "D": "Use an API Gateway integration to send a message to an Amazon Simple Queue Service (Amazon SQS) standard queue when the application receives an order. ConFigure the SQS standard queue to invoke an AWS Lambda function for processing."
+        "D": "Use an API Gateway integration to send a message to an Amazon Simple Queue Service (Amazon SQS) standard queue when the application receives an order. Configure the SQS standard queue to invoke an AWS Lambda function for processing."
       },
       "correct_answer": "B",
       "explanation": "Use an API Gateway integration to send a message to an Amazon Simple Queue Service (Amazon SQS) FIFO queue when the application receives an order. Configure the SQS FIFO queue to invoke an AWS Lambda function for processing."
@@ -136,8 +136,8 @@
       "id": "12",
       "question": "Aglobal company hosts its web application on Amazon EC2 instances behind an Application Load Balancer (ALB). The web application has static data and dynamic data. The company stores its static data in an Amazon S3 bucket. The company wants to improve performance and reduce latency for the static data and dynamic data. The company is using its own domain name registered with Amazon Route 53. What should A solutions architect do to meet these requirements?",
       "options": {
-        "A": "Create an Amazon CloudFront distribution that has the S3 bucket and the ALB as origins. ConFigure Route 53 to route traFic to the CloudFront distribution.",
-        "B": "Create an Amazon CloudFront distribution that has the ALB as an origin. Create an AWS Global Accelerator standard accelerator that has the S3 bucket as an endpoint ConFigure Route 53 to route traFic to the CloudFront distribution.",
+        "A": "Create an Amazon CloudFront distribution that has the S3 bucket and the ALB as origins. Configure Route 53 to route traFic to the CloudFront distribution.",
+        "B": "Create an Amazon CloudFront distribution that has the ALB as an origin. Create an AWS Global Accelerator standard accelerator that has the S3 bucket as an endpoint Configure Route 53 to route traFic to the CloudFront distribution.",
         "C": "Create an Amazon CloudFront distribution that has the S3 bucket as an origin. Create an AWS Global Accelerator standard accelerator that has the ALB and the CloudFront distribution as endpoints. Create a custom domain name that points to the accelerator DNS name. Use the custom domain name as an endpoint for the web application.",
         "D": "Create an Amazon CloudFront distribution that has the ALB as an origin. Create an AWS Global Accelerator standard accelerator that has the S3 bucket as an endpoint. Create two domain names. Point one domain name to the CloudFront DNS name for dynamic content. Point the other domain name to the accelerator DNS name for static content. Use the domain names as endpoints for the web application."
       },
@@ -148,8 +148,8 @@
       "id": "13",
       "question": "A company performs monthly maintenance on its AWS infrastructure. During these maintenance activities, the company needs to rotate the credentials for its Amazon RDS for MySQL databases across multiple AWS Regions. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Store the credentials as secrets in AWS Secrets Manager. Use multi-Region secret replication for the required Regions. ConFigure Secrets Manager to rotate the secrets on a schedule.",
-        "B": "Store the credentials as secrets in AWS Systems Manager by creating a secure string parameter. Use multi-Region secret replication for the required Regions. ConFigure Systems Manager to rotate the secrets on a schedule.",
+        "A": "Store the credentials as secrets in AWS Secrets Manager. Use multi-Region secret replication for the required Regions. Configure Secrets Manager to rotate the secrets on a schedule.",
+        "B": "Store the credentials as secrets in AWS Systems Manager by creating a secure string parameter. Use multi-Region secret replication for the required Regions. Configure Systems Manager to rotate the secrets on a schedule.",
         "C": "Store the credentials in an Amazon S3 bucket that has server-side encryption (SSE) enabled. Use Amazon EventBridge (Amazon CloudWatch Events) to invoke an AWS Lambda function to rotate the credentials.",
         "D": "Encrypt the credentials as secrets by using AWS Key Management Service (AWS KMS) multi-Region customer managed keys. Store the secrets in an Amazon DynamoDB global table. Use an AWS Lambda function to retrieve the secrets from DynamoDB. Use the RDS API to rotate the secrets."
       },
@@ -161,8 +161,8 @@
       "question": "A company runs an ecommerce application on Amazon EC2 instances behind an Application Load Balancer. The instances run in an Amazon EC2 Auto Scaling group across multiple Availability Zones. The Auto Scaling group scales based on CPU utilization metrics. The ecommerce application stores the transaction data in a MySQL 8.0 database that is hosted on a large EC2 instance. The database's performance degrades quickly as application load increases. The application handles more read requests than write transactions. The company wants a solution that will automatically scale the database to meet the demand of unpredictable read workloads while maintaining high availability. Which solution will meet these requirements?",
       "options": {
         "A": "Use Amazon Redshift with a single node for leader and compute functionality.",
-        "B": "Use Amazon RDS with a Single-AZ deployment ConFigure Amazon RDS to add reader instances in a different Availability Zone.",
-        "C": "Use Amazon Aurora with a Multi-AZ deployment. ConFigure Aurora Auto Scaling with Aurora Replicas.",
+        "B": "Use Amazon RDS with a Single-AZ deployment Configure Amazon RDS to add reader instances in a different Availability Zone.",
+        "C": "Use Amazon Aurora with a Multi-AZ deployment. Configure Aurora Auto Scaling with Aurora Replicas.",
         "D": "Use Amazon ElastiCache for Memcached with EC2 Spot Instances."
       },
       "correct_answer": "C",
@@ -208,11 +208,11 @@
       "id": "18",
       "question": "An application development team is designing amicroservice that will convert large images to smaller, compressed images. When auser uploads an image through the web interface, the microservice should store the image in an Amazon S3 bucket, process and compress the image with an AWS Lambda function, and store the image in its compressed form in adifferent S3 bucket. A solutions architect needs to design asolution that uses durable, stateless components to process the images automatically. Which combination of actions will meet these requirements? (Choose two.)",
       "options": {
-        "A": "Create an Amazon Simple Queue Service (Amazon SQS) queue. ConFigure the S3 bucket to send a notiFication to the SQS queue when an image is uploaded to the S3 bucket.",
-        "B": "ConFigure the Lambda function to use the Amazon Simple Queue Service (Amazon SQS) queue as the invocation source. When the SQS message is successfully processed, delete the message in the queue.",
-        "C": "ConFigure the Lambda function to monitor the S3 bucket for new uploads. When an uploaded image is detected, write the File name to a text File in memory and use the text File to keep track of the images that were processed.",
+        "A": "Create an Amazon Simple Queue Service (Amazon SQS) queue. Configure the S3 bucket to send a notiFication to the SQS queue when an image is uploaded to the S3 bucket.",
+        "B": "Configure the Lambda function to use the Amazon Simple Queue Service (Amazon SQS) queue as the invocation source. When the SQS message is successfully processed, delete the message in the queue.",
+        "C": "Configure the Lambda function to monitor the S3 bucket for new uploads. When an uploaded image is detected, write the File name to a text File in memory and use the text File to keep track of the images that were processed.",
         "D": "Launch an Amazon EC2 instance to monitor an Amazon Simple Queue Service (Amazon SQS) queue. When items are added to the queue, log the File name in a text File on the EC2 instance and invoke the Lambda function.",
-        "E": "ConFigure an Amazon EventBridge (Amazon CloudWatch Events) event to monitor the S3 bucket. When an image is uploaded, send an alert to an Amazon ample NotiFication Service (Amazon SNS) topic with the application owner's email address for further processing."
+        "E": "Configure an Amazon EventBridge (Amazon CloudWatch Events) event to monitor the S3 bucket. When an image is uploaded, send an alert to an Amazon ample NotiFication Service (Amazon SNS) topic with the application owner's email address for further processing."
       },
       "correct_answer": "AB",
       "explanation": "B. Configure the Lambda function to use the Amazon Simple Queue Service (Amazon SQS) queue as the invocation source. When the SQS message is successfully processed, delete the message in the queue\nOption A: By creating an Amazon SQS queue and configuring the S3 bucket to send a notification to the SQS queue when an image is uploaded, the system establishes a durable and scalable way to handle incoming image processing tasks.\nOption B: Configuring the Lambda function to use the SQS queue as the invocation source allows it to retrieve messages from the queue and process them in a stateless manner. After successfully processing the image, the Lambda function can delete the message from the queue to avoid duplicate processing."
@@ -223,7 +223,7 @@
       "options": {
         "A": "Create a Network Load Balancer in the public subnet of the application's VPC to route the traFic to the appliance for packet inspection.",
         "B": "Create an Application Load Balancer in the public subnet of the application's VPC to route the traFic to the appliance for packet inspection.",
-        "C": "Deploy a transit gateway in the inspection VPConFigure route tables to route the incoming packets through the transit gateway.",
+        "C": "Deploy a transit gateway in the inspection VPConfigure route tables to route the incoming packets through the transit gateway.",
         "D": "Deploy a Gateway Load Balancer in the inspection VPC. Create a Gateway Load Balancer endpoint to receive the incoming packets and forward the packets to the appliance."
       },
       "correct_answer": "D",
@@ -234,7 +234,7 @@
       "question": "A company wants to improve its ability to clone large amounts of production data into atest environment in the same AWS Region. The data is stored in Amazon EC2 instances on Amazon Elastic Block Store (Amazon EBS) volumes. Modifications to the cloned data must not affect the production environment. The software that accesses this data requires consistently high I/Operformance. A solutions architect needs to minimize the time that is required to clone the production data into the test environment. Which solution will meet these requirements?",
       "options": {
         "A": "Take EBS snapshots of the production EBS volumes. Restore the snapshots onto EC2 instance store volumes in the test environment.",
-        "B": "ConFigure the production EBS volumes to use the EBS Multi-Attach feature. Take EBS snapshots of the production EBS volumes. Attach the production EBS volumes to the EC2 instances in the test environment.",
+        "B": "Configure the production EBS volumes to use the EBS Multi-Attach feature. Take EBS snapshots of the production EBS volumes. Attach the production EBS volumes to the EC2 instances in the test environment.",
         "C": "Take EBS snapshots of the production EBS volumes. Create and initialize new EBS volumes. Attach the new EBS volumes to EC2 instances in the test environment before restoring the volumes from the production EBS snapshots.",
         "D": "Take EBS snapshots of the production EBS volumes. Turn on the EBS fast snapshot restore feature on the EBS snapshots. Restore the snapshots into new EBS volumes. Attach the new EBS volumes to EC2 instances in the test environment."
       },
@@ -269,7 +269,7 @@
       "id": "23",
       "question": "A company is storing backup Files by using Amazon S3 Standard storage. The Files are accessed frequently for 1 month. However, the Files are not accessed after 1 month. The company must keep the Files indefinitely. Which storage solution will meet these requirements MOST cost-effectively?",
       "options": {
-        "A": "ConFigure S3 Intelligent-Tiering to automatically migrate objects.",
+        "A": "Configure S3 Intelligent-Tiering to automatically migrate objects.",
         "B": "Create an S3 Lifecycle conFiguration to transition objects from S3 Standard to S3 Glacier Deep Archive after 1 month.",
         "C": "Create an S3 Lifecycle conFiguration to transition objects from S3 Standard to S3 Standard-Infrequent Access (S3 Standard-IA) after 1 month.",
         "D": "Create an S3 Lifecycle conFiguration to transition objects from S3 Standard to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 1 month."
@@ -295,8 +295,8 @@
       "options": {
         "A": "Refactor the Lambda function code to Apache Tomcat code that runs on Amazon EC2 instances. Connect the database by using native Java Database Connectivity (JDBC) drivers.",
         "B": "Change the platform from Aurora to Amazon DynamoDProvision a DynamoDB Accelerator (DAX) cluster. Use the DAX client SDK to point the existing DynamoDB API calls at the DAX cluster.",
-        "C": "Set up two Lambda functions. ConFigure one function to receive the information. ConFigure the other function to load the information into the database. Integrate the Lambda functions by using Amazon Simple NotiFication Service (Amazon SNS).",
-        "D": "Set up two Lambda functions. ConFigure one function to receive the information. ConFigure the other function to load the information into the database. Integrate the Lambda functions by using an Amazon Simple Queue Service (Amazon SQS) queue."
+        "C": "Set up two Lambda functions. Configure one function to receive the information. Configure the other function to load the information into the database. Integrate the Lambda functions by using Amazon Simple NotiFication Service (Amazon SNS).",
+        "D": "Set up two Lambda functions. Configure one function to receive the information. Configure the other function to load the information into the database. Integrate the Lambda functions by using an Amazon Simple Queue Service (Amazon SQS) queue."
       },
       "correct_answer": "D",
       "explanation": "\"By dividing the functionality into two Lambda functions, one for receiving the information and the other for loading it into the database, you can independently scale and optimize each function based on their specific requirements. This approach allows for more efficient resource allocation and reduces the potential impact of high volumes of data on the overall system."
@@ -308,7 +308,7 @@
         "A": "Turn on AWS ConFig with the appropriate rules.",
         "B": "Turn on AWS Trusted Advisor with the appropriate checks.",
         "C": "Turn on Amazon Inspector with the appropriate assessment template.",
-        "D": "Turn on Amazon S3 server access logging. ConFigure Amazon EventBridge (Amazon Cloud Watch Events)."
+        "D": "Turn on Amazon S3 server access logging. Configure Amazon EventBridge (Amazon Cloud Watch Events)."
       },
       "correct_answer": "A",
       "explanation": "AWS Config is a service that enables you to assess, audit, and evaluate the configurations of your AWS resources. You can use AWS Config to monitor and record changes to the configuration of your Amazon S3 buckets. By turning on AWS Config and enabling the appropriate rules, you can ensure that your S3 buckets do not have unauthorized configuration changes."
@@ -380,7 +380,7 @@
         "A": "Containerize the website and host it in AWS Fargate.",
         "B": "Create an Amazon S3 bucket and host the website there.",
         "C": "Deploy a web server on an Amazon EC2 instance to host the website.",
-        "D": "ConFigure an Application Load Balancer with an AWS Lambda target that uses the Express.js framework."
+        "D": "Configure an Application Load Balancer with an AWS Lambda target that uses the Express.js framework."
       },
       "correct_answer": "B",
       "explanation": "The MOST cost-effective method for hosting a website is to:\nCreate an Amazon S3 bucket and host the website there.\nAmazon S3 is a highly scalable and cost-effective object storage service. It is a good option for hosting static websites, such as the website in this scenario.C is the best solution for the following reasons:"
@@ -425,10 +425,10 @@
       "id": "36",
       "question": "A company is building an application in the AWS Cloud. The application will store data in Amazon S3 buckets in two AWS Regions. The company must use an AWS Key Management Service (AWS KMS) customer managed key to encrypt all data that is stored in the S3 buckets. The data in both S3 buckets must be encrypted and decrypted with the same KMS key. The data and the key must be stored in each of the two Regions. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Create an S3 bucket in each Region. ConFigure the S3 buckets to use server-side encryption with Amazon S3 managed encryption keys (SSE-S3). ConFigure replication between the S3 buckets.",
-        "B": "Create a customer managed multi-Region KMS key. Create an S3 bucket in each Region. ConFigure replication between the S3 buckets. ConFigure the application to use the KMS key with client-side encryption.",
-        "C": "Create a customer managed KMS key and an S3 bucket in each Region. ConFigure the S3 buckets to use server-side encryption with Amazon S3 managed encryption keys (SSE-S3). ConFigure replication between the S3 buckets.",
-        "D": "Create a customer managed KMS key and an S3 bucket in each Region. ConFigure the S3 buckets to use server-side encryption with AWS KMS keys (SSE-KMS). ConFigure replication between the S3 buckets."
+        "A": "Create an S3 bucket in each Region. Configure the S3 buckets to use server-side encryption with Amazon S3 managed encryption keys (SSE-S3). Configure replication between the S3 buckets.",
+        "B": "Create a customer managed multi-Region KMS key. Create an S3 bucket in each Region. Configure replication between the S3 buckets. Configure the application to use the KMS key with client-side encryption.",
+        "C": "Create a customer managed KMS key and an S3 bucket in each Region. Configure the S3 buckets to use server-side encryption with Amazon S3 managed encryption keys (SSE-S3). Configure replication between the S3 buckets.",
+        "D": "Create a customer managed KMS key and an S3 bucket in each Region. Configure the S3 buckets to use server-side encryption with AWS KMS keys (SSE-KMS). Configure replication between the S3 buckets."
       },
       "correct_answer": "B",
       "explanation": ""
@@ -473,10 +473,10 @@
       "id": "40",
       "question": "A company has thousands of edge devices that collectively generate 1 TB of status alerts each day. Each alert is approximately 2 KB in size. A solutions architect needs to implement asolution to ingest and store the alerts for future analysis. The company wants a highly available solution. However, the company needs to minimize costs and does not want to manage additional infrastructure. Additionally, the company wants to keep 14 days of data available for immediate analysis and archive any data older than 14 days. What is the MOST operationally eficient solution that meets these requirements?",
       "options": {
-        "A": "Create an Amazon Kinesis Data Firehose delivery stream to ingest the alerts. ConFigure the Kinesis Data Firehose stream to deliver the alerts to an Amazon S3 bucket. Set up an S3 Lifecycle conFiguration to transition data to Amazon S3 Glacier after 14 days.",
+        "A": "Create an Amazon Kinesis Data Firehose delivery stream to ingest the alerts. Configure the Kinesis Data Firehose stream to deliver the alerts to an Amazon S3 bucket. Set up an S3 Lifecycle conFiguration to transition data to Amazon S3 Glacier after 14 days.",
         "B": "Launch Amazon EC2 instances across two Availability Zones and place them behind an Elastic Load Balancer to ingest the alerts. Create a script on the EC2 instances that will store the alerts in an Amazon S3 bucket. Set up an S3 Lifecycle conFiguration to transition data to Amazon S3 Glacier after 14 days.",
-        "C": "Create an Amazon Kinesis Data Firehose delivery stream to ingest the alerts. ConFigure the Kinesis Data Firehose stream to deliver the alerts to an Amazon OpenSearch Service (Amazon Elasticsearch Service) cluster. Set up the Amazon OpenSearch Service (Amazon Elasticsearch Service) cluster to take manual snapshots every day and delete data from the cluster that is older than 14 days.",
-        "D": "Create an Amazon Simple Queue Service (Amazon SQS) standard queue to ingest the alerts, and set the message retention period to 14 days. ConFigure consumers to poll the SQS queue, check the age of the message, and analyze the message data as needed. If the message is 14 days old, the consumer should copy the message to an Amazon S3 bucket and delete the message from the SQS queue."
+        "C": "Create an Amazon Kinesis Data Firehose delivery stream to ingest the alerts. Configure the Kinesis Data Firehose stream to deliver the alerts to an Amazon OpenSearch Service (Amazon Elasticsearch Service) cluster. Set up the Amazon OpenSearch Service (Amazon Elasticsearch Service) cluster to take manual snapshots every day and delete data from the cluster that is older than 14 days.",
+        "D": "Create an Amazon Simple Queue Service (Amazon SQS) standard queue to ingest the alerts, and set the message retention period to 14 days. Configure consumers to poll the SQS queue, check the age of the message, and analyze the message data as needed. If the message is 14 days old, the consumer should copy the message to an Amazon S3 bucket and delete the message from the SQS queue."
       },
       "correct_answer": "A",
       "explanation": "Amazon Kinesis Data Firehose is a fully managed service that can capture, transform, and deliver streaming data into storage systems or analytics tools, making it an ideal solution for ingesting and storing status alerts. In this solution, the Kinesis Data Firehose delivery stream ingests the alerts and delivers them to an S3 bucket, which is a cost-effective storage solution. An S3 Lifecycle configuration is set up to transition the data to Amazon S3 Glacier after 14 days to minimize storage costs."
@@ -485,10 +485,10 @@
       "id": "41",
       "question": "A company'sapplication integrates with multiple software-as-a-service (SaaS) sources for data collection. The company runs Amazon EC2 instances to receive the data and to upload the data to an Amazon S3 bucket for analysis. The same EC2 instance that receives and uploads the data also sends anotification to the user when an upload is complete. The company has noticed slow application performance and wants to improve the performance as much as possible. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Create an Auto Scaling group so that EC2 instances can scale out. ConFigure an S3 event notiFication to send events to an Amazon Simple NotiFication Service (Amazon SNS) topic when the upload to the S3 bucket is complete.",
-        "B": "Create an Amazon AppFlow Fiow to transfer data between each SaaS source and the S3 bucket. ConFigure an S3 event notiFication to send events to an Amazon Simple NotiFication Service (Amazon SNS) topic when the upload to the S3 bucket is complete.",
-        "C": "Create an Amazon EventBridge (Amazon CloudWatch Events) rule for each SaaS source to send output data. ConFigure the S3 bucket as the rule's target. Create a second EventBridge (Cloud Watch Events) rule to send events when the upload to the S3 bucket is complete. ConFigure an Amazon Simple NotiFication Service (Amazon SNS) topic as the second rule's target.",
-        "D": "Create a Docker container to use instead of an EC2 instance. Host the containerized application on Amazon Elastic Container Service (Amazon ECS). ConFigure Amazon CloudWatch Container Insights to send events to an Amazon Simple NotiFication Service (Amazon SNS) topic when the upload to the S3 bucket is complete."
+        "A": "Create an Auto Scaling group so that EC2 instances can scale out. Configure an S3 event notiFication to send events to an Amazon Simple NotiFication Service (Amazon SNS) topic when the upload to the S3 bucket is complete.",
+        "B": "Create an Amazon AppFlow Fiow to transfer data between each SaaS source and the S3 bucket. Configure an S3 event notiFication to send events to an Amazon Simple NotiFication Service (Amazon SNS) topic when the upload to the S3 bucket is complete.",
+        "C": "Create an Amazon EventBridge (Amazon CloudWatch Events) rule for each SaaS source to send output data. Configure the S3 bucket as the rule's target. Create a second EventBridge (Cloud Watch Events) rule to send events when the upload to the S3 bucket is complete. Configure an Amazon Simple NotiFication Service (Amazon SNS) topic as the second rule's target.",
+        "D": "Create a Docker container to use instead of an EC2 instance. Host the containerized application on Amazon Elastic Container Service (Amazon ECS). Configure Amazon CloudWatch Container Insights to send events to an Amazon Simple NotiFication Service (Amazon SNS) topic when the upload to the S3 bucket is complete."
       },
       "correct_answer": "B",
       "explanation": "Amazon AppFlow is a fully-managed integration service that enables you to securely exchange data between software as a service (SaaS) applications, such as Salesforce, and AWS services, such as Amazon Simple Storage Service (Amazon S3) and Amazon Redshift.\nThe use of Appflow helps to remove the ec2 as the middle layer which slows down the process of data transmission and introduce an additional variable.\nAppflow is also a fully managed AWS service, thus reducing the operational overhead."
@@ -596,7 +596,7 @@
       "question": "A company has aproduction workload that runs on 1,000 Amazon EC2 Linux instances. The workload is powered by third-party software. The company needs to patch the third-party software on all EC2 instances as quickly as possible to remediate a critical security vulnerability. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Create an AWS Lambda function to apply the patch to all EC2 instances.",
-        "B": "ConFigure AWS Systems Manager Patch Manager to apply the patch to all EC2 instances.",
+        "B": "Configure AWS Systems Manager Patch Manager to apply the patch to all EC2 instances.",
         "C": "Schedule an AWS Systems Manager maintenance window to apply the patch to all EC2 instances.",
         "D": "Use AWS Systems Manager Run Command to run a custom command that applies the patch to all EC2 instances."
       },

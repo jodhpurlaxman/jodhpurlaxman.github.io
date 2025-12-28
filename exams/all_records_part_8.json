@@ -18,7 +18,7 @@
       "options": {
         "A": "Setup a transit gateway in each Region. Create inter-Region peering attachments between each transit gateway.",
         "B": "Set up AWS Global Accelerator with UDP listeners and endpoint groups in each Region.",
-        "C": "Set up Amazon CloudFront with UDP turned on. ConFigure an origin in each Region.",
+        "C": "Set up Amazon CloudFront with UDP turned on. Configure an origin in each Region.",
         "D": "Set up a VPC peering mesh between each Region. Turn on UDP for each VPC."
       },
       "correct_answer": "B",
@@ -101,9 +101,9 @@
       "id": "359",
       "question": "Ahospital needs to store patient records in an Amazon S3 bucket. The hospital’scompliance team must ensure that all protected health information (PHI) is encrypted in transit and at rest. The compliance team must administer the encryption key for data at rest. Which solution will meet these requirements?",
       "options": {
-        "A": "Create a public SSL/TLS certiFicate in AWS CertiFicate Manager (ACM). Associate the certiFicate with Amazon S3. ConFigure default encryption for each S3 bucket to use server-side encryption with AWS KMS keys (SSE-KMS). Assign the compliance team to manage the KMS keys.",
-        "B": "Use the aws:SecureTransport condition on S3 bucket policies to allow only encrypted connections over HTTPS (TLS). ConFigure default encryption for each S3 bucket to use server-side encryption with S3 managed encryption keys (SSE-S3). Assign the compliance team to manage the SSE-S3 keys.",
-        "C": "Use the aws:SecureTransport condition on S3 bucket policies to allow only encrypted connections over HTTPS (TLS). ConFigure default encryption for each S3 bucket to use server-side encryption with AWS KMS keys (SSE-KMS). Assign the compliance team to manage the KMS keys.",
+        "A": "Create a public SSL/TLS certiFicate in AWS CertiFicate Manager (ACM). Associate the certiFicate with Amazon S3. Configure default encryption for each S3 bucket to use server-side encryption with AWS KMS keys (SSE-KMS). Assign the compliance team to manage the KMS keys.",
+        "B": "Use the aws:SecureTransport condition on S3 bucket policies to allow only encrypted connections over HTTPS (TLS). Configure default encryption for each S3 bucket to use server-side encryption with S3 managed encryption keys (SSE-S3). Assign the compliance team to manage the SSE-S3 keys.",
+        "C": "Use the aws:SecureTransport condition on S3 bucket policies to allow only encrypted connections over HTTPS (TLS). Configure default encryption for each S3 bucket to use server-side encryption with AWS KMS keys (SSE-KMS). Assign the compliance team to manage the KMS keys.",
         "D": "Use the aws:SecureTransport condition on S3 bucket policies to allow only encrypted connections over HTTPS (TLS). Use Amazon Macie to protect the sensitive data that is stored in Amazon S3. Assign the compliance team to manage Macie."
       },
       "correct_answer": "C",
@@ -199,10 +199,10 @@
       "id": "367",
       "question": "A company is using Amazon Route 53 latency-based routing to route requests to its UDP-based application for users around the world. The application is hosted on redundant servers in the company'son-premises data centers in the United States, Asia, and Europe. The company’scompliance requirements state that the application must be hosted on premises. The company wants to improve the performance and availability of the application. What should A solutions architect do to meet these requirements?",
       "options": {
-        "A": "ConFigure three Network Load Balancers (NLBs) in the three AWS Regions to address the on-premises endpoints. Create an accelerator by using AWS Global Accelerator, and register the NLBs as its endpoints. Provide access to the application by using a CNAME that points to the accelerator DNS.",
-        "B": "ConFigure three Application Load Balancers (ALBs) in the three AWS Regions to address the on-premises endpoints. Create an accelerator by using AWS Global Accelerator, and register the ALBs as its endpoints. Provide access to the application by using a CNAME that points to the accelerator DNS.",
-        "C": "ConFigure three Network Load Balancers (NLBs) in the three AWS Regions to address the on-premises endpoints. In Route 53, create a latency-based record that points to the three NLBs, and use it as an origin for an Amazon CloudFront distribution. Provide access to the application by using a CNAME that points to the CloudFront DNS.",
-        "D": "ConFigure three Application Load Balancers (ALBs) in the three AWS Regions to address the on-premises endpoints. In Route 53, create a latency-based record that points to the three ALBs, and use it as an origin for an Amazon CloudFront distribution. Provide access to the application by using a CNAME that points to the CloudFront DNS."
+        "A": "Configure three Network Load Balancers (NLBs) in the three AWS Regions to address the on-premises endpoints. Create an accelerator by using AWS Global Accelerator, and register the NLBs as its endpoints. Provide access to the application by using a CNAME that points to the accelerator DNS.",
+        "B": "Configure three Application Load Balancers (ALBs) in the three AWS Regions to address the on-premises endpoints. Create an accelerator by using AWS Global Accelerator, and register the ALBs as its endpoints. Provide access to the application by using a CNAME that points to the accelerator DNS.",
+        "C": "Configure three Network Load Balancers (NLBs) in the three AWS Regions to address the on-premises endpoints. In Route 53, create a latency-based record that points to the three NLBs, and use it as an origin for an Amazon CloudFront distribution. Provide access to the application by using a CNAME that points to the CloudFront DNS.",
+        "D": "Configure three Application Load Balancers (ALBs) in the three AWS Regions to address the on-premises endpoints. In Route 53, create a latency-based record that points to the three ALBs, and use it as an origin for an Amazon CloudFront distribution. Provide access to the application by using a CNAME that points to the CloudFront DNS."
       },
       "correct_answer": "A",
       "explanation": "This option suggests configuring three Network Load Balancers (NLBs) in the three AWS Regions to address on-premises endpoints. While AWS Global Accelerator is used, the NLBs are registered as its endpoints. This does not meet the requirement of hosting the application on premises."
@@ -262,7 +262,7 @@
       "options": {
         "A": "Store the images and geographic codes in a database table. Use Oracle running on an Amazon RDS Multi-AZ DB instance.",
         "B": "Store the images in Amazon S3 buckets. Use Amazon DynamoDB with the geographic code as the key and the image S3 URL as the value.",
-        "C": "Store the images and geographic codes in an Amazon DynamoDB table. ConFigure DynamoDB Accelerator (DAX) during times of high load.",
+        "C": "Store the images and geographic codes in an Amazon DynamoDB table. Configure DynamoDB Accelerator (DAX) during times of high load.",
         "D": "Store the images in Amazon S3 buckets. Store geographic codes and image S3 URLs in a database table. Use Oracle running on an Amazon RDS Multi-AZ DB instance."
       },
       "correct_answer": "D",
@@ -273,7 +273,7 @@
       "question": "A company has an application that collects data from IoT sensors on automobiles. The data is streamed and stored in Amazon S3 through Amazon Kinesis Data Firehose. The data produces trillions of S3 objects each year. Each morning, the company uses the data from the previous 30 days to retrain asuite of machine learning (ML) models. Four times each year, the company uses the data from the previous 12 months to perform analysis and train other ML models. The data must be available with minimal delay for up to 1 year. After 1 year, the data must be retained for archival purposes. Which storage solution meets these requirements MOST cost-effectively?",
       "options": {
         "A": "Use the S3 Intelligent-Tiering storage class. Create an S3 Lifecycle policy to transition objects to S3 Glacier Deep Archive after 1 year.",
-        "B": "Use the S3 Intelligent-Tiering storage class. ConFigure S3 Intelligent-Tiering to automatically move objects to S3 Glacier Deep Archive after 1 year.",
+        "B": "Use the S3 Intelligent-Tiering storage class. Configure S3 Intelligent-Tiering to automatically move objects to S3 Glacier Deep Archive after 1 year.",
         "C": "Use the S3 Standard-Infrequent Access (S3 Standard-IA) storage class. Create an S3 Lifecycle policy to transition objects to S3 Glacier Deep Archive after 1 year.",
         "D": "Use the S3 Standard storage class. Create an S3 Lifecycle policy to transition objects to S3 Standard-Infrequent Access (S3 Standard-IA) after 30 days, and then to S3 Glacier Deep Archive after 1 year."
       },
@@ -284,7 +284,7 @@
       "id": "374",
       "question": "A company is running several business applications in three separate VPCs within the us-east-1 Region. The applications must be able to communicate between VPCs. The applications also must be able to consistently send hundreds of gigabytes of data each day to a latency-sensitive application that runs in a single on-premises data center. A solutions architect needs to design a network connectivity solution that maximizes cost-effectiveness. Which solution meets these requirements?",
       "options": {
-        "A": "ConFigure three AWS Site-to-Site VPN connections from the data center to AWS. Establish connectivity by conFiguring one VPN connection for each VPC.",
+        "A": "Configure three AWS Site-to-Site VPN connections from the data center to AWS. Establish connectivity by conFiguring one VPN connection for each VPC.",
         "B": "Launch a third-party virtual network appliance in each VPC. Establish an IPsec VPN tunnel between the data center and each virtual appliance.",
         "C": "Set up three AWS Direct Connect connections from the data center to a Direct Connect gateway in us-east-1. Establish connectivity by conFiguring each VPC to use one of the Direct Connect connections.",
         "D": "Set up one AWS Direct Connect connection from the data center to AWS. Create a transit gateway, and attach each VPC to the transit gateway. Establish connectivity between the Direct Connect connection and the transit gateway."
@@ -308,10 +308,10 @@
       "id": "376",
       "question": "A company has launched an Amazon RDS for MySQL DB instance. Most of the connections to the database come from serverless applications. Application trafic to the database changes significantly at random intervals. At times of high demand, users report that their applications experience database connection rejection errors. Which solution will resolve this issue with the LEAST operational overhead?",
       "options": {
-        "A": "Create a proxy in RDS Proxy. ConFigure the users’ applications to use the DB instance through RDS Proxy.",
+        "A": "Create a proxy in RDS Proxy. Configure the users’ applications to use the DB instance through RDS Proxy.",
         "B": "Deploy Amazon ElastiCache for Memcached between the users’ applications and the DB instance.",
-        "C": "Migrate the DB instance to a different instance class that has higher I/O capacity. ConFigure the users’ applications to use the new DB instance.",
-        "D": "ConFigure Multi-AZ for the DB instance. ConFigure the users’ applications to switch between the DB instances."
+        "C": "Migrate the DB instance to a different instance class that has higher I/O capacity. Configure the users’ applications to use the new DB instance.",
+        "D": "Configure Multi-AZ for the DB instance. Configure the users’ applications to switch between the DB instances."
       },
       "correct_answer": "A",
       "explanation": "RDS Proxy is a fully managed, highly available database proxy for Amazon RDS that makes applications more scalable, more resilient to database failures, and more secure. It automatically routes database traffic to the appropriate DB instance, handling connection pooling and failover."
@@ -323,7 +323,7 @@
         "A": "Use a scheduled AWS Lambda function and run a script remotely on all EC2 instances to send data to the audit system.",
         "B": "Use EC2 Auto Scaling lifecycle hooks to run a custom script to send data to the audit system when instances are launched and terminated.",
         "C": "Use an EC2 Auto Scaling launch conFiguration to run a custom script through user data to send data to the audit system when instances are launched and terminated.",
-        "D": "Run a custom script on the instance operating system to send data to the audit system. ConFigure the script to be invoked by the EC2 Auto Scaling group when the instance starts and is terminated."
+        "D": "Run a custom script on the instance operating system to send data to the audit system. Configure the script to be invoked by the EC2 Auto Scaling group when the instance starts and is terminated."
       },
       "correct_answer": "B",
       "explanation": ""
@@ -345,7 +345,7 @@
       "question": "A company hosts afrontend application that uses an Amazon API Gateway API backend that is integrated with AWS Lambda. When the API receives requests, the Lambda function loads many libraries. Then the Lambda function connects to an Amazon RDS database, processes the data, and returns the data to the frontend application. The company wants to ensure that response latency is as low as possible for all its users with the fewest number of changes to the company'soperations. Which solution will meet these requirements?",
       "options": {
         "A": "Establish a connection between the frontend application and the database to make queries faster by bypassing the API.",
-        "B": "ConFigure provisioned concurrency for the Lambda function that handles the requests.",
+        "B": "Configure provisioned concurrency for the Lambda function that handles the requests.",
         "C": "Cache the results of the queries in Amazon S3 for faster retrieval of similar datasets.",
         "D": "Increase the size of the database to increase the number of connections Lambda can establish at one time."
       },
@@ -358,8 +358,8 @@
       "options": {
         "A": "Scale the EC2 instances by using elastic resize. Scale the DB instances to zero outside of business hours.",
         "B": "Explore AWS Marketplace for partner solutions that will automatically start and stop the EC2 instances and DB instances on a schedule.",
-        "C": "Launch another EC2 instance. ConFigure a crontab schedule to run shell scripts that will start and stop the existing EC2 instances and DB instances on a schedule.",
-        "D": "Create an AWS Lambda function that will start and stop the EC2 instances and DB instances. ConFigure Amazon EventBridge to invoke the Lambda function on a schedule."
+        "C": "Launch another EC2 instance. Configure a crontab schedule to run shell scripts that will start and stop the existing EC2 instances and DB instances on a schedule.",
+        "D": "Create an AWS Lambda function that will start and stop the EC2 instances and DB instances. Configure Amazon EventBridge to invoke the Lambda function on a schedule."
       },
       "correct_answer": "D",
       "explanation": "AWS Lambda Function: Create a Lambda function that contains the logic to start and stop the EC2 instances and DB instances. Lambda is a serverless compute service that allows you to run code without provisioning or managing servers. It is a cost-effective and maintenance-free solution.\nAmazon EventBridge: Configure EventBridge (formerly CloudWatch Events) to invoke the Lambda function on a schedule. EventBridge provides a reliable and scalable way to schedule the execution of Lambda functions at specified intervals, such as starting and stopping instances during business hours."
@@ -370,7 +370,7 @@
       "options": {
         "A": "Set up a new Amazon DocumentDB (with MongoDB compatibility) cluster that includes a read replica. Scale the read replica to generate the reports.",
         "B": "Set up a new Amazon Aurora PostgreSQL DB cluster that includes an Aurora Replica. Issue queries to the Aurora Replica to generate the reports.",
-        "C": "Set up a new Amazon RDS for PostgreSQL Multi-AZ DB instance. ConFigure the reporting module to query the secondary RDS node so that the reporting module does not affect the primary node.",
+        "C": "Set up a new Amazon RDS for PostgreSQL Multi-AZ DB instance. Configure the reporting module to query the secondary RDS node so that the reporting module does not affect the primary node.",
         "D": "Set up a new Amazon DynamoDB table to store the documents. Use a Fixed write capacity to support new document entries. Automatically scale the read capacity to support the reports."
       },
       "correct_answer": "B",
@@ -380,8 +380,8 @@
       "id": "382",
       "question": "A company has athree-tier application on AWS that ingests sensor data from its users’ devices. The trafic Fiows through aNetwork Load Balancer (NLB), then to Amazon EC2 instances for the web tier, and Finally to EC2 instances for the application tier. The application tier makes calls to a database. What should A solutions architect do to improve the security of the data in transit?",
       "options": {
-        "A": "ConFigure a TLS listener. Deploy the server certiFicate on the NLB.",
-        "B": "ConFigure AWS Shield Advanced. Enable AWS WAF on the NLB.",
+        "A": "Configure a TLS listener. Deploy the server certiFicate on the NLB.",
+        "B": "Configure AWS Shield Advanced. Enable AWS WAF on the NLB.",
         "C": "Change the load balancer to an Application Load Balancer (ALB). Enable AWS WAF on the ALB.",
         "D": "Encrypt the Amazon Elastic Block Store (Amazon EBS) volume on the EC2 instances by using AWS Key Management Service (AWS KMS)."
       },
@@ -491,7 +491,7 @@
       "question": "A company needs abackup strategy for its three-tier stateless web application. The web application runs on Amazon EC2 instances in an Auto Scaling group with adynamic scaling policy that is configured to respond to scaling events. The database tier runs on Amazon RDS for PostgreSQL. The web application does not require temporary local storage on the EC2 instances. The company’srecovery point objective (RPO) is 2 hours. The backup strategy must maximize scalability and optimize resource utilization for this environment. Which solution will meet these requirements?",
       "options": {
         "A": "Take snapshots of Amazon Elastic Block Store (Amazon EBS) volumes of the EC2 instances and database every 2 hours to meet the RPO.",
-        "B": "ConFigure a snapshot lifecycle policy to take Amazon Elastic Block Store (Amazon EBS) snapshots. Enable automated backups in Amazon RDS to meet the RPO.",
+        "B": "Configure a snapshot lifecycle policy to take Amazon Elastic Block Store (Amazon EBS) snapshots. Enable automated backups in Amazon RDS to meet the RPO.",
         "C": "Retain the latest Amazon Machine Images (AMIs) of the web and application tiers. Enable automated backups in Amazon RDS and use point-in-time recovery to meet the RPO.",
         "D": "Take snapshots of Amazon Elastic Block Store (Amazon EBS) volumes of the EC2 instances every 2 hours. Enable automated backups in Amazon RDS and use point-in-time recovery to meet the RPO."
       },
@@ -502,10 +502,10 @@
       "id": "392",
       "question": "A company wants to deploy anew public web application on AWS. The application includes a web server tier that uses Amazon EC2 instances. The application also includes a database tier that uses an Amazon RDS for MySQL DB instance. The application must be secure and accessible for global customers that have dynamic IP addresses. How should A solutions architect configure the security groups to meet these requirements?",
       "options": {
-        "A": "ConFigure the security group for the web servers to allow inbound traFic on port 443 from 0.0.0.0/0. ConFigure the security group for the DB instance to allow inbound traFic on port 3306 from the security group of the web servers.",
-        "B": "ConFigure the security group for the web servers to allow inbound traFic on port 443 from the IP addresses of the customers. ConFigure the security group for the DB instance to allow inbound traFic on port 3306 from the security group of the web servers.",
-        "C": "ConFigure the security group for the web servers to allow inbound traFic on port 443 from the IP addresses of the customers. ConFigure the security group for the DB instance to allow inbound traFic on port 3306 from the IP addresses of the customers.",
-        "D": "ConFigure the security group for the web servers to allow inbound traFic on port 443 from 0.0.0.0/0. ConFigure the security group for the DB instance to allow inbound traFic on port 3306 from 0.0.0.0/0."
+        "A": "Configure the security group for the web servers to allow inbound traFic on port 443 from 0.0.0.0/0. Configure the security group for the DB instance to allow inbound traFic on port 3306 from the security group of the web servers.",
+        "B": "Configure the security group for the web servers to allow inbound traFic on port 443 from the IP addresses of the customers. Configure the security group for the DB instance to allow inbound traFic on port 3306 from the security group of the web servers.",
+        "C": "Configure the security group for the web servers to allow inbound traFic on port 443 from the IP addresses of the customers. Configure the security group for the DB instance to allow inbound traFic on port 3306 from the IP addresses of the customers.",
+        "D": "Configure the security group for the web servers to allow inbound traFic on port 443 from 0.0.0.0/0. Configure the security group for the DB instance to allow inbound traFic on port 3306 from 0.0.0.0/0."
       },
       "correct_answer": "A",
       "explanation": ""
@@ -516,7 +516,7 @@
       "options": {
         "A": "Process the audio Files by using Amazon Kinesis Video Streams. Use an AWS Lambda function to scan for known PII patterns.",
         "B": "When an audio File is uploaded to the S3 bucket, invoke an AWS Lambda function to start an Amazon Textract task to analyze the call recordings.",
-        "C": "ConFigure an Amazon Transcribe transcription job with PII redaction turned on. When an audio File is uploaded to the S3 bucket, invoke an AWS Lambda function to start the transcription job. Store the output in a separate S3 bucket.",
+        "C": "Configure an Amazon Transcribe transcription job with PII redaction turned on. When an audio File is uploaded to the S3 bucket, invoke an AWS Lambda function to start the transcription job. Store the output in a separate S3 bucket.",
         "D": "Create an Amazon Connect contact Fiow that ingests the audio Files with transcription turned on. Embed an AWS Lambda function to scan for known PII patterns. Use Amazon EventBridge to start the contact Fiow when an audio File is uploaded to the S3 bucket."
       },
       "correct_answer": "C",
@@ -598,7 +598,7 @@
       "id": "400",
       "question": "Ameteorological startup company has acustom web application to sell weather data to its users online. The company uses Amazon DynamoDB to store its data and wants to build anew service that sends an alert to the managers of four internal teams every time anew weather event is recorded. The company does not want this new service to affect the performance of the current application. What should A solutions architect do to meet these requirements with the LEAST amount of operational overhead?",
       "options": {
-        "A": "Use DynamoDB transactions to write new event data to the table. ConFigure the transactions to notify internal teams.",
+        "A": "Use DynamoDB transactions to write new event data to the table. Configure the transactions to notify internal teams.",
         "B": "Have the current application publish a message to four Amazon Simple NotiFication Service (Amazon SNS) topics. Have each team subscribe to one topic.",
         "C": "Enable Amazon DynamoDB Streams on the table. Use triggers to write to a single Amazon Simple NotiFication Service (Amazon SNS) topic to which the teams can subscribe.",
         "D": "Add a custom attribute to each record to Fiag new items. Write a cron job that scans the table every minute for items that are new and notiFies an Amazon Simple Queue Service (Amazon SQS) queue to which the teams can subscribe."

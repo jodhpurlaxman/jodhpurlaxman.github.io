@@ -114,10 +114,10 @@
       "id": "310",
       "question": "A company sells datasets to customers who do research in artificial intelligence and machine learning (AI/ML). The datasets are large, formatted Files that are stored in an Amazon S3 bucket in the us-east-1 Region. The company hosts a web application that the customers use to purchase access to agiven dataset. The web application is deployed on multiple Amazon EC2 instances behind an Application Load Balancer. After apurchase is made, customers receive an S3 signed URL that allows access to the Files. The customers are distributed across North America and Europe. The company wants to reduce the cost that is associated with data transfers and wants to maintain or improve performance. What should A solutions architect do to meet these requirements?",
       "options": {
-        "A": "ConFigure S3 Transfer Acceleration on the existing S3 bucket. Direct customer requests to the S3 Transfer Acceleration endpoint. Continue to use S3 signed URLs for access control.",
+        "A": "Configure S3 Transfer Acceleration on the existing S3 bucket. Direct customer requests to the S3 Transfer Acceleration endpoint. Continue to use S3 signed URLs for access control.",
         "B": "Deploy an Amazon CloudFront distribution with the existing S3 bucket as the origin. Direct customer requests to the CloudFront URL. Switch to CloudFront signed URLs for access control.",
         "C": "Set up a second S3 bucket in the eu-central-1 Region with S3 Cross-Region Replication between the buckets. Direct customer requests to the closest Region. Continue to use S3 signed URLs for access control.",
-        "D": "Modify the web application to enable streaming of the datasets to end users. ConFigure the web application to read the data from the existing S3 bucket. Implement access control directly in the application."
+        "D": "Modify the web application to enable streaming of the datasets to end users. Configure the web application to read the data from the existing S3 bucket. Implement access control directly in the application."
       },
       "correct_answer": "B",
       "explanation": "Amazon CloudFront: CloudFront is a content delivery network (CDN) service that distributes content globally with low latency and high data transfer speeds. It helps reduce data transfer costs and improves performance by caching content at edge locations.\nS3 Bucket as the Origin: By configuring the existing S3 bucket as the origin for CloudFront, you allow CloudFront to cache and serve the datasets from edge locations around the world.\nCloudFront Signed URLs: CloudFront provides the ability to generate signed URLs, allowing you to control access to your content. You can use CloudFront signed URLs for access control, providing a secure way for customers to access datasets."
@@ -126,10 +126,10 @@
       "id": "311",
       "question": "A company is using AWS to design a web application that will process insurance quotes. Users will request quotes from the application. Quotes must be separated by quote type, must be responded to within 24 hours, and must not get lost. The solution must maximize operational eficiency and must minimize maintenance. Which solution meets these requirements?",
       "options": {
-        "A": "Create multiple Amazon Kinesis data streams based on the quote type. ConFigure the web application to send messages to the proper data stream. ConFigure each backend group of application servers to use the Kinesis Client Library (KCL) to pool messages from its own data stream.",
-        "B": "Create an AWS Lambda function and an Amazon Simple NotiFication Service (Amazon SNS) topic for each quote type. Subscribe the Lambda function to its associated SNS topic. ConFigure the application to publish requests for quotes to the appropriate SNS topic.",
-        "C": "Create a single Amazon Simple NotiFication Service (Amazon SNS) topic. Subscribe Amazon Simple Queue Service (Amazon SQS) queues to the SNS topic. ConFigure SNS message Filtering to publish messages to the proper SQS queue based on the quote type. ConFigure each backend application server to use its own SQS queue.",
-        "D": "Create multiple Amazon Kinesis Data Firehose delivery streams based on the quote type to deliver data streams to an Amazon OpenSearch Service cluster. ConFigure the application to send messages to the proper delivery stream. ConFigure each backend group of application servers to search for the messages from OpenSearch Service and process them accordingly."
+        "A": "Create multiple Amazon Kinesis data streams based on the quote type. Configure the web application to send messages to the proper data stream. Configure each backend group of application servers to use the Kinesis Client Library (KCL) to pool messages from its own data stream.",
+        "B": "Create an AWS Lambda function and an Amazon Simple NotiFication Service (Amazon SNS) topic for each quote type. Subscribe the Lambda function to its associated SNS topic. Configure the application to publish requests for quotes to the appropriate SNS topic.",
+        "C": "Create a single Amazon Simple NotiFication Service (Amazon SNS) topic. Subscribe Amazon Simple Queue Service (Amazon SQS) queues to the SNS topic. Configure SNS message Filtering to publish messages to the proper SQS queue based on the quote type. Configure each backend application server to use its own SQS queue.",
+        "D": "Create multiple Amazon Kinesis Data Firehose delivery streams based on the quote type to deliver data streams to an Amazon OpenSearch Service cluster. Configure the application to send messages to the proper delivery stream. Configure each backend group of application servers to search for the messages from OpenSearch Service and process them accordingly."
       },
       "correct_answer": "C",
       "explanation": ""
@@ -176,8 +176,8 @@
       "options": {
         "A": "Deploy AWS Shield to scan the EC2 instances for vulnerabilities. Create an AWS Lambda function to log any Findings to AWS CloudTrail.",
         "B": "Deploy Amazon Macie and AWS Lambda functions to scan the EC2 instances for vulnerabilities. Log any Findings to AWS CloudTrail.",
-        "C": "Turn on Amazon GuardDuty. Deploy the GuardDuty agents to the EC2 instances. ConFigure an AWS Lambda function to automate the generation and distribution of reports that detail the Findings.",
-        "D": "Turn on Amazon Inspector. Deploy the Amazon Inspector agent to the EC2 instances. ConFigure an AWS Lambda function to automate the generation and distribution of reports that detail the Findings."
+        "C": "Turn on Amazon GuardDuty. Deploy the GuardDuty agents to the EC2 instances. Configure an AWS Lambda function to automate the generation and distribution of reports that detail the Findings.",
+        "D": "Turn on Amazon Inspector. Deploy the Amazon Inspector agent to the EC2 instances. Configure an AWS Lambda function to automate the generation and distribution of reports that detail the Findings."
       },
       "correct_answer": "D",
       "explanation": ""
@@ -198,10 +198,10 @@
       "id": "317",
       "question": "A company uses alegacy application to produce data in CSV format. The legacy application stores the output data in Amazon S3. The company is deploying anew commercial off-the-shelf (COTS) application that can perform complex SQL queries to analyze data that is stored in Amazon Redshift and Amazon S3 only. However, the COTS application cannot process the .csv Files that the legacy application produces. The company cannot update the legacy application to produce data in another format. The company needs to implement asolution so that the COTS application can use the data that the legacy application produces. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Create an AWS Glue extract, transform, and load (ETL) job that runs on a schedule. ConFigure the ETL job to process the .csv Files and store the processed data in Amazon Redshift.",
+        "A": "Create an AWS Glue extract, transform, and load (ETL) job that runs on a schedule. Configure the ETL job to process the .csv Files and store the processed data in Amazon Redshift.",
         "B": "Develop a Python script that runs on Amazon EC2 instances to convert the .csv Files to .sql Files. Invoke the Python script on a cron schedule to store the output Files in Amazon S3.",
-        "C": "Create an AWS Lambda function and an Amazon DynamoDB table. Use an S3 event to invoke the Lambda function. ConFigure the Lambda function to perform an extract, transform, and load (ETL) job to process the .csv Files and store the processed data in the DynamoDB table.",
-        "D": "Use Amazon EventBridge to launch an Amazon EMR cluster on a weekly schedule. ConFigure the EMR cluster to perform an extract, transform, and load (ETL) job to process the .csv Files and store the processed data in an Amazon Redshift table."
+        "C": "Create an AWS Lambda function and an Amazon DynamoDB table. Use an S3 event to invoke the Lambda function. Configure the Lambda function to perform an extract, transform, and load (ETL) job to process the .csv Files and store the processed data in the DynamoDB table.",
+        "D": "Use Amazon EventBridge to launch an Amazon EMR cluster on a weekly schedule. Configure the EMR cluster to perform an extract, transform, and load (ETL) job to process the .csv Files and store the processed data in an Amazon Redshift table."
       },
       "correct_answer": "A",
       "explanation": ""
@@ -225,7 +225,7 @@
       "options": {
         "A": "Use AWS Systems Manager Session Manager to connect to the EC2 instances.",
         "B": "Use AWS Security Token Service (AWS STS) to generate one-time SSH keys on demand.",
-        "C": "Allow shared SSH access to a set of bastion instances. ConFigure all other instances to allow only SSH access from the bastion instances.",
+        "C": "Allow shared SSH access to a set of bastion instances. Configure all other instances to allow only SSH access from the bastion instances.",
         "D": "Use an Amazon Cognito custom authorizer to authenticate users. Invoke an AWS Lambda function to generate a temporary SSH key."
       },
       "correct_answer": "A",
@@ -260,7 +260,7 @@
       "question": "A solutions architect is designing a multi-tier application for A company. The application'susers upload images from amobile device. The application generates athumbnail of each image and returns amessage to the user to confirm that the image was uploaded successfully. The thumbnail generation can take up to 60 seconds, but the company wants to provide afaster response time to its users to notify them that the original image was received. The solutions architect must design the application to asynchronously dispatch requests to the different application tiers. What should the solutions architect do to meet these requirements?",
       "options": {
         "A": "Write a custom AWS Lambda function to generate the thumbnail and alert the user. Use the image upload process as an event source to invoke the Lambda function.",
-        "B": "Create an AWS Step Functions workFiow. ConFigure Step Functions to handle the orchestration between the application tiers and alert the user when thumbnail generation is complete.",
+        "B": "Create an AWS Step Functions workFiow. Configure Step Functions to handle the orchestration between the application tiers and alert the user when thumbnail generation is complete.",
         "C": "Create an Amazon Simple Queue Service (Amazon SQS) message queue. As images are uploaded, place a message on the SQS queue for thumbnail generation. Alert the user through an application message that the image was received.",
         "D": "Create Amazon Simple NotiFication Service (Amazon SNS) notiFication topics and subscriptions. Use one subscription with the application to generate the thumbnail after the image upload is complete. Use a second subscription to message the user's mobile app by way of a push notiFication after thumbnail generation is complete."
       },
@@ -271,10 +271,10 @@
       "id": "323",
       "question": "A company’sfacility has badge readers at every entrance throughout the building. When badges are scanned, the readers send amessage over HTTPS to indicate who attempted to access that particular entrance. A solutions architect must design asystem to process these messages from the sensors. The solution must be highly available, and the results must be made available for the company’ssecurity team to analyze. Which system architecture should the solutions architect recommend?",
       "options": {
-        "A": "Launch an Amazon EC2 instance to serve as the HTTPS endpoint and to process the messages. ConFigure the EC2 instance to save the results to an Amazon S3 bucket.",
-        "B": "Create an HTTPS endpoint in Amazon API Gateway. ConFigure the API Gateway endpoint to invoke an AWS Lambda function to process the messages and save the results to an Amazon DynamoDB table.",
-        "C": "Use Amazon Route 53 to direct incoming sensor messages to an AWS Lambda function. ConFigure the Lambda function to process the messages and save the results to an Amazon DynamoDB table.",
-        "D": "Create a gateway VPC endpoint for Amazon S3. ConFigure a Site-to-Site VPN connection from the facility network to the VPC so that sensor data can be written directly to an S3 bucket by way of the VPC endpoint."
+        "A": "Launch an Amazon EC2 instance to serve as the HTTPS endpoint and to process the messages. Configure the EC2 instance to save the results to an Amazon S3 bucket.",
+        "B": "Create an HTTPS endpoint in Amazon API Gateway. Configure the API Gateway endpoint to invoke an AWS Lambda function to process the messages and save the results to an Amazon DynamoDB table.",
+        "C": "Use Amazon Route 53 to direct incoming sensor messages to an AWS Lambda function. Configure the Lambda function to process the messages and save the results to an Amazon DynamoDB table.",
+        "D": "Create a gateway VPC endpoint for Amazon S3. Configure a Site-to-Site VPN connection from the facility network to the VPC so that sensor data can be written directly to an S3 bucket by way of the VPC endpoint."
       },
       "correct_answer": "B",
       "explanation": ""
@@ -284,9 +284,9 @@
       "question": "A company wants to implement adisaster recovery plan for its primary on-premises File storage volume. The File storage volume is mounted from an Internet Small Computer Systems Interface (iSCSI) device on alocal storage server. The File storage volume holds hundreds of terabytes (TB) of data. The company wants to ensure that end users retain immediate access to all File types from the on-premises systems without experiencing latency. Which solution will meet these requirements with the LEAST amount of change to the company'sexisting infrastructure?",
       "options": {
         "A": "Provision an Amazon S3 File Gateway as a virtual machine (VM) that is hosted on premises. Set the local cache to 10 TB. Modify existing applications to access the Files through the NFS protocol. To recover from a disaster, provision an Amazon EC2 instance and mount the S3 bucket that contains the Files.",
-        "B": "Provision an AWS Storage Gateway tape gateway. Use a data backup solution to back up all existing data to a virtual tape library. ConFigure the data backup solution to run nightly after the initial backup is complete. To recover from a disaster, provision an Amazon EC2 instance and restore the data to an Amazon Elastic Block Store (Amazon EBS) volume from the volumes in the virtual tape library.",
-        "C": "Provision an AWS Storage Gateway Volume Gateway cached volume. Set the local cache to 10 TB. Mount the Volume Gateway cached volume to the existing File server by using iSCSI, and copy all Files to the storage volume. ConFigure scheduled snapshots of the storage volume. To recover from a disaster, restore a snapshot to an Amazon Elastic Block Store (Amazon EBS) volume and attach the EBS volume to an Amazon EC2 instance.",
-        "D": "Provision an AWS Storage Gateway Volume Gateway stored volume with the same amount of disk space as the existing File storage volume. Mount the Volume Gateway stored volume to the existing File server by using iSCSI, and copy all Files to the storage volume. ConFigure scheduled snapshots of the storage volume. To recover from a disaster, restore a snapshot to an Amazon Elastic Block Store (Amazon EBS) volume and attach the EBS volume to an Amazon EC2 instance."
+        "B": "Provision an AWS Storage Gateway tape gateway. Use a data backup solution to back up all existing data to a virtual tape library. Configure the data backup solution to run nightly after the initial backup is complete. To recover from a disaster, provision an Amazon EC2 instance and restore the data to an Amazon Elastic Block Store (Amazon EBS) volume from the volumes in the virtual tape library.",
+        "C": "Provision an AWS Storage Gateway Volume Gateway cached volume. Set the local cache to 10 TB. Mount the Volume Gateway cached volume to the existing File server by using iSCSI, and copy all Files to the storage volume. Configure scheduled snapshots of the storage volume. To recover from a disaster, restore a snapshot to an Amazon Elastic Block Store (Amazon EBS) volume and attach the EBS volume to an Amazon EC2 instance.",
+        "D": "Provision an AWS Storage Gateway Volume Gateway stored volume with the same amount of disk space as the existing File storage volume. Mount the Volume Gateway stored volume to the existing File server by using iSCSI, and copy all Files to the storage volume. Configure scheduled snapshots of the storage volume. To recover from a disaster, restore a snapshot to an Amazon Elastic Block Store (Amazon EBS) volume and attach the EBS volume to an Amazon EC2 instance."
       },
       "correct_answer": "C",
       "explanation": ""
@@ -308,8 +308,8 @@
       "question": "An image hosting company uploads its large assets to Amazon S3 Standard buckets. The company uses multipart upload in parallel by using S3 APIs and overwrites if the same object is uploaded again. For the First 30 days after upload, the objects will be accessed frequently. The objects will be used less frequently after 30 days, but the access patterns for each object will be inconsistent. The company must optimize its S3 storage costs while maintaining high availability and resiliency of stored assets. Which combination of actions should A solutions architect recommend to meet these requirements? (Choose two.)",
       "options": {
         "A": "Move assets to S3 Intelligent-Tiering after 30 days.",
-        "B": "ConFigure an S3 Lifecycle policy to clean up incomplete multipart uploads.",
-        "C": "ConFigure an S3 Lifecycle policy to clean up expired object delete markers.",
+        "B": "Configure an S3 Lifecycle policy to clean up incomplete multipart uploads.",
+        "C": "Configure an S3 Lifecycle policy to clean up expired object delete markers.",
         "D": "Move assets to S3 Standard-Infrequent Access (S3 Standard-IA) after 30 days.",
         "E": "Move assets to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 30 days."
       },
@@ -320,10 +320,10 @@
       "id": "327",
       "question": "A solutions architect must secure a VPC network that hosts Amazon EC2 instances. The EC2 instances contain highly sensitive data and run in a private subnet. According to company policy, the EC2 instances that run in the VPC can access only approved third-party software repositories on the internet for software product updates that use the third party’sURL. Other internet trafic must be blocked. Which solution meets these requirements?",
       "options": {
-        "A": "Update the route table for the private subnet to route the outbound traFic to an AWS Network Firewall Firewall. ConFigure domain list rule groups.",
+        "A": "Update the route table for the private subnet to route the outbound traFic to an AWS Network Firewall Firewall. Configure domain list rule groups.",
         "B": "Set up an AWS WAF web ACL. Create a custom set of rules that Filter traFic requests based on source and destination IP address range sets.",
-        "C": "Implement strict inbound security group rules. ConFigure an outbound rule that allows traFic only to the authorized software repositories on the internet by specifying the URLs.",
-        "D": "ConFigure an Application Load Balancer (ALB) in front of the EC2 instances. Direct all outbound traFic to the ALB. Use a URL-based rule listener in the ALB’s target group for outbound access to the internet."
+        "C": "Implement strict inbound security group rules. Configure an outbound rule that allows traFic only to the authorized software repositories on the internet by specifying the URLs.",
+        "D": "Configure an Application Load Balancer (ALB) in front of the EC2 instances. Direct all outbound traFic to the ALB. Use a URL-based rule listener in the ALB’s target group for outbound access to the internet."
       },
       "correct_answer": "A",
       "explanation": ""
@@ -345,9 +345,9 @@
       "question": "Asecurity audit reveals that Amazon EC2 instances are not being patched regularly. A solutions architect needs to provide asolution that will run regular security scans across a large Fieet of EC2 instances. The solution should also patch the EC2 instances on aregular schedule and provide areport of each instance’spatch status. Which solution will meet these requirements?",
       "options": {
         "A": "Set up Amazon Macie to scan the EC2 instances for software vulnerabilities. Set up a cron job on each EC2 instance to patch the instance on a regular schedule.",
-        "B": "Turn on Amazon GuardDuty in the account. ConFigure GuardDuty to scan the EC2 instances for software vulnerabilities. Set up AWS Systems Manager Session Manager to patch the EC2 instances on a regular schedule.",
+        "B": "Turn on Amazon GuardDuty in the account. Configure GuardDuty to scan the EC2 instances for software vulnerabilities. Set up AWS Systems Manager Session Manager to patch the EC2 instances on a regular schedule.",
         "C": "Set up Amazon Detective to scan the EC2 instances for software vulnerabilities. Set up an Amazon EventBridge scheduled rule to patch the EC2 instances on a regular schedule.",
-        "D": "Turn on Amazon Inspector in the account. ConFigure Amazon Inspector to scan the EC2 instances for software vulnerabilities. Set up AWS Systems Manager Patch Manager to patch the EC2 instances on a regular schedule."
+        "D": "Turn on Amazon Inspector in the account. Configure Amazon Inspector to scan the EC2 instances for software vulnerabilities. Set up AWS Systems Manager Patch Manager to patch the EC2 instances on a regular schedule."
       },
       "correct_answer": "D",
       "explanation": ""
@@ -380,8 +380,8 @@
       "id": "332",
       "question": "A company needs to provide its employees with secure access to confidential and sensitive Files. The company wants to ensure that the Files can be accessed only by authorized users. The Files must be downloaded securely to the employees’ devices. The Files are stored in an on-premises Windows File server. However, due to an increase in remote usage, the File server is running out of capacity. . Which solution will meet these requirements?",
       "options": {
-        "A": "Migrate the File server to an Amazon EC2 instance in a public subnet. ConFigure the security group to limit inbound traFic to the employees’ IP addresses.",
-        "B": "Migrate the Files to an Amazon FSx for Windows File Server File system. Integrate the Amazon FSx File system with the on-premises Active Directory. ConFigure AWS Client VPN.",
+        "A": "Migrate the File server to an Amazon EC2 instance in a public subnet. Configure the security group to limit inbound traFic to the employees’ IP addresses.",
+        "B": "Migrate the Files to an Amazon FSx for Windows File Server File system. Integrate the Amazon FSx File system with the on-premises Active Directory. Configure AWS Client VPN.",
         "C": "Migrate the Files to Amazon S3, and create a private VPC endpoint. Create a signed URL to allow download.",
         "D": "Migrate the Files to Amazon S3, and create a public VPC endpoint. Allow employees to sign on with AWS IAM Identity Center (AWS Single Sign-On)."
       },
@@ -392,10 +392,10 @@
       "id": "333",
       "question": "A company’sapplication runs on Amazon EC2 instances behind an Application Load Balancer (ALB). The instances run in an Amazon EC2 Auto Scaling group across multiple Availability Zones. On the First day of every month at midnight, the application becomes much slower when the month-end Financial calculation batch runs. This causes the CPU utilization of the EC2 instances to immediately peak to 100%, which disrupts the application. What should A solutions architect recommend to ensure the application is able to handle the workload and avoid downtime?",
       "options": {
-        "A": "ConFigure an Amazon CloudFront distribution in front of the ALB.",
-        "B": "ConFigure an EC2 Auto Scaling simple scaling policy based on CPU utilization.",
-        "C": "ConFigure an EC2 Auto Scaling scheduled scaling policy based on the monthly schedule.",
-        "D": "ConFigure Amazon ElastiCache to remove some of the workload from the EC2 instances."
+        "A": "Configure an Amazon CloudFront distribution in front of the ALB.",
+        "B": "Configure an EC2 Auto Scaling simple scaling policy based on CPU utilization.",
+        "C": "Configure an EC2 Auto Scaling scheduled scaling policy based on the monthly schedule.",
+        "D": "Configure Amazon ElastiCache to remove some of the workload from the EC2 instances."
       },
       "correct_answer": "C",
       "explanation": "By configuring a scheduled scaling policy, the EC2 Auto Scaling group can proactively launch additional EC2 instances before the CPU utilization peaks to 100%. This will ensure that the application can handle the workload during the month-end financial calculation batch, and avoid any disruption or downtime.\nConfiguring a simple scaling policy based on CPU utilization or adding Amazon CloudFront distribution or Amazon ElastiCache will not directly address the issue of handling the monthly peak workload."
@@ -404,8 +404,8 @@
       "id": "334",
       "question": "A company wants to give acustomer the ability to use on-premises Microsoft Active Directory to download Files that are stored in Amazon S3. The customer’sapplication uses an SFTP client to download the Files. Which solution will meet these requirements with the LEAST operational overhead and no changes to the customer’sapplication?",
       "options": {
-        "A": "Set up AWS Transfer Family with SFTP for Amazon S3. ConFigure integrated Active Directory authentication.",
-        "B": "Set up AWS Database Migration Service (AWS DMS) to synchronize the on-premises client with Amazon S3. ConFigure integrated Active Directory authentication.",
+        "A": "Set up AWS Transfer Family with SFTP for Amazon S3. Configure integrated Active Directory authentication.",
+        "B": "Set up AWS Database Migration Service (AWS DMS) to synchronize the on-premises client with Amazon S3. Configure integrated Active Directory authentication.",
         "C": "Set up AWS DataSync to synchronize between the on-premises location and the S3 location by using AWS IAM Identity Center (AWS Single Sign-On).",
         "D": "Set up a Windows Amazon EC2 instance with SFTP to connect the on-premises client with Amazon S3. Integrate AWS Identity and Access Management (IAM)."
       },
@@ -419,7 +419,7 @@
         "A": "Use the aws ec2 register-image command to create an AMI from a snapshot. Use AWS Step Functions to replace the AMI in the Auto Scaling group.",
         "B": "Enable Amazon Elastic Block Store (Amazon EBS) fast snapshot restore on a snapshot. Provision an AMI by using the snapshot. Replace the AMI in the Auto Scaling group with the new AMI.",
         "C": "Enable AMI creation and deFine lifecycle rules in Amazon Data Lifecycle Manager (Amazon DLM). Create an AWS Lambda function that modiFies the AMI in the Auto Scaling group.",
-        "D": "Use Amazon EventBridge to invoke AWS Backup lifecycle policies that provision AMIs. ConFigure Auto Scaling group capacity limits as an event source in EventBridge."
+        "D": "Use Amazon EventBridge to invoke AWS Backup lifecycle policies that provision AMIs. Configure Auto Scaling group capacity limits as an event source in EventBridge."
       },
       "correct_answer": "B",
       "explanation": "Amazon EBS Fast Snapshot Restore: Enabling fast snapshot restore allows you to provision Amazon EBS volumes based on snapshots with faster performance. This is particularly useful when creating AMIs from snapshots, as it reduces the time it takes to create EBS volumes from those snapshots.\nMinimum Initialization Latency: Fast snapshot restore helps in minimizing initialization latency as it provides a way to quickly create EBS volumes from snapshots.\nProvisioning AMI from Snapshot: You can create an Amazon Machine Image (AMI) from an Amazon EBS snapshot. This allows you to capture a point-in-time snapshot of the file system, and then use that snapshot to create new instances."
@@ -428,7 +428,7 @@
       "id": "336",
       "question": "A company hosts a multi-tier web application that uses an Amazon Aurora MySQL DB cluster for storage. The application tier is hosted on Amazon EC2 instances. The company’sIT security guidelines mandate that the database credentials be encrypted and rotated every 14 days. What should A solutions architect do to meet this requirement with the LEAST operational effort?",
       "options": {
-        "A": "Create a new AWS Key Management Service (AWS KMS) encryption key. Use AWS Secrets Manager to create a new secret that uses the KMS key with the appropriate credentials. Associate the secret with the Aurora DB cluster. ConFigure a custom rotation period of 14 days.",
+        "A": "Create a new AWS Key Management Service (AWS KMS) encryption key. Use AWS Secrets Manager to create a new secret that uses the KMS key with the appropriate credentials. Associate the secret with the Aurora DB cluster. Configure a custom rotation period of 14 days.",
         "B": "Create two parameters in AWS Systems Manager Parameter Store: one for the user name as a string parameter and one that uses the SecureString type for the password. Select AWS Key Management Service (AWS KMS) encryption for the password parameter, and load these parameters in the application tier. Implement an AWS Lambda function that rotates the password every 14 days.",
         "C": "Store a File that contains the credentials in an AWS Key Management Service (AWS KMS) encrypted Amazon Elastic File System (Amazon EFS) File system. Mount the EFS File system in all EC2 instances of the application tier. Restrict the access to the File on the File system so that the application can read the File and that only super users can modify the File. Implement an AWS Lambda function that rotates the key in Aurora every 14 days and writes new credentials into the File.",
         "D": "Store a File that contains the credentials in an AWS Key Management Service (AWS KMS) encrypted Amazon S3 bucket that the application uses to load the credentials. Download the File to the application regularly to ensure that the correct credentials are used. Implement an AWS Lambda function that rotates the Aurora credentials every 14 days and uploads these credentials to the File in the S3 bucket."
@@ -464,10 +464,10 @@
       "id": "339",
       "question": "A company has acustom application with embedded credentials that retrieves information from an Amazon RDS MySQL DB instance. Management says the application must be made more secure with the least amount of programming effort. What should A solutions architect do to meet these requirements?",
       "options": {
-        "A": "Use AWS Key Management Service (AWS KMS) to create keys. ConFigure the application to load the database credentials from AWS KMS. Enable automatic key rotation.",
-        "B": "Create credentials on the RDS for MySQL database for the application user and store the credentials in AWS Secrets Manager. ConFigure the application to load the database credentials from Secrets Manager. Create an AWS Lambda function that rotates the credentials in Secret Manager.",
-        "C": "Create credentials on the RDS for MySQL database for the application user and store the credentials in AWS Secrets Manager. ConFigure the application to load the database credentials from Secrets Manager. Set up a credentials rotation schedule for the application user in the RDS for MySQL database using Secrets Manager.",
-        "D": "Create credentials on the RDS for MySQL database for the application user and store the credentials in AWS Systems Manager Parameter Store. ConFigure the application to load the database credentials from Parameter Store. Set up a credentials rotation schedule for the application user in the RDS for MySQL database using Parameter Store."
+        "A": "Use AWS Key Management Service (AWS KMS) to create keys. Configure the application to load the database credentials from AWS KMS. Enable automatic key rotation.",
+        "B": "Create credentials on the RDS for MySQL database for the application user and store the credentials in AWS Secrets Manager. Configure the application to load the database credentials from Secrets Manager. Create an AWS Lambda function that rotates the credentials in Secret Manager.",
+        "C": "Create credentials on the RDS for MySQL database for the application user and store the credentials in AWS Secrets Manager. Configure the application to load the database credentials from Secrets Manager. Set up a credentials rotation schedule for the application user in the RDS for MySQL database using Secrets Manager.",
+        "D": "Create credentials on the RDS for MySQL database for the application user and store the credentials in AWS Systems Manager Parameter Store. Configure the application to load the database credentials from Parameter Store. Set up a credentials rotation schedule for the application user in the RDS for MySQL database using Parameter Store."
       },
       "correct_answer": "C",
       "explanation": "C is a valid solution for securing the custom application with the least amount of programming effort. It involves creating credentials on the RDS for MySQL database for the application user and storing them in AWS Secrets Manager. The application can then be configured to load the database credentials from Secrets Manager. Additionally, the solution includes setting up a credentials rotation schedule for the application user in the RDS for MySQL database using Secrets Manager, which will automatically rotate the credentials at a specified interval without requiring any programming effort."
@@ -500,10 +500,10 @@
       "id": "342",
       "question": "Atransaction processing company has weekly scripted batch jobs that run on Amazon EC2 instances. The EC2 instances are in an Auto Scaling group. The number of transactions can vary, but the baseline CPU utilization that is noted on each run is at least 60%. The company needs to provision the capacity 30 minutes before the jobs run. Currently, engineers complete this task by manually modifying the Auto Scaling group parameters. The company does not have the resources to analyze the required capacity trends for the Auto Scaling group counts. The company needs an automated way to modify the Auto Scaling group’sdesired capacity. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Create a dynamic scaling policy for the Auto Scaling group. ConFigure the policy to scale based on the CPU utilization metric. Set the target value for the metric to 60%.",
+        "A": "Create a dynamic scaling policy for the Auto Scaling group. Configure the policy to scale based on the CPU utilization metric. Set the target value for the metric to 60%.",
         "B": "Create a scheduled scaling policy for the Auto Scaling group. Set the appropriate desired capacity, minimum capacity, and maximum capacity. Set the recurrence to weekly. Set the start time to 30 minutes before the batch jobs run.",
-        "C": "Create a predictive scaling policy for the Auto Scaling group. ConFigure the policy to scale based on forecast. Set the scaling metric to CPU utilization. Set the target value for the metric to 60%. In the policy, set the instances to pre-launch 30 minutes before the jobs run.",
-        "D": "Create an Amazon EventBridge event to invoke an AWS Lambda function when the CPU utilization metric value for the Auto Scaling group reaches 60%. ConFigure the Lambda function to increase the Auto Scaling group’s desired capacity and maximum capacity by 20%."
+        "C": "Create a predictive scaling policy for the Auto Scaling group. Configure the policy to scale based on forecast. Set the scaling metric to CPU utilization. Set the target value for the metric to 60%. In the policy, set the instances to pre-launch 30 minutes before the jobs run.",
+        "D": "Create an Amazon EventBridge event to invoke an AWS Lambda function when the CPU utilization metric value for the Auto Scaling group reaches 60%. Configure the Lambda function to increase the Auto Scaling group’s desired capacity and maximum capacity by 20%."
       },
       "correct_answer": "C",
       "explanation": "In general, if you have regular patterns of traffic increases and applications that take a long time to initialize, you should consider using predictive scaling. Predictive scaling can help you scale faster by launching capacity in advance of forecasted load, compared to using only dynamic scaling, which is reactive in nature."
@@ -512,7 +512,7 @@
       "id": "343",
       "question": "A solutions architect is designing A company’sdisaster recovery (DR) architecture. The company has aMySQL database that runs on an Amazon EC2 instance in a private subnet with scheduled backup. The DR design needs to include multiple AWS Regions. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Migrate the MySQL database to multiple EC2 instances. ConFigure a standby EC2 instance in the DR Region. Turn on replication.",
+        "A": "Migrate the MySQL database to multiple EC2 instances. Configure a standby EC2 instance in the DR Region. Turn on replication.",
         "B": "Migrate the MySQL database to Amazon RDS. Use a Multi-AZ deployment. Turn on read replication for the primary DB instance in the different Availability Zones.",
         "C": "Migrate the MySQL database to an Amazon Aurora global database. Host the primary DB cluster in the primary Region. Host the secondary DB cluster in the DR Region.",
         "D": "Store the scheduled backup of the MySQL database in an Amazon S3 bucket that is conFigured for S3 Cross-Region Replication (CRR). Use the data backup to restore the database in the DR Region."
@@ -527,7 +527,7 @@
         "A": "Use the Amazon SQS Extended Client Library for Java to host messages that are larger than 256 KB in Amazon S3.",
         "B": "Use Amazon EventBridge to post large messages from the application instead of Amazon SQS.",
         "C": "Change the limit in Amazon SQS to handle messages that are larger than 256 KB.",
-        "D": "Store messages that are larger than 256 KB in Amazon Elastic File System (Amazon EFS). ConFigure Amazon SQS to reference this location in the messages."
+        "D": "Store messages that are larger than 256 KB in Amazon Elastic File System (Amazon EFS). Configure Amazon SQS to reference this location in the messages."
       },
       "correct_answer": "A",
       "explanation": "Amazon SQS Extended Client Library for Java: This library is specifically designed to handle larger messages in Amazon SQS by transparently offloading them to Amazon S3. It allows you to send a reference to the S3 object in the SQS message while keeping the actual payload in S3.\nMinimal Code Changes: Using the Amazon SQS Extended Client Library for Java requires minimal changes to the existing code. Developers need to integrate the library, and the library itself handles the details of storing and retrieving large messages from Amazon S3."

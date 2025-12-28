@@ -16,10 +16,10 @@
       "id": "652",
       "question": "A company has a large data workload that runs for 6 hours each day. The company cannot lose any data while the process is running. A solutions architect is designing an Amazon EMR cluster configuration to support this critical data workload. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
-        "A": "ConFigure a long-running cluster that runs the primary node and core nodes on On-Demand Instances and the task nodes on Spot Instances.",
-        "B": "ConFigure a transient cluster that runs the primary node and core nodes on On-Demand Instances and the task nodes on Spot Instances.",
-        "C": "ConFigure a transient cluster that runs the primary node on an On-Demand Instance and the core nodes and task nodes on Spot Instances.",
-        "D": "ConFigure a long-running cluster that runs the primary node on an On-Demand Instance, the core nodes on Spot Instances, and the task nodes on Spot Instances."
+        "A": "Configure a long-running cluster that runs the primary node and core nodes on On-Demand Instances and the task nodes on Spot Instances.",
+        "B": "Configure a transient cluster that runs the primary node and core nodes on On-Demand Instances and the task nodes on Spot Instances.",
+        "C": "Configure a transient cluster that runs the primary node on an On-Demand Instance and the core nodes and task nodes on Spot Instances.",
+        "D": "Configure a long-running cluster that runs the primary node on an On-Demand Instance, the core nodes on Spot Instances, and the task nodes on Spot Instances."
       },
       "correct_answer": "B",
       "explanation": "Transient clusters are cost-effective for short workloads. Spot Instances reduce costs for non-critical task nodes.\nLong-running clusters (Options A/D) are unnecessary for a 6-hour workload."
@@ -29,9 +29,9 @@
       "question": "A company maintains an Amazon RDS database that maps users to cost centers. The company has accounts in an organization in AWS Organizations. The company needs asolution that will tag all resources that are created in aspecific AWS account in the organization. The solution must tag each resource with the cost center ID of the user who created the resource. Which solution will meet these requirements?",
       "options": {
         "A": "Move the speciFic AWS account to a new organizational unit (OU) in Organizations from the management account. Create a service control policy (SCP) that requires all existing resources to have the correct cost center tag before the resources are created. Apply the SCP to the new OU.",
-        "B": "Create an AWS Lambda function to tag the resources after the Lambda function looks up the appropriate cost center from the RDS database. ConFigure an Amazon EventBridge rule that reacts to AWS CloudTrail events to invoke the Lambda function.",
-        "C": "Create an AWS CloudFormation stack to deploy an AWS Lambda function. ConFigure the Lambda function to look up the appropriate cost center from the RDS database and to tag resources. Create an Amazon EventBridge scheduled rule to invoke the CloudFormation stack.",
-        "D": "Create an AWS Lambda function to tag the resources with a default value. ConFigure an Amazon EventBridge rule that reacts to AWS CloudTrail events to invoke the Lambda function when a resource is missing the cost center tag."
+        "B": "Create an AWS Lambda function to tag the resources after the Lambda function looks up the appropriate cost center from the RDS database. Configure an Amazon EventBridge rule that reacts to AWS CloudTrail events to invoke the Lambda function.",
+        "C": "Create an AWS CloudFormation stack to deploy an AWS Lambda function. Configure the Lambda function to look up the appropriate cost center from the RDS database and to tag resources. Create an Amazon EventBridge scheduled rule to invoke the CloudFormation stack.",
+        "D": "Create an AWS Lambda function to tag the resources with a default value. Configure an Amazon EventBridge rule that reacts to AWS CloudTrail events to invoke the Lambda function when a resource is missing the cost center tag."
       },
       "correct_answer": "B",
       "explanation": "EventBridge + Lambda automates real-time tagging without manual intervention.\nSCPs (Option A) cannot dynamically tag resources, and scheduled rules (Option C) are not event-driven."
@@ -40,10 +40,10 @@
       "id": "654",
       "question": "A company recently migrated its web application to the AWS Cloud. The company uses an Amazon EC2 instance to run multiple processes to host the application. The processes include an Apache web server that serves static content. The Apache web server makes requests to aPHP application that uses alocal Redis server for user sessions. The company wants to redesign the architecture to be highly available and to use AWS managed solutions. Which solution will meet these requirements?",
       "options": {
-        "A": "Use AWS Elastic Beanstalk to host the static content and the PHP application. ConFigure Elastic Beanstalk to deploy its EC2 instance into a public subnet. Assign a public IP address.",
-        "B": "Use AWS Lambda to host the static content and the PHP application. Use an Amazon API Gateway REST API to proxy requests to the Lambda function. Set the API Gateway CORS conFiguration to respond to the domain name. ConFigure Amazon ElastiCache for Redis to handle session information.",
-        "C": "Keep the backend code on the EC2 instance. Create an Amazon ElastiCache for Redis cluster that has Multi-AZ enabled. ConFigure the ElastiCache for Redis cluster in cluster mode. Copy the frontend resources to Amazon S3. ConFigure the backend code to reference the EC2 instance.",
-        "D": "ConFigure an Amazon CloudFront distribution with an Amazon S3 endpoint to an S3 bucket that is conFigured to host the static content. ConFigure an Application Load Balancer that targets an Amazon Elastic Container Service (Amazon ECS) service that runs AWS Fargate tasks for the PHP application. ConFigure the PHP application to use an Amazon ElastiCache for Redis cluster that runs in multiple Availability Zones."
+        "A": "Use AWS Elastic Beanstalk to host the static content and the PHP application. Configure Elastic Beanstalk to deploy its EC2 instance into a public subnet. Assign a public IP address.",
+        "B": "Use AWS Lambda to host the static content and the PHP application. Use an Amazon API Gateway REST API to proxy requests to the Lambda function. Set the API Gateway CORS conFiguration to respond to the domain name. Configure Amazon ElastiCache for Redis to handle session information.",
+        "C": "Keep the backend code on the EC2 instance. Create an Amazon ElastiCache for Redis cluster that has Multi-AZ enabled. Configure the ElastiCache for Redis cluster in cluster mode. Copy the frontend resources to Amazon S3. Configure the backend code to reference the EC2 instance.",
+        "D": "Configure an Amazon CloudFront distribution with an Amazon S3 endpoint to an S3 bucket that is conFigured to host the static content. Configure an Application Load Balancer that targets an Amazon Elastic Container Service (Amazon ECS) service that runs AWS Fargate tasks for the PHP application. Configure the PHP application to use an Amazon ElastiCache for Redis cluster that runs in multiple Availability Zones."
       },
       "correct_answer": "D",
       "explanation": "Fully managed services (ECS, ElastiCache) ensure high availability. CloudFront improves static content delivery.\nElastic Beanstalk (Option A) lacks decoupling, and Lambda (Option B) is unsuitable for PHP sessions."
@@ -114,10 +114,10 @@
       "id": "660",
       "question": "A company hosts an application on Amazon EC2 On-Demand Instances in an Auto Scaling group. Application peak hours occur at the same time each day. Application users report slow application performance at the start of peak hours. The application performs normally 2-3 hours after peak hours begin. The company wants to ensure that the application works properly at the start of peak hours. Which solution will meet these requirements?",
       "options": {
-        "A": "ConFigure an Application Load Balancer to distribute traFic properly to the instances.",
-        "B": "ConFigure a dynamic scaling policy for the Auto Scaling group to launch new instances based on memory utilization.",
-        "C": "ConFigure a dynamic scaling policy for the Auto Scaling group to launch new instances based on CPU utilization.",
-        "D": "ConFigure a scheduled scaling policy for the Auto Scaling group to launch new instances before peak hours."
+        "A": "Configure an Application Load Balancer to distribute traFic properly to the instances.",
+        "B": "Configure a dynamic scaling policy for the Auto Scaling group to launch new instances based on memory utilization.",
+        "C": "Configure a dynamic scaling policy for the Auto Scaling group to launch new instances based on CPU utilization.",
+        "D": "Configure a scheduled scaling policy for the Auto Scaling group to launch new instances before peak hours."
       },
       "correct_answer": "D",
       "explanation": "Proactively scales instances to handle predictable traffic spikes.\nDynamic scaling (Options B/C) reacts too slowly for known peaks."
@@ -162,10 +162,10 @@
       "id": "664",
       "question": "A company has a web application that runs on premises. The application experiences latency issues during peak hours. The latency issues occur twice each month. At the start of a latency issue, the application'sCPU utilization immediately increases to 10 times its normal amount. The company wants to migrate the application to AWS to improve latency. The company also wants to scale the application automatically when application demand increases. The company will use AWS Elastic Beanstalk for application deployment. Which solution will meet these requirements?",
       "options": {
-        "A": "ConFigure an Elastic Beanstalk environment to use burstable performance instances in unlimited mode. ConFigure the environment to scale based on requests.",
-        "B": "ConFigure an Elastic Beanstalk environment to use compute optimized instances. ConFigure the environment to scale based on requests.",
-        "C": "ConFigure an Elastic Beanstalk environment to use compute optimized instances. ConFigure the environment to scale on a schedule.",
-        "D": "ConFigure an Elastic Beanstalk environment to use burstable performance instances in unlimited mode. ConFigure the environment to scale on predictive metrics."
+        "A": "Configure an Elastic Beanstalk environment to use burstable performance instances in unlimited mode. Configure the environment to scale based on requests.",
+        "B": "Configure an Elastic Beanstalk environment to use compute optimized instances. Configure the environment to scale based on requests.",
+        "C": "Configure an Elastic Beanstalk environment to use compute optimized instances. Configure the environment to scale on a schedule.",
+        "D": "Configure an Elastic Beanstalk environment to use burstable performance instances in unlimited mode. Configure the environment to scale on predictive metrics."
       },
       "correct_answer": "A",
       "explanation": "Burstable instances handle CPU spikes cost-effectively. Request-based scaling matches demand.\nCompute-optimized instances (Option B) are overprovisioned for intermittent spikes."
@@ -259,10 +259,10 @@
       "id": "672",
       "question": "Amarketing company receives a large amount of new clickstream data in Amazon S3 from amarketing campaign. The company needs to analyze the clickstream data in Amazon S3 quickly. Then the company needs to determine whether to process the data further in the data pipeline. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Create external tables in a Spark catalog. ConFigure jobs in AWS Glue to query the data.",
-        "B": "ConFigure an AWS Glue crawler to crawl the data. ConFigure Amazon Athena to query the data.",
-        "C": "Create external tables in a Hive metastore. ConFigure Spark jobs in Amazon EMR to query the data.",
-        "D": "ConFigure an AWS Glue crawler to crawl the data. ConFigure Amazon Kinesis Data Analytics to use SQL to query the data."
+        "A": "Create external tables in a Spark catalog. Configure jobs in AWS Glue to query the data.",
+        "B": "Configure an AWS Glue crawler to crawl the data. Configure Amazon Athena to query the data.",
+        "C": "Create external tables in a Hive metastore. Configure Spark jobs in Amazon EMR to query the data.",
+        "D": "Configure an AWS Glue crawler to crawl the data. Configure Amazon Kinesis Data Analytics to use SQL to query the data."
       },
       "correct_answer": "B",
       "explanation": "Glue catalogs data; Athena provides serverless SQL queries.\nEMR (Option C) adds operational overhead."
@@ -274,7 +274,7 @@
         "A": "Use AWS DataSync to copy data that is older than 7 days from the SMB File server to AWS.",
         "B": "Create an Amazon S3 File Gateway to increase the company's storage space. Create an S3 Lifecycle policy to transition the data to S3 Glacier Deep Archive after 7 days.",
         "C": "Create an Amazon FSx File Gateway to increase the company's storage space. Create an Amazon S3 Lifecycle policy to transition the data after 7 days.",
-        "D": "ConFigure access to Amazon S3 for each user. Create an S3 Lifecycle policy to transition the data to S3 Glacier Flexible Retrieval after 7 days."
+        "D": "Configure access to Amazon S3 for each user. Create an S3 Lifecycle policy to transition the data to S3 Glacier Flexible Retrieval after 7 days."
       },
       "correct_answer": "B",
       "explanation": "File Gateway extends on-prem storage; Glacier Deep Archive is cost-effective for archives.\nDataSync (Option A) doesn’t automate tiering."
@@ -284,10 +284,10 @@
       "question": "A company runs a web application on Amazon EC2 instances in an Auto Scaling group. The application uses a database that runs on an Amazon RDS for PostgreSQL DB instance. The application performs slowly when trafic increases. The database experiences aheavy read load during periods of high trafic. Which actions should A solutions architect take to resolve these performance issues? (Choose two.)",
       "options": {
         "A": "Turn on auto scaling for the DB instance.",
-        "B": "Create a read replica for the DB instance. ConFigure the application to send read traFic to the read replica.",
-        "C": "Convert the DB instance to a Multi-AZ DB instance deployment. ConFigure the application to send read traFic to the standby DB instance.",
-        "D": "Create an Amazon ElastiCache cluster. ConFigure the application to cache query results in the ElastiCache cluster.",
-        "E": "ConFigure the Auto Scaling group subnets to ensure that the EC2 instances are provisioned in the same Availability Zone as the DB instance."
+        "B": "Create a read replica for the DB instance. Configure the application to send read traFic to the read replica.",
+        "C": "Convert the DB instance to a Multi-AZ DB instance deployment. Configure the application to send read traFic to the standby DB instance.",
+        "D": "Create an Amazon ElastiCache cluster. Configure the application to cache query results in the ElastiCache cluster.",
+        "E": "Configure the Auto Scaling group subnets to ensure that the EC2 instances are provisioned in the same Availability Zone as the DB instance."
       },
       "correct_answer": "BD",
       "explanation": "Read replicas offload read traffic. ElastiCache reduces DB load.\nMulti-AZ (Option C) doesn’t scale reads; auto scaling (Option A) isn’t for RDS."
@@ -308,10 +308,10 @@
       "id": "676",
       "question": "A company'sapplication uses Network Load Balancers, Auto Scaling groups, Amazon EC2 instances, and databases that are deployed in an Amazon VPC. The company wants to capture information about trafic to and from the network interfaces in near real time in its Amazon VPC. The company wants to send the information to Amazon Opensearch Service for analysis. Which solution will meet these requirements?",
       "options": {
-        "A": "Create a log group in Amazon CloudWatch Logs. ConFigure VPC Flow Logs to send the log data to the log group. Use Amazon Kinesis Data Streams to stream the logs from the log group to OpenSearch Service.",
-        "B": "Create a log group in Amazon CloudWatch Logs. ConFigure VPC Flow Logs to send the log data to the log group. Use Amazon Kinesis Data Firehose to stream the logs from the log group to OpenSearch Service.",
-        "C": "Create a trail in AWS CloudTrail. ConFigure VPC Flow Logs to send the log data to the trail. Use Amazon Kinesis Data Streams to stream the logs from the trail to OpenSearch Service.",
-        "D": "Create a trail in AWS CloudTrail. ConFigure VPC Flow Logs to send the log data to the trail. Use Amazon Kinesis Data Firehose to stream the logs from the trail to OpenSearch Service."
+        "A": "Create a log group in Amazon CloudWatch Logs. Configure VPC Flow Logs to send the log data to the log group. Use Amazon Kinesis Data Streams to stream the logs from the log group to OpenSearch Service.",
+        "B": "Create a log group in Amazon CloudWatch Logs. Configure VPC Flow Logs to send the log data to the log group. Use Amazon Kinesis Data Firehose to stream the logs from the log group to OpenSearch Service.",
+        "C": "Create a trail in AWS CloudTrail. Configure VPC Flow Logs to send the log data to the trail. Use Amazon Kinesis Data Streams to stream the logs from the trail to OpenSearch Service.",
+        "D": "Create a trail in AWS CloudTrail. Configure VPC Flow Logs to send the log data to the trail. Use Amazon Kinesis Data Firehose to stream the logs from the trail to OpenSearch Service."
       },
       "correct_answer": "B",
       "explanation": "Flow Logs capture traffic; Firehose streams to OpenSearch.\nCloudTrail (Options C/D) logs API calls, not network traffic."
@@ -322,7 +322,7 @@
       "options": {
         "A": "Create a managed node group that contains only Spot Instances.",
         "B": "Create two managed node groups. Provision one node group with On-Demand Instances. Provision the second node group with Spot Instances.",
-        "C": "Create an Auto Scaling group that has a launch conFiguration that uses Spot Instances. ConFigure the user data to add the nodes to the EKS cluster.",
+        "C": "Create an Auto Scaling group that has a launch conFiguration that uses Spot Instances. Configure the user data to add the nodes to the EKS cluster.",
         "D": "Create a managed node group that contains only On-Demand Instances."
       },
       "correct_answer": "B",
@@ -346,9 +346,9 @@
       "options": {
         "A": "Create an S3 bucket that has S3 Object Lock enabled.",
         "B": "Create an S3 bucket that has object versioning enabled.",
-        "C": "ConFigure a default retention period of 30 days for the objects.",
-        "D": "ConFigure an S3 Lifecycle policy to protect the objects for 30 days.",
-        "E": "ConFigure an S3 Lifecycle policy to expire the objects after 30 days. F. ConFigure the backup solution to tag the objects with a 30-day retention period"
+        "C": "Configure a default retention period of 30 days for the objects.",
+        "D": "Configure an S3 Lifecycle policy to protect the objects for 30 days.",
+        "E": "Configure an S3 Lifecycle policy to expire the objects after 30 days. F. Configure the backup solution to tag the objects with a 30-day retention period"
       },
       "correct_answer": "B",
       "explanation": "Versioning + retention policies automate compliance. Lifecycle rules expire objects.\nObject Lock (Option A) prevents deletion; tagging (Option F) doesn’t enforce retention."
@@ -358,7 +358,7 @@
       "question": "A solutions architect needs to copy Files from an Amazon S3 bucket to an Amazon Elastic File System (Amazon EFS) File system and another S3 bucket. The Files must be copied continuously. New Files are added to the original S3 bucket consistently. The copied Files should be overwritten only if the source File changes. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Create an AWS DataSync location for both the destination S3 bucket and the EFS File system. Create a task for the destination S3 bucket and the EFS File system. Set the transfer mode to transfer only data that has changed.",
-        "B": "Create an AWS Lambda function. Mount the File system to the function. Set up an S3 event notiFication to invoke the function when Files are created and changed in Amazon S3. ConFigure the function to copy Files to the File system and the destination S3 bucket.",
+        "B": "Create an AWS Lambda function. Mount the File system to the function. Set up an S3 event notiFication to invoke the function when Files are created and changed in Amazon S3. Configure the function to copy Files to the File system and the destination S3 bucket.",
         "C": "Create an AWS DataSync location for both the destination S3 bucket and the EFS File system. Create a task for the destination S3 bucket and the EFS File system. Set the transfer mode to transfer all data.",
         "D": "Launch an Amazon EC2 instance in the same VPC as the File system. Mount the File system. Create a script to routinely synchronize all objects that changed in the origin S3 bucket to the destination S3 bucket and the mounted File system."
       },
