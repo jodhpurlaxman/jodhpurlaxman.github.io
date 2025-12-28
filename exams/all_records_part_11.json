@@ -2,7 +2,7 @@
   "questions": [
     {
       "id": "501",
-      "question": "A company wants to ingest customer payment data into the company'sdata lake in Amazon S3. The company receives payment data every minute on average. The company wants to analyze the payment data in real time. Then the company wants to ingest the data into the data lake. Which solution will meet these requirements with the MOST operational eficiency?",
+      "question": "A company wants to ingest customer payment data into the company's data lake in Amazon S3. The company receives payment data every minute on average. The company wants to analyze the payment data in real time. Then the company wants to ingest the data into the data lake. Which solution will meet these requirements with the MOST operational eficiency?",
       "options": {
         "A": "Use Amazon Kinesis Data Streams to ingest data. Use AWS Lambda to analyze the data in real time.",
         "B": "Use AWS Glue to ingest data. Use Amazon Kinesis Data Analytics to analyze the data in real time.",
@@ -27,7 +27,7 @@
     },
     {
       "id": "503",
-      "question": "A company runs an infrastructure monitoring service. The company is building anew feature that will enable the service to monitor data in customer AWS accounts. The new feature will call AWS APIs in customer accounts to describe Amazon EC2 instances and read Amazon Cloudwatch metrics. What should the company do to obtain access to customer accounts in the MOST secure way?",
+      "question": "A company runs an infrastructure monitoring service. The company is building a new feature that will enable the service to monitor data in customer AWS accounts. The new feature will call AWS APIs in customer accounts to describe Amazon EC2 instances and read Amazon Cloudwatch metrics. What should the company do to obtain access to customer accounts in the MOST secure way?",
       "options": {
         "A": "Ensure that the customers create an IAM role in their account with read-only EC2 and CloudWatch permissions and a trust policy to the company’s account.",
         "B": "Create a serverless API that implements a token vending machine to provide temporary AWS credentials for a role with read-only EC2 and CloudWatch permissions.",
@@ -39,7 +39,7 @@
     },
     {
       "id": "504",
-      "question": "A company needs to connect several VPCs in the us-east-1 Region that span hundreds of AWS accounts. The company'snetworking team has its own AWS account to manage the cloud network. What is the MOST operationally eficient solution to connect the VPCs?",
+      "question": "A company needs to connect several VPCs in the us-east-1 Region that span hundreds of AWS accounts. The company's networking team has its own AWS account to manage the cloud network. What is the MOST operationally eficient solution to connect the VPCs?",
       "options": {
         "A": "Set up VPC peering connections between each VPC. Update each associated subnet’s route table",
         "B": "Configure a NAT gateway and an internet gateway in each VPC to connect each VPC through the internet",
@@ -63,7 +63,7 @@
     },
     {
       "id": "506",
-      "question": "Asocial media company is building afeature for its website. The feature will give users the ability to upload photos. The company expects significant increases in demand during large events and must ensure that the website can handle the upload trafic from users. Which solution meets these requirements with the MOST scalability?",
+      "question": "Asocial media company is building afeature for its website. The feature will give users the ability to upload photos. The company expects significant increases in demand during large events and must ensure that the website can handle the upload traffic from users. Which solution meets these requirements with the MOST scalability?",
       "options": {
         "A": "Upload Files from the user's browser to the application servers. Transfer the Files to an Amazon S3 bucket.",
         "B": "Provision an AWS Storage Gateway File gateway. Upload Files directly from the user's browser to the File gateway.",
@@ -114,9 +114,9 @@
       "id": "510",
       "question": "Aglobal marketing company has applications that run in the ap-southeast-2 Region and the eu-west-1 Region. Applications that run in a VPC in eu- west-1 need to communicate securely with databases that run in a VPC in ap-southeast-2. Which network design will meet these requirements?",
       "options": {
-        "A": "Create a VPC peering connection between the eu-west-1 VPC and the ap-southeast-2 VPC. Create an inbound rule in the eu-west-1 application security group that allows traFic from the database server IP addresses in the ap-southeast-2 security group.",
+        "A": "Create a VPC peering connection between the eu-west-1 VPC and the ap-southeast-2 VPC. Create an inbound rule in the eu-west-1 application security group that allows traffic from the database server IP addresses in the ap-southeast-2 security group.",
         "B": "Configure a VPC peering connection between the ap-southeast-2 VPC and the eu-west-1 VPC. Update the subnet route tables. Create an inbound rule in the ap-southeast-2 database security group that references the security group ID of the application servers in eu-west-1.",
-        "C": "Configure a VPC peering connection between the ap-southeast-2 VPC and the eu-west-1 VPUpdate the subnet route tables. Create an inbound rule in the ap-southeast-2 database security group that allows traFic from the eu-west-1 application server IP addresses.",
+        "C": "Configure a VPC peering connection between the ap-southeast-2 VPC and the eu-west-1 VPUpdate the subnet route tables. Create an inbound rule in the ap-southeast-2 database security group that allows traffic from the eu-west-1 application server IP addresses.",
         "D": "Create a transit gateway with a peering attachment between the eu-west-1 VPC and the ap-southeast-2 VPC. After the transit gateways are properly peered and routing is conFigured, create an inbound rule in the database security group that references the security group ID of the application servers in eu-west-1."
       },
       "correct_answer": "C",
@@ -124,7 +124,7 @@
     },
     {
       "id": "511",
-      "question": "A company is developing software that uses aPostgreSQL database schema. The company needs to configure multiple development environments and databases for the company'sdevelopers. On average, each development environment is used for half of the 8-hour workday. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company is developing software that uses aPostgreSQL database schema. The company needs to configure multiple development environments and databases for the company's developers. On average, each development environment is used for half of the 8-hour workday. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Configure each development environment with its own Amazon Aurora PostgreSQL database",
         "B": "Configure each development environment with its own Amazon RDS for PostgreSQL Single-AZ DB instances",
@@ -148,7 +148,7 @@
     },
     {
       "id": "513",
-      "question": "Asocial media company wants to allow its users to upload images in an application that is hosted in the AWS Cloud. The company needs asolution that automatically resizes the images so that the images can be displayed on multiple device types. The application experiences unpredictable trafic patterns throughout the day. The company is seeking a highly available solution that maximizes scalability. What should A solutions architect do to meet these requirements?",
+      "question": "Asocial media company wants to allow its users to upload images in an application that is hosted in the AWS Cloud. The company needs a solution that automatically resizes the images so that the images can be displayed on multiple device types. The application experiences unpredictable traffic patterns throughout the day. The company is seeking a highly available solution that maximizes scalability. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Create a static website hosted in Amazon S3 that invokes AWS Lambda functions to resize the images and store the images in an Amazon S3 bucket.",
         "B": "Create a static website hosted in Amazon CloudFront that invokes AWS Step Functions to resize the images and store the images in an Amazon RDS database.",
@@ -165,14 +165,14 @@
         "A": "Grant the required permission in AWS Identity and Access Management (IAM) to the AmazonEKSNodeRole IAM role.",
         "B": "Create interface VPC endpoints to allow nodes to access the control plane.",
         "C": "Recreate nodes in the public subnet. Restrict security groups for EC2 nodes.",
-        "D": "Allow outbound traFic in the security group of the nodes."
+        "D": "Allow outbound traffic in the security group of the nodes."
       },
       "correct_answer": "B",
       "explanation": "When the Amazon EKS control plane has private access, nodes need to communicate with the control plane through interface VPC endpoints.\nCreating interface VPC endpoints ensures that the nodes in private subnets can securely communicate with the EKS control plane without the need for public IP addresses."
     },
     {
       "id": "515",
-      "question": "A company is migrating an on-premises application to AWS. The company wants to use Amazon Redshift as asolution. Which use cases are suitable for Amazon Redshift in this scenario? (Choose three.)",
+      "question": "A company is migrating an on-premises application to AWS. The company wants to use Amazon Redshift as a solution. Which use cases are suitable for Amazon Redshift in this scenario? (Choose three.)",
       "options": {
         "A": "Supporting data APIs to access data with traditional, containerized, and event-driven applications",
         "B": "Supporting client-side and server-side encryption",
@@ -233,7 +233,7 @@
     },
     {
       "id": "520",
-      "question": "A company is designing anew web application that will run on Amazon EC2 Instances. The application will use Amazon DynamoDB for backend data storage. The application trafic will be unpredictable. The company expects that the application read and write throughput to the database will be moderate to high. The company needs to scale in response to application trafic. Which DynamoDB table configuration will meet these requirements MOST cost-effectively?",
+      "question": "A company is designing a new web application that will run on Amazon EC2 Instances. The application will use Amazon DynamoDB for backend data storage. The application traffic will be unpredictable. The company expects that the application read and write throughput to the database will be moderate to high. The company needs to scale in response to application traffic. Which DynamoDB table configuration will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Configure DynamoDB with provisioned read and write by using the DynamoDB Standard table class. Set DynamoDB auto scaling to a maximum deFined capacity.",
         "B": "Configure DynamoDB in on-demand mode by using the DynamoDB Standard table class.",
@@ -245,7 +245,7 @@
     },
     {
       "id": "521",
-      "question": "Aretail company has several businesses. The IT team for each business manages its own AWS account. Each team account is part of an organization in AWS Organizations. Each team monitors its product inventory levels in an Amazon DynamoDB table in the team'sown AWS account. The company is deploying acentral inventory reporting application into ashared AWS account. The application must be able to read items from all the teams' DynamoDB tables. Which authentication option will meet these requirements MOST securely?",
+      "question": "Aretail company has several businesses. The IT team for each business manages its own AWS account. Each team account is part of an organization in AWS Organizations. Each team monitors its product inventory levels in an Amazon DynamoDB table in the team's own AWS account. The company is deploying acentral inventory reporting application into ashared AWS account. The application must be able to read items from all the teams' DynamoDB tables. Which authentication option will meet these requirements MOST securely?",
       "options": {
         "A": "Integrate DynamoDB with AWS Secrets Manager in the inventory application account. Configure the application to use the correct secret from Secrets Manager to authenticate and read the DynamoDB table. Schedule secret rotation for every 30 days.",
         "B": "In every business account, create an IAM user that has programmatic access. Configure the application to use the correct IAM user access key ID and secret access key to authenticate and read the DynamoDB table. Manually rotate IAM access keys every 30 days.",
@@ -257,7 +257,7 @@
     },
     {
       "id": "522",
-      "question": "A company runs container applications by using Amazon Elastic Kubernetes Service (Amazon EKS). The company'sworkload is not consistent throughout the day. The company wants Amazon EKS to scale in and out according to the workload. Which combination of steps will meet these requirements with the LEAST operational overhead? (Choose two.)",
+      "question": "A company runs container applications by using Amazon Elastic Kubernetes Service (Amazon EKS). The company's workload is not consistent throughout the day. The company wants Amazon EKS to scale in and out according to the workload. Which combination of steps will meet these requirements with the LEAST operational overhead? (Choose two.)",
       "options": {
         "A": "Use an AWS Lambda function to resize the EKS cluster.",
         "B": "Use the Kubernetes Metrics Server to activate horizontal pod autoscaling.",
@@ -294,7 +294,7 @@
     },
     {
       "id": "525",
-      "question": "A company wants to add its existing AWS usage cost to its operation cost dashboard. A solutions architect needs to recommend asolution that will give the company access to its usage cost programmatically. The company must be able to access cost data for the current year and forecast costs for the next 12 months. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company wants to add its existing AWS usage cost to its operation cost dashboard. A solutions architect needs to recommend a solution that will give the company access to its usage cost programmatically. The company must be able to access cost data for the current year and forecast costs for the next 12 months. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Access usage cost-related data by using the AWS Cost Explorer API with pagination.",
         "B": "Access usage cost-related data by using downloadable AWS Cost Explorer report .csv Files.",
@@ -306,7 +306,7 @@
     },
     {
       "id": "526",
-      "question": "A solutions architect is reviewing the resilience of an application. The solutions architect notices that a database administrator recently failed over the application'sAmazon Aurora PostgreSQL database writer instance as part of ascaling exercise. The failover resulted in 3 minutes of downtime for the application. Which solution will reduce the downtime for scaling exercises with the LEAST operational overhead?",
+      "question": "A solutions architect is reviewing the resilience of an application. The solutions architect notices that a database administrator recently failed over the application's Amazon Aurora PostgreSQL database writer instance as part of ascaling exercise. The failover resulted in 3 minutes of downtime for the application. Which solution will reduce the downtime for scaling exercises with the LEAST operational overhead?",
       "options": {
         "A": "Create more Aurora PostgreSQL read replicas in the cluster to handle the load during failover.",
         "B": "Set up a secondary Aurora PostgreSQL cluster in the same AWS Region. During failover, update the application to use the secondary cluster's writer endpoint.",
@@ -330,7 +330,7 @@
     },
     {
       "id": "528",
-      "question": "Adata analytics company wants to migrate its batch processing system to AWS. The company receives thousands of small data Files periodically during the day through FTP. An on-premises batch job processes the data Files overnight. However, the batch job takes hours to Finish running. The company wants the AWS solution to process incoming data Files as soon as possible with minimal changes to the FTP clients that send the Files. The solution must delete the incoming data Files after the Files have been processed successfully. Processing for each File needs to take 3-8 minutes. Which solution will meet these requirements in the MOST operationally eficient way?",
+      "question": "A data analytics company wants to migrate its batch processing system to AWS. The company receives thousands of small data Files periodically during the day through FTP. An on-premises batch job processes the data Files overnight. However, the batch job takes hours to Finish running. The company wants the AWS solution to process incoming data Files as soon as possible with minimal changes to the FTP clients that send the Files. The solution must delete the incoming data Files after the Files have been processed successfully. Processing for each File needs to take 3-8 minutes. Which solution will meet these requirements in the MOST operationally eficient way?",
       "options": {
         "A": "Use an Amazon EC2 instance that runs an FTP server to store incoming Files as objects in Amazon S3 Glacier Flexible Retrieval. Configure a job queue in AWS Batch. Use Amazon EventBridge rules to invoke the job to process the objects nightly from S3 Glacier Flexible Retrieval. Delete the objects after the job has processed the objects.",
         "B": "Use an Amazon EC2 instance that runs an FTP server to store incoming Files on an Amazon Elastic Block Store (Amazon EBS) volume. Configure a job queue in AWS Batch. Use Amazon EventBridge rules to invoke the job to process the Files nightly from the EBS volume. Delete the Files after the job has processed the Files.",
@@ -354,7 +354,7 @@
     },
     {
       "id": "530",
-      "question": "A company has an online gaming application that has TCP and UDP multiplayer gaming capabilities. The company uses Amazon Route 53 to point the application trafic to multiple Network Load Balancers (NLBs) in different AWS Regions. The company needs to improve application performance and decrease latency for the online game in preparation for user growth. Which solution will meet these requirements?",
+      "question": "A company has an online gaming application that has TCP and UDP multiplayer gaming capabilities. The company uses Amazon Route 53 to point the application traffic to multiple Network Load Balancers (NLBs) in different AWS Regions. The company needs to improve application performance and decrease latency for the online game in preparation for user growth. Which solution will meet these requirements?",
       "options": {
         "A": "Add an Amazon CloudFront distribution in front of the NLBs. Increase the Cache-Control max-age parameter.",
         "B": "Replace the NLBs with Application Load Balancers (ALBs). Configure Route 53 to use latency-based routing.",
@@ -391,7 +391,7 @@
     },
     {
       "id": "533",
-      "question": "A company stores data in Amazon S3. According to regulations, the data must not contain personally identifiable information (PII). The company recently discovered that S3 buckets have some objects that contain PII. The company needs to automatically detect PII in S3 buckets and to notify the company’ssecurity team. Which solution will meet these requirements?",
+      "question": "A company stores data in Amazon S3. According to regulations, the data must not contain personally identifiable information (PII). The company recently discovered that S3 buckets have some objects that contain PII. The company needs to automatically detect PII in S3 buckets and to notify the company’s security team. Which solution will meet these requirements?",
       "options": {
         "A": "Use Amazon Macie. Create an Amazon EventBridge rule to Filter the SensitiveData event type from Macie Findings and to send an Amazon Simple NotiFication Service (Amazon SNS) notiFication to the security team.",
         "B": "Use Amazon GuardDuty. Create an Amazon EventBridge rule to Filter the CRITICAL event type from GuardDuty Findings and to send an Amazon Simple NotiFication Service (Amazon SNS) notiFication to the security team.",
@@ -403,7 +403,7 @@
     },
     {
       "id": "534",
-      "question": "A company wants to build alogging solution for its multiple AWS accounts. The company currently stores the logs from all accounts in acentralized account. The company has created an Amazon S3 bucket in the centralized account to store the VPC Fiow logs and AWS Cloudtrail logs. All logs must be highly available for 30 days for frequent analysis, retained for an additional 60 days for backup purposes, and deleted 90 days after creation. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company wants to build alogging solution for its multiple AWS accounts. The company currently stores the logs from all accounts in acentralized account. The company has created an Amazon S3 bucket in the centralized account to store the VPC Flow logs and AWS Cloudtrail logs. All logs must be highly available for 30 days for frequent analysis, retained for an additional 60 days for backup purposes, and deleted 90 days after creation. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Transition objects to the S3 Standard storage class 30 days after creation. Write an expiration action that directs Amazon S3 to delete objects after 90 days.",
         "B": "Transition objects to the S3 Standard-Infrequent Access (S3 Standard-IA) storage class 30 days after creation. Move all objects to the S3 Glacier Flexible Retrieval storage class after 90 days. Write an expiration action that directs Amazon S3 to delete objects after 90 days.",
@@ -427,7 +427,7 @@
     },
     {
       "id": "536",
-      "question": "A company wants to provide data scientists with near real-time read-only access to the company'sproduction Amazon RDS for PostgreSQL database. The database is currently configured as aSingle-AZ database. The data scientists use complex queries that will not affect the production database. The company needs asolution that is highly available. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company wants to provide data scientists with near real-time read-only access to the company's production Amazon RDS for PostgreSQL database. The database is currently configured as aSingle-AZ database. The data scientists use complex queries that will not affect the production database. The company needs a solution that is highly available. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Scale the existing production database in a maintenance window to provide enough power for the data scientists.",
         "B": "Change the setup from a Single-AZ to a Multi-AZ instance deployment with a larger secondary standby instance. Provide the data scientists access to the secondary instance.",
@@ -439,7 +439,7 @@
     },
     {
       "id": "537",
-      "question": "A company runs athree-tier web application in the AWS Cloud that operates across three Availability Zones. The application architecture has an Application Load Balancer, an Amazon EC2 web server that hosts user session states, and aMySQL database that runs on an EC2 instance. The company expects sudden increases in application trafic. The company wants to be able to scale to meet future application capacity demands and to ensure high availability across all three Availability Zones. Which solution will meet these requirements?",
+      "question": "A company runs a three-tier web application in the AWS Cloud that operates across three Availability Zones. The application architecture has an Application Load Balancer, an Amazon EC2 web server that hosts user session states, and aMySQL database that runs on an EC2 instance. The company expects sudden increases in application traffic. The company wants to be able to scale to meet future application capacity demands and to ensure high availability across all three Availability Zones. Which solution will meet these requirements?",
       "options": {
         "A": "Migrate the MySQL database to Amazon RDS for MySQL with a Multi-AZ DB cluster deployment. Use Amazon ElastiCache for Redis with high availability to store session data and to cache reads. Migrate the web server to an Auto Scaling group that is in three Availability Zones.",
         "B": "Migrate the MySQL database to Amazon RDS for MySQL with a Multi-AZ DB cluster deployment. Use Amazon ElastiCache for Memcached with high availability to store session data and to cache reads. Migrate the web server to an Auto Scaling group that is in three Availability Zones.",
@@ -463,7 +463,7 @@
     },
     {
       "id": "539",
-      "question": "A company wants to use the AWS Cloud to improve its on-premises disaster recovery (DR) configuration. The company'score production business application uses Microsoft SQL Server Standard, which runs on avirtual machine (VM). The application has arecovery point objective (RPO) of 30 seconds or fewer and arecovery time objective (RTO) of 60 minutes. The DR solution needs to minimize costs wherever possible. Which solution will meet these requirements?",
+      "question": "A company wants to use the AWS Cloud to improve its on-premises disaster recovery (DR) configuration. The company's core production business application uses Microsoft SQL Server Standard, which runs on avirtual machine (VM). The application has arecovery point objective (RPO) of 30 seconds or fewer and arecovery time objective (RTO) of 60 minutes. The DR solution needs to minimize costs wherever possible. Which solution will meet these requirements?",
       "options": {
         "A": "Configure a multi-site active/active setup between the on-premises server and AWS by using Microsoft SQL Server Enterprise with Always On availability groups.",
         "B": "Configure a warm standby Amazon RDS for SQL Server database on AWS. Configure AWS Database Migration Service (AWS DMS) to use change data capture (CDC).",
@@ -512,7 +512,7 @@
     },
     {
       "id": "543",
-      "question": "A company runs Amazon EC2 instances in multiple AWS accounts that are individually bled. The company recently purchased aSavings Pian. Because of changes in the company’sbusiness requirements, the company has decommissioned a large number of EC2 instances. The company wants to use its Savings Plan discounts on its other AWS accounts. Which combination of steps will meet these requirements? (Choose two.)",
+      "question": "A company runs Amazon EC2 instances in multiple AWS accounts that are individually bled. The company recently purchased aSavings Pian. Because of changes in the company’s business requirements, the company has decommissioned a large number of EC2 instances. The company wants to use its Savings Plan discounts on its other AWS accounts. Which combination of steps will meet these requirements? (Choose two.)",
       "options": {
         "A": "From the AWS Account Management Console of the management account, turn on discount sharing from the billing preferences section.",
         "B": "From the AWS Account Management Console of the account that purchased the existing Savings Plan, turn on discount sharing from the billing preferences section. Include all accounts.",
@@ -525,9 +525,9 @@
     },
     {
       "id": "544",
-      "question": "Aretail company uses aregional Amazon API Gateway API for its public REST APIs. The API Gateway endpoint is acustom domain name that points to an Amazon Route 53 alias record. A solutions architect needs to create asolution that has minimal effects on customers and minimal data loss to release the new version of APIs. Which solution will meet these requirements?",
+      "question": "Aretail company uses aregional Amazon API Gateway API for its public REST APIs. The API Gateway endpoint is acustom domain name that points to an Amazon Route 53 alias record. A solutions architect needs to create a solution that has minimal effects on customers and minimal data loss to release the new version of APIs. Which solution will meet these requirements?",
       "options": {
-        "A": "Create a canary release deployment stage for API Gateway. Deploy the latest API version. Point an appropriate percentage of traFic to the canary stage. After API veriFication, promote the canary stage to the production stage.",
+        "A": "Create a canary release deployment stage for API Gateway. Deploy the latest API version. Point an appropriate percentage of traffic to the canary stage. After API veriFication, promote the canary stage to the production stage.",
         "B": "Create a new API Gateway endpoint with a new version of the API in OpenAPI YAML File format. Use the import-to-update operation in merge mode into the API in API Gateway. Deploy the new version of the API to the production stage.",
         "C": "Create a new API Gateway endpoint with a new version of the API in OpenAPI JSON File format. Use the import-to-update operation in overwrite mode into the API in API Gateway. Deploy the new version of the API to the production stage.",
         "D": "Create a new API Gateway endpoint with new versions of the API deFinitions. Create a custom domain name for the new API Gateway API. Point the Route 53 alias record to the new API Gateway API custom domain name."
@@ -537,19 +537,19 @@
     },
     {
       "id": "545",
-      "question": "A company wants to direct its users to abackup static error page if the company'sprimary website is unavailable. The primary website'sDNS records are hosted in Amazon Route 53. The domain is pointing to an Application Load Balancer (ALB). The company needs asolution that minimizes changes and infrastructure overhead. Which solution will meet these requirements?",
+      "question": "A company wants to direct its users to abackup static error page if the company's primary website is unavailable. The primary website's DNS records are hosted in Amazon Route 53. The domain is pointing to an Application Load Balancer (ALB). The company needs a solution that minimizes changes and infrastructure overhead. Which solution will meet these requirements?",
       "options": {
-        "A": "Update the Route 53 records to use a latency routing policy. Add a static error page that is hosted in an Amazon S3 bucket to the records so that the traFic is sent to the most responsive endpoints.",
-        "B": "Set up a Route 53 active-passive failover conFiguration. Direct traFic to a static error page that is hosted in an Amazon S3 bucket when Route 53 health checks determine that the ALB endpoint is unhealthy.",
+        "A": "Update the Route 53 records to use a latency routing policy. Add a static error page that is hosted in an Amazon S3 bucket to the records so that the traffic is sent to the most responsive endpoints.",
+        "B": "Set up a Route 53 active-passive failover conFiguration. Direct traffic to a static error page that is hosted in an Amazon S3 bucket when Route 53 health checks determine that the ALB endpoint is unhealthy.",
         "C": "Set up a Route 53 active-active conFiguration with the ALB and an Amazon EC2 instance that hosts a static error page as endpoints. Configure Route 53 to send requests to the instance only if the health checks fail for the ALB.",
-        "D": "Update the Route 53 records to use a multivalue answer routing policy. Create a health check. Direct traFic to the website if the health check passes. Direct traFic to a static error page that is hosted in Amazon S3 if the health check does not pass."
+        "D": "Update the Route 53 records to use a multivalue answer routing policy. Create a health check. Direct traffic to the website if the health check passes. Direct traffic to a static error page that is hosted in Amazon S3 if the health check does not pass."
       },
       "correct_answer": "B",
       "explanation": "An active-passive failover configuration in Route 53 involves designating one endpoint (primary, in this case, the ALB) as active and another endpoint (S3 bucket hosting a static error page) as passive.\nRoute 53 health checks can be configured to monitor the health of the ALB endpoint. If the health checks determine that the ALB endpoint is unhealthy (i.e., the primary website is unavailable), Route 53 automatically directs traffic to the passive endpoint (S3 bucket with the static error page)."
     },
     {
       "id": "546",
-      "question": "Arecent analysis of A company'sIT expenses highlights the need to reduce backup costs. The company'schief information oficer wants to simplify the on-premises backup infrastructure and reduce costs by eliminating the use of physical backup tapes. The company must preserve the existing investment in the on-premises backup applications and workfiows. What should A solutions architect recommend?",
+      "question": "Arecent analysis of A company's IT expenses highlights the need to reduce backup costs. The company's chief information oficer wants to simplify the on-premises backup infrastructure and reduce costs by eliminating the use of physical backup tapes. The company must preserve the existing investment in the on-premises backup applications and workflows. What should A solutions architect recommend?",
       "options": {
         "A": "Set up AWS Storage Gateway to connect with the backup applications using the NFS interface.",
         "B": "Set up an Amazon EFS File system that connects with the backup applications using the NFS interface.",
@@ -587,10 +587,10 @@
       "id": "549",
       "question": "A company has created a multi-tier application for its ecommerce website. The website uses an Application Load Balancer that resides in the public subnets, a web tier in the public subnets, and aMySQL cluster hosted on Amazon EC2 instances in the private subnets. The MySQL database needs to retrieve product catalog and pricing information that is hosted on the internet by athird-party provider. A solutions architect must devise astrategy that maximizes security without increasing operational overhead. What should the solutions architect do to meet these requirements?",
       "options": {
-        "A": "Deploy a NAT instance in the VPC. Route all the internet-based traFic through the NAT instance.",
-        "B": "Deploy a NAT gateway in the public subnets. Modify the private subnet route table to direct all internet-bound traFic to the NAT gateway.",
-        "C": "Configure an internet gateway and attach it to the VPModify the private subnet route table to direct internet-bound traFic to the internet gateway.",
-        "D": "Configure a virtual private gateway and attach it to the VPC. Modify the private subnet route table to direct internet-bound traFic to the virtual private gateway."
+        "A": "Deploy a NAT instance in the VPC. Route all the internet-based traffic through the NAT instance.",
+        "B": "Deploy a NAT gateway in the public subnets. Modify the private subnet route table to direct all internet-bound traffic to the NAT gateway.",
+        "C": "Configure an internet gateway and attach it to the VPModify the private subnet route table to direct internet-bound traffic to the internet gateway.",
+        "D": "Configure a virtual private gateway and attach it to the VPC. Modify the private subnet route table to direct internet-bound traffic to the virtual private gateway."
       },
       "correct_answer": "B",
       "explanation": "A NAT gateway is a fully managed service provided by AWS that allows instances in a private subnet to initiate outbound traffic to the internet while preventing inbound traffic from reaching those instances. It simplifies the process of enabling internet access for instances in private subnets without the need for managing a separate NAT instance."

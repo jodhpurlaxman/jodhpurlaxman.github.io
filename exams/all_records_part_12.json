@@ -26,7 +26,7 @@
     },
     {
       "id": "553",
-      "question": "A solutions architect needs to review A company'sAmazon S3 buckets to discover personally identifiable information (PII). The company stores the PII data in the us-east-1 Region and us-west-2 Region. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A solutions architect needs to review A company's Amazon S3 buckets to discover personally identifiable information (PII). The company stores the PII data in the us-east-1 Region and us-west-2 Region. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Configure Amazon Macie in each Region. Create a job to analyze the data that is in Amazon S3.",
         "B": "Configure AWS Security Hub for all Regions. Create an AWS ConFig rule to analyze the data that is in Amazon S3.",
@@ -38,7 +38,7 @@
     },
     {
       "id": "554",
-      "question": "A company'sSAP application has abackend SQL Server database in an on-premises environment. The company wants to migrate its on-premises application and database server to AWS. The company needs an instance type that meets the high demands of its SAP database. On-premises performance data shows that both the SAP application and the database have high memory utilization. Which solution will meet these requirements?",
+      "question": "A company's SAP application has abackend SQL Server database in an on-premises environment. The company wants to migrate its on-premises application and database server to AWS. The company needs an instance type that meets the high demands of its SAP database. On-premises performance data shows that both the SAP application and the database have high memory utilization. Which solution will meet these requirements?",
       "options": {
         "A": "Use the compute optimized instance family for the application. Use the memory optimized instance family for the database.",
         "B": "Use the storage optimized instance family for both the application and the database.",
@@ -52,7 +52,7 @@
       "id": "555",
       "question": "A company runs an application in a VPC with public and private subnets. The VPC extends across multiple Availability Zones. The application runs on Amazon EC2 instances in private subnets. The application uses an Amazon Simple Queue Service (Amazon SQS) queue. A solutions architect needs to design asecure solution to establish aconnection between the EC2 instances and the SQS queue. Which solution will meet these requirements?",
       "options": {
-        "A": "Implement an interface VPC endpoint for Amazon SQS. Configure the endpoint to use the private subnets. Add to the endpoint a security group that has an inbound access rule that allows traFic from the EC2 instances that are in the private subnets.",
+        "A": "Implement an interface VPC endpoint for Amazon SQS. Configure the endpoint to use the private subnets. Add to the endpoint a security group that has an inbound access rule that allows traffic from the EC2 instances that are in the private subnets.",
         "B": "Implement an interface VPC endpoint for Amazon SQS. Configure the endpoint to use the public subnets. Attach to the interface endpoint a VPC endpoint policy that allows access from the EC2 instances that are in the private subnets.",
         "C": "Implement an interface VPC endpoint for Amazon SQS. Configure the endpoint to use the public subnets. Attach an Amazon SQS access policy to the interface VPC endpoint that allows requests from only a speciFied VPC endpoint.",
         "D": "Implement a gateway endpoint for Amazon SQS. Add a NAT gateway to the private subnets. Attach an IAM role to the EC2 instances that allows access to the SQS queue."
@@ -62,7 +62,7 @@
     },
     {
       "id": "556",
-      "question": "A solutions architect is using an AWS Cloudformation template to deploy athree-tier web application. The web application consists of a web tier and an application tier that stores and retrieves user data in Amazon DynamoDB tables. The web and application tiers are hosted on Amazon EC2 instances, and the database tier is not publicly accessible. The application EC2 instances need to access the DynamoDB tables without exposing API credentials in the template. What should the solutions architect do to meet these requirements?",
+      "question": "A solutions architect is using an AWS Cloudformation template to deploy a three-tier web application. The web application consists of a web tier and an application tier that stores and retrieves user data in Amazon DynamoDB tables. The web and application tiers are hosted on Amazon EC2 instances, and the database tier is not publicly accessible. The application EC2 instances need to access the DynamoDB tables without exposing API credentials in the template. What should the solutions architect do to meet these requirements?",
       "options": {
         "A": "Create an IAM role to read the DynamoDB tables. Associate the role with the application instances by referencing an instance proFile.",
         "B": "Create an IAM role that has the required permissions to read and write from the DynamoDB tables. Add the role to the EC2 instance proFile, and associate the instance proFile with the application instances.",
@@ -86,7 +86,7 @@
     },
     {
       "id": "558",
-      "question": "A company has two VPCs that are located in the us-west-2 Region within the same AWS account. The company needs to allow network trafic between these VPCs. Approximately 500 GB of data transfer will occur between the VPCs each month. What is the MOST cost-effective solution to connect these VPCs?",
+      "question": "A company has two VPCs that are located in the us-west-2 Region within the same AWS account. The company needs to allow network traffic between these VPCs. Approximately 500 GB of data transfer will occur between the VPCs each month. What is the MOST cost-effective solution to connect these VPCs?",
       "options": {
         "A": "Implement AWS Transit Gateway to connect the VPCs. Update the route tables of each VPC to use the transit gateway for inter-VPC communication.",
         "B": "Implement an AWS Site-to-Site VPN tunnel between the VPCs. Update the route tables of each VPC to use the VPN tunnel for inter-VPC communication.",
@@ -111,7 +111,7 @@
     },
     {
       "id": "560",
-      "question": "A company'ssolutions architect is designing an AWS multi-account solution that uses AWS Organizations. The solutions architect has organized the company'saccounts into organizational units (OUs). The solutions architect needs asolution that will identify any changes to the OU hierarchy. The solution also needs to notify the company'soperations team of any changes. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company's solutions architect is designing an AWS multi-account solution that uses AWS Organizations. The solutions architect has organized the company's accounts into organizational units (OUs). The solutions architect needs a solution that will identify any changes to the OU hierarchy. The solution also needs to notify the company's operations team of any changes. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Provision the AWS accounts by using AWS Control Tower. Use account drift notiFications to identify the changes to the OU hierarchy.",
         "B": "Provision the AWS accounts by using AWS Control Tower. Use AWS ConFig aggregated rules to identify the changes to the OU hierarchy.",
@@ -123,7 +123,7 @@
     },
     {
       "id": "561",
-      "question": "A company'swebsite handles millions of requests each day, and the number of requests continues to increase. A solutions architect needs to improve the response time of the web application. The solutions architect determines that the application needs to decrease latency when retrieving product details from the Amazon DynamoDB table. Which solution will meet these requirements with the LEAST amount of operational overhead?",
+      "question": "A company's website handles millions of requests each day, and the number of requests continues to increase. A solutions architect needs to improve the response time of the web application. The solutions architect determines that the application needs to decrease latency when retrieving product details from the Amazon DynamoDB table. Which solution will meet these requirements with the LEAST amount of operational overhead?",
       "options": {
         "A": "Set up a DynamoDB Accelerator (DAX) cluster. Route all read requests through DAX.",
         "B": "Set up Amazon ElastiCache for Redis between the DynamoDB table and the web application. Route all read requests through Redis.",
@@ -172,7 +172,7 @@
     },
     {
       "id": "565",
-      "question": "A company has an on-premises MySQL database that handles transactional data. The company is migrating the database to the AWS Cloud. The migrated database must maintain compatibility with the company'sapplications that use the database. The migrated database also must scale automatically during periods of increased demand. Which migration solution will meet these requirements?",
+      "question": "A company has an on-premises MySQL database that handles transactional data. The company is migrating the database to the AWS Cloud. The migrated database must maintain compatibility with the company's applications that use the database. The migrated database also must scale automatically during periods of increased demand. Which migration solution will meet these requirements?",
       "options": {
         "A": "Use native MySQL tools to migrate the database to Amazon RDS for MySQL. Configure elastic storage scaling.",
         "B": "Migrate the database to Amazon Redshift by using the mysqldump utility. Turn on Auto Scaling for the Amazon Redshift cluster.",
@@ -208,7 +208,7 @@
     },
     {
       "id": "568",
-      "question": "A solutions architect is designing the storage architecture for anew web application used for storing and viewing engineering drawings. All application components will be deployed on the AWS infrastructure. The application design must support caching to minimize the amount of time that users wait for the engineering drawings to load. The application must be able to store petabytes of data. Which combination of storage and caching should the solutions architect use?",
+      "question": "A solutions architect is designing the storage architecture for a new web application used for storing and viewing engineering drawings. All application components will be deployed on the AWS infrastructure. The application design must support caching to minimize the amount of time that users wait for the engineering drawings to load. The application must be able to store petabytes of data. Which combination of storage and caching should the solutions architect use?",
       "options": {
         "A": "Amazon S3 with Amazon CloudFront",
         "B": "Amazon S3 Glacier with Amazon ElastiCache",
@@ -220,7 +220,7 @@
     },
     {
       "id": "569",
-      "question": "An Amazon Eventbridge rule targets athird-party API. The third-party API has not received any incoming trafic. A solutions architect needs to determine whether the rule conditions are being met and if the rule'starget is being invoked. Which solution will meet these requirements?",
+      "question": "An Amazon Eventbridge rule targets athird-party API. The third-party API has not received any incoming traffic. A solutions architect needs to determine whether the rule conditions are being met and if the rule's target is being invoked. Which solution will meet these requirements?",
       "options": {
         "A": "Check for metrics in Amazon CloudWatch in the namespace for AWS/Events.",
         "B": "Review events in the Amazon Simple Queue Service (Amazon SQS) dead-letter queue.",
@@ -280,7 +280,7 @@
     },
     {
       "id": "574",
-      "question": "AFinancial services company launched anew application that uses an Amazon RDS for MySQL database. The company uses the application to track stock market trends. The company needs to operate the application for only 2 hours at the end of each week. The company needs to optimize the cost of running the database. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "AFinancial services company launched a new application that uses an Amazon RDS for MySQL database. The company uses the application to track stock market trends. The company needs to operate the application for only 2 hours at the end of each week. The company needs to optimize the cost of running the database. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Migrate the existing RDS for MySQL database to an Aurora Serverless v2 MySQL database cluster.",
         "B": "Migrate the existing RDS for MySQL database to an Aurora MySQL database cluster.",
@@ -316,7 +316,7 @@
     },
     {
       "id": "577",
-      "question": "A company uses an Amazon Cloudfront distribution to serve content pages for its website. The company needs to ensure that clients use aTLS certificate when accessing the company'swebsite. The company wants to automate the creation and renewal of the TLS certificates. Which solution will meet these requirements with the MOST operational eficiency?",
+      "question": "A company uses an Amazon Cloudfront distribution to serve content pages for its website. The company needs to ensure that clients use aTLS certificate when accessing the company's website. The company wants to automate the creation and renewal of the TLS certificates. Which solution will meet these requirements with the MOST operational eficiency?",
       "options": {
         "A": "Use a CloudFront security policy to create a certiFicate.",
         "B": "Use a CloudFront origin access control (OAC) to create a certiFicate.",
@@ -340,7 +340,7 @@
     },
     {
       "id": "579",
-      "question": "A company runs an application that uses Amazon RDS for PostgreSQL. The application receives trafic only on weekdays during business hours. The company wants to optimize costs and reduce operational overhead based on this usage. Which solution will meet these requirements?",
+      "question": "A company runs an application that uses Amazon RDS for PostgreSQL. The application receives traffic only on weekdays during business hours. The company wants to optimize costs and reduce operational overhead based on this usage. Which solution will meet these requirements?",
       "options": {
         "A": "Use the Instance Scheduler on AWS to conFigure start and stop schedules.",
         "B": "Turn off automatic backups. Create weekly manual snapshots of the database.",
@@ -376,12 +376,12 @@
     },
     {
       "id": "582",
-      "question": "An ecommerce company uses Amazon Route 53 as its DNS provider. The company hosts its website on premises and in the AWS Cloud. The company'son-premises data center is near the us-west-1 Region. The company uses the eu-central-1 Region to host the website. The company wants to minimize load time for the website as much as possible. Which solution will meet these requirements?",
+      "question": "An ecommerce company uses Amazon Route 53 as its DNS provider. The company hosts its website on premises and in the AWS Cloud. The company's on-premises data center is near the us-west-1 Region. The company uses the eu-central-1 Region to host the website. The company wants to minimize load time for the website as much as possible. Which solution will meet these requirements?",
       "options": {
-        "A": "Set up a geolocation routing policy. Send the traFic that is near us-west-1 to the on-premises data center. Send the traFic that is near eu- central-1 to eu-central-1.",
-        "B": "Set up a simple routing policy that routes all traFic that is near eu-central-1 to eu-central-1 and routes all traFic that is near the on-premises datacenter to the on-premises data center.",
+        "A": "Set up a geolocation routing policy. Send the traffic that is near us-west-1 to the on-premises data center. Send the traffic that is near eu- central-1 to eu-central-1.",
+        "B": "Set up a simple routing policy that routes all traffic that is near eu-central-1 to eu-central-1 and routes all traffic that is near the on-premises datacenter to the on-premises data center.",
         "C": "Set up a latency routing policy. Associate the policy with us-west-1.",
-        "D": "Set up a weighted routing policy. Split the traFic evenly between eu-central-1 and the on-premises data center."
+        "D": "Set up a weighted routing policy. Split the traffic evenly between eu-central-1 and the on-premises data center."
       },
       "correct_answer": "A",
       "explanation": "Geolocation routing directs traffic based on the geographic location of the user. This option would send users near us-west-1 to the on-premises data center and users near eu-central-1 to eu-central-1. While this approach considers geographic location, it might not always result in the lowest latency."
@@ -424,7 +424,7 @@
     },
     {
       "id": "586",
-      "question": "A company has Five organizational units (OUs) as part of its organization in AWS Organizations. Each OU correlates to the Five businesses that the company owns. The company'sresearch and development (R&D) business is separating from the company and will need its own organization. A solutions architect creates aseparate new management account for this purpose. What should the solutions architect do next in the new management account?",
+      "question": "A company has Five organizational units (OUs) as part of its organization in AWS Organizations. Each OU correlates to the Five businesses that the company owns. The company's research and development (R&D) business is separating from the company and will need its own organization. A solutions architect creates aseparate new management account for this purpose. What should the solutions architect do next in the new management account?",
       "options": {
         "A": "Have the R&D AWS account be part of both organizations during the transition.",
         "B": "Invite the R&D AWS account to be part of the new organization after the R&D AWS account has left the prior organization.",
@@ -436,7 +436,7 @@
     },
     {
       "id": "587",
-      "question": "A company is designing asolution to capture customer activity in different web applications to process analytics and make predictions. Customer activity in the web applications is unpredictable and can increase suddenly. The company requires asolution that integrates with other web applications. The solution must include an authorization step for security purposes. Which solution will meet these requirements?",
+      "question": "A company is designing a solution to capture customer activity in different web applications to process analytics and make predictions. Customer activity in the web applications is unpredictable and can increase suddenly. The company requires a solution that integrates with other web applications. The solution must include an authorization step for security purposes. Which solution will meet these requirements?",
       "options": {
         "A": "Configure a Gateway Load Balancer (GWLB) in front of an Amazon Elastic Container Service (Amazon ECS) container instance that stores the information that the company receives in an Amazon Elastic File System (Amazon EFS) File system. Authorization is resolved at the GWLB.",
         "B": "Configure an Amazon API Gateway endpoint in front of an Amazon Kinesis data stream that stores the information that the company receives in an Amazon S3 bucket. Use an AWS Lambda function to resolve authorization.",
@@ -448,7 +448,7 @@
     },
     {
       "id": "588",
-      "question": "An ecommerce company wants adisaster recovery solution for its Amazon RDS DB instances that run Microsoft SQL Server Enterprise Edition. The company'scurrent recovery point objective (RPO) and recovery time objective (RTO) are 24 hours. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "An ecommerce company wants adisaster recovery solution for its Amazon RDS DB instances that run Microsoft SQL Server Enterprise Edition. The company's current recovery point objective (RPO) and recovery time objective (RTO) are 24 hours. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Create a cross-Region read replica and promote the read replica to the primary instance.",
         "B": "Use AWS Database Migration Service (AWS DMS) to create RDS cross-Region replication.",
@@ -472,7 +472,7 @@
     },
     {
       "id": "590",
-      "question": "A company migrated aMySQL database from the company'son-premises data center to an Amazon RDS for MySQL DB instance. The company sized the RDS DB instance to meet the company'saverage daily workload. Once amonth, the database performs slowly when the company runs queries for areport. The company wants to have the ability to run reports and maintain the performance of the daily workloads. Which solution will meet these requirements?",
+      "question": "A company migrated aMySQL database from the company's on-premises data center to an Amazon RDS for MySQL DB instance. The company sized the RDS DB instance to meet the company's average daily workload. Once amonth, the database performs slowly when the company runs queries for areport. The company wants to have the ability to run reports and maintain the performance of the daily workloads. Which solution will meet these requirements?",
       "options": {
         "A": "Create a read replica of the database. Direct the queries to the read replica.",
         "B": "Create a backup of the database. Restore the backup to another DB instance. Direct the queries to the new database.",
@@ -496,7 +496,7 @@
     },
     {
       "id": "592",
-      "question": "A company uses AWS and sells access to copyrighted images. The company’sglobal customer base needs to be able to access these images quickly. The company must deny access to users from specific countries. The company wants to minimize costs as much as possible. Which solution will meet these requirements?",
+      "question": "A company uses AWS and sells access to copyrighted images. The company’s global customer base needs to be able to access these images quickly. The company must deny access to users from specific countries. The company wants to minimize costs as much as possible. Which solution will meet these requirements?",
       "options": {
         "A": "Use Amazon S3 to store the images. Turn on multi-factor authentication (MFA) and public bucket access. Provide customers with a link to the S3 bucket.",
         "B": "Use Amazon S3 to store the images. Create an IAM user for each customer. Add the users to a group that has permission to access the S3 bucket.",
@@ -532,7 +532,7 @@
     },
     {
       "id": "595",
-      "question": "A company'sapplications run on Amazon EC2 instances in Auto Scaling groups. The company notices that its applications experience sudden trafic increases on random days of the week. The company wants to maintain application performance during sudden trafic increases. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company's applications run on Amazon EC2 instances in Auto Scaling groups. The company notices that its applications experience sudden traffic increases on random days of the week. The company wants to maintain application performance during sudden traffic increases. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Use manual scaling to change the size of the Auto Scaling group.",
         "B": "Use predictive scaling to change the size of the Auto Scaling group.",
@@ -544,7 +544,7 @@
     },
     {
       "id": "596",
-      "question": "An ecommerce application uses aPostgreSQL database that runs on an Amazon EC2 instance. During amonthly sales event, database usage increases and causes database connection issues for the application. The trafic is unpredictable for subsequent monthly sales events, which impacts the sales forecast. The company needs to maintain performance when there is an unpredictable increase in trafic. Which solution resolves this issue in the MOST cost-effective way?",
+      "question": "An ecommerce application uses aPostgreSQL database that runs on an Amazon EC2 instance. During amonthly sales event, database usage increases and causes database connection issues for the application. The traffic is unpredictable for subsequent monthly sales events, which impacts the sales forecast. The company needs to maintain performance when there is an unpredictable increase in traffic. Which solution resolves this issue in the MOST cost-effective way?",
       "options": {
         "A": "Migrate the PostgreSQL database to Amazon Aurora Serverless v2.",
         "B": "Enable auto scaling for the PostgreSQL database on the EC2 instance to accommodate increased usage.",
@@ -556,7 +556,7 @@
     },
     {
       "id": "597",
-      "question": "A company hosts an internal serverless application on AWS by using Amazon API Gateway and AWS Lambda. The company’semployees report issues with high latency when they begin using the application each day. The company wants to reduce latency. Which solution will meet these requirements?",
+      "question": "A company hosts an internal serverless application on AWS by using Amazon API Gateway and AWS Lambda. The company’s employees report issues with high latency when they begin using the application each day. The company wants to reduce latency. Which solution will meet these requirements?",
       "options": {
         "A": "Increase the API Gateway throttling limit.",
         "B": "Set up a scheduled scaling to increase Lambda provisioned concurrency before employees begin to use the application each day.",
@@ -581,7 +581,7 @@
     },
     {
       "id": "599",
-      "question": "A company wants to use Amazon Elastic Container Service (Amazon ECS) clusters and Amazon RDS DB instances to build and run apayment processing application. The company will run the application in its on-premises data center for compliance purposes. A solutions architect wants to use AWS Outposts as part of the solution. The solutions architect is working with the company'soperational team to build the application. Which activities are the responsibility of the company'soperational team? (Choose three.)",
+      "question": "A company wants to use Amazon Elastic Container Service (Amazon ECS) clusters and Amazon RDS DB instances to build and run apayment processing application. The company will run the application in its on-premises data center for compliance purposes. A solutions architect wants to use AWS Outposts as part of the solution. The solutions architect is working with the company's operational team to build the application. Which activities are the responsibility of the company's operational team? (Choose three.)",
       "options": {
         "A": "Providing resilient power and network connectivity to the Outposts racks",
         "B": "Managing the virtualization hypervisor, storage systems, and the AWS services that run on Outposts",
@@ -594,7 +594,7 @@
     },
     {
       "id": "600",
-      "question": "A company is planning to migrate aTCP-based application into the company'sVPC. The application is publicly accessible on anonstandard TCP port through ahardware appliance in the company'sdata center. This public endpoint can process up to 3 million requests per second with low latency. The company requires the same level of performance for the new public endpoint in AWS. What should A solutions architect recommend to meet this requirement?",
+      "question": "A company is planning to migrate aTCP-based application into the company's VPC. The application is publicly accessible on anonstandard TCP port through ahardware appliance in the company's data center. This public endpoint can process up to 3 million requests per second with low latency. The company requires the same level of performance for the new public endpoint in AWS. What should A solutions architect recommend to meet this requirement?",
       "options": {
         "A": "Deploy a Network Load Balancer (NLB). Configure the NLB to be publicly accessible over the TCP port that the application requires.",
         "B": "Deploy an Application Load Balancer (ALB). Configure the ALB to be publicly accessible over the TCP port that the application requires.",

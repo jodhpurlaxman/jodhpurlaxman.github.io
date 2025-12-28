@@ -2,7 +2,7 @@
   "questions": [
     {
       "id": "251",
-      "question": "An Amazon EC2 instance is located in a private subnet in anew VPC. This subnet does not have outbound internet access, but the EC2 instance needs the ability to download monthly security updates from an outside vendor. What should A solutions architect do to meet these requirements?",
+      "question": "An Amazon EC2 instance is located in a private subnet in a new VPC. This subnet does not have outbound internet access, but the EC2 instance needs the ability to download monthly security updates from an outside vendor. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Create an internet gateway, and attach it to the VPC. Configure the private subnet route table to use the internet gateway as the default route.",
         "B": "Create a NAT gateway, and place it in a public subnet. Configure the private subnet route table to use the NAT gateway as the default route.",
@@ -38,7 +38,7 @@
     },
     {
       "id": "254",
-      "question": "A company is reviewing arecent migration of athree-tier application to a VPC. The security team discovers that the principle of least privilege is not being applied to Amazon EC2 security group ingress and egress rules between the application tiers. What should A solutions architect do to correct this issue?",
+      "question": "A company is reviewing arecent migration of a three-tier application to a VPC. The security team discovers that the principle of least privilege is not being applied to Amazon EC2 security group ingress and egress rules between the application tiers. What should A solutions architect do to correct this issue?",
       "options": {
         "A": "Create security group rules using the instance ID as the source or destination.",
         "B": "Create security group rules using the security group ID as the source or destination.",
@@ -50,7 +50,7 @@
     },
     {
       "id": "255",
-      "question": "A company has an ecommerce checkout workfiow that writes an order to a database and calls aservice to process the payment. Users are experiencing timeouts during the checkout process. When users resubmit the checkout form, multiple unique orders are created for the same desired transaction. How should A solutions architect refactor this workfiow to prevent the creation of multiple orders?",
+      "question": "A company has an ecommerce checkout workflow that writes an order to a database and calls a service to process the payment. Users are experiencing timeouts during the checkout process. When users resubmit the checkout form, multiple unique orders are created for the same desired transaction. How should A solutions architect refactor this workflow to prevent the creation of multiple orders?",
       "options": {
         "A": "Configure the web application to send an order message to Amazon Kinesis Data Firehose. Set the payment service to retrieve the message from Kinesis Data Firehose and process the order.",
         "B": "Create a rule in AWS CloudTrail to invoke an AWS Lambda function based on the logged application path request. Use Lambda to query the database, call the payment service, and pass in the order information.",
@@ -75,7 +75,7 @@
     },
     {
       "id": "257",
-      "question": "A company is building asolution that will report Amazon EC2 Auto Scaling events across all the applications in an AWS account. The company needs to use a serverless solution to store the EC2 Auto Scaling status data in Amazon S3. The company then will use the data in Amazon S3 to provide near-real-time updates in adashboard. The solution must not affect the speed of EC2 instance launches. How should the company move the data to Amazon S3 to meet these requirements?",
+      "question": "A company is building a solution that will report Amazon EC2 Auto Scaling events across all the applications in an AWS account. The company needs to use a serverless solution to store the EC2 Auto Scaling status data in Amazon S3. The company then will use the data in Amazon S3 to provide near-real-time updates in a dashboard. The solution must not affect the speed of EC2 instance launches. How should the company move the data to Amazon S3 to meet these requirements?",
       "options": {
         "A": "Use an Amazon CloudWatch metric stream to send the EC2 Auto Scaling status data to Amazon Kinesis Data Firehose. Store the data in Amazon S3.",
         "B": "Launch an Amazon EMR cluster to collect the EC2 Auto Scaling status data and send the data to Amazon Kinesis Data Firehose. Store the data in Amazon S3.",
@@ -111,7 +111,7 @@
     },
     {
       "id": "260",
-      "question": "A company’scompliance team needs to move its File shares to AWS. The shares run on aWindows Server SMB File share. Aself-managed on- premises Active Directory controls access to the Files and folders. The company wants to use Amazon FSx for Windows File Server as part of the solution. The company must ensure that the on-premises Active Directory groups restrict access to the FSx for Windows File Server SMB compliance shares, folders, and Files after the move to AWS. The company has created an FSx for Windows File Server File system. Which solution will meet these requirements?",
+      "question": "A company’s compliance team needs to move its File shares to AWS. The shares run on aWindows Server SMB File share. A self-managed on- premises Active Directory controls access to the Files and folders. The company wants to use Amazon FSx for Windows File Server as part of the solution. The company must ensure that the on-premises Active Directory groups restrict access to the FSx for Windows File Server SMB compliance shares, folders, and Files after the move to AWS. The company has created an FSx for Windows File Server File system. Which solution will meet these requirements?",
       "options": {
         "A": "Create an Active Directory Connector to connect to the Active Directory. Map the Active Directory groups to IAM groups to restrict access.",
         "B": "Assign a tag with a Restrict tag key and a Compliance tag value. Map the Active Directory groups to IAM groups to restrict access.",
@@ -126,7 +126,7 @@
       "question": "A company recently announced the deployment of its retail website to aglobal audience. The website runs on multiple Amazon EC2 instances behind an Elastic Load Balancer. The instances run in an Auto Scaling group across multiple Availability Zones. The company wants to provide its customers with different versions of content based on the devices that the customers use to access the website. Which combination of actions should A solutions architect take to meet these requirements? (Choose two.)",
       "options": {
         "A": "Configure Amazon CloudFront to cache multiple versions of the content.",
-        "B": "Configure a host header in a Network Load Balancer to forward traFic to different instances.",
+        "B": "Configure a host header in a Network Load Balancer to forward traffic to different instances.",
         "C": "Configure a Lambda@Edge function to send speciFic objects to users based on the User-Agent header.",
         "D": "Configure AWS Global Accelerator. Forward requests to a Network Load Balancer (NLB). Configure the NLB to set up host-based routing to different EC2 instances.",
         "E": "Configure AWS Global Accelerator. Forward requests to a Network Load Balancer (NLB). Configure the NLB to set up path-based routing to different EC2 instances."
@@ -136,19 +136,19 @@
     },
     {
       "id": "262",
-      "question": "A company plans to use Amazon Elasticache for its multi-tier web application. A solutions architect creates aCache VPC for the Elasticache cluster and an App VPC for the application’sAmazon EC2 instances. Both VPCs are in the us-east-1 Region. The solutions architect must implement asolution to provide the application’sEC2 instances with access to the Elasticache cluster. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company plans to use Amazon Elasticache for its multi-tier web application. A solutions architect creates aCache VPC for the Elasticache cluster and an App VPC for the application’s Amazon EC2 instances. Both VPCs are in the us-east-1 Region. The solutions architect must implement a solution to provide the application’s EC2 instances with access to the Elasticache cluster. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Create a peering connection between the VPCs. Add a route table entry for the peering connection in both VPCs. Configure an inbound rule for the ElastiCache cluster’s security group to allow inbound connection from the application’s security group.",
-        "B": "Create a Transit VPC. Update the VPC route tables in the Cache VPC and the App VPC to route traFic through the Transit VPC. Configure an inbound rule for the ElastiCache cluster's security group to allow inbound connection from the application’s security group.",
+        "B": "Create a Transit VPC. Update the VPC route tables in the Cache VPC and the App VPC to route traffic through the Transit VPC. Configure an inbound rule for the ElastiCache cluster's security group to allow inbound connection from the application’s security group.",
         "C": "Create a peering connection between the VPCs. Add a route table entry for the peering connection in both VPCs. Configure an inbound rule for the peering connection’s security group to allow inbound connection from the application’s security group.",
-        "D": "Create a Transit VPC. Update the VPC route tables in the Cache VPC and the App VPC to route traFic through the Transit VPC. Configure an inbound rule for the Transit VPC’s security group to allow inbound connection from the application’s security group."
+        "D": "Create a Transit VPC. Update the VPC route tables in the Cache VPC and the App VPC to route traffic through the Transit VPC. Configure an inbound rule for the Transit VPC’s security group to allow inbound connection from the application’s security group."
       },
       "correct_answer": "A",
       "explanation": "Creating a peering connection allows communication between the Cache VPC and the App VPC.\nAdding a route table entry in both VPCs for the peering connection ensures that traffic can flow between them.\nInbound Rule in ElastiCache Security Group:\nConfiguring an inbound rule in the ElastiCache cluster's security group to allow connections from the application's security group enables the EC2 instances in the App VPC to access the ElastiCache cluster."
     },
     {
       "id": "263",
-      "question": "A company is building an application that consists of several microservices. The company has decided to use container technologies to deploy its software on AWS. The company needs asolution that minimizes the amount of ongoing effort for maintenance and scaling. The company cannot manage additional infrastructure. Which combination of actions should A solutions architect take to meet these requirements? (Choose two.)",
+      "question": "A company is building an application that consists of several microservices. The company has decided to use container technologies to deploy its software on AWS. The company needs a solution that minimizes the amount of ongoing effort for maintenance and scaling. The company cannot manage additional infrastructure. Which combination of actions should A solutions architect take to meet these requirements? (Choose two.)",
       "options": {
         "A": "Deploy an Amazon Elastic Container Service (Amazon ECS) cluster.",
         "B": "Deploy the Kubernetes control plane on Amazon EC2 instances that span multiple Availability Zones.",
@@ -161,7 +161,7 @@
     },
     {
       "id": "264",
-      "question": "A company has a web application hosted over 10 Amazon EC2 instances with trafic directed by Amazon Route 53. The company occasionally experiences atimeout error when attempting to browse the application. The networking team Finds that some DNS queries return IP addresses of unhealthy instances, resulting in the timeout error. What should A solutions architect implement to overcome these timeout errors?",
+      "question": "A company has a web application hosted over 10 Amazon EC2 instances with traffic directed by Amazon Route 53. The company occasionally experiences atimeout error when attempting to browse the application. The networking team Finds that some DNS queries return IP addresses of unhealthy instances, resulting in the timeout error. What should A solutions architect implement to overcome these timeout errors?",
       "options": {
         "A": "Create a Route 53 simple routing policy record for each EC2 instance. Associate a health check with each record.",
         "B": "Create a Route 53 failover routing policy record for each EC2 instance. Associate a health check with each record.",
@@ -185,11 +185,11 @@
     },
     {
       "id": "266",
-      "question": "A company has apopular gaming platform running on AWS. The application is sensitive to latency because latency can impact the user experience and introduce unfair advantages to some players. The application is deployed in every AWS Region. It runs on Amazon EC2 instances that are part of Auto Scaling groups configured behind Application Load Balancers (ALBs). A solutions architect needs to implement amechanism to monitor the health of the application and redirect trafic to healthy endpoints. Which solution meets these requirements?",
+      "question": "A company has apopular gaming platform running on AWS. The application is sensitive to latency because latency can impact the user experience and introduce unfair advantages to some players. The application is deployed in every AWS Region. It runs on Amazon EC2 instances that are part of Auto Scaling groups configured behind Application Load Balancers (ALBs). A solutions architect needs to implement amechanism to monitor the health of the application and redirect traffic to healthy endpoints. Which solution meets these requirements?",
       "options": {
         "A": "Configure an accelerator in AWS Global Accelerator. Add a listener for the port that the application listens on, and attach it to a Regional endpoint in each Region. Add the ALB as the endpoint.",
-        "B": "Create an Amazon CloudFront distribution and specify the ALB as the origin server. Configure the cache behavior to use origin cache headers. Use AWS Lambda functions to optimize the traFic.",
-        "C": "Create an Amazon CloudFront distribution and specify Amazon S3 as the origin server. Configure the cache behavior to use origin cache headers. Use AWS Lambda functions to optimize the traFic.",
+        "B": "Create an Amazon CloudFront distribution and specify the ALB as the origin server. Configure the cache behavior to use origin cache headers. Use AWS Lambda functions to optimize the traffic.",
+        "C": "Create an Amazon CloudFront distribution and specify Amazon S3 as the origin server. Configure the cache behavior to use origin cache headers. Use AWS Lambda functions to optimize the traffic.",
         "D": "Configure an Amazon DynamoDB database to serve as the data store for the application. Create a DynamoDB Accelerator (DAX) cluster to act as the in-memory cache for DynamoDB hosting the application data."
       },
       "correct_answer": "A",
@@ -209,7 +209,7 @@
     },
     {
       "id": "268",
-      "question": "Agaming company has a web application that displays scores. The application runs on Amazon EC2 instances behind an Application Load Balancer. The application stores data in an Amazon RDS for MySQL database. Users are starting to experience long delays and interruptions that are caused by database read performance. The company wants to improve the user experience while minimizing changes to the application’sarchitecture. What should A solutions architect do to meet these requirements?",
+      "question": "Agaming company has a web application that displays scores. The application runs on Amazon EC2 instances behind an Application Load Balancer. The application stores data in an Amazon RDS for MySQL database. Users are starting to experience long delays and interruptions that are caused by database read performance. The company wants to improve the user experience while minimizing changes to the application’s architecture. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Use Amazon ElastiCache in front of the database.",
         "B": "Use RDS Proxy between the application and the database.",
@@ -257,7 +257,7 @@
     },
     {
       "id": "272",
-      "question": "A company serves adynamic website from aFieet of Amazon EC2 instances behind an Application Load Balancer (ALB). The website needs to support multiple languages to serve customers around the world. The website’sarchitecture is running in the us-west-1 Region and is exhibiting high request latency for users that are located in other parts of the world. The website needs to serve requests quickly and eficiently regardless of auser’slocation. However, the company does not want to recreate the existing architecture across multiple Regions. What should A solutions architect do to meet these requirements?",
+      "question": "A company serves adynamic website from aFieet of Amazon EC2 instances behind an Application Load Balancer (ALB). The website needs to support multiple languages to serve customers around the world. The website’s architecture is running in the us-west-1 Region and is exhibiting high request latency for users that are located in other parts of the world. The website needs to serve requests quickly and eficiently regardless of auser’s location. However, the company does not want to recreate the existing architecture across multiple Regions. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Replace the existing architecture with a website that is served from an Amazon S3 bucket. Configure an Amazon CloudFront distribution with the S3 bucket as the origin. Set the cache behavior settings to cache based on the Accept-Language request header.",
         "B": "Configure an Amazon CloudFront distribution with the ALB as the origin. Set the cache behavior settings to cache based on the Accept- Language request header.",
@@ -305,7 +305,7 @@
     },
     {
       "id": "276",
-      "question": "A company has a multi-tier application deployed on several Amazon EC2 instances in an Auto Scaling group. An Amazon RDS for Oracle instance is the application’ sdata layer that uses Oracle-specific PL/SQL functions. Trafic to the application has been steadily increasing. This is causing the EC2 instances to become overloaded and the RDS instance to run out of storage. The Auto Scaling group does not have any scaling metrics and defines the minimum healthy instance count only. The company predicts that trafic will continue to increase at asteady but unpredictable rate before leveling off. What should A solutions architect do to ensure the system can automatically scale for the increased trafic? (Choose two.)",
+      "question": "A company has a multi-tier application deployed on several Amazon EC2 instances in an Auto Scaling group. An Amazon RDS for Oracle instance is the application’ sdata layer that uses Oracle-specific PL/SQL functions. traffic to the application has been steadily increasing. This is causing the EC2 instances to become overloaded and the RDS instance to run out of storage. The Auto Scaling group does not have any scaling metrics and defines the minimum healthy instance count only. The company predicts that traffic will continue to increase at asteady but unpredictable rate before leveling off. What should A solutions architect do to ensure the system can automatically scale for the increased traffic? (Choose two.)",
       "options": {
         "A": "Configure storage Auto Scaling on the RDS for Oracle instance.",
         "B": "Migrate the database to Amazon Aurora to use Auto Scaling storage.",
@@ -330,7 +330,7 @@
     },
     {
       "id": "278",
-      "question": "A company wants to create an application to store employee data in ahierarchical structured relationship. The company needs aminimum-latency response to high-trafic queries for the employee data and must protect any sensitive data. The company also needs to receive monthly email messages if any Financial information is present in the employee data. Which combination of steps should A solutions architect take to meet these requirements? (Choose two.)",
+      "question": "A company wants to create an application to store employee data in ahierarchical structured relationship. The company needs aminimum-latency response to high-traffic queries for the employee data and must protect any sensitive data. The company also needs to receive monthly email messages if any Financial information is present in the employee data. Which combination of steps should A solutions architect take to meet these requirements? (Choose two.)",
       "options": {
         "A": "Use Amazon Redshift to store the employee data in hierarchies. Unload the data to Amazon S3 every month.",
         "B": "Use Amazon DynamoDB to store the employee data in hierarchies. Export the data to Amazon S3 every month.",
@@ -343,7 +343,7 @@
     },
     {
       "id": "279",
-      "question": "A company has an application that is backed by an Amazon DynamoDB table. The company’scompliance requirements specify that database backups must be taken every month, must be available for 6 months, and must be retained for 7 years. Which solution will meet these requirements?",
+      "question": "A company has an application that is backed by an Amazon DynamoDB table. The company’s compliance requirements specify that database backups must be taken every month, must be available for 6 months, and must be retained for 7 years. Which solution will meet these requirements?",
       "options": {
         "A": "Create an AWS Backup plan to back up the DynamoDB table on the First day of each month. Specify a lifecycle policy that transitions the backup to cold storage after 6 months. Set the retention period for each backup to 7 years.",
         "B": "Create a DynamoDB on-demand backup of the DynamoDB table on the First day of each month. Transition the backup to Amazon S3 Glacier Flexible Retrieval after 6 months. Create an S3 Lifecycle policy to delete backups that are older than 7 years.",
@@ -355,7 +355,7 @@
     },
     {
       "id": "280",
-      "question": "A company is using Amazon Cloudfront with its website. The company has enabled logging on the Cloudfront distribution, and logs are saved in one of the company’sAmazon S3 buckets. The company needs to perform advanced analyses on the logs and build visualizations. What should A solutions architect do to meet these requirements?",
+      "question": "A company is using Amazon Cloudfront with its website. The company has enabled logging on the Cloudfront distribution, and logs are saved in one of the company’s Amazon S3 buckets. The company needs to perform advanced analyses on the logs and build visualizations. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Use standard SQL queries in Amazon Athena to analyze the CloudFront logs in the S3 bucket. Visualize the results with AWS Glue.",
         "B": "Use standard SQL queries in Amazon Athena to analyze the CloudFront logs in the S3 bucket. Visualize the results with Amazon QuickSight.",
@@ -379,12 +379,12 @@
     },
     {
       "id": "282",
-      "question": "A company runs a web application that is deployed on Amazon EC2 instances in the private subnet of a VPC. An Application Load Balancer (ALB) that extends across the public subnets directs web trafic to the EC2 instances. The company wants to implement new security measures to restrict inbound trafic from the ALB to the EC2 instances while preventing access from any other source inside or outside the private subnet of the EC2 instances. Which solution will meet these requirements?",
+      "question": "A company runs a web application that is deployed on Amazon EC2 instances in the private subnet of a VPC. An Application Load Balancer (ALB) that extends across the public subnets directs web traffic to the EC2 instances. The company wants to implement new security measures to restrict inbound traffic from the ALB to the EC2 instances while preventing access from any other source inside or outside the private subnet of the EC2 instances. Which solution will meet these requirements?",
       "options": {
-        "A": "Configure a route in a route table to direct traFic from the internet to the private IP addresses of the EC2 instances.",
-        "B": "Configure the security group for the EC2 instances to only allow traFic that comes from the security group for the ALB.",
+        "A": "Configure a route in a route table to direct traffic from the internet to the private IP addresses of the EC2 instances.",
+        "B": "Configure the security group for the EC2 instances to only allow traffic that comes from the security group for the ALB.",
         "C": "Move the EC2 instances into the public subnet. Give the EC2 instances a set of Elastic IP addresses.",
-        "D": "Configure the security group for the ALB to allow any TCP traFic on any port."
+        "D": "Configure the security group for the ALB to allow any TCP traffic on any port."
       },
       "correct_answer": "B",
       "explanation": "Security groups act as virtual firewalls for EC2 instances. By configuring the security group for the EC2 instances to only allow traffic from the security group associated with the ALB, you can control and restrict inbound traffic effectively.\nWhen you specify a security group as the source in the inbound rules of another security group, you allow traffic only from instances that are members of that source security group. In this case, you can allow traffic only from the ALB, ensuring that traffic is restricted to the necessary source."
@@ -427,7 +427,7 @@
     },
     {
       "id": "286",
-      "question": "A company has astatic website that is hosted on Amazon Cloudfront in front of Amazon S3. The static website uses a database backend. The company notices that the website does not refiect updates that have been made in the website’sGit repository. The company checks the continuous integration and continuous delivery (CI/CD) pipeline between the Git repository and Amazon S3. The company verifies that the webhooks are configured properly and that the CI/CD pipeline is sending messages that indicate successful deployments. A solutions architect needs to implement asolution that displays the updates on the website. Which solution will meet these requirements?",
+      "question": "A company has astatic website that is hosted on Amazon Cloudfront in front of Amazon S3. The static website uses a database backend. The company notices that the website does not refiect updates that have been made in the website’s Git repository. The company checks the continuous integration and continuous delivery (CI/CD) pipeline between the Git repository and Amazon S3. The company verifies that the webhooks are configured properly and that the CI/CD pipeline is sending messages that indicate successful deployments. A solutions architect needs to implement a solution that displays the updates on the website. Which solution will meet these requirements?",
       "options": {
         "A": "Add an Application Load Balancer.",
         "B": "Add Amazon ElastiCache for Redis or Memcached to the database layer of the web application.",
@@ -487,7 +487,7 @@
     },
     {
       "id": "291",
-      "question": "A media company uses Amazon Cloudfront for its publicly available streaming video content. The company wants to secure the video content that is hosted in Amazon S3 by controlling who has access. Some of the company’susers are using acustom HTTP client that does not support cookies. Some of the company’susers are unable to change the hardcoded URLs that they are using for access. Which services or methods will meet these requirements with the LEAST impact to the users? (Choose two.)",
+      "question": "A media company uses Amazon Cloudfront for its publicly available streaming video content. The company wants to secure the video content that is hosted in Amazon S3 by controlling who has access. Some of the company’s users are using acustom HTTP client that does not support cookies. Some of the company’s users are unable to change the hardcoded URLs that they are using for access. Which services or methods will meet these requirements with the LEAST impact to the users? (Choose two.)",
       "options": {
         "A": "Signed cookies",
         "B": "Signed URLs",
@@ -500,7 +500,7 @@
     },
     {
       "id": "292",
-      "question": "A company is preparing anew data platform that will ingest real-time streaming data from multiple sources. The company needs to transform the data before writing the data to Amazon S3. The company needs the ability to use SQL to query the transformed data. Which solutions will meet these requirements? (Choose two.)",
+      "question": "A company is preparing a new data platform that will ingest real-time streaming data from multiple sources. The company needs to transform the data before writing the data to Amazon S3. The company needs the ability to use SQL to query the transformed data. Which solutions will meet these requirements? (Choose two.)",
       "options": {
         "A": "Use Amazon Kinesis Data Streams to stream the data. Use Amazon Kinesis Data Analytics to transform the data. Use Amazon Kinesis Data Firehose to write the data to Amazon S3. Use Amazon Athena to query the transformed data from Amazon S3.",
         "B": "Use Amazon Managed Streaming for Apache Kafka (Amazon MSK) to stream the data. Use AWS Glue to transform the data and to write the data to Amazon S3. Use Amazon Athena to query the transformed data from Amazon S3.",
@@ -513,7 +513,7 @@
     },
     {
       "id": "293",
-      "question": "A company has an on-premises volume backup solution that has reached its end of life. The company wants to use AWS as part of anew backup solution and wants to maintain local access to all the data while it is backed up on AWS. The company wants to ensure that the data backed up on AWS is automatically and securely transferred. Which solution meets these requirements?",
+      "question": "A company has an on-premises volume backup solution that has reached its end of life. The company wants to use AWS as part of a new backup solution and wants to maintain local access to all the data while it is backed up on AWS. The company wants to ensure that the data backed up on AWS is automatically and securely transferred. Which solution meets these requirements?",
       "options": {
         "A": "Use AWS Snowball to migrate data out of the on-premises solution to Amazon S3. Configure on-premises systems to mount the Snowball S3 endpoint to provide local access to the data.",
         "B": "Use AWS Snowball Edge to migrate data out of the on-premises solution to Amazon S3. Use the Snowball Edge File interface to provide on- premises systems with local access to the data.",
@@ -525,7 +525,7 @@
     },
     {
       "id": "294",
-      "question": "An application that is hosted on Amazon EC2 instances needs to access an Amazon S3 bucket. Trafic must not traverse the internet. How should A solutions architect configure access to meet these requirements?",
+      "question": "An application that is hosted on Amazon EC2 instances needs to access an Amazon S3 bucket. traffic must not traverse the internet. How should A solutions architect configure access to meet these requirements?",
       "options": {
         "A": "Create a private hosted zone by using Amazon Route 53.",
         "B": "Set up a gateway VPC endpoint for Amazon S3 in the VPC.",
@@ -549,7 +549,7 @@
     },
     {
       "id": "296",
-      "question": "Adevelopment team has launched anew application that is hosted on Amazon EC2 instances inside adevelopment VPC. A solutions architect needs to create anew VPC in the same account. The new VPC will be peered with the development VPC. The VPC CIDR block for the development VPC is 192.168.0.0/24. The solutions architect needs to create aCIDR block for the new VPC. The CIDR block must be valid for a VPC peering connection to the development VPC. What is the SMALLEST CIDR block that meets these requirements?",
+      "question": "Adevelopment team has launched a new application that is hosted on Amazon EC2 instances inside adevelopment VPC. A solutions architect needs to create a new VPC in the same account. The new VPC will be peered with the development VPC. The VPC CIDR block for the development VPC is 192.168.0.0/24. The solutions architect needs to create aCIDR block for the new VPC. The CIDR block must be valid for a VPC peering connection to the development VPC. What is the SMALLEST CIDR block that meets these requirements?",
       "options": {
         "A": "10.0.1.0/32",
         "B": "192.168.0.0/24",
@@ -561,7 +561,7 @@
     },
     {
       "id": "297",
-      "question": "A company deploys an application on Five Amazon EC2 instances. An Application Load Balancer (ALB) distributes trafic to the instances by using atarget group. The average CPU usage on each of the instances is below 10% most of the time, with occasional surges to 65%. A solutions architect needs to implement asolution to automate the scalability of the application. The solution must optimize the cost of the architecture and must ensure that the application has enough CPU resources when surges occur. Which solution will meet these requirements?",
+      "question": "A company deploys an application on Five Amazon EC2 instances. An Application Load Balancer (ALB) distributes traffic to the instances by using a target group. The average CPU usage on each of the instances is below 10% most of the time, with occasional surges to 65%. A solutions architect needs to implement a solution to automate the scalability of the application. The solution must optimize the cost of the architecture and must ensure that the application has enough CPU resources when surges occur. Which solution will meet these requirements?",
       "options": {
         "A": "Create an Amazon CloudWatch alarm that enters the ALARM state when the CPUUtilization metric is less than 20%. Create an AWS Lambda function that the CloudWatch alarm invokes to terminate one of the EC2 instances in the ALB target group.",
         "B": "Create an EC2 Auto Scaling group. Select the existing ALB as the load balancer and the existing target group as the target group. Set a target tracking scaling policy that is based on the ASGAverageCPUUtilization metric. Set the minimum instances to 2, the desired capacity to 3, the maximum instances to 6, and the target value to 50%. Add the EC2 instances to the Auto Scaling group.",
@@ -597,7 +597,7 @@
     },
     {
       "id": "300",
-      "question": "A company needs to migrate alegacy application from an on-premises data center to the AWS Cloud because of hardware capacity constraints. The application runs 24 hours aday, 7 days aweek. The application’sdatabase storage continues to grow over time. What should A solutions architect do to meet these requirements MOST cost-effectively?",
+      "question": "A company needs to migrate alegacy application from an on-premises data center to the AWS Cloud because of hardware capacity constraints. The application runs 24 hours aday, 7 days aweek. The application’s database storage continues to grow over time. What should A solutions architect do to meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Migrate the application layer to Amazon EC2 Spot Instances. Migrate the data storage layer to Amazon S3.",
         "B": "Migrate the application layer to Amazon EC2 Reserved Instances. Migrate the data storage layer to Amazon RDS On-Demand Instances.",

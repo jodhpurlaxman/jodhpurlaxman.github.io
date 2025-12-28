@@ -26,7 +26,7 @@
     },
     {
       "id": "653",
-      "question": "A company maintains an Amazon RDS database that maps users to cost centers. The company has accounts in an organization in AWS Organizations. The company needs asolution that will tag all resources that are created in aspecific AWS account in the organization. The solution must tag each resource with the cost center ID of the user who created the resource. Which solution will meet these requirements?",
+      "question": "A company maintains an Amazon RDS database that maps users to cost centers. The company has accounts in an organization in AWS Organizations. The company needs a solution that will tag all resources that are created in aspecific AWS account in the organization. The solution must tag each resource with the cost center ID of the user who created the resource. Which solution will meet these requirements?",
       "options": {
         "A": "Move the speciFic AWS account to a new organizational unit (OU) in Organizations from the management account. Create a service control policy (SCP) that requires all existing resources to have the correct cost center tag before the resources are created. Apply the SCP to the new OU.",
         "B": "Create an AWS Lambda function to tag the resources after the Lambda function looks up the appropriate cost center from the RDS database. Configure an Amazon EventBridge rule that reacts to AWS CloudTrail events to invoke the Lambda function.",
@@ -50,7 +50,7 @@
     },
     {
       "id": "655",
-      "question": "A company runs a web application on Amazon EC2 instances in an Auto Scaling group that has atarget group. The company designed the application to work with session afinity (sticky sessions) for abetter user experience. The application must be available publicly over the internet as an endpoint. AWAF must be applied to the endpoint for additional security. Session afinity (sticky sessions) must be configured on the endpoint. Which combination of steps will meet these requirements? (Choose two.)",
+      "question": "A company runs a web application on Amazon EC2 instances in an Auto Scaling group that has a target group. The company designed the application to work with session affinity (sticky sessions) for a better user experience. The application must be available publicly over the internet as an endpoint. AWS WAF must be applied to the endpoint for additional security. Session affinity (sticky sessions) must be configured on the endpoint. Which combination of steps will meet these requirements? (Choose two.)",
       "options": {
         "A": "Create a public Network Load Balancer. Specify the application target group.",
         "B": "Create a Gateway Load Balancer. Specify the application target group.",
@@ -114,7 +114,7 @@
       "id": "660",
       "question": "A company hosts an application on Amazon EC2 On-Demand Instances in an Auto Scaling group. Application peak hours occur at the same time each day. Application users report slow application performance at the start of peak hours. The application performs normally 2-3 hours after peak hours begin. The company wants to ensure that the application works properly at the start of peak hours. Which solution will meet these requirements?",
       "options": {
-        "A": "Configure an Application Load Balancer to distribute traFic properly to the instances.",
+        "A": "Configure an Application Load Balancer to distribute traffic properly to the instances.",
         "B": "Configure a dynamic scaling policy for the Auto Scaling group to launch new instances based on memory utilization.",
         "C": "Configure a dynamic scaling policy for the Auto Scaling group to launch new instances based on CPU utilization.",
         "D": "Configure a scheduled scaling policy for the Auto Scaling group to launch new instances before peak hours."
@@ -124,7 +124,7 @@
     },
     {
       "id": "661",
-      "question": "A company runs applications on AWS that connect to the company'sAmazon RDS database. The applications scale on weekends and at peak times of the year. The company wants to scale the database more effectively for its applications that connect to the database. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company runs applications on AWS that connect to the company's Amazon RDS database. The applications scale on weekends and at peak times of the year. The company wants to scale the database more effectively for its applications that connect to the database. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Use Amazon DynamoDB with connection pooling with a target group conFiguration for the database. Change the applications to use the DynamoDB endpoint.",
         "B": "Use Amazon RDS Proxy with a target group for the database. Change the applications to use the RDS Proxy endpoint.",
@@ -148,7 +148,7 @@
     },
     {
       "id": "663",
-      "question": "A company is developing anew application on AWS. The application consists of an Amazon Elastic Container Service (Amazon ECS) cluster, an Amazon S3 bucket that contains assets for the application, and an Amazon RDS for MySQL database that contains the dataset for the application. The dataset contains sensitive information. The company wants to ensure that only the ECS cluster can access the data in the RDS for MySQL database and the data in the S3 bucket. Which solution will meet these requirements?",
+      "question": "A company is developing a new application on AWS. The application consists of an Amazon Elastic Container Service (Amazon ECS) cluster, an Amazon S3 bucket that contains assets for the application, and an Amazon RDS for MySQL database that contains the dataset for the application. The dataset contains sensitive information. The company wants to ensure that only the ECS cluster can access the data in the RDS for MySQL database and the data in the S3 bucket. Which solution will meet these requirements?",
       "options": {
         "A": "Create a new AWS Key Management Service (AWS KMS) customer managed key to encrypt both the S3 bucket and the RDS for MySQL database. Ensure that the KMS key policy includes encrypt and decrypt permissions for the ECS task execution role.",
         "B": "Create an AWS Key Management Service (AWS KMS) AWS managed key to encrypt both the S3 bucket and the RDS for MySQL database. Ensure that the S3 bucket policy speciFies the ECS task execution role as a user.",
@@ -160,7 +160,7 @@
     },
     {
       "id": "664",
-      "question": "A company has a web application that runs on premises. The application experiences latency issues during peak hours. The latency issues occur twice each month. At the start of a latency issue, the application'sCPU utilization immediately increases to 10 times its normal amount. The company wants to migrate the application to AWS to improve latency. The company also wants to scale the application automatically when application demand increases. The company will use AWS Elastic Beanstalk for application deployment. Which solution will meet these requirements?",
+      "question": "A company has a web application that runs on premises. The application experiences latency issues during peak hours. The latency issues occur twice each month. At the start of a latency issue, the application's CPU utilization immediately increases to 10 times its normal amount. The company wants to migrate the application to AWS to improve latency. The company also wants to scale the application automatically when application demand increases. The company will use AWS Elastic Beanstalk for application deployment. Which solution will meet these requirements?",
       "options": {
         "A": "Configure an Elastic Beanstalk environment to use burstable performance instances in unlimited mode. Configure the environment to scale based on requests.",
         "B": "Configure an Elastic Beanstalk environment to use compute optimized instances. Configure the environment to scale based on requests.",
@@ -172,7 +172,7 @@
     },
     {
       "id": "665",
-      "question": "A company has customers located across the world. The company wants to use automation to secure its systems and network infrastructure. The company'ssecurity team must be able to track and audit all incremental changes to the infrastructure. Which solution will meet these requirements?",
+      "question": "A company has customers located across the world. The company wants to use automation to secure its systems and network infrastructure. The company's security team must be able to track and audit all incremental changes to the infrastructure. Which solution will meet these requirements?",
       "options": {
         "A": "Use AWS Organizations to set up the infrastructure. Use AWS ConFig to track changes.",
         "B": "Use AWS CloudFormation to set up the infrastructure. Use AWS ConFig to track changes.",
@@ -184,20 +184,20 @@
     },
     {
       "id": "666",
-      "question": "Astartup company is hosting a website for its customers on an Amazon EC2 instance. The website consists of astateless Python application and aMySQL database. The website serves only asmall amount of trafic. The company is concerned about the reliability of the instance and needs to migrate to a highly available architecture. The company cannot modify the application code. Which combination of actions should A solutions architect take to achieve high availability for the website? (Choose two.)",
+      "question": "Astartup company is hosting a website for its customers on an Amazon EC2 instance. The website consists of astateless Python application and aMySQL database. The website serves only asmall amount of traffic. The company is concerned about the reliability of the instance and needs to migrate to a highly available architecture. The company cannot modify the application code. Which combination of actions should A solutions architect take to achieve high availability for the website? (Choose two.)",
       "options": {
         "A": "Provision an internet gateway in each Availability Zone in use.",
         "B": "Migrate the database to an Amazon RDS for MySQL Multi-AZ DB instance.",
         "C": "Migrate the database to Amazon DynamoDB, and enable DynamoDB auto scaling.",
         "D": "Use AWS DataSync to synchronize the database data across multiple EC2 instances.",
-        "E": "Create an Application Load Balancer to distribute traFic to an Auto Scaling group of EC2 instances that are distributed across two Availability Zones."
+        "E": "Create an Application Load Balancer to distribute traffic to an Auto Scaling group of EC2 instances that are distributed across two Availability Zones."
       },
       "correct_answer": "BE",
       "explanation": "RDS Multi-AZ ensures DB high availability. ALB + Auto Scaling distributes traffic across AZs.\nDynamoDB (Option C) requires code changes; DataSync (Option D) doesn’t solve HA."
     },
     {
       "id": "667",
-      "question": "A company is moving its data and applications to AWS during a multiyear migration project. The company wants to securely access data on Amazon S3 from the company'sAWS Region and from the company'son-premises location. The data must not traverse the internet. The company has established an AWS Direct Connect connection between its Region and its on-premises location. Which solution will meet these requirements?",
+      "question": "A company is moving its data and applications to AWS during a multiyear migration project. The company wants to securely access data on Amazon S3 from the company's AWS Region and from the company's on-premises location. The data must not traverse the internet. The company has established an AWS Direct Connect connection between its Region and its on-premises location. Which solution will meet these requirements?",
       "options": {
         "A": "Create gateway endpoints for Amazon S3. Use the gateway endpoints to securely access the data from the Region and the on-premises location.",
         "B": "Create a gateway in AWS Transit Gateway to access Amazon S3 securely from the Region and the on-premises location.",
@@ -209,7 +209,7 @@
     },
     {
       "id": "668",
-      "question": "A company created anew organization in AWS Organizations. The organization has multiple accounts for the company'sdevelopment teams. The development team members use AWS IAM Identity Center (AWS Single Sign-On) to access the accounts. For each of the company'sapplications, the development teams must use apredefined application name to tag resources that are created. A solutions architect needs to design asolution that gives the development team the ability to create resources only if the application name tag has an approved value. Which solution will meet these requirements?",
+      "question": "A company created a new organization in AWS Organizations. The organization has multiple accounts for the company's development teams. The development team members use AWS IAM Identity Center (AWS Single Sign-On) to access the accounts. For each of the company's applications, the development teams must use apredefined application name to tag resources that are created. A solutions architect needs to design a solution that gives the development team the ability to create resources only if the application name tag has an approved value. Which solution will meet these requirements?",
       "options": {
         "A": "Create an IAM group that has a conditional Allow policy that requires the application name tag to be speciFied for resources to be created.",
         "B": "Create a cross-account role that has a Deny policy for any resource that has the application name tag.",
@@ -245,7 +245,7 @@
     },
     {
       "id": "671",
-      "question": "A company runs its applications on Amazon EC2 instances. The company performs periodic Financial assessments of its AWS costs. The company recently identified unusual spending. The company needs asolution to prevent unusual spending. The solution must monitor costs and notify responsible stakeholders in the event of unusual spending. Which solution will meet these requirements?",
+      "question": "A company runs its applications on Amazon EC2 instances. The company performs periodic Financial assessments of its AWS costs. The company recently identified unusual spending. The company needs a solution to prevent unusual spending. The solution must monitor costs and notify responsible stakeholders in the event of unusual spending. Which solution will meet these requirements?",
       "options": {
         "A": "Use an AWS Budgets template to create a zero spend budget.",
         "B": "Create an AWS Cost Anomaly Detection monitor in the AWS Billing and Cost Management console.",
@@ -281,11 +281,11 @@
     },
     {
       "id": "674",
-      "question": "A company runs a web application on Amazon EC2 instances in an Auto Scaling group. The application uses a database that runs on an Amazon RDS for PostgreSQL DB instance. The application performs slowly when trafic increases. The database experiences aheavy read load during periods of high trafic. Which actions should A solutions architect take to resolve these performance issues? (Choose two.)",
+      "question": "A company runs a web application on Amazon EC2 instances in an Auto Scaling group. The application uses a database that runs on an Amazon RDS for PostgreSQL DB instance. The application performs slowly when traffic increases. The database experiences aheavy read load during periods of high traffic. Which actions should A solutions architect take to resolve these performance issues? (Choose two.)",
       "options": {
         "A": "Turn on auto scaling for the DB instance.",
-        "B": "Create a read replica for the DB instance. Configure the application to send read traFic to the read replica.",
-        "C": "Convert the DB instance to a Multi-AZ DB instance deployment. Configure the application to send read traFic to the standby DB instance.",
+        "B": "Create a read replica for the DB instance. Configure the application to send read traffic to the read replica.",
+        "C": "Convert the DB instance to a Multi-AZ DB instance deployment. Configure the application to send read traffic to the standby DB instance.",
         "D": "Create an Amazon ElastiCache cluster. Configure the application to cache query results in the ElastiCache cluster.",
         "E": "Configure the Auto Scaling group subnets to ensure that the EC2 instances are provisioned in the same Availability Zone as the DB instance."
       },
@@ -306,7 +306,7 @@
     },
     {
       "id": "676",
-      "question": "A company'sapplication uses Network Load Balancers, Auto Scaling groups, Amazon EC2 instances, and databases that are deployed in an Amazon VPC. The company wants to capture information about trafic to and from the network interfaces in near real time in its Amazon VPC. The company wants to send the information to Amazon Opensearch Service for analysis. Which solution will meet these requirements?",
+      "question": "A company's application uses Network Load Balancers, Auto Scaling groups, Amazon EC2 instances, and databases that are deployed in an Amazon VPC. The company wants to capture information about traffic to and from the network interfaces in near real time in its Amazon VPC. The company wants to send the information to Amazon Opensearch Service for analysis. Which solution will meet these requirements?",
       "options": {
         "A": "Create a log group in Amazon CloudWatch Logs. Configure VPC Flow Logs to send the log data to the log group. Use Amazon Kinesis Data Streams to stream the logs from the log group to OpenSearch Service.",
         "B": "Create a log group in Amazon CloudWatch Logs. Configure VPC Flow Logs to send the log data to the log group. Use Amazon Kinesis Data Firehose to stream the logs from the log group to OpenSearch Service.",
@@ -342,7 +342,7 @@
     },
     {
       "id": "679",
-      "question": "A company wants to back up its on-premises virtual machines (VMs) to AWS. The company'sbackup solution exports on-premises backups to an Amazon S3 bucket as objects. The S3 backups must be retained for 30 days and must be automatically deleted after 30 days. Which combination of steps will meet these requirements? (Choose three.)",
+      "question": "A company wants to back up its on-premises virtual machines (VMs) to AWS. The company's backup solution exports on-premises backups to an Amazon S3 bucket as objects. The S3 backups must be retained for 30 days and must be automatically deleted after 30 days. Which combination of steps will meet these requirements? (Choose three.)",
       "options": {
         "A": "Create an S3 bucket that has S3 Object Lock enabled.",
         "B": "Create an S3 bucket that has object versioning enabled.",
@@ -379,7 +379,7 @@
     },
     {
       "id": "682",
-      "question": "A company needs asolution to enforce data encryption at rest on Amazon EC2 instances. The solution must automatically identify noncompliant resources and enforce compliance policies on Findings. Which solution will meet these requirements with the LEAST administrative overhead?",
+      "question": "A company needs a solution to enforce data encryption at rest on Amazon EC2 instances. The solution must automatically identify noncompliant resources and enforce compliance policies on Findings. Which solution will meet these requirements with the LEAST administrative overhead?",
       "options": {
         "A": "Use an IAM policy that allows users to create only encrypted Amazon Elastic Block Store (Amazon EBS) volumes. Use AWS ConFig and AWS Systems Manager to automate the detection and remediation of unencrypted EBS volumes.",
         "B": "Use AWS Key Management Service (AWS KMS) to manage access to encrypted Amazon Elastic Block Store (Amazon EBS) volumes. Use AWS Lambda and Amazon EventBridge to automate the detection and remediation of unencrypted EBS volumes.",
