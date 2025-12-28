@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>AWS Practice — Input & Self-Check</title>
+<title>AWS SAA-C03 - Practice exam</title>
 <style>
   body{font-family:Segoe UI,Arial,sans-serif;background:#f3f6ff;padding:20px}
   .card{max-width:900px;margin:0 auto;background:#fff;border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,.12);overflow:hidden}
@@ -24,16 +24,28 @@
   .qtext{white-space:pre-wrap;font-size:16px;color:#222;margin-bottom:12px}
   .controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
   button{padding:10px 14px;border-radius:8px;border:0;cursor:pointer;font-weight:600}
+  .controls button{display:none}
+  #startExamBtn, #createReviewBtn{display:inline-block !important}
   .primary{background:#667eea;color:#fff}
   .secondary{background:#6c757d;color:#fff}
   .bookmark{background:#ffc107;color:#000}
-  .answerBox{margin-top:14px}
+  .answerBox{margin-top:14px;display:none}
+  .answerBox.visible{display:block}
   input[type="text"]{width:100%;padding:10px;border-radius:8px;border:1px solid #dfe7ff;font-size:15px}
+  .welcome-section{text-align:center;padding:40px 20px;background:linear-gradient(135deg,#667eea15,#764ba215);border-radius:12px;margin:20px 0}
+  .welcome-section h2{color:#667eea;font-size:24px;margin-bottom:20px}
+  .exam-controls-section{display:flex;flex-direction:column;align-items:center;gap:15px;margin:20px 0;padding:20px;background:#fbfdff;border-radius:10px;border:2px solid #667eea;box-sizing:border-box;overflow:hidden}
+  .exam-controls-section label{font-weight:700;color:#333;font-size:14px}
+  .exam-controls-section select{width:100%;max-width:480px;padding:10px 12px;border-radius:8px;border:2px solid #667eea;background:#fff;font-size:14px;cursor:pointer;box-sizing:border-box;outline:none}
+  .exam-controls-section select:focus{box-shadow:0 0 0 3px rgba(102,126,234,.25);border-color:#667eea}
+  .exam-controls-section button{padding:10px 20px;font-size:14px;min-width:150px}
   .answer-panel{background:#f8f9fb;padding:12px;border-radius:8px;margin-top:12px;display:none}
   .options-list{display:flex;flex-direction:column;gap:8px;margin-top:12px}
   .option-btn{padding:10px 12px;border-radius:8px;border:1px solid #e6ecff;background:#fff;cursor:pointer;text-align:left}
   .option-btn:hover{background:#eef4ff}
   .option-btn.selected{background:#667eea;color:#fff;border-color:#667eea}
+  .option-btn:disabled{opacity:0.5;cursor:not-allowed}
+  @media (max-width:768px){body{padding:10px}.card{border-radius:6px}header{padding:12px}.meta{flex-wrap:wrap;gap:6px;padding:8px 12px;font-size:12px}#examControls{flex-wrap:wrap;width:100%;gap:4px;margin-top:8px;margin-left:0 !important}#examControls label,#examControls select{font-size:12px}#examControls button{padding:4px 8px;font-size:12px}.container{padding:12px}.qtext{font-size:14px}.controls{flex-direction:column}.controls button{width:100%}.answerBox input{font-size:14px;padding:8px}.option-btn{padding:8px 10px;font-size:14px}.welcome-section{padding:20px 10px}.welcome-section h2{font-size:18px}.exam-controls-section{padding:15px}.exam-controls-section select{max-width:100%}.exam-controls-section button{width:100%;min-width:unset}footer{font-size:11px;padding:10px}}
   .confetti-container{pointer-events:none;position:fixed;inset:0;overflow:hidden;z-index:9999}
   .confetti-piece{position:absolute;width:10px;height:14px;opacity:0.95;transform-origin:center;will-change:transform,top,left}
   @keyframes confetti-fall{0%{transform:translateY(-10vh) rotate(0)}100%{transform:translateY(110vh) rotate(720deg)}}
@@ -45,8 +57,10 @@
   .chart-center .pct{font-weight:800;font-size:20px}
   .chart-center .status{font-size:13px;font-weight:700;margin-top:6px}
   .chart-center .label{font-size:12px;color:#666}
-  .wrong-list{margin-top:12px}
+  .wrong-list{margin-top:12px;display:none}
+  .wrong-list.visible{display:block}
   .wrong-item{padding:10px;border-radius:8px;background:#fff7f7;border:1px solid #ffd6d6;margin-bottom:8px}
+  .results-actions{display:flex;gap:8px;margin-top:12px;justify-content:center;flex-wrap:wrap}
   footer{padding:14px;background:#fbfdff;border-top:1px solid #eef2ff;text-align:center}
   .hidden{display:none}
 </style>
@@ -61,32 +75,29 @@
     <div class="meta">
       <div id="progressMeta">Question: 0 / 0</div>
       <div id="percentMeta">Progress: 0%</div>
+      <div id="timerDisplay" style="font-weight:700;color:#222;min-width:110px;text-align:center">00:00</div>
       <div id="idMeta">ID: -</div>
       <div id="saveMeta" class="save-indicator" aria-live="polite">
         <span class="spinner" id="saveSpinner" aria-hidden="true"></span>
         <span class="status" id="saveStatus">Last saved: -</span>
       </div>
-      <div id="examControls" style="margin-left:auto;display:flex;gap:8px;align-items:center">
-        <label style="font-size:13px;color:#333">Exam:</label>
-        <select id="examSelect" style="padding:6px;border-radius:6px;border:1px solid #dfe7ff;background:#fff"></select>
-        <label style="font-size:13px;color:#333">Timer:</label>
-        <select id="timerMode" style="padding:6px;border-radius:6px;border:1px solid #dfe7ff;background:#fff">
-          <option value="exam100">100 minutes / exam</option>
-          <option value="2minPerQ">2 minutes / question (whole exam)</option>
-        </select>
-        <div id="timerDisplay" style="font-weight:700;color:#222;min-width:110px;text-align:center">00:00</div>
-        <button id="startExamBtn" class="primary" style="padding:6px 10px">Start</button>
-        <button id="stopExamBtn" class="secondary" style="padding:6px 10px">Stop</button>
-            <button id="createReviewBtn" class="bookmark" title="Add current session wrongs to review exam" style="padding:6px 10px">Create/Update Review</button>
-      </div>
     </div>
 
     <div class="container" id="main">
-      <div class="qtext" id="questionText">Loading...</div>
+      <div id="welcomeSection" class="welcome-section">
+        <h2>AWS Certified Solutions Architect Associate</h2>
+        <div class="exam-controls-section">
+          <label for="examSelect">Select Exam:</label>
+          <select id="examSelect" style="padding:6px;border-radius:6px;border:1px solid #dfe7ff;background:#fff"></select>
+          <button id="startExamBtn" class="primary" style="padding:10px 20px;font-size:14px;min-width:150px">Start Exam</button>
+        </div>
+      </div>
+
+      <div class="qtext" id="questionText" style="display:none">Loading question...</div>
       <div id="optionsList" class="options-list" aria-live="polite"></div>
 
       <div class="answerBox">
-        <label style="display:block;margin-bottom:6px;font-weight:600">Your answer (required):</label>
+        <label for="userAnswer" style="display:block;margin-bottom:6px;font-weight:600">Your answer (required):</label>
         <input type="text" id="userAnswer" placeholder="Type answer or option letter (e.g., A, B, C)"/>
       </div>
 
@@ -119,11 +130,13 @@
               </div>
             </div>
           </div>
+          <div class="results-actions">
+            <button class="primary" id="restartBtn">Retake</button>
+            <button class="secondary" id="newExamBtn">New Exam</button>
+            <button class="secondary" id="toggleReviewBtn">Review Questions</button>
+          </div>
           <div id="scoreSummary"></div>
         <div class="wrong-list" id="wrongList"></div>
-        <div style="margin-top:12px">
-          <button class="primary" id="restartBtn">Restart</button>
-        </div>
       </div>
     </div>
 
@@ -168,15 +181,38 @@ const wrongList = document.getElementById('wrongList');
 
 // exam selector + timer elements
 const examSelect = document.getElementById('examSelect');
-const timerMode = document.getElementById('timerMode');
 const timerDisplay = document.getElementById('timerDisplay');
 const startExamBtn = document.getElementById('startExamBtn');
-const stopExamBtn = document.getElementById('stopExamBtn');
+const createReviewBtn = document.getElementById('createReviewBtn');
+const metaBar = document.querySelector('.meta');
 
 let examIndexList = [];
 let examTimerInterval = null;
 let examTimeLeft = 0; // seconds
 let currentExamIsReview = false;
+let examInProgress = false;
+
+// Button state management
+function updateButtonStates() {
+  const examLoaded = questions.length > 0;
+  const saveProgressBtn = document.getElementById('saveProgressBtn');
+  const resetProgressBtn = document.getElementById('resetProgressBtn');
+  
+  // Show/hide and enable/disable buttons based on exam state
+  const questionButtons = [showBtn, nextBtn, prevBtn, bookmarkBtn, finishBtn, saveProgressBtn, resetProgressBtn, createReviewBtn];
+  questionButtons.forEach(btn => {
+    if (btn) {
+      btn.style.display = examLoaded ? 'inline-block' : 'none';
+      btn.disabled = !examLoaded;
+    }
+  });
+  
+  // Special enable/disable logic
+  if (examLoaded) {
+    nextBtn.disabled = userInput.value.trim().length === 0;
+    prevBtn.disabled = currentIndex === 0;
+  }
+}
 
 function updateTimerDisplay() {
   const s = Math.max(0, Math.floor(examTimeLeft));
@@ -202,57 +238,91 @@ function startTimer(totalSeconds) {
 
 function stopTimer(){ if (examTimerInterval) { clearInterval(examTimerInterval); examTimerInterval=null; } }
 
-startExamBtn.addEventListener('click', ()=>{
-  const sel = examSelect.value;
-  if (!sel) { alert('Select an exam first'); return; }
-  // fetch exam file from exams/ folder
-  if (sel === 'review') {
-    // load from localStorage review list
-    const review = getReviewList();
-    if (!review || review.length===0) { alert('Review exam empty.'); return; }
-    examLoadedFromReview(review);
-  } else {
-    fetch(sel).then(r=>{
-    if(!r.ok) throw new Error('Failed to fetch exam file');
-    return r.json();
-    }).then(data=>{
-      // set questions from selected file
-      const qarr = Array.isArray(data.questions) ? data.questions : (Array.isArray(data) ? data : []);
-    if (qarr.length===0) { alert('Selected exam has no questions'); return; }
-    questions = qarr.map(it=>{
-      let answerText = '';
-      if (it.correct_answer) {
-        let optText = '';
-        if (it.options && it.options[it.correct_answer]) optText = ' — ' + it.options[it.correct_answer];
-        answerText = `${it.correct_answer}${optText}` + (it.explanation ? '\n\n' + it.explanation : '');
-      } else if (it.answer) {
-        answerText = it.answer;
-      } else {
-        answerText = 'Answer not available in source data.';
-      }
-      const correctRaw = it.correct_answer || null;
-      const correctAnswers = correctRaw ? correctRaw.split(',').map(s=>s.trim()).filter(Boolean) : (it.answer ? [it.answer.trim()] : []);
-      const multi = correctAnswers.length > 1;
-      return { id: it.id || it.number, q: it.question || it.content || '', a: answerText, hasAnswer: !!(it.correct_answer || it.answer), options: it.options || null, correct_raw: correctRaw, correct_answers: correctAnswers, multi: multi };
-    });
-    // init responses and UI
-    questions.sort((x,y)=>parseInt(x.id)-parseInt(y.id));
-    userResponses = questions.map(q=>({id:q.id,user:'',correct:false,correctText:q.a}));
-    currentIndex = 0;
-    mainPanel.classList.remove('hidden');
-    resultsPanel.classList.add('hidden');
-    loadQuestion(0);
-
-    // start timer mode
-    const mode = timerMode.value;
-    if (mode === 'exam100') {
-      startTimer(100 * 60);
-    } else {
-      startTimer(questions.length * 2 * 60);
+function handleExamToggle() {
+  if (examInProgress) {
+    // Stop exam
+    if (confirm('Stop exam and stop timer?')) {
+      stopTimer();
+      examInProgress = false;
+      startExamBtn.textContent = 'Start';
+      startExamBtn.className = 'primary';
+        startExamBtn.style.display = 'inline-block';
+        document.querySelector('.answerBox').classList.remove('visible');
+        document.getElementById('welcomeSection').style.display = 'block';
+        document.getElementById('questionText').style.display = 'none';
+        const controls = document.querySelector('.controls');
+        const options = document.getElementById('optionsList');
+        if (controls) controls.style.display = 'none';
+        if (options) options.style.display = 'none';
+      updateButtonStates();
     }
-  }).catch(err=>{ alert('Failed to start exam: ' + err.message); });
+  } else {
+    // Start exam
+    const sel = examSelect.value;
+    if (!sel) { alert('Please select an exam first'); return; }
+    if (examIndexList.length === 0) { alert('Exam list not loaded yet. Please wait and try again.'); return; }
+    
+    // fetch exam file from exams/ folder
+    if (sel === 'review') {
+      // load from localStorage review list
+      const review = getReviewList();
+      if (!review || review.length===0) { alert('Review exam empty.'); return; }
+      examLoadedFromReview(review);
+    } else {
+      fetch(sel).then(r=>{
+      if(!r.ok) throw new Error('Failed to fetch exam file');
+      return r.json();
+      }).then(data=>{
+        // set questions from selected file
+        const qarr = Array.isArray(data.questions) ? data.questions : (Array.isArray(data) ? data : []);
+      if (qarr.length===0) { alert('Selected exam has no questions'); return; }
+      questions = qarr.map(it=>{
+        let answerText = '';
+        if (it.correct_answer) {
+          let optText = '';
+          if (it.options && it.options[it.correct_answer]) optText = ' — ' + it.options[it.correct_answer];
+          answerText = `${it.correct_answer}${optText}` + (it.explanation ? '\n\n' + it.explanation : '');
+        } else if (it.answer) {
+          answerText = it.answer;
+        } else {
+          answerText = 'Answer not available in source data.';
+        }
+        const correctRaw = it.correct_answer || null;
+        let correctAnswers = correctRaw ? correctRaw.split(',').map(s=>s.trim()).filter(Boolean) : (it.answer ? [it.answer.trim()] : []);
+        // If single answer but looks like multiple letters (e.g., "BD"), split into individual characters
+        if (correctAnswers.length === 1 && /^[A-Z]+$/.test(correctAnswers[0])) {
+          correctAnswers = correctAnswers[0].split('');
+        }
+        const multi = correctAnswers.length > 1;
+        return { id: it.id || it.number, q: it.question || it.content || '', a: answerText, hasAnswer: !!(it.correct_answer || it.answer), options: it.options || null, correct_raw: correctRaw, correct_answers: correctAnswers, multi: multi };
+      });
+      // init responses and UI
+      questions.sort((x,y)=>parseInt(x.id)-parseInt(y.id));
+      userResponses = questions.map(q=>({id:q.id,user:'',correct:false,correctText:q.a}));
+      currentIndex = 0;
+      mainPanel.classList.remove('hidden');
+      resultsPanel.classList.add('hidden');
+      document.getElementById('welcomeSection').style.display = 'none';
+      document.getElementById('questionText').style.display = 'block';
+      document.querySelector('.answerBox').classList.add('visible');
+      const controls = document.querySelector('.controls');
+      const options = document.getElementById('optionsList');
+      if (controls) controls.style.display = 'flex';
+      if (options) options.style.display = '';
+      if (metaBar) metaBar.style.display = 'flex';
+      loadQuestion(0);
+      startExamBtn.style.display = 'inline-block';
+      examInProgress = true;
+      startExamBtn.textContent = 'Stop';
+      startExamBtn.className = 'secondary';
+      // start countdown timer (default: 100 minutes)
+      startTimer(100 * 60);
+    }).catch(err=>{ alert('Failed to start exam: ' + err.message); });
+    }
   }
-});
+}
+
+startExamBtn.addEventListener('click', handleExamToggle);
 
 function examLoadedFromReview(reviewArr) {
   const qarr = reviewArr;
@@ -268,7 +338,11 @@ function examLoadedFromReview(reviewArr) {
       answerText = 'Answer not available in source data.';
     }
     const correctRaw = it.correct_answer || null;
-    const correctAnswers = correctRaw ? correctRaw.split(',').map(s=>s.trim()).filter(Boolean) : (it.answer ? [it.answer.trim()] : []);
+    let correctAnswers = correctRaw ? correctRaw.split(',').map(s=>s.trim()).filter(Boolean) : (it.answer ? [it.answer.trim()] : []);
+    // If single answer but looks like multiple letters (e.g., "BD"), split into individual characters
+    if (correctAnswers.length === 1 && /^[A-Z]+$/.test(correctAnswers[0])) {
+      correctAnswers = correctAnswers[0].split('');
+    }
     const multi = correctAnswers.length > 1;
     return { id: it.id || it.number, q: it.question || it.content || '', a: answerText, hasAnswer: !!(it.correct_answer || it.answer), options: it.options || null, correct_raw: correctRaw, correct_answers: correctAnswers, multi: multi };
   });
@@ -276,26 +350,35 @@ function examLoadedFromReview(reviewArr) {
   userResponses = questions.map(q=>({id:q.id,user:'',correct:false,correctText:q.a}));
   currentIndex = 0;
   currentExamIsReview = true;
+  examInProgress = true;
   mainPanel.classList.remove('hidden');
   resultsPanel.classList.add('hidden');
+  document.getElementById('welcomeSection').style.display = 'none';
+  document.getElementById('questionText').style.display = 'block';
+  document.querySelector('.answerBox').classList.add('visible');
+  if (metaBar) metaBar.style.display = 'flex';
   loadQuestion(0);
-  const mode = timerMode.value;
-  if (mode === 'exam100') startTimer(100*60); else startTimer(questions.length * 2 * 60);
+  startExamBtn.style.display = 'inline-block';
+  startExamBtn.textContent = 'Stop';
+  startExamBtn.className = 'secondary';
+  // start countdown timer (default: 100 minutes)
+  startTimer(100 * 60);
 }
 
-stopExamBtn.addEventListener('click', ()=>{ if (confirm('Stop exam and stop timer?')) { stopTimer(); } });
 // manual create/update review exam from current session wrongs
-document.getElementById('createReviewBtn').addEventListener('click', ()=>{
-  const wrongs = [];
-  for (let i=0;i<userResponses.length;i++){
-    const r = userResponses[i];
-    if (!r.correct) wrongs.push({index:i, id:r.id, user:r.user||''});
-  }
-  if (wrongs.length===0) { alert('No wrong questions in current session to add.'); return; }
-  addToReviewFromWrongs(wrongs);
-  updateReviewOption();
-  alert('Added ' + wrongs.length + ' questions to Review exam.');
-});
+if (createReviewBtn) {
+  createReviewBtn.addEventListener('click', ()=>{
+    const wrongs = [];
+    for (let i=0;i<userResponses.length;i++){
+      const r = userResponses[i];
+      if (!r.correct) wrongs.push({index:i, id:r.id, user:r.user||''});
+    }
+    if (wrongs.length===0) { alert('No wrong questions in current session to add.'); return; }
+    addToReviewFromWrongs(wrongs);
+    updateReviewOption();
+    alert('Added ' + wrongs.length + ' questions to Review exam.');
+  });
+}
 
 async function loadQuestionsFromFile() {
   try {
@@ -318,7 +401,11 @@ async function loadQuestionsFromFile() {
         }
         // derive correct answers array and multi-select flag
         const correctRaw = it.correct_answer || null;
-        const correctAnswers = correctRaw ? correctRaw.split(',').map(s=>s.trim()).filter(Boolean) : (it.answer ? [it.answer.trim()] : []);
+        let correctAnswers = correctRaw ? correctRaw.split(',').map(s=>s.trim()).filter(Boolean) : (it.answer ? [it.answer.trim()] : []);
+        // If single answer but looks like multiple letters (e.g., "BD"), split into individual characters
+        if (correctAnswers.length === 1 && /^[A-Z]+$/.test(correctAnswers[0])) {
+          correctAnswers = correctAnswers[0].split('');
+        }
         const multi = correctAnswers.length > 1;
         questions.push({
           id: it.id || it.number,
@@ -405,12 +492,14 @@ function loadQuestion(index) {
       btn.dataset.opt = key;
       btn.innerHTML = `<strong>${key}.</strong> ${escapeHtml(q.options[key])}`;
       if (q.multi) {
-        btn.addEventListener('click', ()=>{
+        btn.addEventListener('click', (e)=>{
+          e.preventDefault();
           // toggle selection for multi-select
           btn.classList.toggle('selected');
           const selected = Array.from(optionsList.children).filter(c=>c.classList.contains('selected')).map(c=>c.dataset.opt);
           userInput.value = selected.join(', ');
           toggleButtons();
+          userInput.dispatchEvent(new Event('input'));
         });
       } else {
         btn.addEventListener('click', ()=>{
@@ -419,6 +508,7 @@ function loadQuestion(index) {
           Array.from(optionsList.children).forEach(c=>c.classList.remove('selected'));
           btn.classList.add('selected');
           toggleButtons();
+          userInput.dispatchEvent(new Event('input'));
         });
       }
       optionsList.appendChild(btn);
@@ -431,13 +521,15 @@ function loadQuestion(index) {
         if (prevSet.includes(c.dataset.opt.toUpperCase()) || prevSet.includes(q.options[c.dataset.opt].toUpperCase())) c.classList.add('selected');
       });
     }
+    // ensure buttons are enabled (they may have been disabled after showing answer)
+    Array.from(optionsList.children).forEach(c=>c.disabled = false);
   }
   updateMeta();
   toggleButtons();
   updateBookmarkBtn();
-  userInput.focus();
   // autosave position when question changed
   autosave();
+  updateButtonStates();
 }
 
 function updateMeta() {
@@ -452,13 +544,29 @@ function toggleButtons() {
 }
 
 userInput.addEventListener('input', ()=> {
+  // update button selections if this is a multi-select question
+  const q = questions[currentIndex];
+  if (q && q.multi) {
+    const inputVal = userInput.value.trim();
+    const selected = inputVal ? inputVal.split(',').map(s=>s.trim().toUpperCase()) : [];
+    Array.from(optionsList.children).forEach(btn=>{
+      if (selected.includes(btn.dataset.opt.toUpperCase())) {
+        btn.classList.add('selected');
+      } else {
+        btn.classList.remove('selected');
+      }
+    });
+  }
   toggleButtons();
+  updateButtonStates();
   scheduleAutosave();
 });
 
 showBtn.addEventListener('click', ()=> {
-  // reveal correct answer
-  answerPanel.style.display = 'block';
+  // toggle show/hide answer
+  const isShowing = answerPanel.style.display === 'block';
+  answerPanel.style.display = isShowing ? 'none' : 'block';
+  showBtn.textContent = isShowing ? 'Show Answer' : 'Hide Answer';
 });
 
 nextBtn.addEventListener('click', ()=> {
@@ -584,15 +692,14 @@ function saveState(silent){
     localStorage.setItem('aws-exam-state', JSON.stringify(state));
     const now = new Date();
     const ts = now.toLocaleTimeString();
-    if (statusEl) statusEl.textContent = `Saved: ${ts}`;
+    if (statusEl) statusEl.textContent = `Last saved: ${ts}`;
     if (meta) {
       meta.classList.remove('saving');
       meta.classList.add('saved');
     }
-    // clear 'saved' marker after short time
+    // remove 'saved' visual indicator after short time
     setTimeout(()=>{
       try{
-        if (statusEl) statusEl.textContent = `Last saved: ${ts}`;
         if (meta) meta.classList.remove('saved');
       }catch(e){}
     }, 1800);
@@ -621,6 +728,10 @@ setInterval(()=>{ if (questions.length>0) autosave(); }, 10000);
 function resetProgress(){
   if (!confirm('Clear saved progress and bookmarks?')) return;
   try{
+    if (questions.length === 0) {
+      alert('No exam loaded. Start an exam first.');
+      return;
+    }
     localStorage.removeItem('aws-exam-state');
     localStorage.removeItem('aws-exam-bookmarks');
     bookmarks = [];
@@ -628,6 +739,11 @@ function resetProgress(){
     awaitingContinue = false;
     answerPanel.style.display = 'none';
     loadQuestion(0);
+    document.getElementById('welcomeSection').style.display = 'none';
+    document.getElementById('questionText').style.display = 'block';
+    document.querySelector('.answerBox').classList.add('visible');
+    loadQuestion(0);
+    startExamBtn.style.display = 'inline-block';
     alert('Progress reset.');
   }catch(e){
     console.warn('Failed to reset progress', e);
@@ -637,6 +753,11 @@ function resetProgress(){
 
 function finishExam() {
   // compute results
+  stopTimer();
+  examInProgress = false;
+  startExamBtn.textContent = 'Start';
+  startExamBtn.className = 'primary';
+  
   let correct = 0;
   const wrongs = [];
   for (let i=0;i<userResponses.length;i++){
@@ -648,6 +769,7 @@ function finishExam() {
   // Hide main, show results
   mainPanel.classList.add('hidden');
   resultsPanel.classList.remove('hidden');
+  if (metaBar) metaBar.style.display = 'none';
 
   const percent = Math.round((correct/questions.length)*100);
   const passing = percent >= 72;
@@ -680,10 +802,48 @@ function finishExam() {
 
 document.getElementById('restartBtn').addEventListener('click', ()=>{
   // reset
+    document.getElementById('welcomeSection').style.display = 'none';
+    document.getElementById('questionText').style.display = 'block';
+    document.querySelector('.answerBox').classList.add('visible');
+    if (metaBar) metaBar.style.display = 'flex';
   userResponses = questions.map(q=>({id:q.id,user:'',correct:false,correctText:q.a}));
   mainPanel.classList.remove('hidden');
   resultsPanel.classList.add('hidden');
   loadQuestion(0);
+});
+
+// New Exam: return to welcome screen to select a different exam
+document.getElementById('newExamBtn').addEventListener('click', ()=>{
+  stopTimer();
+  examInProgress = false;
+  resultsPanel.classList.add('hidden');
+  mainPanel.classList.remove('hidden');
+  const welcome = document.getElementById('welcomeSection');
+  const qtext = document.getElementById('questionText');
+  const answerBox = document.querySelector('.answerBox');
+  const controls = document.querySelector('.controls');
+  const options = document.getElementById('optionsList');
+  if (welcome) welcome.style.display = 'block';
+  if (qtext) qtext.style.display = 'none';
+  if (answerBox) answerBox.classList.remove('visible');
+  if (controls) controls.style.display = 'none';
+  if (options) options.style.display = 'none';
+  if (metaBar) metaBar.style.display = 'none';
+  startExamBtn.textContent = 'Start';
+  startExamBtn.className = 'primary';
+  updateButtonStates();
+});
+
+// Toggle Review Questions visibility
+document.getElementById('toggleReviewBtn').addEventListener('click', ()=>{
+  const isVisible = wrongList.classList.contains('visible');
+  if (isVisible) {
+    wrongList.classList.remove('visible');
+    document.getElementById('toggleReviewBtn').textContent = 'Review Questions';
+  } else {
+    wrongList.classList.add('visible');
+    document.getElementById('toggleReviewBtn').textContent = 'Hide Questions';
+  }
 });
 
 function normalize(s){
@@ -856,10 +1016,16 @@ function drawResultPie(correct, total, percent, passing){
 // initialize
 // initialize exam selector and timer
 function loadExamList(){
-  fetch('index.json').then(r=>{
-    if(!r.ok) throw new Error('Failed to load exams index');
-    return r.json();
-  }).then(data=>{
+  const tryPaths = ['index.json','exams/index.json'];
+  const tryFetch = (paths)=>{
+    if (paths.length===0) throw new Error('No index.json found');
+    const p = paths[0];
+    return fetch(p).then(r=>{
+      if(!r.ok) throw new Error('Failed to load exams index');
+      return r.json();
+    }).catch(()=> tryFetch(paths.slice(1)));
+  };
+  tryFetch(tryPaths).then(data=>{
     examIndexList = data.parts || [];
     examSelect.innerHTML = '';
     examIndexList.forEach((p, idx)=>{
@@ -875,17 +1041,23 @@ function loadExamList(){
     const reviewList = getReviewList();
     rev.textContent = `Review (${(reviewList||[]).length} items)`;
     examSelect.appendChild(rev);
-    // set default selection
-    if (examIndexList.length>0) examSelect.selectedIndex = 0;
+    // set default selection to Exam 1
+    examSelect.selectedIndex = 0;
     updateTimerDisplay();
   }).catch(err=>{
     console.warn('Failed to load exam index', err);
     // fallback: try to load all_records.json directly
+    try {
+      examSelect.innerHTML = '<option value="">No exams found</option>';
+    } catch(e){}
     loadQuestionsFromFile();
   });
 }
 
 loadExamList();
+// Don't call updateButtonStates here - it will be called after exam loads
+// Hide meta bar before starting any exam
+try { document.querySelector('.meta').style.display = 'none'; } catch(e){}
 </script>
 </body>
 </html>
