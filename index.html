@@ -1,667 +1,654 @@
-<!doctype html>
+<!-- <!DOCTYPE html> -->
 <html lang="en">
+
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>AWS Certified Solutions Architect Associate SAA-C03 Practice Exam</title>
-<style>
-  body{font-family:Segoe UI,Arial,sans-serif;background:#f3f6ff;padding:20px}
-  .card{max-width:900px;margin:0 auto;background:#fff;border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,.12);overflow:hidden}
-  header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:18px}
-  header h1{margin:0;font-size:20px}
-  .meta{display:flex;gap:12px;padding:12px 18px;background:#fbfdff;border-bottom:1px solid #eef2ff}
-  .meta div{font-size:13px;color:#444}
-  .save-indicator{display:flex;align-items:center;gap:8px;font-size:13px;color:#444}
-  .save-indicator .spinner{width:10px;height:10px;border-radius:50%;background:#667eea;display:inline-block;opacity:0;transform:scale(.8);transition:opacity .2s,transform .2s}
-  .save-indicator.saving .spinner{opacity:1;transform:scale(1);animation:pulse 1s infinite}
-  .save-indicator .status{font-size:12px;color:#666}
-  @keyframes pulse{0%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:0.6}100%{transform:scale(1);opacity:1}}
-  /* developer credit styling */
-  .dev-link{font-weight:800;background:linear-gradient(90deg,#0a66c2,#7b61ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none}
-  .dev-link:hover{text-decoration:underline;transform:translateY(-1px);transition:all .15s}
-  .footer-icon svg{vertical-align:middle;margin-left:6px;fill:currentColor;width:16px;height:16px}
-  .container{padding:20px}
-  .qtext{white-space:pre-wrap;font-size:16px;color:#222;margin-bottom:12px}
-  .controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-  button{padding:10px 14px;border-radius:8px;border:0;cursor:pointer;font-weight:600}
-  .primary{background:#667eea;color:#fff}
-  .secondary{background:#6c757d;color:#fff}
-  .bookmark{background:#ffc107;color:#000}
-  .answerBox{margin-top:14px}
-  input[type="text"]{width:100%;padding:10px;border-radius:8px;border:1px solid #dfe7ff;font-size:15px}
-  .answer-panel{background:#f8f9fb;padding:12px;border-radius:8px;margin-top:12px;display:none}
-  .options-list{display:flex;flex-direction:column;gap:8px;margin-top:12px}
-  .option-btn{padding:10px 12px;border-radius:8px;border:1px solid #e6ecff;background:#fff;cursor:pointer;text-align:left}
-  .option-btn:hover{background:#eef4ff}
-  .option-btn.selected{background:#667eea;color:#fff;border-color:#667eea}
-  .confetti-container{pointer-events:none;position:fixed;inset:0;overflow:hidden;z-index:9999}
-  .confetti-piece{position:absolute;width:10px;height:14px;opacity:0.95;transform-origin:center;will-change:transform,top,left}
-  @keyframes confetti-fall{0%{transform:translateY(-10vh) rotate(0)}100%{transform:translateY(110vh) rotate(720deg)}}
-  .result{padding:18px}
-  .chart-wrap{display:flex;justify-content:center;align-items:center;margin:10px 0}
-  .chart-box{width:180px;height:180px;display:flex;align-items:center;justify-content:center;position:relative}
-  #resultChart{width:180px;height:180px}
-  .chart-center{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none}
-  .chart-center .pct{font-weight:800;font-size:20px}
-  .chart-center .status{font-size:13px;font-weight:700;margin-top:6px}
-  .chart-center .label{font-size:12px;color:#666}
-  .wrong-list{margin-top:12px}
-  .wrong-item{padding:10px;border-radius:8px;background:#fff7f7;border:1px solid #ffd6d6;margin-bottom:8px}
-  footer{padding:14px;background:#fbfdff;border-top:1px solid #eef2ff;text-align:center}
-  .hidden{display:none}
-</style>
-</head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Materialize - Compiled and minified CSS-->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
+  <!-- Font Awesome Icon - CSS-->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <!-- Custom Styles-->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <title>Laxman Singh | System Administrator</title>
+
+
+  <!-- Open Graph-->
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Laxman Singh | System Administrator" />
+  <meta property="og:description" content="System Administrator" />
+  <meta property="og:url" content="https://jodhpurlaxman.github.io/" />
+  <meta property="og:site_name" content="Laxman Singh | System Administrator" />
+  <meta property="article:publisher" content="https://jodhpurlaxman.github.io/" />
+  
+  <!-- Twitter -->
+  <meta name="author" content="Laxman Singh" />
+  <meta name="description" content="System Administrator experienced in Linux, automation, networking, and cloud infrastructure." />
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicon/apple-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicon/apple-icon-60x60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicon/apple-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicon/apple-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicon/apple-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-icon-180x180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon/android-icon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="/assets/img/favicon/manifest.json" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="msapplication-TileImage" content="/assets/img/favicon/ms-icon-144x144.png" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="robots" content="index, follow" />
+  </head>
+
 <body>
-  <div class="card">
-    <header>
-      <h1>AWS Certified Solutions Architect Associate SAA-C03 Practice Exam</h1>
+ 
+  
+  <!-- Navigation Menu-->
+  <!-- Nav class 1 -->
+  <nav class="hide-on-small-only">
+    <ul class="side-nav fixed section table-of-contents">
+
+      <li class="logo">
+        <a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro"
+          class="brand-logo grey-blue-text">
+          <img src="/assets/img/passport-new.jpg" class="circle img-responsive profile-pic" alt="avatar">
+        </a>
+      </li>
+
+      <li class="bold">
+        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
+            class="mdi-social-person small"></i><span>About</span></a>
+      </li>
+      <li class="bold">
+        <a aria-label="Navigate to the Experience section" href="#experience"
+          class="waves-effect waves-dark teal-text"><i
+            class="mdi-action-trending-up small"></i><span>Experience</span></a>
+      </li>
+
+      <li class="bold">
+        <!-- mdi-av-web small
+             mdi-av-my-library-books small-->
+        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
+            class="mdi-av-my-library-books small"></i><span>Projects</span></a>
+      </li>
+
+      <li class="bold">
+        <!--
+        ICONS:
+        mdi-action-assessment
+        mdi-social-poll
+        mdi-av-equalizer
+        -->
+        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
+            class="mdi-action-assessment small"></i><span>Skills</span></a>
+      </li>
       
-    </header>
+      <li class="bold">
+        <!--
+        ICONS:
+        -->
+        <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
+            class="mdi-social-school small"></i><span>Education</span></a>
+      </li>
 
-    <div class="meta">
-      <div id="progressMeta">Question: 0 / 0</div>
-      <div id="percentMeta">Progress: 0%</div>
-      <div id="idMeta">ID: -</div>
-      <div id="saveMeta" class="save-indicator" aria-live="polite">
-        <span class="spinner" id="saveSpinner" aria-hidden="true"></span>
-        <span class="status" id="saveStatus">Last saved: -</span>
-      </div>
+      <li class="bold">
+        <!-- 
+        1. mdi-communication-contacts
+        2. mdi-content-mail
+        3. mdi-communication-email
+        -->
+        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
+            class="mdi-content-mail small"></i><span>Contact</span></a>
+      </li>
+
+      <li class="bold">
+        <!--
+        ICONS:
+        1. mdi-action-description
+        2. mdi-file-folder
+        3. mdi-file-folder-open
+        4. mdi-file-attachment
+        5. mdi-file-folder-shared
+        -->
+        <!-- <a aria-label="Open Laxman's resume in a new tab" href="#resume" target="_blank"
+          onclick="window.open('https://drive.google.com/file/d/1vYi-bMyIsZPve0x_clxY8xsDtiHiOMd3/view?usp=sharing')"
+          class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a> -->
+        <a aria-label="Practise AWS SAA-C03" href="https://jodhpurlaxman.github.io/exams" target="_blank"
+        class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>AWS Exam</span></a>  
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Nav class 2 -->
+  <nav class="hide-on-large only trigger z-depth-1">
+    <a aria-label="Toggle visibility of the mobile navbar" href="#" data-activates="slide-out"
+      class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+    <div class="name-title">
+      <a id="name" aria-label="Navigate to the beginning of the page" href="#" class="teal-text">Laxman
+        Singh</a><span class="black-text">System Administrator</span>
     </div>
+  </nav>
 
-    <div class="container" id="main">
-      <div class="qtext" id="questionText">Loading...</div>
-      <div id="optionsList" class="options-list" aria-live="polite"></div>
+  <!-- Nav class 3 -->
+  <nav class="hide-on-large only">
+    <ul id="slide-out" class="side-nav">
+      <li class="bold">
+        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
+            class="mdi-social-person small"></i><span>About</span></a>
+      </li>
+      <li class="bold">
+        <a aria-label="Navigate to the Experience section" href="#experience"
+          class="waves-effect waves-dark teal-text"><i
+            class="mdi-action-trending-up small"></i><span>Experience</span></a>
+      </li>
+      <li class="bold">
+        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
+            class="mdi-av-my-library-books small"></i><span>Projects</span></a>
+      </li>
+      <li class="bold">
+        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
+            class="mdi-action-assessment small"></i><span>Skills</span></a>
+      </li>
 
-      <div class="answerBox">
-        <label style="display:block;margin-bottom:6px;font-weight:600">Your answer (required):</label>
-        <input type="text" id="userAnswer" placeholder="Type answer or option letter (e.g., A, B, C)"/>
+      <li class="bold">
+        <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
+            class="mdi-social-school small"></i><span>Education</span></a>
+      </li>
+      <li class="bold">
+        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
+            class="mdi-content-mail small"></i><span>Contact</span></a>
+      </li>
+      
+    </ul>
+  </nav>
+
+  <!-- Main Content-->
+  <main>
+  
+    <!-- Second Section: About -->
+    <section id="about" class="section scrollspy">
+      <h3 class="page-title white-text teal">About</h3>
+      <div class="container flow-text">
+        <p>
+          With over a decade of experience in system administration, I am passionate about delivering efficient and scalable cloud solutions at iGauri Solutions Pvt. Ltd. My expertise lies in AWS Web Services, Linux system administration, and web hosting for diverse platforms such as WordPress, CodeIgniter, Laravel, and Node.js, Django and other frameworks. I am driven to empower organizations by optimizing server performance, ensuring seamless deployment pipelines, and providing reliable hosting solutions. My commitment to collaboration and innovation aligns with our mission to deliver robust, tailored IT solutions.
+        </p>
+        <p>
+          At iGauri Solutions, I specialize in managing AWS cloud solutions, web server configurations, and CI/CD pipelines. I work with technologies such as GitLab, GitHub, Bash, and Python scripting, focusing on automation and performance optimization. My role includes overseeing WHM &amp; cPanel administration, SSL setup, and DNS configurations, ensuring secure and efficient server operations.
+        </p>
+        <p>
+          By integrating advanced web hosting solutions and cloud technologies, I contribute to the team’s goal of delivering top-tier digital infrastructure for our clients.
+        </p>
+        <ul>
+          <li><b>Core:</b> AWS, Linux system administration, WHM &amp; cPanel, Cloudpanel, CyberPanel, Nodeworx</li>
+          <li><b>Hosting Platforms:</b> WordPress, CodeIgniter, Laravel, Node.js, Django and many more</li>
+          <li><b>Automation & DevOps:</b> GitLab, GitHub, Bash, Python, CI/CD, Terraform/Ansible (as applicable)</li>
+          <li><b>Networking & Security:</b> Endpoint Central, Pfsense, VPN, SSL/TLS setup, DNS, server hardening, monitoring, and security patches</li>
+          <li><b>Virtalization:</b> Proxmox</li>
+        </ul>
+        
       </div>
+    </section>
 
-      <div class="controls">
-        <button class="primary" id="showBtn">Show Answer</button>
-        <button class="secondary" id="nextBtn" disabled>Next →</button>
-        <button class="secondary" id="prevBtn" disabled>← Prev</button>
-        <button class="bookmark" id="bookmarkBtn">☆ Bookmark</button>
-        <button class="secondary" id="finishBtn">Finish Exam</button>
-        <button class="primary" id="saveProgressBtn">Save Progress</button>
-        <button class="secondary" id="resetProgressBtn">Reset Progress</button>
+
+    <!-- Third Section: Experience -->
+    <section id="experience" class="section scrollspy">
+      <h3 class="page-title white-text teal">Experience</h3>
+      <div class="container">
+
+        <!-- Experience 1: iGauri Solutions -->
+        <div class="card">
+          <div class="card-content">
+            <div class="row">
+              <div class="col s12 m2">
+                <a href="https://www.igauri.com" target="_blank"><img alt="iGauri Solutions logo"
+                    src="/assets/img/exp-igauri-logo.png.svg" class="responsive-img center-block" /></a>
+              </div>
+              <div class="col s12 m10">
+                <p>
+                  <span class="card-title"><a href="https://www.igaurisolutions.com" target="_blank"
+                      class="teal-text hoverline">iGauri Solutions Pvt. Ltd</a></span>
+                </p>
+              </div>
+            </div>
+            <div class="role brown-text text-darken-2">Server Administrator | Cloud Engineer</div>
+            <ul>
+              <li>AWS Web Services and AWS Cloud solutions implementation and management</li>
+              <li>Web hosting for WordPress, CodeIgniter, Laravel, Node.js, and Django applications</li>
+              <li>GitLab, GitHub, git, CI/CD pipeline automations and deployment workflows</li>
+              <li>Bash and Python scripting for automation and system management</li>
+              <li>Linux System Administration (AlmaLinux and Ubuntu preferred)</li>
+              <li>WHM & cPanel Administration and Tweaks for optimal performance</li>
+              <li>Nginx, Apache & LiteSpeed Web Servers - Configuration and Tweaks</li>
+              <li>CPanel/WHM/CyberPanel - Setup, Update, and Tweaks for Stability and Efficiency</li>
+              <li>SPF, DKIM, DMARC setup for email authentication</li>
+              <li>SSL installation and setup on servers and websites</li>
+              <li>MySQL/MariaDB database administration (analyzing, creating, modifying, updating, repairing)</li>
+              <li>Server and website performance optimization</li>
+              <li>Website/Email/DNS hosting and domain transfer management</li>
+              <li>Web hosting management across Godaddy, InMotion, HostGator, SiteGround, Bluehost, WP Engine, Cloudflare, and others</li>
+              <li>
+                <b>Skills:</b> AWS, Linux, WHM/cPanel, GitLab, GitHub, CI/CD, Bash, Python, WordPress, Node.js, Nginx, Apache, LiteSpeed, MySQL/MariaDB, SSL/TLS, DNS, Critical Thinking
+              </li>
+            </ul>
+          </div>
+          <div class="card-action">
+            <span>Nov 2015 - Present · 10 yrs 2 mos | Jodhpur, Rajasthan, India</span>
+          </div>
+        </div>
+
+        <!-- Experience 2: Tata Consultancy Services -->
+        <div class="card">
+          <div class="card-content">
+            <div class="row">
+              <div class="col s12 m2">
+                <a href="https://www.tcs.com" target="_blank"><img alt="Tata Consultancy Services logo"
+                    src="/assets/img/exp-tcs-logo.png.svg" class="responsive-img center-block" /></a>
+              </div>
+              <div class="col s12 m10">
+                <p>
+                  <span class="card-title"><a href="https://www.tcs.com" target="_blank"
+                      class="teal-text hoverline">Tata Consultancy Services</a></span>
+                </p>
+              </div>
+            </div>
+            <div class="role brown-text text-darken-2">Customer Support Engineer</div>
+            <ul>
+              <li>Deployed and configured IT racks for new retail stores, ensuring efficient structured cabling, power management, and optimal network performance</li>
+              <li>Installed and configured Cisco routers, Cisco switches, and wireless access points for seamless connectivity</li>
+              <li>Installed and maintained Dell PowerEdge G8 and HP ProLiant DL320 G5 servers running Windows Server 2003/2008, including RAID configuration for redundancy and data protection</li>
+              <li>Performed hardware and network troubleshooting for servers, routers, switches, POS systems, handheld devices, and wireless networks to minimize downtime and maintain smooth operations</li>
+              <li>Installed, configured, and supported Hand Held Terminals (Symbol PDAs), POS machines, and iPhone-based POS devices integrated with ManageEngine for centralized device management</li>
+              <li>Collaborated with the NOC team and Internet Service Providers (ISPs) to ensure network stability, timely issue resolution, and SLA compliance</li>
+              <li>Provided technical guidance and on-site training to junior engineers, improving troubleshooting efficiency and response times</li>
+              <li>Maintained comprehensive documentation of network topology, server configurations (including RAID and VSAT setups), and hardware inventory across all store locations</li>
+              <li>
+                <b>Skills:</b> Resolving Issues, Transport Layer Security (TLS), Cisco Networking, Windows Server, RAID, Hardware Troubleshooting
+              </li>
+            </ul>
+          </div>
+          <div class="card-action">
+            <span>Sep 2012 - Nov 2015 · 3 yrs 3 mos | On-site</span>
+          </div>
+        </div>
+
+        <!-- Experience 3: T&M Consulting -->
+        <div class="card">
+          <div class="card-content">
+            <div class="row">
+              <div class="col s12 m2">
+                <img alt="T&M Consulting logo" src="/assets/img/exp-tm-logo.png.svg" class="responsive-img center-block" />
+              </div>
+              <div class="col s12 m10">
+                <p>
+                  <span class="card-title"><a href="#experience" class="teal-text hoverline">T&M Consulting</a></span>
+                </p>
+              </div>
+            </div>
+            <div class="role brown-text text-darken-2">Customer Support Engineer</div>
+            <ul>
+              <li>Deployed and configured IT racks for new retail stores, ensuring efficient structured cabling, power management, and optimal network performance</li>
+              <li>Installed and configured Cisco routers, Cisco switches, and wireless access points for seamless connectivity</li>
+              <li>Installed and maintained Dell PowerEdge G8 and HP ProLiant DL320 G5 servers running Windows Server 2003/2008, including RAID configuration for redundancy and data protection</li>
+              <li>Performed hardware and network troubleshooting for servers, routers, switches, POS systems, handheld devices, and wireless networks to minimize downtime and maintain smooth operations</li>
+              <li>Installed, configured, and supported Hand Held Terminals (Symbol PDAs), POS machines, and iPhone-based POS devices integrated with ManageEngine for centralized device management</li>
+              <li>Collaborated with the NOC team and Internet Service Providers (ISPs) to ensure network stability, timely issue resolution, and SLA compliance</li>
+              <li>Provided technical guidance and on-site training to junior engineers, improving troubleshooting efficiency and response times</li>
+              <li>Maintained comprehensive documentation of network topology, server configurations (including RAID and VSAT setups), and hardware inventory across all store locations</li>
+              <li>
+                <b>Skills:</b> Resolving Issues, Field Support, Cisco Networking, Windows Server, RAID, Hardware Troubleshooting
+              </li>
+            </ul>
+          </div>
+          <div class="card-action">
+            <span>Aug 2011 - Sep 2012 · 1 yr 2 mos | Jodhpur, Rajasthan, India</span>
+          </div>
+        </div>
+
+        <!-- Experience 4: GAURI ENTERPRISES -->
+        <div class="card">
+          <div class="card-content">
+            <div class="row">
+              <div class="col s12 m2">
+                <img alt="GAURI ENTERPRISES logo" src="/assets/img/exp-gauri-logo.png.svg" class="responsive-img center-block" />
+              </div>
+              <div class="col s12 m10">
+                <p>
+                  <span class="card-title"><a href="#experience" class="teal-text hoverline">GAURI ENTERPRISES</a></span>
+                </p>
+              </div>
+            </div>
+            <div class="role brown-text text-darken-2">Hardware and Network Engineer</div>
+            <ul>
+              <li>Managed site migrations and deployment of new websites and applications, ensuring minimal downtime and smooth transitions</li>
+              <li>Performed DNS updates and mail server setup/migration to ensure seamless email communication and domain resolution</li>
+              <li>Installed, configured, and troubleshot database servers including MySQL and MS SQL, optimizing performance and ensuring data integrity</li>
+              <li>Configured and maintained IIS web servers, including website hosting, application pool management, and troubleshooting server-related issues</li>
+              <li>Collaborated with internal teams and stakeholders to plan and execute server upgrades, application deployment, and IT infrastructure enhancements</li>
+              <li>Monitored server and application performance, implemented security patches, and performed preventive maintenance to minimize downtime</li>
+              <li>Provided hardware and network troubleshooting, resolving issues related to servers, clients, and network devices</li>
+              <li>Maintained detailed documentation of DNS configurations, server setups, deployment procedures, and IT infrastructure inventories</li>
+              <li>Ensured business continuity by implementing backup strategies and disaster recovery measures for critical systems</li>
+              <li>
+                <b>Skills:</b> Resolving Issues, Transport Layer Security (TLS), MySQL, MS SQL, IIS, DNS, Hardware Troubleshooting
+              </li>
+            </ul>
+          </div>
+          <div class="card-action">
+            <span>Mar 2009 - Aug 2011 · 2 yrs 6 mos | Jodhpur, Rajasthan, India</span>
+          </div>
+        </div>
+
+        <!-- Experience 5: sahara Computer -->
+        <div class="card">
+          <div class="card-content">
+            <div class="row">
+              <div class="col s12 m2">
+                <img alt="sahara Computer logo" src="/assets/img/exp-sahara-logo.png.svg" class="responsive-img center-block" />
+              </div>
+              <div class="col s12 m10">
+                <p>
+                  <span class="card-title"><a href="#experience" class="teal-text hoverline">sahara Computer</a></span>
+                </p>
+              </div>
+            </div>
+            <div class="role brown-text text-darken-2">Hardware Engineer</div>
+            <ul>
+              <li>Started career as a beginner IT professional, gaining hands-on experience in hardware and basic network support</li>
+              <li>Assembled desktop and laptop computers, ensuring proper installation of components and peripherals</li>
+              <li>Installed, configured, and troubleshot printers, including networked and USB models, resolving driver and connectivity issues</li>
+              <li>Performed hardware troubleshooting and repairs for PCs, laptops, and peripherals, including motherboards, RAM, storage drives, and printers</li>
+              <li>Provided support for basic network devices, including switches, hubs, and Wi-Fi access points, assisting with connectivity and configuration</li>
+              <li>Installed, configured, and troubleshot operating systems, including Windows, to ensure smooth functionality</li>
+              <li>
+                <b>Skills:</b> Problem Solving, Windows XP, Hardware Assembly, Printer Installation, Network Support
+              </li>
+            </ul>
+          </div>
+          <div class="card-action">
+            <span>Feb 2008 - Feb 2009 · 1 yr 1 mo | Jodhpur, Rajasthan, India</span>
+          </div>
+        </div>
+
       </div>
+    </section>
 
-      <div class="answer-panel" id="answerPanel">
-        <div style="font-weight:700;color:#198754">Correct / Source answer:</div>
-        <div id="answerText" style="white-space:pre-wrap;margin-top:6px;color:#333"></div>
+    <!-- Fourth Section: Projects -->
+
+        </div>
+
       </div>
-    </div>
+    </section>
 
-    <div id="results" class="hidden">
-      <div class="result">
-        <h3>Results</h3>
-          <div class="chart-wrap">
-            <div class="chart-box">
-              <canvas id="resultChart" width="180" height="180"></canvas>
-              <div class="chart-center">
-                <div class="pct" id="chartPct">0%</div>
-                <div class="status" id="chartStatus"></div>
-                <div class="label" id="chartLabel">Status</div>
+    <!-- Fourth Section: Projects -->
+    <section id="projects" class="section scrollspy">
+      <h3 class="page-title white-text teal">Projects</h3>
+      <div class="container">
+        <p>
+          With over a decade of experience in system administration, I am passionate about delivering efficient and scalable cloud solutions at iGauri Solutions Pvt. Ltd. My expertise lies in AWS Web Services, Linux system administration, and web hosting for diverse platforms such as WordPress, CodeIgniter, Laravel, and Node.js. I am driven to empower organizations by optimizing server performance, ensuring seamless deployment pipelines, and providing reliable hosting solutions. My commitment to collaboration and innovation aligns with our mission to deliver robust, tailored IT solutions.
+        </p>
+        <p>
+          At iGauri Solutions, I specialize in managing AWS cloud solutions, web server configurations, and CI/CD pipelines. I work with technologies such as GitLab, GitHub, Bash, and Python scripting, focusing on automation and performance optimization. My role includes overseeing WHM &amp; cPanel administration, SSL setup, and DNS configurations, ensuring secure and efficient server operations.
+        </p>
+        <p>
+          By integrating advanced web hosting solutions and cloud technologies, I contribute to the team’s goal of delivering top-tier digital infrastructure for our clients.
+        </p>
+        <ul>
+          <li><b>Core:</b> AWS, Linux system administration, WHM &amp; cPanel</li>
+          <li><b>Hosting Platforms:</b> WordPress, CodeIgniter, Laravel, Node.js</li>
+          <li><b>Automation & DevOps:</b> GitLab, GitHub, Bash, Python, CI/CD, Terraform/Ansible (as applicable)</li>
+          <li><b>Networking & Security:</b> SSL/TLS setup, DNS, server hardening, monitoring</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Fifth Section: Skills -->
+    <section id="skills" class="section scrollspy">
+      <h3 class="page-title white-text teal">Other Skills</h3>
+      <div class="container">
+        <!-- Languages and Databases -->
+        <div class="card">
+          <div class="card-content">
+            <h4 class="brown-text light">Languages and Databases</h4>
+            <div class="row text-center">
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/python-logo-1-300x300.jpg" class="responsive-img" />Python
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/html5-300x300.jpg" class="responsive-img" />HTML5
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/css3-300x300.jpg" class="responsive-img" />CSS3
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/mysql-logo-1-300x300.jpg" class="responsive-img" />MySQL
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/postgresql.png" class="responsive-img" />Pyside
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/shell-logo-1-300x300.jpg" class="responsive-img" />Shell Scripting
               </div>
             </div>
           </div>
-          <div id="scoreSummary"></div>
-        <div class="wrong-list" id="wrongList"></div>
-        <div style="margin-top:12px">
-          <button class="primary" id="restartBtn">Restart</button>
+        </div>
+
+        <!-- <div class="card">
+          <div class="card-content">
+            <h4 class="brown-text light">Libraries</h4>
+            <div class="row text-center">
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/numpy-logo-1-500x500.jpg" class="responsive-img" />NumPy
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/pandas-logo-2-500x500.jpg" class="responsive-img" />Pandas
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/opencv-logo-1-500x500.jpg" class="responsive-img" />OpenCV
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/sk-learn-logo-1-500x500.jpg" class="responsive-img" />scikit-learn
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/matplotlib-logo-1-500x500.jpg" class="responsive-img" />matplotlib
+              </div>
+            </div>
+          </div> -->
+        </div>
+
+        <!-- Frameworks -->
+        <!-- <div class="card">
+          <div class="card-content">
+            <h4 class="brown-text light">Frameworks</h4>
+            <div class="row text-center">
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/django-logo.webp" class="responsive-img" />Django
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/flask-logo.png" class="responsive-img" />Flask
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/bootstrap.png" class="responsive-img" />Bootstrap
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/keras-logo.png" class="responsive-img" />Keras
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/tensorflow-logo-1.png" class="responsive-img" />TensorFlow
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/pytorch-logo.png" class="responsive-img" />PyTorch
+              </div>
+            </div>
+          </div> -->
+        </div>
+
+        <!-- Other -->
+        <!-- <div class="card">
+          <div class="card-content">
+            <h4 class="brown-text light">Other</h4>
+            <div class="row text-center">
+
+
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/git.png" class="responsive-img" />Git
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/aws.png" class="responsive-img" />AWS
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/heroku.png" class="responsive-img" />Heroku
+              </div>
+            </div>
+          </div> -->
+        </div>
+
+        <!-- certifications -->
+        <!-- <div class="card">
+          <div class="card-content">
+            <h4 class="brown-text light">Certificates</h4>
+            <div class="row text-left">
+              <div class="container">
+                <div class="row">
+                  <div class="col s12 m6 l6">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src="/assets/img/mooc-machine-learning-coursera-800x500.jpg">
+                      </div>
+                      <div class="card-content">
+                        <span class="card-title teal-text">Machine Learning (Stanford)</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col s12 m6 l6">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src="/assets/img/mooc-algorithms-stanford-2-800x500.jpg">
+                      </div>
+                      <div class="card-content">
+                        <span class="card-title teal-text">Algorithms (Stanford)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+      </div>
+    </section>
+
+    <!-- Seventh Section: Education -->
+    <section id="education" class="section scrollspy">
+      <h3 class="page-title white-text teal">Education</h3>
+      <div class="container">
+        <div class="row">
+          <!-- Education -->
+          <div class="col s12 m6 l6">
+            <div class="card">
+              <div class="card-content">
+                <p>
+                  <span class="card-title"><a href="https://www.smu.edu" target="_blank" class="teal-text hoverline">Sikkim Manipal University</a></span>
+                </p>
+                <p class="brown-text">India</p>
+                <p>
+                  <b>Degree: </b>Master of Computer Applications
+                  
+                  <br>
+                  <b>Grade: </b>A
+                </p>
+
+                <ul>
+                  <p>
+                    <b>Relevant Courseworks:</b>
+                  <ul>
+                    <li>Hardware & Networks</li>
+                    <li>Cloud Computing</li>
+                    <li>Foundations of IT</li>                    
+                  </ul>
+                  </p>
+
+                </ul>
+              </div>
+            </div>
+
+            
+          </div>
+         </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <footer>
-      <small> Developed by 
-        <a href="https://www.linkedin.com/in/laxman-singh-2b912316/" target="_blank" rel="noopener noreferrer" class="dev-link" id="devLink">
-          LKY
-          <span class="footer-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11.75 19h-2.5v-8.75h2.5v8.75zm-1.25-10c-.828 0-1.5-.672-1.5-1.5s.672-1.5 1.5-1.5 1.5.672 1.5 1.5-.672 1.5-1.5 1.5zm12 10h-2.5v-4.5c0-1.073-.927-1.5-1.25-1.5s-1.25.427-1.25 1.5v4.5h-2.5v-8.75h2.5v1.25c.693-1.048 2.25-1.25 3.75-1.25 2.25 0 4 1.5 4 4.75v3.75z"/>
-            </svg>
-          </span>
-        </a>
-      </small>
-    </footer>
-  </div>
+    <!-- Eight Section: Contact -->
+    <section id="contact" class="section scrollspy full-height">
+      <h3 class="page-title white-text teal">Contact</h3>
+      <div class="container">
+        <!-- <p>
+          <a aria-label="Call Laxman" data-position="top" data-tooltip="Call Laxman"
+            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-phone"></i><a
+              aria-label="Call Laxman"></a></a>
+        </p> -->
+        <p>
+          <a aria-label="Email Laxman" href="mailto:jodhpur.laxman@gmail.com" target="_blank" data-position="top"
+            data-tooltip="Email Laxman" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+              class="fa fa-envelope"></i><a aria-label="Email Laxman" href="mailto:jodhpur.laxman@gmail.com"
+              class="hoverline">jodhpur.laxman@gmail.com</a></a>
+        </p>
+        <p>
+          <a aria-label="View Laxman on GitHub" href="http://github.com/jodhpurlaxman" target="_blank"
+            data-position="top" data-tooltip="View Laxman on GitHub"
+            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-github"></i><a
+              aria-label="Laxman on Github" href="http://github.com/jodhpurlaxman" class="hoverline"
+              target="_blank">github.com/jodhpurlaxman</a></a>
+        </p>
+        <p>
+          <a aria-label="View Laxman on LinkedIn" href="https://www.linkedin.com/in/laxman-singh-2b912316/" target="_blank"
+            data-position="top" data-tooltip="View Laxman on LinkedIn"
+            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+              class="fa fa-linkedin"></i><a aria-label="Laxman on LinkedIn" href="https://www.linkedin.com/in/laxman-singh-2b912316/"
+              class="hoverline" target="_blank">linkedin.com/in/laxman-singh-2b912316/</a></a>
+        </p>
+      </div>
+    </section>
+  </main>
 
-<script>
-let questions = [];
-let currentIndex = 0;
-let userResponses = []; // {id, user, correct, correctText}
-let bookmarks = JSON.parse(localStorage.getItem('aws-exam-bookmarks')||'[]');
-let awaitingContinue = false;
-
-const qText = document.getElementById('questionText');
-const optionsList = document.getElementById('optionsList');
-const answerText = document.getElementById('answerText');
-const answerPanel = document.getElementById('answerPanel');
-const userInput = document.getElementById('userAnswer');
-const showBtn = document.getElementById('showBtn');
-const nextBtn = document.getElementById('nextBtn');
-const prevBtn = document.getElementById('prevBtn');
-const bookmarkBtn = document.getElementById('bookmarkBtn');
-const finishBtn = document.getElementById('finishBtn');
-const progressMeta = document.getElementById('progressMeta');
-const percentMeta = document.getElementById('percentMeta');
-const idMeta = document.getElementById('idMeta');
-const resultsPanel = document.getElementById('results');
-const mainPanel = document.getElementById('main');
-const scoreSummary = document.getElementById('scoreSummary');
-const wrongList = document.getElementById('wrongList');
-
-async function loadQuestionsFromFile() {
-  try {
-    const r = await fetch('qa_export.json');
-    if(!r.ok) throw new Error('Failed to fetch qa_export.json');
-    const data = await r.json();
-    questions = [];
-
-    if (Array.isArray(data.questions)) {
-      data.questions.forEach(it => {
-        let answerText = '';
-        if (it.correct_answer) {
-          let optText = '';
-          if (it.options && it.options[it.correct_answer]) optText = ' — ' + it.options[it.correct_answer];
-          answerText = `${it.correct_answer}${optText}` + (it.explanation ? '\n\n' + it.explanation : '');
-        } else if (it.answer) {
-          answerText = it.answer;
-        } else {
-          answerText = 'Answer not available in source data.';
-        }
-        // derive correct answers array and multi-select flag
-        const correctRaw = it.correct_answer || null;
-        const correctAnswers = correctRaw ? correctRaw.split(',').map(s=>s.trim()).filter(Boolean) : (it.answer ? [it.answer.trim()] : []);
-        const multi = correctAnswers.length > 1;
-        questions.push({
-          id: it.id || it.number,
-          q: it.question || it.content || '',
-          a: answerText,
-          hasAnswer: !!(it.correct_answer || it.answer),
-          options: it.options || null,
-          correct_raw: correctRaw,
-          correct_answers: correctAnswers,
-          multi: multi
-        });
-      });
-    } else {
-      // Backwards-compatible parsing for files that use complete_qa_pairs/incomplete_entries
-      if (Array.isArray(data.complete_qa_pairs)) {
-        data.complete_qa_pairs.forEach(it => questions.push({id: it.number, q: it.question || it.content || '', a: it.answer || '', hasAnswer: !!it.has_answer}));
-      }
-      if (Array.isArray(data.incomplete_entries)) {
-        data.incomplete_entries.forEach(it => questions.push({id: it.number, q: it.content || '', a: it.answer || 'Answer not available in source data.', hasAnswer: !!it.has_answer}));
-      }
-    }
-
-    // Sort by numeric id when possible
-    questions.sort((x,y)=>parseInt(x.id)-parseInt(y.id));
-    if (questions.length===0) {
-      qText.textContent = 'No questions found in qa_export.json';
-      return;
-    }
-
-    // init responses
-    userResponses = questions.map(q=>({id:q.id,user:'',correct:false,correctText:q.a}));
-
-    // Try to restore saved state (progress, bookmarks, responses)
-    try {
-      const saved = JSON.parse(localStorage.getItem('aws-exam-state')||'null');
-      if (saved && typeof saved === 'object') {
-        if (typeof saved.currentIndex === 'number' && saved.currentIndex >= 0) {
-          currentIndex = Math.min(saved.currentIndex, questions.length - 1);
-        }
-        if (Array.isArray(saved.bookmarks)) {
-          bookmarks = saved.bookmarks;
-          localStorage.setItem('aws-exam-bookmarks', JSON.stringify(bookmarks));
-        }
-        if (Array.isArray(saved.userResponses)) {
-          // merge saved user values by id
-          saved.userResponses.forEach(sr => {
-            const idx = userResponses.findIndex(ur => String(ur.id) === String(sr.id));
-            if (idx > -1) {
-              userResponses[idx].user = sr.user || '';
-              userResponses[idx].correct = !!sr.correct;
-            }
-          });
-        }
-        awaitingContinue = !!saved.awaitingContinue;
-        if (saved.showingAnswer) answerPanel.style.display = 'block';
-      }
-    } catch (e) {
-      console.warn('Failed to restore saved exam state:', e);
-    }
-
-    loadQuestion(currentIndex || 0);
-  } catch (err) {
-    qText.textContent = 'Error loading questions: ' + err.message + '\nEnsure file qa_export.json is served over HTTP.';
-  }
-}
-
-function loadQuestion(index) {
-  currentIndex = index;
-  const q = questions[currentIndex];
-  qText.textContent = q.q || '(no text)';
-  answerText.textContent = q.a || '(no answer)';
-  answerPanel.style.display = 'none';
-  userInput.value = userResponses[currentIndex].user || '';
-    // render options
-  optionsList.innerHTML = '';
-  if (q.options && typeof q.options === 'object') {
-    // sort keys like A,B,C...
-    Object.keys(q.options).sort().forEach(key => {
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'option-btn';
-      btn.dataset.opt = key;
-      btn.innerHTML = `<strong>${key}.</strong> ${escapeHtml(q.options[key])}`;
-      if (q.multi) {
-        btn.addEventListener('click', ()=>{
-          // toggle selection for multi-select
-          btn.classList.toggle('selected');
-          const selected = Array.from(optionsList.children).filter(c=>c.classList.contains('selected')).map(c=>c.dataset.opt);
-          userInput.value = selected.join(', ');
-          toggleButtons();
-        });
-      } else {
-        btn.addEventListener('click', ()=>{
-          // single select behavior
-          userInput.value = key;
-          Array.from(optionsList.children).forEach(c=>c.classList.remove('selected'));
-          btn.classList.add('selected');
-          toggleButtons();
-        });
-      }
-      optionsList.appendChild(btn);
+  <!-- typed.js -->
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script type="text/javascript">
+    var typed = new Typed('.typing',{
+      strings: ["Pythonist", "Developer", "Fast Learner"],
+      loop: true,
+      typeSpeed: 80,
+      backSpeed: 40
     });
-    // restore previous selection if any
-    const prev = userResponses[currentIndex].user;
-    if (prev) {
-      const prevSet = prev.split(',').map(s=>s.trim().toUpperCase());
-      Array.from(optionsList.children).forEach(c=>{
-        if (prevSet.includes(c.dataset.opt.toUpperCase()) || prevSet.includes(q.options[c.dataset.opt].toUpperCase())) c.classList.add('selected');
-      });
-    }
-  }
-  updateMeta();
-  toggleButtons();
-  updateBookmarkBtn();
-  userInput.focus();
-  // autosave position when question changed
-  autosave();
-}
+  </script>
 
-function updateMeta() {
-  progressMeta.textContent = `Question: ${currentIndex+1} / ${questions.length}`;
-  percentMeta.textContent = `Progress: ${Math.round(((currentIndex+1)/questions.length)*100)}%`;
-  idMeta.textContent = `ID: ${questions[currentIndex].id}`;
-}
 
-function toggleButtons() {
-  nextBtn.disabled = userInput.value.trim().length === 0;
-  prevBtn.disabled = currentIndex===0;
-}
+  <!-- jQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
-userInput.addEventListener('input', ()=> {
-  toggleButtons();
-  scheduleAutosave();
-});
-
-showBtn.addEventListener('click', ()=> {
-  // reveal correct answer
-  answerPanel.style.display = 'block';
-});
-
-nextBtn.addEventListener('click', ()=> {
-  // two-step: first click evaluates and shows answer (with celebration if correct), second click continues to next question
-  if (!awaitingContinue) {
-    // evaluate and reveal
-    const user = userInput.value.trim();
-    if(user.length===0) { alert('Please enter your answer before proceeding.'); return; }
-
-    const q = questions[currentIndex];
-    let correctFlag = false;
-    if (q.multi && Array.isArray(q.correct_answers) && q.correct_answers.length>0) {
-      const selected = Array.from(optionsList.children).filter(c=>c.classList.contains('selected')).map(c=>c.dataset.opt.toUpperCase().trim());
-      const selSet = new Set(selected);
-      const corrSet = new Set(q.correct_answers.map(s=>s.toUpperCase().trim()));
-      correctFlag = selSet.size === corrSet.size && [...selSet].every(x=>corrSet.has(x));
-    } else if (Array.isArray(q.correct_answers) && q.correct_answers.length===1) {
-      const correctLetter = q.correct_answers[0].toUpperCase().trim();
-      const userVal = user.toUpperCase().trim();
-      if (userVal === correctLetter) correctFlag = true;
-      else if (q.options && q.options[correctLetter] && normalize(user) === normalize(q.options[correctLetter])) correctFlag = true;
-      else correctFlag = normalize(user) === normalize(q.a || '');
-    } else {
-      correctFlag = normalize(user) === normalize(q.a || '');
-    }
-
-    userResponses[currentIndex].user = user;
-    userResponses[currentIndex].correct = correctFlag;
-
-    // reveal answer panel
-    answerPanel.style.display = 'block';
-
-    // celebration when correct
-    if (correctFlag) showCelebration();
-
-    // enter awaiting continue state
-    awaitingContinue = true;
-    nextBtn.textContent = 'Continue';
-    nextBtn.disabled = false;
-    userInput.disabled = true;
-    Array.from(optionsList.children).forEach(c=>c.disabled = true);
-  } else {
-    // continue to next
-    awaitingContinue = false;
-    nextBtn.textContent = 'Next →';
-    userInput.disabled = false;
-    Array.from(optionsList.children).forEach(c=>c.disabled = false);
-    clearConfetti();
-    if (currentIndex < questions.length-1) {
-      loadQuestion(currentIndex+1);
-    } else {
-      finishExam();
-    }
-  }
-});
-
-prevBtn.addEventListener('click', ()=> {
-  if (currentIndex>0) {
-    loadQuestion(currentIndex-1);
-  }
-});
-
-bookmarkBtn.addEventListener('click', ()=> {
-  const idx = bookmarks.indexOf(currentIndex);
-  if (idx>-1) bookmarks.splice(idx,1);
-  else bookmarks.push(currentIndex);
-  localStorage.setItem('aws-exam-bookmarks', JSON.stringify(bookmarks));
-  updateBookmarkBtn();
-  autosave();
-});
-
-function updateBookmarkBtn(){
-  if (bookmarks.includes(currentIndex)) { bookmarkBtn.textContent='★ Bookmarked'; bookmarkBtn.style.background='#ff6b6b'; }
-  else { bookmarkBtn.textContent='☆ Bookmark'; bookmarkBtn.style.background='#ffc107'; }
-}
-
-finishBtn.addEventListener('click', ()=> {
-  // if current not answered, prompt
-  if (userInput.value.trim().length>0 && !userResponses[currentIndex].user) {
-    // auto-save current input before finishing
-    const user = userInput.value.trim();
-    userResponses[currentIndex].user = user;
-    userResponses[currentIndex].correct = normalize(user) === normalize((questions[currentIndex].a||'').trim());
-  }
-  finishExam();
-});
-
-// Save / Reset functionality
-document.getElementById('saveProgressBtn').addEventListener('click', saveProgress);
-document.getElementById('resetProgressBtn').addEventListener('click', resetProgress);
-
-function saveProgress(){
-  try{
-    saveState(false);
-  }catch(e){
-    console.warn('Failed to save progress', e);
-    alert('Failed to save progress: ' + (e && e.message));
-  }
-}
-
-// core save helper used by autosave and manual save
-function saveState(silent){
-  try{
-    // visual: show saving spinner/status
-    const meta = document.getElementById('saveMeta');
-    if (meta) meta.classList.add('saving');
-    const statusEl = document.getElementById('saveStatus');
-    if (statusEl) statusEl.textContent = 'Saving...';
-
-    const state = {
-      currentIndex: currentIndex,
-      bookmarks: bookmarks,
-      userResponses: userResponses.map(r=>({id:r.id,user:r.user,correct:r.correct})),
-      awaitingContinue: awaitingContinue,
-      showingAnswer: answerPanel.style.display === 'block'
-    };
-    localStorage.setItem('aws-exam-state', JSON.stringify(state));
-    const now = new Date();
-    const ts = now.toLocaleTimeString();
-    if (statusEl) statusEl.textContent = `Saved: ${ts}`;
-    if (meta) {
-      meta.classList.remove('saving');
-      meta.classList.add('saved');
-    }
-    // clear 'saved' marker after short time
-    setTimeout(()=>{
-      try{
-        if (statusEl) statusEl.textContent = `Last saved: ${ts}`;
-        if (meta) meta.classList.remove('saved');
-      }catch(e){}
-    }, 1800);
-    if (!silent) alert('Progress saved locally.');
-  }catch(e){
-    console.warn('Failed to save state', e);
-    if (!silent) alert('Failed to save progress: ' + (e && e.message));
-  }
-}
-
-// autosave helpers
-let autosaveTimer = null;
-function scheduleAutosave(){
-  if (autosaveTimer) clearTimeout(autosaveTimer);
-  autosaveTimer = setTimeout(()=>{ autosave(); }, 1500);
-}
-
-function autosave(){
-  // silent save
-  saveState(true);
-}
-
-// periodic autosave every 10 seconds
-setInterval(()=>{ if (questions.length>0) autosave(); }, 10000);
-
-function resetProgress(){
-  if (!confirm('Clear saved progress and bookmarks?')) return;
-  try{
-    localStorage.removeItem('aws-exam-state');
-    localStorage.removeItem('aws-exam-bookmarks');
-    bookmarks = [];
-    userResponses = questions.map(q=>({id:q.id,user:'',correct:false,correctText:q.a}));
-    awaitingContinue = false;
-    answerPanel.style.display = 'none';
-    loadQuestion(0);
-    alert('Progress reset.');
-  }catch(e){
-    console.warn('Failed to reset progress', e);
-    alert('Failed to reset: ' + (e && e.message));
-  }
-}
-
-function finishExam() {
-  // compute results
-  let correct = 0;
-  const wrongs = [];
-  for (let i=0;i<userResponses.length;i++){
-    const r = userResponses[i];
-    if (r.user && r.correct) correct++;
-    else wrongs.push({index:i, id:r.id, user:r.user||'(no answer)', correctText:r.correctText||'(no answer)'});
-  }
-
-  // Hide main, show results
-  mainPanel.classList.add('hidden');
-  resultsPanel.classList.remove('hidden');
-
-  const percent = Math.round((correct/questions.length)*100);
-  const passing = percent >= 72;
-  // we display results only in the pie chart center; clear textual status here
-  scoreSummary.innerHTML = '';
-  // draw result pie chart (chart center will show count and percentage)
-  drawResultPie(correct, questions.length, percent, passing);
-
-  wrongList.innerHTML = '';
-  if (wrongs.length===0) {
-    wrongList.innerHTML = '<div style="padding:10px;background:#e9f8ee;border-radius:8px">All answers correct or provided.</div>';
-  } else {
-    wrongs.forEach(w=>{
-      const div = document.createElement('div');
-      div.className='wrong-item';
-      div.innerHTML = `<div style="font-weight:700">Q ${parseInt(w.index)+1} (ID: ${w.id})</div>
-                       <div style="margin-top:6px;white-space:pre-wrap">${questions[w.index].q}</div>
-                       <div style="margin-top:8px"><strong>Your answer:</strong> ${escapeHtml(w.user)}</div>
-                       <div style="margin-top:4px;color:#0b5cff"><strong>Correct / Source:</strong> ${escapeHtml(w.correctText)}</div>`;
-      wrongList.appendChild(div);
-    });
-  }
-}
-
-document.getElementById('restartBtn').addEventListener('click', ()=>{
-  // reset
-  userResponses = questions.map(q=>({id:q.id,user:'',correct:false,correctText:q.a}));
-  mainPanel.classList.remove('hidden');
-  resultsPanel.classList.add('hidden');
-  loadQuestion(0);
-});
-
-function normalize(s){
-  return (s||'').toLowerCase().replace(/\s+/g,' ').trim();
-}
-
-function escapeHtml(s){ return String(s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
-
-// keyboard shortcuts
-document.addEventListener('keydown', (e)=>{
-  if (e.target.tagName==='INPUT') return;
-  if (e.key==='ArrowRight') nextBtn.click();
-  if (e.key==='ArrowLeft') prevBtn.click();
-  if (e.key===' ') { e.preventDefault(); showBtn.click(); }
-});
-
-// Celebration helpers
-function showCelebration(){
-  clearConfetti();
-  const container = document.createElement('div');
-  container.className = 'confetti-container';
-  const colors = ['#ffc107','#ff6b6b','#6bcB77','#4dabf7','#ff8a65','#b39ddb'];
-  const pieces = 36;
-  for (let i=0;i<pieces;i++){
-    const el = document.createElement('div');
-    el.className = 'confetti-piece';
-    const left = Math.random()*100;
-    const delay = Math.random()*0.4;
-    const dur = 1.8 + Math.random()*1.2;
-    el.style.left = left + 'vw';
-    el.style.top = '-10vh';
-    el.style.background = colors[i % colors.length];
-    el.style.transform = `rotate(${Math.random()*360}deg)`;
-    el.style.animation = `confetti-fall ${dur}s ${delay}s linear forwards`;
-    el.style.borderRadius = (Math.random()>0.5? '2px':'50%');
-    container.appendChild(el);
-  }
-  document.body.appendChild(container);
-  // remove after animation
-  setTimeout(()=>{ clearConfetti(); }, 2600);
-}
-
-function clearConfetti(){
-  Array.from(document.getElementsByClassName('confetti-container')).forEach(n=>n.remove());
-}
-
-// Draw animated result pie on canvas
-function drawResultPie(correct, total, percent, passing){
-  const canvas = document.getElementById('resultChart');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const dpr = window.devicePixelRatio || 1;
-  const size = 180;
-  canvas.width = size * dpr;
-  canvas.height = size * dpr;
-  canvas.style.width = size + 'px';
-  canvas.style.height = size + 'px';
-  ctx.scale(dpr,dpr);
-
-  const cx = size/2, cy = size/2, r = 72;
-  // background circle
-  ctx.clearRect(0,0,size,size);
-  ctx.beginPath();
-  ctx.arc(cx,cy,r,0,Math.PI*2);
-  ctx.fillStyle = '#f1f3f8';
-  ctx.fill();
-
-  const target = Math.max(0, Math.min(1, percent/100));
-  const green = '#0b8f3b';
-  const red = '#d63333';
-  let progress = 0;
-
-  // draw initial background (light ring)
-  ctx.clearRect(0,0,size,size);
-  ctx.beginPath();
-  ctx.arc(cx,cy,r,0,Math.PI*2);
-  ctx.fillStyle = '#f1f3f8';
-  ctx.fill();
-
-  function render(){
-    ctx.clearRect(0,0,size,size);
-
-    // background full ring (light)
-    ctx.beginPath();
-    ctx.arc(cx,cy,r,0,Math.PI*2);
-    ctx.fillStyle = '#f1f3f8';
-    ctx.fill();
-
-    // draw remainder (full circle in red)
-    ctx.beginPath();
-    ctx.moveTo(cx,cy);
-    ctx.arc(cx,cy,r,-Math.PI/2, -Math.PI/2 + Math.PI*2, false);
-    ctx.closePath();
-    ctx.fillStyle = red;
-    ctx.fill();
-
-    // draw progress (green) on top from 0 -> progress
-    ctx.beginPath();
-    ctx.moveTo(cx,cy);
-    ctx.arc(cx,cy,r,-Math.PI/2, -Math.PI/2 + (Math.PI*2)*progress, false);
-    ctx.closePath();
-    ctx.fillStyle = green;
-    ctx.fill();
-
-    // inner cutout (white)
-    ctx.beginPath();
-    ctx.arc(cx,cy,r-18,0,Math.PI*2);
-    ctx.fillStyle = '#fff';
-    ctx.fill();
-
-    // update DOM text and status
-    const pctEl = document.getElementById('chartPct');
-    const labelEl = document.getElementById('chartLabel');
-    const statusEl = document.getElementById('chartStatus');
-    pctEl.textContent = percent + '%';
-    labelEl.textContent = `${correct} / ${total} correct (${percent}%)`;
-    statusEl.textContent = passing ? 'PASS' : 'FAIL';
-    // keep status colored by pass/fail; percent stays green to match progress
-    pctEl.style.color = green;
-    statusEl.style.color = passing ? green : red;
-
-    if (progress < target) {
-      progress += Math.min(0.02, (target-progress)/6);
-      requestAnimationFrame(render);
-    } else {
-      progress = target;
-      pctEl.textContent = percent + '%';
-    }
-  }
-  render();
-}
-
-// initialize
-loadQuestionsFromFile();
-</script>
+  <!-- Materialize - Compiled and minified JavaScript-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+  <script>
+    // Materialize - Initializers
+    $(document).ready(function () {
+      $(".scrollspy").scrollSpy()
+      // Initialize collapse button
+      $(".button-collapse").sideNav({
+        menuWidth: 190, // Default is 240
+        edge: "left", // Choose the horizontal origin
+        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      })
+    })
+  </script>
 </body>
+
 </html>
-
-
