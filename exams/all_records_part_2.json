@@ -2,7 +2,7 @@
   "questions": [
     {
       "id": "51",
-      "question": "A company is developing an application that provides order shipping statistics for retrieval by aREST API. The company wants to extract the shipping statistics, organize the data into an easy-to-read HTML format, and send the report to several email addresses at the same time every morning. Which combination of steps should A solutions architect take to meet these requirements? (Choose two.)",
+      "question": "A company is developing an application that provides order shipping statistics for retrieval by a REST API. The company wants to extract the shipping statistics, organize the data into an easy-to-read HTML format, and send the report to several email addresses at the same time every morning. Which combination of steps should A solutions architect take to meet these requirements? (Choose two.)",
       "options": {
         "A": "ConFigure the application to send the data to Amazon Kinesis Data Firehose.",
         "B": "Use Amazon Simple Email Service (Amazon SES) to format the data and to send the report by email.",
@@ -39,7 +39,7 @@
     },
     {
       "id": "54",
-      "question": "A company runs multiple Windows workloads on AWS. The company'semployees use Windows File shares that are hosted on two Amazon EC2 instances. The File shares synchronize data between themselves and maintain duplicate copies. The company wants ahighly available and durable storage solution that preserves how users currently access the Files. What should A solutions architect do to meet these requirements?",
+      "question": "A company runs multiple Windows workloads on AWS. The company'semployees use Windows File shares that are hosted on two Amazon EC2 instances. The File shares synchronize data between themselves and maintain duplicate copies. The company wants a highly available and durable storage solution that preserves how users currently access the Files. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Migrate all the data to Amazon S3. Set up IAM authentication for users to access Files.",
         "B": "Set up an Amazon S3 File Gateway. Mount the S3 File Gateway on the existing EC2 instances.",
@@ -51,7 +51,7 @@
     },
     {
       "id": "55",
-      "question": "A solutions architect is developing aVPC architecture that includes multiple subnets. The architecture will host applications that use Amazon EC2 instances and Amazon RDS DB instances. The architecture consists of six subnets in two Availability Zones. Each Availability Zone includes apublic subnet, aprivate subnet, and adedicated subnet for databases. Only EC2 instances that run in the private subnets can have access to the RDS databases. Which solution will meet these requirements?",
+      "question": "A solutions architect is developing a VPC architecture that includes multiple subnets. The architecture will host applications that use Amazon EC2 instances and Amazon RDS DB instances. The architecture consists of six subnets in two Availability Zones. Each Availability Zone includes a public subnet, a private subnet, and a dedicated subnet for databases. Only EC2 instances that run in the private subnets can have access to the RDS databases. Which solution will meet these requirements?",
       "options": {
         "A": "Create a new route table that excludes the route to the public subnets' CIDR blocks. Associate the route table with the database subnets.",
         "B": "Create a security group that denies inbound traFic from the security group that is assigned to instances in the public subnets. Attach the security group to the DB instances.",
@@ -63,7 +63,7 @@
     },
     {
       "id": "56",
-      "question": "A company has registered its domain name with Amazon Route 53. The company uses Amazon API Gateway in the ca-central-1 Region as apublic interface for its backend microservice APIs. Third-party services consume the APIs securely. The company wants to design its API Gateway URL with the company'sdomain name and corresponding certificate so that the third-party services can use HTTPS. Which solution will meet these requirements?",
+      "question": "A company has registered its domain name with Amazon Route 53. The company uses Amazon API Gateway in the ca-central-1 Region as a public interface for its backend microservice APIs. Third-party services consume the APIs securely. The company wants to design its API Gateway URL with the company'sdomain name and corresponding certificate so that the third-party services can use HTTPS. Which solution will meet these requirements?",
       "options": {
         "A": "Create stage variables in API Gateway with Name=\"Endpoint-URL\" and Value=\"Company Domain Name\" to overwrite the default URL. Import the public certiFicate associated with the company's domain name into AWS CertiFicate Manager (ACM).",
         "B": "Create Route 53 DNS records with the company's domain name. Point the alias record to the Regional API Gateway stage endpoint. Import the public certiFicate associated with the company's domain name into AWS CertiFicate Manager (ACM) in the us-east-1 Region.",
@@ -111,7 +111,7 @@
     },
     {
       "id": "60",
-      "question": "A company has awebsite hosted on AWS. The website is behind an Application Load Balancer (ALB) that is configured to handle HTTP and HTTPS separately. The company wants to forward all requests to the website so that the requests will use HTTPS. What should A solutions architect do to meet this requirement?",
+      "question": "A company has a website hosted on AWS. The website is behind an Application Load Balancer (ALB) that is configured to handle HTTP and HTTPS separately. The company wants to forward all requests to the website so that the requests will use HTTPS. What should A solutions architect do to meet this requirement?",
       "options": {
         "A": "Update the ALB's network ACL to accept only HTTPS traFic.",
         "B": "Create a rule that replaces the HTTP in the URL with HTTPS.",
@@ -171,7 +171,7 @@
     },
     {
       "id": "65",
-      "question": "Ahospital recently deployed aRESTful API with Amazon API Gateway and AWS Lambda. The hospital uses API Gateway and Lambda to upload reports that are in PDF format and JPEG format. The hospital needs to modify the Lambda code to identify protected health information (PHI) in the reports. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "Ahospital recently deployed a RESTful API with Amazon API Gateway and AWS Lambda. The hospital uses API Gateway and Lambda to upload reports that are in PDF format and JPEG format. The hospital needs to modify the Lambda code to identify protected health information (PHI) in the reports. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Use existing Python libraries to extract the text from the reports and to identify the PHI from the extracted text.",
         "B": "Use Amazon Textract to extract the text from the reports. Use Amazon SageMaker to identify the PHI from the extracted text.",
@@ -183,7 +183,7 @@
     },
     {
       "id": "66",
-      "question": "A company has an application that generates alarge number of Files, each approximately 5 MB in size. The Files are stored in Amazon S3. Company policy requires the Files to be stored for 4 years before they can be deleted. Immediate accessibility is always required as the Files contain critical business data that is not easy to reproduce. The Files are frequently accessed in the First 30 days of the object creation but are rarely accessed after the First 30 days. Which storage solution is MOST cost-effective?",
+      "question": "A company has an application that generates a large number of Files, each approximately 5 MB in size. The Files are stored in Amazon S3. Company policy requires the Files to be stored for 4 years before they can be deleted. Immediate accessibility is always required as the Files contain critical business data that is not easy to reproduce. The Files are frequently accessed in the First 30 days of the object creation but are rarely accessed after the First 30 days. Which storage solution is MOST cost-effective?",
       "options": {
         "A": "Create an S3 bucket lifecycle policy to move Files from S3 Standard to S3 Glacier 30 days from object creation. Delete the Files 4 years after object creation.",
         "B": "Create an S3 bucket lifecycle policy to move Files from S3 Standard to S3 One Zone-Infrequent Access (S3 One Zone-IA) 30 days from object creation. Delete the Files 4 years after object creation.",
@@ -207,7 +207,7 @@
     },
     {
       "id": "68",
-      "question": "A solutions architect is designing anew hybrid architecture to extend A company'son-premises infrastructure to AWS. The company requires ahighly available connection with consistent low latency to an AWS Region. The company needs to minimize costs and is willing to accept slower trafic if the primary connection fails. What should the solutions architect do to meet these requirements?",
+      "question": "A solutions architect is designing anew hybrid architecture to extend A company'son-premises infrastructure to AWS. The company requires a highly available connection with consistent low latency to an AWS Region. The company needs to minimize costs and is willing to accept slower trafic if the primary connection fails. What should the solutions architect do to meet these requirements?",
       "options": {
         "A": "Provision an AWS Direct Connect connection to a Region. Provision a VPN connection as a backup if the primary Direct Connect connection fails.",
         "B": "Provision a VPN tunnel connection to a Region for private connectivity. Provision a second VPN tunnel for private connectivity and as a backup if the primary VPN connection fails.",
@@ -219,7 +219,7 @@
     },
     {
       "id": "69",
-      "question": "A company is running abusiness-critical web application on Amazon EC2 instances behind an Application Load Balancer. The EC2 instances are in an Auto Scaling group. The application uses an Amazon Aurora PostgreSQL database that is deployed in asingle Availability Zone. The company wants the application to be highly available with minimum downtime and minimum loss of data. Which solution will meet these requirements with the LEAST operational effort?",
+      "question": "A company is running abusiness-critical web application on Amazon EC2 instances behind an Application Load Balancer. The EC2 instances are in an Auto Scaling group. The application uses an Amazon Aurora PostgreSQL database that is deployed in a single Availability Zone. The company wants the application to be highly available with minimum downtime and minimum loss of data. Which solution will meet these requirements with the LEAST operational effort?",
       "options": {
         "A": "Place the EC2 instances in different AWS Regions. Use Amazon Route 53 health checks to redirect traFic. Use Aurora PostgreSQL Cross- Region Replication.",
         "B": "ConFigure the Auto Scaling group to use multiple Availability Zones. ConFigure the database as Multi-AZ. ConFigure an Amazon RDS Proxy instance for the database.",
@@ -267,7 +267,7 @@
     },
     {
       "id": "73",
-      "question": "A company recently launched Linux-based application instances on Amazon EC2 in aprivate subnet and launched aLinux-based bastion host on an Amazon EC2 instance in apublic subnet of aVPC. A solutions architect needs to connect from the on-premises network, through the company'sinternet connection, to the bastion host, and to the application servers. The solutions architect must make sure that the security groups of all the EC2 instances will allow that access. Which combination of steps should the solutions architect take to meet these requirements? (Choose two.)",
+      "question": "A company recently launched Linux-based application instances on Amazon EC2 in a private subnet and launched aLinux-based bastion host on an Amazon EC2 instance in a public subnet of a VPC. A solutions architect needs to connect from the on-premises network, through the company'sinternet connection, to the bastion host, and to the application servers. The solutions architect must make sure that the security groups of all the EC2 instances will allow that access. Which combination of steps should the solutions architect take to meet these requirements? (Choose two.)",
       "options": {
         "A": "Replace the current security group of the bastion host with one that only allows inbound access from the application instances.",
         "B": "Replace the current security group of the bastion host with one that only allows inbound access from the internal IP range for the company.",
@@ -280,7 +280,7 @@
     },
     {
       "id": "74",
-      "question": "A solutions architect is designing atwo-tier web application. The application consists of apublic-facing web tier hosted on Amazon EC2 in public subnets. The database tier consists of Microsoft SQL Server running on Amazon EC2 in aprivate subnet. Security is ahigh priority for the company. How should security groups be configured in this situation? (Choose two.)",
+      "question": "A solutions architect is designing atwo-tier web application. The application consists of a public-facing web tier hosted on Amazon EC2 in public subnets. The database tier consists of Microsoft SQL Server running on Amazon EC2 in a private subnet. Security is a high priority for the company. How should security groups be configured in this situation? (Choose two.)",
       "options": {
         "A": "ConFigure the security group for the web tier to allow inbound traFic on port 443 from 0.0.0.0/0.",
         "B": "ConFigure the security group for the web tier to allow outbound traFic on port 443 from 0.0.0.0/0.",
@@ -293,7 +293,7 @@
     },
     {
       "id": "75",
-      "question": "A company wants to move amulti-tiered application from on premises to the AWS Cloud to improve the application'sperformance. The application consists of application tiers that communicate with each other by way of RESTful services. Transactions are dropped when one tier becomes overloaded. A solutions architect must design asolution that resolves these issues and modernizes the application. Which solution meets these requirements and is the MOST operationally eficient?",
+      "question": "A company wants to move a multi-tiered application from on premises to the AWS Cloud to improve the application'sperformance. The application consists of application tiers that communicate with each other by way of RESTful services. Transactions are dropped when one tier becomes overloaded. A solutions architect must design asolution that resolves these issues and modernizes the application. Which solution meets these requirements and is the MOST operationally eficient?",
       "options": {
         "A": "Use Amazon API Gateway and direct transactions to the AWS Lambda functions as the application layer. Use Amazon Simple Queue Service (Amazon SQS) as the communication layer between application services.",
         "B": "Use Amazon CloudWatch metrics to analyze the application performance history to determine the servers' peak utilization during the performance failures. Increase the size of the application server's Amazon EC2 instances to meet the peak requirements.",
@@ -305,7 +305,7 @@
     },
     {
       "id": "76",
-      "question": "A company receives 10 TB of instrumentation data each day from several machines located at asingle factory. The data consists of JSON Files stored on astorage area network (SAN) in an on-premises data center located within the factory. The company wants to send this data to Amazon S3 where it can be accessed by several additional systems that provide critical near-real-time analytics. Asecure transfer is important because the data is considered sensitive. Which solution offers the MOST reliable data transfer?",
+      "question": "A company receives 10 TB of instrumentation data each day from several machines located at a single factory. The data consists of JSON Files stored on astorage area network (SAN) in an on-premises data center located within the factory. The company wants to send this data to Amazon S3 where it can be accessed by several additional systems that provide critical near-real-time analytics. Asecure transfer is important because the data is considered sensitive. Which solution offers the MOST reliable data transfer?",
       "options": {
         "A": "AWS DataSync over public internet",
         "B": "AWS DataSync over AWS Direct Connect",
@@ -413,7 +413,7 @@
     },
     {
       "id": "85",
-      "question": "A company has aproduction web application in which users upload documents through aweb interface or amobile app. According to anew regulatory requirement. new documents cannot be modified or deleted after they are stored. What should A solutions architect do to meet this requirement?",
+      "question": "A company has aproduction web application in which users upload documents through a web interface or amobile app. According to anew regulatory requirement. new documents cannot be modified or deleted after they are stored. What should A solutions architect do to meet this requirement?",
       "options": {
         "A": "Store the uploaded documents in an Amazon S3 bucket with S3 Versioning and S3 Object Lock enabled.",
         "B": "Store the uploaded documents in an Amazon S3 bucket. ConFigure an S3 Lifecycle policy to archive the documents periodically.",
@@ -425,7 +425,7 @@
     },
     {
       "id": "86",
-      "question": "A company has several web servers that need to frequently access acommon Amazon RDS MySQL Multi-AZ DB instance. The company wants asecure method for the web servers to connect to the database while meeting asecurity requirement to rotate user credentials frequently. Which solution meets these requirements?",
+      "question": "A company has several web servers that need to frequently access a common Amazon RDS MySQL Multi-AZ DB instance. The company wants asecure method for the web servers to connect to the database while meeting asecurity requirement to rotate user credentials frequently. Which solution meets these requirements?",
       "options": {
         "A": "Store the database user credentials in AWS Secrets Manager. Grant the necessary IAM permissions to allow the web servers to access AWS Secrets Manager.",
         "B": "Store the database user credentials in AWS Systems Manager OpsCenter. Grant the necessary IAM permissions to allow the web servers to access OpsCenter.",
@@ -485,7 +485,7 @@
     },
     {
       "id": "91",
-      "question": "A company has applications that run on Amazon EC2 instances in aVPC. One of the applications needs to call the Amazon S3 API to store and read objects. According to the company'ssecurity regulations, no trafic from the applications is allowed to travel across the internet. Which solution will meet these requirements?",
+      "question": "A company has applications that run on Amazon EC2 instances in a VPC. One of the applications needs to call the Amazon S3 API to store and read objects. According to the company'ssecurity regulations, no trafic from the applications is allowed to travel across the internet. Which solution will meet these requirements?",
       "options": {
         "A": "ConFigure an S3 gateway endpoint.",
         "B": "Create an S3 bucket in a private subnet.",
@@ -497,7 +497,7 @@
     },
     {
       "id": "92",
-      "question": "A company is storing sensitive user information in an Amazon S3 bucket. The company wants to provide secure access to this bucket from the application tier running on Amazon EC2 instances inside aVPC. Which combination of steps should A solutions architect take to accomplish this? (Choose two.)",
+      "question": "A company is storing sensitive user information in an Amazon S3 bucket. The company wants to provide secure access to this bucket from the application tier running on Amazon EC2 instances inside a VPC. Which combination of steps should A solutions architect take to accomplish this? (Choose two.)",
       "options": {
         "A": "ConFigure a VPC gateway endpoint for Amazon S3 within the VPC.",
         "B": "Create a bucket policy to make the objects in the S3 bucket public.",
@@ -510,7 +510,7 @@
     },
     {
       "id": "93",
-      "question": "A company runs an on-premises application that is powered by aMySQL database. The company is migrating the application to AWS to increase the application'selasticity and availability. The current architecture shows heavy read activity on the database during times of normal operation. Every 4 hours, the company'sdevelopment team pulls afull export of the production database to populate adatabase in the staging environment. During this period, users experience unacceptable application latency. The development team is unable to use the staging environment until the procedure completes. A solutions architect must recommend replacement architecture that alleviates the application latency issue. The replacement architecture also must give the development team the ability to continue using the staging environment without delay. Which solution meets these requirements?",
+      "question": "A company runs an on-premises application that is powered by aMySQL database. The company is migrating the application to AWS to increase the application'selasticity and availability. The current architecture shows heavy read activity on the database during times of normal operation. Every 4 hours, the company'sdevelopment team pulls afull export of the production database to populate a database in the staging environment. During this period, users experience unacceptable application latency. The development team is unable to use the staging environment until the procedure completes. A solutions architect must recommend replacement architecture that alleviates the application latency issue. The replacement architecture also must give the development team the ability to continue using the staging environment without delay. Which solution meets these requirements?",
       "options": {
         "A": "Use Amazon Aurora MySQL with Multi-AZ Aurora Replicas for production. Populate the staging database by implementing a backup and restore process that uses the mysqldump utility.",
         "B": "Use Amazon Aurora MySQL with Multi-AZ Aurora Replicas for production. Use database cloning to create the staging database on-demand.",
@@ -522,7 +522,7 @@
     },
     {
       "id": "94",
-      "question": "A company is designing an application where users upload small Files into Amazon S3. After auser uploads aFile, the File requires one-time simple processing to transform the data and save the data in JSON format for later analysis. Each File must be processed as quickly as possible after it is uploaded. Demand will vary. On some days, users will upload ahigh number of Files. On other days, users will upload afew Files or no Files. Which solution meets these requirements with the LEAST operational overhead?",
+      "question": "A company is designing an application where users upload small Files into Amazon S3. After auser uploads aFile, the File requires one-time simple processing to transform the data and save the data in JSON format for later analysis. Each File must be processed as quickly as possible after it is uploaded. Demand will vary. On some days, users will upload a high number of Files. On other days, users will upload afew Files or no Files. Which solution meets these requirements with the LEAST operational overhead?",
       "options": {
         "A": "ConFigure Amazon EMR to read text Files from Amazon S3. Run processing scripts to transform the data. Store the resulting JSON File in an Amazon Aurora DB cluster.",
         "B": "ConFigure Amazon S3 to send an event notiFication to an Amazon Simple Queue Service (Amazon SQS) queue. Use Amazon EC2 instances to read from the queue and process the data. Store the resulting JSON File in Amazon DynamoDB.",
@@ -558,7 +558,7 @@
     },
     {
       "id": "97",
-      "question": "A company has alarge Microsoft Sharepoint deployment running on-premises that requires Microsoft Windows shared File storage. The company wants to migrate this workload to the AWS Cloud and is considering various storage options. The storage solution must be highly available and integrated with Active Directory for access control. Which solution will satisfy these requirements?",
+      "question": "A company has a large Microsoft Sharepoint deployment running on-premises that requires Microsoft Windows shared File storage. The company wants to migrate this workload to the AWS Cloud and is considering various storage options. The storage solution must be highly available and integrated with Active Directory for access control. Which solution will satisfy these requirements?",
       "options": {
         "A": "ConFigure Amazon EFS storage and set the Active Directory domain for authentication.",
         "B": "Create an SMB File share on an AWS Storage Gateway File gateway in two Availability Zones.",
@@ -570,7 +570,7 @@
     },
     {
       "id": "98",
-      "question": "An image-processing company has aweb application that users use to upload images. The application uploads the images into an Amazon S3 bucket. The company has set up S3 event notifications to publish the object creation events to an Amazon Simple Queue Service (Amazon SQS) standard queue. The SQS queue serves as the event source for an AWS Lambda function that processes the images and sends the results to users through email. Users report that they are receiving multiple email messages for every uploaded image. A solutions architect determines that SQS messages are invoking the Lambda function more than once, resulting in multiple email messages. What should the solutions architect do to resolve this issue with the LEAST operational overhead?",
+      "question": "An image-processing company has a web application that users use to upload images. The application uploads the images into an Amazon S3 bucket. The company has set up S3 event notifications to publish the object creation events to an Amazon Simple Queue Service (Amazon SQS) standard queue. The SQS queue serves as the event source for an AWS Lambda function that processes the images and sends the results to users through email. Users report that they are receiving multiple email messages for every uploaded image. A solutions architect determines that SQS messages are invoking the Lambda function more than once, resulting in multiple email messages. What should the solutions architect do to resolve this issue with the LEAST operational overhead?",
       "options": {
         "A": "Set up long polling in the SQS queue by increasing the ReceiveMessage wait time to 30 seconds.",
         "B": "Change the SQS standard queue to an SQS FIFO queue. Use the message deduplication ID to discard duplicate messages.",
@@ -594,7 +594,7 @@
     },
     {
       "id": "100",
-      "question": "A company'scontainerized application runs on an Amazon EC2 instance. The application needs to download security certificates before it can communicate with other business applications. The company wants ahighly secure solution to encrypt and decrypt the certificates in near real time. The solution also needs to store data in highly available storage after the data is encrypted. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company'scontainerized application runs on an Amazon EC2 instance. The application needs to download security certificates before it can communicate with other business applications. The company wants a highly secure solution to encrypt and decrypt the certificates in near real time. The solution also needs to store data in highly available storage after the data is encrypted. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Create AWS Secrets Manager secrets for encrypted certiFicates. Manually update the certiFicates as needed. Control access to the data by using Fine-grained IAM access.",
         "B": "Create an AWS Lambda function that uses the Python cryptography library to receive and perform encryption operations. Store the function in an Amazon S3 bucket.",

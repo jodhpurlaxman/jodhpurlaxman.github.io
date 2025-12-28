@@ -2,7 +2,7 @@
   "questions": [
     {
       "id": "651",
-      "question": "A company stores alarge volume of image Files in an Amazon S3 bucket. The images need to be readily available for the First 180 days. The images are infrequently accessed for the next 180 days. After 360 days, the images need to be archived but must be available instantly upon request. After 5 years, only auditors can access the images. The auditors must be able to retrieve the images within 12 hours. The images cannot be lost during this process. Adeveloper will use S3 Standard storage for the First 180 days. The developer needs to configure an S3 Lifecycle rule. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company stores a large volume of image Files in an Amazon S3 bucket. The images need to be readily available for the First 180 days. The images are infrequently accessed for the next 180 days. After 360 days, the images need to be archived but must be available instantly upon request. After 5 years, only auditors can access the images. The auditors must be able to retrieve the images within 12 hours. The images cannot be lost during this process. Adeveloper will use S3 Standard storage for the First 180 days. The developer needs to configure an S3 Lifecycle rule. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Transition the objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 180 days. S3 Glacier Instant Retrieval after 360 days, and S3 Glacier Deep Archive after 5 years.",
         "B": "Transition the objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 180 days. S3 Glacier Flexible Retrieval after 360 days, and S3 Glacier Deep Archive after 5 years.",
@@ -14,7 +14,7 @@
     },
     {
       "id": "652",
-      "question": "A company has alarge data workload that runs for 6 hours each day. The company cannot lose any data while the process is running. A solutions architect is designing an Amazon EMR cluster configuration to support this critical data workload. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company has a large data workload that runs for 6 hours each day. The company cannot lose any data while the process is running. A solutions architect is designing an Amazon EMR cluster configuration to support this critical data workload. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "ConFigure a long-running cluster that runs the primary node and core nodes on On-Demand Instances and the task nodes on Spot Instances.",
         "B": "ConFigure a transient cluster that runs the primary node and core nodes on On-Demand Instances and the task nodes on Spot Instances.",
@@ -50,7 +50,7 @@
     },
     {
       "id": "655",
-      "question": "A company runs aweb application on Amazon EC2 instances in an Auto Scaling group that has atarget group. The company designed the application to work with session afinity (sticky sessions) for abetter user experience. The application must be available publicly over the internet as an endpoint. AWAF must be applied to the endpoint for additional security. Session afinity (sticky sessions) must be configured on the endpoint. Which combination of steps will meet these requirements? (Choose two.)",
+      "question": "A company runs a web application on Amazon EC2 instances in an Auto Scaling group that has atarget group. The company designed the application to work with session afinity (sticky sessions) for abetter user experience. The application must be available publicly over the internet as an endpoint. AWAF must be applied to the endpoint for additional security. Session afinity (sticky sessions) must be configured on the endpoint. Which combination of steps will meet these requirements? (Choose two.)",
       "options": {
         "A": "Create a public Network Load Balancer. Specify the application target group.",
         "B": "Create a Gateway Load Balancer. Specify the application target group.",
@@ -63,7 +63,7 @@
     },
     {
       "id": "656",
-      "question": "A company runs awebsite that stores images of historical events. Website users need the ability to search and view images based on the year that the event in the image occurred. On average, users request each image only once or twice ayear. The company wants ahighly available solution to store and deliver the images to users. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company runs a website that stores images of historical events. Website users need the ability to search and view images based on the year that the event in the image occurred. On average, users request each image only once or twice ayear. The company wants a highly available solution to store and deliver the images to users. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Store images in Amazon Elastic Block Store (Amazon EBS). Use a web server that runs on Amazon EC2.",
         "B": "Store images in Amazon Elastic File System (Amazon EFS). Use a web server that runs on Amazon EC2.",
@@ -160,7 +160,7 @@
     },
     {
       "id": "664",
-      "question": "A company has aweb application that runs on premises. The application experiences latency issues during peak hours. The latency issues occur twice each month. At the start of alatency issue, the application'sCPU utilization immediately increases to 10 times its normal amount. The company wants to migrate the application to AWS to improve latency. The company also wants to scale the application automatically when application demand increases. The company will use AWS Elastic Beanstalk for application deployment. Which solution will meet these requirements?",
+      "question": "A company has a web application that runs on premises. The application experiences latency issues during peak hours. The latency issues occur twice each month. At the start of a latency issue, the application'sCPU utilization immediately increases to 10 times its normal amount. The company wants to migrate the application to AWS to improve latency. The company also wants to scale the application automatically when application demand increases. The company will use AWS Elastic Beanstalk for application deployment. Which solution will meet these requirements?",
       "options": {
         "A": "ConFigure an Elastic Beanstalk environment to use burstable performance instances in unlimited mode. ConFigure the environment to scale based on requests.",
         "B": "ConFigure an Elastic Beanstalk environment to use compute optimized instances. ConFigure the environment to scale based on requests.",
@@ -184,7 +184,7 @@
     },
     {
       "id": "666",
-      "question": "Astartup company is hosting awebsite for its customers on an Amazon EC2 instance. The website consists of astateless Python application and aMySQL database. The website serves only asmall amount of trafic. The company is concerned about the reliability of the instance and needs to migrate to ahighly available architecture. The company cannot modify the application code. Which combination of actions should A solutions architect take to achieve high availability for the website? (Choose two.)",
+      "question": "Astartup company is hosting a website for its customers on an Amazon EC2 instance. The website consists of astateless Python application and aMySQL database. The website serves only asmall amount of trafic. The company is concerned about the reliability of the instance and needs to migrate to a highly available architecture. The company cannot modify the application code. Which combination of actions should A solutions architect take to achieve high availability for the website? (Choose two.)",
       "options": {
         "A": "Provision an internet gateway in each Availability Zone in use.",
         "B": "Migrate the database to an Amazon RDS for MySQL Multi-AZ DB instance.",
@@ -197,7 +197,7 @@
     },
     {
       "id": "667",
-      "question": "A company is moving its data and applications to AWS during amultiyear migration project. The company wants to securely access data on Amazon S3 from the company'sAWS Region and from the company'son-premises location. The data must not traverse the internet. The company has established an AWS Direct Connect connection between its Region and its on-premises location. Which solution will meet these requirements?",
+      "question": "A company is moving its data and applications to AWS during a multiyear migration project. The company wants to securely access data on Amazon S3 from the company'sAWS Region and from the company'son-premises location. The data must not traverse the internet. The company has established an AWS Direct Connect connection between its Region and its on-premises location. Which solution will meet these requirements?",
       "options": {
         "A": "Create gateway endpoints for Amazon S3. Use the gateway endpoints to securely access the data from the Region and the on-premises location.",
         "B": "Create a gateway in AWS Transit Gateway to access Amazon S3 securely from the Region and the on-premises location.",
@@ -257,7 +257,7 @@
     },
     {
       "id": "672",
-      "question": "Amarketing company receives alarge amount of new clickstream data in Amazon S3 from amarketing campaign. The company needs to analyze the clickstream data in Amazon S3 quickly. Then the company needs to determine whether to process the data further in the data pipeline. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "Amarketing company receives a large amount of new clickstream data in Amazon S3 from amarketing campaign. The company needs to analyze the clickstream data in Amazon S3 quickly. Then the company needs to determine whether to process the data further in the data pipeline. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Create external tables in a Spark catalog. ConFigure jobs in AWS Glue to query the data.",
         "B": "ConFigure an AWS Glue crawler to crawl the data. ConFigure Amazon Athena to query the data.",
@@ -281,7 +281,7 @@
     },
     {
       "id": "674",
-      "question": "A company runs aweb application on Amazon EC2 instances in an Auto Scaling group. The application uses adatabase that runs on an Amazon RDS for PostgreSQL DB instance. The application performs slowly when trafic increases. The database experiences aheavy read load during periods of high trafic. Which actions should A solutions architect take to resolve these performance issues? (Choose two.)",
+      "question": "A company runs a web application on Amazon EC2 instances in an Auto Scaling group. The application uses a database that runs on an Amazon RDS for PostgreSQL DB instance. The application performs slowly when trafic increases. The database experiences aheavy read load during periods of high trafic. Which actions should A solutions architect take to resolve these performance issues? (Choose two.)",
       "options": {
         "A": "Turn on auto scaling for the DB instance.",
         "B": "Create a read replica for the DB instance. ConFigure the application to send read traFic to the read replica.",
@@ -318,7 +318,7 @@
     },
     {
       "id": "677",
-      "question": "A company is developing an application that will run on aproduction Amazon Elastic Kubernetes Service (Amazon EKS) cluster. The EKS cluster has managed node groups that are provisioned with On-Demand Instances. The company needs adedicated EKS cluster for development work. The company will use the development cluster infrequently to test the resiliency of the application. The EKS cluster must manage all the nodes. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company is developing an application that will run on aproduction Amazon Elastic Kubernetes Service (Amazon EKS) cluster. The EKS cluster has managed node groups that are provisioned with On-Demand Instances. The company needs a dedicated EKS cluster for development work. The company will use the development cluster infrequently to test the resiliency of the application. The EKS cluster must manage all the nodes. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Create a managed node group that contains only Spot Instances.",
         "B": "Create two managed node groups. Provision one node group with On-Demand Instances. Provision the second node group with Spot Instances.",
@@ -391,7 +391,7 @@
     },
     {
       "id": "683",
-      "question": "A company is migrating its multi-tier on-premises application to AWS. The application consists of asingle-node MySQL database and amulti-node web tier. The company must minimize changes to the application during the migration. The company wants to improve application resiliency after the migration. Which combination of steps will meet these requirements? (Choose two.)",
+      "question": "A company is migrating its multi-tier on-premises application to AWS. The application consists of a single-node MySQL database and a multi-node web tier. The company must minimize changes to the application during the migration. The company wants to improve application resiliency after the migration. Which combination of steps will meet these requirements? (Choose two.)",
       "options": {
         "A": "Migrate the web tier to Amazon EC2 instances in an Auto Scaling group behind an Application Load Balancer.",
         "B": "Migrate the database to Amazon EC2 instances in an Auto Scaling group behind a Network Load Balancer.",

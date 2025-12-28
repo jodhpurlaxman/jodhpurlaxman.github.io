@@ -2,7 +2,7 @@
   "questions": [
     {
       "id": "251",
-      "question": "An Amazon EC2 instance is located in aprivate subnet in anew VPC. This subnet does not have outbound internet access, but the EC2 instance needs the ability to download monthly security updates from an outside vendor. What should A solutions architect do to meet these requirements?",
+      "question": "An Amazon EC2 instance is located in a private subnet in anew VPC. This subnet does not have outbound internet access, but the EC2 instance needs the ability to download monthly security updates from an outside vendor. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Create an internet gateway, and attach it to the VPC. ConFigure the private subnet route table to use the internet gateway as the default route.",
         "B": "Create a NAT gateway, and place it in a public subnet. ConFigure the private subnet route table to use the NAT gateway as the default route.",
@@ -38,7 +38,7 @@
     },
     {
       "id": "254",
-      "question": "A company is reviewing arecent migration of athree-tier application to aVPC. The security team discovers that the principle of least privilege is not being applied to Amazon EC2 security group ingress and egress rules between the application tiers. What should A solutions architect do to correct this issue?",
+      "question": "A company is reviewing arecent migration of athree-tier application to a VPC. The security team discovers that the principle of least privilege is not being applied to Amazon EC2 security group ingress and egress rules between the application tiers. What should A solutions architect do to correct this issue?",
       "options": {
         "A": "Create security group rules using the instance ID as the source or destination.",
         "B": "Create security group rules using the security group ID as the source or destination.",
@@ -50,7 +50,7 @@
     },
     {
       "id": "255",
-      "question": "A company has an ecommerce checkout workfiow that writes an order to adatabase and calls aservice to process the payment. Users are experiencing timeouts during the checkout process. When users resubmit the checkout form, multiple unique orders are created for the same desired transaction. How should A solutions architect refactor this workfiow to prevent the creation of multiple orders?",
+      "question": "A company has an ecommerce checkout workfiow that writes an order to a database and calls aservice to process the payment. Users are experiencing timeouts during the checkout process. When users resubmit the checkout form, multiple unique orders are created for the same desired transaction. How should A solutions architect refactor this workfiow to prevent the creation of multiple orders?",
       "options": {
         "A": "ConFigure the web application to send an order message to Amazon Kinesis Data Firehose. Set the payment service to retrieve the message from Kinesis Data Firehose and process the order.",
         "B": "Create a rule in AWS CloudTrail to invoke an AWS Lambda function based on the logged application path request. Use Lambda to query the database, call the payment service, and pass in the order information.",
@@ -75,7 +75,7 @@
     },
     {
       "id": "257",
-      "question": "A company is building asolution that will report Amazon EC2 Auto Scaling events across all the applications in an AWS account. The company needs to use aserverless solution to store the EC2 Auto Scaling status data in Amazon S3. The company then will use the data in Amazon S3 to provide near-real-time updates in adashboard. The solution must not affect the speed of EC2 instance launches. How should the company move the data to Amazon S3 to meet these requirements?",
+      "question": "A company is building asolution that will report Amazon EC2 Auto Scaling events across all the applications in an AWS account. The company needs to use a serverless solution to store the EC2 Auto Scaling status data in Amazon S3. The company then will use the data in Amazon S3 to provide near-real-time updates in adashboard. The solution must not affect the speed of EC2 instance launches. How should the company move the data to Amazon S3 to meet these requirements?",
       "options": {
         "A": "Use an Amazon CloudWatch metric stream to send the EC2 Auto Scaling status data to Amazon Kinesis Data Firehose. Store the data in Amazon S3.",
         "B": "Launch an Amazon EMR cluster to collect the EC2 Auto Scaling status data and send the data to Amazon Kinesis Data Firehose. Store the data in Amazon S3.",
@@ -161,7 +161,7 @@
     },
     {
       "id": "264",
-      "question": "A company has aweb application hosted over 10 Amazon EC2 instances with trafic directed by Amazon Route 53. The company occasionally experiences atimeout error when attempting to browse the application. The networking team Finds that some DNS queries return IP addresses of unhealthy instances, resulting in the timeout error. What should A solutions architect implement to overcome these timeout errors?",
+      "question": "A company has a web application hosted over 10 Amazon EC2 instances with trafic directed by Amazon Route 53. The company occasionally experiences atimeout error when attempting to browse the application. The networking team Finds that some DNS queries return IP addresses of unhealthy instances, resulting in the timeout error. What should A solutions architect implement to overcome these timeout errors?",
       "options": {
         "A": "Create a Route 53 simple routing policy record for each EC2 instance. Associate a health check with each record.",
         "B": "Create a Route 53 failover routing policy record for each EC2 instance. Associate a health check with each record.",
@@ -173,7 +173,7 @@
     },
     {
       "id": "265",
-      "question": "A solutions architect needs to design ahighly available application consisting of web, application, and database tiers. HTTPS content delivery should be as close to the edge as possible, with the least delivery time. Which solution meets these requirements and is MOST secure?",
+      "question": "A solutions architect needs to design a highly available application consisting of web, application, and database tiers. HTTPS content delivery should be as close to the edge as possible, with the least delivery time. Which solution meets these requirements and is MOST secure?",
       "options": {
         "A": "ConFigure a public Application Load Balancer (ALB) with multiple redundant Amazon EC2 instances in public subnets. ConFigure Amazon CloudFront to deliver HTTPS content using the public ALB as the origin.",
         "B": "ConFigure a public Application Load Balancer with multiple redundant Amazon EC2 instances in private subnets. ConFigure Amazon CloudFront to deliver HTTPS content using the EC2 instances as the origin.",
@@ -209,7 +209,7 @@
     },
     {
       "id": "268",
-      "question": "Agaming company has aweb application that displays scores. The application runs on Amazon EC2 instances behind an Application Load Balancer. The application stores data in an Amazon RDS for MySQL database. Users are starting to experience long delays and interruptions that are caused by database read performance. The company wants to improve the user experience while minimizing changes to the application’sarchitecture. What should A solutions architect do to meet these requirements?",
+      "question": "Agaming company has a web application that displays scores. The application runs on Amazon EC2 instances behind an Application Load Balancer. The application stores data in an Amazon RDS for MySQL database. Users are starting to experience long delays and interruptions that are caused by database read performance. The company wants to improve the user experience while minimizing changes to the application’sarchitecture. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Use Amazon ElastiCache in front of the database.",
         "B": "Use RDS Proxy between the application and the database.",
@@ -269,7 +269,7 @@
     },
     {
       "id": "273",
-      "question": "Arapidly growing ecommerce company is running its workloads in asingle AWS Region. A solutions architect must create adisaster recovery (DR) strategy that includes adifferent AWS Region. The company wants its database to be up to date in the DR Region with the least possible latency. The remaining infrastructure in the DR Region needs to run at reduced capacity and must be able to scale up if necessary. Which solution will meet these requirements with the LOWEST recovery time objective (RTO)?",
+      "question": "Arapidly growing ecommerce company is running its workloads in a single AWS Region. A solutions architect must create adisaster recovery (DR) strategy that includes adifferent AWS Region. The company wants its database to be up to date in the DR Region with the least possible latency. The remaining infrastructure in the DR Region needs to run at reduced capacity and must be able to scale up if necessary. Which solution will meet these requirements with the LOWEST recovery time objective (RTO)?",
       "options": {
         "A": "Use an Amazon Aurora global database with a pilot light deployment.",
         "B": "Use an Amazon Aurora global database with a warm standby deployment.",
@@ -305,7 +305,7 @@
     },
     {
       "id": "276",
-      "question": "A company has amulti-tier application deployed on several Amazon EC2 instances in an Auto Scaling group. An Amazon RDS for Oracle instance is the application’ sdata layer that uses Oracle-specific PL/SQL functions. Trafic to the application has been steadily increasing. This is causing the EC2 instances to become overloaded and the RDS instance to run out of storage. The Auto Scaling group does not have any scaling metrics and defines the minimum healthy instance count only. The company predicts that trafic will continue to increase at asteady but unpredictable rate before leveling off. What should A solutions architect do to ensure the system can automatically scale for the increased trafic? (Choose two.)",
+      "question": "A company has a multi-tier application deployed on several Amazon EC2 instances in an Auto Scaling group. An Amazon RDS for Oracle instance is the application’ sdata layer that uses Oracle-specific PL/SQL functions. Trafic to the application has been steadily increasing. This is causing the EC2 instances to become overloaded and the RDS instance to run out of storage. The Auto Scaling group does not have any scaling metrics and defines the minimum healthy instance count only. The company predicts that trafic will continue to increase at asteady but unpredictable rate before leveling off. What should A solutions architect do to ensure the system can automatically scale for the increased trafic? (Choose two.)",
       "options": {
         "A": "ConFigure storage Auto Scaling on the RDS for Oracle instance.",
         "B": "Migrate the database to Amazon Aurora to use Auto Scaling storage.",
@@ -379,7 +379,7 @@
     },
     {
       "id": "282",
-      "question": "A company runs aweb application that is deployed on Amazon EC2 instances in the private subnet of aVPC. An Application Load Balancer (ALB) that extends across the public subnets directs web trafic to the EC2 instances. The company wants to implement new security measures to restrict inbound trafic from the ALB to the EC2 instances while preventing access from any other source inside or outside the private subnet of the EC2 instances. Which solution will meet these requirements?",
+      "question": "A company runs a web application that is deployed on Amazon EC2 instances in the private subnet of a VPC. An Application Load Balancer (ALB) that extends across the public subnets directs web trafic to the EC2 instances. The company wants to implement new security measures to restrict inbound trafic from the ALB to the EC2 instances while preventing access from any other source inside or outside the private subnet of the EC2 instances. Which solution will meet these requirements?",
       "options": {
         "A": "ConFigure a route in a route table to direct traFic from the internet to the private IP addresses of the EC2 instances.",
         "B": "ConFigure the security group for the EC2 instances to only allow traFic that comes from the security group for the ALB.",
@@ -427,7 +427,7 @@
     },
     {
       "id": "286",
-      "question": "A company has astatic website that is hosted on Amazon Cloudfront in front of Amazon S3. The static website uses adatabase backend. The company notices that the website does not refiect updates that have been made in the website’sGit repository. The company checks the continuous integration and continuous delivery (CI/CD) pipeline between the Git repository and Amazon S3. The company verifies that the webhooks are configured properly and that the CI/CD pipeline is sending messages that indicate successful deployments. A solutions architect needs to implement asolution that displays the updates on the website. Which solution will meet these requirements?",
+      "question": "A company has astatic website that is hosted on Amazon Cloudfront in front of Amazon S3. The static website uses a database backend. The company notices that the website does not refiect updates that have been made in the website’sGit repository. The company checks the continuous integration and continuous delivery (CI/CD) pipeline between the Git repository and Amazon S3. The company verifies that the webhooks are configured properly and that the CI/CD pipeline is sending messages that indicate successful deployments. A solutions architect needs to implement asolution that displays the updates on the website. Which solution will meet these requirements?",
       "options": {
         "A": "Add an Application Load Balancer.",
         "B": "Add Amazon ElastiCache for Redis or Memcached to the database layer of the web application.",
@@ -439,7 +439,7 @@
     },
     {
       "id": "287",
-      "question": "A company wants to migrate aWindows-based application from on premises to the AWS Cloud. The application has three tiers: an application tier, abusiness tier, and adatabase tier with Microsoft SQL Server. The company wants to use specific features of SQL Server such as native backups and Data Quality Services. The company also needs to share Files for processing between the tiers. How should A solutions architect design the architecture to meet these requirements?",
+      "question": "A company wants to migrate aWindows-based application from on premises to the AWS Cloud. The application has three tiers: an application tier, abusiness tier, and a database tier with Microsoft SQL Server. The company wants to use specific features of SQL Server such as native backups and Data Quality Services. The company also needs to share Files for processing between the tiers. How should A solutions architect design the architecture to meet these requirements?",
       "options": {
         "A": "Host all three tiers on Amazon EC2 instances. Use Amazon FSx File Gateway for File sharing between the tiers.",
         "B": "Host all three tiers on Amazon EC2 instances. Use Amazon FSx for Windows File Server for File sharing between the tiers.",
@@ -475,7 +475,7 @@
     },
     {
       "id": "290",
-      "question": "A company hosts aweb application on multiple Amazon EC2 instances. The EC2 instances are in an Auto Scaling group that scales in response to user demand. The company wants to optimize cost savings without making along-term commitment. Which EC2 instance purchasing option should A solutions architect recommend to meet these requirements?",
+      "question": "A company hosts a web application on multiple Amazon EC2 instances. The EC2 instances are in an Auto Scaling group that scales in response to user demand. The company wants to optimize cost savings without making along-term commitment. Which EC2 instance purchasing option should A solutions architect recommend to meet these requirements?",
       "options": {
         "A": "Dedicated Instances only",
         "B": "On-Demand Instances only",
@@ -549,7 +549,7 @@
     },
     {
       "id": "296",
-      "question": "Adevelopment team has launched anew application that is hosted on Amazon EC2 instances inside adevelopment VPC. A solutions architect needs to create anew VPC in the same account. The new VPC will be peered with the development VPC. The VPC CIDR block for the development VPC is 192.168.0.0/24. The solutions architect needs to create aCIDR block for the new VPC. The CIDR block must be valid for aVPC peering connection to the development VPC. What is the SMALLEST CIDR block that meets these requirements?",
+      "question": "Adevelopment team has launched anew application that is hosted on Amazon EC2 instances inside adevelopment VPC. A solutions architect needs to create anew VPC in the same account. The new VPC will be peered with the development VPC. The VPC CIDR block for the development VPC is 192.168.0.0/24. The solutions architect needs to create aCIDR block for the new VPC. The CIDR block must be valid for a VPC peering connection to the development VPC. What is the SMALLEST CIDR block that meets these requirements?",
       "options": {
         "A": "10.0.1.0/32",
         "B": "192.168.0.0/24",
@@ -573,7 +573,7 @@
     },
     {
       "id": "298",
-      "question": "A company is running acritical business application on Amazon EC2 instances behind an Application Load Balancer. The EC2 instances run in an Auto Scaling group and access an Amazon RDS DB instance. The design did not pass an operational review because the EC2 instances and the DB instance are all located in asingle Availability Zone. A solutions architect must update the design to use asecond Availability Zone. Which solution will make the application highly available?",
+      "question": "A company is running a critical business application on Amazon EC2 instances behind an Application Load Balancer. The EC2 instances run in an Auto Scaling group and access an Amazon RDS DB instance. The design did not pass an operational review because the EC2 instances and the DB instance are all located in a single Availability Zone. A solutions architect must update the design to use asecond Availability Zone. Which solution will make the application highly available?",
       "options": {
         "A": "Provision a subnet in each Availability Zone. ConFigure the Auto Scaling group to distribute the EC2 instances across both Availability Zones. ConFigure the DB instance with connections to each network.",
         "B": "Provision two subnets that extend across both Availability Zones. ConFigure the Auto Scaling group to distribute the EC2 instances across both Availability Zones. ConFigure the DB instance with connections to each network.",

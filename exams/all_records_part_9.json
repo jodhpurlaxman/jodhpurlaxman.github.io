@@ -2,7 +2,7 @@
   "questions": [
     {
       "id": "401",
-      "question": "A company wants to use the AWS Cloud to make an existing application highly available and resilient. The current version of the application resides in the company'sdata center. The application recently experienced data loss after adatabase server crashed because of an unexpected power outage. The company needs asolution that avoids any single points of failure. The solution must give the application the ability to scale to meet user demand. Which solution will meet these requirements?",
+      "question": "A company wants to use the AWS Cloud to make an existing application highly available and resilient. The current version of the application resides in the company'sdata center. The application recently experienced data loss after a database server crashed because of an unexpected power outage. The company needs asolution that avoids any single points of failure. The solution must give the application the ability to scale to meet user demand. Which solution will meet these requirements?",
       "options": {
         "A": "Deploy the application servers by using Amazon EC2 instances in an Auto Scaling group across multiple Availability Zones. Use an Amazon RDS DB instance in a Multi-AZ conFiguration.",
         "B": "Deploy the application servers by using Amazon EC2 instances in an Auto Scaling group in a single Availability Zone. Deploy the database on an EC2 instance. Enable EC2 Auto Recovery.",
@@ -38,7 +38,7 @@
     },
     {
       "id": "404",
-      "question": "A company has deployed aserverless application that invokes an AWS Lambda function when new documents are uploaded to an Amazon S3 bucket. The application uses the Lambda function to process the documents. After arecent marketing campaign, the company noticed that the application did not process many of the documents. What should A solutions architect do to improve the architecture of this application?",
+      "question": "A company has deployed a serverless application that invokes an AWS Lambda function when new documents are uploaded to an Amazon S3 bucket. The application uses the Lambda function to process the documents. After arecent marketing campaign, the company noticed that the application did not process many of the documents. What should A solutions architect do to improve the architecture of this application?",
       "options": {
         "A": "Set the Lambda function's runtime timeout value to 15 minutes.",
         "B": "ConFigure an S3 bucket replication policy. Stage the documents in the S3 bucket for later processing.",
@@ -63,7 +63,7 @@
     },
     {
       "id": "406",
-      "question": "A solutions architect is designing atwo-tiered architecture that includes apublic subnet and adatabase subnet. The web servers in the public subnet must be open to the internet on port 443. The Amazon RDS for MySQL DB instance in the database subnet must be accessible only to the web servers on port 3306. Which combination of steps should the solutions architect take to meet these requirements? (Choose two.)",
+      "question": "A solutions architect is designing atwo-tiered architecture that includes a public subnet and a database subnet. The web servers in the public subnet must be open to the internet on port 443. The Amazon RDS for MySQL DB instance in the database subnet must be accessible only to the web servers on port 3306. Which combination of steps should the solutions architect take to meet these requirements? (Choose two.)",
       "options": {
         "A": "Create a network ACL for the public subnet. Add a rule to deny outbound traFic to 0.0.0.0/0 on port 3306.",
         "B": "Create a security group for the DB instance. Add a rule to allow traFic from the public subnet CIDR block on port 3306.",
@@ -124,7 +124,7 @@
     },
     {
       "id": "411",
-      "question": "A company has aweb application with sporadic usage patterns. There is heavy usage at the beginning of each month, moderate usage at the start of each week, and unpredictable usage during the week. The application consists of aweb server and aMySQL database server running inside the data center. The company would like to move the application to the AWS Cloud, and needs to select acost-effective database platform that will not require database modifications. Which solution will meet these requirements?",
+      "question": "A company has a web application with sporadic usage patterns. There is heavy usage at the beginning of each month, moderate usage at the start of each week, and unpredictable usage during the week. The application consists of a web server and aMySQL database server running inside the data center. The company would like to move the application to the AWS Cloud, and needs to select acost-effective database platform that will not require database modifications. Which solution will meet these requirements?",
       "options": {
         "A": "Amazon DynamoDB",
         "B": "Amazon RDS for MySQL",
@@ -148,7 +148,7 @@
     },
     {
       "id": "413",
-      "question": "An ecommerce company is experiencing an increase in user trafic. The company’sstore is deployed on Amazon EC2 instances as atwo-tier web application consisting of aweb tier and aseparate database tier. As trafic increases, the company notices that the architecture is causing significant delays in sending timely marketing and order confirmation email to users. The company wants to reduce the time it spends resolving complex email delivery issues and minimize operational overhead. What should A solutions architect do to meet these requirements?",
+      "question": "An ecommerce company is experiencing an increase in user trafic. The company’sstore is deployed on Amazon EC2 instances as atwo-tier web application consisting of a web tier and aseparate database tier. As trafic increases, the company notices that the architecture is causing significant delays in sending timely marketing and order confirmation email to users. The company wants to reduce the time it spends resolving complex email delivery issues and minimize operational overhead. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Create a separate application tier using EC2 instances dedicated to email processing.",
         "B": "ConFigure the web instance to send email through Amazon Simple Email Service (Amazon SES).",
@@ -197,7 +197,7 @@
     },
     {
       "id": "417",
-      "question": "A company uses Amazon EC2 instances and AWS Lambda functions to run its application. The company has VPCs with public subnets and private subnets in its AWS account. The EC2 instances run in aprivate subnet in one of the VPCs. The Lambda functions need direct network access to the EC2 instances for the application to work. The application will run for at least 1 year. The company expects the number of Lambda functions that the application uses to increase during that time. The company wants to maximize its savings on all application resources and to keep network latency between the services low. Which solution will meet these requirements?",
+      "question": "A company uses Amazon EC2 instances and AWS Lambda functions to run its application. The company has VPCs with public subnets and private subnets in its AWS account. The EC2 instances run in a private subnet in one of the VPCs. The Lambda functions need direct network access to the EC2 instances for the application to work. The application will run for at least 1 year. The company expects the number of Lambda functions that the application uses to increase during that time. The company wants to maximize its savings on all application resources and to keep network latency between the services low. Which solution will meet these requirements?",
       "options": {
         "A": "Purchase an EC2 Instance Savings Plan Optimize the Lambda functions’ duration and memory usage and the number of invocations. Connect the Lambda functions to the private subnet that contains the EC2 instances.",
         "B": "Purchase an EC2 Instance Savings Plan Optimize the Lambda functions' duration and memory usage, the number of invocations, and the amount of data that is transferred. Connect the Lambda functions to a public subnet in the same VPC where the EC2 instances run.",
@@ -246,7 +246,7 @@
     },
     {
       "id": "421",
-      "question": "A company runs ahighly available SFTP service. The SFTP service uses two Amazon EC2 Linux instances that run with elastic IP addresses to accept trafic from trusted IP sources on the internet. The SFTP service is backed by shared storage that is attached to the instances. User accounts are created and managed as Linux users in the SFTP servers. The company wants aserverless option that provides high IOPS performance and highly configurable security. The company also wants to maintain control over user permissions. Which solution will meet these requirements?",
+      "question": "A company runs a highly available SFTP service. The SFTP service uses two Amazon EC2 Linux instances that run with elastic IP addresses to accept trafic from trusted IP sources on the internet. The SFTP service is backed by shared storage that is attached to the instances. User accounts are created and managed as Linux users in the SFTP servers. The company wants a serverless option that provides high IOPS performance and highly configurable security. The company also wants to maintain control over user permissions. Which solution will meet these requirements?",
       "options": {
         "A": "Create an encrypted Amazon Elastic Block Store (Amazon EBS) volume. Create an AWS Transfer Family SFTP service with a public endpoint that allows only trusted IP addresses. Attach the EBS volume to the SFTP service endpoint. Grant users access to the SFTP service.",
         "B": "Create an encrypted Amazon Elastic File System (Amazon EFS) volume. Create an AWS Transfer Family SFTP service with elastic IP addresses and a VPC endpoint that has internet-facing access. Attach a security group to the endpoint that allows only trusted IP addresses. Attach the EFS volume to the SFTP service endpoint. Grant users access to the SFTP service.",
@@ -368,7 +368,7 @@
     },
     {
       "id": "431",
-      "question": "A company has developed anew video game as aweb application. The application is in athree-tier architecture in aVPC with Amazon RDS for MySQL in the database layer. Several players will compete concurrently online. The game’sdevelopers want to display atop-10 scoreboard in near- real time and offer the ability to stop and restore the game while preserving the current scores. What should A solutions architect do to meet these requirements?",
+      "question": "A company has developed anew video game as a web application. The application is in athree-tier architecture in a VPC with Amazon RDS for MySQL in the database layer. Several players will compete concurrently online. The game’sdevelopers want to display atop-10 scoreboard in near- real time and offer the ability to stop and restore the game while preserving the current scores. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Set up an Amazon ElastiCache for Memcached cluster to cache the scores for the web application to display.",
         "B": "Set up an Amazon ElastiCache for Redis cluster to compute and cache the scores for the web application to display.",
@@ -440,7 +440,7 @@
     },
     {
       "id": "437",
-      "question": "A company operates an ecommerce website on Amazon EC2 instances behind an Application Load Balancer (ALB) in an Auto Scaling group. The site is experiencing performance issues related to ahigh request rate from illegitimate external systems with changing IP addresses. The security team is worried about potential DDoS attacks against the website. The company must block the illegitimate incoming requests in away that has aminimal impact on legitimate users. What should A solutions architect recommend?",
+      "question": "A company operates an ecommerce website on Amazon EC2 instances behind an Application Load Balancer (ALB) in an Auto Scaling group. The site is experiencing performance issues related to a high request rate from illegitimate external systems with changing IP addresses. The security team is worried about potential DDoS attacks against the website. The company must block the illegitimate incoming requests in away that has aminimal impact on legitimate users. What should A solutions architect recommend?",
       "options": {
         "A": "Deploy Amazon Inspector and associate it with the ALB.",
         "B": "Deploy AWS WAF, associate it with the ALB, and conFigure a rate-limiting rule.",
@@ -452,7 +452,7 @@
     },
     {
       "id": "438",
-      "question": "A company wants to share accounting data with an external auditor. The data is stored in an Amazon RDS DB instance that resides in aprivate subnet. The auditor has its own AWS account and requires its own copy of the database. What is the MOST secure way for the company to share the database with the auditor?",
+      "question": "A company wants to share accounting data with an external auditor. The data is stored in an Amazon RDS DB instance that resides in a private subnet. The auditor has its own AWS account and requires its own copy of the database. What is the MOST secure way for the company to share the database with the auditor?",
       "options": {
         "A": "Create a read replica of the database. ConFigure IAM standard database authentication to grant the auditor access.",
         "B": "Export the database contents to text Files. Store the Files in an Amazon S3 bucket. Create a new IAM user for the auditor. Grant the user access to the S3 bucket.",
@@ -464,7 +464,7 @@
     },
     {
       "id": "439",
-      "question": "A solutions architect configured aVPC that has asmall range of IP addresses. The number of Amazon EC2 instances that are in the VPC is increasing, and there is an insuficient number of IP addresses for future workloads. Which solution resolves this issue with the LEAST operational overhead?",
+      "question": "A solutions architect configured a VPC that has asmall range of IP addresses. The number of Amazon EC2 instances that are in the VPC is increasing, and there is an insuficient number of IP addresses for future workloads. Which solution resolves this issue with the LEAST operational overhead?",
       "options": {
         "A": "Add an additional IPv4 CIDR block to increase the number of IP addresses and create additional subnets in the VPC. Create new resources in the new subnets by using the new CIDR.",
         "B": "Create a second VPC with additional subnets. Use a peering connection to connect the second VPC with the First VPC Update the routes and create new resources in the subnets of the second VPC.",
@@ -476,7 +476,7 @@
     },
     {
       "id": "440",
-      "question": "A company used an Amazon RDS for MySQL DB instance during application testing. Before terminating the DB instance at the end of the test cycle, A solutions architect created two backups. The solutions architect created the First backup by using the mysqldump utility to create adatabase dump. The solutions architect created the second backup by enabling the Final DB snapshot option on RDS termination. The company is now planning for anew test cycle and wants to create anew DB instance from the most recent backup. The company has chosen aMySQL-compatible edition ofamazon Aurora to host the DB instance. Which solutions will create the new DB instance? (Choose two.)",
+      "question": "A company used an Amazon RDS for MySQL DB instance during application testing. Before terminating the DB instance at the end of the test cycle, A solutions architect created two backups. The solutions architect created the First backup by using the mysqldump utility to create a database dump. The solutions architect created the second backup by enabling the Final DB snapshot option on RDS termination. The company is now planning for anew test cycle and wants to create anew DB instance from the most recent backup. The company has chosen aMySQL-compatible edition ofamazon Aurora to host the DB instance. Which solutions will create the new DB instance? (Choose two.)",
       "options": {
         "A": "Import the RDS snapshot directly into Aurora.",
         "B": "Upload the RDS snapshot to Amazon S3. Then import the RDS snapshot into Aurora.",
@@ -489,7 +489,7 @@
     },
     {
       "id": "441",
-      "question": "A company hosts amulti-tier web application on Amazon Linux Amazon EC2 instances behind an Application Load Balancer. The instances run in an Auto Scaling group across multiple Availability Zones. The company observes that the Auto Scaling group launches more On-Demand Instances when the application'send users access high volumes of static web content. The company wants to optimize cost. What should A solutions architect do to redesign the application MOST cost-effectively?",
+      "question": "A company hosts a multi-tier web application on Amazon Linux Amazon EC2 instances behind an Application Load Balancer. The instances run in an Auto Scaling group across multiple Availability Zones. The company observes that the Auto Scaling group launches more On-Demand Instances when the application'send users access high volumes of static web content. The company wants to optimize cost. What should A solutions architect do to redesign the application MOST cost-effectively?",
       "options": {
         "A": "Update the Auto Scaling group to use Reserved Instances instead of On-Demand Instances.",
         "B": "Update the Auto Scaling group to scale by launching Spot Instances instead of On-Demand Instances.",
@@ -525,7 +525,7 @@
     },
     {
       "id": "444",
-      "question": "A company has hired A solutions architect to design areliable architecture for its application. The application consists of one Amazon RDS DB instance and two manually provisioned Amazon EC2 instances that run web servers. The EC2 instances are located in asingle Availability Zone. An employee recently deleted the DB instance, and the application was unavailable for 24 hours as aresult. The company is concerned with the overall reliability of its environment. What should the solutions architect do to maximize reliability of the application'sinfrastructure?",
+      "question": "A company has hired A solutions architect to design areliable architecture for its application. The application consists of one Amazon RDS DB instance and two manually provisioned Amazon EC2 instances that run web servers. The EC2 instances are located in a single Availability Zone. An employee recently deleted the DB instance, and the application was unavailable for 24 hours as aresult. The company is concerned with the overall reliability of its environment. What should the solutions architect do to maximize reliability of the application'sinfrastructure?",
       "options": {
         "A": "Delete one EC2 instance and enable termination protection on the other EC2 instance. Update the DB instance to be Multi-AZ, and enable deletion protection.",
         "B": "Update the DB instance to be Multi-AZ, and enable deletion protection. Place the EC2 instances behind an Application Load Balancer, and run them in an EC2 Auto Scaling group across multiple Availability Zones.",
@@ -537,7 +537,7 @@
     },
     {
       "id": "445",
-      "question": "A company is storing 700 terabytes of data on alarge network-attached storage (NAS) system in its corporate data center. The company has ahybrid environment with a 10 Gbps AWS Direct Connect connection. After an audit from aregulator, the company has 90 days to move the data to the cloud. The company needs to move the data eficiently and without disruption. The company still needs to be able to access and update the data during the transfer window. Which solution will meet these requirements?",
+      "question": "A company is storing 700 terabytes of data on a large network-attached storage (NAS) system in its corporate data center. The company has ahybrid environment with a 10 Gbps AWS Direct Connect connection. After an audit from aregulator, the company has 90 days to move the data to the cloud. The company needs to move the data eficiently and without disruption. The company still needs to be able to access and update the data during the transfer window. Which solution will meet these requirements?",
       "options": {
         "A": "Create an AWS DataSync agent in the corporate data center. Create a data transfer task Start the transfer to an Amazon S3 bucket.",
         "B": "Back up the data to AWS Snowball Edge Storage Optimized devices. Ship the devices to an AWS data center. Mount a target Amazon S3 bucket on the on-premises File system.",
@@ -573,7 +573,7 @@
     },
     {
       "id": "448",
-      "question": "A company has two VPCs named Management and Production. The Management VPC uses VPNs through acustomer gateway to connect to asingle device in the data center. The Production VPC uses avirtual private gateway with two attached AWS Direct Connect connections. The Management and Production VPCs both use asingle VPC peering connection to allow communication between the applications. What should A solutions architect do to mitigate any single point of failure in this architecture?",
+      "question": "A company has two VPCs named Management and Production. The Management VPC uses VPNs through acustomer gateway to connect to a single device in the data center. The Production VPC uses avirtual private gateway with two attached AWS Direct Connect connections. The Management and Production VPCs both use a single VPC peering connection to allow communication between the applications. What should A solutions architect do to mitigate any single point of failure in this architecture?",
       "options": {
         "A": "Add a set of VPNs between the Management and Production VPCs.",
         "B": "Add a second virtual private gateway and attach it to the Management VPC.",
@@ -597,7 +597,7 @@
     },
     {
       "id": "450",
-      "question": "A company has athree-tier web application that is in asingle server. The company wants to migrate the application to the AWS Cloud. The company also wants the application to align with the AWS Well-Architected Framework and to be consistent with AWS recommended best practices for security, scalability, and resiliency. Which combination of solutions will meet these requirements? (Choose three.)",
+      "question": "A company has athree-tier web application that is in a single server. The company wants to migrate the application to the AWS Cloud. The company also wants the application to align with the AWS Well-Architected Framework and to be consistent with AWS recommended best practices for security, scalability, and resiliency. Which combination of solutions will meet these requirements? (Choose three.)",
       "options": {
         "A": "Create a VPC across two Availability Zones with the application's existing architecture. Host the application with existing architecture on an Amazon EC2 instance in a private subnet in each Availability Zone with EC2 Auto Scaling groups. Secure the EC2 instance with security groups and network access control lists (network ACLs).",
         "B": "Set up security groups and network access control lists (network ACLs) to control access to the database layer. Set up a single Amazon RDS database in a private subnet.",

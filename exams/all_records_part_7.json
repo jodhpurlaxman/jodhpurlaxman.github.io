@@ -63,7 +63,7 @@
     },
     {
       "id": "306",
-      "question": "A company wants to run an in-memory database for alatency-sensitive application that runs on Amazon EC2 instances. The application processes more than 100,000 transactions each minute and requires high network throughput. A solutions architect needs to provide acost- effective network design that minimizes data transfer charges. Which solution meets these requirements?",
+      "question": "A company wants to run an in-memory database for a latency-sensitive application that runs on Amazon EC2 instances. The application processes more than 100,000 transactions each minute and requires high network throughput. A solutions architect needs to provide acost- effective network design that minimizes data transfer charges. Which solution meets these requirements?",
       "options": {
         "A": "Launch all EC2 instances in the same Availability Zone within the same AWS Region. Specify a placement group with cluster strategy when launching EC2 instances.",
         "B": "Launch all EC2 instances in different Availability Zones within the same AWS Region. Specify a placement group with partition strategy when launching EC2 instances.",
@@ -112,7 +112,7 @@
     },
     {
       "id": "310",
-      "question": "A company sells datasets to customers who do research in artificial intelligence and machine learning (AI/ML). The datasets are large, formatted Files that are stored in an Amazon S3 bucket in the us-east-1 Region. The company hosts aweb application that the customers use to purchase access to agiven dataset. The web application is deployed on multiple Amazon EC2 instances behind an Application Load Balancer. After apurchase is made, customers receive an S3 signed URL that allows access to the Files. The customers are distributed across North America and Europe. The company wants to reduce the cost that is associated with data transfers and wants to maintain or improve performance. What should A solutions architect do to meet these requirements?",
+      "question": "A company sells datasets to customers who do research in artificial intelligence and machine learning (AI/ML). The datasets are large, formatted Files that are stored in an Amazon S3 bucket in the us-east-1 Region. The company hosts a web application that the customers use to purchase access to agiven dataset. The web application is deployed on multiple Amazon EC2 instances behind an Application Load Balancer. After apurchase is made, customers receive an S3 signed URL that allows access to the Files. The customers are distributed across North America and Europe. The company wants to reduce the cost that is associated with data transfers and wants to maintain or improve performance. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "ConFigure S3 Transfer Acceleration on the existing S3 bucket. Direct customer requests to the S3 Transfer Acceleration endpoint. Continue to use S3 signed URLs for access control.",
         "B": "Deploy an Amazon CloudFront distribution with the existing S3 bucket as the origin. Direct customer requests to the CloudFront URL. Switch to CloudFront signed URLs for access control.",
@@ -124,7 +124,7 @@
     },
     {
       "id": "311",
-      "question": "A company is using AWS to design aweb application that will process insurance quotes. Users will request quotes from the application. Quotes must be separated by quote type, must be responded to within 24 hours, and must not get lost. The solution must maximize operational eficiency and must minimize maintenance. Which solution meets these requirements?",
+      "question": "A company is using AWS to design a web application that will process insurance quotes. Users will request quotes from the application. Quotes must be separated by quote type, must be responded to within 24 hours, and must not get lost. The solution must maximize operational eficiency and must minimize maintenance. Which solution meets these requirements?",
       "options": {
         "A": "Create multiple Amazon Kinesis data streams based on the quote type. ConFigure the web application to send messages to the proper data stream. ConFigure each backend group of application servers to use the Kinesis Client Library (KCL) to pool messages from its own data stream.",
         "B": "Create an AWS Lambda function and an Amazon Simple NotiFication Service (Amazon SNS) topic for each quote type. Subscribe the Lambda function to its associated SNS topic. ConFigure the application to publish requests for quotes to the appropriate SNS topic.",
@@ -160,7 +160,7 @@
     },
     {
       "id": "314",
-      "question": "A company has an on-premises MySQL database used by the global sales team with infrequent access patterns. The sales team requires the database to have minimal downtime. Adatabase administrator wants to migrate this database to AWS without selecting aparticular instance type in anticipation of more users in the future. Which service should A solutions architect recommend?",
+      "question": "A company has an on-premises MySQL database used by the global sales team with infrequent access patterns. The sales team requires the database to have minimal downtime. A database administrator wants to migrate this database to AWS without selecting aparticular instance type in anticipation of more users in the future. Which service should A solutions architect recommend?",
       "options": {
         "A": "Amazon Aurora MySQL",
         "B": "Amazon Aurora Serverless for MySQL",
@@ -257,7 +257,7 @@
     },
     {
       "id": "322",
-      "question": "A solutions architect is designing amulti-tier application for A company. The application'susers upload images from amobile device. The application generates athumbnail of each image and returns amessage to the user to confirm that the image was uploaded successfully. The thumbnail generation can take up to 60 seconds, but the company wants to provide afaster response time to its users to notify them that the original image was received. The solutions architect must design the application to asynchronously dispatch requests to the different application tiers. What should the solutions architect do to meet these requirements?",
+      "question": "A solutions architect is designing a multi-tier application for A company. The application'susers upload images from amobile device. The application generates athumbnail of each image and returns amessage to the user to confirm that the image was uploaded successfully. The thumbnail generation can take up to 60 seconds, but the company wants to provide afaster response time to its users to notify them that the original image was received. The solutions architect must design the application to asynchronously dispatch requests to the different application tiers. What should the solutions architect do to meet these requirements?",
       "options": {
         "A": "Write a custom AWS Lambda function to generate the thumbnail and alert the user. Use the image upload process as an event source to invoke the Lambda function.",
         "B": "Create an AWS Step Functions workFiow. ConFigure Step Functions to handle the orchestration between the application tiers and alert the user when thumbnail generation is complete.",
@@ -293,7 +293,7 @@
     },
     {
       "id": "325",
-      "question": "A company is hosting aweb application from an Amazon S3 bucket. The application uses Amazon Cognito as an identity provider to authenticate users and return aJSON Web Token (JWT) that provides access to protected resources that are stored in another S3 bucket. Upon deployment of the application, users report errors and are unable to access the protected content. A solutions architect must resolve this issue by providing proper permissions so that users can access the protected content. Which solution meets these requirements?",
+      "question": "A company is hosting a web application from an Amazon S3 bucket. The application uses Amazon Cognito as an identity provider to authenticate users and return aJSON Web Token (JWT) that provides access to protected resources that are stored in another S3 bucket. Upon deployment of the application, users report errors and are unable to access the protected content. A solutions architect must resolve this issue by providing proper permissions so that users can access the protected content. Which solution meets these requirements?",
       "options": {
         "A": "Update the Amazon Cognito identity pool to assume the proper IAM role for access to the protected content.",
         "B": "Update the S3 ACL to allow the application to access the protected content.",
@@ -318,7 +318,7 @@
     },
     {
       "id": "327",
-      "question": "A solutions architect must secure aVPC network that hosts Amazon EC2 instances. The EC2 instances contain highly sensitive data and run in aprivate subnet. According to company policy, the EC2 instances that run in the VPC can access only approved third-party software repositories on the internet for software product updates that use the third party’sURL. Other internet trafic must be blocked. Which solution meets these requirements?",
+      "question": "A solutions architect must secure a VPC network that hosts Amazon EC2 instances. The EC2 instances contain highly sensitive data and run in a private subnet. According to company policy, the EC2 instances that run in the VPC can access only approved third-party software repositories on the internet for software product updates that use the third party’sURL. Other internet trafic must be blocked. Which solution meets these requirements?",
       "options": {
         "A": "Update the route table for the private subnet to route the outbound traFic to an AWS Network Firewall Firewall. ConFigure domain list rule groups.",
         "B": "Set up an AWS WAF web ACL. Create a custom set of rules that Filter traFic requests based on source and destination IP address range sets.",
@@ -342,7 +342,7 @@
     },
     {
       "id": "329",
-      "question": "Asecurity audit reveals that Amazon EC2 instances are not being patched regularly. A solutions architect needs to provide asolution that will run regular security scans across alarge Fieet of EC2 instances. The solution should also patch the EC2 instances on aregular schedule and provide areport of each instance’spatch status. Which solution will meet these requirements?",
+      "question": "Asecurity audit reveals that Amazon EC2 instances are not being patched regularly. A solutions architect needs to provide asolution that will run regular security scans across a large Fieet of EC2 instances. The solution should also patch the EC2 instances on aregular schedule and provide areport of each instance’spatch status. Which solution will meet these requirements?",
       "options": {
         "A": "Set up Amazon Macie to scan the EC2 instances for software vulnerabilities. Set up a cron job on each EC2 instance to patch the instance on a regular schedule.",
         "B": "Turn on Amazon GuardDuty in the account. ConFigure GuardDuty to scan the EC2 instances for software vulnerabilities. Set up AWS Systems Manager Session Manager to patch the EC2 instances on a regular schedule.",
@@ -426,7 +426,7 @@
     },
     {
       "id": "336",
-      "question": "A company hosts amulti-tier web application that uses an Amazon Aurora MySQL DB cluster for storage. The application tier is hosted on Amazon EC2 instances. The company’sIT security guidelines mandate that the database credentials be encrypted and rotated every 14 days. What should A solutions architect do to meet this requirement with the LEAST operational effort?",
+      "question": "A company hosts a multi-tier web application that uses an Amazon Aurora MySQL DB cluster for storage. The application tier is hosted on Amazon EC2 instances. The company’sIT security guidelines mandate that the database credentials be encrypted and rotated every 14 days. What should A solutions architect do to meet this requirement with the LEAST operational effort?",
       "options": {
         "A": "Create a new AWS Key Management Service (AWS KMS) encryption key. Use AWS Secrets Manager to create a new secret that uses the KMS key with the appropriate credentials. Associate the secret with the Aurora DB cluster. ConFigure a custom rotation period of 14 days.",
         "B": "Create two parameters in AWS Systems Manager Parameter Store: one for the user name as a string parameter and one that uses the SecureString type for the password. Select AWS Key Management Service (AWS KMS) encryption for the password parameter, and load these parameters in the application tier. Implement an AWS Lambda function that rotates the password every 14 days.",
@@ -438,7 +438,7 @@
     },
     {
       "id": "337",
-      "question": "A company has deployed aweb application on AWS. The company hosts the backend database on Amazon RDS for MySQL with aprimary DB instance and Five read replicas to support scaling needs. The read replicas must lag no more than 1 second behind the primary DB instance. The database routinely runs scheduled stored procedures. As trafic on the website increases, the replicas experience additional lag during periods of peak load. A solutions architect must reduce the replication lag as much as possible. The solutions architect must minimize changes to the application code and must minimize ongoing operational overhead. Which solution will meet these requirements?",
+      "question": "A company has deployed a web application on AWS. The company hosts the backend database on Amazon RDS for MySQL with a primary DB instance and Five read replicas to support scaling needs. The read replicas must lag no more than 1 second behind the primary DB instance. The database routinely runs scheduled stored procedures. As trafic on the website increases, the replicas experience additional lag during periods of peak load. A solutions architect must reduce the replication lag as much as possible. The solutions architect must minimize changes to the application code and must minimize ongoing operational overhead. Which solution will meet these requirements?",
       "options": {
         "A": "Migrate the database to Amazon Aurora MySQL. Replace the read replicas with Aurora Replicas, and conFigure Aurora Auto Scaling. Replace the stored procedures with Aurora MySQL native functions.",
         "B": "Deploy an Amazon ElastiCache for Redis cluster in front of the database. Modify the application to check the cache before the application queries the database. Replace the stored procedures with AWS Lambda functions.",
@@ -450,7 +450,7 @@
     },
     {
       "id": "338",
-      "question": "A solutions architect must create adisaster recovery (DR) plan for ahigh-volume software as aservice (SaaS) platform. All data for the platform is stored in an Amazon Aurora MySQL DB cluster. The DR plan must replicate data to asecondary AWS Region. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A solutions architect must create adisaster recovery (DR) plan for a high-volume software as aservice (SaaS) platform. All data for the platform is stored in an Amazon Aurora MySQL DB cluster. The DR plan must replicate data to a secondary AWS Region. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Use MySQL binary log replication to an Aurora cluster in the secondary Region. Provision one DB instance for the Aurora cluster in the secondary Region.",
         "B": "Set up an Aurora global database for the DB cluster. When setup is complete, remove the DB instance from the secondary Region.",
@@ -474,7 +474,7 @@
     },
     {
       "id": "340",
-      "question": "Amedia company hosts its website on AWS. The website application’sarchitecture includes aFieet of Amazon EC2 instances behind an Application Load Balancer (ALB) and adatabase that is hosted on Amazon Aurora. The company’scybersecurity team reports that the application is vulnerable to SQL injection. How should the company resolve this issue?",
+      "question": "Amedia company hosts its website on AWS. The website application’sarchitecture includes aFieet of Amazon EC2 instances behind an Application Load Balancer (ALB) and a database that is hosted on Amazon Aurora. The company’scybersecurity team reports that the application is vulnerable to SQL injection. How should the company resolve this issue?",
       "options": {
         "A": "Use AWS WAF in front of the ALB. Associate the appropriate web ACLs with AWS WAF.",
         "B": "Create an ALB listener rule to reply to SQL injections with a Fixed response.",
@@ -510,7 +510,7 @@
     },
     {
       "id": "343",
-      "question": "A solutions architect is designing A company’sdisaster recovery (DR) architecture. The company has aMySQL database that runs on an Amazon EC2 instance in aprivate subnet with scheduled backup. The DR design needs to include multiple AWS Regions. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A solutions architect is designing A company’sdisaster recovery (DR) architecture. The company has aMySQL database that runs on an Amazon EC2 instance in a private subnet with scheduled backup. The DR design needs to include multiple AWS Regions. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Migrate the MySQL database to multiple EC2 instances. ConFigure a standby EC2 instance in the DR Region. Turn on replication.",
         "B": "Migrate the MySQL database to Amazon RDS. Use a Multi-AZ deployment. Turn on read replication for the primary DB instance in the different Availability Zones.",
@@ -534,7 +534,7 @@
     },
     {
       "id": "345",
-      "question": "A company wants to restrict access to the content of one of its main web applications and to protect the content by using authorization techniques available on AWS. The company wants to implement aserverless architecture and an authentication solution for fewer than 100 users. The solution needs to integrate with the main web application and serve web content globally. The solution must also scale as the company'suser base grows while providing the lowest login latency possible. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company wants to restrict access to the content of one of its main web applications and to protect the content by using authorization techniques available on AWS. The company wants to implement a serverless architecture and an authentication solution for fewer than 100 users. The solution needs to integrate with the main web application and serve web content globally. The solution must also scale as the company'suser base grows while providing the lowest login latency possible. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Use Amazon Cognito for authentication. Use Lambda@Edge for authorization. Use Amazon CloudFront to serve the web application globally.",
         "B": "Use AWS Directory Service for Microsoft Active Directory for authentication. Use AWS Lambda for authorization. Use an Application Load Balancer to serve the web application globally.",
@@ -570,7 +570,7 @@
     },
     {
       "id": "348",
-      "question": "A company collects data from alarge number of participants who use wearable devices. The company stores the data in an Amazon DynamoDB table and uses applications to analyze the data. The data workload is constant and predictable. The company wants to stay at or below its forecasted budget for DynamoDB. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company collects data from a large number of participants who use wearable devices. The company stores the data in an Amazon DynamoDB table and uses applications to analyze the data. The data workload is constant and predictable. The company wants to stay at or below its forecasted budget for DynamoDB. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Use provisioned mode and DynamoDB Standard-Infrequent Access (DynamoDB Standard-IA). Reserve capacity for the forecasted workload.",
         "B": "Use provisioned mode. Specify the read capacity units (RCUs) and write capacity units (WCUs).",

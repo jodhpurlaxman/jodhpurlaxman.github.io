@@ -14,7 +14,7 @@
     },
     {
       "id": "502",
-      "question": "A company runs awebsite that uses acontent management system (CMS) on Amazon EC2. The CMS runs on asingle EC2 instance and uses an Amazon Aurora MySQL Multi-AZ DB instance for the data tier. Website images are stored on an Amazon Elastic Block Store (Amazon EBS) volume that is mounted inside the EC2 instance. Which combination of actions should A solutions architect take to improve the performance and resilience of the website? (Choose two.)",
+      "question": "A company runs a website that uses acontent management system (CMS) on Amazon EC2. The CMS runs on a single EC2 instance and uses an Amazon Aurora MySQL Multi-AZ DB instance for the data tier. Website images are stored on an Amazon Elastic Block Store (Amazon EBS) volume that is mounted inside the EC2 instance. Which combination of actions should A solutions architect take to improve the performance and resilience of the website? (Choose two.)",
       "options": {
         "A": "Move the website images into an Amazon S3 bucket that is mounted on every EC2 instance",
         "B": "Share the website images by using an NFS share from the primary EC2 instance. Mount this share on the other EC2 instances.",
@@ -75,7 +75,7 @@
     },
     {
       "id": "507",
-      "question": "A company has aweb application for travel ticketing. The application is based on adatabase that runs in asingle data center in North America. The company wants to expand the application to serve aglobal user base. The company needs to deploy the application to multiple AWS Regions. Average latency must be less than 1 second on updates to the reservation database. The company wants to have separate deployments of its web platform across multiple Regions. However, the company must maintain asingle primary reservation database that is globally consistent. Which solution should A solutions architect recommend to meet these requirements?",
+      "question": "A company has a web application for travel ticketing. The application is based on a database that runs in a single data center in North America. The company wants to expand the application to serve aglobal user base. The company needs to deploy the application to multiple AWS Regions. Average latency must be less than 1 second on updates to the reservation database. The company wants to have separate deployments of its web platform across multiple Regions. However, the company must maintain a single primary reservation database that is globally consistent. Which solution should A solutions architect recommend to meet these requirements?",
       "options": {
         "A": "Convert the application to use Amazon DynamoDB. Use a global table for the center reservation table. Use the correct Regional endpoint in each Regional deployment.",
         "B": "Migrate the database to an Amazon Aurora MySQL database. Deploy Aurora Read Replicas in each Region. Use the correct Regional endpoint in each Regional deployment for access to the database.",
@@ -112,7 +112,7 @@
     },
     {
       "id": "510",
-      "question": "Aglobal marketing company has applications that run in the ap-southeast-2 Region and the eu-west-1 Region. Applications that run in aVPC in eu- west-1 need to communicate securely with databases that run in aVPC in ap-southeast-2. Which network design will meet these requirements?",
+      "question": "Aglobal marketing company has applications that run in the ap-southeast-2 Region and the eu-west-1 Region. Applications that run in a VPC in eu- west-1 need to communicate securely with databases that run in a VPC in ap-southeast-2. Which network design will meet these requirements?",
       "options": {
         "A": "Create a VPC peering connection between the eu-west-1 VPC and the ap-southeast-2 VPC. Create an inbound rule in the eu-west-1 application security group that allows traFic from the database server IP addresses in the ap-southeast-2 security group.",
         "B": "ConFigure a VPC peering connection between the ap-southeast-2 VPC and the eu-west-1 VPC. Update the subnet route tables. Create an inbound rule in the ap-southeast-2 database security group that references the security group ID of the application servers in eu-west-1.",
@@ -148,7 +148,7 @@
     },
     {
       "id": "513",
-      "question": "Asocial media company wants to allow its users to upload images in an application that is hosted in the AWS Cloud. The company needs asolution that automatically resizes the images so that the images can be displayed on multiple device types. The application experiences unpredictable trafic patterns throughout the day. The company is seeking ahighly available solution that maximizes scalability. What should A solutions architect do to meet these requirements?",
+      "question": "Asocial media company wants to allow its users to upload images in an application that is hosted in the AWS Cloud. The company needs asolution that automatically resizes the images so that the images can be displayed on multiple device types. The application experiences unpredictable trafic patterns throughout the day. The company is seeking a highly available solution that maximizes scalability. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Create a static website hosted in Amazon S3 that invokes AWS Lambda functions to resize the images and store the images in an Amazon S3 bucket.",
         "B": "Create a static website hosted in Amazon CloudFront that invokes AWS Step Functions to resize the images and store the images in an Amazon RDS database.",
@@ -185,7 +185,7 @@
     },
     {
       "id": "516",
-      "question": "A company provides an API interface to customers so the customers can retrieve their Financial information. Еhe company expects alarger number of requests during peak usage times of the year. The company requires the API to respond consistently with low latency to ensure customer satisfaction. The company needs to provide acompute host for the API. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company provides an API interface to customers so the customers can retrieve their Financial information. Еhe company expects a larger number of requests during peak usage times of the year. The company requires the API to respond consistently with low latency to ensure customer satisfaction. The company needs to provide acompute host for the API. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Use an Application Load Balancer and Amazon Elastic Container Service (Amazon ECS).",
         "B": "Use Amazon API Gateway and AWS Lambda functions with provisioned concurrency.",
@@ -221,7 +221,7 @@
     },
     {
       "id": "519",
-      "question": "Aconsulting company provides professional services to customers worldwide. The company provides solutions and tools for customers to expedite gathering and analyzing data on AWS. The company needs to centrally manage and deploy acommon set of solutions and tools for customers to use for self-service purposes. Which solution will meet these requirements?",
+      "question": "Aconsulting company provides professional services to customers worldwide. The company provides solutions and tools for customers to expedite gathering and analyzing data on AWS. The company needs to centrally manage and deploy a common set of solutions and tools for customers to use for self-service purposes. Which solution will meet these requirements?",
       "options": {
         "A": "Create AWS CloudFormation templates for the customers.",
         "B": "Create AWS Service Catalog products for the customers.",
@@ -306,7 +306,7 @@
     },
     {
       "id": "526",
-      "question": "A solutions architect is reviewing the resilience of an application. The solutions architect notices that adatabase administrator recently failed over the application'sAmazon Aurora PostgreSQL database writer instance as part of ascaling exercise. The failover resulted in 3 minutes of downtime for the application. Which solution will reduce the downtime for scaling exercises with the LEAST operational overhead?",
+      "question": "A solutions architect is reviewing the resilience of an application. The solutions architect notices that a database administrator recently failed over the application'sAmazon Aurora PostgreSQL database writer instance as part of ascaling exercise. The failover resulted in 3 minutes of downtime for the application. Which solution will reduce the downtime for scaling exercises with the LEAST operational overhead?",
       "options": {
         "A": "Create more Aurora PostgreSQL read replicas in the cluster to handle the load during failover.",
         "B": "Set up a secondary Aurora PostgreSQL cluster in the same AWS Region. During failover, update the application to use the secondary cluster's writer endpoint.",
@@ -318,7 +318,7 @@
     },
     {
       "id": "527",
-      "question": "A company has aregional subscription-based streaming service that runs in asingle AWS Region. The architecture consists of web servers and application servers on Amazon EC2 instances. The EC2 instances are in Auto Scaling groups behind Elastic Load Balancers. The architecture includes an Amazon Aurora global database cluster that extends across multiple Availability Zones. The company wants to expand globally and to ensure that its application has minimal downtime. Which solution will provide the MOST fault tolerance?",
+      "question": "A company has aregional subscription-based streaming service that runs in a single AWS Region. The architecture consists of web servers and application servers on Amazon EC2 instances. The EC2 instances are in Auto Scaling groups behind Elastic Load Balancers. The architecture includes an Amazon Aurora global database cluster that extends across multiple Availability Zones. The company wants to expand globally and to ensure that its application has minimal downtime. Which solution will provide the MOST fault tolerance?",
       "options": {
         "A": "Extend the Auto Scaling groups for the web tier and the application tier to deploy instances in Availability Zones in a second Region. Use an Aurora global database to deploy the database in the primary Region and the second Region. Use Amazon Route 53 health checks with a failover routing policy to the second Region.",
         "B": "Deploy the web tier and the application tier to a second Region. Add an Aurora PostgreSQL cross-Region Aurora Replica in the second Region. Use Amazon Route 53 health checks with a failover routing policy to the second Region. Promote the secondary to primary as needed.",
@@ -366,7 +366,7 @@
     },
     {
       "id": "531",
-      "question": "A company needs to integrate with athird-party data feed. The data feed sends awebhook to notify an external service when new data is ready for consumption. Adeveloper wrote an AWS Lambda function to retrieve data when the company receives awebhook callback. The developer must make the Lambda function available for the third party to call. Which solution will meet these requirements with the MOST operational eficiency?",
+      "question": "A company needs to integrate with athird-party data feed. The data feed sends a webhook to notify an external service when new data is ready for consumption. Adeveloper wrote an AWS Lambda function to retrieve data when the company receives a webhook callback. The developer must make the Lambda function available for the third party to call. Which solution will meet these requirements with the MOST operational eficiency?",
       "options": {
         "A": "Create a function URL for the Lambda function. Provide the Lambda function URL to the third party for the webhook.",
         "B": "Deploy an Application Load Balancer (ALB) in front of the Lambda function. Provide the ALB URL to the third party for the webhook.",
@@ -487,7 +487,7 @@
     },
     {
       "id": "541",
-      "question": "A company wants to build aweb application on AWS. Client access requests to the website are not predictable and can be idle for along time. Only customers who have paid asubscription fee can have the ability to sign in and use the web application. Which combination of steps will meet these requirements MOST cost-effectively? (Choose three.)",
+      "question": "A company wants to build a web application on AWS. Client access requests to the website are not predictable and can be idle for along time. Only customers who have paid asubscription fee can have the ability to sign in and use the web application. Which combination of steps will meet these requirements MOST cost-effectively? (Choose three.)",
       "options": {
         "A": "Create an AWS Lambda function to retrieve user information from Amazon DynamoDB. Create an Amazon API Gateway endpoint to accept RESTful APIs. Send the API calls to the Lambda function.",
         "B": "Create an Amazon Elastic Container Service (Amazon ECS) service behind an Application Load Balancer to retrieve user information from Amazon RDS. Create an Amazon API Gateway endpoint to accept RESTful APIs. Send the API calls to the Lambda function.",
@@ -512,7 +512,7 @@
     },
     {
       "id": "543",
-      "question": "A company runs Amazon EC2 instances in multiple AWS accounts that are individually bled. The company recently purchased aSavings Pian. Because of changes in the company’sbusiness requirements, the company has decommissioned alarge number of EC2 instances. The company wants to use its Savings Plan discounts on its other AWS accounts. Which combination of steps will meet these requirements? (Choose two.)",
+      "question": "A company runs Amazon EC2 instances in multiple AWS accounts that are individually bled. The company recently purchased aSavings Pian. Because of changes in the company’sbusiness requirements, the company has decommissioned a large number of EC2 instances. The company wants to use its Savings Plan discounts on its other AWS accounts. Which combination of steps will meet these requirements? (Choose two.)",
       "options": {
         "A": "From the AWS Account Management Console of the management account, turn on discount sharing from the billing preferences section.",
         "B": "From the AWS Account Management Console of the account that purchased the existing Savings Plan, turn on discount sharing from the billing preferences section. Include all accounts.",
@@ -561,7 +561,7 @@
     },
     {
       "id": "547",
-      "question": "A company has data collection sensors at different locations. The data collection sensors stream ahigh volume of data to the company. The company wants to design aplatform on AWS to ingest and process high-volume streaming data. The solution must be scalable and support data collection in near real time. The company must store the data in Amazon S3 for future reporting. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company has data collection sensors at different locations. The data collection sensors stream a high volume of data to the company. The company wants to design aplatform on AWS to ingest and process high-volume streaming data. The solution must be scalable and support data collection in near real time. The company must store the data in Amazon S3 for future reporting. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Use Amazon Kinesis Data Firehose to deliver streaming data to Amazon S3.",
         "B": "Use AWS Glue to deliver streaming data to Amazon S3.",
@@ -585,7 +585,7 @@
     },
     {
       "id": "549",
-      "question": "A company has created amulti-tier application for its ecommerce website. The website uses an Application Load Balancer that resides in the public subnets, aweb tier in the public subnets, and aMySQL cluster hosted on Amazon EC2 instances in the private subnets. The MySQL database needs to retrieve product catalog and pricing information that is hosted on the internet by athird-party provider. A solutions architect must devise astrategy that maximizes security without increasing operational overhead. What should the solutions architect do to meet these requirements?",
+      "question": "A company has created a multi-tier application for its ecommerce website. The website uses an Application Load Balancer that resides in the public subnets, a web tier in the public subnets, and aMySQL cluster hosted on Amazon EC2 instances in the private subnets. The MySQL database needs to retrieve product catalog and pricing information that is hosted on the internet by athird-party provider. A solutions architect must devise astrategy that maximizes security without increasing operational overhead. What should the solutions architect do to meet these requirements?",
       "options": {
         "A": "Deploy a NAT instance in the VPC. Route all the internet-based traFic through the NAT instance.",
         "B": "Deploy a NAT gateway in the public subnets. Modify the private subnet route table to direct all internet-bound traFic to the NAT gateway.",

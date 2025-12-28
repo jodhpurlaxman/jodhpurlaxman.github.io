@@ -51,7 +51,7 @@
     },
     {
       "id": "155",
-      "question": "Alarge media company hosts aweb application on AWS. The company wants to start caching confidential media Files so that users around the world will have reliable access to the Files. The content is stored in Amazon S3 buckets. The company must deliver the content quickly, regardless of where the requests originate geographically. Which solution will meet these requirements?",
+      "question": "Alarge media company hosts a web application on AWS. The company wants to start caching confidential media Files so that users around the world will have reliable access to the Files. The content is stored in Amazon S3 buckets. The company must deliver the content quickly, regardless of where the requests originate geographically. Which solution will meet these requirements?",
       "options": {
         "A": "Use AWS DataSync to connect the S3 buckets to the web application.",
         "B": "Deploy AWS Global Accelerator to connect the S3 buckets to the web application.",
@@ -89,7 +89,7 @@
     },
     {
       "id": "158",
-      "question": "A solutions architect is optimizing awebsite for an upcoming musical event. Videos of the performances will be streamed in real time and then will be available on demand. The event is expected to attract aglobal online audience. Which service will improve the performance of both the real-time and on-demand streaming?",
+      "question": "A solutions architect is optimizing a website for an upcoming musical event. Videos of the performances will be streamed in real time and then will be available on demand. The event is expected to attract aglobal online audience. Which service will improve the performance of both the real-time and on-demand streaming?",
       "options": {
         "A": "Amazon CloudFront",
         "B": "AWS Global Accelerator",
@@ -101,7 +101,7 @@
     },
     {
       "id": "159",
-      "question": "A company is running apublicly accessible serverless application that uses Amazon API Gateway and AWS Lambda. The application’strafic recently spiked due to fraudulent requests from botnets. Which steps should A solutions architect take to block requests from unauthorized users? (Choose two.)",
+      "question": "A company is running a publicly accessible serverless application that uses Amazon API Gateway and AWS Lambda. The application’strafic recently spiked due to fraudulent requests from botnets. Which steps should A solutions architect take to block requests from unauthorized users? (Choose two.)",
       "options": {
         "A": "Create a usage plan with an API key that is shared with genuine users only.",
         "B": "Integrate logic within the Lambda function to ignore the requests from fraudulent IP addresses.",
@@ -126,7 +126,7 @@
     },
     {
       "id": "161",
-      "question": "A company has asmall Python application that processes JSON documents and outputs the results to an on-premises SQL database. The application runs thousands of times each day. The company wants to move the application to the AWS Cloud. The company needs ahighly available solution that maximizes scalability and minimizes operational overhead. Which solution will meet these requirements?",
+      "question": "A company has asmall Python application that processes JSON documents and outputs the results to an on-premises SQL database. The application runs thousands of times each day. The company wants to move the application to the AWS Cloud. The company needs a highly available solution that maximizes scalability and minimizes operational overhead. Which solution will meet these requirements?",
       "options": {
         "A": "Place the JSON documents in an Amazon S3 bucket. Run the Python code on multiple Amazon EC2 instances to process the documents. Store the results in an Amazon Aurora DB cluster.",
         "B": "Place the JSON documents in an Amazon S3 bucket. Create an AWS Lambda function that runs the Python code to process the documents as they arrive in the S3 bucket. Store the results in an Amazon Aurora DB cluster.",
@@ -138,7 +138,7 @@
     },
     {
       "id": "162",
-      "question": "A company wants to use high performance computing (HPC) infrastructure on AWS for Financial risk modeling. The company’sHPC workloads run on Linux. Each HPC workfiow runs on hundreds of Amazon EC2 Spot Instances, is short-lived, and generates thousands of output Files that are ultimately stored in persistent storage for analytics and long-term future use. The company seeks acloud storage solution that permits the copying of on-premises data to long-term persistent storage to make data available for processing by all EC2 instances. The solution should also be ahigh performance File system that is integrated with persistent storage to read and write datasets and output Files. Which combination of AWS services meets these requirements?",
+      "question": "A company wants to use high performance computing (HPC) infrastructure on AWS for Financial risk modeling. The company’sHPC workloads run on Linux. Each HPC workfiow runs on hundreds of Amazon EC2 Spot Instances, is short-lived, and generates thousands of output Files that are ultimately stored in persistent storage for analytics and long-term future use. The company seeks acloud storage solution that permits the copying of on-premises data to long-term persistent storage to make data available for processing by all EC2 instances. The solution should also be a high performance File system that is integrated with persistent storage to read and write datasets and output Files. Which combination of AWS services meets these requirements?",
       "options": {
         "A": "Amazon FSx for Lustre integrated with Amazon S3",
         "B": "Amazon FSx for Windows File Server integrated with Amazon S3",
@@ -150,7 +150,7 @@
     },
     {
       "id": "163",
-      "question": "A company is building acontainerized application on premises and decides to move the application to AWS. The application will have thousands of users soon after it is deployed. The company is unsure how to manage the deployment of containers at scale. The company needs to deploy the containerized application in ahighly available architecture that minimizes operational overhead. Which solution will meet these requirements?",
+      "question": "A company is building acontainerized application on premises and decides to move the application to AWS. The application will have thousands of users soon after it is deployed. The company is unsure how to manage the deployment of containers at scale. The company needs to deploy the containerized application in a highly available architecture that minimizes operational overhead. Which solution will meet these requirements?",
       "options": {
         "A": "Store container images in an Amazon Elastic Container Registry (Amazon ECR) repository. Use an Amazon Elastic Container Service (Amazon ECS) cluster with the AWS Fargate launch type to run the containers. Use target tracking to scale automatically based on demand.",
         "B": "Store container images in an Amazon Elastic Container Registry (Amazon ECR) repository. Use an Amazon Elastic Container Service (Amazon ECS) cluster with the Amazon EC2 launch type to run the containers. Use target tracking to scale automatically based on demand.",
@@ -210,7 +210,7 @@
     },
     {
       "id": "168",
-      "question": "Asecurity team wants to limit access to specific services or actions in all of the team’sAWS accounts. All accounts belong to alarge organization in AWS Organizations. The solution must be scalable and there must be asingle point where permissions can be maintained. What should A solutions architect do to accomplish this?",
+      "question": "Asecurity team wants to limit access to specific services or actions in all of the team’sAWS accounts. All accounts belong to a large organization in AWS Organizations. The solution must be scalable and there must be a single point where permissions can be maintained. What should A solutions architect do to accomplish this?",
       "options": {
         "A": "Create an ACL to provide access to the services or actions.",
         "B": "Create a security group to allow accounts and attach it to user groups.",
@@ -246,7 +246,7 @@
     },
     {
       "id": "171",
-      "question": "A company provides an API to its users that automates inquiries for tax computations based on item prices. The company experiences alarger number of inquiries during the holiday season only that cause slower response times. A solutions architect needs to design asolution that is scalable and elastic. What should the solutions architect do to accomplish this?",
+      "question": "A company provides an API to its users that automates inquiries for tax computations based on item prices. The company experiences a larger number of inquiries during the holiday season only that cause slower response times. A solutions architect needs to design asolution that is scalable and elastic. What should the solutions architect do to accomplish this?",
       "options": {
         "A": "Provide an API hosted on an Amazon EC2 instance. The EC2 instance performs the required computations when the API request is made.",
         "B": "Design a REST API using Amazon API Gateway that accepts the item names. API Gateway passes item names to AWS Lambda for tax computations.",
@@ -270,7 +270,7 @@
     },
     {
       "id": "173",
-      "question": "Agaming company hosts abrowser-based application on AWS. The users of the application consume alarge number of videos and images that are stored in Amazon S3. This content is the same for all users. The application has increased in popularity, and millions of users worldwide accessing these media Files. The company wants to provide the Files to the users while reducing the load on the origin. Which solution meets these requirements MOST cost-effectively?",
+      "question": "Agaming company hosts abrowser-based application on AWS. The users of the application consume a large number of videos and images that are stored in Amazon S3. This content is the same for all users. The application has increased in popularity, and millions of users worldwide accessing these media Files. The company wants to provide the Files to the users while reducing the load on the origin. Which solution meets these requirements MOST cost-effectively?",
       "options": {
         "A": "Deploy an AWS Global Accelerator accelerator in front of the web servers.",
         "B": "Deploy an Amazon CloudFront web distribution in front of the S3 bucket.",
@@ -282,7 +282,7 @@
     },
     {
       "id": "174",
-      "question": "A company has amulti-tier application that runs six front-end web servers in an Amazon EC2 Auto Scaling group in asingle Availability Zone behind an Application Load Balancer (ALB). A solutions architect needs to modify the infrastructure to be highly available without modifying the application. Which architecture should the solutions architect choose that provides high availability?",
+      "question": "A company has a multi-tier application that runs six front-end web servers in an Amazon EC2 Auto Scaling group in a single Availability Zone behind an Application Load Balancer (ALB). A solutions architect needs to modify the infrastructure to be highly available without modifying the application. Which architecture should the solutions architect choose that provides high availability?",
       "options": {
         "A": "Create an Auto Scaling group that uses three instances across each of two Regions.",
         "B": "Modify the Auto Scaling group to use three instances across each of two Availability Zones.",
@@ -294,7 +294,7 @@
     },
     {
       "id": "175",
-      "question": "An ecommerce company has an order-processing application that uses Amazon API Gateway and an AWS Lambda function. The application stores data in an Amazon Aurora PostgreSQL database. During arecent sales event, asudden surge in customer orders occurred. Some customers experienced timeouts, and the application did not process the orders of those customers. A solutions architect determined that the CPU utilization and memory utilization were high on the database because of alarge number of open connections. The solutions architect needs to prevent the timeout errors while making the least possible changes to the application. Which solution will meet these requirements?",
+      "question": "An ecommerce company has an order-processing application that uses Amazon API Gateway and an AWS Lambda function. The application stores data in an Amazon Aurora PostgreSQL database. During arecent sales event, asudden surge in customer orders occurred. Some customers experienced timeouts, and the application did not process the orders of those customers. A solutions architect determined that the CPU utilization and memory utilization were high on the database because of a large number of open connections. The solutions architect needs to prevent the timeout errors while making the least possible changes to the application. Which solution will meet these requirements?",
       "options": {
         "A": "ConFigure provisioned concurrency for the Lambda function. Modify the database to be a global database in multiple AWS Regions.",
         "B": "Use Amazon RDS Proxy to create a proxy for the database. Modify the Lambda function to use the RDS Proxy endpoint instead of the database endpoint.",
@@ -330,7 +330,7 @@
     },
     {
       "id": "178",
-      "question": "A company’sinfrastructure consists of Amazon EC2 instances and an Amazon RDS DB instance in asingle AWS Region. The company wants to back up its data in aseparate Region. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company’sinfrastructure consists of Amazon EC2 instances and an Amazon RDS DB instance in a single AWS Region. The company wants to back up its data in aseparate Region. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Use AWS Backup to copy EC2 backups and RDS backups to the separate Region.",
         "B": "Use Amazon Data Lifecycle Manager (Amazon DLM) to copy EC2 backups and RDS backups to the separate Region.",
@@ -342,7 +342,7 @@
     },
     {
       "id": "179",
-      "question": "A solutions architect needs to securely store adatabase user name and password that an application uses to access an Amazon RDS DB instance. The application that accesses the database runs on an Amazon EC2 instance. The solutions architect wants to create asecure parameter in AWS Systems Manager Parameter Store. What should the solutions architect do to meet this requirement?",
+      "question": "A solutions architect needs to securely store a database user name and password that an application uses to access an Amazon RDS DB instance. The application that accesses the database runs on an Amazon EC2 instance. The solutions architect wants to create asecure parameter in AWS Systems Manager Parameter Store. What should the solutions architect do to meet this requirement?",
       "options": {
         "A": "Create an IAM role that has read access to the Parameter Store parameter. Allow Decrypt access to an AWS Key Management Service (AWS KMS) key that is used to encrypt the parameter. Assign this IAM role to the EC2 instance.",
         "B": "Create an IAM policy that allows read access to the Parameter Store parameter. Allow Decrypt access to an AWS Key Management Service (AWS KMS) key that is used to encrypt the parameter. Assign this IAM policy to the EC2 instance.",
@@ -379,7 +379,7 @@
     },
     {
       "id": "182",
-      "question": "A company wants to migrate its MySQL database from on premises to AWS. The company recently experienced adatabase outage that significantly impacted the business. To ensure this does not happen again, the company wants areliable database solution on AWS that minimizes data loss and stores every transaction on at least two nodes. Which solution meets these requirements?",
+      "question": "A company wants to migrate its MySQL database from on premises to AWS. The company recently experienced a database outage that significantly impacted the business. To ensure this does not happen again, the company wants areliable database solution on AWS that minimizes data loss and stores every transaction on at least two nodes. Which solution meets these requirements?",
       "options": {
         "A": "Create an Amazon RDS DB instance with synchronous replication to three nodes in three Availability Zones.",
         "B": "Create an Amazon RDS MySQL DB instance with Multi-AZ functionality enabled to synchronously replicate the data.",
@@ -403,7 +403,7 @@
     },
     {
       "id": "184",
-      "question": "A company has an AWS account used for software engineering. The AWS account has access to the company’son-premises data center through apair of AWS Direct Connect connections. All non-VPC trafic routes to the virtual private gateway. Adevelopment team recently created an AWS Lambda function through the console. The development team needs to allow the function to access adatabase that runs in aprivate subnet in the company’sdata center. Which solution will meet these requirements?",
+      "question": "A company has an AWS account used for software engineering. The AWS account has access to the company’son-premises data center through apair of AWS Direct Connect connections. All non-VPC trafic routes to the virtual private gateway. Adevelopment team recently created an AWS Lambda function through the console. The development team needs to allow the function to access a database that runs in a private subnet in the company’sdata center. Which solution will meet these requirements?",
       "options": {
         "A": "ConFigure the Lambda function to run in the VPC with the appropriate security group.",
         "B": "Set up a VPN connection from AWS to the data center. Route the traFic from the Lambda function through the VPN.",
@@ -439,7 +439,7 @@
     },
     {
       "id": "187",
-      "question": "A company is developing an ecommerce application that will consist of aload-balanced front end, acontainer-based application, and arelational database. A solutions architect needs to create ahighly available solution that operates with as little manual intervention as possible. Which solutions meet these requirements? (Choose two.)",
+      "question": "A company is developing an ecommerce application that will consist of aload-balanced front end, acontainer-based application, and arelational database. A solutions architect needs to create a highly available solution that operates with as little manual intervention as possible. Which solutions meet these requirements? (Choose two.)",
       "options": {
         "A": "Create an Amazon RDS DB instance in Multi-AZ mode.",
         "B": "Create an Amazon RDS DB instance and one or more replicas in another Availability Zone.",
@@ -452,7 +452,7 @@
     },
     {
       "id": "188",
-      "question": "A company uses Amazon S3 as its data lake. The company has anew partner that must use SFTP to upload data Files. A solutions architect needs to implement ahighly available SFTP solution that minimizes operational overhead. Which solution will meet these requirements?",
+      "question": "A company uses Amazon S3 as its data lake. The company has anew partner that must use SFTP to upload data Files. A solutions architect needs to implement a highly available SFTP solution that minimizes operational overhead. Which solution will meet these requirements?",
       "options": {
         "A": "Use AWS Transfer Family to conFigure an SFTP-enabled server with a publicly accessible endpoint. Choose the S3 data lake as the destination.",
         "B": "Use Amazon S3 File Gateway as an SFTP server. Expose the S3 File Gateway endpoint URL to the new partner. Share the S3 File Gateway endpoint with the new partner.",
@@ -477,7 +477,7 @@
     },
     {
       "id": "190",
-      "question": "A company has aweb application that is based on Java and PHP. The company plans to move the application from on premises to AWS. The company needs the ability to test new site features frequently. The company also needs ahighly available and managed solution that requires minimum operational overhead. Which solution will meet these requirements?",
+      "question": "A company has a web application that is based on Java and PHP. The company plans to move the application from on premises to AWS. The company needs the ability to test new site features frequently. The company also needs a highly available and managed solution that requires minimum operational overhead. Which solution will meet these requirements?",
       "options": {
         "A": "Create an Amazon S3 bucket. Enable static web hosting on the S3 bucket. Upload the static content to the S3 bucket. Use AWS Lambda to process all dynamic content.",
         "B": "Deploy the web application to an AWS Elastic Beanstalk environment. Use URL swapping to switch between multiple Elastic Beanstalk environments for feature testing.",
@@ -514,7 +514,7 @@
     },
     {
       "id": "193",
-      "question": "A company is running abatch application on Amazon EC2 instances. The application consists of abackend with multiple Amazon RDS databases. The application is causing ahigh number of reads on the databases. A solutions architect must reduce the number of database reads while ensuring high availability. What should the solutions architect do to meet this requirement?",
+      "question": "A company is running abatch application on Amazon EC2 instances. The application consists of abackend with multiple Amazon RDS databases. The application is causing a high number of reads on the databases. A solutions architect must reduce the number of database reads while ensuring high availability. What should the solutions architect do to meet this requirement?",
       "options": {
         "A": "Add Amazon RDS read replicas.",
         "B": "Use Amazon ElastiCache for Redis.",
@@ -526,7 +526,7 @@
     },
     {
       "id": "194",
-      "question": "A company needs to run acritical application on AWS. The company needs to use Amazon EC2 for the application’sdatabase. The database must be highly available and must fail over automatically if adisruptive event occurs. Which solution will meet these requirements?",
+      "question": "A company needs to run a critical application on AWS. The company needs to use Amazon EC2 for the application’sdatabase. The database must be highly available and must fail over automatically if adisruptive event occurs. Which solution will meet these requirements?",
       "options": {
         "A": "Launch two EC2 instances, each in a different Availability Zone in the same AWS Region. Install the database on both EC2 instances. ConFigure the EC2 instances as a cluster. Set up database replication.",
         "B": "Launch an EC2 instance in an Availability Zone. Install the database on the EC2 instance. Use an Amazon Machine Image (AMI) to back up the data. Use AWS CloudFormation to automate provisioning of the EC2 instance if a disruptive event occurs.",
@@ -538,7 +538,7 @@
     },
     {
       "id": "195",
-      "question": "A company’sorder system sends requests from clients to Amazon EC2 instances. The EC2 instances process the orders and then store the orders in adatabase on Amazon RDS. Users report that they must reprocess orders when the system fails. The company wants aresilient solution that can process orders automatically if asystem outage occurs. What should A solutions architect do to meet these requirements?",
+      "question": "A company’sorder system sends requests from clients to Amazon EC2 instances. The EC2 instances process the orders and then store the orders in a database on Amazon RDS. Users report that they must reprocess orders when the system fails. The company wants aresilient solution that can process orders automatically if asystem outage occurs. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Move the EC2 instances into an Auto Scaling group. Create an Amazon EventBridge (Amazon CloudWatch Events) rule to target an Amazon Elastic Container Service (Amazon ECS) task.",
         "B": "Move the EC2 instances into an Auto Scaling group behind an Application Load Balancer (ALB). Update the order system to send messages to the ALB endpoint.",
@@ -550,7 +550,7 @@
     },
     {
       "id": "196",
-      "question": "A company runs an application on alarge Fieet of Amazon EC2 instances. The application reads and writes entries into an Amazon DynamoDB table. The size of the DynamoDB table continuously grows, but the application needs only data from the last 30 days. The company needs asolution that minimizes cost and development effort. Which solution meets these requirements?",
+      "question": "A company runs an application on a large Fieet of Amazon EC2 instances. The application reads and writes entries into an Amazon DynamoDB table. The size of the DynamoDB table continuously grows, but the application needs only data from the last 30 days. The company needs asolution that minimizes cost and development effort. Which solution meets these requirements?",
       "options": {
         "A": "Use an AWS CloudFormation template to deploy the complete solution. Redeploy the CloudFormation stack every 30 days, and delete the original stack.",
         "B": "Use an EC2 instance that runs a monitoring application from AWS Marketplace. ConFigure the monitoring application to use Amazon DynamoDB Streams to store the timestamp when a new item is created in the table. Use a script that runs on the EC2 instance to delete items that have a timestamp that is older than 30 days.",
@@ -599,7 +599,7 @@
     },
     {
       "id": "200",
-      "question": "A company hosts its application on AWS. The company uses Amazon Cognito to manage users. When users log in to the application, the application fetches required data from Amazon DynamoDB by using aREST API that is hosted in Amazon API Gateway. The company wants an AWS managed solution that will control access to the REST API to reduce development efforts. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company hosts its application on AWS. The company uses Amazon Cognito to manage users. When users log in to the application, the application fetches required data from Amazon DynamoDB by using a REST API that is hosted in Amazon API Gateway. The company wants an AWS managed solution that will control access to the REST API to reduce development efforts. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "ConFigure an AWS Lambda function to be an authorizer in API Gateway to validate which user made the request.",
         "B": "For each user, create and assign an API key that must be sent with each request. Validate the key by using an AWS Lambda function.",

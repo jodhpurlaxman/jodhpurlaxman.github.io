@@ -2,7 +2,7 @@
   "questions": [
     {
       "id": "1",
-      "question": "Topic 1 A company collects data for temperature, humidity, and atmospheric pressure in cities across multiple continents. The average volume of data that the company collects from each site daily is 500 GB. Each site has ahigh-speed Internet connection. The company wants to aggregate the data from all these global sites as quickly as possible in asingle Amazon S3 bucket. The solution must minimize operational complexity. Which solution meets these requirements?",
+      "question": "A company collects data for temperature, humidity, and atmospheric pressure in cities across multiple continents. The average volume of data that the company collects from each site daily is 500 GB. Each site has a high-speed Internet connection. The company wants to aggregate the data from all these global sites as quickly as possible in a single Amazon S3 bucket. The solution must minimize operational complexity. Which solution meets these requirements?",
       "options": {
         "A": "Turn on S3 Transfer Acceleration on the destination S3 bucket. Use multipart uploads to directly upload site data to the destination S3",
         "B": "Upload the data from each site to an S3 bucket in the closest Region. Use S3 Cross-Region Replication to copy objects to the destination S3",
@@ -38,7 +38,7 @@
     },
     {
       "id": "4",
-      "question": "An application runs on an Amazon EC2 instance in aVPC. The application processes logs that are stored in an Amazon S3 bucket. The EC2 instance needs to access the S3 bucket without connectivity to the internet. Which solution will provide private network connectivity to Amazon S3?",
+      "question": "An application runs on an Amazon EC2 instance in a VPC. The application processes logs that are stored in an Amazon S3 bucket. The EC2 instance needs to access the S3 bucket without connectivity to the internet. Which solution will provide private network connectivity to Amazon S3?",
       "options": {
         "A": "Create a gateway VPC endpoint to the S3 bucket.",
         "B": "Stream the logs to Amazon CloudWatch Logs. Export the logs to the S3 bucket.",
@@ -50,7 +50,7 @@
     },
     {
       "id": "5",
-      "question": "A company is hosting aweb application on AWS using asingle Amazon EC2 instance that stores user-uploaded documents in an Amazon EBS volume. For better scalability and availability, the company duplicated the architecture and created asecond EC2 instance and EBS volume in another Availability Zone, placing both behind an Application Load Balancer. After completing this change, users reported that, each time they refreshed the website, they could see one subset of their documents or the other, but never all of the documents at the same time. What should A solutions architect propose to ensure users see all of their documents at once?",
+      "question": "A company is hosting a web application on AWS using a single Amazon EC2 instance that stores user-uploaded documents in an Amazon EBS volume. For better scalability and availability, the company duplicated the architecture and created asecond EC2 instance and EBS volume in another Availability Zone, placing both behind an Application Load Balancer. After completing this change, users reported that, each time they refreshed the website, they could see one subset of their documents or the other, but never all of the documents at the same time. What should A solutions architect propose to ensure users see all of their documents at once?",
       "options": {
         "A": "Copy the data so both EBS volumes contain all the documents",
         "B": "ConFigure the Application Load Balancer to direct a user to the server with the documents",
@@ -86,7 +86,7 @@
     },
     {
       "id": "8",
-      "question": "A company is migrating adistributed application to AWS. The application serves variable workloads. The legacy platform consists of aprimary server that coordinates jobs across multiple compute nodes. The company wants to modernize the application with asolution that maximizes resiliency and scalability. How should A solutions architect design the architecture to meet these requirements?",
+      "question": "A company is migrating a distributed application to AWS. The application serves variable workloads. The legacy platform consists of a primary server that coordinates jobs across multiple compute nodes. The company wants to modernize the application with asolution that maximizes resiliency and scalability. How should A solutions architect design the architecture to meet these requirements?",
       "options": {
         "A": "ConFigure an Amazon Simple Queue Service (Amazon SQS) queue as a destination for the jobs. Implement the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. ConFigure EC2 Auto Scaling to use scheduled scaling.",
         "B": "ConFigure an Amazon Simple Queue Service (Amazon SQS) queue as a destination for the jobs. Implement the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. ConFigure EC2 Auto Scaling based on the size of the queue.",
@@ -158,7 +158,7 @@
     },
     {
       "id": "14",
-      "question": "A company runs an ecommerce application on Amazon EC2 instances behind an Application Load Balancer. The instances run in an Amazon EC2 Auto Scaling group across multiple Availability Zones. The Auto Scaling group scales based on CPU utilization metrics. The ecommerce application stores the transaction data in aMySQL 8.0 database that is hosted on alarge EC2 instance. The database'sperformance degrades quickly as application load increases. The application handles more read requests than write transactions. The company wants asolution that will automatically scale the database to meet the demand of unpredictable read workloads while maintaining high availability. Which solution will meet these requirements?",
+      "question": "A company runs an ecommerce application on Amazon EC2 instances behind an Application Load Balancer. The instances run in an Amazon EC2 Auto Scaling group across multiple Availability Zones. The Auto Scaling group scales based on CPU utilization metrics. The ecommerce application stores the transaction data in a MySQL 8.0 database that is hosted on a large EC2 instance. The database's performance degrades quickly as application load increases. The application handles more read requests than write transactions. The company wants a solution that will automatically scale the database to meet the demand of unpredictable read workloads while maintaining high availability. Which solution will meet these requirements?",
       "options": {
         "A": "Use Amazon Redshift with a single node for leader and compute functionality.",
         "B": "Use Amazon RDS with a Single-AZ deployment ConFigure Amazon RDS to add reader instances in a different Availability Zone.",
@@ -219,7 +219,7 @@
     },
     {
       "id": "19",
-      "question": "A company has athree-tier web application that is deployed on AWS. The web servers are deployed in apublic subnet in aVPC. The application servers and database servers are deployed in private subnets in the same VPC. The company has deployed athird-party virtual Firewall appliance from AWS Marketplace in an inspection VPC. The appliance is configured with an IP interface that can accept IP packets. A solutions architect needs to integrate the web application with the appliance to inspect all trafic to the application before the trafic reaches the web server. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company has athree-tier web application that is deployed on AWS. The web servers are deployed in a public subnet in a VPC. The application servers and database servers are deployed in private subnets in the same VPC. The company has deployed athird-party virtual Firewall appliance from AWS Marketplace in an inspection VPC. The appliance is configured with an IP interface that can accept IP packets. A solutions architect needs to integrate the web application with the appliance to inspect all trafic to the application before the trafic reaches the web server. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Create a Network Load Balancer in the public subnet of the application's VPC to route the traFic to the appliance for packet inspection.",
         "B": "Create an Application Load Balancer in the public subnet of the application's VPC to route the traFic to the appliance for packet inspection.",
@@ -327,7 +327,7 @@
     },
     {
       "id": "28",
-      "question": "A company is migrating applications to AWS. The applications are deployed in different accounts. The company manages the accounts centrally by using AWS Organizations. The company'ssecurity team needs asingle sign-on (SSO) solution across all the company'saccounts. The company must continue managing the users and groups in its on-premises self-managed Microsoft Active Directory. Which solution will meet these requirements?",
+      "question": "A company is migrating applications to AWS. The applications are deployed in different accounts. The company manages the accounts centrally by using AWS Organizations. The company'ssecurity team needs a single sign-on (SSO) solution across all the company's accounts. The company must continue managing the users and groups in its on-premises self-managed Microsoft Active Directory. Which solution will meet these requirements?",
       "options": {
         "A": "Enable AWS Single Sign-On (AWS SSO) from the AWS SSO console. Create a one-way forest trust or a one-way domain trust to connect the company's self-managed Microsoft Active Directory with AWS SSO by using AWS Directory Service for Microsoft Active Directory.",
         "B": "Enable AWS Single Sign-On (AWS SSO) from the AWS SSO console. Create a two-way forest trust to connect the company's self-managed Microsoft Active Directory with AWS SSO by using AWS Directory Service for Microsoft Active Directory.",
@@ -375,7 +375,7 @@
     },
     {
       "id": "32",
-      "question": "Adevelopment team needs to host awebsite that will be accessed by other teams. The website contents consist of HTML, CSS, client-side Javascript, and images. Which method is the MOST cost-effective for hosting the website?",
+      "question": "Adevelopment team needs to host a website that will be accessed by other teams. The website contents consist of HTML, CSS, client-side Javascript, and images. Which method is the MOST cost-effective for hosting the website?",
       "options": {
         "A": "Containerize the website and host it in AWS Fargate.",
         "B": "Create an Amazon S3 bucket and host the website there.",
@@ -411,7 +411,7 @@
     },
     {
       "id": "35",
-      "question": "A company is preparing to launch apublic-facing web application in the AWS Cloud. The architecture consists of Amazon EC2 instances within aVPC behind an Elastic Load Balancer (ELB). Athird-party service is used for the DNS. The company'ssolutions architect must recommend asolution to detect and protect against large-scale DDoS attacks. Which solution meets these requirements?",
+      "question": "A company is preparing to launch a public-facing web application in the AWS Cloud. The architecture consists of Amazon EC2 instances within a VPC behind an Elastic Load Balancer (ELB). A third-party service is used for the DNS. The company's solutions architect must recommend asolution to detect and protect against large-scale DDoS attacks. Which solution meets these requirements?",
       "options": {
         "A": "Enable Amazon GuardDuty on the account.",
         "B": "Enable Amazon Inspector on the EC2 instances.",
@@ -471,7 +471,7 @@
     },
     {
       "id": "40",
-      "question": "A company has thousands of edge devices that collectively generate 1 TB of status alerts each day. Each alert is approximately 2 KB in size. A solutions architect needs to implement asolution to ingest and store the alerts for future analysis. The company wants ahighly available solution. However, the company needs to minimize costs and does not want to manage additional infrastructure. Additionally, the company wants to keep 14 days of data available for immediate analysis and archive any data older than 14 days. What is the MOST operationally eficient solution that meets these requirements?",
+      "question": "A company has thousands of edge devices that collectively generate 1 TB of status alerts each day. Each alert is approximately 2 KB in size. A solutions architect needs to implement asolution to ingest and store the alerts for future analysis. The company wants a highly available solution. However, the company needs to minimize costs and does not want to manage additional infrastructure. Additionally, the company wants to keep 14 days of data available for immediate analysis and archive any data older than 14 days. What is the MOST operationally eficient solution that meets these requirements?",
       "options": {
         "A": "Create an Amazon Kinesis Data Firehose delivery stream to ingest the alerts. ConFigure the Kinesis Data Firehose stream to deliver the alerts to an Amazon S3 bucket. Set up an S3 Lifecycle conFiguration to transition data to Amazon S3 Glacier after 14 days.",
         "B": "Launch Amazon EC2 instances across two Availability Zones and place them behind an Elastic Load Balancer to ingest the alerts. Create a script on the EC2 instances that will store the alerts in an Amazon S3 bucket. Set up an S3 Lifecycle conFiguration to transition data to Amazon S3 Glacier after 14 days.",
@@ -495,7 +495,7 @@
     },
     {
       "id": "42",
-      "question": "A company runs ahighly available image-processing application on Amazon EC2 instances in asingle VPC. The EC2 instances run inside several subnets across multiple Availability Zones. The EC2 instances do not communicate with each other. However, the EC2 instances download images from Amazon S3 and upload images to Amazon S3 through asingle NAT gateway. The company is concerned about data transfer charges. What is the MOST cost-effective way for the company to avoid Regional data transfer charges?",
+      "question": "A company runs a highly available image-processing application on Amazon EC2 instances in a single VPC. The EC2 instances run inside several subnets across multiple Availability Zones. The EC2 instances do not communicate with each other. However, the EC2 instances download images from Amazon S3 and upload images to Amazon S3 through a single NAT gateway. The company is concerned about data transfer charges. What is the MOST cost-effective way for the company to avoid Regional data transfer charges?",
       "options": {
         "A": "Launch the NAT gateway in each Availability Zone.",
         "B": "Replace the NAT gateway with a NAT instance.",
@@ -507,7 +507,7 @@
     },
     {
       "id": "43",
-      "question": "A company has an on-premises application that generates alarge amount of time-sensitive data that is backed up to Amazon S3. The application has grown and there are user complaints about internet bandwidth limitations. A solutions architect needs to design along-term solution that allows for both timely backups to Amazon S3 and with minimal impact on internet connectivity for internal users. Which solution meets these requirements?",
+      "question": "A company has an on-premises application that generates a large amount of time-sensitive data that is backed up to Amazon S3. The application has grown and there are user complaints about internet bandwidth limitations. A solutions architect needs to design along-term solution that allows for both timely backups to Amazon S3 and with minimal impact on internet connectivity for internal users. Which solution meets these requirements?",
       "options": {
         "A": "Establish AWS VPN connections and proxy all traFic through a VPC gateway endpoint.",
         "B": "Establish a new AWS Direct Connect connection and direct backup traFic through this new connection.",
@@ -593,7 +593,7 @@
     },
     {
       "id": "50",
-      "question": "A company has aproduction workload that runs on 1,000 Amazon EC2 Linux instances. The workload is powered by third-party software. The company needs to patch the third-party software on all EC2 instances as quickly as possible to remediate acritical security vulnerability. What should A solutions architect do to meet these requirements?",
+      "question": "A company has aproduction workload that runs on 1,000 Amazon EC2 Linux instances. The workload is powered by third-party software. The company needs to patch the third-party software on all EC2 instances as quickly as possible to remediate a critical security vulnerability. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Create an AWS Lambda function to apply the patch to all EC2 instances.",
         "B": "ConFigure AWS Systems Manager Patch Manager to apply the patch to all EC2 instances.",

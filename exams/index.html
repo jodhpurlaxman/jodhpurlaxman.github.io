@@ -160,6 +160,9 @@ let currentIndex = 0;
 let userResponses = []; // {id, user, correct, correctText}
 let bookmarks = JSON.parse(localStorage.getItem('aws-exam-bookmarks')||'[]');
 let awaitingContinue = false;
+let currentExamFile = null;
+const LAST_EXAM_KEY = 'aws-exam-last';
+const stateKeyFor = (exam)=> `aws-exam-state-${exam||'default'}`;
 
 const qText = document.getElementById('questionText');
 const optionsList = document.getElementById('optionsList');
@@ -261,6 +264,7 @@ function handleExamToggle() {
     const sel = examSelect.value;
     if (!sel) { alert('Please select an exam first'); return; }
     if (examIndexList.length === 0) { alert('Exam list not loaded yet. Please wait and try again.'); return; }
+    currentExamFile = sel;
     
     // fetch exam file from exams/ folder
     if (sel === 'review') {
@@ -300,6 +304,8 @@ function handleExamToggle() {
       questions.sort((x,y)=>parseInt(x.id)-parseInt(y.id));
       userResponses = questions.map(q=>({id:q.id,user:'',correct:false,correctText:q.a}));
       currentIndex = 0;
+      const restored = restoreStateForExam(currentExamFile);
+      localStorage.setItem(LAST_EXAM_KEY, currentExamFile);
       mainPanel.classList.remove('hidden');
       resultsPanel.classList.add('hidden');
       document.getElementById('welcomeSection').style.display = 'none';
@@ -310,13 +316,14 @@ function handleExamToggle() {
       if (controls) controls.style.display = 'flex';
       if (options) options.style.display = '';
       if (metaBar) metaBar.style.display = 'flex';
-      loadQuestion(0);
+      loadQuestion(currentIndex || 0);
       startExamBtn.style.display = 'inline-block';
       examInProgress = true;
       startExamBtn.textContent = 'Stop';
       startExamBtn.className = 'secondary';
       // start countdown timer (default: 100 minutes)
-      startTimer(100 * 60);
+      const resumeTime = restored && restored.timeLeft ? restored.timeLeft : (100 * 60);
+      startTimer(resumeTime);
     }).catch(err=>{ alert('Failed to start exam: ' + err.message); });
     }
   }
@@ -325,6 +332,7 @@ function handleExamToggle() {
 startExamBtn.addEventListener('click', handleExamToggle);
 
 function examLoadedFromReview(reviewArr) {
+  currentExamFile = 'review';
   const qarr = reviewArr;
   questions = qarr.map(it=>{
     let answerText = '';
@@ -349,6 +357,8 @@ function examLoadedFromReview(reviewArr) {
   questions.sort((x,y)=>parseInt(x.id)-parseInt(y.id));
   userResponses = questions.map(q=>({id:q.id,user:'',correct:false,correctText:q.a}));
   currentIndex = 0;
+  const restored = restoreStateForExam(currentExamFile);
+  localStorage.setItem(LAST_EXAM_KEY, currentExamFile);
   currentExamIsReview = true;
   examInProgress = true;
   mainPanel.classList.remove('hidden');
@@ -357,12 +367,13 @@ function examLoadedFromReview(reviewArr) {
   document.getElementById('questionText').style.display = 'block';
   document.querySelector('.answerBox').classList.add('visible');
   if (metaBar) metaBar.style.display = 'flex';
-  loadQuestion(0);
+  loadQuestion(currentIndex || 0);
   startExamBtn.style.display = 'inline-block';
   startExamBtn.textContent = 'Stop';
   startExamBtn.className = 'secondary';
   // start countdown timer (default: 100 minutes)
-  startTimer(100 * 60);
+  const resumeTime = restored && restored.timeLeft ? restored.timeLeft : (100 * 60);
+  startTimer(resumeTime);
 }
 
 // manual create/update review exam from current session wrongs
@@ -382,6 +393,7 @@ if (createReviewBtn) {
 
 async function loadQuestionsFromFile() {
   try {
+    currentExamFile = 'all_records';
     const r = await fetch('all_records.json');
     if(!r.ok) throw new Error('Failed to fetch all_records.json');
     const data = await r.json();
@@ -440,34 +452,8 @@ async function loadQuestionsFromFile() {
 
     currentExamIsReview = false;
 
-    // Try to restore saved state (progress, bookmarks, responses)
-    try {
-      const saved = JSON.parse(localStorage.getItem('aws-exam-state')||'null');
-      if (saved && typeof saved === 'object') {
-        if (typeof saved.currentIndex === 'number' && saved.currentIndex >= 0) {
-          currentIndex = Math.min(saved.currentIndex, questions.length - 1);
-        }
-        if (Array.isArray(saved.bookmarks)) {
-          bookmarks = saved.bookmarks;
-          localStorage.setItem('aws-exam-bookmarks', JSON.stringify(bookmarks));
-        }
-        if (Array.isArray(saved.userResponses)) {
-          // merge saved user values by id
-          saved.userResponses.forEach(sr => {
-            const idx = userResponses.findIndex(ur => String(ur.id) === String(sr.id));
-            if (idx > -1) {
-              userResponses[idx].user = sr.user || '';
-              userResponses[idx].correct = !!sr.correct;
-            }
-          });
-        }
-        awaitingContinue = !!saved.awaitingContinue;
-        if (saved.showingAnswer) answerPanel.style.display = 'block';
-      }
-    } catch (e) {
-      console.warn('Failed to restore saved exam state:', e);
-    }
-
+    const restored = restoreStateForExam(currentExamFile);
+    localStorage.setItem(LAST_EXAM_KEY, currentExamFile);
     loadQuestion(currentIndex || 0);
   } catch (err) {
     qText.textContent = 'Error loading questions: ' + err.message + '\nEnsure file json is served over HTTP.';
@@ -676,6 +662,8 @@ function saveProgress(){
 // core save helper used by autosave and manual save
 function saveState(silent){
   try{
+    if (!currentExamFile) return; // no active exam to save
+    const stateKey = stateKeyFor(currentExamFile);
     // visual: show saving spinner/status
     const meta = document.getElementById('saveMeta');
     if (meta) meta.classList.add('saving');
@@ -687,9 +675,13 @@ function saveState(silent){
       bookmarks: bookmarks,
       userResponses: userResponses.map(r=>({id:r.id,user:r.user,correct:r.correct})),
       awaitingContinue: awaitingContinue,
-      showingAnswer: answerPanel.style.display === 'block'
+      showingAnswer: answerPanel.style.display === 'block',
+      qIds: questions.map(q=>String(q.id)),
+      timeLeft: examTimeLeft,
+      examFile: currentExamFile
     };
-    localStorage.setItem('aws-exam-state', JSON.stringify(state));
+    localStorage.setItem(stateKey, JSON.stringify(state));
+    localStorage.setItem(LAST_EXAM_KEY, currentExamFile);
     const now = new Date();
     const ts = now.toLocaleTimeString();
     if (statusEl) statusEl.textContent = `Last saved: ${ts}`;
@@ -708,6 +700,49 @@ function saveState(silent){
     console.warn('Failed to save state', e);
     if (!silent) alert('Failed to save progress: ' + (e && e.message));
   }
+}
+
+function getSavedState(examFile){
+  if (!examFile) return null;
+  try{
+    return JSON.parse(localStorage.getItem(stateKeyFor(examFile))||'null');
+  }catch(e){
+    console.warn('Failed to read saved state', e);
+    return null;
+  }
+}
+
+function restoreStateForExam(examFile){
+  const saved = getSavedState(examFile);
+  if (!saved || typeof saved !== 'object') return null;
+  // basic guard: ensure question set matches saved snapshot
+  if (Array.isArray(saved.qIds)) {
+    const curIds = questions.map(q=>String(q.id));
+    if (saved.qIds.length !== curIds.length) return null;
+    for (let i=0;i<curIds.length;i++) {
+      if (String(saved.qIds[i]) !== String(curIds[i])) return null;
+    }
+  }
+  if (typeof saved.currentIndex === 'number' && saved.currentIndex >= 0) {
+    currentIndex = Math.min(saved.currentIndex, questions.length - 1);
+  }
+  if (Array.isArray(saved.bookmarks)) {
+    bookmarks = saved.bookmarks;
+    localStorage.setItem('aws-exam-bookmarks', JSON.stringify(bookmarks));
+  }
+  if (Array.isArray(saved.userResponses)) {
+    saved.userResponses.forEach(sr => {
+      const idx = userResponses.findIndex(ur => String(ur.id) === String(sr.id));
+      if (idx > -1) {
+        userResponses[idx].user = sr.user || '';
+        userResponses[idx].correct = !!sr.correct;
+      }
+    });
+  }
+  awaitingContinue = !!saved.awaitingContinue;
+  if (saved.showingAnswer) answerPanel.style.display = 'block';
+  if (typeof saved.timeLeft === 'number' && saved.timeLeft > 0) examTimeLeft = saved.timeLeft;
+  return saved;
 }
 
 // autosave helpers
@@ -732,8 +767,9 @@ function resetProgress(){
       alert('No exam loaded. Start an exam first.');
       return;
     }
-    localStorage.removeItem('aws-exam-state');
+    if (currentExamFile) localStorage.removeItem(stateKeyFor(currentExamFile));
     localStorage.removeItem('aws-exam-bookmarks');
+    localStorage.removeItem(LAST_EXAM_KEY);
     bookmarks = [];
     userResponses = questions.map(q=>({id:q.id,user:'',correct:false,correctText:q.a}));
     awaitingContinue = false;
@@ -1043,6 +1079,11 @@ function loadExamList(){
     examSelect.appendChild(rev);
     // set default selection to Exam 1
     examSelect.selectedIndex = 0;
+    const lastExam = localStorage.getItem(LAST_EXAM_KEY);
+    if (lastExam) {
+      const hasLast = Array.from(examSelect.options).some(o=>o.value===lastExam);
+      if (hasLast) examSelect.value = lastExam;
+    }
     updateTimerDisplay();
   }).catch(err=>{
     console.warn('Failed to load exam index', err);

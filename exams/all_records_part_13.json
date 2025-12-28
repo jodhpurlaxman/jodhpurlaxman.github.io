@@ -26,7 +26,7 @@
     },
     {
       "id": "603",
-      "question": "A company recently migrated to the AWS Cloud. The company wants aserverless solution for large-scale parallel on-demand processing of asemistructured dataset. The data consists of logs, media Files, sales transactions, and IoT sensor data that is stored in Amazon S3. The company wants the solution to process thousands of items in the dataset in parallel. Which solution will meet these requirements with the MOST operational eficiency?",
+      "question": "A company recently migrated to the AWS Cloud. The company wants a serverless solution for large-scale parallel on-demand processing of asemistructured dataset. The data consists of logs, media Files, sales transactions, and IoT sensor data that is stored in Amazon S3. The company wants the solution to process thousands of items in the dataset in parallel. Which solution will meet these requirements with the MOST operational eficiency?",
       "options": {
         "A": "Use the AWS Step Functions Map state in Inline mode to process the data in parallel.",
         "B": "Use the AWS Step Functions Map state in Distributed mode to process the data in parallel.",
@@ -74,7 +74,7 @@
     },
     {
       "id": "607",
-      "question": "A company has migrated atwo-tier application from its on-premises data center to the AWS Cloud. The data tier is aMulti-AZ deployment of Amazon RDS for Oracle with 12 TB of General Purpose SSD Amazon Elastic Block Store (Amazon EBS) storage. The application is designed to process and store documents in the database as binary large objects (blobs) with an average document size of 6 MB. The database size has grown over time, reducing the performance and increasing the cost of storage. The company must improve the database performance and needs asolution that is highly available and resilient. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company has migrated atwo-tier application from its on-premises data center to the AWS Cloud. The data tier is a Multi-AZ deployment of Amazon RDS for Oracle with 12 TB of General Purpose SSD Amazon Elastic Block Store (Amazon EBS) storage. The application is designed to process and store documents in the database as binary large objects (blobs) with an average document size of 6 MB. The database size has grown over time, reducing the performance and increasing the cost of storage. The company must improve the database performance and needs asolution that is highly available and resilient. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Reduce the RDS DB instance size. Increase the storage capacity to 24 TiB. Change the storage type to Magnetic.",
         "B": "Increase the RDS DB instance size. Increase the storage capacity to 24 TiChange the storage type to Provisioned IOPS.",
@@ -110,7 +110,7 @@
     },
     {
       "id": "610",
-      "question": "A company deploys Amazon EC2 instances that run in aVPC. The EC2 instances load source data into Amazon S3 buckets so that the data can be processed in the future. According to compliance laws, the data must not be transmitted over the public internet. Servers in the company'son- premises data center will consume the output from an application that runs on the EC2 instances. Which solution will meet these requirements?",
+      "question": "A company deploys Amazon EC2 instances that run in a VPC. The EC2 instances load source data into Amazon S3 buckets so that the data can be processed in the future. According to compliance laws, the data must not be transmitted over the public internet. Servers in the company'son- premises data center will consume the output from an application that runs on the EC2 instances. Which solution will meet these requirements?",
       "options": {
         "A": "Deploy an interface VPC endpoint for Amazon EC2. Create an AWS Site-to-Site VPN connection between the company and the VPC.",
         "B": "Deploy a gateway VPC endpoint for Amazon S3. Set up an AWS Direct Connect connection between the on-premises network and the VPC.",
@@ -122,7 +122,7 @@
     },
     {
       "id": "611",
-      "question": "A company has an application with aREST-based interface that allows data to be received in near-real time from athird-party vendor. Once received, the application processes and stores the data for further analysis. The application is running on Amazon EC2 instances. The third-party vendor has received many 503 Service Unavailable Errors when sending data to the application. When the data volume spikes, the compute capacity reaches its maximum limit and the application is unable to process all requests. Which design should A solutions architect recommend to provide amore scalable solution?",
+      "question": "A company has an application with a REST-based interface that allows data to be received in near-real time from athird-party vendor. Once received, the application processes and stores the data for further analysis. The application is running on Amazon EC2 instances. The third-party vendor has received many 503 Service Unavailable Errors when sending data to the application. When the data volume spikes, the compute capacity reaches its maximum limit and the application is unable to process all requests. Which design should A solutions architect recommend to provide amore scalable solution?",
       "options": {
         "A": "Use Amazon Kinesis Data Streams to ingest the data. Process the data using AWS Lambda functions.",
         "B": "Use Amazon API Gateway on top of the existing application. Create a usage plan with a quota limit for the third-party vendor.",
@@ -134,7 +134,7 @@
     },
     {
       "id": "612",
-      "question": "A company has an application that runs on Amazon EC2 instances in aprivate subnet. The application needs to process sensitive information from an Amazon S3 bucket. The application must not use the internet to connect to the S3 bucket. Which solution will meet these requirements?",
+      "question": "A company has an application that runs on Amazon EC2 instances in a private subnet. The application needs to process sensitive information from an Amazon S3 bucket. The application must not use the internet to connect to the S3 bucket. Which solution will meet these requirements?",
       "options": {
         "A": "ConFigure an internet gateway. Update the S3 bucket policy to allow access from the internet gateway. Update the application to use the new internet gateway.",
         "B": "ConFigure a VPN connection. Update the S3 bucket policy to allow access from the VPN connection. Update the application to use the new VPN connection.",
@@ -170,7 +170,7 @@
     },
     {
       "id": "615",
-      "question": "A company runs acritical, customer-facing application on Amazon Elastic Kubernetes Service (Amazon EKS). The application has amicroservices architecture. The company needs to implement asolution that collects, aggregates, and summarizes metrics and logs from the application in acentralized location. Which solution meets these requirements?",
+      "question": "A company runs a critical, customer-facing application on Amazon Elastic Kubernetes Service (Amazon EKS). The application has amicroservices architecture. The company needs to implement asolution that collects, aggregates, and summarizes metrics and logs from the application in acentralized location. Which solution meets these requirements?",
       "options": {
         "A": "Run the Amazon CloudWatch agent in the existing EKS cluster. View the metrics and logs in the CloudWatch console.",
         "B": "Run AWS App Mesh in the existing EKS cluster. View the metrics and logs in the App Mesh console.",
@@ -292,7 +292,7 @@
     },
     {
       "id": "625",
-      "question": "A company is hosting awebsite behind multiple Application Load Balancers. The company has different distribution rights for its content around the world. A solutions architect needs to ensure that users are served the correct content without violating distribution rights. Which configuration should the solutions architect choose to meet these requirements?",
+      "question": "A company is hosting a website behind multiple Application Load Balancers. The company has different distribution rights for its content around the world. A solutions architect needs to ensure that users are served the correct content without violating distribution rights. Which configuration should the solutions architect choose to meet these requirements?",
       "options": {
         "A": "ConFigure Amazon CloudFront with AWS WAF.",
         "B": "ConFigure Application Load Balancers with AWS WAF",
@@ -376,7 +376,7 @@
     },
     {
       "id": "632",
-      "question": "A company is creating anew application that will store alarge amount of data. The data will be analyzed hourly and will be modified by several Amazon EC2 Linux instances that are deployed across multiple Availability Zones. The needed amount of storage space will continue to grow for the next 6 months. Which storage solution should A solutions architect recommend to meet these requirements?",
+      "question": "A company is creating anew application that will store a large amount of data. The data will be analyzed hourly and will be modified by several Amazon EC2 Linux instances that are deployed across multiple Availability Zones. The needed amount of storage space will continue to grow for the next 6 months. Which storage solution should A solutions architect recommend to meet these requirements?",
       "options": {
         "A": "Store the data in Amazon S3 Glacier. Update the S3 Glacier vault policy to allow access to the application instances.",
         "B": "Store the data in an Amazon Elastic Block Store (Amazon EBS) volume. Mount the EBS volume on the application instances.",
@@ -412,7 +412,7 @@
     },
     {
       "id": "635",
-      "question": "A company uses Amazon FSx for Netapp ONTAP in its primary AWS Region for CIFS and NFS File shares. Applications that run on Amazon EC2 instances access the File shares. The company needs astorage disaster recovery (DR) solution in asecondary Region. The data that is replicated in the secondary Region needs to be accessed by using the same protocols as the primary Region. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company uses Amazon FSx for Netapp ONTAP in its primary AWS Region for CIFS and NFS File shares. Applications that run on Amazon EC2 instances access the File shares. The company needs astorage disaster recovery (DR) solution in a secondary Region. The data that is replicated in the secondary Region needs to be accessed by using the same protocols as the primary Region. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Create an AWS Lambda function to copy the data to an Amazon S3 bucket. Replicate the S3 bucket to the secondary Region.",
         "B": "Create a backup of the FSx for ONTAP volumes by using AWS Backup. Copy the volumes to the secondary Region. Create a new FSx for ONTAP instance from the backup.",
@@ -547,7 +547,7 @@
     },
     {
       "id": "646",
-      "question": "A solutions architect needs to host ahigh performance computing (HPC) workload in the AWS Cloud. The workload will run on hundreds of Amazon EC2 instances and will require parallel access to ashared File system to enable distributed processing of large datasets. Datasets will be accessed across multiple instances simultaneously. The workload requires access latency within 1 ms. After processing has completed, engineers will need access to the dataset for manual postprocessing. Which solution will meet these requirements?",
+      "question": "A solutions architect needs to host a high performance computing (HPC) workload in the AWS Cloud. The workload will run on hundreds of Amazon EC2 instances and will require parallel access to ashared File system to enable distributed processing of large datasets. Datasets will be accessed across multiple instances simultaneously. The workload requires access latency within 1 ms. After processing has completed, engineers will need access to the dataset for manual postprocessing. Which solution will meet these requirements?",
       "options": {
         "A": "Use Amazon Elastic File System (Amazon EFS) as a shared File system. Access the dataset from Amazon EFS.",
         "B": "Mount an Amazon S3 bucket to serve as the shared File system. Perform postprocessing directly from the S3 bucket.",
@@ -571,7 +571,7 @@
     },
     {
       "id": "648",
-      "question": "Aweather forecasting company needs to process hundreds of gigabytes of data with sub-millisecond latency. The company has ahigh performance computing (HPC) environment in its data center and wants to expand its forecasting capabilities. A solutions architect must identify ahighly available cloud storage solution that can handle large amounts of sustained throughput. Files that are stored in the solution should be accessible to thousands of compute instances that will simultaneously access and process the entire dataset. What should the solutions architect do to meet these requirements?",
+      "question": "Aweather forecasting company needs to process hundreds of gigabytes of data with sub-millisecond latency. The company has a high performance computing (HPC) environment in its data center and wants to expand its forecasting capabilities. A solutions architect must identify a highly available cloud storage solution that can handle large amounts of sustained throughput. Files that are stored in the solution should be accessible to thousands of compute instances that will simultaneously access and process the entire dataset. What should the solutions architect do to meet these requirements?",
       "options": {
         "A": "Use Amazon FSx for Lustre scratch File systems.",
         "B": "Use Amazon FSx for Lustre persistent File systems.",
