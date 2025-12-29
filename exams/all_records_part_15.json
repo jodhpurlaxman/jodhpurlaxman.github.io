@@ -223,7 +223,7 @@
       "question": "A web application may be vulnerable to cross-site scripting (XSS) attacks. What should remediate this vulnerability?",
       "options": {
         "A": "Create a Classic Load Balancer with AWS WAF",
-        "B": "Create a Network Load Balancer with AWS WAF",
+        "B": "Create Anetwork Load Balancer with AWS WAF",
         "C": "Create an Application Load Balancer with AWS WAF",
         "D": "Create an Application Load Balancer with AWS Shield Standard"
       },
@@ -232,7 +232,7 @@
     },
     {
       "id": "720",
-      "question": "A big data workload runs on thousands of EC2 instances across AZs. Data needs concurrent access with extremely high throughput. Which storage is most suitable?",
+      "question": "A big data workload runs on thousands of EC2 instances across AZs. DatAneeds concurrent access with extremely high throughput. Which storage is most suitable?",
       "options": {
         "A": "Amazon EFS in General Purpose mode",
         "B": "Amazon EBS PIOPS",
@@ -344,7 +344,7 @@
       "id": "729",
       "question": "A shared VPC for several accounts must prevent consumers from connecting to other instances. How to set up with least effort? (Select TWO)",
       "options": {
-        "A": "Create a Network Load Balancer (NLB)",
+        "A": "Create Anetwork Load Balancer (NLB)",
         "B": "Use AWS PublicLink",
         "C": "Use AWS ClassicLink",
         "D": "Create a Classic Load Balancer",
@@ -428,7 +428,7 @@
     },
     {
       "id": "736",
-      "question": "An application in a VPC uses a Network Load Balancer and will be offered to other accounts. What AWS service provides the service for consumption?",
+      "question": "An application in a VPC uses Anetwork Load Balancer and will be offered to other accounts. What AWS service provides the service for consumption?",
       "options": {
         "A": "Amazon Cognito",
         "B": "Route 53",
@@ -469,7 +469,7 @@
         "A": "Create a route table entry for the endpoint",
         "B": "Create a gateway endpoint for DynamoDB",
         "C": "Create an interface endpoint for DynamoDB",
-        "D": "Create a new private DynamoDB table",
+        "D": "Create Anew private DynamoDB table",
         "E": "Create VPC peering between VPC and DynamoDB"
       },
       "correct_answer": "AB",

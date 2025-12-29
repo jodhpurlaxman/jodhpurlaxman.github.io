@@ -28,7 +28,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
 /******/
-/******/ 		// Create a new module (and put it into the cache)
+/******/ 		// Create Anew module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			exports: {},
 /******/ 			id: moduleId,
@@ -81,7 +81,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * Welcome to Typed.js!
 	 * @param {string} elementId HTML element ID _OR_ HTML element
 	 * @param {object} options options object
-	 * @returns {object} a new Typed object
+	 * @returns {object} Anew Typed object
 	 */
 	
 	var Typed = (function () {
@@ -981,7 +981,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @param {string} curString Current string
 	     * @param {number} curStrPos Position in current string
 	     * @param {Typed} self instance of Typed
-	     * @returns {number} a new string position
+	     * @returns {number} Anew string position
 	     * @private
 	     */
 	
@@ -1011,7 +1011,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @param {string} curString Current string
 	     * @param {number} curStrPos Position in current string
 	     * @param {Typed} self instance of Typed
-	     * @returns {number} a new string position
+	     * @returns {number} Anew string position
 	     * @private
 	     */
 	  }, {

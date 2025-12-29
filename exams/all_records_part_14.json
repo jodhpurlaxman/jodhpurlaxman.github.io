@@ -2,241 +2,241 @@
   "questions": [
     {
       "id": "651",
-      "question": "A company stores a large volume of image Files in a n A mazon S3 bucket. The images need to be readily a vailable for the First 180 days. The images a re infrequently a ccessed for the next 180 days. A fter 360 days, the images need to be a rchived but must be a vailable instantly upon request. A fter 5 years, only a uditors can a ccess the images. The a uditors must be a ble to retrieve the images within 12 hours. The images cannot be lost during this process. A developer will use S3 Standard storage for the First 180 days. The developer needs to configure a n S3 Lifecycle rule. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company stores a large volume of image Files in An Amazon S3 bucket. The images need to be readily available for the First 180 days. The images are infrequently accessed for the next 180 days. After 360 days, the images need to be archived but must be available instantly upon request. After 5 years, only auditors can Access the images. The auditors must be able to retrieve the images within 12 hours. The images cannot be lost during this process. A developer will use S3 Standard storage for the First 180 days. The developer needs to configure An S3 Lifecycle rule. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
-        "A": "Transition the objects to S3 One Zone-Infrequent A ccess (S3 One Zone-IA) a fter 180 days. S3 Glacier Instant Retrieval a fter 360 days, a nd S3 Glacier Deep A rchive a fter 5 years.",
-        "B": "Transition the objects to S3 One Zone-Infrequent A ccess (S3 One Zone-IA) a fter 180 days. S3 Glacier Flexible Retrieval a fter 360 days, a nd S3 Glacier Deep A rchive a fter 5 years.",
-        "C": "Transition the objects to S3 Standard-Infrequent A ccess (S3 Standard-IA) a fter 180 days, S3 Glacier Instant Retrieval a fter 360 days, a nd S3 Glacier Deep A rchive a fter 5 years.",
-        "D": "Transition the objects to S3 Standard-Infrequent A ccess (S3 Standard-IA) a fter 180 days, S3 Glacier Flexible Retrieval a fter 360 days, a nd S3 Glacier Deep A rchive a fter 5 years."
+        "A": "Transition the objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 180 days. S3 Glacier Instant Retrieval after 360 days, And S3 Glacier Deep Archive after 5 years.",
+        "B": "Transition the objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 180 days. S3 Glacier Flexible Retrieval after 360 days, And S3 Glacier Deep Archive after 5 years.",
+        "C": "Transition the objects to S3 Standard-Infrequent Access (S3 Standard-IA) after 180 days, S3 Glacier Instant Retrieval after 360 days, And S3 Glacier Deep Archive after 5 years.",
+        "D": "Transition the objects to S3 Standard-Infrequent Access (S3 Standard-IA) after 180 days, S3 Glacier Flexible Retrieval after 360 days, And S3 Glacier Deep Archive after 5 years."
       },
       "correct_answer": "C",
-      "explanation": "gp3 a llows independent provisioning of IOPS (unlike gp2) a nd is more cost-effective than io1 for 15,000 IOPS.\nMagnetic volumes (Option D) a re outdated a nd cannot meet the performance requirement."
+      "explanation": "gp3 allows independent provisioning of IOPS (unlike gp2) And is more cost-effective than io1 for 15,000 IOPS.\nMagnetic volumes (Option D) are outdated And cannot meet the performance requirement."
     },
     {
       "id": "652",
-      "question": "A company has a large data workload that runs for 6 hours each day. The company cannot lose a ny data while the process is running. A solutions a rchitect is designing a n A mazon EMR cluster configuration to support this critical data workload. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company has a large data workload that runs for 6 hours each day. The company cannot lose Any data while the process is running. A solutions architect is designing An Amazon EMR cluster configuration to support this critical data workload. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
-        "A": "Configure a long-running cluster that runs the primary node a nd core nodes on On-Demand Instances a nd the task nodes on Spot Instances.",
-        "B": "Configure a transient cluster that runs the primary node a nd core nodes on On-Demand Instances a nd the task nodes on Spot Instances.",
-        "C": "Configure a transient cluster that runs the primary node on a n On-Demand Instance a nd the core nodes a nd task nodes on Spot Instances.",
-        "D": "Configure a long-running cluster that runs the primary node on a n On-Demand Instance, the core nodes on Spot Instances, a nd the task nodes on Spot Instances."
+        "A": "Configure a long-running cluster that runs the primary node And core nodes on On-Demand Instances And the task nodes on Spot Instances.",
+        "B": "Configure a transient cluster that runs the primary node And core nodes on On-Demand Instances And the task nodes on Spot Instances.",
+        "C": "Configure a transient cluster that runs the primary node on An On-Demand Instance And the core nodes And task nodes on Spot Instances.",
+        "D": "Configure a long-running cluster that runs the primary node on An On-Demand Instance, the core nodes on Spot Instances, And the task nodes on Spot Instances."
       },
       "correct_answer": "B",
-      "explanation": "Transient clusters a re cost-effective for short workloads. Spot Instances reduce costs for non-critical task nodes.\nLong-running clusters (Options A/D) a re unnecessary for a 6-hour workload."
+      "explanation": "Transient clusters are cost-effective for short workloads. Spot Instances reduce costs for non-critical task nodes.\nLong-running clusters (Options A/D) are unnecessary for a 6-hour workload."
     },
     {
       "id": "653",
-      "question": "A company maintains a n A mazon RDS database that maps users to cost centers. The company has a ccounts in a n organization in A WS Organizations. The company needs a solution that will tag a ll resources that a re created in a specific A WS a ccount in the organization. The solution must tag each resource with the cost center ID of the user who created the resource. Which solution will meet these requirements?",
+      "question": "A company maintains An Amazon RDS database that maps users to cost centers. The company has accounts in An organization in AWS Organizations. The company needs a solution that will tag All resources that are created in a specific AWS account in the organization. The solution must tag each resource with the cost center ID of the user who created the resource. Which solution will meet these requirements?",
       "options": {
-        "A": "Move the speciFic A WS a ccount to a new organizational unit (OU) in Organizations from the management a ccount. Create a service control policy (SCP) that requires a ll existing resources to have the correct cost center tag before the resources a re created. A pply the SCP to the new OU.",
-        "B": "Create a n A WS Lambda function to tag the resources a fter the Lambda function looks up the a ppropriate cost center from the RDS database. Configure a n A mazon EventBridge rule that reacts to A WS CloudTrail events to invoke the Lambda function.",
-        "C": "Create a n A WS CloudFormation stack to deploy a n A WS Lambda function. Configure the Lambda function to look up the a ppropriate cost center from the RDS database a nd to tag resources. Create a n A mazon EventBridge scheduled rule to invoke the CloudFormation stack.",
-        "D": "Create a n A WS Lambda function to tag the resources with a default value. Configure a n A mazon EventBridge rule that reacts to A WS CloudTrail events to invoke the Lambda function when a resource is missing the cost center tag."
+        "A": "Move the speciFic AWS account to Anew organizational unit (OU) in Organizations from the management account. Create a service control policy (SCP) that requires All existing resources to have the correct cost center tag before the resources are created. Apply the SCP to the new OU.",
+        "B": "Create An AWS Lambda function to tag the resources after the Lambda function looks up the appropriate cost center from the RDS database. Configure An Amazon EventBridge rule that reacts to AWS CloudTrail events to invoke the Lambda function.",
+        "C": "Create An AWS CloudFormation stack to deploy An AWS Lambda function. Configure the Lambda function to look up the appropriate cost center from the RDS database And to tag resources. Create An Amazon EventBridge scheduled rule to invoke the CloudFormation stack.",
+        "D": "Create An AWS Lambda function to tag the resources with a default value. Configure An Amazon EventBridge rule that reacts to AWS CloudTrail events to invoke the Lambda function when a resource is missing the cost center tag."
       },
       "correct_answer": "B",
-      "explanation": "EventBridge + Lambda a utomates real-time tagging without manual intervention.\nSCPs (Option A) cannot dynamically tag resources, a nd scheduled rules (Option C) a re not event-driven."
+      "explanation": "EventBridge + Lambda a utomates real-time tagging without manual intervention.\nSCPs (Option A) cannot dynamically tag resources, And scheduled rules (Option C) are not event-driven."
     },
     {
       "id": "654",
-      "question": "A company recently migrated its web a pplication to the A WS Cloud. The company uses a n A mazon EC2 instance to run multiple processes to host the a pplication. The processes include a n A pache web server that serves static content. The A pache web server makes requests to a PHP a pplication that uses a local Redis server for user sessions. The company wants to redesign the a rchitecture to be highly a vailable a nd to use A WS managed solutions. Which solution will meet these requirements?",
+      "question": "A company recently migrated its web Application to the AWS Cloud. The company uses An Amazon EC2 instance to run multiple processes to host the application. The processes include An Apache web server that serves static content. The Apache web server makes requests to a PHP Application that uses a local Redis server for user sessions. The company wants to redesign the architecture to be highly available And to use AWS managed solutions. Which solution will meet these requirements?",
       "options": {
-        "A": "Use A WS Elastic Beanstalk to host the static content a nd the PHP a pplication. Configure Elastic Beanstalk to deploy its EC2 instance into a public subnet. A ssign a public IP a ddress.",
-        "B": "Use A WS Lambda to host the static content a nd the PHP a pplication. Use a n A mazon A PI Gateway REST A PI to proxy requests to the Lambda function. Set the A PI Gateway CORS conFiguration to respond to the domain name. Configure A mazon ElastiCache for Redis to handle session information.",
-        "C": "Keep the backend code on the EC2 instance. Create a n A mazon ElastiCache for Redis cluster that has Multi-A Z enabled. Configure the ElastiCache for Redis cluster in cluster mode. Copy the frontend resources to A mazon S3. Configure the backend code to reference the EC2 instance.",
-        "D": "Configure a n A mazon CloudFront distribution with a n A mazon S3 endpoint to a n S3 bucket that is conFigured to host the static content. Configure a n A pplication Load Balancer that targets a n A mazon Elastic Container Service (A mazon ECS) service that runs A WS Fargate tasks for the PHP a pplication. Configure the PHP a pplication to use a n A mazon ElastiCache for Redis cluster that runs in multiple A vailability Zones."
+        "A": "Use AWS Elastic Beanstalk to host the static content And the PHP application. Configure Elastic Beanstalk to deploy its EC2 instance into a public subnet. Assign a public IP a ddress.",
+        "B": "Use AWS Lambda to host the static content And the PHP application. Use An Amazon API Gateway REST API to proxy requests to the Lambda function. Set the API Gateway CORS  configuration to respond to the domain name. Configure Amazon ElastiCache for Redis to handle session information.",
+        "C": "Keep the backend code on the EC2 instance. Create An Amazon ElastiCache for Redis cluster that has Multi-AZ enabled. Configure the ElastiCache for Redis cluster in cluster mode. Copy the frontend resources to Amazon S3. Configure the backend code to reference the EC2 instance.",
+        "D": "Configure An Amazon CloudFront distribution with An Amazon S3 endpoint to An S3 bucket that is conFigured to host the static content. Configure An Application Load Balancer that targets An Amazon Elastic Container Service (Amazon ECS) service that runs AWS Fargate tasks for the PHP application. Configure the PHP Application to use An Amazon ElastiCache for Redis cluster that runs in multiple Availability Zones."
       },
       "correct_answer": "D",
-      "explanation": "Fully managed services (ECS, ElastiCache) ensure high a vailability. CloudFront improves static content delivery.\nElastic Beanstalk (Option A) lacks decoupling, a nd Lambda (Option B) is unsuitable for PHP sessions."
+      "explanation": "Fully managed services (ECS, ElastiCache) ensure high Availability. CloudFront improves static content delivery.\nElastic Beanstalk (Option A) lacks decoupling, And Lambda (Option B) is unsuitable for PHP sessions."
     },
     {
       "id": "655",
-      "question": "A company runs a web a pplication on A mazon EC2 instances in a n A uto Scaling group that has a target group. The company designed the a pplication to work with session a ffinity (sticky sessions) for a better user experience. The a pplication must be a vailable publicly over the internet a s a n endpoint. A WS WAF must be a pplied to the endpoint for a dditional security. Session a ffinity (sticky sessions) must be configured on the endpoint. Which combination of steps will meet these requirements? (Choose two.)",
+      "question": "A company runs a web Application on Amazon EC2 instances in An Auto Scaling group that has a target group. The company designed the Application to work with session a ffinity (sticky sessions) for a better user experience. The Application must be available publicly over the internet as An endpoint. AWS WAF must be a pplied to the endpoint for additional security. Session a ffinity (sticky sessions) must be configured on the endpoint. Which combination of steps will meet these requirements? (Choose two.)",
       "options": {
-        "A": "Create a public Network Load Balancer. Specify the a pplication target group.",
-        "B": "Create a Gateway Load Balancer. Specify the a pplication target group.",
-        "C": "Create a public A pplication Load Balancer. Specify the a pplication target group.",
-        "D": "Create a second target group. A dd Elastic IP a ddresses to the EC2 instances.",
-        "E": "Create a web A CL in A WS WAF. A ssociate the web A CL with the endpoint"
+        "A": "Create a public Network Load Balancer. Specify the Application target group.",
+        "B": "Create a Gateway Load Balancer. Specify the Application target group.",
+        "C": "Create a public Application Load Balancer. Specify the Application target group.",
+        "D": "Create a second target group. Add Elastic IP addresses to the EC2 instances.",
+        "E": "Create a web ACL in AWS WAF. Associate the web ACL with the endpoint"
       },
       "correct_answer": "CE",
-      "explanation": "A LB supports sticky sessions (unlike NLB/GWLB). WAF provides security.\nElastic IPs (Option D) a re not scalable."
+      "explanation": "ALBsupports sticky sessions (unlike NLB/GWLB). WAF provides security.\nElastic IPs (Option D) are not scalable."
     },
     {
       "id": "656",
-      "question": "A company runs a website that stores images of historical events. Website users need the a bility to search a nd view images based on the year that the event in the image occurred. On a verage, users request each image only once or twice a year. The company wants a highly a vailable solution to store a nd deliver the images to users. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company runs a website that stores images of historical events. Website users need the a bility to search And view images based on the year that the event in the image occurred. On a verage, users request each image only once or twice a year. The company wants a highly available solution to store And deliver the images to users. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
-        "A": "Store images in A mazon Elastic Block Store (A mazon EBS). Use a web server that runs on A mazon EC2.",
-        "B": "Store images in A mazon Elastic File System (A mazon EFS). Use a web server that runs on A mazon EC2.",
-        "C": "Store images in A mazon S3 Standard. Use S3 Standard to directly deliver images by using a static website.",
-        "D": "Store images in A mazon S3 Standard-Infrequent A ccess (S3 Standard-IA). Use S3 Standard-IA to directly deliver images by using a static website."
+        "A": "Store images in Amazon Elastic Block Store (Amazon EBS). Use a web server that runs on Amazon EC2.",
+        "B": "Store images in Amazon Elastic File System (Amazon EFS). Use a web server that runs on Amazon EC2.",
+        "C": "Store images in Amazon S3 Standard. Use S3 Standard to directly deliver images by using a static website.",
+        "D": "Store images in Amazon S3 Standard-Infrequent Access (S3 Standard-IA). Use S3 Standard-IA to directly deliver images by using a static website."
       },
       "correct_answer": "D",
-      "explanation": "Standard-IA is cost-effective for rarely a ccessed images. Static websites simplify delivery.\nEBS/EFS (Options A/B) a re expensive a nd lack S3\u2019s durability."
+      "explanation": "Standard-IA is cost-effective for rarely accessed images. Static websites simplify delivery.\nEBS/EFS (Options A/B) are expensive And lack S3 s durability."
     },
     {
       "id": "657",
-      "question": "A company has multiple A WS a ccounts in a n organization in A WS Organizations that different business units use. The company has multiple ofices a round the world. The company needs to update security group rules to a llow new ofice CIDR ranges or to remove old CIDR ranges a cross the organization. The company wants to centralize the management of security group rules to minimize the a dministrative overhead that updating CIDR ranges requires. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company has multiple AWS accounts in An organization in AWS Organizations that different business units use. The company has multiple ofices around the world. The company needs to update security group rules to Allow new ofice CIDR ranges or to remove old CIDR ranges across the organization. The company wants to centralize the management of security group rules to minimize the a dministrative overhead that updating CIDR ranges requires. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
-        "A": "Create VPC security groups in the organization's management a ccount. Update the security groups when a CIDR range update is necessary.",
-        "B": "Create a VPC customer managed preFix list that contains the list of CIDRs. Use A WS Resource A ccess Manager (A WS RAM) to share the preFix list a cross the organization. Use the preFix list in the security groups a cross the organization.",
-        "C": "Create a n A WS managed preFix list. Use a n A WS Security Hub policy to enforce the security group update a cross the organization. Use a n A WS Lambda function to update the preFix list a utomatically when the CIDR ranges change.",
-        "D": "Create security groups in a central a dministrative A WS a ccount. Create a n A WS Firewall Manager common security group policy for the whole organization. Select the previously created security groups a s primary groups in the policy."
+        "A": "Create VPC security groups in the organization's management account. Update the security groups when a CIDR range update is necessary.",
+        "B": "Create a VPC customer managed preFix list that contains the list of CIDRs. Use AWS Resource Access Manager (AWS RAM) to share the preFix list across the organization. Use the preFix list in the security groups across the organization.",
+        "C": "Create An AWS managed preFix list. Use An AWS Security Hub policy to enforce the security group update across the organization. Use An AWS Lambda function to update the preFix list automatically when the CIDR ranges change.",
+        "D": "Create security groups in a central a dministrative AWS account. Create An AWS Firewall Manager common security group policy for the whole organization. Select the previously created security groups as primary groups in the policy."
       },
       "correct_answer": "B",
-      "explanation": "Prefix lists centralize CIDR management. A WS RAM enables cross-a ccount sharing.\nFirewall Manager (Option D) is overkill for CIDR updates."
+      "explanation": "Prefix lists centralize CIDR management. AWS RAM enables cross-account sharing.\nFirewall Manager (Option D) is overkill for CIDR updates."
     },
     {
       "id": "658",
-      "question": "A company uses a n on-premises network-a ttached storage (NAS) system to provide File shares to its high performance computing (HPC) workloads. The company wants to migrate its latency-sensitive HPC workloads a nd its storage to the A WS Cloud. The company must be a ble to provide NFS a nd SMB multi-protocol a ccess from the File system. Which solution will meet these requirements with the LEAST latency? (Choose two.)",
+      "question": "A company uses An on-premises network-attached storage (NAS) system to provide File shares to its high performance computing (HPC) workloads. The company wants to migrate its latency-sensitive HPC workloads And its storage to the AWS Cloud. The company must be able to provide NFS And SMB multi-protocol Access from the File system. Which solution will meet these requirements with the LEAST latency? (Choose two.)",
       "options": {
         "A": "Deploy compute optimized EC2 instances into a cluster placement group.",
         "B": "Deploy compute optimized EC2 instances into a partition placement group.",
-        "C": "A ttach the EC2 instances to a n A mazon FSx for Lustre File system.",
-        "D": "A ttach the EC2 instances to a n A mazon FSx for OpenZFS File system.",
-        "E": "A ttach the EC2 instances to a n A mazon FSx for NetApp ONTAP File system."
+        "C": "Attach the EC2 instances to An Amazon FSx for Lustre File system.",
+        "D": "Attach the EC2 instances to An Amazon FSx for OpenZFS File system.",
+        "E": "Attach the EC2 instances to An Amazon FSx for NetApp ONTAP File system."
       },
       "correct_answer": "AE",
-      "explanation": "Cluster placement minimizes latency. FSx for ONTAP supports multi-protocol (NFS/SMB) a ccess.\nLustre (Option C) lacks SMB support."
+      "explanation": "Cluster placement minimizes latency. FSx for ONTAP supports multi-protocol (NFS/SMB) access.\nLustre (Option C) lacks SMB support."
     },
     {
       "id": "659",
-      "question": "A company is relocating its data center a nd wants to securely transfer 50 TB of data to A WS within 2 weeks. The existing data center has a Site-to- Site VPN connection to A WS that is 90% utilized. Which A WS service should A solutions a rchitect use to meet these requirements?",
+      "question": "A company is relocating its data center And wants to securely transfer 50 TB of data to AWS within 2 weeks. The existing data center has a Site-to- Site VPN connection to AWS that is 90% utilized. Which AWS service should A solutions architect use to meet these requirements?",
       "options": {
-        "A": "A WS DataSync with a VPC endpoint",
-        "B": "A WS Direct Connect",
-        "C": "A WS Snowball Edge Storage Optimized",
-        "D": "A WS Storage Gateway"
+        "A": "AWS DataSync with a VPC endpoint",
+        "B": "AWS Direct Connect",
+        "C": "AWS Snowball Edge Storage Optimized",
+        "D": "AWS Storage Gateway"
       },
       "correct_answer": "C",
       "explanation": "Snowball Edge is ideal for large offline transfers (50 TB in 2 weeks) without VPN bottlenecks.\nDataSync (Option A) is for online transfers; Direct Connect (Option B) is too slow."
     },
     {
       "id": "660",
-      "question": "A company hosts a n a pplication on A mazon EC2 On-Demand Instances in a n A uto Scaling group. A pplication peak hours occur a t the same time each day. A pplication users report slow a pplication performance a t the start of peak hours. The a pplication performs normally 2-3 hours a fter peak hours begin. The company wants to ensure that the a pplication works properly a t the start of peak hours. Which solution will meet these requirements?",
+      "question": "A company hosts An Application on Amazon EC2 On-Demand Instances in An Auto Scaling group. Application peak hours occur at the same time each day. Application users report slow Application performance at the start of peak hours. The Application performs normally 2-3 hours after peak hours begin. The company wants to ensure that the Application works properly at the start of peak hours. Which solution will meet these requirements?",
       "options": {
-        "A": "Configure a n A pplication Load Balancer to distribute traffic properly to the instances.",
-        "B": "Configure a dynamic scaling policy for the A uto Scaling group to launch new instances based on memory utilization.",
-        "C": "Configure a dynamic scaling policy for the A uto Scaling group to launch new instances based on CPU utilization.",
-        "D": "Configure a scheduled scaling policy for the A uto Scaling group to launch new instances before peak hours."
+        "A": "Configure An Application Load Balancer to distribute traffic properly to the instances.",
+        "B": "Configure a dynamic scaling policy for the Auto Scaling group to launch new instances based on memory utilization.",
+        "C": "Configure a dynamic scaling policy for the Auto Scaling group to launch new instances based on CPU utilization.",
+        "D": "Configure a scheduled scaling policy for the Auto Scaling group to launch new instances before peak hours."
       },
       "correct_answer": "D",
       "explanation": "Proactively scales instances to handle predictable traffic spikes.\nDynamic scaling (Options B/C) reacts too slowly for known peaks."
     },
     {
       "id": "661",
-      "question": "A company runs a pplications on A WS that connect to the company's A mazon RDS database. The a pplications scale on weekends a nd a t peak times of the year. The company wants to scale the database more effectively for its a pplications that connect to the database. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company runs applications on AWS that connect to the company's Amazon RDS database. The applications scale on weekends And at peak times of the year. The company wants to scale the database more effectively for its applications that connect to the database. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Use A mazon DynamoDB with connection pooling with a target group conFiguration for the database. Change the a pplications to use the DynamoDB endpoint.",
-        "B": "Use A mazon RDS Proxy with a target group for the database. Change the a pplications to use the RDS Proxy endpoint.",
-        "C": "Use a custom proxy that runs on A mazon EC2 a s a n intermediary to the database. Change the a pplications to use the custom proxy endpoint.",
-        "D": "Use a n A WS Lambda function to provide connection pooling with a target group conFiguration for the database. Change the a pplications to use the Lambda function."
+        "A": "Use Amazon DynamoDB with connection pooling with a target group  configuration for the database. Change the applications to use the DynamoDB endpoint.",
+        "B": "Use Amazon RDS Proxy with a target group for the database. Change the applications to use the RDS Proxy endpoint.",
+        "C": "Use a custom proxy that runs on Amazon EC2 as An intermediary to the database. Change the applications to use the custom proxy endpoint.",
+        "D": "Use An AWS Lambda function to provide connection pooling with a target group  configuration for the database. Change the applications to use the Lambda function."
       },
       "correct_answer": "B",
       "explanation": "RDS Proxy manages scaling connections with minimal code changes.\nDynamoDB (Option A) is incompatible with RDS."
     },
     {
       "id": "662",
-      "question": "A company uses A WS Cost Explorer to monitor its A WS costs. The company notices that A mazon Elastic Block Store (A mazon EBS) storage a nd snapshot costs increase every month. However, the company does not purchase a dditional EBS storage every month. The company wants to optimize monthly costs for its current storage usage. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company uses AWS Cost Explorer to monitor its AWS costs. The company notices that Amazon Elastic Block Store (Amazon EBS) storage And snapshot costs increase every month. However, the company does not purchase additional EBS storage every month. The company wants to optimize monthly costs for its current storage usage. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Use logs in A mazon CloudWatch Logs to monitor the storage utilization of A mazon EBS. Use A mazon EBS Elastic Volumes to reduce the size of the EBS volumes.",
-        "B": "Use a custom script to monitor space usage. Use A mazon EBS Elastic Volumes to reduce the size of the EBS volumes.",
-        "C": "Delete a ll expired a nd unused snapshots to reduce snapshot costs.",
-        "D": "Delete a ll nonessential snapshots. Use A mazon Data Lifecycle Manager to create a nd manage the snapshots a ccording to the company's snapshot policy requirements."
+        "A": "Use logs in Amazon CloudWatch Logs to monitor the storage utilization of Amazon EBS. Use Amazon EBS Elastic Volumes to reduce the size of the EBS volumes.",
+        "B": "Use a custom script to monitor space usage. Use Amazon EBS Elastic Volumes to reduce the size of the EBS volumes.",
+        "C": "Delete All expired And unused snapshots to reduce snapshot costs.",
+        "D": "Delete All nonessential snapshots. Use Amazon Data Lifecycle Manager to create And manage the snapshots According to the company's snapshot policy requirements."
       },
       "correct_answer": "D",
       "explanation": "A utomates snapshot retention per policy, reducing costs.\nManual resizing (Options A/B) a dds overhead."
     },
     {
       "id": "663",
-      "question": "A company is developing a new a pplication on A WS. The a pplication consists of a n A mazon Elastic Container Service (A mazon ECS) cluster, a n A mazon S3 bucket that contains a ssets for the a pplication, a nd a n A mazon RDS for MySQL database that contains the dataset for the a pplication. The dataset contains sensitive information. The company wants to ensure that only the ECS cluster can a ccess the data in the RDS for MySQL database a nd the data in the S3 bucket. Which solution will meet these requirements?",
+      "question": "A company is developing Anew Application on AWS. The Application consists of An Amazon Elastic Container Service (Amazon ECS) cluster, An Amazon S3 bucket that contains a ssets for the application, And An Amazon RDS for MySQL database that contains the dataset for the application. The dataset contains sensitive information. The company wants to ensure that only the ECS cluster can Access the data in the RDS for MySQL database And the data in the S3 bucket. Which solution will meet these requirements?",
       "options": {
-        "A": "Create a new A WS Key Management Service (A WS KMS) customer managed key to encrypt both the S3 bucket a nd the RDS for MySQL database. Ensure that the KMS key policy includes encrypt a nd decrypt permissions for the ECS task execution role.",
-        "B": "Create a n A WS Key Management Service (A WS KMS) A WS managed key to encrypt both the S3 bucket a nd the RDS for MySQL database. Ensure that the S3 bucket policy speciFies the ECS task execution role a s a user.",
-        "C": "Create a n S3 bucket policy that restricts bucket a ccess to the ECS task execution role. Create a VPC endpoint for A mazon RDS for MySQL. Update the RDS for MySQL security group to a llow a ccess from only the subnets that the ECS cluster will generate tasks in.",
-        "D": "Create a VPC endpoint for A mazon RDS for MySQL. Update the RDS for MySQL security group to a llow a ccess from only the subnets that the ECS cluster will generate tasks in. Create a VPC endpoint for A mazon S3. Update the S3 bucket policy to a llow a ccess from only the S3 VPC endpoint."
+        "A": "Create Anew AWS Key Management Service (AWS KMS) customer managed key to encrypt both the S3 bucket And the RDS for MySQL database. Ensure that the KMS key policy includes encrypt And decrypt permissions for the ECS task execution role.",
+        "B": "Create An AWS Key Management Service (AWS KMS) AWS managed key to encrypt both the S3 bucket And the RDS for MySQL database. Ensure that the S3 bucket policy speciFies the ECS task execution role as a user.",
+        "C": "Create An S3 bucket policy that restricts bucket Access to the ECS task execution role. Create a VPC endpoint for Amazon RDS for MySQL. Update the RDS for MySQL security group to Allow Access from only the subnets that the ECS cluster will generate tasks in.",
+        "D": "Create a VPC endpoint for Amazon RDS for MySQL. Update the RDS for MySQL security group to Allow Access from only the subnets that the ECS cluster will generate tasks in. Create a VPC endpoint for Amazon S3. Update the S3 bucket policy to Allow Access from only the S3 VPC endpoint."
       },
       "correct_answer": "C",
-      "explanation": "VPC endpoints keep traffic private. Security groups limit a ccess to ECS subnets.\nKMS (Options A/B) doesn\u2019t restrict network a ccess."
+      "explanation": "VPC endpoints keep traffic private. Security groups limit Access to ECS subnets.\nKMS (Options A/B) doesn t restrict network access."
     },
     {
       "id": "664",
-      "question": "A company has a web a pplication that runs on premises. The a pplication experiences latency issues during peak hours. The latency issues occur twice each month. A t the start of a latency issue, the a pplication's CPU utilization immediately increases to 10 times its normal a mount. The company wants to migrate the a pplication to A WS to improve latency. The company a lso wants to scale the a pplication a utomatically when a pplication demand increases. The company will use A WS Elastic Beanstalk for a pplication deployment. Which solution will meet these requirements?",
+      "question": "A company has a web Application that runs on premises. The Application experiences latency issues during peak hours. The latency issues occur twice each month. A t the start of a latency issue, the application's CPU utilization immediately increases to 10 times its normal amount. The company wants to migrate the Application to AWS to improve latency. The company also wants to scale the Application automatically when Application demand increases. The company will use AWS Elastic Beanstalk for Application deployment. Which solution will meet these requirements?",
       "options": {
-        "A": "Configure a n Elastic Beanstalk environment to use burstable performance instances in unlimited mode. Configure the environment to scale based on requests.",
-        "B": "Configure a n Elastic Beanstalk environment to use compute optimized instances. Configure the environment to scale based on requests.",
-        "C": "Configure a n Elastic Beanstalk environment to use compute optimized instances. Configure the environment to scale on a schedule.",
-        "D": "Configure a n Elastic Beanstalk environment to use burstable performance instances in unlimited mode. Configure the environment to scale on predictive metrics."
+        "A": "Configure An Elastic Beanstalk environment to use burstable performance instances in unlimited mode. Configure the environment to scale based on requests.",
+        "B": "Configure An Elastic Beanstalk environment to use compute optimized instances. Configure the environment to scale based on requests.",
+        "C": "Configure An Elastic Beanstalk environment to use compute optimized instances. Configure the environment to scale on a schedule.",
+        "D": "Configure An Elastic Beanstalk environment to use burstable performance instances in unlimited mode. Configure the environment to scale on predictive metrics."
       },
       "correct_answer": "A",
-      "explanation": "Burstable instances handle CPU spikes cost-effectively. Request-based scaling matches demand.\nCompute-optimized instances (Option B) a re overprovisioned for intermittent spikes."
+      "explanation": "Burstable instances handle CPU spikes cost-effectively. Request-based scaling matches demand.\nCompute-optimized instances (Option B) are overprovisioned for intermittent spikes."
     },
     {
       "id": "665",
-      "question": "A company has customers located a cross the world. The company wants to use a utomation to secure its systems a nd network infrastructure. The company's security team must be a ble to track a nd a udit a ll incremental changes to the infrastructure. Which solution will meet these requirements?",
+      "question": "A company has customers located across the world. The company wants to use a utomation to secure its systems And network infrastructure. The company's security team must be able to track And audit All incremental changes to the infrastructure. Which solution will meet these requirements?",
       "options": {
-        "A": "Use A WS Organizations to set up the infrastructure. Use A WS ConFig to track changes.",
-        "B": "Use A WS CloudFormation to set up the infrastructure. Use A WS ConFig to track changes.",
-        "C": "Use A WS Organizations to set up the infrastructure. Use A WS Service Catalog to track changes.",
-        "D": "Use A WS CloudFormation to set up the infrastructure. Use A WS Service Catalog to track changes."
+        "A": "Use AWS Organizations to set up the infrastructure. Use AWS ConFig to track changes.",
+        "B": "Use AWS CloudFormation to set up the infrastructure. Use AWS ConFig to track changes.",
+        "C": "Use AWS Organizations to set up the infrastructure. Use AWS Service Catalog to track changes.",
+        "D": "Use AWS CloudFormation to set up the infrastructure. Use AWS Service Catalog to track changes."
       },
       "correct_answer": "B",
-      "explanation": "CloudFormation a utomates infrastructure; Config tracks changes for a uditing.\nService Catalog (Options C/D) is for governance, not change tracking."
+      "explanation": "CloudFormation a utomates infrastructure; Config tracks changes for auditing.\nService Catalog (Options C/D) is for governance, not change tracking."
     },
     {
       "id": "666",
-      "question": "A startup company is hosting a website for its customers on a n A mazon EC2 instance. The website consists of a stateless Python a pplication a nd a MySQL database. The website serves only a small a mount of traffic. The company is concerned a bout the reliability of the instance a nd needs to migrate to a highly a vailable a rchitecture. The company cannot modify the a pplication code. Which combination of a ctions should A solutions a rchitect take to a chieve high a vailability for the website? (Choose two.)",
+      "question": "A startup company is hosting a website for its customers on An Amazon EC2 instance. The website consists of a stateless Python Application And a MySQL database. The website serves only a small amount of traffic. The company is concerned a bout the reliability of the instance And needs to migrate to a highly available architecture. The company cannot modify the Application code. Which combination of actions should A solutions architect take to achieve high Availability for the website? (Choose two.)",
       "options": {
-        "A": "Provision a n internet gateway in each A vailability Zone in use.",
-        "B": "Migrate the database to a n A mazon RDS for MySQL Multi-A Z DB instance.",
-        "C": "Migrate the database to A mazon DynamoDB, a nd enable DynamoDB a uto scaling.",
-        "D": "Use A WS DataSync to synchronize the database data a cross multiple EC2 instances.",
-        "E": "Create a n A pplication Load Balancer to distribute traffic to a n A uto Scaling group of EC2 instances that a re distributed a cross two A vailability Zones."
+        "A": "Provision An internet gateway in each Availability Zone in use.",
+        "B": "Migrate the database to An Amazon RDS for MySQL Multi-AZ DB instance.",
+        "C": "Migrate the database to Amazon DynamoDB, And enable DynamoDB Auto scaling.",
+        "D": "Use AWS DataSync to synchronize the database data across multiple EC2 instances.",
+        "E": "Create An Application Load Balancer to distribute traffic to An Auto Scaling group of EC2 instances that are distributed across two Availability Zones."
       },
       "correct_answer": "BE",
-      "explanation": "RDS Multi-A Z ensures DB high a vailability. A LB + A uto Scaling distributes traffic a cross A Zs.\nDynamoDB (Option C) requires code changes; DataSync (Option D) doesn\u2019t solve HA."
+      "explanation": "RDS Multi-AZ ensures DB high Availability. ALB+ Auto Scaling distributes traffic across A Zs.\nDynamoDB (Option C) requires code changes; DataSync (Option D) doesn t solve HA."
     },
     {
       "id": "667",
-      "question": "A company is moving its data a nd a pplications to A WS during a multiyear migration project. The company wants to securely a ccess data on A mazon S3 from the company's A WS Region a nd from the company's on-premises location. The data must not traverse the internet. The company has established a n A WS Direct Connect connection between its Region a nd its on-premises location. Which solution will meet these requirements?",
+      "question": "A company is moving its data And applications to AWS during a multiyear migration project. The company wants to securely Access data on Amazon S3 from the company's AWS Region And from the company's on-premises location. The data must not traverse the internet. The company has established An AWS Direct Connect connection between its Region And its on-premises location. Which solution will meet these requirements?",
       "options": {
-        "A": "Create gateway endpoints for A mazon S3. Use the gateway endpoints to securely a ccess the data from the Region a nd the on-premises location.",
-        "B": "Create a gateway in A WS Transit Gateway to a ccess A mazon S3 securely from the Region a nd the on-premises location.",
-        "C": "Create interface endpoints for A mazon S3. Use the interface endpoints to securely a ccess the data from the Region a nd the on-premises location.",
-        "D": "Use a n A WS Key Management Service (A WS KMS) key to a ccess the data securely from the Region a nd the on-premises location."
+        "A": "Create gateway endpoints for Amazon S3. Use the gateway endpoints to securely Access the data from the Region And the on-premises location.",
+        "B": "Create a gateway in AWS Transit Gateway to Access Amazon S3 securely from the Region And the on-premises location.",
+        "C": "Create interface endpoints for Amazon S3. Use the interface endpoints to securely Access the data from the Region And the on-premises location.",
+        "D": "Use An AWS Key Management Service (AWS KMS) key to Access the data securely from the Region And the on-premises location."
       },
       "correct_answer": "A",
-      "explanation": "Gateway endpoints a llow secure S3 a ccess via Direct Connect/VPC without internet.\nInterface endpoints (Option C) a re for private-link services, not S3."
+      "explanation": "Gateway endpoints Allow secure S3 Access via Direct Connect/VPC without internet.\nInterface endpoints (Option C) are for private-link services, not S3."
     },
     {
       "id": "668",
-      "question": "A company created a new organization in A WS Organizations. The organization has multiple a ccounts for the company's development teams. The development team members use A WS IAM Identity Center (A WS Single Sign-On) to a ccess the a ccounts. For each of the company's a pplications, the development teams must use a predefined a pplication name to tag resources that a re created. A solutions a rchitect needs to design a solution that gives the development team the a bility to create resources only if the a pplication name tag has a n a pproved value. Which solution will meet these requirements?",
+      "question": "A company created Anew organization in AWS Organizations. The organization has multiple accounts for the company's development teams. The development team members use AWS IAM Identity Center (AWS Single Sign-On) to Access the accounts. For each of the company's applications, the development teams must use a predefined Application name to tag resources that are created. A solutions architect needs to design a solution that gives the development team the a bility to create resources only if the Application name tag has An a pproved value. Which solution will meet these requirements?",
       "options": {
-        "A": "Create a n IAM group that has a conditional A llow policy that requires the a pplication name tag to be speciFied for resources to be created.",
-        "B": "Create a cross-a ccount role that has a Deny policy for a ny resource that has the a pplication name tag.",
-        "C": "Create a resource group in A WS Resource Groups to validate that the tags a re a pplied to a ll resources in a ll a ccounts.",
-        "D": "Create a tag policy in Organizations that has a list of a llowed a pplication names."
+        "A": "Create An IAM group that has a conditional Allow policy that requires the Application name tag to be speciFied for resources to be created.",
+        "B": "Create a cross-account role that has a Deny policy for Any resource that has the Application name tag.",
+        "C": "Create a resource group in AWS Resource Groups to validate that the tags are a pplied to All resources in All accounts.",
+        "D": "Create a tag policy in Organizations that has a list of a llowed Application names."
       },
       "correct_answer": "D",
-      "explanation": "Tag policies enforce standardized tagging a cross a ccounts.\nIAM policies (Option A) cannot validate tag values."
+      "explanation": "Tag policies enforce standardized tagging across accounts.\nIAM policies (Option A) cannot validate tag values."
     },
     {
       "id": "669",
-      "question": "A company runs its databases on A mazon RDS for PostgreSQL. The company wants a secure solution to manage the master user password by rotating the password every 30 days. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company runs its databases on Amazon RDS for PostgreSQL. The company wants a secure solution to manage the master user password by rotating the password every 30 days. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Use A mazon EventBridge to schedule a custom A WS Lambda function to rotate the password every 30 days.",
-        "B": "Use the modify-db-instance command in the A WS CLI to change the password.",
-        "C": "Integrate A WS Secrets Manager with A mazon RDS for PostgreSQL to a utomate password rotation.",
-        "D": "Integrate A WS Systems Manager Parameter Store with A mazon RDS for PostgreSQL to a utomate password rotation."
+        "A": "Use Amazon EventBridge to schedule a custom AWS Lambda function to rotate the password every 30 days.",
+        "B": "Use the modify-db-instance command in the AWS CLI to change the password.",
+        "C": "Integrate AWS Secrets Manager with Amazon RDS for PostgreSQL to a utomate password rotation.",
+        "D": "Integrate AWS Systems Manager Parameter Store with Amazon RDS for PostgreSQL to a utomate password rotation."
       },
       "correct_answer": "C",
       "explanation": "Secrets Manager a utomates rotation every 30 days with zero operational effort.\nManual rotation (Option B) or Parameter Store (Option D) lacks a utomation."
     },
     {
       "id": "670",
-      "question": "A company performs tests on a n a pplication that uses a n A mazon DynamoDB table. The tests run for 4 hours once a week. The company knows how many read a nd write operations the a pplication performs to the table each second during the tests. The company does not currently use DynamoDB for a ny other use case. A solutions a rchitect needs to optimize the costs for the table. Which solution will meet these requirements?",
+      "question": "A company performs tests on An Application that uses An Amazon DynamoDB table. The tests run for 4 hours once a week. The company knows how many read And write operations the Application performs to the table each second during the tests. The company does not currently use DynamoDB for Any other use case. A solutions architect needs to optimize the costs for the table. Which solution will meet these requirements?",
       "options": {
-        "A": "Choose on-demand mode. Update the read a nd write capacity units a ppropriately.",
-        "B": "Choose provisioned mode. Update the read a nd write capacity units a ppropriately.",
+        "A": "Choose on-demand mode. Update the read And write capacity units appropriately.",
+        "B": "Choose provisioned mode. Update the read And write capacity units appropriately.",
         "C": "Purchase DynamoDB reserved capacity for a 1-year term.",
         "D": "Purchase DynamoDB reserved capacity for a 3-year term."
       },
@@ -245,60 +245,60 @@
     },
     {
       "id": "671",
-      "question": "A company runs its a pplications on A mazon EC2 instances. The company performs periodic Financial a ssessments of its A WS costs. The company recently identified unusual spending. The company needs a solution to prevent unusual spending. The solution must monitor costs a nd notify responsible stakeholders in the event of unusual spending. Which solution will meet these requirements?",
+      "question": "A company runs its applications on Amazon EC2 instances. The company performs periodic Financial a ssessments of its AWS costs. The company recently identified unusual spending. The company needs a solution to prevent unusual spending. The solution must monitor costs And notify responsible stakeholders in the event of unusual spending. Which solution will meet these requirements?",
       "options": {
-        "A": "Use a n A WS Budgets template to create a zero spend budget.",
-        "B": "Create a n A WS Cost A nomaly Detection monitor in the A WS Billing a nd Cost Management console.",
-        "C": "Create A WS Pricing Calculator estimates for the current running workload pricing details.",
-        "D": "Use A mazon CloudWatch to monitor costs a nd to identify unusual spending."
+        "A": "Use An AWS Budgets template to create a zero spend budget.",
+        "B": "Create An AWS Cost Anomaly Detection monitor in the AWS Billing And Cost Management console.",
+        "C": "Create AWS Pricing Calculator estimates for the current running workload pricing details.",
+        "D": "Use Amazon CloudWatch to monitor costs And to identify unusual spending."
       },
       "correct_answer": "B",
-      "explanation": "A utomatically detects a nd a lerts on unusual spending.\nCloudWatch (Option D) lacks built-in a nomaly detection."
+      "explanation": "Automatically detects And alerts on unusual spending.\nCloudWatch (Option D) lacks built-in Anomaly detection."
     },
     {
       "id": "672",
-      "question": "A marketing company receives a large a mount of new clickstream data in A mazon S3 from a marketing campaign. The company needs to a nalyze the clickstream data in A mazon S3 quickly. Then the company needs to determine whether to process the data further in the data pipeline. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A marketing company receives a large amount of new clickstream data in Amazon S3 from a marketing campaign. The company needs to Analyze the clickstream data in Amazon S3 quickly. Then the company needs to determine whether to process the data further in the data pipeline. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Create external tables in a Spark catalog. Configure jobs in A WS Glue to query the data.",
-        "B": "Configure a n A WS Glue crawler to crawl the data. Configure A mazon A thena to query the data.",
-        "C": "Create external tables in a Hive metastore. Configure Spark jobs in A mazon EMR to query the data.",
-        "D": "Configure a n A WS Glue crawler to crawl the data. Configure A mazon Kinesis Data A nalytics to use SQL to query the data."
+        "A": "Create external tables in a Spark catalog. Configure jobs in AWS Glue to query the data.",
+        "B": "Configure An AWS Glue crawler to crawl the data. Configure Amazon Athena to query the data.",
+        "C": "Create external tables in a Hive metastore. Configure Spark jobs in Amazon EMR to query the data.",
+        "D": "Configure An AWS Glue crawler to crawl the data. Configure Amazon Kinesis Data Analytics to use SQL to query the data."
       },
       "correct_answer": "B",
-      "explanation": "Glue catalogs data; A thena provides serverless SQL queries.\nEMR (Option C) a dds operational overhead."
+      "explanation": "Glue catalogs data; Athena provides serverless SQL queries.\nEMR (Option C) a dds operational overhead."
     },
     {
       "id": "673",
-      "question": "A company runs a n SMB File server in its data center. The File server stores large Files that the company frequently a ccesses for up to 7 days a fter the File creation date. A fter 7 days, the company needs to be a ble to a ccess the Files with a maximum retrieval time of 24 hours. Which solution will meet these requirements?",
+      "question": "A company runs An SMB File server in its data center. The File server stores large Files that the company frequently accesses for up to 7 days after the File creation date. After 7 days, the company needs to be able to Access the Files with a maximum retrieval time of 24 hours. Which solution will meet these requirements?",
       "options": {
-        "A": "Use A WS DataSync to copy data that is older than 7 days from the SMB File server to A WS.",
-        "B": "Create a n A mazon S3 File Gateway to increase the company's storage space. Create a n S3 Lifecycle policy to transition the data to S3 Glacier Deep A rchive a fter 7 days.",
-        "C": "Create a n A mazon FSx File Gateway to increase the company's storage space. Create a n A mazon S3 Lifecycle policy to transition the data a fter 7 days.",
-        "D": "Configure a ccess to A mazon S3 for each user. Create a n S3 Lifecycle policy to transition the data to S3 Glacier Flexible Retrieval a fter 7 days."
+        "A": "Use AWS DataSync to copy data that is older than 7 days from the SMB File server to AWS.",
+        "B": "Create An Amazon S3 File Gateway to increase the company's storage space. Create An S3 Lifecycle policy to transition the data to S3 Glacier Deep Archive after 7 days.",
+        "C": "Create An Amazon FSx File Gateway to increase the company's storage space. Create An Amazon S3 Lifecycle policy to transition the data after 7 days.",
+        "D": "Configure Access to Amazon S3 for each user. Create An S3 Lifecycle policy to transition the data to S3 Glacier Flexible Retrieval after 7 days."
       },
       "correct_answer": "B",
-      "explanation": "File Gateway extends on-prem storage; Glacier Deep A rchive is cost-effective for a rchives.\nDataSync (Option A) doesn\u2019t a utomate tiering."
+      "explanation": "File Gateway extends on-prem storage; Glacier Deep Archive is cost-effective for archives.\nDataSync (Option A) doesn t a utomate tiering."
     },
     {
       "id": "674",
-      "question": "A company runs a web a pplication on A mazon EC2 instances in a n A uto Scaling group. The a pplication uses a database that runs on a n A mazon RDS for PostgreSQL DB instance. The a pplication performs slowly when traffic increases. The database experiences a heavy read load during periods of high traffic. Which a ctions should A solutions a rchitect take to resolve these performance issues? (Choose two.)",
+      "question": "A company runs a web Application on Amazon EC2 instances in An Auto Scaling group. The Application uses a database that runs on An Amazon RDS for PostgreSQL DB instance. The Application performs slowly when traffic increases. The database experiences a heavy read load during periods of high traffic. Which actions should A solutions architect take to resolve these performance issues? (Choose two.)",
       "options": {
-        "A": "Turn on a uto scaling for the DB instance.",
-        "B": "Create a read replica for the DB instance. Configure the a pplication to send read traffic to the read replica.",
-        "C": "Convert the DB instance to a Multi-A Z DB instance deployment. Configure the a pplication to send read traffic to the standby DB instance.",
-        "D": "Create a n A mazon ElastiCache cluster. Configure the a pplication to cache query results in the ElastiCache cluster.",
-        "E": "Configure the A uto Scaling group subnets to ensure that the EC2 instances a re provisioned in the same A vailability Zone a s the DB instance."
+        "A": "Turn on Auto scaling for the DB instance.",
+        "B": "Create a read replica for the DB instance. Configure the Application to send read traffic to the read replica.",
+        "C": "Convert the DB instance to a Multi-AZ DB instance deployment. Configure the Application to send read traffic to the standby DB instance.",
+        "D": "Create An Amazon ElastiCache cluster. Configure the Application to cache query results in the ElastiCache cluster.",
+        "E": "Configure the Auto Scaling group subnets to ensure that the EC2 instances are provisioned in the same Availability Zone as the DB instance."
       },
       "correct_answer": "BD",
-      "explanation": "Read replicas offload read traffic. ElastiCache reduces DB load.\nMulti-A Z (Option C) doesn\u2019t scale reads; a uto scaling (Option A) isn\u2019t for RDS."
+      "explanation": "Read replicas offload read traffic. ElastiCache reduces DB load.\nMulti-AZ (Option C) doesn t scale reads; Auto scaling (Option A) isn t for RDS."
     },
     {
       "id": "675",
-      "question": "A company uses A mazon EC2 instances a nd A mazon Elastic Block Store (A mazon EBS) volumes to run a n a pplication. The company creates one snapshot of each EBS volume every day to meet compliance requirements. The company wants to implement a n a rchitecture that prevents the a ccidental deletion of EBS volume snapshots. The solution must not change the a dministrative rights of the storage a dministrator user. Which solution will meet these requirements with the LEAST a dministrative effort?",
+      "question": "A company uses Amazon EC2 instances And Amazon Elastic Block Store (Amazon EBS) volumes to run An application. The company creates one snapshot of each EBS volume every day to meet compliance requirements. The company wants to implement An architecture that prevents the a ccidental deletion of EBS volume snapshots. The solution must not change the a dministrative rights of the storage a dministrator user. Which solution will meet these requirements with the LEAST a dministrative effort?",
       "options": {
-        "A": "Create a n IAM role that has permission to delete snapshots. A ttach the role to a new EC2 instance. Use the A WS CLI from the new EC2 instance to delete snapshots.",
-        "B": "Create a n IAM policy that denies snapshot deletion. A ttach the policy to the storage a dministrator user.",
-        "C": "A dd tags to the snapshots. Create retention rules in Recycle Bin for EBS snapshots that have the tags.",
+        "A": "Create An IAM role that has permission to delete snapshots. Attach the role to Anew EC2 instance. Use the AWS CLI from the new EC2 instance to delete snapshots.",
+        "B": "Create An IAM policy that denies snapshot deletion. Attach the policy to the storage a dministrator user.",
+        "C": "Add tags to the snapshots. Create retention rules in Recycle Bin for EBS snapshots that have the tags.",
         "D": "Lock the EBS snapshots to prevent deletion."
       },
       "correct_answer": "D",
@@ -306,120 +306,120 @@
     },
     {
       "id": "676",
-      "question": "A company's a pplication uses Network Load Balancers, A uto Scaling groups, A mazon EC2 instances, a nd databases that a re deployed in a n A mazon VPC. The company wants to capture information a bout traffic to a nd from the network interfaces in near real time in its A mazon VPC. The company wants to send the information to A mazon Opensearch Service for a nalysis. Which solution will meet these requirements?",
+      "question": "A company's Application uses Network Load Balancers, Auto Scaling groups, Amazon EC2 instances, And databases that are deployed in An Amazon VPC. The company wants to capture information a bout traffic to And from the network interfaces in near real time in its Amazon VPC. The company wants to send the information to Amazon Opensearch Service for Analysis. Which solution will meet these requirements?",
       "options": {
-        "A": "Create a log group in A mazon CloudWatch Logs. Configure VPC Flow Logs to send the log data to the log group. Use A mazon Kinesis Data Streams to stream the logs from the log group to OpenSearch Service.",
-        "B": "Create a log group in A mazon CloudWatch Logs. Configure VPC Flow Logs to send the log data to the log group. Use A mazon Kinesis Data Firehose to stream the logs from the log group to OpenSearch Service.",
-        "C": "Create a trail in A WS CloudTrail. Configure VPC Flow Logs to send the log data to the trail. Use A mazon Kinesis Data Streams to stream the logs from the trail to OpenSearch Service.",
-        "D": "Create a trail in A WS CloudTrail. Configure VPC Flow Logs to send the log data to the trail. Use A mazon Kinesis Data Firehose to stream the logs from the trail to OpenSearch Service."
+        "A": "Create a log group in Amazon CloudWatch Logs. Configure VPC Flow Logs to send the log data to the log group. Use Amazon Kinesis Data Streams to stream the logs from the log group to OpenSearch Service.",
+        "B": "Create a log group in Amazon CloudWatch Logs. Configure VPC Flow Logs to send the log data to the log group. Use Amazon Kinesis Data Firehose to stream the logs from the log group to OpenSearch Service.",
+        "C": "Create a trail in AWS CloudTrail. Configure VPC Flow Logs to send the log data to the trail. Use Amazon Kinesis Data Streams to stream the logs from the trail to OpenSearch Service.",
+        "D": "Create a trail in AWS CloudTrail. Configure VPC Flow Logs to send the log data to the trail. Use Amazon Kinesis Data Firehose to stream the logs from the trail to OpenSearch Service."
       },
       "correct_answer": "B",
-      "explanation": "Flow Logs capture traffic; Firehose streams to OpenSearch.\nCloudTrail (Options C/D) logs A PI calls, not network traffic."
+      "explanation": "Flow Logs capture traffic; Firehose streams to OpenSearch.\nCloudTrail (Options C/D) logs API calls, not network traffic."
     },
     {
       "id": "677",
-      "question": "A company is developing a n a pplication that will run on a production A mazon Elastic Kubernetes Service (A mazon EKS) cluster. The EKS cluster has managed node groups that a re provisioned with On-Demand Instances. The company needs a dedicated EKS cluster for development work. The company will use the development cluster infrequently to test the resiliency of the a pplication. The EKS cluster must manage a ll the nodes. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company is developing An Application that will run on a production Amazon Elastic Kubernetes Service (Amazon EKS) cluster. The EKS cluster has managed node groups that are provisioned with On-Demand Instances. The company needs a dedicated EKS cluster for development work. The company will use the development cluster infrequently to test the resiliency of the application. The EKS cluster must manage All the nodes. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Create a managed node group that contains only Spot Instances.",
         "B": "Create two managed node groups. Provision one node group with On-Demand Instances. Provision the second node group with Spot Instances.",
-        "C": "Create a n A uto Scaling group that has a launch conFiguration that uses Spot Instances. Configure the user data to a dd the nodes to the EKS cluster.",
+        "C": "Create An Auto Scaling group that has a launch  configuration that uses Spot Instances. Configure the user data to Add the nodes to the EKS cluster.",
         "D": "Create a managed node group that contains only On-Demand Instances."
       },
       "correct_answer": "B",
-      "explanation": "Balances cost (Spot) a nd reliability (On-Demand) for infrequent dev workloads.\nA ll-Spot (Option A) risks interruptions; self-managed A SG (Option C) a dds overhead."
+      "explanation": "Balances cost (Spot) And reliability (On-Demand) for infrequent dev workloads.\nA ll-Spot (Option A) risks interruptions; self-managed A SG (Option C) a dds overhead."
     },
     {
       "id": "678",
-      "question": "A company stores sensitive data in A mazon S3. A solutions a rchitect needs to create a n encryption solution. The company needs to fully control the a bility of users to create, rotate, a nd disable encryption keys with minimal effort for a ny data that must be encrypted. Which solution will meet these requirements?",
+      "question": "A company stores sensitive data in Amazon S3. A solutions architect needs to create An encryption solution. The company needs to fully control the a bility of users to create, rotate, And disable encryption keys with minimal effort for Any data that must be encrypted. Which solution will meet these requirements?",
       "options": {
-        "A": "Use default server-side encryption with A mazon S3 managed encryption keys (SSE-S3) to store the sensitive data.",
-        "B": "Create a customer managed key by using A WS Key Management Service (A WS KMS). Use the new key to encrypt the S3 objects by using server-side encryption with A WS KMS keys (SSE-KMS).",
-        "C": "Create a n A WS managed key by using A WS Key Management Service (A WS KMS). Use the new key to encrypt the S3 objects by using server-side encryption with A WS KMS keys (SSE-KMS).",
-        "D": "Download S3 objects to a n A mazon EC2 instance. Encrypt the objects by using customer managed keys. Upload the encrypted objects back into A mazon S3."
+        "A": "Use default server-side encryption with Amazon S3 managed encryption keys (SSE-S3) to store the sensitive data.",
+        "B": "Create a customer managed key by using AWS Key Management Service (AWS KMS). Use the new key to encrypt the S3 objects by using server-side encryption with AWS KMS keys (SSE-KMS).",
+        "C": "Create An AWS managed key by using AWS Key Management Service (AWS KMS). Use the new key to encrypt the S3 objects by using server-side encryption with AWS KMS keys (SSE-KMS).",
+        "D": "Download S3 objects to An Amazon EC2 instance. Encrypt the objects by using customer managed keys. Upload the encrypted objects back into Amazon S3."
       },
       "correct_answer": "B",
-      "explanation": "Grants full control over key rotation/a ccess. SSE-S3 (Option A) lacks key management.\nClient-side encryption (Option D) is complex."
+      "explanation": "Grants full control over key rotation/access. SSE-S3 (Option A) lacks key management.\nClient-side encryption (Option D) is complex."
     },
     {
       "id": "679",
-      "question": "A company wants to back up its on-premises virtual machines (VMs) to A WS. The company's backup solution exports on-premises backups to a n A mazon S3 bucket a s objects. The S3 backups must be retained for 30 days a nd must be a utomatically deleted a fter 30 days. Which combination of steps will meet these requirements? (Choose three.)",
+      "question": "A company wants to back up its on-premises virtual machines (VMs) to AWS. The company's backup solution exports on-premises backups to An Amazon S3 bucket as objects. The S3 backups must be retained for 30 days And must be automatically deleted after 30 days. Which combination of steps will meet these requirements? (Choose three.)",
       "options": {
-        "A": "Create a n S3 bucket that has S3 Object Lock enabled.",
-        "B": "Create a n S3 bucket that has object versioning enabled.",
+        "A": "Create An S3 bucket that has S3 Object Lock enabled.",
+        "B": "Create An S3 bucket that has object versioning enabled.",
         "C": "Configure a default retention period of 30 days for the objects.",
-        "D": "Configure a n S3 Lifecycle policy to protect the objects for 30 days.",
-        "E": "Configure a n S3 Lifecycle policy to expire the objects a fter 30 days. F. Configure the backup solution to tag the objects with a 30-day retention period"
+        "D": "Configure An S3 Lifecycle policy to protect the objects for 30 days.",
+        "E": "Configure An S3 Lifecycle policy to expire the objects after 30 days. F. Configure the backup solution to tag the objects with a 30-day retention period"
       },
       "correct_answer": "ACE",
-      "explanation": "Versioning + retention policies a utomate compliance. Lifecycle rules expire objects.\nObject Lock (Option A) prevents deletion; tagging (Option F) doesn\u2019t enforce retention."
+      "explanation": "Versioning + retention policies a utomate compliance. Lifecycle rules expire objects.\nObject Lock (Option A) prevents deletion; tagging (Option F) doesn t enforce retention."
     },
     {
       "id": "680",
-      "question": "A solutions a rchitect needs to copy Files from a n A mazon S3 bucket to a n A mazon Elastic File System (A mazon EFS) File system a nd a nother S3 bucket. The Files must be copied continuously. New Files a re a dded to the original S3 bucket consistently. The copied Files should be overwritten only if the source File changes. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A solutions architect needs to copy Files from An Amazon S3 bucket to An Amazon Elastic File System (Amazon EFS) File system And Another S3 bucket. The Files must be copied continuously. New Files are a dded to the original S3 bucket consistently. The copied Files should be overwritten only if the source File changes. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Create a n A WS DataSync location for both the destination S3 bucket a nd the EFS File system. Create a task for the destination S3 bucket a nd the EFS File system. Set the transfer mode to transfer only data that has changed.",
-        "B": "Create a n A WS Lambda function. Mount the File system to the function. Set up a n S3 event notiFication to invoke the function when Files a re created a nd changed in A mazon S3. Configure the function to copy Files to the File system a nd the destination S3 bucket.",
-        "C": "Create a n A WS DataSync location for both the destination S3 bucket a nd the EFS File system. Create a task for the destination S3 bucket a nd the EFS File system. Set the transfer mode to transfer a ll data.",
-        "D": "Launch a n A mazon EC2 instance in the same VPC a s the File system. Mount the File system. Create a script to routinely synchronize a ll objects that changed in the origin S3 bucket to the destination S3 bucket a nd the mounted File system."
+        "A": "Create An AWS DataSync location for both the destination S3 bucket And the EFS File system. Create a task for the destination S3 bucket And the EFS File system. Set the transfer mode to transfer only data that has changed.",
+        "B": "Create An AWS Lambda function. Mount the File system to the function. Set up An S3 event notiFication to invoke the function when Files are created And changed in Amazon S3. Configure the function to copy Files to the File system And the destination S3 bucket.",
+        "C": "Create An AWS DataSync location for both the destination S3 bucket And the EFS File system. Create a task for the destination S3 bucket And the EFS File system. Set the transfer mode to transfer All data.",
+        "D": "Launch An Amazon EC2 instance in the same VPC as the File system. Mount the File system. Create a script to routinely synchronize All objects that changed in the origin S3 bucket to the destination S3 bucket And the mounted File system."
       },
       "correct_answer": "A",
-      "explanation": "Continuously syncs only modified files to S3/EFS.\nLambda (Option B) requires custom code; full syncs (Option C) a re inefficient."
+      "explanation": "Continuously syncs only modified files to S3/EFS.\nLambda (Option B) requires custom code; full syncs (Option C) are inefficient."
     },
     {
       "id": "681",
-      "question": "A company uses A mazon EC2 instances a nd stores data on A mazon Elastic Block Store (A mazon EBS) volumes. The company must ensure that a ll data is encrypted a t rest by using A WS Key Management Service (A WS KMS). The company must be a ble to control rotation of the encryption keys. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company uses Amazon EC2 instances And stores data on Amazon Elastic Block Store (Amazon EBS) volumes. The company must ensure that All data is encrypted at rest by using AWS Key Management Service (AWS KMS). The company must be able to control rotation of the encryption keys. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Create a customer managed key. Use the key to encrypt the EBS volumes.",
-        "B": "Use a n A WS managed key to encrypt the EBS volumes. Use the key to conFigure a utomatic key rotation.",
-        "C": "Create a n external KMS key with imported key material. Use the key to encrypt the EBS volumes.",
-        "D": "Use a n A WS owned key to encrypt the EBS volumes."
+        "B": "Use An AWS managed key to encrypt the EBS volumes. Use the key to conFigure automatic key rotation.",
+        "C": "Create An external KMS key with imported key material. Use the key to encrypt the EBS volumes.",
+        "D": "Use An AWS owned key to encrypt the EBS volumes."
       },
       "correct_answer": "A",
-      "explanation": "A llows control over key rotation. A WS-managed keys (Option B) limit rotation flexibility."
+      "explanation": "Allows control over key rotation. AWS-managed keys (Option B) limit rotation flexibility."
     },
     {
       "id": "682",
-      "question": "A company needs a solution to enforce data encryption a t rest on A mazon EC2 instances. The solution must a utomatically identify noncompliant resources a nd enforce compliance policies on Findings. Which solution will meet these requirements with the LEAST a dministrative overhead?",
+      "question": "A company needs a solution to enforce data encryption at rest on Amazon EC2 instances. The solution must automatically identify noncompliant resources And enforce compliance policies on Findings. Which solution will meet these requirements with the LEAST a dministrative overhead?",
       "options": {
-        "A": "Use a n IAM policy that a llows users to create only encrypted A mazon Elastic Block Store (A mazon EBS) volumes. Use A WS ConFig a nd A WS Systems Manager to a utomate the detection a nd remediation of unencrypted EBS volumes.",
-        "B": "Use A WS Key Management Service (A WS KMS) to manage a ccess to encrypted A mazon Elastic Block Store (A mazon EBS) volumes. Use A WS Lambda a nd A mazon EventBridge to a utomate the detection a nd remediation of unencrypted EBS volumes.",
-        "C": "Use A mazon Macie to detect unencrypted A mazon Elastic Block Store (A mazon EBS) volumes. Use A WS Systems Manager A utomation rules to a utomatically encrypt existing a nd new EBS volumes.",
-        "D": "Use A mazon inspector to detect unencrypted A mazon Elastic Block Store (A mazon EBS) volumes. Use A WS Systems Manager A utomation rules to a utomatically encrypt existing a nd new EBS volumes."
+        "A": "Use An IAM policy that allows users to create only encrypted Amazon Elastic Block Store (Amazon EBS) volumes. Use AWS ConFig And AWS Systems Manager to a utomate the detection And remediation of unencrypted EBS volumes.",
+        "B": "Use AWS Key Management Service (AWS KMS) to manage Access to encrypted Amazon Elastic Block Store (Amazon EBS) volumes. Use AWS Lambda And Amazon EventBridge to a utomate the detection And remediation of unencrypted EBS volumes.",
+        "C": "Use Amazon Macie to detect unencrypted Amazon Elastic Block Store (Amazon EBS) volumes. Use AWS Systems Manager A utomation rules to automatically encrypt existing And new EBS volumes.",
+        "D": "Use Amazon inspector to detect unencrypted Amazon Elastic Block Store (Amazon EBS) volumes. Use AWS Systems Manager A utomation rules to automatically encrypt existing And new EBS volumes."
       },
       "correct_answer": "A",
       "explanation": "Config detects noncompliant volumes; Systems Manager a utomates remediation.\nMacie (Option C) is for data classification, not encryption."
     },
     {
       "id": "683",
-      "question": "A company is migrating its multi-tier on-premises a pplication to A WS. The a pplication consists of a single-node MySQL database a nd a multi-node web tier. The company must minimize changes to the a pplication during the migration. The company wants to improve a pplication resiliency a fter the migration. Which combination of steps will meet these requirements? (Choose two.)",
+      "question": "A company is migrating its multi-tier on-premises Application to AWS. The Application consists of a single-node MySQL database And a multi-node web tier. The company must minimize changes to the Application during the migration. The company wants to improve Application resiliency after the migration. Which combination of steps will meet these requirements? (Choose two.)",
       "options": {
-        "A": "Migrate the web tier to A mazon EC2 instances in a n A uto Scaling group behind a n A pplication Load Balancer.",
-        "B": "Migrate the database to A mazon EC2 instances in a n A uto Scaling group behind a Network Load Balancer.",
-        "C": "Migrate the database to a n A mazon RDS Multi-A Z deployment.",
-        "D": "Migrate the web tier to a n A WS Lambda function.",
-        "E": "Migrate the database to a n A mazon DynamoDB table."
+        "A": "Migrate the web tier to Amazon EC2 instances in An Auto Scaling group behind An Application Load Balancer.",
+        "B": "Migrate the database to Amazon EC2 instances in An Auto Scaling group behind Anetwork Load Balancer.",
+        "C": "Migrate the database to An Amazon RDS Multi-AZ deployment.",
+        "D": "Migrate the web tier to An AWS Lambda function.",
+        "E": "Migrate the database to An Amazon DynamoDB table."
       },
       "correct_answer": "AC",
-      "explanation": "A uto Scaling improves web tier resiliency; RDS Multi-A Z ensures DB HA.\nLambda (Option D) requires code changes; DynamoDB (Option E) is incompatible."
+      "explanation": "Auto Scaling improves web tier resiliency; RDS Multi-AZ ensures DB HA.\nLambda (Option D) requires code changes; DynamoDB (Option E) is incompatible."
     },
     {
       "id": "684",
-      "question": "A company wants to migrate its web a pplications from on premises to A WS. The company is located close to the eu-central-1 Region. Because of regulations, the company cannot launch some of its a pplications in eu-central-1. The company wants to a chieve single-digit millisecond latency. Which solution will meet these requirements?",
+      "question": "A company wants to migrate its web applications from on premises to AWS. The company is located close to the eu-central-1 Region. Because of regulations, the company cannot launch some of its applications in eu-central-1. The company wants to achieve single-digit millisecond latency. Which solution will meet these requirements?",
       "options": {
-        "A": "Deploy the a pplications in eu-central-1. Extend the company\u2019s VPC from eu-central-1 to a n edge location in A mazon CloudFront.",
-        "B": "Deploy the a pplications in A WS Local Zones by extending the company's VPC from eu-central-1 to the chosen Local Zone.",
-        "C": "Deploy the a pplications in eu-central-1. Extend the company\u2019s VPC from eu-central-1 to the regional edge caches in A mazon CloudFront.",
-        "D": "Deploy the a pplications in A WS Wavelength Zones by extending the company\u2019s VPC from eu-central-1 to the chosen Wavelength Zone."
+        "A": "Deploy the applications in eu-central-1. Extend the company s VPC from eu-central-1 to An edge location in Amazon CloudFront.",
+        "B": "Deploy the applications in AWS Local Zones by extending the company's VPC from eu-central-1 to the chosen Local Zone.",
+        "C": "Deploy the applications in eu-central-1. Extend the company s VPC from eu-central-1 to the regional edge caches in Amazon CloudFront.",
+        "D": "Deploy the applications in AWS Wavelength Zones by extending the company s VPC from eu-central-1 to the chosen Wavelength Zone."
       },
       "correct_answer": "B",
-      "explanation": "Local Zones provide single-digit latency near eu-central-1 while complying with regulations.\nCloudFront (Option A) is for caching, not a pp hosting."
+      "explanation": "Local Zones provide single-digit latency near eu-central-1 while complying with regulations.\nCloudFront (Option A) is for caching, not app hosting."
     },
     {
       "id": "685",
       "question": "A fleet of EC2 instances running in a private subnet needs to connect to the Internet using the IPv6 protocol. What service should we configure to enable this connectivity?",
       "options": {
         "A": "Connect the instances to Route 53",
-        "B": "A NAT Instance",
+        "B": "An AT Instance",
         "C": "An Egress-Only Internet Gateway",
         "D": "AWS Direct Connect"
       },
@@ -569,7 +569,7 @@
         "D": "Reduced latency"
       },
       "correct_answer": "D",
-      "explanation": "Amazon CloudFront is a CDN service that delivers data globally with low latency using a network of edge locations worldwide."
+      "explanation": "Amazon CloudFront is a CDN service that delivers data globally with low latency using Anetwork of edge locations worldwide."
     },
     {
       "id": "698",
@@ -587,13 +587,13 @@
       "id": "699",
       "question": "An application runs on EC2 instances in an Auto Scaling group in a private subnet. How can the application download software updates from the Internet with minimal systems management effort?",
       "options": {
-        "A": "Create a NAT gateway",
-        "B": "Launch a NAT instance",
+        "A": "Create An AT gateway",
+        "B": "Launch An AT instance",
         "C": "Attach Elastic IP addresses",
         "D": "Create a Virtual Private Gateway"
       },
       "correct_answer": "A",
-      "explanation": "A NAT Gateway is a fully managed service providing outbound internet connectivity with minimal ongoing management, unlike NAT instances which require manual management."
+      "explanation": "An AT Gateway is a fully managed service providing outbound internet connectivity with minimal ongoing management, unlike NAT instances which require manual management."
     },
     {
       "id": "700",

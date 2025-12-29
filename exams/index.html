@@ -2,22 +2,27 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<metAname="viewport" content="width=device-width,initial-scale=1" />
 <title>AWS SAA-C03 - Practice exam</title>
 <style>
   body{font-family:Segoe UI,Arial,sans-serif;background:#f3f6ff;padding:20px}
   .card{max-width:900px;margin:0 auto;background:#fff;border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,.12);overflow:hidden}
-  header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:18px}
-  header h1{margin:0;font-size:20px}
-  .meta{display:flex;gap:12px;padding:12px 18px;background:#fbfdff;border-bottom:1px solid #eef2ff}
-  .meta div{font-size:13px;color:#444}
+  /* Improved header and meta styles */
+  header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+  header .header-left{display:flex;flex-direction:column;}
+  header h1{margin:0;font-size:20px;letter-spacing:0.2px;font-weight:700}
+  header .subtitle{font-size:12px;opacity:0.9;margin-top:4px}
+  header .header-right{display:flex;align-items:center;gap:10px}
+  .meta{display:flex;gap:12px;padding:12px 18px;background:#fbfdff;border-bottom:1px solid #eef2ff;align-items: center}
+  /* progress styling for native progress element */
+  .progress{height:10px;background:#eef2ff;border-radius:999px;overflow:hidden;width:100%;max-width:360px;-webkit-appearance:none;appearance:none;border:0}
+  .progress::-webkit-progress-bar{background:transparent}
+  .progress::-webkit-progress-value{background:linear-gradient(90deg,#667eea,#764ba2);border-radius:999px}
+  .progress::-moz-progress-bar{background:linear-gradient(90deg,#667eea,#764ba2);border-radius:999px}
   .save-indicator{display:flex;align-items:center;gap:8px;font-size:13px;color:#444}
-  .save-indicator .spinner{width:10px;height:10px;border-radius:50%;background:#667eea;display:inline-block;opacity:0;transform:scale(.8);transition:opacity .2s,transform .2s}
-  .save-indicator.saving .spinner{opacity:1;transform:scale(1);animation:pulse 1s infinite}
-  .save-indicator .status{font-size:12px;color:#666}
   @keyframes pulse{0%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:0.6}100%{transform:scale(1);opacity:1}}
   /* developer credit styling */
-  .dev-link{font-weight:800;background:linear-gradient(90deg,#0a66c2,#7b61ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none}
+  .dev-link{font-weight:700;color:#fff;text-decoration:none}
   .dev-link:hover{text-decoration:underline;transform:translateY(-1px);transition:all .15s}
   .footer-icon svg{vertical-align:middle;margin-left:6px;fill:currentColor;width:16px;height:16px}
   .container{padding:20px}
@@ -68,14 +73,25 @@
 <body>
   <div class="card">
     <header>
-      <h1>AWS Certified Solutions Architect Associate SAA-C03 Practice Exam</h1>
-      
+      <div class="header-left">
+        <h1>AWS Certified Solutions Architect – Practice Exam</h1>
+        <div class="subtitle">SAA-C03 style questions · lightweight offline progress save</div>
+      </div>
+      <div class="header-right">
+        <small style="opacity:.95">Quick practice — built for fast review</small>
+      </div>
     </header>
 
     <div class="meta">
       <div id="progressMeta">Question: 0 / 0</div>
       <div id="percentMeta">Progress: 0%</div>
-      <div id="timerDisplay" style="font-weight:700;color:#222;min-width:110px;text-align:center">00:00</div>
+      <div style="flex:1;display:flex;align-items:center;justify-content:flex-start">
+        <progress id="progressBar" class="progress" value="0" max="100" aria-label="exam progress"></progress>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <div id="timerDisplay" style="font-weight:700;color:#222;min-width:110px;text-align:center">00:00</div>
+        <button id="pauseResumeBtn" class="secondary" style="padding:6px 10px;border-radius:8px;display:none;min-width:70px">Pause</button>
+      </div>
       <div id="idMeta">ID: -</div>
       <div id="saveMeta" class="save-indicator" aria-live="polite">
         <span class="spinner" id="saveSpinner" aria-hidden="true"></span>
@@ -194,15 +210,17 @@ let examTimerInterval = null;
 let examTimeLeft = 0; // seconds
 let currentExamIsReview = false;
 let examInProgress = false;
+let examPaused = false; // whether the exam timer is currently paused
 
 // Button state management
 function updateButtonStates() {
   const examLoaded = questions.length > 0;
   const saveProgressBtn = document.getElementById('saveProgressBtn');
   const resetProgressBtn = document.getElementById('resetProgressBtn');
+  const pauseResumeBtn = document.getElementById('pauseResumeBtn');
   
   // Show/hide and enable/disable buttons based on exam state
-  const questionButtons = [showBtn, nextBtn, prevBtn, bookmarkBtn, finishBtn, saveProgressBtn, resetProgressBtn, createReviewBtn];
+  const questionButtons = [showBtn, nextBtn, prevBtn, bookmarkBtn, finishBtn, saveProgressBtn, resetProgressBtn, createReviewBtn, pauseResumeBtn];
   questionButtons.forEach(btn => {
     if (btn) {
       btn.style.display = examLoaded ? 'inline-block' : 'none';
@@ -228,6 +246,8 @@ function startTimer(totalSeconds) {
   stopTimer();
   examTimeLeft = totalSeconds;
   updateTimerDisplay();
+  examPaused = false;
+  updatePauseButton();
   examTimerInterval = setInterval(()=>{
     examTimeLeft -= 1;
     updateTimerDisplay();
@@ -240,6 +260,35 @@ function startTimer(totalSeconds) {
 }
 
 function stopTimer(){ if (examTimerInterval) { clearInterval(examTimerInterval); examTimerInterval=null; } }
+
+function updatePauseButton(){
+  const btn = document.getElementById('pauseResumeBtn');
+  if (!btn) return;
+  if (examPaused) { btn.textContent = 'Resume'; btn.style.background = '#ffc107'; }
+  else { btn.textContent = 'Pause'; btn.style.background = '#6c757d'; }
+  // only show pause when an exam is loaded
+  btn.style.display = questions.length>0 ? 'inline-block' : 'none';
+}
+
+// Pause/Resume toggle handler
+document.getElementById('pauseResumeBtn').addEventListener('click', ()=>{
+  if (!examInProgress) return;
+  if (!examPaused) {
+    // pause
+    stopTimer();
+    examPaused = true;
+    updatePauseButton();
+    // persist paused state
+    autosave();
+  } else {
+    // resume
+    examPaused = false;
+    updatePauseButton();
+    // resume timer from remaining time
+    startTimer(Math.max(1, Math.floor(examTimeLeft)));
+    autosave();
+  }
+});
 
 function handleExamToggle() {
   if (examInProgress) {
@@ -257,6 +306,7 @@ function handleExamToggle() {
         const options = document.getElementById('optionsList');
         if (controls) controls.style.display = 'none';
         if (options) options.style.display = 'none';
+      examPaused = false;
       updateButtonStates();
     }
   } else {
@@ -322,8 +372,19 @@ function handleExamToggle() {
       startExamBtn.textContent = 'Stop';
       startExamBtn.className = 'secondary';
       // start countdown timer (default: 100 minutes)
-      const resumeTime = restored && restored.timeLeft ? restored.timeLeft : (100 * 60);
-      startTimer(resumeTime);
+      const resumeTime = restored && typeof restored.timeLeft === 'number' ? restored.timeLeft : (100 * 60);
+      // If the saved state indicates the exam was paused, restore paused state without starting the timer
+      if (restored && restored.examPaused) {
+        examPaused = true;
+        examTimeLeft = resumeTime;
+        updateTimerDisplay();
+        updatePauseButton();
+        // ensure timer is not running
+        stopTimer();
+      } else {
+        examPaused = false;
+        startTimer(resumeTime);
+      }
     }).catch(err=>{ alert('Failed to start exam: ' + err.message); });
     }
   }
@@ -372,8 +433,17 @@ function examLoadedFromReview(reviewArr) {
   startExamBtn.textContent = 'Stop';
   startExamBtn.className = 'secondary';
   // start countdown timer (default: 100 minutes)
-  const resumeTime = restored && restored.timeLeft ? restored.timeLeft : (100 * 60);
-  startTimer(resumeTime);
+  const resumeTime = restored && typeof restored.timeLeft === 'number' ? restored.timeLeft : (100 * 60);
+  if (restored && restored.examPaused) {
+    examPaused = true;
+    examTimeLeft = resumeTime;
+    updateTimerDisplay();
+    updatePauseButton();
+    stopTimer();
+  } else {
+    examPaused = false;
+    startTimer(resumeTime);
+  }
 }
 
 // manual create/update review exam from current session wrongs
@@ -520,7 +590,11 @@ function loadQuestion(index) {
 
 function updateMeta() {
   progressMeta.textContent = `Question: ${currentIndex+1} / ${questions.length}`;
-  percentMeta.textContent = `Progress: ${Math.round(((currentIndex+1)/questions.length)*100)}%`;
+  const pct = Math.round(((currentIndex+1)/questions.length)*100);
+  percentMeta.textContent = `Progress: ${pct}%`;
+  // update native progress element value for accessibility
+  const pb = document.getElementById('progressBar');
+  if (pb) { try { pb.value = pct; pb.setAttribute('aria-valuenow', String(pct)); } catch(e){} }
   idMeta.textContent = `ID: ${questions[currentIndex].id}`;
 }
 
@@ -678,6 +752,7 @@ function saveState(silent){
       showingAnswer: answerPanel.style.display === 'block',
       qIds: questions.map(q=>String(q.id)),
       timeLeft: examTimeLeft,
+      examPaused: !!examPaused,
       examFile: currentExamFile
     };
     localStorage.setItem(stateKey, JSON.stringify(state));
@@ -742,6 +817,8 @@ function restoreStateForExam(examFile){
   awaitingContinue = !!saved.awaitingContinue;
   if (saved.showingAnswer) answerPanel.style.display = 'block';
   if (typeof saved.timeLeft === 'number' && saved.timeLeft > 0) examTimeLeft = saved.timeLeft;
+  // restore paused state if present
+  examPaused = !!saved.examPaused;
   return saved;
 }
 
@@ -1085,6 +1162,14 @@ function loadExamList(){
       if (hasLast) examSelect.value = lastExam;
     }
     updateTimerDisplay();
+    updatePauseButton();
+  }).catch(err=>{
+    console.warn('Failed to load exam index', err);
+    // fallback: try to load all_records.json directly
+    try {
+      examSelect.innerHTML = '<option value="">No exams found</option>';
+    } catch(e){}
+    loadQuestionsFromFile();
   }).catch(err=>{
     console.warn('Failed to load exam index', err);
     // fallback: try to load all_records.json directly
