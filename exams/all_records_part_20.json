@@ -779,6 +779,18 @@
       },
       "correct_answer": "B",
       "explanation": "Amazon EFS is a fully-managed service that makes it easy to set up, scale, and cost-optimize file storage in the Amazon Cloud. EFS file systems are accessible to Amazon EC2 instances via a file system interface (using standard operating system file I/O APIs) and support full file system access semantics (such as strong consistency and file locking). EFS is a good solution for when you need to attach a shared filesystem to multiple EC2 instances across multiple Availability Zones. CORRECT: \"Create an Amazon Elastic File System (Amazon EFS) file system and mount it on the individual Amazon EC2 instances\" is the correct answer. INCORRECT: \"Create an Amazon S3 bucket to store the web content and use Amazon CloudFront to deliver the content\" is incorrect as this may require more effort in terms of reprogramming the application to use the S3 API. INCORRECT: \"Create a shared Amazon Block Store (Amazon EBS) volume and mount it on the individual Amazon EC2 instances\" is incorrect. Please note that you can multi-attach an EBS volume to multiple EC2 instances but the instances must be in the same AZ. INCORRECT: \"Create a volume gateway using AWS Storage Gateway to host the data and mount it to the Auto Scaling group\" is incorrect as a storage gateway is used on-premises. INCORRECT: \"Create an Amazon S3 bucket to store the web content and use Amazon CloudFront to deliver the content\" is incorrect as this may require more effort in terms of reprogramming the application to use the S3 API. INCORRECT: \"Create a shared Amazon Block Store (Amazon EBS) volume and mount it on the individual Amazon EC2 instances\" is incorrect. INCORRECT: \"Create a volume gateway using AWS Storage Gateway to host the data and mount it to the Auto Scaling group\" is incorrect as a storage gateway is used on-premises."
+    },
+    {
+      "id": "1076",
+      "question": "An application is deployed on multiple AWS Regions and accessed from around the world. The application exposes static public IP addresses. Some users are experiencing poor performance when accessing the application over the internet. What should a solutions architect recommend to reduce internet latency?",
+      "options": {
+        "A": "Set up AWS Global Accelerator and add endpoints",
+        "B": "Set up an Amazon CloudFront distribution to access the application",
+        "C": "Set up AWS Direct Connect locations in multiple Regions",
+        "D": "Set up an Amazon Route 53 geoproximity routing policy to route traffic"
+      },
+      "correct_answer": "A",
+      "explanation": "AWS Global Accelerator provides static anycast IP addresses and routes user traffic over the AWS global network to the optimal regional endpoints, reducing internet latency and improving availability for globally accessed applications. CORRECT: \"Set up AWS Global Accelerator and add endpoints\" is the correct answer. INCORRECT: \"Set up an Amazon CloudFront distribution to access the application\" is incorrect because CloudFront cannot expose static public IP addresses. INCORRECT: \"Set up AWS Direct Connect locations in multiple Regions\" is incorrect because Direct Connect is for private connectivity from on-premises to AWS, not for improving general internet user latency. INCORRECT: \"Set up an Amazon Route 53 geoproximity routing policy to route traffic\" is incorrect because Route 53 routing alone does not leverage the AWS global network to reduce latency as effectively as Global Accelerator."
     }
   ]
 }
