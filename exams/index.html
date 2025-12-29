@@ -140,6 +140,7 @@
 
       <div class="controls">
         <button class="secondary" id="nextBtn" disabled>Next →</button>
+        <button class="secondary" id="skipBtn" disabled>Skip</button>
         <button class="secondary" id="prevBtn" disabled>← Prev</button>
         <button class="primary" id="showBtn" disabled>Show Answer</button>
         <button class="bookmark" id="bookmarkBtn" disabled>☆ Bookmark</button>
@@ -204,6 +205,7 @@ const answerPanel = document.getElementById('answerPanel');
 const userInput = document.getElementById('userAnswer');
 const showBtn = document.getElementById('showBtn');
 const nextBtn = document.getElementById('nextBtn');
+const skipBtn = document.getElementById('skipBtn');
 const prevBtn = document.getElementById('prevBtn');
 const bookmarkBtn = document.getElementById('bookmarkBtn');
 const finishBtn = document.getElementById('finishBtn');
@@ -237,7 +239,7 @@ function updateButtonStates() {
   const pauseResumeBtn = document.getElementById('pauseResumeBtn');
   
   // Enable/disable buttons based on exam state; visibility controlled by .controls.visible class
-  const questionButtons = [showBtn, nextBtn, prevBtn, bookmarkBtn, finishBtn, saveProgressBtn, resetProgressBtn, createReviewBtn, pauseResumeBtn];
+  const questionButtons = [showBtn, nextBtn, skipBtn, prevBtn, bookmarkBtn, finishBtn, saveProgressBtn, resetProgressBtn, createReviewBtn, pauseResumeBtn];
   questionButtons.forEach(btn => {
     if (btn) {
       // don't touch display here — CSS (.controls.visible) controls visibility
@@ -712,6 +714,20 @@ nextBtn.addEventListener('click', ()=> {
 prevBtn.addEventListener('click', ()=> {
   if (currentIndex>0) {
     loadQuestion(currentIndex-1);
+  }
+});
+
+skipBtn.addEventListener('click', ()=> {
+  // Skip current question without answer
+  awaitingContinue = false;
+  answerPanel.style.display = 'none';
+  userInput.disabled = false;
+  Array.from(optionsList.children).forEach(c=>c.disabled = false);
+  clearConfetti();
+  if (currentIndex < questions.length-1) {
+    loadQuestion(currentIndex+1);
+  } else {
+    finishExam();
   }
 });
 
