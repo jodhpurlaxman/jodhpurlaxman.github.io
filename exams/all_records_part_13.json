@@ -2,608 +2,608 @@
   "questions": [
     {
       "id": "601",
-      "question": "A company runs its critical database on an Amazon RDS for PostgreSQL DB instance. The company wants to migrate to Amazon Aurora PostgreSQL with minimal downtime and data loss. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company runs its critical database on a n A mazon RDS for PostgreSQL DB instance. The company wants to migrate to A mazon A urora PostgreSQL with minimal downtime a nd data loss. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Create a DB snapshot of the RDS for PostgreSQL DB instance to populate a new Aurora PostgreSQL DB cluster.",
-        "B": "Create an Aurora read replica of the RDS for PostgreSQL DB instance. Promote the Aurora read replicate to a new Aurora PostgreSQL DB cluster.",
-        "C": "Use data import from Amazon S3 to migrate the database to an Aurora PostgreSQL DB cluster.",
-        "D": "Use the pg_dump utility to back up the RDS for PostgreSQL database. Restore the backup to a new Aurora PostgreSQL DB cluster."
+        "A": "Create a DB snapshot of the RDS for PostgreSQL DB instance to populate a new A urora PostgreSQL DB cluster.",
+        "B": "Create a n A urora read replica of the RDS for PostgreSQL DB instance. Promote the A urora read replicate to a new A urora PostgreSQL DB cluster.",
+        "C": "Use data import from A mazon S3 to migrate the database to a n A urora PostgreSQL DB cluster.",
+        "D": "Use the pg_dump utility to back up the RDS for PostgreSQL database. Restore the backup to a new A urora PostgreSQL DB cluster."
       },
       "correct_answer": "B",
-      "explanation": "Aurora Read Replica: Creating an Aurora read replica from the RDS for PostgreSQL DB instance is a low-impact operation that allows you to replicate the data to Aurora with minimal downtime.\nPromote to Aurora PostgreSQL DB Cluster: Once the read replica is in sync with the primary RDS instance, you can promote the Aurora read replica to become the new primary cluster."
+      "explanation": "A urora Read Replica: Creating a n A urora read replica from the RDS for PostgreSQL DB instance is a low-impact operation that a llows you to replicate the data to A urora with minimal downtime.\nPromote to A urora PostgreSQL DB Cluster: Once the read replica is in sync with the primary RDS instance, you can promote the A urora read replica to become the new primary cluster."
     },
     {
       "id": "602",
-      "question": "A company's infrastructure consists of hundreds of Amazon EC2 instances that use Amazon Elastic Block Store (Amazon EBS) storage. A solutions architect must ensure that every EC2 instance can be recovered after adisaster. What should the solutions architect do to meet this requirement with the LEAST amount of effort?",
+      "question": "A company's infrastructure consists of hundreds of A mazon EC2 instances that use A mazon Elastic Block Store (A mazon EBS) storage. A solutions a rchitect must ensure that every EC2 instance can be recovered a fter a disaster. What should the solutions a rchitect do to meet this requirement with the LEAST a mount of effort?",
       "options": {
-        "A": "Take a snapshot of the EBS storage that is attached to each EC2 instance. Create an AWS CloudFormation template to launch new EC2 instances from the EBS storage.",
-        "B": "Take a snapshot of the EBS storage that is attached to each EC2 instance. Use AWS Elastic Beanstalk to set the environment based on the EC2 template and attach the EBS storage.",
-        "C": "Use AWS Backup to set up a backup plan for the entire group of EC2 instances. Use the AWS Backup API or the AWS CLI to speed up the restore process for multiple EC2 instances.",
-        "D": "Create an AWS Lambda function to take a snapshot of the EBS storage that is attached to each EC2 instance and copy the Amazon Machine Images (AMIs). Create another Lambda function to perform the restores with the copied AMIs and attach the EBS storage."
+        "A": "Take a snapshot of the EBS storage that is a ttached to each EC2 instance. Create a n A WS CloudFormation template to launch new EC2 instances from the EBS storage.",
+        "B": "Take a snapshot of the EBS storage that is a ttached to each EC2 instance. Use A WS Elastic Beanstalk to set the environment based on the EC2 template a nd a ttach the EBS storage.",
+        "C": "Use A WS Backup to set up a backup plan for the entire group of EC2 instances. Use the A WS Backup A PI or the A WS CLI to speed up the restore process for multiple EC2 instances.",
+        "D": "Create a n A WS Lambda function to take a snapshot of the EBS storage that is a ttached to each EC2 instance a nd copy the A mazon Machine Images (A MIs). Create a nother Lambda function to perform the restores with the copied A MIs a nd a ttach the EBS storage."
       },
       "correct_answer": "C",
-      "explanation": "AWS Backup: AWS Backup is a fully managed backup service that centralizes and automates the backup of data across AWS services. \nBackup Plan: You can set up a backup plan in AWS Backup to create and manage backups of the entire group of EC2 instances. \nAWS Backup provides a streamlined process for restoring data. You can use the AWS Backup console, API, or AWS CLI to initiate the restore process for multiple EC2 instances."
+      "explanation": "A WS Backup: A WS Backup is a fully managed backup service that centralizes a nd a utomates the backup of data a cross A WS services. \nBackup Plan: You can set up a backup plan in A WS Backup to create a nd manage backups of the entire group of EC2 instances. \nA WS Backup provides a streamlined process for restoring data. You can use the A WS Backup console, A PI, or A WS CLI to initiate the restore process for multiple EC2 instances."
     },
     {
       "id": "603",
-      "question": "A company recently migrated to the AWS Cloud. The company wants a serverless solution for large-scale parallel on-demand processing of asemistructured dataset. The data consists of logs, media Files, sales transactions, and IoT sensor data that is stored in Amazon S3. The company wants the solution to process thousands of items in the dataset in parallel. Which solution will meet these requirements with the MOST operational eficiency?",
+      "question": "A company recently migrated to the A WS Cloud. The company wants a serverless solution for large-scale parallel on-demand processing of a semistructured dataset. The data consists of logs, media Files, sales transactions, a nd IoT sensor data that is stored in A mazon S3. The company wants the solution to process thousands of items in the dataset in parallel. Which solution will meet these requirements with the MOST operational eficiency?",
       "options": {
-        "A": "Use the AWS Step Functions Map state in Inline mode to process the data in parallel.",
-        "B": "Use the AWS Step Functions Map state in Distributed mode to process the data in parallel.",
-        "C": "Use AWS Glue to process the data in parallel.",
-        "D": "Use several AWS Lambda functions to process the data in parallel."
+        "A": "Use the A WS Step Functions Map state in Inline mode to process the data in parallel.",
+        "B": "Use the A WS Step Functions Map state in Distributed mode to process the data in parallel.",
+        "C": "Use A WS Glue to process the data in parallel.",
+        "D": "Use several A WS Lambda functions to process the data in parallel."
       },
       "correct_answer": "B",
-      "explanation": "The Map state in AWS Step Functions is designed for parallel processing. In Distributed mode, it efficiently processes items in parallel, providing a scalable solution. This allows you to process thousands of items concurrently, achieving high throughput."
+      "explanation": "The Map state in A WS Step Functions is designed for parallel processing. In Distributed mode, it efficiently processes items in parallel, providing a scalable solution. This a llows you to process thousands of items concurrently, a chieving high throughput."
     },
     {
       "id": "604",
-      "question": "A company will migrate 10 PB of data to Amazon S3 in 6 weeks. The current data center has a 500 Mbps uplink to the internet. Other on-premises applications share the uplink. The company can use 80% of the internet bandwidth for this one-time migration task. Which solution will meet these requirements?",
+      "question": "A company will migrate 10 PB of data to A mazon S3 in 6 weeks. The current data center has a 500 Mbps uplink to the internet. Other on-premises a pplications share the uplink. The company can use 80% of the internet bandwidth for this one-time migration task. Which solution will meet these requirements?",
       "options": {
-        "A": "Configure AWS DataSync to migrate the data to Amazon S3 and to automatically verify the data.",
-        "B": "Use rsync to transfer the data directly to Amazon S3.",
-        "C": "Use the AWS CLI and multiple copy processes to send the data directly to Amazon S3.",
-        "D": "Order multiple AWS Snowball devices. Copy the data to the devices. Send the devices to AWS to copy the data to Amazon S3."
+        "A": "Configure A WS DataSync to migrate the data to A mazon S3 a nd to a utomatically verify the data.",
+        "B": "Use rsync to transfer the data directly to A mazon S3.",
+        "C": "Use the A WS CLI a nd multiple copy processes to send the data directly to A mazon S3.",
+        "D": "Order multiple A WS Snowball devices. Copy the data to the devices. Send the devices to A WS to copy the data to A mazon S3."
       },
       "correct_answer": "D",
-      "explanation": "With only a 500 Mbps uplink bandwidth shared among other on-premises applications, transferring 10 PB of data over the internet would be impractical and time-consuming. AWS Snowball provides a physical device that can be shipped to the company to facilitate faster initial data transfer."
+      "explanation": "With only a 500 Mbps uplink bandwidth shared a mong other on-premises a pplications, transferring 10 PB of data over the internet would be impractical a nd time-consuming. A WS Snowball provides a physical device that can be shipped to the company to facilitate faster initial data transfer."
     },
     {
       "id": "605",
-      "question": "A company has several on-premises Internet Small Computer Systems Interface (ISCSI) network storage servers. The company wants to reduce the number of these servers by moving to the AWS Cloud. A solutions architect must provide low-latency access to frequently used data and reduce the dependency on on-premises servers with aminimal number of infrastructure changes. Which solution will meet these requirements?",
+      "question": "A company has several on-premises Internet Small Computer Systems Interface (ISCSI) network storage servers. The company wants to reduce the number of these servers by moving to the A WS Cloud. A solutions a rchitect must provide low-latency a ccess to frequently used data a nd reduce the dependency on on-premises servers with a minimal number of infrastructure changes. Which solution will meet these requirements?",
       "options": {
-        "A": "Deploy an Amazon S3 File Gateway.",
-        "B": "Deploy Amazon Elastic Block Store (Amazon EBS) storage with backups to Amazon S3.",
-        "C": "Deploy an AWS Storage Gateway volume gateway that is conFigured with stored volumes.",
-        "D": "Deploy an AWS Storage Gateway volume gateway that is conFigured with cached volumes."
+        "A": "Deploy a n A mazon S3 File Gateway.",
+        "B": "Deploy A mazon Elastic Block Store (A mazon EBS) storage with backups to A mazon S3.",
+        "C": "Deploy a n A WS Storage Gateway volume gateway that is conFigured with stored volumes.",
+        "D": "Deploy a n A WS Storage Gateway volume gateway that is conFigured with cached volumes."
       },
       "correct_answer": "D",
-      "explanation": "A volume gateway with cached volumes is a good fit when you want to keep frequently accessed data on-premises for low-latency access while still having a copy in the AWS Cloud. Cached volumes store the entire dataset in Amazon S3 while retaining the most frequently accessed data locally."
+      "explanation": "A volume gateway with cached volumes is a good fit when you want to keep frequently a ccessed data on-premises for low-latency a ccess while still having a copy in the A WS Cloud. Cached volumes store the entire dataset in A mazon S3 while retaining the most frequently a ccessed data locally."
     },
     {
       "id": "606",
-      "question": "A solutions architect is designing an application that will allow business users to upload objects to Amazon S3. The solution needs to maximize object durability. Objects also must be readily available at any time and for any length of time. Users will access objects frequently within the First 30 days after the objects are uploaded, but users are much less likely to access objects that are older than 30 days. Which solution meets these requirements MOST cost-effectively?",
+      "question": "A solutions a rchitect is designing a n a pplication that will a llow business users to upload objects to A mazon S3. The solution needs to maximize object durability. Objects a lso must be readily a vailable a t a ny time a nd for a ny length of time. Users will a ccess objects frequently within the First 30 days a fter the objects a re uploaded, but users a re much less likely to a ccess objects that a re older than 30 days. Which solution meets these requirements MOST cost-effectively?",
       "options": {
-        "A": "Store all the objects in S3 Standard with an S3 Lifecycle rule to transition the objects to S3 Glacier after 30 days.",
-        "B": "Store all the objects in S3 Standard with an S3 Lifecycle rule to transition the objects to S3 Standard-Infrequent Access (S3 Standard-IA) after 30 days.",
-        "C": "Store all the objects in S3 Standard with an S3 Lifecycle rule to transition the objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 30 days.",
-        "D": "Store all the objects in S3 Intelligent-Tiering with an S3 Lifecycle rule to transition the objects to S3 Standard-Infrequent Access (S3 Standard-IA) after 30 days."
+        "A": "Store a ll the objects in S3 Standard with a n S3 Lifecycle rule to transition the objects to S3 Glacier a fter 30 days.",
+        "B": "Store a ll the objects in S3 Standard with a n S3 Lifecycle rule to transition the objects to S3 Standard-Infrequent A ccess (S3 Standard-IA) a fter 30 days.",
+        "C": "Store a ll the objects in S3 Standard with a n S3 Lifecycle rule to transition the objects to S3 One Zone-Infrequent A ccess (S3 One Zone-IA) a fter 30 days.",
+        "D": "Store a ll the objects in S3 Intelligent-Tiering with a n S3 Lifecycle rule to transition the objects to S3 Standard-Infrequent A ccess (S3 Standard-IA) a fter 30 days."
       },
       "correct_answer": "B",
-      "explanation": "Storing objects in S3 Standard ensures low-latency access and high durability. After 30 days, transitioning objects to S3 Standard-IA allows you to take advantage of a lower storage cost for objects that are less frequently accessed."
+      "explanation": "Storing objects in S3 Standard ensures low-latency a ccess a nd high durability. A fter 30 days, transitioning objects to S3 Standard-IA a llows you to take a dvantage of a lower storage cost for objects that a re less frequently a ccessed."
     },
     {
       "id": "607",
-      "question": "A company has migrated atwo-tier application from its on-premises data center to the AWS Cloud. The data tier is a Multi-AZ deployment of Amazon RDS for Oracle with 12 TB of General Purpose SSD Amazon Elastic Block Store (Amazon EBS) storage. The application is designed to process and store documents in the database as binary large objects (blobs) with an average document size of 6 MB. The database size has grown over time, reducing the performance and increasing the cost of storage. The company must improve the database performance and needs a solution that is highly available and resilient. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company has migrated a two-tier a pplication from its on-premises data center to the A WS Cloud. The data tier is a Multi-A Z deployment of A mazon RDS for Oracle with 12 TB of General Purpose SSD A mazon Elastic Block Store (A mazon EBS) storage. The a pplication is designed to process a nd store documents in the database a s binary large objects (blobs) with a n a verage document size of 6 MB. The database size has grown over time, reducing the performance a nd increasing the cost of storage. The company must improve the database performance a nd needs a solution that is highly a vailable a nd resilient. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Reduce the RDS DB instance size. Increase the storage capacity to 24 TiB. Change the storage type to Magnetic.",
         "B": "Increase the RDS DB instance size. Increase the storage capacity to 24 TiChange the storage type to Provisioned IOPS.",
-        "C": "Create an Amazon S3 bucket. Update the application to store documents in the S3 bucket. Store the object metadata in the existing database.",
-        "D": "Create an Amazon DynamoDB table. Update the application to use DynamoDB. Use AWS Database Migration Service (AWS DMS) to migrate data from the Oracle database to DynamoDB."
+        "C": "Create a n A mazon S3 bucket. Update the a pplication to store documents in the S3 bucket. Store the object metadata in the existing database.",
+        "D": "Create a n A mazon DynamoDB table. Update the a pplication to use DynamoDB. Use A WS Database Migration Service (A WS DMS) to migrate data from the Oracle database to DynamoDB."
       },
       "correct_answer": "C",
-      "explanation": "Amazon S3 is highly scalable, durable, and cost-effective for storing objects, making it well-suited for binary large objects (blobs) such as documents. It provides low-latency access and is designed to handle large volumes of data."
+      "explanation": "A mazon S3 is highly scalable, durable, a nd cost-effective for storing objects, making it well-suited for binary large objects (blobs) such a s documents. It provides low-latency a ccess a nd is designed to handle large volumes of data."
     },
     {
       "id": "608",
-      "question": "A company has an application that serves clients that are deployed in more than 20.000 retail storefront locations around the world. The application consists of backend web services that are exposed over HTTPS on port 443. The application is hosted on Amazon EC2 instances behind an Application Load Balancer (ALB). The retail locations communicate with the web application over the public internet. The company allows each retail location to register the IP address that the retail location has been allocated by its local ISP. The company's security team recommends to increase the security of the application endpoint by restricting access to only the IP addresses registered by the retail locations. What should A solutions architect do to meet these requirements?",
+      "question": "A company has a n a pplication that serves clients that a re deployed in more than 20.000 retail storefront locations a round the world. The a pplication consists of backend web services that a re exposed over HTTPS on port 443. The a pplication is hosted on A mazon EC2 instances behind a n A pplication Load Balancer (A LB). The retail locations communicate with the web a pplication over the public internet. The company a llows each retail location to register the IP a ddress that the retail location has been a llocated by its local ISP. The company's security team recommends to increase the security of the a pplication endpoint by restricting a ccess to only the IP a ddresses registered by the retail locations. What should A solutions a rchitect do to meet these requirements?",
       "options": {
-        "A": "Associate an AWS WAF web ACL with the ALB. Use IP rule sets on the ALB to Filter traffic. Update the IP addresses in the rule to include the registered IP addresses.",
-        "B": "Deploy AWS Firewall Manager to manage the ALConfigure Firewall rules to restrict traffic to the ALModify the Firewall rules to include the registered IP addresses.",
-        "C": "Store the IP addresses in an Amazon DynamoDB table. Configure an AWS Lambda authorization function on the ALB to validate that incoming requests are from the registered IP addresses.",
-        "D": "Configure the network ACL on the subnet that contains the public interface of the ALB. Update the ingress rules on the network ACL with entries for each of the registered IP addresses."
+        "A": "A ssociate a n A WS WAF web A CL with the A LB. Use IP rule sets on the A LB to Filter traffic. Update the IP a ddresses in the rule to include the registered IP a ddresses.",
+        "B": "Deploy A WS Firewall Manager to manage the A LConfigure Firewall rules to restrict traffic to the A LModify the Firewall rules to include the registered IP a ddresses.",
+        "C": "Store the IP a ddresses in a n A mazon DynamoDB table. Configure a n A WS Lambda a uthorization function on the A LB to validate that incoming requests a re from the registered IP a ddresses.",
+        "D": "Configure the network A CL on the subnet that contains the public interface of the A LB. Update the ingress rules on the network A CL with entries for each of the registered IP a ddresses."
       },
       "correct_answer": "A",
       "explanation": ""
     },
     {
       "id": "609",
-      "question": "A company is building a data analysis platform on AWS by using AWS Lake Formation. The platform will ingest data from different sources such as Amazon S3 and Amazon RDS. The company needs asecure solution to prevent access to portions of the data that contain sensitive information. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company is building a data a nalysis platform on A WS by using A WS Lake Formation. The platform will ingest data from different sources such a s A mazon S3 a nd A mazon RDS. The company needs a secure solution to prevent a ccess to portions of the data that contain sensitive information. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Create an IAM role that includes permissions to access Lake Formation tables.",
-        "B": "Create data Filters to implement row-level security and cell-level security.",
-        "C": "Create an AWS Lambda function that removes sensitive information before Lake Formation ingests the data.",
-        "D": "Create an AWS Lambda function that periodically queries and removes sensitive information from Lake Formation tables."
+        "A": "Create a n IAM role that includes permissions to a ccess Lake Formation tables.",
+        "B": "Create data Filters to implement row-level security a nd cell-level security.",
+        "C": "Create a n A WS Lambda function that removes sensitive information before Lake Formation ingests the data.",
+        "D": "Create a n A WS Lambda function that periodically queries a nd removes sensitive information from Lake Formation tables."
       },
       "correct_answer": "B",
-      "explanation": "AWS Lake Formation allows you to create data filters that can be used for row-level security and cell-level security."
+      "explanation": "A WS Lake Formation a llows you to create data filters that can be used for row-level security a nd cell-level security."
     },
     {
       "id": "610",
-      "question": "A company deploys Amazon EC2 instances that run in a VPC. The EC2 instances load source data into Amazon S3 buckets so that the data can be processed in the future. According to compliance laws, the data must not be transmitted over the public internet. Servers in the company's on- premises data center will consume the output from an application that runs on the EC2 instances. Which solution will meet these requirements?",
+      "question": "A company deploys A mazon EC2 instances that run in a VPC. The EC2 instances load source data into A mazon S3 buckets so that the data can be processed in the future. A ccording to compliance laws, the data must not be transmitted over the public internet. Servers in the company's on- premises data center will consume the output from a n a pplication that runs on the EC2 instances. Which solution will meet these requirements?",
       "options": {
-        "A": "Deploy an interface VPC endpoint for Amazon EC2. Create an AWS Site-to-Site VPN connection between the company and the VPC.",
-        "B": "Deploy a gateway VPC endpoint for Amazon S3. Set up an AWS Direct Connect connection between the on-premises network and the VPC.",
-        "C": "Set up an AWS Transit Gateway connection from the VPC to the S3 buckets. Create an AWS Site-to-Site VPN connection between the company and the VPC.",
-        "D": "Set up proxy EC2 instances that have routes to NAT gateways. Configure the proxy EC2 instances to fetch S3 data and feed the application instances."
+        "A": "Deploy a n interface VPC endpoint for A mazon EC2. Create a n A WS Site-to-Site VPN connection between the company a nd the VPC.",
+        "B": "Deploy a gateway VPC endpoint for A mazon S3. Set up a n A WS Direct Connect connection between the on-premises network a nd the VPC.",
+        "C": "Set up a n A WS Transit Gateway connection from the VPC to the S3 buckets. Create a n A WS Site-to-Site VPN connection between the company a nd the VPC.",
+        "D": "Set up proxy EC2 instances that have routes to NAT gateways. Configure the proxy EC2 instances to fetch S3 data a nd feed the a pplication instances."
       },
       "correct_answer": "B",
-      "explanation": "A gateway VPC endpoint allows communication between resources in your VPC and Amazon S3 without traversing the public internet.\nAWS Direct Connect provides a dedicated network connection from the on-premises data center to the VPC. This dedicated connection enhances security and ensures a reliable and consistent connection between on-premises servers and the EC2 instances in the VPC."
+      "explanation": "A gateway VPC endpoint a llows communication between resources in your VPC a nd A mazon S3 without traversing the public internet.\nA WS Direct Connect provides a dedicated network connection from the on-premises data center to the VPC. This dedicated connection enhances security a nd ensures a reliable a nd consistent connection between on-premises servers a nd the EC2 instances in the VPC."
     },
     {
       "id": "611",
-      "question": "A company has an application with a REST-based interface that allows data to be received in near-real time from athird-party vendor. Once received, the application processes and stores the data for further analysis. The application is running on Amazon EC2 instances. The third-party vendor has received many 503 Service Unavailable Errors when sending data to the application. When the data volume spikes, the compute capacity reaches its maximum limit and the application is unable to process all requests. Which design should A solutions architect recommend to provide amore scalable solution?",
+      "question": "A company has a n a pplication with a REST-based interface that a llows data to be received in near-real time from a third-party vendor. Once received, the a pplication processes a nd stores the data for further a nalysis. The a pplication is running on A mazon EC2 instances. The third-party vendor has received many 503 Service Unavailable Errors when sending data to the a pplication. When the data volume spikes, the compute capacity reaches its maximum limit a nd the a pplication is unable to process a ll requests. Which design should A solutions a rchitect recommend to provide a more scalable solution?",
       "options": {
-        "A": "Use Amazon Kinesis Data Streams to ingest the data. Process the data using AWS Lambda functions.",
-        "B": "Use Amazon API Gateway on top of the existing application. Create a usage plan with a quota limit for the third-party vendor.",
-        "C": "Use Amazon Simple NotiFication Service (Amazon SNS) to ingest the data. Put the EC2 instances in an Auto Scaling group behind an Application Load Balancer.",
-        "D": "Repackage the application as a container. Deploy the application using Amazon Elastic Container Service (Amazon ECS) using the EC2 launch type with an Auto Scaling group."
+        "A": "Use A mazon Kinesis Data Streams to ingest the data. Process the data using A WS Lambda functions.",
+        "B": "Use A mazon A PI Gateway on top of the existing a pplication. Create a usage plan with a quota limit for the third-party vendor.",
+        "C": "Use A mazon Simple NotiFication Service (A mazon SNS) to ingest the data. Put the EC2 instances in a n A uto Scaling group behind a n A pplication Load Balancer.",
+        "D": "Repackage the a pplication a s a container. Deploy the a pplication using A mazon Elastic Container Service (A mazon ECS) using the EC2 launch type with a n A uto Scaling group."
       },
       "correct_answer": "A",
-      "explanation": "Kinesis Data Streams is designed for ingesting and processing real-time streaming data at scale. It can handle large volumes of data and provides the ability to scale horizontally.\n Using Lambda functions allows for serverless, event-driven processing of the data. Lambda automatically scales based on the number of incoming events, providing the needed elasticity to handle spikes in data volume without the need to manage underlying infrastructure."
+      "explanation": "Kinesis Data Streams is designed for ingesting a nd processing real-time streaming data a t scale. It can handle large volumes of data a nd provides the a bility to scale horizontally.\n Using Lambda functions a llows for serverless, event-driven processing of the data. Lambda a utomatically scales based on the number of incoming events, providing the needed elasticity to handle spikes in data volume without the need to manage underlying infrastructure."
     },
     {
       "id": "612",
-      "question": "A company has an application that runs on Amazon EC2 instances in a private subnet. The application needs to process sensitive information from an Amazon S3 bucket. The application must not use the internet to connect to the S3 bucket. Which solution will meet these requirements?",
+      "question": "A company has a n a pplication that runs on A mazon EC2 instances in a private subnet. The a pplication needs to process sensitive information from a n A mazon S3 bucket. The a pplication must not use the internet to connect to the S3 bucket. Which solution will meet these requirements?",
       "options": {
-        "A": "Configure an internet gateway. Update the S3 bucket policy to allow access from the internet gateway. Update the application to use the new internet gateway.",
-        "B": "Configure a VPN connection. Update the S3 bucket policy to allow access from the VPN connection. Update the application to use the new VPN connection.",
-        "C": "Configure a NAT gateway. Update the S3 bucket policy to allow access from the NAT gateway. Update the application to use the new NAT gateway.",
-        "D": "Configure a VPC endpoint. Update the S3 bucket policy to allow access from the VPC endpoint. Update the application to use the new VPC endpoint."
+        "A": "Configure a n internet gateway. Update the S3 bucket policy to a llow a ccess from the internet gateway. Update the a pplication to use the new internet gateway.",
+        "B": "Configure a VPN connection. Update the S3 bucket policy to a llow a ccess from the VPN connection. Update the a pplication to use the new VPN connection.",
+        "C": "Configure a NAT gateway. Update the S3 bucket policy to a llow a ccess from the NAT gateway. Update the a pplication to use the new NAT gateway.",
+        "D": "Configure a VPC endpoint. Update the S3 bucket policy to a llow a ccess from the VPC endpoint. Update the a pplication to use the new VPC endpoint."
       },
       "correct_answer": "D",
-      "explanation": "VPC Endpoint for S3: A VPC endpoint allows you to privately connect your VPC to supported AWS services, including Amazon S3, without traversing the public internet. This ensures secure and direct access to S3 from within your VPC."
+      "explanation": "VPC Endpoint for S3: A VPC endpoint a llows you to privately connect your VPC to supported A WS services, including A mazon S3, without traversing the public internet. This ensures secure a nd direct a ccess to S3 from within your VPC."
     },
     {
       "id": "613",
-      "question": "A company uses Amazon Elastic Kubernetes Service (Amazon EKS) to run acontainer application. The EKS cluster stores sensitive information in the Kubernetes secrets object. The company wants to ensure that the information is encrypted. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company uses A mazon Elastic Kubernetes Service (A mazon EKS) to run a container a pplication. The EKS cluster stores sensitive information in the Kubernetes secrets object. The company wants to ensure that the information is encrypted. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Use the container application to encrypt the information by using AWS Key Management Service (AWS KMS).",
-        "B": "Enable secrets encryption in the EKS cluster by using AWS Key Management Service (AWS KMS).",
-        "C": "Implement an AWS Lambda function to encrypt the information by using AWS Key Management Service (AWS KMS).",
-        "D": "Use AWS Systems Manager Parameter Store to encrypt the information by using AWS Key Management Service (AWS KMS)."
+        "A": "Use the container a pplication to encrypt the information by using A WS Key Management Service (A WS KMS).",
+        "B": "Enable secrets encryption in the EKS cluster by using A WS Key Management Service (A WS KMS).",
+        "C": "Implement a n A WS Lambda function to encrypt the information by using A WS Key Management Service (A WS KMS).",
+        "D": "Use A WS Systems Manager Parameter Store to encrypt the information by using A WS Key Management Service (A WS KMS)."
       },
       "correct_answer": "B",
-      "explanation": "Amazon EKS provides built-in support for encrypting Kubernetes secrets using AWS Key Management Service (AWS KMS). You can enable this feature at the EKS cluster level."
+      "explanation": "A mazon EKS provides built-in support for encrypting Kubernetes secrets using A WS Key Management Service (A WS KMS). You can enable this feature a t the EKS cluster level."
     },
     {
       "id": "614",
-      "question": "A company is designing a new multi-tier web application that consists of the following components: • Web and application servers that run on Amazon EC2 instances as part of Auto Scaling groups • An Amazon RDS DB instance for data storage A solutions architect needs to limit access to the application servers so that only the web servers can access them. Which solution will meet these requirements?",
+      "question": "A company is designing a new multi-tier web a pplication that consists of the following components: \u2022 Web a nd a pplication servers that run on A mazon EC2 instances a s part of A uto Scaling groups \u2022 A n A mazon RDS DB instance for data storage A solutions a rchitect needs to limit a ccess to the a pplication servers so that only the web servers can a ccess them. Which solution will meet these requirements?",
       "options": {
-        "A": "Deploy AWS PrivateLink in front of the application servers. Configure the network ACL to allow only the web servers to access the application servers.",
-        "B": "Deploy a VPC endpoint in front of the application servers. Configure the security group to allow only the web servers to access the application servers.",
-        "C": "Deploy a Network Load Balancer with a target group that contains the application servers' Auto Scaling group. Configure the network ACL to allow only the web servers to access the application servers.",
-        "D": "Deploy an Application Load Balancer with a target group that contains the application servers' Auto Scaling group. Configure the security group to allow only the web servers to access the application servers."
+        "A": "Deploy A WS PrivateLink in front of the a pplication servers. Configure the network A CL to a llow only the web servers to a ccess the a pplication servers.",
+        "B": "Deploy a VPC endpoint in front of the a pplication servers. Configure the security group to a llow only the web servers to a ccess the a pplication servers.",
+        "C": "Deploy a Network Load Balancer with a target group that contains the a pplication servers' A uto Scaling group. Configure the network A CL to a llow only the web servers to a ccess the a pplication servers.",
+        "D": "Deploy a n A pplication Load Balancer with a target group that contains the a pplication servers' A uto Scaling group. Configure the security group to a llow only the web servers to a ccess the a pplication servers."
       },
       "correct_answer": "D",
-      "explanation": "An ALB is a load balancer service provided by AWS that allows you to distribute incoming application traffic across multiple targets, such as EC2 instances. In this scenario, the ALB is deployed in front of the application servers.\nThe ALB is configured with a target group that includes the application servers' Auto Scaling group instances. The target group defines where the ALB directs traffic."
+      "explanation": "A n A LB is a load balancer service provided by A WS that a llows you to distribute incoming a pplication traffic a cross multiple targets, such a s EC2 instances. In this scenario, the A LB is deployed in front of the a pplication servers.\nThe A LB is configured with a target group that includes the a pplication servers' A uto Scaling group instances. The target group defines where the A LB directs traffic."
     },
     {
       "id": "615",
-      "question": "A company runs a critical, customer-facing application on Amazon Elastic Kubernetes Service (Amazon EKS). The application has amicroservices architecture. The company needs to implement a solution that collects, aggregates, and summarizes metrics and logs from the application in acentralized location. Which solution meets these requirements?",
+      "question": "A company runs a critical, customer-facing a pplication on A mazon Elastic Kubernetes Service (A mazon EKS). The a pplication has a microservices a rchitecture. The company needs to implement a solution that collects, a ggregates, a nd summarizes metrics a nd logs from the a pplication in a centralized location. Which solution meets these requirements?",
       "options": {
-        "A": "Run the Amazon CloudWatch agent in the existing EKS cluster. View the metrics and logs in the CloudWatch console.",
-        "B": "Run AWS App Mesh in the existing EKS cluster. View the metrics and logs in the App Mesh console.",
-        "C": "Configure AWS CloudTrail to capture data events. Query CloudTrail by using Amazon OpenSearch Service.",
-        "D": "Configure Amazon CloudWatch Container Insights in the existing EKS cluster. View the metrics and logs in the CloudWatch console."
+        "A": "Run the A mazon CloudWatch a gent in the existing EKS cluster. View the metrics a nd logs in the CloudWatch console.",
+        "B": "Run A WS A pp Mesh in the existing EKS cluster. View the metrics a nd logs in the A pp Mesh console.",
+        "C": "Configure A WS CloudTrail to capture data events. Query CloudTrail by using A mazon OpenSearch Service.",
+        "D": "Configure A mazon CloudWatch Container Insights in the existing EKS cluster. View the metrics a nd logs in the CloudWatch console."
       },
       "correct_answer": "D",
-      "explanation": "CloudWatch Container Insights is specifically designed for monitoring containerized applications on Amazon EKS and ECS. It provides visibility into the performance of containers, clusters, and microservices."
+      "explanation": "CloudWatch Container Insights is specifically designed for monitoring containerized a pplications on A mazon EKS a nd ECS. It provides visibility into the performance of containers, clusters, a nd microservices."
     },
     {
       "id": "616",
-      "question": "A company has deployed its newest product on AWS. The product runs in an Auto Scaling group behind a Network Load Balancer. The company stores the product’s objects in an Amazon S3 bucket. The company recently experienced malicious attacks against its systems. The company needs a solution that continuously monitors for malicious activity in the AWS account, workloads, and access patterns to the S3 bucket. The solution must also report suspicious activity and display the information on a dashboard. Which solution will meet these requirements?",
+      "question": "A company has deployed its newest product on A WS. The product runs in a n A uto Scaling group behind a Network Load Balancer. The company stores the product\u2019s objects in a n A mazon S3 bucket. The company recently experienced malicious a ttacks a gainst its systems. The company needs a solution that continuously monitors for malicious a ctivity in the A WS a ccount, workloads, a nd a ccess patterns to the S3 bucket. The solution must a lso report suspicious a ctivity a nd display the information on a dashboard. Which solution will meet these requirements?",
       "options": {
-        "A": "Configure Amazon Macie to monitor and report Findings to AWS ConFig.",
-        "B": "Configure Amazon Inspector to monitor and report Findings to AWS CloudTrail.",
-        "C": "Configure Amazon GuardDuty to monitor and report Findings to AWS Security Hub.",
-        "D": "Configure AWS ConFig to monitor and report Findings to Amazon EventBridge."
+        "A": "Configure A mazon Macie to monitor a nd report Findings to A WS ConFig.",
+        "B": "Configure A mazon Inspector to monitor a nd report Findings to A WS CloudTrail.",
+        "C": "Configure A mazon GuardDuty to monitor a nd report Findings to A WS Security Hub.",
+        "D": "Configure A WS ConFig to monitor a nd report Findings to A mazon EventBridge."
       },
       "correct_answer": "C",
-      "explanation": "Amazon GuardDuty:\nGuardDuty is a threat detection service that continuously monitors for malicious activity and unauthorized behavior in your AWS account. It analyzes events, such as API calls and network traffic, to detect potentially malicious activity.\nAWS Security Hub:\nAWS Security Hub is a comprehensive security service that aggregates and prioritizes security findings from various AWS services, including GuardDuty. It provides a centralized dashboard for security alerts and findings."
+      "explanation": "A mazon GuardDuty:\nGuardDuty is a threat detection service that continuously monitors for malicious a ctivity a nd unauthorized behavior in your A WS a ccount. It a nalyzes events, such a s A PI calls a nd network traffic, to detect potentially malicious a ctivity.\nA WS Security Hub:\nA WS Security Hub is a comprehensive security service that a ggregates a nd prioritizes security findings from various A WS services, including GuardDuty. It provides a centralized dashboard for security a lerts a nd findings."
     },
     {
       "id": "617",
-      "question": "A company wants to migrate an on-premises data center to AWS. The data center hosts astorage server that stores data in an NFS-based File system. The storage server holds 200 GB of data. The company needs to migrate the data without interruption to existing services. Multiple resources in AWS must be able to access the data by using the NFS protocol. Which combination of steps will meet these requirements MOST cost-effectively? (Choose two.)",
+      "question": "A company wants to migrate a n on-premises data center to A WS. The data center hosts a storage server that stores data in a n NFS-based File system. The storage server holds 200 GB of data. The company needs to migrate the data without interruption to existing services. Multiple resources in A WS must be a ble to a ccess the data by using the NFS protocol. Which combination of steps will meet these requirements MOST cost-effectively? (Choose two.)",
       "options": {
-        "A": "Create an Amazon FSx for Lustre File system.",
-        "B": "Create an Amazon Elastic File System (Amazon EFS) File system.",
-        "C": "Create an Amazon S3 bucket to receive the data.",
-        "D": "Manually use an operating system copy command to push the data into the AWS destination.",
-        "E": "Install an AWS DataSync agent in the on-premises data center. Use a DataSync task between the on-premises location and AWS."
+        "A": "Create a n A mazon FSx for Lustre File system.",
+        "B": "Create a n A mazon Elastic File System (A mazon EFS) File system.",
+        "C": "Create a n A mazon S3 bucket to receive the data.",
+        "D": "Manually use a n operating system copy command to push the data into the A WS destination.",
+        "E": "Install a n A WS DataSync a gent in the on-premises data center. Use a DataSync task between the on-premises location a nd A WS."
       },
       "correct_answer": "BE",
-      "explanation": "E. Install an AWS DataSync agent in the on-premises data center. Use a DataSync task between the on-premises location and AWS.\nAmazon EFS is a scalable, fully managed file system that supports the NFSv4 protocol. It is designed to be highly available and can be mounted on multiple EC2 instances concurrently.\nCreating an Amazon EFS file system allows you to easily migrate the data and have multiple AWS resources access it concurrently.\nAWS DataSync is a service for efficiently transferring large amounts of data between on-premises storage and AWS. By installing a DataSync agent in the on-premises data center, you can use DataSync to perform the migration task.\nDataSync ensures efficient and secure transfer of data, making it suitable for migrating large amounts of data to AWS."
+      "explanation": "E. Install a n A WS DataSync a gent in the on-premises data center. Use a DataSync task between the on-premises location a nd A WS.\nA mazon EFS is a scalable, fully managed file system that supports the NFSv4 protocol. It is designed to be highly a vailable a nd can be mounted on multiple EC2 instances concurrently.\nCreating a n A mazon EFS file system a llows you to easily migrate the data a nd have multiple A WS resources a ccess it concurrently.\nA WS DataSync is a service for efficiently transferring large a mounts of data between on-premises storage a nd A WS. By installing a DataSync a gent in the on-premises data center, you can use DataSync to perform the migration task.\nDataSync ensures efficient a nd secure transfer of data, making it suitable for migrating large a mounts of data to A WS."
     },
     {
       "id": "618",
-      "question": "A company wants to use Amazon FSx for Windows File Server for its Amazon EC2 instances that have an SMB File share mounted as avolume in the us-east-1 Region. The company has arecovery point objective (RPO) of 5 minutes for planned system maintenance or unplanned service disruptions. The company needs to replicate the File system to the us-west-2 Region. The replicated data must not be deleted by any user for 5 years. Which solution will meet these requirements?",
+      "question": "A company wants to use A mazon FSx for Windows File Server for its A mazon EC2 instances that have a n SMB File share mounted a s a volume in the us-east-1 Region. The company has a recovery point objective (RPO) of 5 minutes for planned system maintenance or unplanned service disruptions. The company needs to replicate the File system to the us-west-2 Region. The replicated data must not be deleted by a ny user for 5 years. Which solution will meet these requirements?",
       "options": {
-        "A": "Create an FSx for Windows File Server File system in us-east-1 that has a Single-AZ 2 deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Configure AWS Backup Vault Lock in compliance mode for a target vault in us-west-2. Configure a minimum duration of 5 years.",
-        "B": "Create an FSx for Windows File Server File system in us-east-1 that has a Multi-AZ deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Configure AWS Backup Vault Lock in governance mode for a target vault in us-west-2. Configure a minimum duration of 5 years.",
-        "C": "Create an FSx for Windows File Server File system in us-east-1 that has a Multi-AZ deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Configure AWS Backup Vault Lock in compliance mode for a target vault in us-west-2. Configure a minimum duration of 5 years.",
-        "D": "Create an FSx for Windows File Server File system in us-east-1 that has a Single-AZ 2 deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Configure AWS Backup Vault Lock in governance mode for a target vault in us-west-2. Configure a minimum duration of 5 years."
+        "A": "Create a n FSx for Windows File Server File system in us-east-1 that has a Single-A Z 2 deployment type. Use A WS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Configure A WS Backup Vault Lock in compliance mode for a target vault in us-west-2. Configure a minimum duration of 5 years.",
+        "B": "Create a n FSx for Windows File Server File system in us-east-1 that has a Multi-A Z deployment type. Use A WS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Configure A WS Backup Vault Lock in governance mode for a target vault in us-west-2. Configure a minimum duration of 5 years.",
+        "C": "Create a n FSx for Windows File Server File system in us-east-1 that has a Multi-A Z deployment type. Use A WS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Configure A WS Backup Vault Lock in compliance mode for a target vault in us-west-2. Configure a minimum duration of 5 years.",
+        "D": "Create a n FSx for Windows File Server File system in us-east-1 that has a Single-A Z 2 deployment type. Use A WS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Configure A WS Backup Vault Lock in governance mode for a target vault in us-west-2. Configure a minimum duration of 5 years."
       },
       "correct_answer": "C",
-      "explanation": "FSx for Windows File Server:\nCreate an FSx for Windows File Server file system in the us-east-1 Region with a Multi-AZ deployment type. The Multi-AZ deployment type ensures high availability.\nAWS Backup:\nUse AWS Backup to create a daily backup plan for the FSx file system. Include a backup rule that copies the backup to the us-west-2 Region. This ensures that a backup is replicated to the us-west-2 Region regularly."
+      "explanation": "FSx for Windows File Server:\nCreate a n FSx for Windows File Server file system in the us-east-1 Region with a Multi-A Z deployment type. The Multi-A Z deployment type ensures high a vailability.\nA WS Backup:\nUse A WS Backup to create a daily backup plan for the FSx file system. Include a backup rule that copies the backup to the us-west-2 Region. This ensures that a backup is replicated to the us-west-2 Region regularly."
     },
     {
       "id": "619",
-      "question": "A solutions architect is designing asecurity solution for A company that wants to provide developers with individual AWS accounts through AWS Organizations, while also maintaining standard security controls. Because the individual developers will have AWS account root user-level access to their own accounts, the solutions architect wants to ensure that the mandatory AWS Cloudtrail configuration that is applied to new developer accounts is not modified. Which action meets these requirements?",
+      "question": "A solutions a rchitect is designing a security solution for A company that wants to provide developers with individual A WS a ccounts through A WS Organizations, while a lso maintaining standard security controls. Because the individual developers will have A WS a ccount root user-level a ccess to their own a ccounts, the solutions a rchitect wants to ensure that the mandatory A WS Cloudtrail configuration that is a pplied to new developer a ccounts is not modified. Which a ction meets these requirements?",
       "options": {
-        "A": "Create an IAM policy that prohibits changes to CloudTrail. and attach it to the root user.",
-        "B": "Create a new trail in CloudTrail from within the developer accounts with the organization trails option enabled.",
-        "C": "Create a service control policy (SCP) that prohibits changes to CloudTrail, and attach it the developer accounts.",
-        "D": "Create a service-linked role for CloudTrail with a policy condition that allows changes only from an Amazon Resource Name (ARN) in the management account."
+        "A": "Create a n IAM policy that prohibits changes to CloudTrail. a nd a ttach it to the root user.",
+        "B": "Create a new trail in CloudTrail from within the developer a ccounts with the organization trails option enabled.",
+        "C": "Create a service control policy (SCP) that prohibits changes to CloudTrail, a nd a ttach it the developer a ccounts.",
+        "D": "Create a service-linked role for CloudTrail with a policy condition that a llows changes only from a n A mazon Resource Name (A RN) in the management a ccount."
       },
       "correct_answer": "C",
-      "explanation": "SCPs are used in AWS Organizations to set fine-grained permissions and restrictions on AWS accounts within the organization.\nBy creating an SCP that explicitly prohibits changes to CloudTrail settings, you can enforce this restriction across all developer accounts."
+      "explanation": "SCPs a re used in A WS Organizations to set fine-grained permissions a nd restrictions on A WS a ccounts within the organization.\nBy creating a n SCP that explicitly prohibits changes to CloudTrail settings, you can enforce this restriction a cross a ll developer a ccounts."
     },
     {
       "id": "620",
-      "question": "A company is planning to deploy abusiness-critical application in the AWS Cloud. The application requires durable storage with consistent, low- latency performance. Which type of storage should A solutions architect recommend to meet these requirements?",
+      "question": "A company is planning to deploy a business-critical a pplication in the A WS Cloud. The a pplication requires durable storage with consistent, low- latency performance. Which type of storage should A solutions a rchitect recommend to meet these requirements?",
       "options": {
         "A": "Instance store volume",
-        "B": "Amazon ElastiCache for Memcached cluster",
-        "C": "Provisioned IOPS SSD Amazon Elastic Block Store (Amazon EBS) volume",
-        "D": "Throughput Optimized HDD Amazon Elastic Block Store (Amazon EBS) volume"
+        "B": "A mazon ElastiCache for Memcached cluster",
+        "C": "Provisioned IOPS SSD A mazon Elastic Block Store (A mazon EBS) volume",
+        "D": "Throughput Optimized HDD A mazon Elastic Block Store (A mazon EBS) volume"
       },
       "correct_answer": "C",
-      "explanation": "Provisioned IOPS (Input/Output Operations Per Second) SSD volumes are designed to deliver predictable, consistent, and low-latency performance for critical applications.\nThese volumes allow you to specify the amount of IOPS you need, providing a consistent level of performance regardless of the volume size."
+      "explanation": "Provisioned IOPS (Input/Output Operations Per Second) SSD volumes a re designed to deliver predictable, consistent, a nd low-latency performance for critical a pplications.\nThese volumes a llow you to specify the a mount of IOPS you need, providing a consistent level of performance regardless of the volume size."
     },
     {
       "id": "621",
-      "question": "An online photo-sharing company stores its photos in an Amazon S3 bucket that exists in the us-west-1 Region. The company needs to store acopy of all new photos in the us-east-1 Region. Which solution will meet this requirement with the LEAST operational effort?",
+      "question": "A n online photo-sharing company stores its photos in a n A mazon S3 bucket that exists in the us-west-1 Region. The company needs to store a copy of a ll new photos in the us-east-1 Region. Which solution will meet this requirement with the LEAST operational effort?",
       "options": {
         "A": "Create a second S3 bucket in us-east-1. Use S3 Cross-Region Replication to copy photos from the existing S3 bucket to the second S3 bucket.",
-        "B": "Create a cross-origin resource sharing (CORS) conFiguration of the existing S3 bucket. Specify us-east-1 in the CORS rule's AllowedOrigin element.",
-        "C": "Create a second S3 bucket in us-east-1 across multiple Availability Zones. Create an S3 Lifecycle rule to save photos into the second S3 bucket.",
-        "D": "Create a second S3 bucket in us-east-1. Configure S3 event notiFications on object creation and update events to invoke an AWS Lambda function to copy photos from the existing S3 bucket to the second S3 bucket."
+        "B": "Create a cross-origin resource sharing (CORS) conFiguration of the existing S3 bucket. Specify us-east-1 in the CORS rule's A llowedOrigin element.",
+        "C": "Create a second S3 bucket in us-east-1 a cross multiple A vailability Zones. Create a n S3 Lifecycle rule to save photos into the second S3 bucket.",
+        "D": "Create a second S3 bucket in us-east-1. Configure S3 event notiFications on object creation a nd update events to invoke a n A WS Lambda function to copy photos from the existing S3 bucket to the second S3 bucket."
       },
       "correct_answer": "A",
-      "explanation": "S3 Cross-Region Replication (CRR) is designed specifically for replicating objects across different AWS regions. It is a fully managed feature that automatically replicates objects from the source bucket to the destination bucket in a different region. This requires minimal operational effort as it is a built-in S3 feature for cross-region replication, and you don't have to manually trigger actions or configure additional services."
+      "explanation": "S3 Cross-Region Replication (CRR) is designed specifically for replicating objects a cross different A WS regions. It is a fully managed feature that a utomatically replicates objects from the source bucket to the destination bucket in a different region. This requires minimal operational effort a s it is a built-in S3 feature for cross-region replication, a nd you don't have to manually trigger a ctions or configure a dditional services."
     },
     {
       "id": "622",
-      "question": "A company is creating a new web application for its subscribers. The application will consist of astatic single page and apersistent database layer. The application will have millions of users for 4 hours in the morning, but the application will have only afew thousand users during the rest of the day. The company's data architects have requested the ability to rapidly evolve their schema. Which solutions will meet these requirements and provide the MOST scalability? (Choose two.)",
+      "question": "A company is creating a new web a pplication for its subscribers. The a pplication will consist of a static single page a nd a persistent database layer. The a pplication will have millions of users for 4 hours in the morning, but the a pplication will have only a few thousand users during the rest of the day. The company's data a rchitects have requested the a bility to rapidly evolve their schema. Which solutions will meet these requirements a nd provide the MOST scalability? (Choose two.)",
       "options": {
-        "A": "Deploy Amazon DynamoDB as the database solution. Provision on-demand capacity.",
-        "B": "Deploy Amazon Aurora as the database solution. Choose the serverless DB engine mode.",
-        "C": "Deploy Amazon DynamoDB as the database solution. Ensure that DynamoDB auto scaling is enabled.",
-        "D": "Deploy the static content into an Amazon S3 bucket. Provision an Amazon CloudFront distribution with the S3 bucket as the origin.",
-        "E": "Deploy the web servers for static content across a Fieet of Amazon EC2 instances in Auto Scaling groups. Configure the instances to periodically refresh the content from an Amazon Elastic File System (Amazon EFS) volume."
+        "A": "Deploy A mazon DynamoDB a s the database solution. Provision on-demand capacity.",
+        "B": "Deploy A mazon A urora a s the database solution. Choose the serverless DB engine mode.",
+        "C": "Deploy A mazon DynamoDB a s the database solution. Ensure that DynamoDB a uto scaling is enabled.",
+        "D": "Deploy the static content into a n A mazon S3 bucket. Provision a n A mazon CloudFront distribution with the S3 bucket a s the origin.",
+        "E": "Deploy the web servers for static content a cross a Fieet of A mazon EC2 instances in A uto Scaling groups. Configure the instances to periodically refresh the content from a n A mazon Elastic File System (A mazon EFS) volume."
       },
       "correct_answer": "AD",
-      "explanation": "DynamoDB auto scaling allows the database to automatically adjust its read and write capacity based on the application's traffic, making it well-suited for varying workloads.\nD. Deploy the static content into an Amazon S3 bucket. Provision an Amazon CloudFront distribution with the S3 bucket as the origin.\nAmazon S3 is a highly scalable and durable object storage service, and using CloudFront, a content delivery network (CDN), helps distribute static content globally, reducing latency and providing scalability."
+      "explanation": "DynamoDB a uto scaling a llows the database to a utomatically a djust its read a nd write capacity based on the a pplication's traffic, making it well-suited for varying workloads.\nD. Deploy the static content into a n A mazon S3 bucket. Provision a n A mazon CloudFront distribution with the S3 bucket a s the origin.\nA mazon S3 is a highly scalable a nd durable object storage service, a nd using CloudFront, a content delivery network (CDN), helps distribute static content globally, reducing latency a nd providing scalability."
     },
     {
       "id": "623",
-      "question": "A company uses Amazon API Gateway to manage its REST APIs that third-party service providers access. The company must protect the REST APIs from SQL injection and cross-site scripting attacks. What is the MOST operationally eficient solution that meets these requirements?",
+      "question": "A company uses A mazon A PI Gateway to manage its REST A PIs that third-party service providers a ccess. The company must protect the REST A PIs from SQL injection a nd cross-site scripting a ttacks. What is the MOST operationally eficient solution that meets these requirements?",
       "options": {
-        "A": "Configure AWS Shield.",
-        "B": "Configure AWS WAF.",
-        "C": "Set up API Gateway with an Amazon CloudFront distribution. Configure AWS Shield in CloudFront.",
-        "D": "Set up API Gateway with an Amazon CloudFront distribution. Configure AWS WAF in CloudFront."
+        "A": "Configure A WS Shield.",
+        "B": "Configure A WS WAF.",
+        "C": "Set up A PI Gateway with a n A mazon CloudFront distribution. Configure A WS Shield in CloudFront.",
+        "D": "Set up A PI Gateway with a n A mazon CloudFront distribution. Configure A WS WAF in CloudFront."
       },
       "correct_answer": "B",
-      "explanation": "AWS WAF (Web Application Firewall) is specifically designed to protect web applications from common web exploits like SQL injection and cross-site scripting (XSS) attacks. By configuring AWS WAF with API Gateway, you can create rules to filter and allow or block requests based on defined conditions, providing protection against various types of attacks."
+      "explanation": "A WS WAF (Web A pplication Firewall) is specifically designed to protect web a pplications from common web exploits like SQL injection a nd cross-site scripting (XSS) a ttacks. By configuring A WS WAF with A PI Gateway, you can create rules to filter a nd a llow or block requests based on defined conditions, providing protection a gainst various types of a ttacks."
     },
     {
       "id": "624",
-      "question": "A company wants to provide users with access to AWS resources. The company has 1,500 users and manages their access to on-premises resources through Active Directory user groups on the corporate network. However, the company does not want users to have to maintain another identity to access the resources. A solutions architect must manage user access to the AWS resources while preserving access to the on- premises resources. What should the solutions architect do to meet these requirements?",
+      "question": "A company wants to provide users with a ccess to A WS resources. The company has 1,500 users a nd manages their a ccess to on-premises resources through A ctive Directory user groups on the corporate network. However, the company does not want users to have to maintain a nother identity to a ccess the resources. A solutions a rchitect must manage user a ccess to the A WS resources while preserving a ccess to the on- premises resources. What should the solutions a rchitect do to meet these requirements?",
       "options": {
-        "A": "Create an IAM user for each user in the company. Attach the appropriate policies to each user.",
-        "B": "Use Amazon Cognito with an Active Directory user pool. Create roles with the appropriate policies attached.",
-        "C": "DeFine cross-account roles with the appropriate policies attached. Map the roles to the Active Directory groups.",
-        "D": "Configure Security Assertion Markup Language (SAML) 2 0-based federation. Create roles with the appropriate policies attached Map the roles to the Active Directory groups."
+        "A": "Create a n IAM user for each user in the company. A ttach the a ppropriate policies to each user.",
+        "B": "Use A mazon Cognito with a n A ctive Directory user pool. Create roles with the a ppropriate policies a ttached.",
+        "C": "DeFine cross-a ccount roles with the a ppropriate policies a ttached. Map the roles to the A ctive Directory groups.",
+        "D": "Configure Security A ssertion Markup Language (SAML) 2 0-based federation. Create roles with the a ppropriate policies a ttached Map the roles to the A ctive Directory groups."
       },
       "correct_answer": "D",
-      "explanation": "using SAML 2.0-based federation, which allows you to integrate AWS with your existing Active Directory infrastructure. This approach enables single sign-on (SSO) for users, meaning they can use their existing corporate credentials to access both on-premises and AWS resources without maintaining separate identities."
+      "explanation": "using SAML 2.0-based federation, which a llows you to integrate A WS with your existing A ctive Directory infrastructure. This a pproach enables single sign-on (SSO) for users, meaning they can use their existing corporate credentials to a ccess both on-premises a nd A WS resources without maintaining separate identities."
     },
     {
       "id": "625",
-      "question": "A company is hosting a website behind multiple Application Load Balancers. The company has different distribution rights for its content around the world. A solutions architect needs to ensure that users are served the correct content without violating distribution rights. Which configuration should the solutions architect choose to meet these requirements?",
+      "question": "A company is hosting a website behind multiple A pplication Load Balancers. The company has different distribution rights for its content a round the world. A solutions a rchitect needs to ensure that users a re served the correct content without violating distribution rights. Which configuration should the solutions a rchitect choose to meet these requirements?",
       "options": {
-        "A": "Configure Amazon CloudFront with AWS WAF.",
-        "B": "Configure Application Load Balancers with AWS WAF",
-        "C": "Configure Amazon Route 53 with a geolocation policy",
-        "D": "Configure Amazon Route 53 with a geoproximity routing policy"
+        "A": "Configure A mazon CloudFront with A WS WAF.",
+        "B": "Configure A pplication Load Balancers with A WS WAF",
+        "C": "Configure A mazon Route 53 with a geolocation policy",
+        "D": "Configure A mazon Route 53 with a geoproximity routing policy"
       },
       "correct_answer": "C",
-      "explanation": "Geolocation routing in Amazon Route 53 allows you to route traffic based on the geographic location of the user.\nYou can create different records for your website content and associate them with specific geographic locations. This way, users from different regions will be directed to the appropriate servers or load balancers hosting the content that adheres to the distribution rights for that region."
+      "explanation": "Geolocation routing in A mazon Route 53 a llows you to route traffic based on the geographic location of the user.\nYou can create different records for your website content a nd a ssociate them with specific geographic locations. This way, users from different regions will be directed to the a ppropriate servers or load balancers hosting the content that a dheres to the distribution rights for that region."
     },
     {
       "id": "626",
-      "question": "A company stores its data on premises. The amount of data is growing beyond the company's available capacity. The company wants to migrate its data from the on-premises location to an Amazon S3 bucket. The company needs a solution that will automatically validate the integrity of the data after the transfer. Which solution will meet these requirements?",
+      "question": "A company stores its data on premises. The a mount of data is growing beyond the company's a vailable capacity. The company wants to migrate its data from the on-premises location to a n A mazon S3 bucket. The company needs a solution that will a utomatically validate the integrity of the data a fter the transfer. Which solution will meet these requirements?",
       "options": {
-        "A": "Order an AWS Snowball Edge device. Configure the Snowball Edge device to perform the online data transfer to an S3 bucket",
-        "B": "Deploy an AWS DataSync agent on premises. Configure the DataSync agent to perform the online data transfer to an S3 bucket.",
-        "C": "Create an Amazon S3 File Gateway on premises Configure the S3 File Gateway to perform the online data transfer to an S3 bucket",
-        "D": "Configure an accelerator in Amazon S3 Transfer Acceleration on premises. Configure the accelerator to perform the online data transfer to an S3 bucket."
+        "A": "Order a n A WS Snowball Edge device. Configure the Snowball Edge device to perform the online data transfer to a n S3 bucket",
+        "B": "Deploy a n A WS DataSync a gent on premises. Configure the DataSync a gent to perform the online data transfer to a n S3 bucket.",
+        "C": "Create a n A mazon S3 File Gateway on premises Configure the S3 File Gateway to perform the online data transfer to a n S3 bucket",
+        "D": "Configure a n a ccelerator in A mazon S3 Transfer A cceleration on premises. Configure the a ccelerator to perform the online data transfer to a n S3 bucket."
       },
       "correct_answer": "B",
-      "explanation": "AWS DataSync is a service designed for fast and secure online data transfer between on-premises storage and Amazon S3, Amazon EFS, or Amazon FSx for Windows File Server.\nDataSync automatically performs integrity validation by ensuring that the data transferred to S3 matches the source data. It uses checksums to validate the integrity of the files."
+      "explanation": "A WS DataSync is a service designed for fast a nd secure online data transfer between on-premises storage a nd A mazon S3, A mazon EFS, or A mazon FSx for Windows File Server.\nDataSync a utomatically performs integrity validation by ensuring that the data transferred to S3 matches the source data. It uses checksums to validate the integrity of the files."
     },
     {
       "id": "627",
-      "question": "A company wants to migrate two DNS servers to AWS. The servers host atotal of approximately 200 zones and receive 1 million requests each day on average. The company wants to maximize availability while minimizing the operational overhead that is related to the management of the two servers. What should A solutions architect recommend to meet these requirements?",
+      "question": "A company wants to migrate two DNS servers to A WS. The servers host a total of a pproximately 200 zones a nd receive 1 million requests each day on a verage. The company wants to maximize a vailability while minimizing the operational overhead that is related to the management of the two servers. What should A solutions a rchitect recommend to meet these requirements?",
       "options": {
-        "A": "Create 200 new hosted zones in the Amazon Route 53 console Import zone Files.",
-        "B": "Launch a single large Amazon EC2 instance Import zone tiles. Configure Amazon CloudWatch alarms and notiFications to alert the company about any downtime.",
-        "C": "Migrate the servers to AWS by using AWS Server Migration Service (AWS SMS). Configure Amazon CloudWatch alarms and notiFications to alert the company about any downtime.",
-        "D": "Launch an Amazon EC2 instance in an Auto Scaling group across two Availability Zones. Import zone Files. Set the desired capacity to 1 and the maximum capacity to 3 for the Auto Scaling group. Configure scaling alarms to scale based on CPU utilization."
+        "A": "Create 200 new hosted zones in the A mazon Route 53 console Import zone Files.",
+        "B": "Launch a single large A mazon EC2 instance Import zone tiles. Configure A mazon CloudWatch a larms a nd notiFications to a lert the company a bout a ny downtime.",
+        "C": "Migrate the servers to A WS by using A WS Server Migration Service (A WS SMS). Configure A mazon CloudWatch a larms a nd notiFications to a lert the company a bout a ny downtime.",
+        "D": "Launch a n A mazon EC2 instance in a n A uto Scaling group a cross two A vailability Zones. Import zone Files. Set the desired capacity to 1 a nd the maximum capacity to 3 for the A uto Scaling group. Configure scaling a larms to scale based on CPU utilization."
       },
       "correct_answer": "A",
-      "explanation": "Amazon Route 53 is a highly available and scalable domain name system (DNS) web service provided by AWS.\nBy creating 200 new hosted zones in the Amazon Route 53 console and importing the existing zone files, you can take advantage of the fully managed and highly available nature of Route 53 without the need to manage servers."
+      "explanation": "A mazon Route 53 is a highly a vailable a nd scalable domain name system (DNS) web service provided by A WS.\nBy creating 200 new hosted zones in the A mazon Route 53 console a nd importing the existing zone files, you can take a dvantage of the fully managed a nd highly a vailable nature of Route 53 without the need to manage servers."
     },
     {
       "id": "628",
-      "question": "Aglobal company runs its applications in multiple AWS accounts in AWS Organizations. The company's applications use multipart uploads to upload data to multiple Amazon S3 buckets across AWS Regions. The company wants to report on incomplete multipart uploads for cost compliance purposes. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A global company runs its a pplications in multiple A WS a ccounts in A WS Organizations. The company's a pplications use multipart uploads to upload data to multiple A mazon S3 buckets a cross A WS Regions. The company wants to report on incomplete multipart uploads for cost compliance purposes. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Configure AWS ConFig with a rule to report the incomplete multipart upload object count.",
+        "A": "Configure A WS ConFig with a rule to report the incomplete multipart upload object count.",
         "B": "Create a service control policy (SCP) to report the incomplete multipart upload object count.",
         "C": "Configure S3 Storage Lens to report the incomplete multipart upload object count.",
-        "D": "Create an S3 Multi-Region Access Point to report the incomplete multipart upload object count."
+        "D": "Create a n S3 Multi-Region A ccess Point to report the incomplete multipart upload object count."
       },
       "correct_answer": "C",
-      "explanation": "S3 Storage Lens is a feature in Amazon S3 that provides a comprehensive view of your storage usage and activity across multiple accounts. It helps you understand, analyze, and optimize your storage usage.\nYou can use S3 Storage Lens to generate reports on various metrics, including the incomplete multipart upload object count."
+      "explanation": "S3 Storage Lens is a feature in A mazon S3 that provides a comprehensive view of your storage usage a nd a ctivity a cross multiple a ccounts. It helps you understand, a nalyze, a nd optimize your storage usage.\nYou can use S3 Storage Lens to generate reports on various metrics, including the incomplete multipart upload object count."
     },
     {
       "id": "629",
-      "question": "A company runs aproduction database on Amazon RDS for MySQL. The company wants to upgrade the database version for security compliance reasons. Because the database contains critical data, the company wants aquick solution to upgrade and test functionality without losing any data. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company runs a production database on A mazon RDS for MySQL. The company wants to upgrade the database version for security compliance reasons. Because the database contains critical data, the company wants a quick solution to upgrade a nd test functionality without losing a ny data. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Create an RDS manual snapshot. Upgrade to the new version of Amazon RDS for MySQL.",
-        "B": "Use native backup and restore. Restore the data to the upgraded new version of Amazon RDS for MySQL.",
-        "C": "Use AWS Database Migration Service (AWS DMS) to replicate the data to the upgraded new version of Amazon RDS for MySQL.",
-        "D": "Use Amazon RDS Blue/Green Deployments to deploy and test production changes."
+        "A": "Create a n RDS manual snapshot. Upgrade to the new version of A mazon RDS for MySQL.",
+        "B": "Use native backup a nd restore. Restore the data to the upgraded new version of A mazon RDS for MySQL.",
+        "C": "Use A WS Database Migration Service (A WS DMS) to replicate the data to the upgraded new version of A mazon RDS for MySQL.",
+        "D": "Use A mazon RDS Blue/Green Deployments to deploy a nd test production changes."
       },
       "correct_answer": "D",
       "explanation": ""
     },
     {
       "id": "630",
-      "question": "A solutions architect is creating a data processing job that runs once daily and can take up to 2 hours to complete. If the job is interrupted, it has to restart from the beginning. How should the solutions architect address this issue in the MOST cost-effective manner?",
+      "question": "A solutions a rchitect is creating a data processing job that runs once daily a nd can take up to 2 hours to complete. If the job is interrupted, it has to restart from the beginning. How should the solutions a rchitect a ddress this issue in the MOST cost-effective manner?",
       "options": {
-        "A": "Create a script that runs locally on an Amazon EC2 Reserved Instance that is triggered by a cron job.",
-        "B": "Create an AWS Lambda function triggered by an Amazon EventBridge scheduled event.",
-        "C": "Use an Amazon Elastic Container Service (Amazon ECS) Fargate task triggered by an Amazon EventBridge scheduled event.",
-        "D": "Use an Amazon Elastic Container Service (Amazon ECS) task running on Amazon EC2 triggered by an Amazon EventBridge scheduled event."
+        "A": "Create a script that runs locally on a n A mazon EC2 Reserved Instance that is triggered by a cron job.",
+        "B": "Create a n A WS Lambda function triggered by a n A mazon EventBridge scheduled event.",
+        "C": "Use a n A mazon Elastic Container Service (A mazon ECS) Fargate task triggered by a n A mazon EventBridge scheduled event.",
+        "D": "Use a n A mazon Elastic Container Service (A mazon ECS) task running on A mazon EC2 triggered by a n A mazon EventBridge scheduled event."
       },
       "correct_answer": "C",
-      "explanation": "ECS Fargate is a serverless container service, and it abstracts away the underlying infrastructure. With Fargate, you don't need to manage or provision EC2 instances directly. You can run containers without worrying about the infrastructure, and AWS takes care of scaling and resource allocation."
+      "explanation": "ECS Fargate is a serverless container service, a nd it a bstracts a way the underlying infrastructure. With Fargate, you don't need to manage or provision EC2 instances directly. You can run containers without worrying a bout the infrastructure, a nd A WS takes care of scaling a nd resource a llocation."
     },
     {
       "id": "631",
-      "question": "Asocial media company wants to store its database of user profiles, relationships, and interactions in the AWS Cloud. The company needs an application to monitor any changes in the database. The application needs to analyze the relationships between the data entities and to provide recommendations to users. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A social media company wants to store its database of user profiles, relationships, a nd interactions in the A WS Cloud. The company needs a n a pplication to monitor a ny changes in the database. The a pplication needs to a nalyze the relationships between the data entities a nd to provide recommendations to users. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Use Amazon Neptune to store the information. Use Amazon Kinesis Data Streams to process changes in the database.",
-        "B": "Use Amazon Neptune to store the information. Use Neptune Streams to process changes in the database.",
-        "C": "Use Amazon Quantum Ledger Database (Amazon QLDB) to store the information. Use Amazon Kinesis Data Streams to process changes in the database.",
-        "D": "Use Amazon Quantum Ledger Database (Amazon QLDB) to store the information. Use Neptune Streams to process changes in the database."
+        "A": "Use A mazon Neptune to store the information. Use A mazon Kinesis Data Streams to process changes in the database.",
+        "B": "Use A mazon Neptune to store the information. Use Neptune Streams to process changes in the database.",
+        "C": "Use A mazon Quantum Ledger Database (A mazon QLDB) to store the information. Use A mazon Kinesis Data Streams to process changes in the database.",
+        "D": "Use A mazon Quantum Ledger Database (A mazon QLDB) to store the information. Use Neptune Streams to process changes in the database."
       },
       "correct_answer": "B",
-      "explanation": "Amazon Neptune is a fully managed graph database service that is designed for storing and querying highly connected data. It supports the property graph and RDF graph models, making it suitable for scenarios where relationships between data entities need to be analyzed.\nNeptune Streams:\nNeptune Streams is a feature of Amazon Neptune that allows you to capture changes (inserts, updates, deletes) made to the graph database in a streaming fashion. This streaming capability enables you to react to changes in near real-time and trigger additional processing based on those changes."
+      "explanation": "A mazon Neptune is a fully managed graph database service that is designed for storing a nd querying highly connected data. It supports the property graph a nd RDF graph models, making it suitable for scenarios where relationships between data entities need to be a nalyzed.\nNeptune Streams:\nNeptune Streams is a feature of A mazon Neptune that a llows you to capture changes (inserts, updates, deletes) made to the graph database in a streaming fashion. This streaming capability enables you to react to changes in near real-time a nd trigger a dditional processing based on those changes."
     },
     {
       "id": "632",
-      "question": "A company is creating a new application that will store a large amount of data. The data will be analyzed hourly and will be modified by several Amazon EC2 Linux instances that are deployed across multiple Availability Zones. The needed amount of storage space will continue to grow for the next 6 months. Which storage solution should A solutions architect recommend to meet these requirements?",
+      "question": "A company is creating a new a pplication that will store a large a mount of data. The data will be a nalyzed hourly a nd will be modified by several A mazon EC2 Linux instances that a re deployed a cross multiple A vailability Zones. The needed a mount of storage space will continue to grow for the next 6 months. Which storage solution should A solutions a rchitect recommend to meet these requirements?",
       "options": {
-        "A": "Store the data in Amazon S3 Glacier. Update the S3 Glacier vault policy to allow access to the application instances.",
-        "B": "Store the data in an Amazon Elastic Block Store (Amazon EBS) volume. Mount the EBS volume on the application instances.",
-        "C": "Store the data in an Amazon Elastic File System (Amazon EFS) File system. Mount the File system on the application instances.",
-        "D": "Store the data in an Amazon Elastic Block Store (Amazon EBS) Provisioned IOPS volume shared between the application instances."
+        "A": "Store the data in A mazon S3 Glacier. Update the S3 Glacier vault policy to a llow a ccess to the a pplication instances.",
+        "B": "Store the data in a n A mazon Elastic Block Store (A mazon EBS) volume. Mount the EBS volume on the a pplication instances.",
+        "C": "Store the data in a n A mazon Elastic File System (A mazon EFS) File system. Mount the File system on the a pplication instances.",
+        "D": "Store the data in a n A mazon Elastic Block Store (A mazon EBS) Provisioned IOPS volume shared between the a pplication instances."
       },
       "correct_answer": "C",
-      "explanation": "Amazon EFS is a scalable and fully managed file storage service that can be mounted on multiple Amazon EC2 instances simultaneously. It provides a shared file system that can be accessed concurrently from different instances.Amazon EFS can automatically scale its file system capacity to accommodate growing data sets. It can handle a large amount of data and is designed to grow and shrink as needed."
+      "explanation": "A mazon EFS is a scalable a nd fully managed file storage service that can be mounted on multiple A mazon EC2 instances simultaneously. It provides a shared file system that can be a ccessed concurrently from different instances.A mazon EFS can a utomatically scale its file system capacity to a ccommodate growing data sets. It can handle a large a mount of data a nd is designed to grow a nd shrink a s needed."
     },
     {
       "id": "633",
-      "question": "A company manages an application that stores data on an Amazon RDS for PostgreSQL Multi-AZ DB instance. Increases in traffic are causing performance problems. The company determines that database queries are the primary reason for the slow performance. What should A solutions architect do to improve the application's performance?",
+      "question": "A company manages a n a pplication that stores data on a n A mazon RDS for PostgreSQL Multi-A Z DB instance. Increases in traffic a re causing performance problems. The company determines that database queries a re the primary reason for the slow performance. What should A solutions a rchitect do to improve the a pplication's performance?",
       "options": {
-        "A": "Serve read traffic from the Multi-AZ standby replica.",
-        "B": "Configure the DB instance to use Transfer Acceleration.",
+        "A": "Serve read traffic from the Multi-A Z standby replica.",
+        "B": "Configure the DB instance to use Transfer A cceleration.",
         "C": "Create a read replica from the source DB instance. Serve read traffic from the read replica.",
-        "D": "Use Amazon Kinesis Data Firehose between the application and Amazon RDS to increase the concurrency of database requests."
+        "D": "Use A mazon Kinesis Data Firehose between the a pplication a nd A mazon RDS to increase the concurrency of database requests."
       },
       "correct_answer": "C",
-      "explanation": "Creating read replicas allows you to offload read traffic from the primary (master) DB instance to one or more read replicas. Read replicas can serve read-only queries, distributing the load and improving overall query performance."
+      "explanation": "Creating read replicas a llows you to offload read traffic from the primary (master) DB instance to one or more read replicas. Read replicas can serve read-only queries, distributing the load a nd improving overall query performance."
     },
     {
       "id": "634",
-      "question": "A company collects 10 GB of telemetry data daily from various machines. The company stores the data in an Amazon S3 bucket in asource data account. The company has hired several consulting agencies to use this data for analysis. Each agency needs read access to the data for its analysts. The company must share the data from the source data account by choosing a solution that maximizes security and operational eficiency. Which solution will meet these requirements?",
+      "question": "A company collects 10 GB of telemetry data daily from various machines. The company stores the data in a n A mazon S3 bucket in a source data a ccount. The company has hired several consulting a gencies to use this data for a nalysis. Each a gency needs read a ccess to the data for its a nalysts. The company must share the data from the source data a ccount by choosing a solution that maximizes security a nd operational eficiency. Which solution will meet these requirements?",
       "options": {
-        "A": "Configure S3 global tables to replicate data for each agency.",
-        "B": "Make the S3 bucket public for a limited time. Inform only the agencies.",
-        "C": "Configure cross-account access for the S3 bucket to the accounts that the agencies own.",
-        "D": "Set up an IAM user for each analyst in the source data account. Grant each user access to the S3 bucket."
+        "A": "Configure S3 global tables to replicate data for each a gency.",
+        "B": "Make the S3 bucket public for a limited time. Inform only the a gencies.",
+        "C": "Configure cross-a ccount a ccess for the S3 bucket to the a ccounts that the a gencies own.",
+        "D": "Set up a n IAM user for each a nalyst in the source data a ccount. Grant each user a ccess to the S3 bucket."
       },
       "correct_answer": "C",
-      "explanation": "By configuring cross-account access, you can grant permissions to specific AWS accounts (owned by the consulting agencies) to access the S3 bucket. This allows you to share the data securely with the agencies without making the data public or creating additional IAM users in the source data account."
+      "explanation": "By configuring cross-a ccount a ccess, you can grant permissions to specific A WS a ccounts (owned by the consulting a gencies) to a ccess the S3 bucket. This a llows you to share the data securely with the a gencies without making the data public or creating a dditional IAM users in the source data a ccount."
     },
     {
       "id": "635",
-      "question": "A company uses Amazon FSx for Netapp ONTAP in its primary AWS Region for CIFS and NFS File shares. Applications that run on Amazon EC2 instances access the File shares. The company needs astorage disaster recovery (DR) solution in a secondary Region. The data that is replicated in the secondary Region needs to be accessed by using the same protocols as the primary Region. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company uses A mazon FSx for Netapp ONTAP in its primary A WS Region for CIFS a nd NFS File shares. A pplications that run on A mazon EC2 instances a ccess the File shares. The company needs a storage disaster recovery (DR) solution in a secondary Region. The data that is replicated in the secondary Region needs to be a ccessed by using the same protocols a s the primary Region. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Create an AWS Lambda function to copy the data to an Amazon S3 bucket. Replicate the S3 bucket to the secondary Region.",
-        "B": "Create a backup of the FSx for ONTAP volumes by using AWS Backup. Copy the volumes to the secondary Region. Create a new FSx for ONTAP instance from the backup.",
-        "C": "Create an FSx for ONTAP instance in the secondary Region. Use NetApp SnapMirror to replicate data from the primary Region to the secondary Region.",
-        "D": "Create an Amazon Elastic File System (Amazon EFS) volume. Migrate the current data to the volume. Replicate the volume to the secondary Region."
+        "A": "Create a n A WS Lambda function to copy the data to a n A mazon S3 bucket. Replicate the S3 bucket to the secondary Region.",
+        "B": "Create a backup of the FSx for ONTAP volumes by using A WS Backup. Copy the volumes to the secondary Region. Create a new FSx for ONTAP instance from the backup.",
+        "C": "Create a n FSx for ONTAP instance in the secondary Region. Use NetApp SnapMirror to replicate data from the primary Region to the secondary Region.",
+        "D": "Create a n A mazon Elastic File System (A mazon EFS) volume. Migrate the current data to the volume. Replicate the volume to the secondary Region."
       },
       "correct_answer": "C",
-      "explanation": "FSx for ONTAP supports NetApp SnapMirror, which is a robust data replication technology. You can use SnapMirror to replicate data from the primary FSx for ONTAP instance in the primary Region to an FSx for ONTAP instance in the secondary Region."
+      "explanation": "FSx for ONTAP supports NetApp SnapMirror, which is a robust data replication technology. You can use SnapMirror to replicate data from the primary FSx for ONTAP instance in the primary Region to a n FSx for ONTAP instance in the secondary Region."
     },
     {
       "id": "636",
-      "question": "Adevelopment team is creating an event-based application that uses AWS Lambda functions. Events will be generated when Files are added to an Amazon S3 bucket. The development team currently has Amazon Simple Notification Service (Amazon SNS) configured as the event target from Amazon S3. What should A solutions architect do to process the events from Amazon S3 in ascalable way?",
+      "question": "A development team is creating a n event-based a pplication that uses A WS Lambda functions. Events will be generated when Files a re a dded to a n A mazon S3 bucket. The development team currently has A mazon Simple Notification Service (A mazon SNS) configured a s the event target from A mazon S3. What should A solutions a rchitect do to process the events from A mazon S3 in a scalable way?",
       "options": {
-        "A": "Create an SNS subscription that processes the event in Amazon Elastic Container Service (Amazon ECS) before the event runs in Lambda.",
-        "B": "Create an SNS subscription that processes the event in Amazon Elastic Kubernetes Service (Amazon EKS) before the event runs in Lambda",
-        "C": "Create an SNS subscription that sends the event to Amazon Simple Queue Service (Amazon SQS). Configure the SOS queue to trigger a Lambda function.",
-        "D": "Create an SNS subscription that sends the event to AWS Server Migration Service (AWS SMS). Configure the Lambda function to poll from the SMS event."
+        "A": "Create a n SNS subscription that processes the event in A mazon Elastic Container Service (A mazon ECS) before the event runs in Lambda.",
+        "B": "Create a n SNS subscription that processes the event in A mazon Elastic Kubernetes Service (A mazon EKS) before the event runs in Lambda",
+        "C": "Create a n SNS subscription that sends the event to A mazon Simple Queue Service (A mazon SQS). Configure the SOS queue to trigger a Lambda function.",
+        "D": "Create a n SNS subscription that sends the event to A WS Server Migration Service (A WS SMS). Configure the Lambda function to poll from the SMS event."
       },
       "correct_answer": "C",
       "explanation": ""
     },
     {
       "id": "637",
-      "question": "A solutions architect is designing a new service behind Amazon API Gateway. The request patterns for the service will be unpredictable and can change suddenly from 0 requests to over 500 per second. The total size of the data that needs to be persisted in abackend database is currently less than 1 GB with unpredictable future growth. Data can be queried using simple key-value requests. Which combination ofAWS services would meet these requirements? (Choose two.)",
+      "question": "A solutions a rchitect is designing a new service behind A mazon A PI Gateway. The request patterns for the service will be unpredictable a nd can change suddenly from 0 requests to over 500 per second. The total size of the data that needs to be persisted in a backend database is currently less than 1 GB with unpredictable future growth. Data can be queried using simple key-value requests. Which combination ofAWS services would meet these requirements? (Choose two.)",
       "options": {
-        "A": "AWS Fargate",
-        "B": "AWS Lambda",
-        "C": "Amazon DynamoDB",
-        "D": "Amazon EC2 Auto Scaling",
-        "E": "MySQL-compatible Amazon Aurora"
+        "A": "A WS Fargate",
+        "B": "A WS Lambda",
+        "C": "A mazon DynamoDB",
+        "D": "A mazon EC2 A uto Scaling",
+        "E": "MySQL-compatible A mazon A urora"
       },
       "correct_answer": "BC",
-      "explanation": "C. Amazon DynamoDB\nAWS Lambda is a serverless compute service that automatically scales with the number of incoming requests. It's suitable for unpredictable workloads, as it allows you to run code without provisioning or managing servers. Lambda functions can be triggered by API Gateway for handling HTTP requests.\nAmazon DynamoDB (Option C):\nDynamoDB is a fully managed NoSQL database service that can handle unpredictable and scalable workloads. It provides low-latency, high-throughput performance for simple key-value queries. DynamoDB automatically scales to accommodate varying request rates, and you pay for the throughput you provision."
+      "explanation": "C. A mazon DynamoDB\nA WS Lambda is a serverless compute service that a utomatically scales with the number of incoming requests. It's suitable for unpredictable workloads, a s it a llows you to run code without provisioning or managing servers. Lambda functions can be triggered by A PI Gateway for handling HTTP requests.\nA mazon DynamoDB (Option C):\nDynamoDB is a fully managed NoSQL database service that can handle unpredictable a nd scalable workloads. It provides low-latency, high-throughput performance for simple key-value queries. DynamoDB a utomatically scales to a ccommodate varying request rates, a nd you pay for the throughput you provision."
     },
     {
       "id": "638",
-      "question": "A company collects and shares research data with the company's employees all over the world. The company wants to collect and store the data in an Amazon S3 bucket and process the data in the AWS Cloud. The company will share the data with the company's employees. The company needs asecure solution in the AWS Cloud that minimizes operational overhead. Which solution will meet these requirements?",
+      "question": "A company collects a nd shares research data with the company's employees a ll over the world. The company wants to collect a nd store the data in a n A mazon S3 bucket a nd process the data in the A WS Cloud. The company will share the data with the company's employees. The company needs a secure solution in the A WS Cloud that minimizes operational overhead. Which solution will meet these requirements?",
       "options": {
-        "A": "Use an AWS Lambda function to create an S3 presigned URL. Instruct employees to use the URL.",
-        "B": "Create an IAM user for each employee. Create an IAM policy for each employee to allow S3 access. Instruct employees to use the AWS Management Console.",
-        "C": "Create an S3 File Gateway. Create a share for uploading and a share for downloading. Allow employees to mount shares on their local computers to use S3 File Gateway.",
-        "D": "Configure AWS Transfer Family SFTP endpoints. Select the custom identity provider options. Use AWS Secrets Manager to manage the user credentials Instruct employees to use Transfer Family."
+        "A": "Use a n A WS Lambda function to create a n S3 presigned URL. Instruct employees to use the URL.",
+        "B": "Create a n IAM user for each employee. Create a n IAM policy for each employee to a llow S3 a ccess. Instruct employees to use the A WS Management Console.",
+        "C": "Create a n S3 File Gateway. Create a share for uploading a nd a share for downloading. A llow employees to mount shares on their local computers to use S3 File Gateway.",
+        "D": "Configure A WS Transfer Family SFTP endpoints. Select the custom identity provider options. Use A WS Secrets Manager to manage the user credentials Instruct employees to use Transfer Family."
       },
       "correct_answer": "A",
       "explanation": ""
     },
     {
       "id": "639",
-      "question": "A company is building a new furniture inventory application. The company has deployed the application on aFieet ofamazon EC2 instances across multiple Availability Zones. The EC2 instances run behind an Application Load Balancer (ALB) in their VPC. A solutions architect has observed that incoming traffic seems to favor one EC2 instance, resulting in latency for some requests. What should the solutions architect do to resolve this issue?",
+      "question": "A company is building a new furniture inventory a pplication. The company has deployed the a pplication on a Fieet ofamazon EC2 instances a cross multiple A vailability Zones. The EC2 instances run behind a n A pplication Load Balancer (A LB) in their VPC. A solutions a rchitect has observed that incoming traffic seems to favor one EC2 instance, resulting in latency for some requests. What should the solutions a rchitect do to resolve this issue?",
       "options": {
-        "A": "Disable session affinity (sticky sessions) on the ALB",
-        "B": "Replace the ALB with a Network Load Balancer",
-        "C": "Increase the number of EC2 instances in each Availability Zone",
-        "D": "Adjust the frequency of the health checks on the ALB's target group"
+        "A": "Disable session a ffinity (sticky sessions) on the A LB",
+        "B": "Replace the A LB with a Network Load Balancer",
+        "C": "Increase the number of EC2 instances in each A vailability Zone",
+        "D": "A djust the frequency of the health checks on the A LB's target group"
       },
       "correct_answer": "A",
-      "explanation": "Session affinity, also known as sticky sessions, directs a client's requests to the same EC2 instance, based on the client's session information. While sticky sessions can be useful in some scenarios, they can lead to uneven distribution of traffic, causing latency for some requests if one EC2 instance is overloaded."
+      "explanation": "Session a ffinity, a lso known a s sticky sessions, directs a client's requests to the same EC2 instance, based on the client's session information. While sticky sessions can be useful in some scenarios, they can lead to uneven distribution of traffic, causing latency for some requests if one EC2 instance is overloaded."
     },
     {
       "id": "640",
-      "question": "A company has an application workflow that uses an AWS Lambda function to download and decrypt Files from Amazon S3. These Files are encrypted using AWS Key Management Service (AWS KMS) keys. A solutions architect needs to design a solution that will ensure the required permissions are set correctly. Which combination of actions accomplish this? (Choose two.)",
+      "question": "A company has a n a pplication workflow that uses a n A WS Lambda function to download a nd decrypt Files from A mazon S3. These Files a re encrypted using A WS Key Management Service (A WS KMS) keys. A solutions a rchitect needs to design a solution that will ensure the required permissions a re set correctly. Which combination of a ctions a ccomplish this? (Choose two.)",
       "options": {
-        "A": "Attach the kms:decrypt permission to the Lambda function’s resource policy",
+        "A": "A ttach the kms:decrypt permission to the Lambda function\u2019s resource policy",
         "B": "Grant the decrypt permission for the Lambda IAM role in the KMS key's policy",
         "C": "Grant the decrypt permission for the Lambda resource policy in the KMS key's policy.",
-        "D": "Create a new IAM policy with the kms:decrypt permission and attach the policy to the Lambda function.",
-        "E": "Create a new IAM role with the kms:decrypt permission and attach the execution role to the Lambda function."
+        "D": "Create a new IAM policy with the kms:decrypt permission a nd a ttach the policy to the Lambda function.",
+        "E": "Create a new IAM role with the kms:decrypt permission a nd a ttach the execution role to the Lambda function."
       },
       "correct_answer": "BE",
-      "explanation": "E. Create a new IAM role with the kms:decrypt permission and attach the execution role to the Lambda function."
+      "explanation": "E. Create a new IAM role with the kms:decrypt permission a nd a ttach the execution role to the Lambda function."
     },
     {
       "id": "641",
-      "question": "A company wants to monitor its AWS costs for Financial review. The cloud operations team is designing an architecture in the AWS Organizations management account to query AWS Cost and Usage Reports for all member accounts. The team must run this query once amonth and provide adetailed analysis of the bill. Which solution is the MOST scalable and cost-effective way to meet these requirements?",
+      "question": "A company wants to monitor its A WS costs for Financial review. The cloud operations team is designing a n a rchitecture in the A WS Organizations management a ccount to query A WS Cost a nd Usage Reports for a ll member a ccounts. The team must run this query once a month a nd provide a detailed a nalysis of the bill. Which solution is the MOST scalable a nd cost-effective way to meet these requirements?",
       "options": {
-        "A": "Enable Cost and Usage Reports in the management account. Deliver reports to Amazon Kinesis. Use Amazon EMR for analysis.",
-        "B": "Enable Cost and Usage Reports in the management account. Deliver the reports to Amazon S3 Use Amazon Athena for analysis.",
-        "C": "Enable Cost and Usage Reports for member accounts. Deliver the reports to Amazon S3 Use Amazon Redshift for analysis.",
-        "D": "Enable Cost and Usage Reports for member accounts. Deliver the reports to Amazon Kinesis. Use Amazon QuickSight tor analysis."
+        "A": "Enable Cost a nd Usage Reports in the management a ccount. Deliver reports to A mazon Kinesis. Use A mazon EMR for a nalysis.",
+        "B": "Enable Cost a nd Usage Reports in the management a ccount. Deliver the reports to A mazon S3 Use A mazon A thena for a nalysis.",
+        "C": "Enable Cost a nd Usage Reports for member a ccounts. Deliver the reports to A mazon S3 Use A mazon Redshift for a nalysis.",
+        "D": "Enable Cost a nd Usage Reports for member a ccounts. Deliver the reports to A mazon Kinesis. Use A mazon QuickSight tor a nalysis."
       },
       "correct_answer": "B",
-      "explanation": "Amazon Athena is a serverless query service that allows you to analyze data directly in Amazon S3 using SQL queries."
+      "explanation": "A mazon A thena is a serverless query service that a llows you to a nalyze data directly in A mazon S3 using SQL queries."
     },
     {
       "id": "642",
-      "question": "A company wants to run agaming application on Amazon EC2 instances that are part of an Auto Scaling group in the AWS Cloud. The application will transmit data by using UDP packets. The company wants to ensure that the application can scale out and in as traffic increases and decreases. What should A solutions architect do to meet these requirements?",
+      "question": "A company wants to run a gaming a pplication on A mazon EC2 instances that a re part of a n A uto Scaling group in the A WS Cloud. The a pplication will transmit data by using UDP packets. The company wants to ensure that the a pplication can scale out a nd in a s traffic increases a nd decreases. What should A solutions a rchitect do to meet these requirements?",
       "options": {
-        "A": "Attach a Network Load Balancer to the Auto Scaling group.",
-        "B": "Attach an Application Load Balancer to the Auto Scaling group.",
-        "C": "Deploy an Amazon Route 53 record set with a weighted policy to route traffic appropriately.",
-        "D": "Deploy a NAT instance that is conFigured with port forwarding to the EC2 instances in the Auto Scaling group."
+        "A": "A ttach a Network Load Balancer to the A uto Scaling group.",
+        "B": "A ttach a n A pplication Load Balancer to the A uto Scaling group.",
+        "C": "Deploy a n A mazon Route 53 record set with a weighted policy to route traffic a ppropriately.",
+        "D": "Deploy a NAT instance that is conFigured with port forwarding to the EC2 instances in the A uto Scaling group."
       },
       "correct_answer": "A",
-      "explanation": "UDP is a connectionless protocol, and Network Load Balancers (NLB) support UDP, making them suitable for applications that use UDP for transmitting data."
+      "explanation": "UDP is a connectionless protocol, a nd Network Load Balancers (NLB) support UDP, making them suitable for a pplications that use UDP for transmitting data."
     },
     {
       "id": "643",
-      "question": "A company runs several websites on AWS for its different brands. Each website generates tens of gigabytes of web traffic logs each day. A solutions architect needs to design ascalable solution to give the company's developers the ability to analyze traffic patterns across all the company's websites. This analysis by the developers will occur on demand once aweek over the course of several months. The solution must support queries with standard SQL. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company runs several websites on A WS for its different brands. Each website generates tens of gigabytes of web traffic logs each day. A solutions a rchitect needs to design a scalable solution to give the company's developers the a bility to a nalyze traffic patterns a cross a ll the company's websites. This a nalysis by the developers will occur on demand once a week over the course of several months. The solution must support queries with standard SQL. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
-        "A": "Store the logs in Amazon S3. Use Amazon Athena tor analysis.",
-        "B": "Store the logs in Amazon RDS. Use a database client for analysis.",
-        "C": "Store the logs in Amazon OpenSearch Service. Use OpenSearch Service for analysis.",
-        "D": "Store the logs in an Amazon EMR cluster Use a supported open-source framework for SQL-based analysis."
+        "A": "Store the logs in A mazon S3. Use A mazon A thena tor a nalysis.",
+        "B": "Store the logs in A mazon RDS. Use a database client for a nalysis.",
+        "C": "Store the logs in A mazon OpenSearch Service. Use OpenSearch Service for a nalysis.",
+        "D": "Store the logs in a n A mazon EMR cluster Use a supported open-source framework for SQL-based a nalysis."
       },
       "correct_answer": "A",
-      "explanation": "Amazon Athena is a serverless query service that allows you to analyze data directly in Amazon S3 using standard SQL queries. It is cost-effective because you pay only for the queries you run, and there is no need to provision or manage infrastructure."
+      "explanation": "A mazon A thena is a serverless query service that a llows you to a nalyze data directly in A mazon S3 using standard SQL queries. It is cost-effective because you pay only for the queries you run, a nd there is no need to provision or manage infrastructure."
     },
     {
       "id": "644",
-      "question": "An international company has asubdomain for each country that the company operates in. The subdomains are formatted as example.com, country1.example.com, and country2.example.com. The company's workloads are behind an Application Load Balancer. The company wants to encrypt the website data that is in transit. Which combination of steps will meet these requirements? (Choose two.)",
+      "question": "A n international company has a subdomain for each country that the company operates in. The subdomains a re formatted a s example.com, country1.example.com, a nd country2.example.com. The company's workloads a re behind a n A pplication Load Balancer. The company wants to encrypt the website data that is in transit. Which combination of steps will meet these requirements? (Choose two.)",
       "options": {
-        "A": "Use the AWS CertiFicate Manager (ACM) console to request a public certiFicate for the apex top domain example com and a wildcard certiFicate for *.example.com.",
-        "B": "Use the AWS CertiFicate Manager (ACM) console to request a private certiFicate for the apex top domain example.com and a wildcard certiFicate for *.example.com.",
-        "C": "Use the AWS CertiFicate Manager (ACM) console to request a public and private certiFicate for the apex top domain example.com.",
-        "D": "Validate domain ownership by email address. Switch to DNS validation by adding the required DNS records to the DNS provider.",
-        "E": "Validate domain ownership for the domain by adding the required DNS records to the DNS provider."
+        "A": "Use the A WS CertiFicate Manager (A CM) console to request a public certiFicate for the a pex top domain example com a nd a wildcard certiFicate for *.example.com.",
+        "B": "Use the A WS CertiFicate Manager (A CM) console to request a private certiFicate for the a pex top domain example.com a nd a wildcard certiFicate for *.example.com.",
+        "C": "Use the A WS CertiFicate Manager (A CM) console to request a public a nd private certiFicate for the a pex top domain example.com.",
+        "D": "Validate domain ownership by email a ddress. Switch to DNS validation by a dding the required DNS records to the DNS provider.",
+        "E": "Validate domain ownership for the domain by a dding the required DNS records to the DNS provider."
       },
       "correct_answer": "AE",
-      "explanation": "E. Validate domain ownership for the domain by adding the required DNS records to the DNS provider.\nAWS Certificate Manager (ACM) is a service provided by Amazon Web Services (AWS) that simplifies the process of managing and provisioning SSL/TLS (Secure Sockets Layer/Transport Layer Security) certificates for your applications and websites. SSL/TLS certificates are essential for encrypting data in transit and securing communication between clients and servers.\n ACM requires domain ownership validation before issuing certificates. For wildcard certificates, DNS validation is necessary."
+      "explanation": "E. Validate domain ownership for the domain by a dding the required DNS records to the DNS provider.\nA WS Certificate Manager (A CM) is a service provided by A mazon Web Services (A WS) that simplifies the process of managing a nd provisioning SSL/TLS (Secure Sockets Layer/Transport Layer Security) certificates for your a pplications a nd websites. SSL/TLS certificates a re essential for encrypting data in transit a nd securing communication between clients a nd servers.\n A CM requires domain ownership validation before issuing certificates. For wildcard certificates, DNS validation is necessary."
     },
     {
       "id": "645",
-      "question": "A company is required to use cryptographic keys in its on-premises key manager. The key manager is outside of the AWS Cloud because of regulatory and compliance requirements. The company wants to manage encryption and decryption by using cryptographic keys that are retained outside of the AWS Cloud and that support avariety of external key managers from different vendors. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company is required to use cryptographic keys in its on-premises key manager. The key manager is outside of the A WS Cloud because of regulatory a nd compliance requirements. The company wants to manage encryption a nd decryption by using cryptographic keys that a re retained outside of the A WS Cloud a nd that support a variety of external key managers from different vendors. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Use AWS CloudHSM key store backed by a CloudHSM cluster.",
-        "B": "Use an AWS Key Management Service (AWS KMS) external key store backed by an external key manager.",
-        "C": "Use the default AWS Key Management Service (AWS KMS) managed key store.",
-        "D": "Use a custom key store backed by an AWS CloudHSM cluster."
+        "A": "Use A WS CloudHSM key store backed by a CloudHSM cluster.",
+        "B": "Use a n A WS Key Management Service (A WS KMS) external key store backed by a n external key manager.",
+        "C": "Use the default A WS Key Management Service (A WS KMS) managed key store.",
+        "D": "Use a custom key store backed by a n A WS CloudHSM cluster."
       },
       "correct_answer": "B",
       "explanation": ""
     },
     {
       "id": "646",
-      "question": "A solutions architect needs to host a high performance computing (HPC) workload in the AWS Cloud. The workload will run on hundreds of Amazon EC2 instances and will require parallel access to ashared File system to enable distributed processing of large datasets. Datasets will be accessed across multiple instances simultaneously. The workload requires access latency within 1 ms. After processing has completed, engineers will need access to the dataset for manual postprocessing. Which solution will meet these requirements?",
+      "question": "A solutions a rchitect needs to host a high performance computing (HPC) workload in the A WS Cloud. The workload will run on hundreds of A mazon EC2 instances a nd will require parallel a ccess to a shared File system to enable distributed processing of large datasets. Datasets will be a ccessed a cross multiple instances simultaneously. The workload requires a ccess latency within 1 ms. A fter processing has completed, engineers will need a ccess to the dataset for manual postprocessing. Which solution will meet these requirements?",
       "options": {
-        "A": "Use Amazon Elastic File System (Amazon EFS) as a shared File system. Access the dataset from Amazon EFS.",
-        "B": "Mount an Amazon S3 bucket to serve as the shared File system. Perform postprocessing directly from the S3 bucket.",
-        "C": "Use Amazon FSx for Lustre as a shared File system. Link the File system to an Amazon S3 bucket for postprocessing.",
-        "D": "Configure AWS Resource Access Manager to share an Amazon S3 bucket so that it can be mounted to all instances for processing and postprocessing."
+        "A": "Use A mazon Elastic File System (A mazon EFS) a s a shared File system. A ccess the dataset from A mazon EFS.",
+        "B": "Mount a n A mazon S3 bucket to serve a s the shared File system. Perform postprocessing directly from the S3 bucket.",
+        "C": "Use A mazon FSx for Lustre a s a shared File system. Link the File system to a n A mazon S3 bucket for postprocessing.",
+        "D": "Configure A WS Resource A ccess Manager to share a n A mazon S3 bucket so that it can be mounted to a ll instances for processing a nd postprocessing."
       },
       "correct_answer": "C",
-      "explanation": "FSx for Lustre is designed for high-performance computing workloads that require fast and scalable shared storage. It provides low-latency access to data and is well-suited for parallel processing across multiple instances."
+      "explanation": "FSx for Lustre is designed for high-performance computing workloads that require fast a nd scalable shared storage. It provides low-latency a ccess to data a nd is well-suited for parallel processing a cross multiple instances."
     },
     {
       "id": "647",
-      "question": "Agaming company is building an application with Voice over IP capabilities. The application will serve traffic to users across the world. The application needs to be highly available with an automated failover across AWS Regions. The company wants to minimize the latency of users without relying on IP address caching on user devices. What should A solutions architect do to meet these requirements?",
+      "question": "A gaming company is building a n a pplication with Voice over IP capabilities. The a pplication will serve traffic to users a cross the world. The a pplication needs to be highly a vailable with a n a utomated failover a cross A WS Regions. The company wants to minimize the latency of users without relying on IP a ddress caching on user devices. What should A solutions a rchitect do to meet these requirements?",
       "options": {
-        "A": "Use AWS Global Accelerator with health checks.",
-        "B": "Use Amazon Route 53 with a geolocation routing policy.",
-        "C": "Create an Amazon CloudFront distribution that includes multiple origins.",
-        "D": "Create an Application Load Balancer that uses path-based routing."
+        "A": "Use A WS Global A ccelerator with health checks.",
+        "B": "Use A mazon Route 53 with a geolocation routing policy.",
+        "C": "Create a n A mazon CloudFront distribution that includes multiple origins.",
+        "D": "Create a n A pplication Load Balancer that uses path-based routing."
       },
       "correct_answer": "A",
-      "explanation": "AWS Global Accelerator is a service that provides static IP addresses (Anycast) to route traffic over the AWS global network. It routes traffic over the optimal path to the AWS endpoint, improving availability and performance."
+      "explanation": "A WS Global A ccelerator is a service that provides static IP a ddresses (A nycast) to route traffic over the A WS global network. It routes traffic over the optimal path to the A WS endpoint, improving a vailability a nd performance."
     },
     {
       "id": "648",
-      "question": "Aweather forecasting company needs to process hundreds of gigabytes of data with sub-millisecond latency. The company has a high performance computing (HPC) environment in its data center and wants to expand its forecasting capabilities. A solutions architect must identify a highly available cloud storage solution that can handle large amounts of sustained throughput. Files that are stored in the solution should be accessible to thousands of compute instances that will simultaneously access and process the entire dataset. What should the solutions architect do to meet these requirements?",
+      "question": "A weather forecasting company needs to process hundreds of gigabytes of data with sub-millisecond latency. The company has a high performance computing (HPC) environment in its data center a nd wants to expand its forecasting capabilities. A solutions a rchitect must identify a highly a vailable cloud storage solution that can handle large a mounts of sustained throughput. Files that a re stored in the solution should be a ccessible to thousands of compute instances that will simultaneously a ccess a nd process the entire dataset. What should the solutions a rchitect do to meet these requirements?",
       "options": {
-        "A": "Use Amazon FSx for Lustre scratch File systems.",
-        "B": "Use Amazon FSx for Lustre persistent File systems.",
-        "C": "Use Amazon Elastic File System (Amazon EFS) with Bursting Throughput mode.",
-        "D": "Use Amazon Elastic File System (Amazon EFS) with Provisioned Throughput mode."
+        "A": "Use A mazon FSx for Lustre scratch File systems.",
+        "B": "Use A mazon FSx for Lustre persistent File systems.",
+        "C": "Use A mazon Elastic File System (A mazon EFS) with Bursting Throughput mode.",
+        "D": "Use A mazon Elastic File System (A mazon EFS) with Provisioned Throughput mode."
       },
       "correct_answer": "B",
-      "explanation": "Persistent file systems in FSx for Lustre are designed for longer-term storage needs. They provide a durable and highly available solution for your data. This is important for the weather forecasting company's requirement to handle large amounts of sustained throughput."
+      "explanation": "Persistent file systems in FSx for Lustre a re designed for longer-term storage needs. They provide a durable a nd highly a vailable solution for your data. This is important for the weather forecasting company's requirement to handle large a mounts of sustained throughput."
     },
     {
       "id": "649",
-      "question": "An ecommerce company runs aPostgreSQL database on premises. The database stores data by using high IOPS Amazon Elastic Block Store (Amazon EBS) block storage. The daily peak I/Otransactions per second do not exceed 15,000 IOPS. The company wants to migrate the database to Amazon RDS for PostgreSQL and provision disk IOPS performance independent of disk storage capacity. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A n ecommerce company runs a PostgreSQL database on premises. The database stores data by using high IOPS A mazon Elastic Block Store (A mazon EBS) block storage. The daily peak I/Otransactions per second do not exceed 15,000 IOPS. The company wants to migrate the database to A mazon RDS for PostgreSQL a nd provision disk IOPS performance independent of disk storage capacity. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
-        "A": "Configure the General Purpose SSD (gp2) EBS volume storage type and provision 15,000 IOPS.",
-        "B": "Configure the Provisioned IOPS SSD (io1) EBS volume storage type and provision 15,000 IOPS.",
-        "C": "Configure the General Purpose SSD (gp3) EBS volume storage type and provision 15,000 IOPS.",
-        "D": "Configure the EBS magnetic volume type to achieve maximum IOPS."
+        "A": "Configure the General Purpose SSD (gp2) EBS volume storage type a nd provision 15,000 IOPS.",
+        "B": "Configure the Provisioned IOPS SSD (io1) EBS volume storage type a nd provision 15,000 IOPS.",
+        "C": "Configure the General Purpose SSD (gp3) EBS volume storage type a nd provision 15,000 IOPS.",
+        "D": "Configure the EBS magnetic volume type to a chieve maximum IOPS."
       },
       "correct_answer": "C",
-      "explanation": "Amazon EBS gp3 volumes are designed for general-purpose workloads and offer a balance of price and performance. They allow you to provision IOPS independently of storage capacity, similar to io1 volumes."
+      "explanation": "A mazon EBS gp3 volumes a re designed for general-purpose workloads a nd offer a balance of price a nd performance. They a llow you to provision IOPS independently of storage capacity, similar to io1 volumes."
     },
     {
       "id": "650",
-      "question": "A company wants to migrate its on-premises Microsoft SQL Server Enterprise edition database to AWS. The company's online application uses the database to process transactions. The data analysis team uses the same production database to run reports for analytical processing. The company wants to reduce operational overhead by moving to managed services wherever possible. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company wants to migrate its on-premises Microsoft SQL Server Enterprise edition database to A WS. The company's online a pplication uses the database to process transactions. The data a nalysis team uses the same production database to run reports for a nalytical processing. The company wants to reduce operational overhead by moving to managed services wherever possible. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Migrate to Amazon RDS for Microsoft SOL Server. Use read replicas for reporting purposes",
-        "B": "Migrate to Microsoft SQL Server on Amazon EC2. Use Always On read replicas for reporting purposes",
-        "C": "Migrate to Amazon DynamoDB. Use DynamoDB on-demand replicas for reporting purposes",
-        "D": "Migrate to Amazon Aurora MySQL. Use Aurora read replicas for reporting purposes"
+        "A": "Migrate to A mazon RDS for Microsoft SOL Server. Use read replicas for reporting purposes",
+        "B": "Migrate to Microsoft SQL Server on A mazon EC2. Use A lways On read replicas for reporting purposes",
+        "C": "Migrate to A mazon DynamoDB. Use DynamoDB on-demand replicas for reporting purposes",
+        "D": "Migrate to A mazon A urora MySQL. Use A urora read replicas for reporting purposes"
       },
       "correct_answer": "A",
-      "explanation": "Amazon RDS supports read replicas, allowing you to offload reporting and analytical workloads to replicas without impacting the performance of the primary database. This is a cost-effective and efficient way to handle reporting without affecting transactional processing on the primary database."
+      "explanation": "A mazon RDS supports read replicas, a llowing you to offload reporting a nd a nalytical workloads to replicas without impacting the performance of the primary database. This is a cost-effective a nd efficient way to handle reporting without a ffecting transactional processing on the primary database."
     }
   ]
 }

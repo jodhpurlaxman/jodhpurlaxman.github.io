@@ -1,0 +1,615 @@
+{
+  "questions": [
+    {
+      "id": "701",
+      "question": "An Auto Scaling group of EC2 instances runs behind an Elastic Load Balancer. Web servers must be accessible only through the ELB, not directly from the Internet. How should this be configured?",
+      "options": {
+        "A": "With a CloudFront distribution in front of the Elastic Load Balancer",
+        "B": "Denying traffic from the Internet in the web server's security group",
+        "C": "Configure the web tier security group to allow only traffic from the Elastic Load Balancer",
+        "D": "Install a Load Balancer on an Amazon EC2 instance"
+      },
+      "correct_answer": "C",
+      "explanation": "Configure the web server security group to only allow inbound traffic from the ELB. Security Groups cannot create deny rules, so blocking all internet traffic would also block legitimate ELB traffic."
+    },
+    {
+      "id": "702",
+      "question": "A company is generating large datasets with millions of rows that must be summarized by column. Reports will be built using business intelligence tools. Which storage service meets the requirements?",
+      "options": {
+        "A": "Amazon OpenSearch",
+        "B": "Amazon RDS",
+        "C": "Amazon ElastiCache",
+        "D": "Amazon Redshift"
+      },
+      "correct_answer": "D",
+      "explanation": "Amazon Redshift is a petabyte-scale data warehouse designed for heavy analytics workloads. It uses columnar storage and parallel query execution for high performance on analytic queries."
+    },
+    {
+      "id": "703",
+      "question": "Images must be encrypted at rest in Amazon S3. The company doesn't want to manage keys but wants to control who can access them. What should be used?",
+      "options": {
+        "A": "Server-Side Encryption with keys stored in an S3 bucket",
+        "B": "Server-Side Encryption with Customer-Provided Keys (SSE-C)",
+        "C": "Server-Side Encryption with Amazon S3-Managed Keys (SSE-S3)",
+        "D": "Server-Side Encryption with AWS KMS-Managed Keys (SSE-KMS)"
+      },
+      "correct_answer": "D",
+      "explanation": "SSE-KMS handles key management including creation, rotation, and deletion, while providing granular access control. SSE-C requires managing keys yourself, and SSE-S3 doesn't provide the same access control."
+    },
+    {
+      "id": "704",
+      "question": "A High-Performance Computing (HPC) application requires low network latency and high throughput between nodes in a single AZ. How should it be deployed?",
+      "options": {
+        "A": "In a partition placement group",
+        "B": "In a load balancer placement group",
+        "C": "In a spread placement group",
+        "D": "In a cluster placement group"
+      },
+      "correct_answer": "D",
+      "explanation": "Cluster placement groups provide low network latency and high throughput by grouping instances within a single Availability Zone, ideal for HPC applications."
+    },
+    {
+      "id": "705",
+      "question": "Your Business Intelligence team uses SQL tools to analyze data. What's the best solution for performing queries on structured data received at high velocity?",
+      "options": {
+        "A": "EMR using Hive",
+        "B": "Kinesis Data Streams with RDS",
+        "C": "Kinesis Firehose with RDS",
+        "D": "Kinesis Firehose with RedShift"
+      },
+      "correct_answer": "D",
+      "explanation": "Kinesis Firehose delivers real-time streaming data to Redshift. Redshift is optimized for analytics queries on structured data with SQL tools."
+    },
+    {
+      "id": "706",
+      "question": "A company stores important data in an Amazon S3 bucket. How can data be recovered in case of accidental deletion?",
+      "options": {
+        "A": "Enable Amazon S3 Intelligent-Tiering",
+        "B": "Enable an Amazon S3 lifecycle policy",
+        "C": "Enable Amazon S3 cross-Region replication",
+        "D": "Enable Amazon S3 versioning"
+      },
+      "correct_answer": "D",
+      "explanation": "S3 versioning keeps multiple variants of an object, making it easy to recover from unintended user actions. Cross-Region replication would also replicate deletions."
+    },
+    {
+      "id": "707",
+      "question": "An application for a social media website needs to perform complicated queries about users' connections, likes, and messages. Which database is recommended?",
+      "options": {
+        "A": "Amazon RDS",
+        "B": "Amazon Redshift",
+        "C": "Amazon Neptune",
+        "D": "Amazon OpenSearch"
+      },
+      "correct_answer": "C",
+      "explanation": "Amazon Neptune is a graph database specifically designed for handling interconnected data and social network relationships with high performance."
+    },
+    {
+      "id": "708",
+      "question": "A manual NodeJS script runs a couple times a week and takes 10 minutes. It needs to be replaced with an automated solution. Which option should be used?",
+      "options": {
+        "A": "Use a cron job on an Amazon EC2 instance",
+        "B": "Use AWS Batch",
+        "C": "Use AWS Lambda",
+        "D": "Use AWS Elastic Beanstalk"
+      },
+      "correct_answer": "C",
+      "explanation": "AWS Lambda is serverless with a 15-minute maximum execution time. It's the most cost-effective solution as you only pay for compute time consumed."
+    },
+    {
+      "id": "709",
+      "question": "A web application runs on EC2 instances behind an Application Load Balancer (ALB). Which protocols can be used for health checks? (Select TWO)",
+      "options": {
+        "A": "SSL",
+        "B": "TCP",
+        "C": "ICMP",
+        "D": "HTTP",
+        "E": "HTTPS"
+      },
+      "correct_answer": "DE",
+      "explanation": "Application Load Balancer operates at Layer 7 and supports health checks using HTTP and HTTPS protocols to ensure instances are healthy."
+    },
+    {
+      "id": "710",
+      "question": "A company plans to replicate core services to a Disaster Recovery site that can take over seamlessly. Other services will be switched off. Which DR strategy should be used?",
+      "options": {
+        "A": "Backup and restore",
+        "B": "Pilot light",
+        "C": "Warm standby",
+        "D": "Multi-site"
+      },
+      "correct_answer": "B",
+      "explanation": "Pilot light replicates core infrastructure with resources for data replication always on. Application servers are switched off and only used during failover."
+    },
+    {
+      "id": "711",
+      "question": "A website using HTML, CSS, client-side JavaScript, and images needs hosting. Which solution is MOST cost-effective?",
+      "options": {
+        "A": "Containerize the website and host it in AWS Fargate",
+        "B": "Create an Amazon S3 bucket and host the website there",
+        "C": "Deploy a web server on an Amazon EC2 instance",
+        "D": "Configure an Application Load Balancer with an AWS Lambda target"
+      },
+      "correct_answer": "B",
+      "explanation": "Amazon S3 static website hosting is the most cost-effective for static files, requiring no server management."
+    },
+    {
+      "id": "712",
+      "question": "How can a systems administrator specify a script to run on an EC2 instance during launch?",
+      "options": {
+        "A": "Metadata",
+        "B": "User Data",
+        "C": "Launch Template",
+        "D": "AWS ECS"
+      },
+      "correct_answer": "B",
+      "explanation": "User Data allows you to run scripts or set configuration details upon instance launch to automate tasks like installing software."
+    },
+    {
+      "id": "713",
+      "question": "To avoid data loss in EC2 Instance Stores and need a file system that scales automatically with LEAST management, which storage is appropriate?",
+      "options": {
+        "A": "Amazon EFS",
+        "B": "Amazon S3",
+        "C": "Amazon EBS",
+        "D": "Amazon RDS"
+      },
+      "correct_answer": "A",
+      "explanation": "Amazon EFS is a scalable file storage that automatically grows and shrinks, offering a simple interface for file systems accessible by multiple EC2 instances."
+    },
+    {
+      "id": "714",
+      "question": "When launching an EC2 instance with multiple attached volumes by modifying block device mapping, which block devices can be specified? (Select TWO)",
+      "options": {
+        "A": "EBS volume",
+        "B": "EFS volume",
+        "C": "Instance store volume",
+        "D": "Snapshot",
+        "E": "S3 bucket"
+      },
+      "correct_answer": "AC",
+      "explanation": "EBS volumes provide persistent block-level storage, and instance store provides temporary block-level storage. EFS is not block-level storage."
+    },
+    {
+      "id": "715",
+      "question": "A serverless application must analyze S3 data using SQL. Data must always be encrypted. Which services should encrypt and query the data?",
+      "options": {
+        "A": "Use S3 server-side encryption and Redshift Spectrum",
+        "B": "Use AWS KMS encryption keys and Redshift Spectrum",
+        "C": "Use AWS KMS encryption keys and Amazon Athena",
+        "D": "Use S3 server-side encryption and QuickSight"
+      },
+      "correct_answer": "C",
+      "explanation": "AWS KMS provides server-side encryption for S3. Amazon Athena is serverless for SQL queries on S3 data. Redshift Spectrum requires a cluster, making it not serverless."
+    },
+    {
+      "id": "716",
+      "question": "A Kinesis consumer application reads slower than expected. Multiple consumers exceed per-shard limits. How can this be resolved?",
+      "options": {
+        "A": "Increase the number of shards in the Kinesis data stream",
+        "B": "Implement API throttling to restrict requests per-shard",
+        "C": "Increase the number of reading transactions per shard",
+        "D": "Implement read throttling for the Kinesis data stream"
+      },
+      "correct_answer": "A",
+      "explanation": "Each shard has limited capacity. Adding more shards increases the stream's capacity to handle more data volume and transactions."
+    },
+    {
+      "id": "717",
+      "question": "An organization wants to share static web pages that will generate large global views. Files are in S3. Which solution is most efficient?",
+      "options": {
+        "A": "Create EC2 instances worldwide and host the website",
+        "B": "Use cross-Region replication to all Regions",
+        "C": "Use the geo proximity feature of AWS S3",
+        "D": "Use Amazon CloudFront with the S3 bucket as origin"
+      },
+      "correct_answer": "D",
+      "explanation": "CloudFront is a CDN that caches content at edge locations globally, reducing latency. EC2 instances worldwide would be costly and complex to manage."
+    },
+    {
+      "id": "718",
+      "question": "A company must encrypt customer documents at rest in S3. They don't want to manage keys but want to control who accesses them. What should be used?",
+      "options": {
+        "A": "Client-Side Encryption with S3-Managed Keys (SSE-S3)",
+        "B": "Client-Side Encryption with Customer-Provided Keys (SSE-C)",
+        "C": "Server-Side Encryption with S3-Managed Keys (SSE-S3)",
+        "D": "Server-Side Encryption with AWS KMS-Managed Keys (SSE-KMS)"
+      },
+      "correct_answer": "D",
+      "explanation": "SSE-KMS handles key management including rotation while providing granular access control through KMS policies."
+    },
+    {
+      "id": "719",
+      "question": "A web application may be vulnerable to cross-site scripting (XSS) attacks. What should remediate this vulnerability?",
+      "options": {
+        "A": "Create a Classic Load Balancer with AWS WAF",
+        "B": "Create a Network Load Balancer with AWS WAF",
+        "C": "Create an Application Load Balancer with AWS WAF",
+        "D": "Create an Application Load Balancer with AWS Shield Standard"
+      },
+      "correct_answer": "C",
+      "explanation": "AWS WAF protects against XSS attacks and is only available with Application Load Balancer. AWS Shield provides DDoS protection, not XSS protection."
+    },
+    {
+      "id": "720",
+      "question": "A big data workload runs on thousands of EC2 instances across AZs. Data needs concurrent access with extremely high throughput. Which storage is most suitable?",
+      "options": {
+        "A": "Amazon EFS in General Purpose mode",
+        "B": "Amazon EBS PIOPS",
+        "C": "Amazon EFS in Max I/O mode",
+        "D": "Amazon S3"
+      },
+      "correct_answer": "C",
+      "explanation": "EFS in Max I/O mode is optimized for highest possible throughput from many EC2 instances concurrently."
+    },
+    {
+      "id": "721",
+      "question": "A web application on EC2 behind an ELB requires all data in transit to be encrypted. How can this be achieved? (Select TWO)",
+      "options": {
+        "A": "Use NLB with TCP listener, terminate SSL on EC2",
+        "B": "Use sticky sessions with ALB",
+        "C": "Use ALB with HTTPS listener, install SSL certificates on ALB and EC2",
+        "D": "Use NLB with HTTPS listener, install SSL certificates",
+        "E": "Use ALB with TCP listener, terminate SSL on EC2"
+      },
+      "correct_answer": "AC",
+      "explanation": "NLB works at Layer 4 and can pass through SSL traffic with TCP listener. ALB supports SSL termination at Layer 7 with HTTPS listener."
+    },
+    {
+      "id": "722",
+      "question": "What's the most efficient service to establish network connectivity from on-premise to multiple VPCs in different AWS regions?",
+      "options": {
+        "A": "AWS Direct Connect",
+        "B": "AWS VPC Endpoints",
+        "C": "AWS VPN",
+        "D": "AWS Transit Gateway"
+      },
+      "correct_answer": "D",
+      "explanation": "AWS Transit Gateway connects VPCs and on-premises networks to a single gateway, acting as a cloud router for simplified multi-region connectivity."
+    },
+    {
+      "id": "723",
+      "question": "An HPC application needs 135,000 IOPS with replicated storage across all cluster instances. What's the most optimal and cost-effective storage?",
+      "options": {
+        "A": "Use EBS Provisioned IOPS volume with 135,000 IOPS",
+        "B": "Use Amazon Instance Store",
+        "C": "Use Amazon S3 with byte-range fetch",
+        "D": "Use EC2 Enhanced Networking with EBS HDD"
+      },
+      "correct_answer": "B",
+      "explanation": "Instance Store provides very high IOPS and low latency from physically attached disks. No EBS volume type supports 135,000 IOPS. Data is ephemeral but replicated across instances."
+    },
+    {
+      "id": "724",
+      "question": "A web application runs on-premise and in AWS. During coexistence, 80% of traffic should go to AWS, 20% to on-premises. How to distribute traffic?",
+      "options": {
+        "A": "Use Route 53 with weighted routing policy",
+        "B": "Use Route 53 with simple routing policy",
+        "C": "Use ALB to distribute traffic based on IP address",
+        "D": "Use NLB to distribute traffic based on Instance ID"
+      },
+      "correct_answer": "A",
+      "explanation": "Route 53 weighted routing policy splits traffic based on assigned weights. Assign weight 80 to AWS and 20 to on-premises servers."
+    },
+    {
+      "id": "725",
+      "question": "How can we be notified by email when an RDS database exceeds certain metric thresholds?",
+      "options": {
+        "A": "Create a CloudTrail alarm to send SMS",
+        "B": "Create a CloudWatch alarm and associate an SNS topic",
+        "C": "Create CloudWatch Logs rule triggering Lambda to send emails",
+        "D": "Setup an RDS alarm to send emails"
+      },
+      "correct_answer": "B",
+      "explanation": "CloudWatch alarms can trigger notifications. Create an SNS topic, subscribe your email, then configure the CloudWatch alarm to notify the SNS topic."
+    },
+    {
+      "id": "726",
+      "question": "A MySQL database needs migration to AWS with high availability and automatic failover across AZs. How to achieve this?",
+      "options": {
+        "A": "Use DMS to migrate to RDS MySQL Multi-AZ deployment",
+        "B": "Use DMS to migrate to RDS MySQL using Schema Conversion Tool",
+        "C": "Use DMS to migrate to Amazon EC2",
+        "D": "Use DMS to migrate to Amazon EBS"
+      },
+      "correct_answer": "A",
+      "explanation": "AWS DMS migrates databases securely with minimal downtime. RDS Multi-AZ provides high availability with automatic failover. SCT is unnecessary for MySQL to MySQL migration."
+    },
+    {
+      "id": "727",
+      "question": "A microservices platform using Docker needs AWS-managed infrastructure without managing EC2 instances. Which options deliver this? (Select TWO)",
+      "options": {
+        "A": "Use ECS with Fargate Launch Type",
+        "B": "Use ECS with EC2 Launch Type",
+        "C": "Put container images on GitHub",
+        "D": "Put container images in ECS",
+        "E": "Put container images in ECR"
+      },
+      "correct_answer": "AE",
+      "explanation": "ECR is AWS's managed container registry. ECS with Fargate is serverless, eliminating EC2 instance management. You only pay for running tasks."
+    },
+    {
+      "id": "728",
+      "question": "An application processes 4GB files with sporadic uploads. Metadata extraction takes seconds. What's the most cost-efficient architecture?",
+      "options": {
+        "A": "Use RDS to store files, Lambda for processing",
+        "B": "Store in S3, use EC2 to extract metadata",
+        "C": "Upload to S3, use S3 event notification to invoke Lambda",
+        "D": "Store in EBS, use EC2 fleet to extract metadata"
+      },
+      "correct_answer": "C",
+      "explanation": "S3 event notifications trigger Lambda on file upload. This is most cost-effective with no running servers and low S3/Lambda costs."
+    },
+    {
+      "id": "729",
+      "question": "A shared VPC for several accounts must prevent consumers from connecting to other instances. How to set up with least effort? (Select TWO)",
+      "options": {
+        "A": "Create a Network Load Balancer (NLB)",
+        "B": "Use AWS PublicLink",
+        "C": "Use AWS ClassicLink",
+        "D": "Create a Classic Load Balancer",
+        "E": "Use AWS PrivateLink to expose as endpoint service"
+      },
+      "correct_answer": "AE",
+      "explanation": "PrivateLink allows private service access without exposing other VPC resources. Create an NLB as the service front end, then use it with the VPC endpoint service configuration."
+    },
+    {
+      "id": "730",
+      "question": "An application writes to DynamoDB and needs to run code in response to item-level changes. How to implement?",
+      "options": {
+        "A": "Enable server access logging and create Lambda mapping to S3",
+        "B": "Enable DynamoDB Streams and create Lambda event source mapping",
+        "C": "Create a script detecting data insertion",
+        "D": "Use Kinesis Data Streams with DynamoDB as producer"
+      },
+      "correct_answer": "B",
+      "explanation": "DynamoDB Streams capture item-level modifications. Creating event source mapping between Lambda and the stream triggers the function on modifications."
+    },
+    {
+      "id": "731",
+      "question": "A company needs single sign-on and AWS console access for an on-premise web application. Which combination is BEST?",
+      "options": {
+        "A": "Use IAM and Amazon Cognito",
+        "B": "Integrate using CloudTrail",
+        "C": "Use AWS STS and SAML",
+        "D": "Use IAM and MFA"
+      },
+      "correct_answer": "C",
+      "explanation": "AWS STS provides temporary security credentials. SAML enables SSO between on-premises identity provider and AWS. Cognito doesn't provide on-premises SSO."
+    },
+    {
+      "id": "732",
+      "question": "A decoupled application sends batches of up to 1000 messages per second that must be received in correct order. How to achieve this?",
+      "options": {
+        "A": "Create Amazon SQS Standard queue",
+        "B": "Create Amazon SQS FIFO queue",
+        "C": "Create Amazon SNS topic",
+        "D": "Create Amazon Kinesis Analytics topic"
+      },
+      "correct_answer": "B",
+      "explanation": "SQS FIFO queues are designed for strict message ordering. Messages are processed exactly once in order. SNS doesn't provide durable storage or ordering guarantees."
+    },
+    {
+      "id": "733",
+      "question": "To ensure EC2 instances can be launched in another AWS region for disaster recovery, what steps are needed? (Select TWO)",
+      "options": {
+        "A": "Launch instances using S3 API",
+        "B": "Create AMIs and copy them to another region",
+        "C": "Launch instances from the AMIs in second region",
+        "D": "Copy snapshots using S3 cross-region replication",
+        "E": "Enable cross-region snapshots for EC2"
+      },
+      "correct_answer": "BC",
+      "explanation": "AMIs capture EC2 instance configuration and state. Creating and copying AMIs to another region enables easy replication and launch in the DR region."
+    },
+    {
+      "id": "734",
+      "question": "A security team wants to limit service access across multiple accounts in AWS Organizations. Solution must be scalable with single permission point. How to accomplish?",
+      "options": {
+        "A": "Create an ACL to block account IPs",
+        "B": "Create roles in each account to deny access",
+        "C": "Create a global role shared between accounts",
+        "D": "Create a service control policy in root OU to deny access"
+      },
+      "correct_answer": "D",
+      "explanation": "Service control policies (SCPs) in AWS Organizations manage permissions across the organization. Attach SCP to organizational unit to control service access across multiple accounts."
+    },
+    {
+      "id": "735",
+      "question": "A multi-region database needs replication with master in EU (Ireland) and databases in 4 other regions for local reads. Which service is cost-effective?",
+      "options": {
+        "A": "RDS with Multi-AZ",
+        "B": "RDS with cross-region Read Replicas",
+        "C": "EC2 instances with EBS replication",
+        "D": "EC2 instances with CloudFront"
+      },
+      "correct_answer": "B",
+      "explanation": "RDS Multi-AZ provides high availability within a single region. Cross-region Read Replicas replicate databases to multiple regions, distributing read traffic locally."
+    },
+    {
+      "id": "736",
+      "question": "An application in a VPC uses a Network Load Balancer and will be offered to other accounts. What AWS service provides the service for consumption?",
+      "options": {
+        "A": "Amazon Cognito",
+        "B": "Route 53",
+        "C": "VPC Endpoint Services using AWS PrivateLink",
+        "D": "API Gateway"
+      },
+      "correct_answer": "C",
+      "explanation": "PrivateLink exposes your VPC application to other AWS accounts securely and scalably through VPC endpoint services."
+    },
+    {
+      "id": "737",
+      "question": "Incoming billing reports in CSV format need storage and infrequent analysis, then discard after 30 days. What's MOST cost-effective?",
+      "options": {
+        "A": "Write files to S3 and use Amazon Athena to query",
+        "B": "Import logs to Amazon Redshift cluster",
+        "C": "Use AWS Data Pipeline to import into DynamoDB",
+        "D": "Import logs into RDS MySQL instance"
+      },
+      "correct_answer": "A",
+      "explanation": "Amazon Athena is serverless for SQL queries on S3 data. You only pay for queries run, making it cost-effective for infrequent analysis."
+    },
+    {
+      "id": "738",
+      "question": "An RDS database needs reporting tool access without impacting application performance. How to achieve high availability?",
+      "options": {
+        "A": "Create cross-region Multi-AZ and read replica in second region",
+        "B": "Move to EC2 and manage snapshots manually",
+        "C": "Create Multi-AZ RDS Read Replica",
+        "D": "Create Single-AZ Read Replica, then create second Single-AZ replica from it"
+      },
+      "correct_answer": "C",
+      "explanation": "RDS Read Replicas offload read traffic from primary database. Multi-AZ deployment provides high availability while supporting reporting without impacting application."
+    },
+    {
+      "id": "739",
+      "question": "EC2 instances in a VPC need to make API calls to DynamoDB without using public endpoints. What's the MOST efficient secure method? (Select TWO)",
+      "options": {
+        "A": "Create a route table entry for the endpoint",
+        "B": "Create a gateway endpoint for DynamoDB",
+        "C": "Create an interface endpoint for DynamoDB",
+        "D": "Create a new private DynamoDB table",
+        "E": "Create VPC peering between VPC and DynamoDB"
+      },
+      "correct_answer": "AB",
+      "explanation": "VPC endpoints provide private connections to AWS services. DynamoDB requires gateway endpoints. Create route table entry to direct DynamoDB traffic to the endpoint."
+    },
+    {
+      "id": "740",
+      "question": "An extremely popular application's DynamoDB database may not perform as required. How to enable microsecond in-memory read performance?",
+      "options": {
+        "A": "Enable read replicas",
+        "B": "Configure DynamoDB Auto Scaling",
+        "C": "Configure Amazon DAX",
+        "D": "Increase provisioned throughput"
+      },
+      "correct_answer": "C",
+      "explanation": "DynamoDB Accelerator (DAX) is a fully managed in-memory cache delivering up to 10x performance improvement with microsecond response times."
+    },
+    {
+      "id": "741",
+      "question": "An application needs to retain user session information. Which options could store it? (Select TWO)",
+      "options": {
+        "A": "Sticky sessions on Elastic Load Balancer",
+        "B": "Block storage like EBS",
+        "C": "Amazon Redshift",
+        "D": "Relational data store like RDS",
+        "E": "Key/value store like ElastiCache Redis"
+      },
+      "correct_answer": "AE",
+      "explanation": "Sticky sessions bind user sessions to specific targets. ElastiCache Redis is a key/value store ideal for session data caching. Both provide session management solutions."
+    },
+    {
+      "id": "742",
+      "question": "A web application has public-facing web tier on EC2 in public subnets and SQL Server database in private subnet. How should security groups be configured? (Select TWO)",
+      "options": {
+        "A": "Configure web tier to allow inbound traffic on port 443 from 0.0.0.0/0",
+        "B": "Configure web tier to allow outbound traffic on port 443 to the Internet",
+        "C": "Configure database tier to allow outbound on ports 443 and 1433 to the web tier",
+        "D": "Configure database tier to allow inbound on ports 443 and 1433 from the web tier",
+        "E": "Configure database tier to allow inbound on port 1433 from the web tier"
+      },
+      "correct_answer": "AE",
+      "explanation": "Web tier needs inbound HTTPS (port 443) from the internet (0.0.0.0/0). Database tier needs inbound SQL Server traffic (port 1433) only from web tier security group."
+    },
+    {
+      "id": "743",
+      "question": "Videos in S3 shared via CloudFront must restrict access to specific IP addresses. Direct S3 access shouldn't be possible. How to achieve this?",
+      "options": {
+        "A": "Use signed cookies, create OAI, instruct users to log in with OAI",
+        "B": "Use signed URL, create OAI, restrict S3 access to OAI",
+        "C": "Use signed cookies, move files to encrypted EBS volume",
+        "D": "Use signed URL and configure S3 as website endpoint"
+      },
+      "correct_answer": "B",
+      "explanation": "Signed URLs restrict content access to specific users. Origin Access Identity (OAI) allows CloudFront to access S3 while preventing direct S3 URL access."
+    },
+    {
+      "id": "744",
+      "question": "An application on EC2 Auto Scaling should scale based on jobs to process. Compute layer is stateless. How to ensure loose coupling and durable job storage?",
+      "options": {
+        "A": "Create SNS topic for jobs, scale based on CPU usage",
+        "B": "Create SNS topic for jobs, scale based on message count",
+        "C": "Create SQS queue for jobs, scale based on network usage",
+        "D": "Create SQS queue for jobs, scale based on queue items"
+      },
+      "correct_answer": "D",
+      "explanation": "SQS provides durable message storage for decoupling. Scaling based on SQS queue depth matches processing capacity to workload. SNS doesn't provide durable storage."
+    },
+    {
+      "id": "745",
+      "question": "Three AWS accounts in different regions. Account Z has two Direct Connect connections. Accounts A and B need routing through account Z's Direct Connect. How to configure?",
+      "options": {
+        "A": "Associate Direct Connect gateway to transit gateway in each region",
+        "B": "Associate Direct Connect gateway to one transit gateway",
+        "C": "Associate Direct Connect gateway to virtual private gateway in accounts A and B",
+        "D": "Create VPC Endpoint to Direct Connect gateway"
+      },
+      "correct_answer": "C",
+      "explanation": "Direct Connect gateway connects to VPCs in multiple accounts/regions. Associate the gateway with virtual private gateways in accounts A and B for cross-account connectivity."
+    },
+    {
+      "id": "746",
+      "question": "A MongoDB database must migrate to DynamoDB within weeks. Database is too large for limited internet bandwidth. What should be used?",
+      "options": {
+        "A": "Migrate to S3 using bandwidth, then move to DynamoDB using DMS",
+        "B": "Use SCT to extract and load data to Snowball Edge, then DMS to migrate to DynamoDB",
+        "C": "Compress MongoDB and use DMS to migrate directly",
+        "D": "Use DMS to extract and load to Snowball Edge, complete migration using DMS in cloud"
+      },
+      "correct_answer": "B",
+      "explanation": "Snowball Edge moves large data volumes without bandwidth limitations. SCT converts MongoDB schema for DynamoDB. DMS loads data into DynamoDB after transfer."
+    },
+    {
+      "id": "747",
+      "question": "Data uploaded to S3 sporadically needs transformation triggered by event, then loaded to target store. What combination is cost-effective? (Select TWO)",
+      "options": {
+        "A": "Configure S3 notifications to trigger EC2 XL instance for ETL",
+        "B": "Configure S3 notifications to trigger Lambda function for ETL",
+        "C": "Configure CloudFormation to provision Kinesis for transformation",
+        "D": "Use AWS Glue to extract, transform and load data",
+        "E": "Configure CloudFormation to provision Data Pipeline"
+      },
+      "correct_answer": "BD",
+      "explanation": "Lambda processes S3 event notifications cost-effectively (serverless, pay per use). AWS Glue is serverless ETL service for transforming and loading data."
+    },
+    {
+      "id": "748",
+      "question": "A single volume requires 500 GiB size and needs 20,000 IOPS support. What EBS volume type should be selected?",
+      "options": {
+        "A": "EBS General Purpose SSD",
+        "B": "EBS Provisioned IOPS SSD",
+        "C": "EBS General Purpose SSD in RAID 1",
+        "D": "EBS Throughput Optimized HDD"
+      },
+      "correct_answer": "B",
+      "explanation": "EBS Provisioned IOPS SSD volumes support up to 64,000 IOPS per volume. Other volume types don't support 20,000 IOPS requirements."
+    },
+    {
+      "id": "749",
+      "question": "How to encrypt an unencrypted master RDS database with a cross-region Read Replica?",
+      "options": {
+        "A": "Enable encryption when creating cross-region Read Replica",
+        "B": "Encrypt snapshot, create encrypted cross-region replica from snapshot",
+        "C": "Encrypt snapshot, create encrypted master, then create encrypted replica",
+        "D": "Encrypt snapshot, create encrypted master, then create encrypted cross-region replica"
+      },
+      "correct_answer": "D",
+      "explanation": "Encryption can only be enabled at DB instance creation. Can't have encrypted replica of unencrypted instance. Must create encrypted master first, then encrypted cross-region replica."
+    },
+    {
+      "id": "750",
+      "question": "A web application on EC2 behind ELB in multiple regions (active/passive) uses Route 53 for DNS. How should Route 53 be configured? (Select TWO)",
+      "options": {
+        "A": "Use Failover Routing Policy",
+        "B": "Set Evaluate Target Health to No for primary",
+        "C": "Use Weighted Routing Policy",
+        "D": "Connect ELBs using Alias records",
+        "E": "Connect ELBs using CNAME records"
+      },
+      "correct_answer": "AD",
+      "explanation": "Failover Routing Policy is for active/passive configurations with automatic failover to standby. Alias records provide native integration with ELBs for DNS routing."
+    }
+  ]
+}
