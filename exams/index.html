@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<metAname="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum=5, user-scalable=yes" />
 <title>AWS SAA-C03 - Practice exam</title>
 <style>
   body{font-family:Segoe UI,Arial,sans-serif;background:#f3f6ff;padding:20px}
@@ -50,7 +50,10 @@
   .option-btn:hover{background:#eef4ff}
   .option-btn.selected{background:#667eea;color:#fff;border-color:#667eea}
   .option-btn:disabled{opacity:0.5;cursor:not-allowed}
-  @media (max-width:768px){body{padding:10px}.card{border-radius:6px}header{padding:12px}.meta{flex-wrap:wrap;gap:6px;padding:8px 12px;font-size:12px}#examControls{flex-wrap:wrap;width:100%;gap:4px;margin-top:8px;margin-left:0 !important}#examControls label,#examControls select{font-size:12px}#examControls button{padding:4px 8px;font-size:12px}.container{padding:12px}.qtext{font-size:14px}.controls{flex-direction:column}.controls button{width:100%}.answerBox input{font-size:14px;padding:8px}.option-btn{padding:8px 10px;font-size:14px}.welcome-section{padding:20px 10px}.welcome-section h2{font-size:18px}.exam-controls-section{padding:15px}.exam-controls-section select{max-width:100%}.exam-controls-section button{width:100%;min-width:unset}footer{font-size:11px;padding:10px}}
+  @media (max-width:768px){body{padding:10px}.card{border-radius:6px}header{padding:12px}.meta{flex-wrap:wrap;gap:6px;padding:8px 12px;font-size:12px}#examControls{flex-wrap:wrap;width:100%;gap:4px;margin-top:8px;margin-left:0 !important}#examControls label,#examControls select{font-size:12px}#examControls button{padding:4px 8px;font-size:12px}.container{padding:12px}.qtext{font-size:14px}.controls{flex-direction:column}.controls button{width:100%}.answerBox input{font-size:14px;padding:8px}.option-btn{padding:8px 10px;font-size:14px}.welcome-section{padding:20px 10px}.welcome-section h2{font-size:18px}.exam-controls-section{padding:15px}.exam-controls-section select{max-width:100%}.exam-controls-section button{width:100%;min-width:unset}footer{font-size:11px;padding:10px}
+    /* Force control buttons to stack full-width on narrow viewports and override inline styles, but only when controls are visible */
+    .controls.visible button { display: block !important; width: 100% !important; box-sizing: border-box; }
+  }
   .confetti-container{pointer-events:none;position:fixed;inset:0;overflow:hidden;z-index:9999}
   .confetti-piece{position:absolute;width:10px;height:14px;opacity:0.95;transform-origin:center;will-change:transform,top,left}
   @keyframes confetti-fall{0%{transform:translateY(-10vh) rotate(0)}100%{transform:translateY(110vh) rotate(720deg)}}
@@ -68,6 +71,22 @@
   .results-actions{display:flex;gap:8px;margin-top:12px;justify-content:center;flex-wrap:wrap}
   footer{padding:14px;background:#fbfdff;border-top:1px solid #eef2ff;text-align:center}
   .hidden{display:none}
+  /* Mobile tweaks: smaller progress bar and stacked center row */
+  @media (max-width:480px){
+    .progress{height:6px;max-width:220px}
+    .meta-center-row{flex-direction:column;align-items:center;gap:6px}
+    .meta-center-row #saveMeta{font-size:12px}
+  }
+  .controls button{display:none}
+  .controls.visible button{display:inline-block}
+  @media (max-width:768px){
+    .controls.visible button{display:block !important;width:100%}
+  }
+  .meta-center-row{justify-content:center}
+  .meta-center-row > *{display:flex;align-items:center}
+  /* Controls visibility/layout tweaks */
+  .controls.visible { flex-direction: column; align-items: stretch; }
+  .controls.visible button { display: block !important; width: 100% !important; box-sizing: border-box; }
 </style>
 </head>
 <body>
@@ -83,19 +102,21 @@
     </header>
 
     <div class="meta">
+      <div id="idMeta">ID: -</div>
       <div id="progressMeta">Question: 0 / 0</div>
       <div id="percentMeta">Progress: 0%</div>
       <div style="flex:1;display:flex;align-items:center;justify-content:flex-start">
         <progress id="progressBar" class="progress" value="0" max="100" aria-label="exam progress"></progress>
       </div>
-      <div style="display:flex;align-items:center;gap:8px">
-        <div id="timerDisplay" style="font-weight:700;color:#222;min-width:110px;text-align:center">00:00</div>
+      <!-- Centered row for timer, pause and last-saved -->
+      <div class="meta-center-row" style="width:100%;display:flex;justify-content:center;gap:12px;align-items:center;margin-top:6px;flex-wrap:wrap">
+        <div class="remaining-label" style="font-weight:600;color:#444;min-width:80px;text-align:right">Remaining:</div>
+        <div id="timerDisplay" style="font-weight:700;color:#222;min-width:80px;text-align:center">00:00</div>
         <button id="pauseResumeBtn" class="secondary" style="padding:6px 10px;border-radius:8px;display:none;min-width:70px">Pause</button>
-      </div>
-      <div id="idMeta">ID: -</div>
-      <div id="saveMeta" class="save-indicator" aria-live="polite">
-        <span class="spinner" id="saveSpinner" aria-hidden="true"></span>
-        <span class="status" id="saveStatus">Last saved: -</span>
+        <div id="saveMeta" class="save-indicator" aria-live="polite" style="min-width:140px;justify-content:flex-start">
+          <span class="spinner" id="saveSpinner" aria-hidden="true"></span>
+          <span class="status" id="saveStatus">Last saved: -</span>
+        </div>
       </div>
     </div>
 
@@ -120,11 +141,11 @@
       <div class="controls">
         <button class="secondary" id="nextBtn" disabled>Next →</button>
         <button class="secondary" id="prevBtn" disabled>← Prev</button>
-        <button class="primary" id="showBtn">Show Answer</button>
-        <button class="bookmark" id="bookmarkBtn">☆ Bookmark</button>
-        <button class="secondary" id="finishBtn">Finish Exam</button>
-        <button class="primary" id="saveProgressBtn">Save Progress</button>
-        <button class="secondary" id="resetProgressBtn">Reset Progress</button>
+        <button class="primary" id="showBtn" disabled>Show Answer</button>
+        <button class="bookmark" id="bookmarkBtn" disabled>☆ Bookmark</button>
+        <button class="secondary" id="finishBtn" disabled>Finish Exam</button>
+        <button class="primary" id="saveProgressBtn" disabled>Save Progress</button>
+        <button class="secondary" id="resetProgressBtn" disabled>Reset Progress</button>
       </div>
 
       <div class="answer-panel" id="answerPanel">
@@ -215,11 +236,11 @@ function updateButtonStates() {
   const resetProgressBtn = document.getElementById('resetProgressBtn');
   const pauseResumeBtn = document.getElementById('pauseResumeBtn');
   
-  // Show/hide and enable/disable buttons based on exam state
+  // Enable/disable buttons based on exam state; visibility controlled by .controls.visible class
   const questionButtons = [showBtn, nextBtn, prevBtn, bookmarkBtn, finishBtn, saveProgressBtn, resetProgressBtn, createReviewBtn, pauseResumeBtn];
   questionButtons.forEach(btn => {
     if (btn) {
-      btn.style.display = examLoaded ? 'inline-block' : 'none';
+      // don't touch display here — CSS (.controls.visible) controls visibility
       btn.disabled = !examLoaded;
     }
   });
@@ -228,6 +249,9 @@ function updateButtonStates() {
   if (examLoaded) {
     nextBtn.disabled = userInput.value.trim().length === 0;
     prevBtn.disabled = currentIndex === 0;
+  } else {
+    // ensure controls hidden when no exam loaded
+    try { document.querySelector('.controls')?.classList.remove('visible'); } catch(e){}
   }
 }
 
@@ -300,7 +324,7 @@ function handleExamToggle() {
         document.getElementById('questionText').style.display = 'none';
         const controls = document.querySelector('.controls');
         const options = document.getElementById('optionsList');
-        if (controls) controls.style.display = 'none';
+        if (controls) controls.classList.remove('visible');
         if (options) options.style.display = 'none';
       examPaused = false;
       updateButtonStates();
@@ -359,7 +383,7 @@ function handleExamToggle() {
       document.querySelector('.answerBox').classList.add('visible');
       const controls = document.querySelector('.controls');
       const options = document.getElementById('optionsList');
-      if (controls) controls.style.display = 'flex';
+      if (controls) controls.classList.add('visible');
       if (options) options.style.display = '';
       if (metaBar) metaBar.style.display = 'flex';
       loadQuestion(currentIndex || 0);
@@ -935,7 +959,7 @@ document.getElementById('newExamBtn').addEventListener('click', ()=>{
   if (welcome) welcome.style.display = 'block';
   if (qtext) qtext.style.display = 'none';
   if (answerBox) answerBox.classList.remove('visible');
-  if (controls) controls.style.display = 'none';
+  if (controls) controls.classList.remove('visible');
   if (options) options.style.display = 'none';
   if (metaBar) metaBar.style.display = 'none';
   startExamBtn.textContent = 'Start';
@@ -1180,6 +1204,8 @@ loadExamList();
 // Don't call updateButtonStates here - it will be called after exam loads
 // Hide meta bar before starting any exam
 try { document.querySelector('.meta').style.display = 'none'; } catch(e){}
+// Ensure controls remain hidden until explicitly shown by JS
+try{ document.querySelector('.controls')?.classList.remove('visible'); } catch(e){}
 </script>
 </body>
 </html>

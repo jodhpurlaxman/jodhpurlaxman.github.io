@@ -651,6 +651,25 @@ small {
     right: initial;
     top: initial;
   }
+
+  /* Hide the desktop fixed side navigation on small screens (some Materialize builds
+     may not toggle this correctly if classes are inconsistent) */
+  ul.side-nav.fixed { display: none !important; }
+
+  /* Ensure mobile navbar is visible and fixed at top */
+  nav.hide-on-large-only { display: block !important; position: fixed; top: 0; left: 0; right: 0; z-index: 999; }
+
+  /* Remove desktop left padding so content fills viewport */
+  main { padding-left: 0 !important; margin-top: 64px; }
+
+  /* Reduce profile picture negative margins that cause overflow on small screens */
+  .profile-pic { margin: -10px !important; max-width: 86px; max-height: 86px; }
+
+  /* Make the container comfortably fit small screens */
+  .container { width: 100% !important; padding: 0 12px; box-sizing: border-box; }
+
+  /* Prevent font autoscaling issues on mobile browsers */
+  html, body { -webkit-text-size-adjust: 100%; }
 }
 
 @media (max-width: 600px) {
