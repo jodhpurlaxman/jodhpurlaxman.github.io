@@ -56,7 +56,7 @@
   }
   .confetti-container{pointer-events:none;position:fixed;inset:0;overflow:hidden;z-index:9999}
   .confetti-piece{position:absolute;width:10px;height:14px;opacity:0.95;transform-origin:center;will-change:transform,top,left}
-  @keyframes confetti-fall{0%{transform:translateY(-10vh) rotate(0)}100%{transform:translateY(110vh) rotate(720deg)}}
+  @keyframes confetti-fall{0%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:0.6}100%{transform:scale(1);opacity:1}}
   .result{padding:18px}
   .chart-wrap{display:flex;justify-content:center;align-items:center;margin:10px 0}
   .chart-box{width:180px;height:180px;display:flex;align-items:center;justify-content:center;position:relative}
@@ -88,6 +88,16 @@
   .controls.visible { flex-direction: column; align-items: stretch; }
   .controls.visible button { display: block !important; width: 100% !important; box-sizing: border-box; }
 </style>
+<!-- GA4 snippet -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FCZ6969S43"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);} 
+  gtag('js', new Date());
+  gtag('config', 'G-FCZ6969S43', { 'send_page_view': false });
+
+  function trackEvent(name, params){ try{ gtag('event', name, params || {}); }catch(e){} }
+</script>
 </head>
 <body>
   <div class="card">
@@ -407,6 +417,7 @@ function handleExamToggle() {
         examPaused = false;
         startTimer(resumeTime);
       }
+      try{ trackEvent('start_exam', { exam_id: currentExamFile || 'unknown' }); }catch(e){}
     }).catch(err=>{ alert('Failed to start exam: ' + err.message); });
     }
   }
@@ -709,12 +720,14 @@ nextBtn.addEventListener('click', ()=> {
       finishExam();
     }
   }
+  try{ trackEvent('next_question', { question_index: currentIndex }); }catch(e){}
 });
 
 prevBtn.addEventListener('click', ()=> {
   if (currentIndex>0) {
     loadQuestion(currentIndex-1);
   }
+  try{ trackEvent('prev_question', { question_index: currentIndex }); }catch(e){}
 });
 
 skipBtn.addEventListener('click', ()=> {
@@ -738,12 +751,8 @@ bookmarkBtn.addEventListener('click', ()=> {
   localStorage.setItem('aws-exam-bookmarks', JSON.stringify(bookmarks));
   updateBookmarkBtn();
   autosave();
+  try{ trackEvent('bookmark', { question_index: currentIndex }); }catch(e){}
 });
-
-function updateBookmarkBtn(){
-  if (bookmarks.includes(currentIndex)) { bookmarkBtn.textContent='★ Bookmarked'; bookmarkBtn.style.background='#ff6b6b'; }
-  else { bookmarkBtn.textContent='☆ Bookmark'; bookmarkBtn.style.background='#ffc107'; }
-}
 
 finishBtn.addEventListener('click', ()=> {
   // if current not answered, prompt
@@ -754,10 +763,14 @@ finishBtn.addEventListener('click', ()=> {
     userResponses[currentIndex].correct = normalize(user) === normalize((questions[currentIndex].a||'').trim());
   }
   finishExam();
+  try{ trackEvent('finish_exam', { exam_id: currentExamFile || 'unknown' }); }catch(e){}
 });
 
 // Save / Reset functionality
-document.getElementById('saveProgressBtn').addEventListener('click', saveProgress);
+document.getElementById('saveProgressBtn').addEventListener('click', ()=>{
+  saveProgress();
+  try{ trackEvent('save_progress', { percent: parseInt(document.getElementById('progressBar')?.value || 0, 10) }); }catch(e){}
+});
 document.getElementById('resetProgressBtn').addEventListener('click', resetProgress);
 
 function saveProgress(){
