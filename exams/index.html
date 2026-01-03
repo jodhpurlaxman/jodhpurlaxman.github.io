@@ -28,7 +28,7 @@
   .dev-link:hover{text-decoration:underline;transform:translateY(-1px);transition:all .15s}
   .footer-icon svg{vertical-align:middle;margin-left:6px;fill:currentColor;width:16px;height:16px}
   .container{padding:20px}
-  .qtext{white-space:pre-wrap;font-size:16px;color:#222;margin-bottom:12px}
+  .qtext{white-space:pre-wrap;font-size:18px;color:#222;margin-bottom:12px;line-height:1.35;padding:8px 6px}
   .controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
   button{padding:10px 14px;border-radius:8px;border:0;cursor:pointer;font-weight:600}
   .controls button{display:none}
@@ -48,7 +48,7 @@
   .exam-controls-section button{padding:10px 20px;font-size:14px;min-width:150px}
   .answer-panel{background:#f8f9fb;padding:12px;border-radius:8px;margin-top:12px;display:none}
   .options-list{display:flex;flex-direction:column;gap:8px;margin-top:12px}
-  .option-btn{padding:10px 12px;border-radius:8px;border:1px solid #e6ecff;background:#fff;cursor:pointer;text-align:left}
+  .option-btn{padding:10px 12px;border-radius:8px;border:1px solid #e6ecff;background:#fff;cursor:pointer;text-align:left;font-size:15px}
   .option-btn:hover{background:#eef4ff}
   .option-btn.selected{background:#667eea;color:#fff;border-color:#667eea}
   .option-btn:disabled{opacity:0.5;cursor:not-allowed}
@@ -174,7 +174,7 @@
       </div>
 
       <div class="answer-panel" id="answerPanel">
-        <div style="font-weight:700;color:#198754">Correct / Source answer:</div>
+        <div style="font-weight:700;color:#198754;margin-bottom:6px">Explanation</div>
         <div id="answerText" style="white-space:pre-wrap;margin-top:6px;color:#333"></div>
       </div>
     </div>
@@ -616,7 +616,8 @@ function loadQuestion(index) {
   currentIndex = index;
   const q = questions[currentIndex];
   qText.textContent = q.q || '(no text)';
-  answerText.textContent = q.a || '(no answer)';
+  // render explanation only by default (no status shown)
+  renderAnswerContent(q.a || '(no answer)', null);
   answerPanel.style.display = 'none';
   userInput.value = userResponses[currentIndex].user || '';
     // render options
@@ -707,8 +708,16 @@ userInput.addEventListener('input', ()=> {
 showBtn.addEventListener('click', ()=> {
   // toggle show/hide answer
   const isShowing = answerPanel.style.display === 'block';
-  answerPanel.style.display = isShowing ? 'none' : 'block';
-  showBtn.textContent = isShowing ? 'Show Answer' : 'Hide Answer';
+  if (isShowing) {
+    answerPanel.style.display = 'none';
+    showBtn.textContent = 'Show Answer';
+  } else {
+    // compute correctness based on user input (null if no answer provided)
+    const userCorrect = isCurrentAnswerCorrect();
+    renderAnswerContent(questions[currentIndex]?.a || '(no answer)', userCorrect);
+    answerPanel.style.display = 'block';
+    showBtn.textContent = 'Hide Answer';
+  }
 });
 
 nextBtn.addEventListener('click', ()=> {
@@ -744,7 +753,8 @@ nextBtn.addEventListener('click', ()=> {
       if (q && q.id) removeFromReviewById(q.id);
     }
 
-    // reveal answer panel
+    // render answer with status and reveal
+    renderAnswerContent(q.a || '(no answer)', correctFlag);
     answerPanel.style.display = 'block';
 
     // celebration when correct
@@ -1099,6 +1109,122 @@ function updateReviewOption(){
 // hook: when user answers correct during review exam, remove from review
 
 function escapeHtml(s){ return String(s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+// Render answer content by parsing CORRECT:/INCORRECT: labels and formatting
+function isCurrentAnswerCorrect(){
+  try{
+    const q = questions[currentIndex];
+    const user = (userInput.value||'').trim();
+    if (!user) return null; // no answer provided
+    if (q.multi && Array.isArray(q.correct_answers) && q.correct_answers.length>0) {
+      const selected = Array.from(optionsList.children).filter(c=>c.classList.contains('selected')).map(c=>c.dataset.opt.toUpperCase().trim());
+      const selSet = new Set(selected);
+      const corrSet = new Set(q.correct_answers.map(s=>s.toUpperCase().trim()));
+      return (selSet.size === corrSet.size && [...selSet].every(x=>corrSet.has(x)));
+    } else if (Array.isArray(q.correct_answers) && q.correct_answers.length===1) {
+      const correctLetter = q.correct_answers[0].toUpperCase().trim();
+      const userVal = user.toUpperCase().trim();
+      if (userVal === correctLetter) return true;
+      if (q.options && q.options[correctLetter] && normalize(user) === normalize(q.options[correctLetter])) return true;
+      return normalize(user) === normalize(q.a || '');
+    } else {
+      return normalize(user) === normalize(q.a || '');
+    }
+  }catch(e){ return null; }
+}
+
+function renderAnswerContent(raw, userCorrect){
+  if (!raw) { answerText.textContent = ''; return; }
+  const text = String(raw).replace(/\r\n/g,'\n');
+  // find labeled sections
+  const regex = /(CORRECT|INCORRECT):/ig;
+  let matches = [];
+  let m;
+  while ((m = regex.exec(text)) !== null) {
+    matches.push({label: m[1].toUpperCase(), index: m.index});
+  }
+  if (matches.length === 0) {
+    // if no labeled parts, show full text; if userCorrect specified, prepend status
+    if (typeof userCorrect === 'boolean') {
+      answerText.innerHTML = `<div style="font-weight:700;color:${userCorrect? '#0b8f3b':'#d63333'};margin-bottom:6px">${userCorrect? 'Correct':'Incorrect'}</div><div style="white-space:pre-wrap;color:#333">${escapeHtml(text)}</div>`;
+    } else {
+      answerText.textContent = text;
+    }
+    return;
+  }
+  // build sections
+  let sections = [];
+  let lastPos = 0;
+  for (let i=0;i<matches.length;i++){
+    const start = matches[i].index;
+    if (start > lastPos) {
+      const expl = text.slice(lastPos, start).trim();
+      if (expl) sections.push({type:'EXPLANATION', text: expl});
+    }
+    // content after this label up to next label or end
+    const label = matches[i].label;
+    const contentStart = start + matches[i][0]?.length || (start + label.length + 1);
+    const nextIndex = (i+1 < matches.length) ? matches[i+1].index : text.length;
+    const content = text.slice(contentStart, nextIndex).trim();
+    if (content) sections.push({type: label, text: content});
+    lastPos = nextIndex;
+  }
+  // if trailing explanation after last label
+  if (lastPos < text.length) {
+    const tail = text.slice(lastPos).trim(); if (tail) sections.push({type:'EXPLANATION', text: tail});
+  }
+
+  // Render into answerText element
+  answerText.innerHTML = '';
+  // render explanation paragraphs first
+  sections.filter(s=>s.type==='EXPLANATION').forEach(s=>{
+    const p = document.createElement('p'); p.textContent = s.text; p.style.marginBottom = '8px'; answerText.appendChild(p);
+  });
+  // collect CORRECT and INCORRECT entries
+  const corrects = sections.filter(s=>s.type==='CORRECT').map(s=>s.text);
+  const incorrects = sections.filter(s=>s.type==='INCORRECT').map(s=>s.text);
+  // dedupe identical incorrect entries
+  const seen = new Set();
+  const uniqIncorrects = [];
+  incorrects.forEach(t=>{ if (!seen.has(t)) { seen.add(t); uniqIncorrects.push(t); }});
+
+  // If userCorrect is null/undefined, render both sections (existing behavior)
+  if (typeof userCorrect !== 'boolean') {
+    if (corrects.length>0) {
+      const div = document.createElement('div'); div.style.color = '#0b8f3b'; div.style.marginTop = '6px';
+      div.innerHTML = `<strong>Correct:</strong> ${escapeHtml(corrects.join(' '))}`;
+      answerText.appendChild(div);
+    }
+    if (uniqIncorrects.length>0) {
+      const ul = document.createElement('ul'); ul.style.marginTop = '8px';
+      uniqIncorrects.forEach(t=>{ const li = document.createElement('li'); li.innerHTML = `<strong>Incorrect:</strong> ${escapeHtml(t)}`; ul.appendChild(li); });
+      answerText.appendChild(ul);
+    }
+    return;
+  }
+
+  // If userCorrect is boolean, show only the relevant section and status header
+  const statusDiv = document.createElement('div');
+  statusDiv.style.fontWeight = '700';
+  statusDiv.style.marginTop = '6px';
+  statusDiv.style.color = userCorrect ? '#0b8f3b' : '#d63333';
+  statusDiv.textContent = userCorrect ? 'Correct' : 'Incorrect';
+  answerText.appendChild(statusDiv);
+
+  if (userCorrect) {
+    if (corrects.length>0) {
+      const div = document.createElement('div'); div.style.color = '#0b8f3b'; div.style.marginTop = '6px';
+      div.innerHTML = `${escapeHtml(corrects.join(' '))}`;
+      answerText.appendChild(div);
+    }
+  } else {
+    if (uniqIncorrects.length>0) {
+      const ul = document.createElement('ul'); ul.style.marginTop = '8px';
+      uniqIncorrects.forEach(t=>{ const li = document.createElement('li'); li.innerHTML = `${escapeHtml(t)}`; ul.appendChild(li); });
+      answerText.appendChild(ul);
+    }
+  }
+}
 
 // keyboard shortcuts
 document.addEventListener('keydown', (e)=>{
