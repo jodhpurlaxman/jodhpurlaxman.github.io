@@ -57,8 +57,9 @@
     .controls.visible button { display: block !important; width: 100% !important; box-sizing: border-box; }
   }
   .confetti-container{pointer-events:none;position:fixed;inset:0;overflow:hidden;z-index:9999}
-  .confetti-piece{position:absolute;width:10px;height:14px;opacity:0.95;transform-origin:center;will-change:transform,top,left}
-  @keyframes confetti-fall{0%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:0.6}100%{transform:scale(1);opacity:1}}
+  .confetti-piece{position:absolute;width:10px;height:14px;opacity:0.95;will-change:transform,top,left}
+  /* Fall straight down from above viewport with gentle rotation and horizontal sway */
+  @keyframes confetti-fall{0%{transform:translateY(-10vh) rotate(0deg);opacity:1}50%{opacity:0.95}100%{transform:translateY(110vh) rotate(360deg);opacity:1}}
   .result{padding:18px}
   .chart-wrap{display:flex;justify-content:center;align-items:center;margin:10px 0}
   .chart-box{width:180px;height:180px;display:flex;align-items:center;justify-content:center;position:relative}
@@ -167,10 +168,7 @@
         <button class="secondary" id="skipBtn" disabled>Skip</button>
         <button class="secondary" id="prevBtn" disabled>← Prev</button>
         <button class="primary" id="showBtn" disabled>Show Answer</button>
-        <button class="bookmark" id="bookmarkBtn" disabled>☆ Bookmark</button>
         <button class="secondary" id="finishBtn" disabled>Finish Exam</button>
-        <button class="primary" id="saveProgressBtn" disabled>Save Progress</button>
-        <button class="secondary" id="resetProgressBtn" disabled>Reset Progress</button>
       </div>
 
       <div class="answer-panel" id="answerPanel">
@@ -265,7 +263,7 @@ function updateButtonStates() {
   const pauseResumeBtn = document.getElementById('pauseResumeBtn');
   
   // Enable/disable buttons based on exam state; visibility controlled by .controls.visible class
-  const questionButtons = [showBtn, nextBtn, skipBtn, prevBtn, bookmarkBtn, finishBtn, saveProgressBtn, resetProgressBtn, createReviewBtn, pauseResumeBtn];
+  const questionButtons = [showBtn, nextBtn, skipBtn, prevBtn, finishBtn, saveProgressBtn, resetProgressBtn, createReviewBtn, pauseResumeBtn];
   questionButtons.forEach(btn => {
     if (btn) {
       // don't touch display here — CSS (.controls.visible) controls visibility
@@ -760,7 +758,7 @@ nextBtn.addEventListener('click', ()=> {
     answerPanel.style.display = 'block';
 
     // celebration when correct
-    if (correctFlag) showCelebration();
+    if (correctFlag) showCelebration(nextBtn);
 
     // enter awaiting continue state
     awaitingContinue = true;
@@ -769,12 +767,13 @@ nextBtn.addEventListener('click', ()=> {
     userInput.disabled = true;
     Array.from(optionsList.children).forEach(c=>c.disabled = true);
   } else {
-    // continue to next
+    // continue to next — hide answer panel and move on
     awaitingContinue = false;
     nextBtn.textContent = 'Next →';
     userInput.disabled = false;
     Array.from(optionsList.children).forEach(c=>c.disabled = false);
     clearConfetti();
+    hideAnswerPanel();
     if (currentIndex < questions.length-1) {
       loadQuestion(currentIndex+1);
     } else {
@@ -785,6 +784,8 @@ nextBtn.addEventListener('click', ()=> {
 });
 
 prevBtn.addEventListener('click', ()=> {
+  // hide any shown answer when navigating
+  hideAnswerPanel();
   if (currentIndex>0) {
     loadQuestion(currentIndex-1);
   }
@@ -794,7 +795,7 @@ prevBtn.addEventListener('click', ()=> {
 skipBtn.addEventListener('click', ()=> {
   // Skip current question without answer
   awaitingContinue = false;
-  answerPanel.style.display = 'none';
+  hideAnswerPanel();
   userInput.disabled = false;
   Array.from(optionsList.children).forEach(c=>c.disabled = false);
   clearConfetti();
@@ -805,7 +806,7 @@ skipBtn.addEventListener('click', ()=> {
   }
 });
 
-bookmarkBtn.addEventListener('click', ()=> {
+function toggleBookmark(){
   const idx = bookmarks.indexOf(currentIndex);
   if (idx>-1) bookmarks.splice(idx,1);
   else bookmarks.push(currentIndex);
@@ -813,6 +814,52 @@ bookmarkBtn.addEventListener('click', ()=> {
   updateBookmarkBtn();
   autosave();
   try{ trackEvent('bookmark', { question_index: currentIndex }); }catch(e){}
+}
+
+// attach bookmark handler only if button exists (button removed from UI)
+if (bookmarkBtn) {
+  bookmarkBtn.addEventListener('click', toggleBookmark);
+}
+
+// guard save/reset button bindings (buttons removed from UI)
+const spb = document.getElementById('saveProgressBtn');
+if (spb) {
+  spb.addEventListener('click', ()=>{
+    // keep existing behavior for manual save
+    saveProgress();
+    try{ trackEvent('save_progress', { percent: parseInt(document.getElementById('progressBar')?.value || 0, 10) }); }catch(e){}
+  });
+}
+const rpb = document.getElementById('resetProgressBtn');
+if (rpb) rpb.addEventListener('click', resetProgress);
+
+// Keyboard shortcuts: Ctrl/Cmd+S = save (silent), Ctrl/Cmd+R = reset, Ctrl/Cmd+B = bookmark toggle
+document.addEventListener('keydown', (e)=>{
+  if (!(e.ctrlKey || e.metaKey)) return;
+  const key = (e.key || '').toLowerCase();
+  if (key === 's') {
+    e.preventDefault();
+    // silent save
+    try{ saveState(true); }catch(err){}
+    // quick visual feedback
+    try{
+      const statusEl = document.getElementById('saveStatus');
+      if (statusEl) {
+        const prev = statusEl.textContent;
+        statusEl.textContent = 'Last saved: just now';
+        setTimeout(()=>{ statusEl.textContent = prev; }, 1500);
+      }
+    }catch(e){}
+  }
+  if (key === 'r') {
+    e.preventDefault();
+    // confirm then reset
+    resetProgress();
+  }
+  if (key === 'b') {
+    e.preventDefault();
+    toggleBookmark();
+  }
 });
 
 finishBtn.addEventListener('click', ()=> {
@@ -826,13 +873,6 @@ finishBtn.addEventListener('click', ()=> {
   finishExam();
   try{ trackEvent('finish_exam', { exam_id: currentExamFile || 'unknown' }); }catch(e){}
 });
-
-// Save / Reset functionality
-document.getElementById('saveProgressBtn').addEventListener('click', ()=>{
-  saveProgress();
-  try{ trackEvent('save_progress', { percent: parseInt(document.getElementById('progressBar')?.value || 0, 10) }); }catch(e){}
-});
-document.getElementById('resetProgressBtn').addEventListener('click', resetProgress);
 
 function saveProgress(){
   try{
@@ -1136,96 +1176,16 @@ function isCurrentAnswerCorrect(){
 }
 
 function renderAnswerContent(raw, userCorrect){
-  if (!raw) { answerText.textContent = ''; return; }
-  const text = String(raw).replace(/\r\n/g,'\n');
-  // find labeled sections
-  const regex = /(CORRECT|INCORRECT):/ig;
-  let matches = [];
-  let m;
-  while ((m = regex.exec(text)) !== null) {
-    matches.push({label: m[1].toUpperCase(), index: m.index});
-  }
-  if (matches.length === 0) {
-    // if no labeled parts, show full text; if userCorrect specified, prepend status
-    if (typeof userCorrect === 'boolean') {
-      answerText.innerHTML = `<div style="font-weight:700;color:${userCorrect? '#0b8f3b':'#d63333'};margin-bottom:6px">${userCorrect? 'Correct':'Incorrect'}</div><div style="white-space:pre-wrap;color:#333">${escapeHtml(text)}</div>`;
-    } else {
-      answerText.textContent = text;
-    }
-    return;
-  }
-  // build sections
-  let sections = [];
-  let lastPos = 0;
-  for (let i=0;i<matches.length;i++){
-    const start = matches[i].index;
-    if (start > lastPos) {
-      const expl = text.slice(lastPos, start).trim();
-      if (expl) sections.push({type:'EXPLANATION', text: expl});
-    }
-    // content after this label up to next label or end
-    const label = matches[i].label;
-    const contentStart = start + matches[i][0]?.length || (start + label.length + 1);
-    const nextIndex = (i+1 < matches.length) ? matches[i+1].index : text.length;
-    const content = text.slice(contentStart, nextIndex).trim();
-    if (content) sections.push({type: label, text: content});
-    lastPos = nextIndex;
-  }
-  // if trailing explanation after last label
-  if (lastPos < text.length) {
-    const tail = text.slice(lastPos).trim(); if (tail) sections.push({type:'EXPLANATION', text: tail});
-  }
+  // use formatAnswerHTML to build HTML and insert
+  answerText.innerHTML = formatAnswerHTML(raw, userCorrect);
+}
 
-  // Render into answerText element
-  answerText.innerHTML = '';
-  // render explanation paragraphs first
-  sections.filter(s=>s.type==='EXPLANATION').forEach(s=>{
-    const p = document.createElement('p'); p.textContent = s.text; p.style.marginBottom = '8px'; answerText.appendChild(p);
-  });
-  // collect CORRECT and INCORRECT entries
-  const corrects = sections.filter(s=>s.type==='CORRECT').map(s=>s.text);
-  const incorrects = sections.filter(s=>s.type==='INCORRECT').map(s=>s.text);
-  // dedupe identical incorrect entries
-  const seen = new Set();
-  const uniqIncorrects = [];
-  incorrects.forEach(t=>{ if (!seen.has(t)) { seen.add(t); uniqIncorrects.push(t); }});
-
-  // If userCorrect is null/undefined, render both sections (existing behavior)
-  if (typeof userCorrect !== 'boolean') {
-    if (corrects.length>0) {
-      const div = document.createElement('div'); div.style.color = '#0b8f3b'; div.style.marginTop = '6px';
-      div.innerHTML = `<strong>Correct:</strong> ${escapeHtml(corrects.join(' '))}`;
-      answerText.appendChild(div);
-    }
-    if (uniqIncorrects.length>0) {
-      const ul = document.createElement('ul'); ul.style.marginTop = '8px';
-      uniqIncorrects.forEach(t=>{ const li = document.createElement('li'); li.innerHTML = `<strong>Incorrect:</strong> ${escapeHtml(t)}`; ul.appendChild(li); });
-      answerText.appendChild(ul);
-    }
-    return;
-  }
-
-  // If userCorrect is boolean, show only the relevant section and status header
-  const statusDiv = document.createElement('div');
-  statusDiv.style.fontWeight = '700';
-  statusDiv.style.marginTop = '6px';
-  statusDiv.style.color = userCorrect ? '#0b8f3b' : '#d63333';
-  statusDiv.textContent = userCorrect ? 'Correct' : 'Incorrect';
-  answerText.appendChild(statusDiv);
-
-  if (userCorrect) {
-    if (corrects.length>0) {
-      const div = document.createElement('div'); div.style.color = '#0b8f3b'; div.style.marginTop = '6px';
-      div.innerHTML = `${escapeHtml(corrects.join(' '))}`;
-      answerText.appendChild(div);
-    }
-  } else {
-    if (uniqIncorrects.length>0) {
-      const ul = document.createElement('ul'); ul.style.marginTop = '8px';
-      uniqIncorrects.forEach(t=>{ const li = document.createElement('li'); li.innerHTML = `${escapeHtml(t)}`; ul.appendChild(li); });
-      answerText.appendChild(ul);
-    }
-  }
+// hide answer panel helper
+function hideAnswerPanel(){
+  try{
+    if (answerPanel) { answerPanel.style.display = 'none'; }
+    if (showBtn) { showBtn.textContent = 'Show Answer'; }
+  }catch(e){}
 }
 
 // keyboard shortcuts
@@ -1238,28 +1198,48 @@ document.addEventListener('keydown', (e)=>{
 
 // Celebration helpers
 function showCelebration(){
+  // optional target element: confetti will originate horizontally near it but always drop from top
+  const target = arguments[0];
   clearConfetti();
   const container = document.createElement('div');
   container.className = 'confetti-container';
   const colors = ['#ffc107','#ff6b6b','#6bcB77','#4dabf7','#ff8a65','#b39ddb'];
-  const pieces = 36;
+  const pieces = 40;
+  // compute target position if provided
+  let rect = null;
+  if (target && target.getBoundingClientRect) {
+    rect = target.getBoundingClientRect();
+  }
+  const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
   for (let i=0;i<pieces;i++){
     const el = document.createElement('div');
     el.className = 'confetti-piece';
-    const left = Math.random()*100;
     const delay = Math.random()*0.4;
-    const dur = 1.8 + Math.random()*1.2;
-    el.style.left = left + 'vw';
+    const dur = 2.0 + Math.random()*1.2;
+    // horizontal origin: near target center if available, otherwise random across viewport
+    if (rect) {
+      const spread = Math.max(120, rect.width*4);
+      const offsetX = (Math.random()-0.5) * spread;
+      const startLeft = rect.left + rect.width/2 + offsetX;
+      // ensure within viewport
+      el.style.left = Math.max(0, Math.min(vw-8, startLeft)) + 'px';
+    } else {
+      const leftPx = Math.random() * vw;
+      el.style.left = leftPx + 'px';
+    }
+    // always start above the viewport so pieces drop from top
     el.style.top = '-10vh';
     el.style.background = colors[i % colors.length];
+    // give each piece a slight initial rotation via inline transform; animation will rotate as it falls
     el.style.transform = `rotate(${Math.random()*360}deg)`;
-    el.style.animation = `confetti-fall ${dur}s ${delay}s linear forwards`;
+    // slight horizontal drift via CSS animation timing function and small translateX in keyframes is acceptable
+    el.style.animation = `confetti-fall ${dur}s ${delay}s cubic-bezier(.2,.6,.2,1) forwards`;
     el.style.borderRadius = (Math.random()>0.5? '2px':'50%');
     container.appendChild(el);
   }
   document.body.appendChild(container);
   // remove after animation
-  setTimeout(()=>{ clearConfetti(); }, 2600);
+  setTimeout(()=>{ clearConfetti(); }, 3000);
 }
 
 function clearConfetti(){
@@ -1444,6 +1424,11 @@ function formatAnswerHTML(raw, userCorrect){
 
   // Build sections: explanation (before first label) + each labeled block
   let out = '';
+  // If a user answer was provided, show a status header immediately (so it appears below the "Explanation" heading)
+  if (typeof userCorrect === 'boolean') {
+    out += `<div style="font-weight:700;margin-top:6px;margin-bottom:8px;color:${userCorrect? '#0b8f3b':'#d63333'}">Your answer is ${userCorrect? 'Correct.':'Incorrect.'}</div>`;
+  }
+
   // explanation before first label
   const first = matches[0];
   if (first.index > 0) {
@@ -1459,16 +1444,10 @@ function formatAnswerHTML(raw, userCorrect){
     const content = text.slice(labelEnd, end).trim();
     const labelText = cur.label.charAt(0) + cur.label.slice(1).toLowerCase() + ':'; // "Correct:" / "Incorrect:"
 
-    if (typeof userCorrect === 'boolean') {
-      if ((userCorrect && cur.label === 'CORRECT') || (!userCorrect && cur.label === 'INCORRECT')) {
-        out += `<div style="font-weight:700;margin-top:6px;color:${userCorrect? '#0b8f3b':'#d63333'}">${userCorrect? 'Correct':'Incorrect'}</div>`;
-        if (content) out += `<div style="margin-top:6px;white-space:pre-wrap">${escapeHtml(content)}</div>`;
-      }
-    } else {
-      out += `<div style="height:8px"></div>`;
-      const labelColor = cur.label === 'CORRECT' ? '#0b8f3b' : '#d63333';
-      out += `<div style="margin-top:0"><strong style="color:${labelColor}">${escapeHtml(labelText)}</strong>${content? ' <span style="margin-left:8px">' + escapeHtml(content) + '</span>':''}</div>`;
-    }
+    // Always render each labeled block; labels are bold and colored
+    out += `<div style="height:8px"></div>`;
+    const labelColor = cur.label === 'CORRECT' ? '#0b8f3b' : '#d63333';
+    out += `<div style="margin-top:0"><strong style="color:${labelColor}">${escapeHtml(labelText)}</strong>${content? ' <span style="margin-left:8px">' + escapeHtml(content) + '</span>':''}</div>`;
   }
 
   return out;
