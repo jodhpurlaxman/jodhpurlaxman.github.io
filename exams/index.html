@@ -7,6 +7,8 @@
 <style>
   body{font-family:Segoe UI,Arial,sans-serif;background:#f3f6ff;padding:20px}
   .card{max-width:900px;margin:0 auto;background:#fff;border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,.12);overflow:hidden}
+  /* make card a positioned container so overlay can cover it */
+  .card{position:relative}
   /* Improved header and meta styles */
   header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px}
   header .header-left{display:flex;flex-direction:column;}
@@ -87,7 +89,14 @@
   /* Controls visibility/layout tweaks */
   .controls.visible { flex-direction: column; align-items: stretch; }
   .controls.visible button { display: block !important; width: 100% !important; box-sizing: border-box; }
-</style>
+
+  /* Pause overlay that covers question area when exam is paused */
+  #pauseOverlay{position:absolute;inset:0;background:rgba(255,255,255,0.96);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;padding:20px;z-index:999;border-radius:10px}
+  #pauseOverlay.hidden{display:none}
+  #pauseOverlay .pause-title{font-size:20px;font-weight:800;color:#333}
+  #pauseOverlay .pause-desc{color:#666;font-size:14px}
+  #pauseOverlay button{min-width:140px}
+ </style>
 <!-- GA4 snippet -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FCZ6969S43"></script>
 <script>
@@ -110,7 +119,12 @@
         <small style="opacity:.95">Quick practice — built for fast review</small>
       </div>
     </header>
-
+    <!-- Pause overlay (hidden by default) -->
+    <div id="pauseOverlay" class="hidden" aria-hidden="true">
+      <div class="pause-title">Exam paused</div>
+      <div class="pause-desc">The exam is paused. Resume to continue.</div>
+      <button id="overlayResumeBtn" class="primary">Resume Exam</button>
+    </div>
     <div class="meta">
       <div id="idMeta">ID: -</div>
       <div id="progressMeta">Question: 0 / 0</div>
@@ -240,6 +254,8 @@ let examTimeLeft = 0; // seconds
 let currentExamIsReview = false;
 let examInProgress = false;
 let examPaused = false; // whether the exam timer is currently paused
+// Time allocation: minutes per question (change as needed)
+const PER_QUESTION_MINUTES = 1.5; // minutes per question
 
 // Button state management
 function updateButtonStates() {
@@ -265,6 +281,16 @@ function updateButtonStates() {
     // ensure controls hidden when no exam loaded
     try { document.querySelector('.controls')?.classList.remove('visible'); } catch(e){}
   }
+}
+
+// Add missing helper to keep bookmark button in sync
+function updateBookmarkBtn() {
+  const btn = document.getElementById('bookmarkBtn');
+  if (!btn) return;
+  const isBookmarked = Array.isArray(bookmarks) && bookmarks.indexOf(currentIndex) > -1;
+  btn.textContent = isBookmarked ? '★ Bookmarked' : '☆ Bookmark';
+  btn.disabled = questions.length === 0;
+  if (isBookmarked) btn.classList.add('bookmarked'); else btn.classList.remove('bookmarked');
 }
 
 function updateTimerDisplay() {
@@ -300,6 +326,41 @@ function updatePauseButton(){
   else { btn.textContent = 'Pause'; btn.style.background = '#6c757d'; }
   // only show pause when an exam is loaded
   btn.style.display = questions.length>0 ? 'inline-block' : 'none';
+  // toggle pause overlay if present
+  try{
+    const overlay = document.getElementById('pauseOverlay');
+    if (overlay) {
+      if (examPaused) { overlay.classList.remove('hidden'); overlay.setAttribute('aria-hidden','false'); }
+      else { overlay.classList.add('hidden'); overlay.setAttribute('aria-hidden','true'); }
+    }
+  }catch(e){}
+}
+
+// Ensure the exam timer is started or properly paused/resumed
+function ensureExamTimer(resumeSeconds, restored){
+  try{
+    // Default time: questions.length * PER_QUESTION_MINUTES (in seconds). Fallback to 100 minutes if no questions loaded.
+    const defaultSeconds = (questions && questions.length>0) ? Math.max(1, questions.length) * PER_QUESTION_MINUTES * 60 : (100*60);
+    const resumeTime = (typeof resumeSeconds === 'number' && resumeSeconds>0) ? resumeSeconds : defaultSeconds;
+    if (restored && restored.examPaused) {
+      examPaused = true;
+      examTimeLeft = resumeTime;
+      updateTimerDisplay();
+      updatePauseButton();
+      // ensure no interval running
+      stopTimer();
+    } else {
+      examPaused = false;
+      // if an interval already exists, restart it to ensure it's active with correct time
+      if (examTimerInterval) {
+        stopTimer();
+      }
+      startTimer(resumeTime);
+    }
+  }catch(e){
+    console.warn('ensureExamTimer failed', e);
+    try{ startTimer(resumeSeconds || 100*60); }catch(e){}
+  }
 }
 
 // Pause/Resume toggle handler
@@ -321,6 +382,14 @@ document.getElementById('pauseResumeBtn').addEventListener('click', ()=>{
     autosave();
   }
 });
+
+// resume via overlay button -> reuse pause/resume button logic
+try{
+  document.getElementById('overlayResumeBtn')?.addEventListener('click', ()=>{
+    // delegate to the existing pause/resume handler
+    document.getElementById('pauseResumeBtn')?.click();
+  });
+}catch(e){}
 
 function handleExamToggle() {
   if (examInProgress) {
@@ -403,20 +472,9 @@ function handleExamToggle() {
       examInProgress = true;
       startExamBtn.textContent = 'Stop';
       startExamBtn.className = 'secondary';
-      // start countdown timer (default: 100 minutes)
-      const resumeTime = restored && typeof restored.timeLeft === 'number' ? restored.timeLeft : (100 * 60);
-      // If the saved state indicates the exam was paused, restore paused state without starting the timer
-      if (restored && restored.examPaused) {
-        examPaused = true;
-        examTimeLeft = resumeTime;
-        updateTimerDisplay();
-        updatePauseButton();
-        // ensure timer is not running
-        stopTimer();
-      } else {
-        examPaused = false;
-        startTimer(resumeTime);
-      }
+      // start countdown timer — use restored.timeLeft when present, otherwise let ensureExamTimer compute default based on per-question minutes
+      const resumeTime = restored && typeof restored.timeLeft === 'number' ? restored.timeLeft : undefined;
+      ensureExamTimer(resumeTime, restored);
       try{ trackEvent('start_exam', { exam_id: currentExamFile || 'unknown' }); }catch(e){}
     }).catch(err=>{ alert('Failed to start exam: ' + err.message); });
     }
@@ -466,17 +524,8 @@ function examLoadedFromReview(reviewArr) {
   startExamBtn.textContent = 'Stop';
   startExamBtn.className = 'secondary';
   // start countdown timer (default: 100 minutes)
-  const resumeTime = restored && typeof restored.timeLeft === 'number' ? restored.timeLeft : (100 * 60);
-  if (restored && restored.examPaused) {
-    examPaused = true;
-    examTimeLeft = resumeTime;
-    updateTimerDisplay();
-    updatePauseButton();
-    stopTimer();
-  } else {
-    examPaused = false;
-    startTimer(resumeTime);
-  }
+  const resumeTime = restored && typeof restored.timeLeft === 'number' ? restored.timeLeft : undefined;
+  ensureExamTimer(resumeTime, restored);
 }
 
 // manual create/update review exam from current session wrongs

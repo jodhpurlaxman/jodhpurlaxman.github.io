@@ -3,8 +3,18 @@
 
 <head>
   <meta charset="utf-8" />
-  <metAname="viewport" content="width=device-width initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- GA4 snippet -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FCZ6969S43"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-FCZ6969S43', { 'send_page_view': false });
+    function trackEvent(name, params){ try{ gtag('event', name, params || {}); }catch(e){} }
+  </script>
 
   <!-- Materialize - Compiled and minified CSS-->
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
@@ -25,8 +35,8 @@
   <meta property="article:publisher" content="https://jodhpurlaxman.github.io/" />
   
   <!-- Twitter -->
-  <metAname="author" content="Laxman Singh" />
-  <metAname="description" content="System Administrator experienced in Linux, automation, networking, and cloud infrastructure." />
+  <meta name="author" content="Laxman Singh" />
+  <meta name="description" content="System Administrator experienced in Linux, automation, networking, and cloud infrastructure." />
   <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicon/apple-icon-57x57.png" />
   <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicon/apple-icon-60x60.png" />
   <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-icon-72x72.png" />
@@ -41,11 +51,11 @@
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon/favicon-96x96.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png" />
   <link rel="manifest" href="/assets/img/favicon/manifest.json" />
-  <metAname="msapplication-TileColor" content="#ffffff" />
-  <metAname="msapplication-TileImage" content="/assets/img/favicon/ms-icon-144x144.png" />
-  <metAname="theme-color" content="#ffffff" />
-  <metAname="robots" content="index, follow" />
-  </head>
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="msapplication-TileImage" content="/assets/img/favicon/ms-icon-144x144.png" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="robots" content="index, follow" />
+</head>
 
 <body>
  
@@ -164,6 +174,10 @@
       <li class="bold">
         <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
             class="mdi-content-mail small"></i><span>Contact</span></a>
+      </li>
+      <li class="bold">
+        <a aria-label="Practise AWS SAA-C03" href="https://jodhpurlaxman.github.io/exams" target="_blank"
+        class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>AWS Exam</span></a>
       </li>
       
     </ul>
@@ -649,6 +663,22 @@
       })
     })
   </script>
+
+  <style>
+  /* Mobile visibility overrides to ensure exam card is visible on small screens */
+  @media (max-width: 992px) {
+    /* hide any fixed desktop side-nav that may push content off-screen */
+    ul.side-nav.fixed, .sidenav-fixed, .left-fixed-nav { display: none !important; }
+    /* ensure mobile navbar is visible and fixed at top */
+    nav.hide-on-large-only, nav.mobile-nav { display: block !important; position: fixed; top: 0; left: 0; right: 0; z-index: 999; }
+    /* remove desktop left padding so main content fills viewport */
+    main, .main-content, .content-wrapper { padding-left: 0 !important; margin-top: 56px !important; }
+    /* make card and containers fill width comfortably */
+    .card, .container, .exam-card { max-width: 100% !important; margin: 8px !important; box-sizing: border-box; }
+    /* ensure exam entry/list is visible and not off-canvas */
+    #examList, #examSelect, .exam-controls-section, #main { width: 100% !important; }
+  }
+  </style>
 </body>
 
 </html>
