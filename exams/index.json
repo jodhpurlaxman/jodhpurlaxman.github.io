@@ -111,12 +111,12 @@
     {
       "file": "all_records_part_19.json",
       "start_index": 946,
-      "end_index": 1011,
+      "end_index": 1010,
       "count": 65
     },
     {
       "file": "all_records_part_20.json",
-      "start_index": 1012,
+      "start_index": 1011,
       "end_index": 1076,
       "count": 65
     }

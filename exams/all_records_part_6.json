@@ -14,7 +14,7 @@
     },
     {
       "id": "252",
-      "question": "A solutions architect needs to design asystem to store client case files. The files are core company assets and are important. The number of files will grow over time. The files must be simultaneously accessible from multiple application servers that run on Amazon EC2 instances. The solution must have built-in redundancy. Which solution meets these requirements?",
+      "question": "A solutions architect needs to design a system to store client case files. The files are core company assets and are important. The number of files will grow over time. The files must be simultaneously accessible from multiple application servers that run on Amazon EC2 instances. The solution must have built-in redundancy. Which solution meets these requirements?",
       "options": {
         "A": "Amazon Elastic File System (Amazon EFS)",
         "B": "Amazon Elastic Block Store (Amazon EBS)",
@@ -38,7 +38,7 @@
     },
     {
       "id": "254",
-      "question": "A company is reviewing arecent migration of a three-tier application to a VPC. The security team discovers that the principle of least privilege is not being applied to Amazon EC2 security group ingress and egress rules between the application tiers. What should A solutions architect do to correct this issue?",
+      "question": "A company is reviewing a recent migration of a three-tier application to a VPC. The security team discovers that the principle of least privilege is not being applied to Amazon EC2 security group ingress and egress rules between the application tiers. What should A solutions architect do to correct this issue?",
       "options": {
         "A": "Create security group rules using the instance ID as the source or destination.",
         "B": "Create security group rules using the security group ID as the source or destination.",
@@ -62,7 +62,7 @@
     },
     {
       "id": "256",
-      "question": "A solutions architect is implementing adocument review application using an Amazon S3 bucket for storage. The solution must prevent accidental deletion of the documents and ensure that all versions of the documents are available. Users must be able to download, modify, and upload documents. Which combination of actions should be taken to meet these requirements? (Choose two.)",
+      "question": "A solutions architect is implementing a document review application using an Amazon S3 bucket for storage. The solution must prevent accidental deletion of the documents and ensure that all versions of the documents are available. Users must be able to download, modify, and upload documents. Which combination of actions should be taken to meet these requirements? (Choose two.)",
       "options": {
         "A": "Enable a read-only bucket  ACL",
         "B": "Enable versioning on the bucket.",
@@ -99,7 +99,7 @@
     },
     {
       "id": "259",
-      "question": "A company is implementing new data retention policies for all databases that run on Amazon RDS DB instances. The company must retain daily backups for aminimum period of 2 years. The backups must be consistent and restorable. Which solution should A solutions architect recommend to meet these requirements?",
+      "question": "A company is implementing new data retention policies for all databases that run on Amazon RDS DB instances. The company must retain daily backups for a minimum period of 2 years. The backups must be consistent and restorable. Which solution should A solutions architect recommend to meet these requirements?",
       "options": {
         "A": "Create a backup vault in AWS Backup to retain RDS backups. Create Anew backup plan with a daily schedule and an expiration period of 2 years after creation. Assign the RDS DB instances to the backup plan.",
         "B": "Configure a backup window for the RDS DB instances for daily snapshots. Assign a snapshot retention policy of 2 years to each RDS DB instance. Use Amazon Data Lifecycle Manager (Amazon DLM) to schedule snapshot deletions.",
@@ -123,13 +123,13 @@
     },
     {
       "id": "261",
-      "question": "A company recently announced the deployment of its retail website to aglobal audience. The website runs on multiple Amazon EC2 instances behind an Elastic Load Balancer. The instances run in an Auto Scaling group across multiple Availability Zones. The company wants to provide its customers with different versions of content based on the devices that the customers use to access the website. Which combination of actions should A solutions architect take to meet these requirements? (Choose two.)",
+      "question": "A company recently announced the deployment of its retail website to a global audience. The website runs on multiple Amazon EC2 instances behind an Elastic Load Balancer. The instances run in an Auto Scaling group across multiple Availability Zones. The company wants to provide its customers with different versions of content based on the devices that the customers use to access the website. Which combination of actions should A solutions architect take to meet these requirements? (Choose two.)",
       "options": {
         "A": "Configure Amazon CloudFront to cache multiple versions of the content.",
-        "B": "Configure a host header in Anetwork Load Balancer to forward traffic to different instances.",
+        "B": "Configure a host header in A network Load Balancer to forward traffic to different instances.",
         "C": "Configure a Lambda@Edge function to send speciFic objects to users based on the User-Agent header.",
-        "D": "Configure AWS Global Accelerator Forward requests to Anetwork Load Balancer (NLB). Configure the NLB to set up host-based routing to different EC2 instances.",
-        "E": "Configure AWS Global Accelerator Forward requests to Anetwork Load Balancer (NLB). Configure the NLB to set up path-based routing to different EC2 instances."
+        "D": "Configure AWS Global Accelerator Forward requests to A network Load Balancer (NLB). Configure the NLB to set up host-based routing to different EC2 instances.",
+        "E": "Configure AWS Global Accelerator Forward requests to A network Load Balancer (NLB). Configure the NLB to set up path-based routing to different EC2 instances."
       },
       "correct_answer": "AC",
       "explanation": "C. Configure a Lambda@Edge function to send specific objects to users based on the User-Agent header.\nAmazon CloudFront is a content delivery network (CDN) service that can cache and deliver content globally.\nConfigure CloudFront to cache different versions of content based on the device type or other criteria.\nLambda@Edge allows you to run code in response to CloudFront events globally.\nUse a Lambda@Edge function to inspect the User-Agent header and dynamically serve different versions of content based on the device type."
@@ -161,7 +161,7 @@
     },
     {
       "id": "264",
-      "question": "A company has a web application hosted over 10 Amazon EC2 instances with traffic directed by Amazon Route 53. The company occasionally experiences atimeout error when attempting to browse the application. The networking team Finds that some DNS queries return IP addresses of unhealthy instances, resulting in the timeout error. What should A solutions architect implement to overcome these timeout errors?",
+      "question": "A company has a web application hosted over 10 Amazon EC2 instances with traffic directed by Amazon Route 53. The company occasionally experiences a timeout error when attempting to browse the application. The networking team Finds that some DNS queries return IP addresses of unhealthy instances, resulting in the timeout error. What should A solutions architect implement to overcome these timeout errors?",
       "options": {
         "A": "Create a Route 53 simple routing policy record for each EC2 instance. Associate a health check with each record.",
         "B": "Create a Route 53 failover routing policy record for each EC2 instance. Associate a health check with each record.",
@@ -185,7 +185,7 @@
     },
     {
       "id": "266",
-      "question": "A company has apopular gaming platform running on AWS. The application is sensitive to latency because latency can impact the user experience and introduce unfair advantages to some players. The application is deployed in every AWS Region. It runs on Amazon EC2 instances that are part of Auto Scaling groups configured behind Application Load Balancers (ALBs). A solutions architect needs to implement amechanism to monitor the health of the application and redirect traffic to healthy endpoints. Which solution meets these requirements?",
+      "question": "A company has a popular gaming platform running on AWS. The application is sensitive to latency because latency can impact the user experience and introduce unfair advantages to some players. The application is deployed in every AWS Region. It runs on Amazon EC2 instances that are part of Auto Scaling groups configured behind Application Load Balancers (ALBs). A solutions architect needs to implement a mechanism to monitor the health of the application and redirect traffic to healthy endpoints. Which solution meets these requirements?",
       "options": {
         "A": "Configure an accelerator in AWS Global Accelerator Add a listener for the port that the application listens on, and attach it to a Regional endpoint in each Region. Add the ALBas the endpoint.",
         "B": "Create an Amazon CloudFront distribution and specify the ALBas the origin server. Configure the cache behavior to use origin cache headers. Use AWS Lambda functions to optimize the traffic.",
@@ -197,7 +197,7 @@
     },
     {
       "id": "267",
-      "question": "A company has one million users that use its mobile app. The company must analyze the data usage in near-real time. The company also must encrypt the data in near-real time and must store the data in acentralized location in Apache Parquet format for further processing. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company has one million users that use its mobile app. The company must analyze the data usage in near-real time. The company also must encrypt the data in near-real time and must store the data in a centralized location in Apache Parquet format for further processing. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Create an Amazon Kinesis data stream to store the data in Amazon S3. Create an Amazon Kinesis Data Analytics application to analyze the data. Invoke an AWS Lambda function to send the data to the Kinesis Data Analytics application.",
         "B": "Create an Amazon Kinesis data stream to store the data in Amazon S3. Create an Amazon EMR cluster to analyze the data. Invoke an AWS Lambda function to send the data to the EMR cluster.",
@@ -233,7 +233,7 @@
     },
     {
       "id": "270",
-      "question": "A company is using acentralized AWS account to store log data in various Amazon S3 buckets. A solutions architect needs to ensure that the data is encrypted at rest before the data is uploaded to the S3 buckets. The data also must be encrypted in transit. Which solution meets these requirements?",
+      "question": "A company is using a centralized AWS account to store log data in various Amazon S3 buckets. A solutions architect needs to ensure that the data is encrypted at rest before the data is uploaded to the S3 buckets. The data also must be encrypted in transit. Which solution meets these requirements?",
       "options": {
         "A": "Use client-side encryption to encrypt the data that is being uploaded to the S3 buckets.",
         "B": "Use server-side encryption to encrypt the data that is being uploaded to the S3 buckets.",
@@ -245,7 +245,7 @@
     },
     {
       "id": "271",
-      "question": "A solutions architect observes that anightly batch processing job is automatically scaled up for 1 hour before the desired Amazon EC2 capacity is reached. The peak capacity is the \u2018same every night and the batch jobs always start at 1 A M. The solutions architect needs to Find acost-effective solution that will allow for the desired EC2 capacity to be reached quickly and allow the Auto Scaling group to scale down after the batch jobs are complete. What should the solutions architect do to meet these requirements?",
+      "question": "A solutions architect observes that a nightly batch processing job is automatically scaled up for 1 hour before the desired Amazon EC2 capacity is reached. The peak capacity is the \u2018same every night and the batch jobs always start at 1 A M. The solutions architect needs to Find acost-effective solution that will allow for the desired EC2 capacity to be reached quickly and allow the Auto Scaling group to scale down after the batch jobs are complete. What should the solutions architect do to meet these requirements?",
       "options": {
         "A": "Increase the minimum capacity for the Auto Scaling group.",
         "B": "Increase the maximum capacity for the Auto Scaling group.",
@@ -257,11 +257,11 @@
     },
     {
       "id": "272",
-      "question": "A company serves adynamic website from aFleet of Amazon EC2 instances behind an Application Load Balancer (ALB). The website needs to support multiple languages to serve customers around the world. The website s architecture is running in the us-west-1 Region and is exhibiting high request latency for users that are located in other parts of the world. The website needs to serve requests quickly and eficiently regardless of auser s location. However, the company does not want to recreate the existing architecture across multiple Regions. What should A solutions architect do to meet these requirements?",
+      "question": "A company serves a dynamic website from aFleet of Amazon EC2 instances behind an Application Load Balancer (ALB). The website needs to support multiple languages to serve customers around the world. The website s architecture is running in the us-west-1 Region and is exhibiting high request latency for users that are located in other parts of the world. The website needs to serve requests quickly and efficiently regardless of a user s location. However, the company does not want to recreate the existing architecture across multiple Regions. What should A solutions architect do to meet these requirements?",
       "options": {
-        "A": "Replace the existing architecture with a website that is served from an Amazon S3 bucket. Configure an Amazon CloudFront distribution with the S3 bucket as the origin. Set the cache behavior settings to cache based on the A ccept-Language request header.",
-        "B": "Configure an Amazon CloudFront distribution with the ALBas the origin. Set the cache behavior settings to cache based on the A ccept- Language request header.",
-        "C": "Create an Amazon API Gateway API that is integrated with the ALB. Configure the API to use the HTTP integration type. Set up an API Gateway stage to enable the API cache based on the A ccept-Language request header.",
+        "A": "Replace the existing architecture with a website that is served from an Amazon S3 bucket. Configure an Amazon CloudFront distribution with the S3 bucket as the origin. Set the cache behavior settings to cache based on the Accept-Language request header.",
+        "B": "Configure an Amazon CloudFront distribution with the ALBas the origin. Set the cache behavior settings to cache based on the Accept- Language request header.",
+        "C": "Create an Amazon API Gateway API that is integrated with the ALB. Configure the API to use the HTTP integration type. Set up an API Gateway stage to enable the API cache based on the Accept-Language request header.",
         "D": "Launch an EC2 instance in each additional Region and conFigure NGINX to act as a cache server for that Region. Put all the EC2 instances and the ALBbehind an Amazon Route 53 record set with a geolocation routing policy."
       },
       "correct_answer": "B",
@@ -269,7 +269,7 @@
     },
     {
       "id": "273",
-      "question": "A rapidly growing ecommerce company is running its workloads in a single AWS Region. A solutions architect must create adisaster recovery (DR) strategy that includes adifferent AWS Region. The company wants its database to be up to date in the DR Region with the least possible latency. The remaining infrastructure in the DR Region needs to run at reduced capacity and must be able to scale up if necessary. Which solution will meet these requirements with the LOWEST recovery time objective (RTO)?",
+      "question": "A rapidly growing ecommerce company is running its workloads in a single AWS Region. A solutions architect must create a disaster recovery (DR) strategy that includes a different AWS Region. The company wants its database to be up to date in the DR Region with the least possible latency. The remaining infrastructure in the DR Region needs to run at reduced capacity and must be able to scale up if necessary. Which solution will meet these requirements with the LOWEST recovery time objective (RTO)?",
       "options": {
         "A": "Use an Amazon Aurora global database with a pilot light deployment.",
         "B": "Use an Amazon Aurora global database with a warm standby deployment.",
@@ -281,7 +281,7 @@
     },
     {
       "id": "274",
-      "question": "A company runs an application on Amazon EC2 instances. The company needs to implement adisaster recovery (DR) solution for the application. The DR solution needs to have arecovery time objective (RTO) of less than 4 hours. The DR solution also needs to use the fewest possible AWS resources during normal operations. Which solution will meet these requirements in the MOST operationally eficient way?",
+      "question": "A company runs an application on Amazon EC2 instances. The company needs to implement a disaster recovery (DR) solution for the application. The DR solution needs to have a recovery time objective (RTO) of less than 4 hours. The DR solution also needs to use the fewest possible AWS resources during normal operations. Which solution will meet these requirements in the MOST operationally efficient way?",
       "options": {
         "A": "Create Amazon Machine Images (AMIs) to back up the EC2 instances. Copy the AMIs to a secondary AWS Region. Automate infrastructure deployment in the secondary Region by using AWS Lambda and custom scripts.",
         "B": "Create Amazon Machine Images (AMIs) to back up the EC2 instances. Copy the AMIs to a secondary AWS Region. Automate infrastructure deployment in the secondary Region by using AWS CloudFormation.",
@@ -293,19 +293,19 @@
     },
     {
       "id": "275",
-      "question": "A company runs an internal browser-based application. The application runs on Amazon EC2 instances behind an Application Load Balancer. The instances run in an Amazon EC2 Auto Scaling group across multiple Availability Zones. The Auto Scaling group scales up to 20 instances during work hours, but scales down to 2 instances overnight. Staff are complaining that the application is very slow when the day begins, although it runs well by mid-morning. How should the scaling be changed to address the staff complaints and keep costs to aminimum?",
+      "question": "A company runs an internal browser-based application. The application runs on Amazon EC2 instances behind an Application Load Balancer. The instances run in an Amazon EC2 Auto Scaling group across multiple Availability Zones. The Auto Scaling group scales up to 20 instances during work hours, but scales down to 2 instances overnight. Staff are complaining that the application is very slow when the day begins, although it runs well by mid-morning. How should the scaling be changed to address the staff complaints and keep costs to a minimum?",
       "options": {
-        "A": "Implement a scheduled action that sets the desired capacity to 20 shortly before the oFice opens.",
+        "A": "Implement a scheduled action that sets the desired capacity to 20 shortly before the office opens.",
         "B": "Implement a step scaling action triggered at a lower CPU threshold, and decrease the cooldown period.",
         "C": "Implement a target tracking action triggered at a lower CPU threshold, and decrease the cooldown period.",
-        "D": "Implement a scheduled action that sets the minimum and maximum capacity to 20 shortly before the oFice opens."
+        "D": "Implement a scheduled action that sets the minimum and maximum capacity to 20 shortly before the office opens."
       },
       "correct_answer": "C",
       "explanation": ""
     },
     {
       "id": "276",
-      "question": "A company has a multi-tier application deployed on several Amazon EC2 instances in an Auto Scaling group. An Amazon RDS for Oracle instance is the application sdata layer that uses Oracle-specific PL/SQL functions. traffic to the application has been steadily increasing. This is causing the EC2 instances to become overloaded and the RDS instance to run out of storage. The Auto Scaling group does not have any scaling metrics and defines the minimum healthy instance count only. The company predicts that traffic will continue to increase at asteady but unpredictable rate before leveling off. What should A solutions architect do to ensure the system can automatically scale for the increased traffic? (Choose two.)",
+      "question": "A company has a multi-tier application deployed on several Amazon EC2 instances in an Auto Scaling group. An Amazon RDS for Oracle instance is the applications data layer that uses Oracle-specific PL/SQL functions. traffic to the application has been steadily increasing. This is causing the EC2 instances to become overloaded and the RDS instance to run out of storage. The Auto Scaling group does not have any scaling metrics and defines the minimum healthy instance count only. The company predicts that traffic will continue to increase at a steady but unpredictable rate before leveling off. What should A solutions architect do to ensure the system can automatically scale for the increased traffic? (Choose two.)",
       "options": {
         "A": "Configure storage Auto Scaling on the RDS for Oracle instance.",
         "B": "Migrate the database to Amazon Aurora to use Auto Scaling storage.",
@@ -330,7 +330,7 @@
     },
     {
       "id": "278",
-      "question": "A company wants to create an application to store employee data in ahierarchical structured relationship. The company needs aminimum-latency response to high-traffic queries for the employee data and must protect any sensitive data. The company also needs to receive monthly email messages if any Financial information is present in the employee data. Which combination of steps should A solutions architect take to meet these requirements? (Choose two.)",
+      "question": "A company wants to create an application to store employee data in a hierarchical structured relationship. The company needs a minimum-latency response to high-traffic queries for the employee data and must protect any sensitive data. The company also needs to receive monthly email messages if any Financial information is present in the employee data. Which combination of steps should A solutions architect take to meet these requirements? (Choose two.)",
       "options": {
         "A": "Use Amazon Redshift to store the employee data in hierarchies. Unload the data to Amazon S3 every month.",
         "B": "Use Amazon DynamoDB to store the employee data in hierarchies. Export the data to Amazon S3 every month.",
@@ -367,7 +367,7 @@
     },
     {
       "id": "281",
-      "question": "A company runs aFleet of web servers using an Amazon RDS for PostgreSQL DB instance. After aroutine compliance check, the company sets astandard that requires arecovery point objective (RPO) of less than 1 second for all its production databases. Which solution meets these requirements?",
+      "question": "A company runs aFleet of web servers using an Amazon RDS for PostgreSQL DB instance. After a routine compliance check, the company sets a standard that requires a recovery point objective (RPO) of less than 1 second for all its production databases. Which solution meets these requirements?",
       "options": {
         "A": "Enable a Multi-AZ deployment for the DB instance.",
         "B": "Enable auto scaling for the DB instance in one Availability Zone.",
@@ -391,7 +391,7 @@
     },
     {
       "id": "283",
-      "question": "A research company runs experiments that are powered by asimulation application and avisualization application. The simulation application runs on Linux and outputs intermediate data to an NFS share every 5 minutes. The visualization application is aWindows desktop application that displays the simulation output and requires an SMB file system. The company maintains two synchronized file systems. This strategy is causing data duplication and ineficient resource usage. The company needs to migrate the applications to AWS without making code changes to either application. Which solution will meet these requirements?",
+      "question": "A research company runs experiments that are powered by a simulation application and a visualization application. The simulation application runs on Linux and outputs intermediate data to an NFS share every 5 minutes. The visualization application is aWindows desktop application that displays the simulation output and requires an SMB file system. The company maintains two synchronized file systems. This strategy is causing data duplication and inefficient resource usage. The company needs to migrate the applications to AWS without making code changes to either application. Which solution will meet these requirements?",
       "options": {
         "A": "Migrate both applications to AWS Lambda. Create an Amazon S3 bucket to exchange data between the applications.",
         "B": "Migrate both applications to Amazon Elastic Container Service (Amazon ECS). Configure Amazon FSx File Gateway for storage.",
@@ -403,7 +403,7 @@
     },
     {
       "id": "284",
-      "question": "A s part of budget planning, management wants areport of AWS billed items listed by user. The data will be used to create department budgets. A solutions architect needs to determine the most eficient way to obtain this report information. Which solution meets these requirements?",
+      "question": "A s part of budget planning, management wants a report of AWS billed items listed by user. The data will be used to create department budgets. A solutions architect needs to determine the most efficient way to obtain this report information. Which solution meets these requirements?",
       "options": {
         "A": "Run a query with Amazon Athena to generate the report.",
         "B": "Create a report in Cost Explorer and download the report.",
@@ -415,7 +415,7 @@
     },
     {
       "id": "285",
-      "question": "A company hosts its static website by using Amazon S3. The company wants to add acontact form to its webpage. The contact form will have dynamic server-side components for users to input their name, email address, phone number, and user message. The company anticipates that there will be fewer than 100 site visits each month. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company hosts its static website by using Amazon S3. The company wants to add a contact form to its webpage. The contact form will have dynamic server-side components for users to input their name, email address, phone number, and user message. The company anticipates that there will be fewer than 100 site visits each month. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Host a dynamic contact form page in Amazon Elastic Container Service (Amazon ECS). Set up Amazon Simple Email Service (Amazon SES) to connect to any third-party email provider.",
         "B": "Create an Amazon API Gateway endpoint with an AWS Lambda backend that makes a call to Amazon Simple Email Service (Amazon SES).",
@@ -427,7 +427,7 @@
     },
     {
       "id": "286",
-      "question": "A company has astatic website that is hosted on Amazon Cloudfront in front of Amazon S3. The static website uses a database backend. The company notices that the website does not refiect updates that have been made in the website s Git repository. The company checks the continuous integration and continuous delivery (CI/CD) pipeline between the Git repository and Amazon S3. The company verifies that the webhooks are configured properly and that the CI/CD pipeline is sending messages that indicate successful deployments. A solutions architect needs to implement a solution that displays the updates on the website. Which solution will meet these requirements?",
+      "question": "A company has astatic website that is hosted on Amazon Cloudfront in front of Amazon S3. The static website uses a database backend. The company notices that the website does not reflect updates that have been made in the website s Git repository. The company checks the continuous integration and continuous delivery (CI/CD) pipeline between the Git repository and Amazon S3. The company verifies that the webhooks are configured properly and that the CI/CD pipeline is sending messages that indicate successful deployments. A solutions architect needs to implement a solution that displays the updates on the website. Which solution will meet these requirements?",
       "options": {
         "A": "Add an Application Load Balancer.",
         "B": "Add Amazon ElastiCache for Redis or Memcached to the database layer of the web application.",
@@ -439,7 +439,7 @@
     },
     {
       "id": "287",
-      "question": "A company wants to migrate a Windows-based application from on premises to the AWS Cloud. The application has three tiers: an application tier, abusiness tier, and a database tier with Microsoft SQL Server. The company wants to use specific features of SQL Server such as native backups and Data Quality Services. The company also needs to share files for processing between the tiers. How should A solutions architect design the architecture to meet these requirements?",
+      "question": "A company wants to migrate a Windows-based application from on premises to the AWS Cloud. The application has three tiers: an application tier, a business tier, and a database tier with Microsoft SQL Server. The company wants to use specific features of SQL Server such as native backups and Data Quality Services. The company also needs to share files for processing between the tiers. How should A solutions architect design the architecture to meet these requirements?",
       "options": {
         "A": "Host all three tiers on Amazon EC2 instances. Use Amazon FSx File Gateway for File sharing between the tiers.",
         "B": "Host all three tiers on Amazon EC2 instances. Use Amazon FSx for Windows File Server for File sharing between the tiers.",
@@ -451,7 +451,7 @@
     },
     {
       "id": "288",
-      "question": "A company is migrating aLinux-based web server group to AWS. The web servers must access files in ashared File store for some content. The company must not make any changes to the application. What should A solutions architect do to meet these requirements?",
+      "question": "A company is migrating aLinux-based web server group to AWS. The web servers must access files in a shared File store for some content. The company must not make any changes to the application. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Create an Amazon S3 Standard bucket with access to the web servers.",
         "B": "Configure an Amazon CloudFront distribution with an Amazon S3 bucket as the origin.",
@@ -487,7 +487,7 @@
     },
     {
       "id": "291",
-      "question": "A media company uses Amazon Cloudfront for its publicly available streaming video content. The company wants to secure the video content that is hosted in Amazon S3 by controlling who has access. Some of the company s users are using acustom HTTP client that does not support cookies. Some of the company s users are unable to change the hardcoded URLs that they are using for access. Which services or methods will meet these requirements with the LEAST impact to the users? (Choose two.)",
+      "question": "A media company uses Amazon Cloudfront for its publicly available streaming video content. The company wants to secure the video content that is hosted in Amazon S3 by controlling who has access. Some of the company s users are using a custom HTTP client that does not support cookies. Some of the company s users are unable to change the hardcoded URLs that they are using for access. Which services or methods will meet these requirements with the LEAST impact to the users? (Choose two.)",
       "options": {
         "A": "Signed cookies",
         "B": "Signed URLs",
@@ -563,10 +563,10 @@
       "id": "297",
       "question": "A company deploys an application on Five Amazon EC2 instances. An Application Load Balancer (ALB) distributes traffic to the instances by using a target group. The average CPU usage on each of the instances is below 10% most of the time, with occasional surges to 65%. A solutions architect needs to implement a solution to automate the scalability of the application. The solution must optimize the cost of the architecture and must ensure that the application has enough CPU resources when surges occur. Which solution will meet these requirements?",
       "options": {
-        "A": "Create an Amazon CloudWatch alarm that enters the A LARM state when the CPUUtilization metric is less than 20%. Create an AWS Lambda function that the CloudWatch alarm invokes to terminate one of the EC2 instances in the ALBtarget group.",
+        "A": "Create an Amazon CloudWatch alarm that enters the ALARM state when the CPUUtilization metric is less than 20%. Create an AWS Lambda function that the CloudWatch alarm invokes to terminate one of the EC2 instances in the ALBtarget group.",
         "B": "Create an EC2 Auto Scaling group. Select the existing ALBas the load balancer and the existing target group as the target group. Set a target tracking scaling policy that is based on the A SGAverageCPUUtilization metric. Set the minimum instances to 2, the desired capacity to 3, the maximum instances to 6, and the target value to 50%. Add the EC2 instances to the Auto Scaling group.",
         "C": "Create an EC2 Auto Scaling group. Select the existing ALBas the load balancer and the existing target group as the target group. Set the minimum instances to 2, the desired capacity to 3, and the maximum instances to 6. Add the EC2 instances to the Auto Scaling group.",
-        "D": "Create two Amazon CloudWatch alarms. Configure the First CloudWatch alarm to enter the A LARM state when the average CPUUtilization metric is below 20%. Configure the second CloudWatch alarm to enter the A LARM state when the average CPUUtilization matric is above 50%. Configure the alarms to publish to an Amazon Simple Notification Service (Amazon SNS) topic to send an email message. After receiving the message, log in to decrease or increase the number of EC2 instances that are running."
+        "D": "Create two Amazon CloudWatch alarms. Configure the First CloudWatch alarm to enter the ALARM state when the average CPUUtilization metric is below 20%. Configure the second CloudWatch alarm to enter the ALARM state when the average CPUUtilization matric is above 50%. Configure the alarms to publish to an Amazon Simple Notification Service (Amazon SNS) topic to send an email message. After receiving the message, log in to decrease or increase the number of EC2 instances that are running."
       },
       "correct_answer": "B",
       "explanation": "Option B utilizes EC2 Auto Scaling, which automatically adjusts the number of EC2 instances in the Auto Scaling group based on the specified target tracking scaling policy.\nBy setting a target tracking scaling policy based on the A SGAverageCPUUtilization metric with a target value of 50%, the Auto Scaling group will dynamically adjust the number of instances to maintain an average CPU utilization close to the target value.\nThis solution provides scalability when needed, ensures that there are enough CPU resources during surges, and optimizes costs by automatically adjusting the capacity based on demand."
@@ -597,7 +597,7 @@
     },
     {
       "id": "300",
-      "question": "A company needs to migrate alegacy application from an on-premises data center to the AWS Cloud because of hardware capacity constraints. The application runs 24 hours aday, 7 days aweek. The application s database storage continues to grow over time. What should A solutions architect do to meet these requirements MOST cost-effectively?",
+      "question": "A company needs to migrate a legacy application from an on-premises data center to the AWS Cloud because of hardware capacity constraints. The application runs 24 hours a day, 7 days a week. The application s database storage continues to grow over time. What should A solutions architect do to meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Migrate the application layer to Amazon EC2 Spot Instances. Migrate the data storage layer to Amazon S3.",
         "B": "Migrate the application layer to Amazon EC2 Reserved Instances. Migrate the data storage layer to Amazon RDS On-Demand Instances.",

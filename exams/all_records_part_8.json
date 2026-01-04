@@ -2,7 +2,7 @@
   "questions": [
     {
       "id": "351",
-      "question": "A company is moving its data management Application to AWS. The company wants to transition to An event-driven architecture. The architecture needs to be more distributed And to use serverless concepts while performing the different a spects of the workflow. The company also wants to minimize operational overhead. Which solution will meet these requirements?",
+      "question": "A company is moving its data management Application to AWS. The company wants to transition to An event-driven architecture. The architecture needs to be more distributed And to use serverless concepts while performing the different aspects of the workflow. The company also wants to minimize operational overhead. Which solution will meet these requirements?",
       "options": {
         "A": "Build out the workflow in AWS Glue. Use AWS Glue to invoke AWS Lambda functions to process the workflow steps.",
         "B": "Build out the workflow in AWS Step Functions. Deploy the Application on Amazon EC2 instances. Use Step Functions to invoke the workflow steps on the EC2 instances.",
@@ -10,7 +10,7 @@
         "D": "Build out the workflow in AWS Step Functions. Use Step Functions to create a state machine. Use the state machine to invoke AWS Lambda functions to process the workflow steps."
       },
       "correct_answer": "D",
-      "explanation": "AWS Step Functions allows you to coordinate the components of distributed applications using visual workflows. It is a fully managed service, which means you don't need to worry a bout operational overhead.\nState machines in AWS Step Functions enable you to define the workflow of your Application by specifying a series of steps. Each step can invoke An AWS Lambda function, a mong other things.\nAWS Lambda is a serverless compute service, And it automatically scales with the workload. This a ligns with the goal of using serverless concepts And minimizing operational overhead."
+      "explanation": "AWS Step Functions allows you to coordinate the components of distributed applications using visual workflows. It is a fully managed service, which means you don't need to worry a bout operational overhead.\nState machines in AWS Step Functions enable you to define the workflow of your Application by specifying a series of steps. Each step can invoke An AWS Lambda function, a mong other things.\nAWS Lambda is a serverless compute service, And it automatically scales with the workload. This aligns with the goal of using serverless concepts And minimizing operational overhead."
     },
     {
       "id": "352",
@@ -50,7 +50,7 @@
     },
     {
       "id": "355",
-      "question": "A company is migrating An old Application to AWS. The Application runs a batch job every hour And is CPU intensive. The batch job takes 15 minutes on a verage with An on-premises server. The server has 64 virtual CPU (vCPU) And 512 GiB of memory. Which solution will run the batch job within 15 minutes with the LEAST operational overhead?",
+      "question": "A company is migrating An old Application to AWS. The Application runs a batch job every hour And is CPU intensive. The batch job takes 15 minutes on average with An on-premises server. The server has 64 virtual CPU (vCPU) And 512 GiB of memory. Which solution will run the batch job within 15 minutes with the LEAST operational overhead?",
       "options": {
         "A": "Use AWS Lambda with functional scaling.",
         "B": "Use Amazon Elastic Container Service (Amazon ECS) with AWS Fargate.",
@@ -99,7 +99,7 @@
     },
     {
       "id": "359",
-      "question": "A hospital needs to store patient records in An Amazon S3 bucket. The hospital s compliance team must ensure that All protected health information (PHI) is encrypted in transit And at rest. The compliance team must a dminister the encryption key for data at rest. Which solution will meet these requirements?",
+      "question": "A hospital needs to store patient records in An Amazon S3 bucket. The hospital s compliance team must ensure that All protected health information (PHI) is encrypted in transit And at rest. The compliance team must administer the encryption key for data at rest. Which solution will meet these requirements?",
       "options": {
         "A": "Create a public SSL/TLS certiFicate in AWS CertiFicate Manager (ACM). Associate the certiFicate with Amazon S3. Configure default encryption for each S3 bucket to use server-side encryption with AWS KMS keys (SSE-KMS). Assign the compliance team to manage the KMS keys.",
         "B": "Use the AWS:SecureTransport condition on S3 bucket policies to Allow only encrypted connections over HTTPS (TLS). Configure default encryption for each S3 bucket to use server-side encryption with S3 managed encryption keys (SSE-S3). Assign the compliance team to manage the SSE-S3 keys.",
@@ -156,7 +156,7 @@
         "D": "Amazon Simple Queue Service (Amazon SQS) FIFO queues"
       },
       "correct_answer": "B",
-      "explanation": "SNS FIFO also can send events or messages cocurrently to many subscribers while maintaining the order it receives. SNS fanout pattern is set in standard SNS which is commonly used to fan out events to large number of subscribers And usually for duplicated messages."
+      "explanation": "SNS FIFO also can send events or messages concurrently to many subscribers while maintaining the order it receives. SNS fanout pattern is set in standard SNS which is commonly used to fan out events to large number of subscribers And usually for duplicated messages."
     },
     {
       "id": "364",
@@ -169,15 +169,15 @@
         "E": "Turn on server-side encryption on the SQS components by using An AWS Key Management Service (AWS KMS) customer managed key. Apply An IAM policy to restrict key usage to a set of authorized principals. Set a condition in the queue policy to Allow only encrypted connections over TLS."
       },
       "correct_answer": "BD",
-      "explanation": "D. Turn on server-side encryption on the SQS components by using An AWS Key Management Service (AWS KMS) customer managed key. Apply a key policy to restrict key usage to a set of authorized principals. Set a condition in the queue policy to Allow only encrypted connections over TLS.\nThis option ensures that data at rest in the SNS components is encrypted using An AWS KMS customer managed key. The key policy restricts key usage to authorized personnel.\nThis option ensures that data at rest in the SQS components is encrypted using An AWS KMS customer managed key. The key policy restricts key usage to authorized personnel, And the queue policy ensures that only encrypted connections over TLS are a llowed."
+      "explanation": "D. Turn on server-side encryption on the SQS components by using An AWS Key Management Service (AWS KMS) customer managed key. Apply a key policy to restrict key usage to a set of authorized principals. Set a condition in the queue policy to Allow only encrypted connections over TLS.\nThis option ensures that data at rest in the SNS components is encrypted using An AWS KMS customer managed key. The key policy restricts key usage to authorized personnel.\nThis option ensures that data at rest in the SQS components is encrypted using An AWS KMS customer managed key. The key policy restricts key usage to authorized personnel, And the queue policy ensures that only encrypted connections over TLS are allowed."
     },
     {
       "id": "365",
-      "question": "A company runs a web Application that is backed by Amazon RDS. Anew database a dministrator caused data loss by accidentally editing information in a database table. To help recover from this type of incident, the company wants the a bility to restore the database to its state from 5 minutes before Any change within the last 30 days. Which feature should the solutions architect include in the design to meet this requirement?",
+      "question": "A company runs a web Application that is backed by Amazon RDS. Anew database administrator caused data loss by accidentally editing information in a database table. To help recover from this type of incident, the company wants the ability to restore the database to its state from 5 minutes before Any change within the last 30 days. Which feature should the solutions architect include in the design to meet this requirement?",
       "options": {
         "A": "Read replicas",
         "B": "Manual snapshots",
-        "C": "A utomated backups",
+        "C": "Automated backups",
         "D": "Multi-AZ deployments"
       },
       "correct_answer": "C",
@@ -209,7 +209,7 @@
     },
     {
       "id": "368",
-      "question": "A solutions architect wants All new users to have specific complexity requirements And mandatory rotation periods for IAM user passwords. What should the solutions architect do to a ccomplish this?",
+      "question": "A solutions architect wants All new users to have specific complexity requirements And mandatory rotation periods for IAM user passwords. What should the solutions architect do to accomplish this?",
       "options": {
         "A": "Set An overall password policy for the entire AWS account.",
         "B": "Set a password policy for each IAM user in the AWS account.",
@@ -258,7 +258,7 @@
     },
     {
       "id": "372",
-      "question": "A company wants to migrate An Oracle database to AWS. The database consists of a single table that contains millions of geographic information systems (GIS) images that are high resolution And are identified by a geographic code. When Anatural disaster occurs, tens of thousands of images get updated every few minutes. Each geographic code has a single image or row that is associated with it. The company wants a solution that is highly available And scalable during such events. Which solution meets these requirements MOST cost-effectively?",
+      "question": "A company wants to migrate An Oracle database to AWS. The database consists of a single table that contains millions of geographic information systems (GIS) images that are high resolution And are identified by a geographic code. When A natural disaster occurs, tens of thousands of images get updated every few minutes. Each geographic code has a single image or row that is associated with it. The company wants a solution that is highly available And scalable during such events. Which solution meets these requirements MOST cost-effectively?",
       "options": {
         "A": "Store the images And geographic codes in a database table. Use Oracle running on An Amazon RDS Multi-AZ DB instance.",
         "B": "Store the images in Amazon S3 buckets. Use Amazon DynamoDB with the geographic code as the key And the image S3 URL as the value.",
@@ -266,7 +266,7 @@
         "D": "Store the images in Amazon S3 buckets. Store geographic codes And image S3 URLs in a database table. Use Oracle running on An Amazon RDS Multi-AZ DB instance."
       },
       "correct_answer": "D",
-      "explanation": "In this we cannot used DynamoDB database bcz it is AnOSQL database And we want a SQL  database bcz oracle database is SQL DATABASE thats why the correct Ans is D. bcz used S3 bucket for storing data And used Oracle database for SQL we used Amazon RDS."
+      "explanation": "In this we cannot used DynamoDB database bcz it is A nOSQL database And we want a SQL  database bcz oracle database is SQL DATABASE thats why the correct Ans is D. bcz used S3 bucket for storing data And used Oracle database for SQL we used Amazon RDS."
     },
     {
       "id": "373",
@@ -282,7 +282,7 @@
     },
     {
       "id": "374",
-      "question": "A company is running several business applications in three separate VPCs within the us-east-1 Region. The applications must be able to communicate between VPCs. The applications also must be able to consistently send hundreds of gigabytes of data each day to a latency-sensitive Application that runs in a single on-premises data center. A solutions architect needs to design Anetwork connectivity solution that maximizes cost-effectiveness. Which solution meets these requirements?",
+      "question": "A company is running several business applications in three separate VPCs within the us-east-1 Region. The applications must be able to communicate between VPCs. The applications also must be able to consistently send hundreds of gigabytes of data each day to a latency-sensitive Application that runs in a single on-premises data center. A solutions architect needs to design A network connectivity solution that maximizes cost-effectiveness. Which solution meets these requirements?",
       "options": {
         "A": "Configure three AWS Site-to-Site VPN connections from the data center to AWS. Establish connectivity by configuring one VPN connection for each VPC.",
         "B": "Launch a third-party virtual network appliance in each VPC. Establish An IPsec VPN tunnel between the data center And each virtual appliance.",
@@ -290,11 +290,11 @@
         "D": "Set up one AWS Direct Connect connection from the data center to AWS. Create a transit gateway, And Attach each VPC to the transit gateway. Establish connectivity between the Direct Connect connection And the transit gateway."
       },
       "correct_answer": "D",
-      "explanation": "AWS Direct Connect: Using a single AWS Direct Connect connection from the data center to AWS is more cost-effective than setting up multiple connections. It provides a dedicated And consistent network connection between the on-premises data center And AWS.\nTransit Gateway: The use of a transit gateway simplifies network connectivity. It a cts as a hub, a llowing communication between the VPCs And the on-premises data center without requiring separate connections for each VPC. This reduces complexity And costs associated with managing multiple connections."
+      "explanation": "AWS Direct Connect: Using a single AWS Direct Connect connection from the data center to AWS is more cost-effective than setting up multiple connections. It provides a dedicated And consistent network connection between the on-premises data center And AWS.\nTransit Gateway: The use of a transit gateway simplifies network connectivity. It a cts as a hub, allowing communication between the VPCs And the on-premises data center without requiring separate connections for each VPC. This reduces complexity And costs associated with managing multiple connections."
     },
     {
       "id": "375",
-      "question": "An ecommerce company is building a distributed Application that involves several serverless functions And AWS services to complete order- processing tasks. These tasks require manual a pprovals as part of the workflow. A solutions architect needs to design An architecture for the order-processing application. The solution must be able to combine multiple AWS Lambda functions into responsive serverless applications. The solution also must orchestrate data And services that run on Amazon EC2 instances, containers, or on-premises servers. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "An ecommerce company is building a distributed Application that involves several serverless functions And AWS services to complete order- processing tasks. These tasks require manual approvals as part of the workflow. A solutions architect needs to design An architecture for the order-processing application. The solution must be able to combine multiple AWS Lambda functions into responsive serverless applications. The solution also must orchestrate data And services that run on Amazon EC2 instances, containers, or on-premises servers. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Use AWS Step Functions to build the application.",
         "B": "Integrate All the Application components in An AWS Glue job.",
@@ -318,7 +318,7 @@
     },
     {
       "id": "377",
-      "question": "A company recently deployed Anew auditing system to centralize information a bout operating system versions, patching, And installed software for Amazon EC2 instances. A solutions architect must ensure All instances provisioned through EC2 Auto Scaling groups successfully send reports to the auditing system as soon as they are launched And terminated. Which solution achieves these goals MOST eficiently?",
+      "question": "A company recently deployed Anew auditing system to centralize information a bout operating system versions, patching, And installed software for Amazon EC2 instances. A solutions architect must ensure All instances provisioned through EC2 Auto Scaling groups successfully send reports to the auditing system as soon as they are launched And terminated. Which solution achieves these goals MOST efficiently?",
       "options": {
         "A": "Use a scheduled AWS Lambda function And run a script remotely on All EC2 instances to send data to the audit system.",
         "B": "Use EC2 Auto Scaling lifecycle hooks to run a custom script to send data to the audit system when instances are launched And terminated.",
@@ -330,11 +330,11 @@
     },
     {
       "id": "378",
-      "question": "A company is developing a real-time multiplayer game that uses UDP for communications between the client And servers in An Auto Scaling group. Spikes in demand are Anticipated during the day, so the game server platform must a dapt a ccordingly. Developers want to store gamer scores And other non-relational data in a database solution that will scale without intervention. Which solution should A solutions architect recommend?",
+      "question": "A company is developing a real-time multiplayer game that uses UDP for communications between the client And servers in An Auto Scaling group. Spikes in demand are Anticipated during the day, so the game server platform must adapt accordingly. Developers want to store gamer scores And other non-relational data in a database solution that will scale without intervention. Which solution should A solutions architect recommend?",
       "options": {
         "A": "Use Amazon Route 53 for traffic distribution And Amazon Aurora Serverless for data storage.",
-        "B": "Use Anetwork Load Balancer for traffic distribution And Amazon DynamoDB on-demand for data storage.",
-        "C": "Use Anetwork Load Balancer for traffic distribution And Amazon Aurora Global Database for data storage.",
+        "B": "Use A network Load Balancer for traffic distribution And Amazon DynamoDB on-demand for data storage.",
+        "C": "Use A network Load Balancer for traffic distribution And Amazon Aurora Global Database for data storage.",
         "D": "Use An Application Load Balancer for traffic distribution And Amazon DynamoDB global tables for data storage."
       },
       "correct_answer": "B",
@@ -366,19 +366,19 @@
     },
     {
       "id": "381",
-      "question": "A company hosts a three-tier web Application that includes a PostgreSQL database. The database stores the metadata from documents. The company searches the metadata for key terms to retrieve documents that the company reviews in a report each month. The documents are stored in Amazon S3. The documents are usually written only once, but they are updated frequently. The reporting process takes a few hours with the use of relational queries. The reporting process must not prevent Any document modifications or the a ddition of new documents. A solutions architect needs to implement a solution to speed up the reporting process. Which solution will meet these requirements with the LEAST amount of change to the Application code?",
+      "question": "A company hosts a three-tier web Application that includes a PostgreSQL database. The database stores the metadata from documents. The company searches the metadata for key terms to retrieve documents that the company reviews in a report each month. The documents are stored in Amazon S3. The documents are usually written only once, but they are updated frequently. The reporting process takes a few hours with the use of relational queries. The reporting process must not prevent Any document modifications or the addition of new documents. A solutions architect needs to implement a solution to speed up the reporting process. Which solution will meet these requirements with the LEAST amount of change to the Application code?",
       "options": {
         "A": "Set up Anew Amazon DocumentDB (with MongoDB compatibility) cluster that includes a read replica. Scale the read replica to generate the reports.",
         "B": "Set up Anew Amazon Aurora PostgreSQL DB cluster that includes An Aurora Replica. Issue queries to the Aurora Replica to generate the reports.",
-        "C": "Set up Anew Amazon RDS for PostgreSQL Multi-AZ DB instance. Configure the reporting module to query the secondary RDS node so that the reporting module does not a ffect the primary node.",
+        "C": "Set up Anew Amazon RDS for PostgreSQL Multi-AZ DB instance. Configure the reporting module to query the secondary RDS node so that the reporting module does not affect the primary node.",
         "D": "Set up Anew Amazon DynamoDB table to store the documents. Use a Fixed write capacity to support new document entries. Automatically scale the read capacity to support the reports."
       },
       "correct_answer": "B",
-      "explanation": "Amazon Aurora PostgreSQL DB cluster that includes An Aurora Replica. Issue queries to the Aurora Replica to generate the reports) is the best option for speeding up the reporting process for a three-tier web Application that includes a PostgreSQL database storing metadata from documents, while not impacting document modifications or a dditions, with the least amount of change to the Application code."
+      "explanation": "Amazon Aurora PostgreSQL DB cluster that includes An Aurora Replica. Issue queries to the Aurora Replica to generate the reports) is the best option for speeding up the reporting process for a three-tier web Application that includes a PostgreSQL database storing metadata from documents, while not impacting document modifications or additions, with the least amount of change to the Application code."
     },
     {
       "id": "382",
-      "question": "A company has a three-tier Application on AWS that ingests sensor data from its users devices. The traffic Flows through Anetwork Load Balancer (NLB), then to Amazon EC2 instances for the web tier, And Finally to EC2 instances for the Application tier. The Application tier makes calls to a database. What should A solutions architect do to improve the security of the data in transit?",
+      "question": "A company has a three-tier Application on AWS that ingests sensor data from its users devices. The traffic Flows through A network Load Balancer (NLB), then to Amazon EC2 instances for the web tier, And Finally to EC2 instances for the Application tier. The Application tier makes calls to a database. What should A solutions architect do to improve the security of the data in transit?",
       "options": {
         "A": "Configure a TLS listener. Deploy the server certiFicate on the NLB.",
         "B": "Configure AWS Shield Advanced. Enable AWS WAF on the NLB.",
@@ -414,19 +414,19 @@
     },
     {
       "id": "385",
-      "question": "A solutions architect is creating Anew VPC design. There are two public subnets for the load balancer, two private subnets for web servers, And two private subnets for MySQL. The web servers use only HTTPS. The solutions architect has already created a security group for the load balancer a llowing port 443 from 0.0.0.0/0. Company policy requires that each resource has the least Access required to still be able to perform its tasks. Which additional configuration strategy should the solutions architect use to meet these requirements?",
+      "question": "A solutions architect is creating Anew VPC design. There are two public subnets for the load balancer, two private subnets for web servers, And two private subnets for MySQL. The web servers use only HTTPS. The solutions architect has already created a security group for the load balancer allowing port 443 from 0.0.0.0/0. Company policy requires that each resource has the least Access required to still be able to perform its tasks. Which additional configuration strategy should the solutions architect use to meet these requirements?",
       "options": {
         "A": "Create a security group for the web servers And Allow port 443 from 0.0.0.0/0. Create a security group for the MySQL servers And Allow port 3306 from the web servers security group.",
-        "B": "Create Anetwork ACL for the web servers And Allow port 443 from 0.0.0.0/0. Create Anetwork ACL for the MySQL servers And Allow port 3306 from the web servers security group.",
+        "B": "Create A network ACL for the web servers And Allow port 443 from 0.0.0.0/0. Create A network ACL for the MySQL servers And Allow port 3306 from the web servers security group.",
         "C": "Create a security group for the web servers And Allow port 443 from the load balancer. Create a security group for the MySQL servers And Allow port 3306 from the web servers security group.",
-        "D": "Create Anetwork ACL for the web servers And Allow port 443 from the load balancer. Create Anetwork ACL for the MySQL servers And Allow port 3306 from the web servers security group."
+        "D": "Create A network ACL for the web servers And Allow port 443 from the load balancer. Create A network ACL for the MySQL servers And Allow port 3306 from the web servers security group."
       },
       "correct_answer": "C",
       "explanation": ""
     },
     {
       "id": "386",
-      "question": "An ecommerce company is running a multi-tier Application on AWS. The front-end And backend tiers both run on Amazon EC2, And the database runs on Amazon RDS for MySQL. The backend tier communicates with the RDS instance. There are frequent calls to return identical datasets from the database that are causing performance slowdowns. Which a ction should be taken to improve the performance of the backend?",
+      "question": "An ecommerce company is running a multi-tier Application on AWS. The front-end And backend tiers both run on Amazon EC2, And the database runs on Amazon RDS for MySQL. The backend tier communicates with the RDS instance. There are frequent calls to return identical datasets from the database that are causing performance slowdowns. Which action should be taken to improve the performance of the backend?",
       "options": {
         "A": "Implement Amazon SNS to store the database calls.",
         "B": "Implement Amazon ElastiCache to cache the large datasets.",
@@ -438,16 +438,16 @@
     },
     {
       "id": "387",
-      "question": "Anew employee has joined A company as a deployment engineer. The deployment engineer will be using AWS Cloudformation templates to create multiple AWS resources. A solutions architect wants the deployment engineer to perform job a ctivities while following the principle of least privilege. Which combination of actions should the solutions architect take to a ccomplish this goal? (Choose two.)",
+      "question": "Anew employee has joined A company as a deployment engineer. The deployment engineer will be using AWS Cloudformation templates to create multiple AWS resources. A solutions architect wants the deployment engineer to perform job activities while following the principle of least privilege. Which combination of actions should the solutions architect take to accomplish this goal? (Choose two.)",
       "options": {
         "A": "Have the deployment engineer use AWS account root user credentials for performing AWS CloudFormation stack operations.",
         "B": "Create Anew IAM user for the deployment engineer And Add the IAM user to a group that has the PowerUsers IAM policy attached.",
-        "C": "Create Anew IAM user for the deployment engineer And Add the IAM user to a group that has the A dministratorAccess IAM policy attached.",
+        "C": "Create Anew IAM user for the deployment engineer And Add the IAM user to a group that has the AdministratorAccess IAM policy attached.",
         "D": "Create Anew IAM user for the deployment engineer And Add the IAM user to a group that has An IAM policy that allows AWS CloudFormation actions only.",
         "E": "Create An IAM role for the deployment engineer to explicitly deFine the permissions speciFic to the AWS CloudFormation stack And launch stacks using that IAM role."
       },
       "correct_answer": "DE",
-      "explanation": "E. Create An IAM role for the deployment engineer to explicitly define the permissions specific to the AWS CloudFormation stack And launch stacks using that IAM role.\nThis ensures that the IAM user has the necessary permissions for AWS CloudFormation but not unnecessary permissions for other AWS services.\nIAM roles are more suitable for temporary elevated permissions needed during AWS CloudFormation stack operations. The deployment engineer can a ssume the role when required, limiting their permissions to only what is needed for those specific actions."
+      "explanation": "E. Create An IAM role for the deployment engineer to explicitly define the permissions specific to the AWS CloudFormation stack And launch stacks using that IAM role.\nThis ensures that the IAM user has the necessary permissions for AWS CloudFormation but not unnecessary permissions for other AWS services.\nIAM roles are more suitable for temporary elevated permissions needed during AWS CloudFormation stack operations. The deployment engineer can assume the role when required, limiting their permissions to only what is needed for those specific actions."
     },
     {
       "id": "388",
@@ -471,13 +471,13 @@
         "D": "Deploy the DB instance in multiple Availability Zones to process the business reporting queries."
       },
       "correct_answer": "A",
-      "explanation": "Amazon RDS provides the a bility to create read replicas of a source DB instance. Read replicas can be used to offload read traffic from the primary (write) DB instance, a llowing you to scale read operations horizontally. This is particularly useful for scenarios where you want to run reporting queries without a ffecting the write performance of the production DB instance."
+      "explanation": "Amazon RDS provides the ability to create read replicas of a source DB instance. Read replicas can be used to offload read traffic from the primary (write) DB instance, allowing you to scale read operations horizontally. This is particularly useful for scenarios where you want to run reporting queries without affecting the write performance of the production DB instance."
     },
     {
       "id": "390",
       "question": "A company hosts a three-tier ecommerce Application on a Fleet of Amazon EC2 instances. The instances run in An Auto Scaling group behind An Application Load Balancer (ALB). All ecommerce data is stored in An Amazon RDS for MariaDB Multi-AZ DB instance. The company wants to optimize customer session management during transactions. The Application must store session data durably. Which solutions will meet these requirements? (Choose two.)",
       "options": {
-        "A": "Turn on the sticky sessions feature (session a ffinity) on the ALB.",
+        "A": "Turn on the sticky sessions feature (session affinity) on the ALB.",
         "B": "Use An Amazon DynamoDB table to store customer session information.",
         "C": "Deploy An Amazon Cognito user pool to manage user session information.",
         "D": "Deploy An Amazon ElastiCache for Redis cluster to store customer session information.",
@@ -524,7 +524,7 @@
     },
     {
       "id": "394",
-      "question": "A company is running a multi-tier ecommerce web Application in the AWS Cloud. The Application runs on Amazon EC2 instances with An Amazon RDS for MySQL Multi-AZ DB instance. Amazon RDS is configured with the latest generation DB instance with 2,000 GB of storage in a General Purpose SSD (gp3) Amazon Elastic Block Store (Amazon EBS) volume. The database performance a ffects the Application during periods of high demand. A database a dministrator Analyzes the logs in Amazon Cloudwatch Logs And discovers that the Application performance a lways degrades when the number of read And write IOPS is higher than 20,000. What should A solutions architect do to improve the Application performance?",
+      "question": "A company is running a multi-tier ecommerce web Application in the AWS Cloud. The Application runs on Amazon EC2 instances with An Amazon RDS for MySQL Multi-AZ DB instance. Amazon RDS is configured with the latest generation DB instance with 2,000 GB of storage in a General Purpose SSD (gp3) Amazon Elastic Block Store (Amazon EBS) volume. The database performance affects the Application during periods of high demand. A database administrator Analyzes the logs in Amazon Cloudwatch Logs And discovers that the Application performance always degrades when the number of read And write IOPS is higher than 20,000. What should A solutions architect do to improve the Application performance?",
       "options": {
         "A": "Replace the volume with a magnetic volume.",
         "B": "Increase the number of IOPS on the gp3 volume.",
@@ -544,11 +544,11 @@
         "D": "AWS ConFig"
       },
       "correct_answer": "C",
-      "explanation": "AWS CloudTrail is a service provided by Amazon Web Services (AWS) that allows you to monitor And log AWS account a ctivity. It records API calls made on your AWS account, capturing information such as the identity of the caller, the time of the API call, the source IP a ddress, the request parameters, And the response elements returned by the AWS service."
+      "explanation": "AWS CloudTrail is a service provided by Amazon Web Services (AWS) that allows you to monitor And log AWS account activity. It records API calls made on your AWS account, capturing information such as the identity of the caller, the time of the API call, the source IP a ddress, the request parameters, And the response elements returned by the AWS service."
     },
     {
       "id": "396",
-      "question": "A company has implemented a self-managed DNS service on AWS. The solution consists of the following: \u2022 Amazon EC2 instances in different AWS Regions \u2022 Endpoints of a standard Accelerator in AWS Global Accelerator The company wants to protect the solution a gainst DDoS a ttacks. What should A solutions architect do to meet this requirement?",
+      "question": "A company has implemented a self-managed DNS service on AWS. The solution consists of the following: \u2022 Amazon EC2 instances in different AWS Regions \u2022 Endpoints of a standard Accelerator in AWS Global Accelerator The company wants to protect the solution a gainst DDoS attacks. What should A solutions architect do to meet this requirement?",
       "options": {
         "A": "Subscribe to AWS Shield Advanced. Add the Accelerator as a resource to protect.",
         "B": "Subscribe to AWS Shield Advanced. Add the EC2 instances as resources to protect.",
@@ -556,11 +556,11 @@
         "D": "Create An AWS WAF web ACL that includes a rate-based rule. Associate the web ACL with the EC2 instances."
       },
       "correct_answer": "A",
-      "explanation": "AWS Shield Advanced is a managed Distributed Denial of Service (DDoS) protection service provided by AWS.\nBy subscribing to AWS Shield Advanced, you gain Access to enhanced DDoS protection capabilities, including automatic detection And mitigation of DDoS a ttacks."
+      "explanation": "AWS Shield Advanced is a managed Distributed Denial of Service (DDoS) protection service provided by AWS.\nBy subscribing to AWS Shield Advanced, you gain Access to enhanced DDoS protection capabilities, including automatic detection And mitigation of DDoS attacks."
     },
     {
       "id": "397",
-      "question": "An ecommerce company needs to run a scheduled daily job to a ggregate And Filter sales records for Analytics. The company stores the sales records in An Amazon S3 bucket. Each object can be up to 10 GB in size. Based on the number of sales events, the job can take up to An hour to complete. The CPU And memory usage of the job are constant And are known in a dvance. A solutions architect needs to minimize the amount of operational effort that is needed for the job to run. Which solution meets these requirements?",
+      "question": "An ecommerce company needs to run a scheduled daily job to aggregate And Filter sales records for Analytics. The company stores the sales records in An Amazon S3 bucket. Each object can be up to 10 GB in size. Based on the number of sales events, the job can take up to An hour to complete. The CPU And memory usage of the job are constant And are known in advance. A solutions architect needs to minimize the amount of operational effort that is needed for the job to run. Which solution meets these requirements?",
       "options": {
         "A": "Create An AWS Lambda function that has An Amazon EventBridge notiFication. Schedule the EventBridge event to run once a day.",
         "B": "Create An AWS Lambda function. Create An Amazon API Gateway HTTP A PI, And integrate the API with the function. Create An Amazon EventBridge scheduled event that calls the API And invokes the function.",
@@ -584,7 +584,7 @@
     },
     {
       "id": "399",
-      "question": "A Financial company hosts a web Application on AWS. The Application uses An Amazon API Gateway Regional API endpoint to give users the a bility to retrieve current stock prices. The company s security team has noticed An increase in the number of API requests. The security team is concerned that HTTP Fiood a ttacks might take the Application ofiine. A solutions architect must design a solution to protect the Application from this type of a ttack. Which solution meets these requirements with the LEAST operational overhead?",
+      "question": "A Financial company hosts a web Application on AWS. The Application uses An Amazon API Gateway Regional API endpoint to give users the ability to retrieve current stock prices. The company s security team has noticed An increase in the number of API requests. The security team is concerned that HTTP flood attacks might take the Application offline. A solutions architect must design a solution to protect the Application from this type of attack. Which solution meets these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Create An Amazon CloudFront distribution in front of the API Gateway Regional API endpoint with a maximum TTL of 24 hours.",
         "B": "Create a Regional AWS WAF web ACL with a rate-based rule. Associate the web ACL with the API Gateway stage.",
@@ -592,16 +592,16 @@
         "D": "Create An Amazon CloudFront distribution with Lambda@Edge in front of the API Gateway Regional API endpoint. Create An AWS Lambda function to block requests from IP addresses that exceed the predeFined rate."
       },
       "correct_answer": "B",
-      "explanation": "Rate-based Rule with AWS WAF: AWS WAF provides protection a gainst various web Application a ttacks, including HTTP flood a ttacks. By using a rate-based rule, you can set thresholds for the number of requests from a client IP within a specified time period. This helps in detecting And mitigating HTTP flood a ttacks effectively."
+      "explanation": "Rate-based Rule with AWS WAF: AWS WAF provides protection a gainst various web Application attacks, including HTTP flood attacks. By using a rate-based rule, you can set thresholds for the number of requests from a client IP within a specified time period. This helps in detecting And mitigating HTTP flood attacks effectively."
     },
     {
       "id": "400",
-      "question": "A meteorological startup company has a custom web Application to sell weather data to its users online. The company uses Amazon DynamoDB to store its data And wants to build Anew service that sends An alert to the managers of four internal teams every time Anew weather event is recorded. The company does not want this new service to a ffect the performance of the current application. What should A solutions architect do to meet these requirements with the LEAST amount of operational overhead?",
+      "question": "A meteorological startup company has a custom web Application to sell weather data to its users online. The company uses Amazon DynamoDB to store its data And wants to build Anew service that sends An alert to the managers of four internal teams every time Anew weather event is recorded. The company does not want this new service to affect the performance of the current application. What should A solutions architect do to meet these requirements with the LEAST amount of operational overhead?",
       "options": {
         "A": "Use DynamoDB transactions to write new event data to the table. Configure the transactions to notify internal teams.",
         "B": "Have the current Application publish a message to four Amazon Simple NotiFication Service (Amazon SNS) topics. Have each team subscribe to one topic.",
         "C": "Enable Amazon DynamoDB Streams on the table. Use triggers to write to a single Amazon Simple NotiFication Service (Amazon SNS) topic to which the teams can subscribe.",
-        "D": "Add a custom attribute to each record to Fiag new items. Write a cron job that scans the table every minute for items that are new And notiFies An Amazon Simple Queue Service (Amazon SQS) queue to which the teams can subscribe."
+        "D": "Add a custom attribute to each record to flag new items. Write a cron job that scans the table every minute for items that are new And notiFies An Amazon Simple Queue Service (Amazon SQS) queue to which the teams can subscribe."
       },
       "correct_answer": "C",
       "explanation": "Using a single SNS topic simplifies the notification process. The trigger can publish a message to this topic, And each internal team can subscribe to this topic. This reduces the operational overhead compared to managing multiple SNS topics (Option B)."

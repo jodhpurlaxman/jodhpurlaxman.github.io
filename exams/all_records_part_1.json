@@ -182,7 +182,7 @@
     },
     {
       "id": "16",
-      "question": "A company hosts a data lake on AWS. The data lake consists of data in Amazon S3 and Amazon RDS for PostgreSQL. The company needs areporting solution that provides data visualization and includes all the data sources within the data lake. Only the company's management team should have full access to all the visualizations. The rest of the company should have only limited access. Which solution will meet these requirements?",
+      "question": "A company hosts a data lake on AWS. The data lake consists of data in Amazon S3 and Amazon RDS for PostgreSQL. The company needs a reporting solution that provides data visualization and includes all the data sources within the data lake. Only the company's management team should have full access to all the visualizations. The rest of the company should have only limited access. Which solution will meet these requirements?",
       "options": {
         "A": "Create an analysis in Amazon QuickSight. Connect all the data sources and create new datasets. Publish dashboards to visualize the data. Share the dashboards with the appropriate IAM roles.",
         "B": "Create an analysis in Amazon QuickSight. Connect all the data sources and create new datasets. Publish dashboards to visualize the data. Share the dashboards with the appropriate users and groups.",
@@ -206,22 +206,22 @@
     },
     {
       "id": "18",
-      "question": "An application development team is designing amicroservice that will convert large images to smaller, compressed images. When auser uploads an image through the web interface, the microservice should store the image in an Amazon S3 bucket, process and compress the image with an AWS Lambda function, and store the image in its compressed form in adifferent S3 bucket. A solutions architect needs to design a solution that uses durable, stateless components to process the images automatically. Which combination of actions will meet these requirements? (Choose two.)",
+      "question": "An application development team is designing a microservice that will convert large images to smaller, compressed images. When a user uploads an image through the web interface, the microservice should store the image in an Amazon S3 bucket, process and compress the image with an AWS Lambda function, and store the image in its compressed form in adifferent S3 bucket. A solutions architect needs to design a solution that uses durable, stateless components to process the images automatically. Which combination of actions will meet these requirements? (Choose two.)",
       "options": {
-        "A": "Create an Amazon Simple Queue Service (Amazon SQS) queue. Configure the S3 bucket to send AnotiFication to the SQS queue when an image is uploaded to the S3 bucket.",
+        "A": "Create an Amazon Simple Queue Service (Amazon SQS) queue. Configure the S3 bucket to send A notification to the SQS queue when an image is uploaded to the S3 bucket.",
         "B": "Configure the Lambda function to use the Amazon Simple Queue Service (Amazon SQS) queue as the invocation source. When the SQS message is successfully processed, delete the message in the queue.",
         "C": "Configure the Lambda function to monitor the S3 bucket for new uploads. When an uploaded image is detected, write the File name to a text File in memory and use the text File to keep track of the images that were processed.",
         "D": "Launch an Amazon EC2 instance to monitor an Amazon Simple Queue Service (Amazon SQS) queue. When items are added to the queue, log the File name in a text File on the EC2 instance and invoke the Lambda function.",
         "E": "Configure an Amazon EventBridge (Amazon CloudWatch Events) event to monitor the S3 bucket. When an image is uploaded, send an alert to an Amazon ample Notification Service (Amazon SNS) topic with the application owner's email address for further processing."
       },
       "correct_answer": "AB",
-      "explanation": "B. Configure the Lambda function to use the Amazon Simple Queue Service (Amazon SQS) queue as the invocation source. When the SQS message is successfully processed, delete the message in the queue\nOption A: By creating an Amazon SQS queue and configuring the S3 bucket to send Anotification to the SQS queue when an image is uploaded, the system establishes a durable and scalable way to handle incoming image processing tasks.\nOption B: Configuring the Lambda function to use the SQS queue as the invocation source allows it to retrieve messages from the queue and process them in a stateless manner. After successfully processing the image, the Lambda function can delete the message from the queue to avoid duplicate processing."
+      "explanation": "B. Configure the Lambda function to use the Amazon Simple Queue Service (Amazon SQS) queue as the invocation source. When the SQS message is successfully processed, delete the message in the queue\nOption A: By creating an Amazon SQS queue and configuring the S3 bucket to send A notification to the SQS queue when an image is uploaded, the system establishes a durable and scalable way to handle incoming image processing tasks.\nOption B: Configuring the Lambda function to use the SQS queue as the invocation source allows it to retrieve messages from the queue and process them in a stateless manner. After successfully processing the image, the Lambda function can delete the message from the queue to avoid duplicate processing."
     },
     {
       "id": "19",
-      "question": "A company has a three-tier web application that is deployed on AWS. The web servers are deployed in a public subnet in a VPC. The application servers and database servers are deployed in private subnets in the same VPC. The company has deployed athird-party virtual Firewall appliance from AWS Marketplace in an inspection VPC. The appliance is configured with an IP interface that can accept IP packets. A solutions architect needs to integrate the web application with the appliance to inspect all traffic to the application before the traffic reaches the web server. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company has a three-tier web application that is deployed on AWS. The web servers are deployed in a public subnet in a VPC. The application servers and database servers are deployed in private subnets in the same VPC. The company has deployed a third-party virtual Firewall appliance from AWS Marketplace in an inspection VPC. The appliance is configured with an IP interface that can accept IP packets. A solutions architect needs to integrate the web application with the appliance to inspect all traffic to the application before the traffic reaches the web server. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Create Anetwork Load Balancer in the public subnet of the application's VPC to route the traffic to the appliance for packet inspection.",
+        "A": "Create A network Load Balancer in the public subnet of the application's VPC to route the traffic to the appliance for packet inspection.",
         "B": "Create an Application Load Balancer in the public subnet of the application's VPC to route the traffic to the appliance for packet inspection.",
         "C": "Deploy a transit gateway in the inspection VPConfigure route tables to route the incoming packets through the transit gateway.",
         "D": "Deploy a Gateway Load Balancer in the inspection VPC. Create a Gateway Load Balancer endpoint to receive the incoming packets and forward the packets to the appliance."
@@ -231,7 +231,7 @@
     },
     {
       "id": "20",
-      "question": "A company wants to improve its ability to clone large amounts of production data into atest environment in the same AWS Region. The data is stored in Amazon EC2 instances on Amazon Elastic Block Store (Amazon EBS) volumes. Modifications to the cloned data must not affect the production environment. The software that accesses this data requires consistently high I/Operformance. A solutions architect needs to minimize the time that is required to clone the production data into the test environment. Which solution will meet these requirements?",
+      "question": "A company wants to improve its ability to clone large amounts of production data into a test environment in the same AWS Region. The data is stored in Amazon EC2 instances on Amazon Elastic Block Store (Amazon EBS) volumes. Modifications to the cloned data must not affect the production environment. The software that accesses this data requires consistently high I/Operformance. A solutions architect needs to minimize the time that is required to clone the production data into the test environment. Which solution will meet these requirements?",
       "options": {
         "A": "Take EBS snapshots of the production EBS volumes. Restore the snapshots onto EC2 instance store volumes in the test environment.",
         "B": "Configure the production EBS volumes to use the EBS Multi-Attach feature. Take EBS snapshots of the production EBS volumes. Attach the production EBS volumes to the EC2 instances in the test environment.",
@@ -243,7 +243,7 @@
     },
     {
       "id": "21",
-      "question": "An ecommerce company wants to launch aone-deal-a-day website on AWS. Each day will feature exactly one product on sale for aperiod of 24 hours. The company wants to be able to handle millions of requests each hour with millisecond latency during peak hours. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "An ecommerce company wants to launch a one-deal-a-day website on AWS. Each day will feature exactly one product on sale for a period of 24 hours. The company wants to be able to handle millions of requests each hour with millisecond latency during peak hours. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Use Amazon S3 to host the full website in different S3 buckets. Add Amazon CloudFront distributions. Set the S3 buckets as origins for the distributions. Store the order data in Amazon S3.",
         "B": "Deploy the full website on Amazon EC2 instances that run in Auto Scaling groups across multiple Availability Zones. Add an Application Load Balancer (ALB) to distribute the website traffic. Add another ALBfor the backend APIs. Store the data in Amazon RDS for MySQL.",
@@ -279,7 +279,7 @@
     },
     {
       "id": "24",
-      "question": "A company observes an increase in Amazon EC2 costs in its most recent bill. The billing team notices unwanted vertical scaling of instance types for acouple of EC2 instances. A solutions architect needs to create agraph comparing the last 2 months of EC2 costs and perform an in-depth analysis to identify the root cause of the vertical scaling. How should the solutions architect generate the information with the LEAST operational overhead?",
+      "question": "A company observes an increase in Amazon EC2 costs in its most recent bill. The billing team notices unwanted vertical scaling of instance types for a couple of EC2 instances. A solutions architect needs to create a graph comparing the last 2 months of EC2 costs and perform an in-depth analysis to identify the root cause of the vertical scaling. How should the solutions architect generate the information with the LEAST operational overhead?",
       "options": {
         "A": "Use AWS Budgets to create a budget report and compare EC2 costs based on instance types.",
         "B": "Use Cost Explorer's granular Filtering feature to perform an in-depth analysis of EC2 costs based on instance types.",
@@ -341,17 +341,17 @@
       "id": "29",
       "question": "A company provides a voice over Internet Protocol (VoIP) service that uses UDP connections. The service consists of Amazon EC2 instances that run in an Auto Scaling group. The company has deployments across multiple AWS Regions. The company needs to route users to the Region with the lowest latency. The company also needs automated failover between Regions. Which solution will meet these requirements?",
       "options": {
-        "A": "Deploy Anetwork Load Balancer (NLB) and an associated target group. Associate the target group with the Auto Scaling group. Use the NLB as an AWS Global Accelerator endpoint in each Region.",
+        "A": "Deploy A network Load Balancer (NLB) and an associated target group. Associate the target group with the Auto Scaling group. Use the NLB as an AWS Global Accelerator endpoint in each Region.",
         "B": "Deploy an Application Load Balancer (ALB) and an associated target group. Associate the target group with the Auto Scaling group. Use the ALBas an AWS Global Accelerator endpoint in each Region.",
-        "C": "Deploy Anetwork Load Balancer (NLB) and an associated target group. Associate the target group with the Auto Scaling group. Create an Amazon Route 53 latency record that points to aliases for each NLB. Create an Amazon CloudFront distribution that uses the latency record as an origin.",
+        "C": "Deploy A network Load Balancer (NLB) and an associated target group. Associate the target group with the Auto Scaling group. Create an Amazon Route 53 latency record that points to aliases for each NLB. Create an Amazon CloudFront distribution that uses the latency record as an origin.",
         "D": "Deploy an Application Load Balancer (ALB) and an associated target group. Associate the target group with the Auto Scaling group. Create an Amazon Route 53 weighted record that points to aliases for each ALB. Deploy an Amazon CloudFront distribution that uses the weighted record as an origin."
       },
       "correct_answer": "A",
-      "explanation": "' Deploy Anetwork Load Balancer (NLB) and an associated target group. Associate the target group with the Auto Scaling group. Use the NLB as an AWS Global Accelerator endpoint in each Region."
+      "explanation": "' Deploy A network Load Balancer (NLB) and an associated target group. Associate the target group with the Auto Scaling group. Use the NLB as an AWS Global Accelerator endpoint in each Region."
     },
     {
       "id": "30",
-      "question": "A development team runs monthly resource-intensive tests on its general purpose Amazon RDS for MySQL DB instance with Performance Insights enabled. The testing lasts for 48 hours once amonth and is the only process that uses the database. The team wants to reduce the cost of running the tests without reducing the compute and memory attributes of the DB instance. Which solution meets these requirements MOST cost-effectively?",
+      "question": "A development team runs monthly resource-intensive tests on its general purpose Amazon RDS for MySQL DB instance with Performance Insights enabled. The testing lasts for 48 hours once  a month and is the only process that uses the database. The team wants to reduce the cost of running the tests without reducing the compute and memory attributes of the DB instance. Which solution meets these requirements MOST cost-effectively?",
       "options": {
         "A": "Stop the DB instance when tests are completed. Restart the DB instance when required.",
         "B": "Use an Auto Scaling policy with the DB instance to automatically scale when tests are completed.",
@@ -387,7 +387,7 @@
     },
     {
       "id": "33",
-      "question": "A company runs an online marketplace web application on AWS. The application serves hundreds of thousands of users during peak hours. The company needs ascalable, near-real-time solution to share the details of millions of Financial transactions with several other internal applications. Transactions also need to be processed to remove sensitive data before being stored in adocument database for low-latency retrieval. What should A solutions architect recommend to meet these requirements?",
+      "question": "A company runs an online marketplace web application on AWS. The application serves hundreds of thousands of users during peak hours. The company needs a scalable, near-real-time solution to share the details of millions of Financial transactions with several other internal applications. Transactions also need to be processed to remove sensitive data before being stored in adocument database for low-latency retrieval. What should A solutions architect recommend to meet these requirements?",
       "options": {
         "A": "Store the transactions data into Amazon DynamoDB. Set up a rule in DynamoDB to remove sensitive data from every transaction upon write. Use DynamoDB Streams to share the transactions data with other applications.",
         "B": "Stream the transactions data into Amazon Kinesis Data Firehose to store data in Amazon DynamoDB and Amazon S3. Use AWS Lambda integration with Kinesis Data Firehose to remove sensitive data. Other applications can consume the data stored in Amazon S3.",
@@ -399,7 +399,7 @@
     },
     {
       "id": "34",
-      "question": "A company hosts its multi-tier applications on AWS. For compliance, governance, auditing, and security, the company must track configuration changes on its AWS resources and record ahistory of API calls made to these resources. What should A solutions architect do to meet these requirements?",
+      "question": "A company hosts its multi-tier applications on AWS. For compliance, governance, auditing, and security, the company must track configuration changes on its AWS resources and record a history of API calls made to these resources. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Use AWS CloudTrail to track  configuration changes and AWS ConFig to record API calls.",
         "B": "Use AWS ConFig to track  configuration changes and AWS CloudTrail to record API calls.",
@@ -435,7 +435,7 @@
     },
     {
       "id": "37",
-      "question": "A company recently launched avariety of new workloads on Amazon EC2 instances in its AWS account. The company needs to create astrategy to access and administer the instances remotely and securely. The company needs to implement arepeatable process that works with native AWS services and follows the AWS Well-Architected Framework. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company recently launched avariety of new workloads on Amazon EC2 instances in its AWS account. The company needs to create astrategy to access and administer the instances remotely and securely. The company needs to implement a repeatable process that works with native AWS services and follows the AWS Well-Architected Framework. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Use the EC2 serial console to directly access the terminal interface of each instance for administration.",
         "B": "Attach the appropriate IAM role to each existing instance and new instance. Use AWS Systems Manager Session Manager to establish a remote SSH session.",
@@ -459,7 +459,7 @@
     },
     {
       "id": "39",
-      "question": "A company maintains asearchable repository of items on its website. The data is stored in an Amazon RDS for MySQL database table that contains more than 10 million rows. The database has 2 TB of General Purpose SSD storage. There are millions of updates against this data every day through the company's website. The company has noticed that some insert operations are taking 10 seconds or longer. The company has determined that the database storage performance is the problem. Which solution addresses this performance issue?",
+      "question": "A company maintains a searchable repository of items on its website. The data is stored in an Amazon RDS for MySQL database table that contains more than 10 million rows. The database has 2 TB of General Purpose SSD storage. There are millions of updates against this data every day through the company's website. The company has noticed that some insert operations are taking 10 seconds or longer. The company has determined that the database storage performance is the problem. Which solution addresses this performance issue?",
       "options": {
         "A": "Change the storage type to Provisioned IOPS SSD.",
         "B": "Change the DB instance to a memory optimized instance class.",
@@ -471,7 +471,7 @@
     },
     {
       "id": "40",
-      "question": "A company has thousands of edge devices that collectively generate 1 TB of status alerts each day. Each alert is approximately 2 KB in size. A solutions architect needs to implement a solution to ingest and store the alerts for future analysis. The company wants a highly available solution. However, the company needs to minimize costs and does not want to manage additional infrastructure. Additionally, the company wants to keep 14 days of data available for immediate analysis and archive any data older than 14 days. What is the MOST operationally eficient solution that meets these requirements?",
+      "question": "A company has thousands of edge devices that collectively generate 1 TB of status alerts each day. Each alert is approximately 2 KB in size. A solutions architect needs to implement a solution to ingest and store the alerts for future analysis. The company wants a highly available solution. However, the company needs to minimize costs and does not want to manage additional infrastructure. Additionally, the company wants to keep 14 days of data available for immediate analysis and archive any data older than 14 days. What is the MOST operationally efficient solution that meets these requirements?",
       "options": {
         "A": "Create an Amazon Kinesis Data Firehose delivery stream to ingest the alerts. Configure the Kinesis Data Firehose stream to deliver the alerts to an Amazon S3 bucket. Set up an S3 Lifecycle  configuration to transition data to Amazon S3 Glacier after 14 days.",
         "B": "Launch Amazon EC2 instances across two Availability Zones and place them behind an Elastic Load Balancer to ingest the alerts. Create a script on the EC2 instances that will store the alerts in an Amazon S3 bucket. Set up an S3 Lifecycle  configuration to transition data to Amazon S3 Glacier after 14 days.",
@@ -515,7 +515,7 @@
         "D": "Submit a support ticket through the AWS Management Console. Request the removal of S3 service limits from the account."
       },
       "correct_answer": "B",
-      "explanation": "AWS Direct Connect is Anetwork service that allows you to establish a dedicated network connection from your on-premises data center to AWS. This connection bypasses the public Internet and can provide more reliable, lower-latency communication between your on-premises application and Amazon S3. By directing backup traffic through the AWS Direct Connect connection, you can minimize the impact on your internet bandwidth and ensure timely backups to S3."
+      "explanation": "AWS Direct Connect is A network service that allows you to establish a dedicated network connection from your on-premises data center to AWS. This connection bypasses the public Internet and can provide more reliable, lower-latency communication between your on-premises application and Amazon S3. By directing backup traffic through the AWS Direct Connect connection, you can minimize the impact on your internet bandwidth and ensure timely backups to S3."
     },
     {
       "id": "44",
@@ -548,16 +548,16 @@
       "question": "A company has an application that provides marketing services to stores. The services are based on previous purchases by store customers. The stores upload transaction data to the company through SFTP, and the data is processed and analyzed to generate new marketing offers. Some of the files can exceed 200 GB in size. Recently, the company discovered that some of the stores have uploaded files that contain personally identifiable information (PII) that should not have been included. The company wants administrators to be alerted if PII is shared again. The company also wants to automate remediation. What should A solutions architect do to meet these requirements with the LEAST development effort?",
       "options": {
         "A": "Use an Amazon S3 bucket as a secure transfer point. Use Amazon Inspector to scan the objects in the bucket. If objects contain PII, trigger an S3 Lifecycle policy to remove the objects that contain PII.",
-        "B": "Use an Amazon S3 bucket as a secure transfer point. Use Amazon Macie to scan the objects in the bucket. If objects contain PII, use Amazon Simple Notification Service (Amazon SNS) to trigger AnotiFication to the administrators to remove the objects that contain PII.",
-        "C": "Implement custom scanning algorithms in an AWS Lambda function. Trigger the function when objects are loaded into the bucket. If objects contain PII, use Amazon Simple Notification Service (Amazon SNS) to trigger AnotiFication to the administrators to remove the objects that contain PII.",
-        "D": "Implement custom scanning algorithms in an AWS Lambda function. Trigger the function when objects are loaded into the bucket. If objects contain PII, use Amazon Simple Email Service (Amazon SES) to trigger AnotiFication to the administrators and trigger an S3 Lifecycle policy to remove the meats that contain PII."
+        "B": "Use an Amazon S3 bucket as a secure transfer point. Use Amazon Macie to scan the objects in the bucket. If objects contain PII, use Amazon Simple Notification Service (Amazon SNS) to trigger A notification to the administrators to remove the objects that contain PII.",
+        "C": "Implement custom scanning algorithms in an AWS Lambda function. Trigger the function when objects are loaded into the bucket. If objects contain PII, use Amazon Simple Notification Service (Amazon SNS) to trigger A notification to the administrators to remove the objects that contain PII.",
+        "D": "Implement custom scanning algorithms in an AWS Lambda function. Trigger the function when objects are loaded into the bucket. If objects contain PII, use Amazon Simple Email Service (Amazon SES) to trigger A notification to the administrators and trigger an S3 Lifecycle policy to remove the meats that contain PII."
       },
       "correct_answer": "B",
       "explanation": "Some quotas can be increased, while others cannot. To request an increase to a quota, use the Service Quotas console. To learn how to request an increase, see Requesting a quota increase in the Service Quotas User Guide. If a quota isn't available on the Service Quotas console, use the service limit increase form on the AWS Support Center Console to request an increase to the quota."
     },
     {
       "id": "47",
-      "question": "A company needs guaranteed Amazon EC2 capacity in three specific Availability Zones in aspecific AWS Region for an upcoming event that will last 1 week. What should the company do to guarantee the EC2 capacity?",
+      "question": "A company needs guaranteed Amazon EC2 capacity in three specific Availability Zones in a specific AWS Region for an upcoming event that will last 1 week. What should the company do to guarantee the EC2 capacity?",
       "options": {
         "A": "Purchase Reserved Instances that specify the Region needed.",
         "B": "Create an On-Demand Capacity Reservation that speciFies the Region needed.",
@@ -581,7 +581,7 @@
     },
     {
       "id": "49",
-      "question": "A company stores call transcript files on amonthly basis. Users access the files randomly within 1 year of the call, but users access the files infrequently after 1 year. The company wants to optimize its solution by giving users the ability to query and retrieve files that are less than 1-year- old as quickly as possible. A delay in retrieving older files is acceptable. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company stores call transcript files on  a monthly basis. Users access the files randomly within 1 year of the call, but users access the files infrequently after 1 year. The company wants to optimize its solution by giving users the ability to query and retrieve files that are less than 1-year- old as quickly as possible. A delay in retrieving older files is acceptable. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Store individual files with tags in Amazon S3 Glacier Instant Retrieval. Query the tags to retrieve the files from S3 Glacier Instant Retrieval.",
         "B": "Store individual files in Amazon S3 Intelligent-Tiering. Use S3 Lifecycle policies to move the files to S3 Glacier Flexible Retrieval after 1 year. Query and retrieve the files that are in Amazon S3 by using Amazon Athena. Query and retrieve the files that are in S3 Glacier by using S3 Glacier Select.",
@@ -593,7 +593,7 @@
     },
     {
       "id": "50",
-      "question": "A company has aproduction workload that runs on 1,000 Amazon EC2 Linux instances. The workload is powered by third-party software. The company needs to patch the third-party software on all EC2 instances as quickly as possible to remediate a critical security vulnerability. What should A solutions architect do to meet these requirements?",
+      "question": "A company has a production workload that runs on 1,000 Amazon EC2 Linux instances. The workload is powered by third-party software. The company needs to patch the third-party software on all EC2 instances as quickly as possible to remediate a critical security vulnerability. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Create an AWS Lambda function to apply the patch to all EC2 instances.",
         "B": "Configure AWS Systems Manager Patch Manager to apply the patch to all EC2 instances.",

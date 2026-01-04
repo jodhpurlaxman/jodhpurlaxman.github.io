@@ -2,7 +2,7 @@
   "questions": [
     {
       "id": "551",
-      "question": "A company has a Financial Application that produces reports. The reports a verage 50 KB in size And are stored in Amazon S3. The reports are frequently accessed during the First week after production And must be stored for several years. The reports must be retrievable within 6 hours. Which solution meets these requirements MOST cost-effectively?",
+      "question": "A company has a Financial Application that produces reports. The reports average 50 KB in size And are stored in Amazon S3. The reports are frequently accessed during the First week after production And must be stored for several years. The reports must be retrievable within 6 hours. Which solution meets these requirements MOST cost-effectively?",
       "options": {
         "A": "Use S3 Standard. Use An S3 Lifecycle rule to transition the reports to S3 Glacier after 7 days.",
         "B": "Use S3 Standard. Use An S3 Lifecycle rule to transition the reports to S3 Standard-Infrequent Access (S3 Standard-IA) after 7 days.",
@@ -22,7 +22,7 @@
         "D": "Purchase An All Upfront EC2 Instance Savings Plan for a 1-year term."
       },
       "correct_answer": "B",
-      "explanation": "WHat is Upfront  You don't pay Anything upfront. You receive a smaller discount, but you free up capital for other projects.\nAno Upfront option means no upfront payment is required, which provides flexibility.\n1-year Term: A 1-year term a ligns with the company's need to change the type And family of its EC2 instances every 2-3 months. While Compute Savings Plans have a commitment term, choosing a 1-year term allows for more frequent a djustments compared to a 3-year term."
+      "explanation": "WHat is Upfront  You don't pay Anything upfront. You receive a smaller discount, but you free up capital for other projects.\nAno Upfront option means no upfront payment is required, which provides flexibility.\n1-year Term: A 1-year term aligns with the company's need to change the type And family of its EC2 instances every 2-3 months. While Compute Savings Plans have a commitment term, choosing a 1-year term allows for more frequent adjustments compared to a 3-year term."
     },
     {
       "id": "553",
@@ -46,7 +46,7 @@
         "D": "Use the high performance computing (HPC) optimized instance family for the application. Use the memory optimized instance family for the database."
       },
       "correct_answer": "C",
-      "explanation": "Memory optimized instances are designed to provide a high memory-to-CPU ratio, which a ligns well with workloads that have significant memory requirements, such as SAP applications with backend databases."
+      "explanation": "Memory optimized instances are designed to provide a high memory-to-CPU ratio, which aligns well with workloads that have significant memory requirements, such as SAP applications with backend databases."
     },
     {
       "id": "555",
@@ -103,18 +103,18 @@
         "A": "Select a speciFic AWS generated tag in the AWS Billing console.",
         "B": "Select a speciFic user-deFined tag in the AWS Billing console.",
         "C": "Select a speciFic user-deFined tag in the AWS Resource Groups console.",
-        "D": "A ctivate the selected tag from each AWS account.",
-        "E": "A ctivate the selected tag from the Organizations management account."
+        "D": "Activate the selected tag from each AWS account.",
+        "E": "Activate the selected tag from the Organizations management account."
       },
       "correct_answer": "BE",
-      "explanation": "E. A ctivate the selected tag from the Organizations management account.\nUser-defined tags are tags that you create And Attach to your AWS resources. In this case, since teams for each product line have tagged each compute resource with user-defined tags, selecting a specific user-defined tag in the AWS Billing console allows you to filter costs based on those tags.\nThe consolidated billing feature in AWS Organizations allows you to view And manage costs across multiple AWS accounts. By a ctivating the selected tag from the Organizations management account, you ensure that the tagged resources from All linked accounts are included in the consolidated billing report. This enables you to get detailed cost information for each product line."
+      "explanation": "E. Activate the selected tag from the Organizations management account.\nUser-defined tags are tags that you create And Attach to your AWS resources. In this case, since teams for each product line have tagged each compute resource with user-defined tags, selecting a specific user-defined tag in the AWS Billing console allows you to filter costs based on those tags.\nThe consolidated billing feature in AWS Organizations allows you to view And manage costs across multiple AWS accounts. By activating the selected tag from the Organizations management account, you ensure that the tagged resources from All linked accounts are included in the consolidated billing report. This enables you to get detailed cost information for each product line."
     },
     {
       "id": "560",
       "question": "A company's solutions architect is designing An AWS multi-account solution that uses AWS Organizations. The solutions architect has organized the company's accounts into organizational units (OUs). The solutions architect needs a solution that will identify Any changes to the OU hierarchy. The solution also needs to notify the company's operations team of Any changes. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Provision the AWS accounts by using AWS Control Tower. Use account drift notiFications to identify the changes to the OU hierarchy.",
-        "B": "Provision the AWS accounts by using AWS Control Tower. Use AWS ConFig a ggregated rules to identify the changes to the OU hierarchy.",
+        "B": "Provision the AWS accounts by using AWS Control Tower. Use AWS ConFig aggregated rules to identify the changes to the OU hierarchy.",
         "C": "Use AWS Service Catalog to create accounts in Organizations. Use An AWS CloudTrail organization trail to identify the changes to the OU hierarchy.",
         "D": "Use AWS CloudFormation templates to create accounts in Organizations. Use the drift detection operation on a stack to identify the changes to the OU hierarchy."
       },
@@ -156,11 +156,11 @@
         "D": "Use Amazon EKS Anywhere as the primary cluster to view the other clusters with native Kubernetes commands."
       },
       "correct_answer": "B",
-      "explanation": "Amazon EKS Connector is designed to help centralize the management of multiple Amazon Elastic Kubernetes Service (EKS) clusters. It allows you to register And connect multiple EKS clusters, providing a unified view of the clusters from the AWS Management Console. This solution a ligns well with the requirement of managing clusters And workloads from a central location with the least operational overhead."
+      "explanation": "Amazon EKS Connector is designed to help centralize the management of multiple Amazon Elastic Kubernetes Service (EKS) clusters. It allows you to register And connect multiple EKS clusters, providing a unified view of the clusters from the AWS Management Console. This solution aligns well with the requirement of managing clusters And workloads from a central location with the least operational overhead."
     },
     {
       "id": "564",
-      "question": "A company is building An ecommerce Application And needs to store sensitive customer information. The company needs to give customers the a bility to complete purchase transactions on the website. The company also needs to ensure that sensitive customer data is protected, even from database a dministrators. Which solution meets these requirements?",
+      "question": "A company is building An ecommerce Application And needs to store sensitive customer information. The company needs to give customers the ability to complete purchase transactions on the website. The company also needs to ensure that sensitive customer data is protected, even from database administrators. Which solution meets these requirements?",
       "options": {
         "A": "Store sensitive data in An Amazon Elastic Block Store (Amazon EBS) volume. Use EBS encryption to encrypt the data. Use An IAM instance role to restrict access.",
         "B": "Store sensitive data in Amazon RDS for MySQL. Use AWS Key Management Service (AWS KMS) client-side encryption to encrypt the data.",
@@ -235,16 +235,16 @@
       "question": "A company has a large workload that runs every Friday evening. The workload runs on Amazon EC2 instances that are in two Availability Zones in the us-east-1 Region. Normally, the company must run no more than two instances at All times. However, the company wants to scale up to six instances each Friday to handle a regularly repeating increased workload. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Create a reminder in Amazon EventBridge to scale the instances.",
-        "B": "Create An Auto Scaling group that has a scheduled a ction.",
+        "B": "Create An Auto Scaling group that has a scheduled action.",
         "C": "Create An Auto Scaling group that uses manual scaling.",
         "D": "Create An Auto Scaling group that uses automatic scaling."
       },
       "correct_answer": "B",
-      "explanation": "By creating An Auto Scaling group with a scheduled a ction, you can configure the group to automatically a djust the desired capacity based on a specified schedule. In this case, you can set up a scheduled a ction to increase the desired capacity to six instances every Friday evening."
+      "explanation": "By creating An Auto Scaling group with a scheduled action, you can configure the group to automatically adjust the desired capacity based on a specified schedule. In this case, you can set up a scheduled action to increase the desired capacity to six instances every Friday evening."
     },
     {
       "id": "571",
-      "question": "A company is creating a REST API  The company has strict requirements for the use of TLS. The company requires TLSv1.3 on the API endpoints. The company also requires a specific public third-party certificate a uthority (CA) to sign the TLS certificate. Which solution will meet these requirements?",
+      "question": "A company is creating a REST API  The company has strict requirements for the use of TLS. The company requires TLSv1.3 on the API endpoints. The company also requires a specific public third-party certificate authority (CA) to sign the TLS certificate. Which solution will meet these requirements?",
       "options": {
         "A": "Use a local machine to create a certiFicate that is signed by the third-party CImport the certiFicate into AWS CertiFicate Manager (ACM). Create An HTTP API in Amazon API Gateway with a custom domain. Configure the custom domain to use the certiFicate.",
         "B": "Create a certiFicate in AWS CertiFicate Manager (ACM) that is signed by the third-party CA. Create An HTTP API in Amazon API Gateway with a custom domain. Configure the custom domain to use the certiFicate.",
@@ -256,7 +256,7 @@
     },
     {
       "id": "572",
-      "question": "A company runs An Application on AWS. The Application receives inconsistent amounts of usage. The Application uses AWS Direct Connect to connect to An on-premises MySQL-compatible database. The on-premises database consistently uses a minimum of 2 GiB of memory. The company wants to migrate the on-premises database to a managed AWS service. The company wants to use Auto scaling capabilities to manage unexpected workload increases. Which solution will meet these requirements with the LEAST a dministrative overhead?",
+      "question": "A company runs An Application on AWS. The Application receives inconsistent amounts of usage. The Application uses AWS Direct Connect to connect to An on-premises MySQL-compatible database. The on-premises database consistently uses a minimum of 2 GiB of memory. The company wants to migrate the on-premises database to a managed AWS service. The company wants to use Auto scaling capabilities to manage unexpected workload increases. Which solution will meet these requirements with the LEAST administrative overhead?",
       "options": {
         "A": "Provision An Amazon DynamoDB database with default read And write capacity settings.",
         "B": "Provision An Amazon Aurora database with a minimum capacity of 1 Aurora capacity unit (A CU).",
@@ -264,7 +264,7 @@
         "D": "Provision An Amazon RDS for MySQL database with 2 GiB of memory."
       },
       "correct_answer": "C",
-      "explanation": "Aurora Serverless is designed for applications with variable or unpredictable workloads. With Aurora Serverless v2, you can set the minimum capacity to 1 Aurora capacity unit (A CU), And it will automatically scale based on the a ctual workload."
+      "explanation": "Aurora Serverless is designed for applications with variable or unpredictable workloads. With Aurora Serverless v2, you can set the minimum capacity to 1 Aurora capacity unit (A CU), And it will automatically scale based on the actual workload."
     },
     {
       "id": "573",
@@ -276,7 +276,7 @@
         "D": "Configure Lambda SnapStart."
       },
       "correct_answer": "D",
-      "explanation": "Lambda Cold Start:\nWhen a Lambda function is invoked, it may take a bit of time for the system to set up everything needed to run the function. This initial setup time is called a \"cold start.\" Cold starts can Add some delay, especially if the function hasn't been used recently.\nLambda SnapStart:\nSnapStart is a feature in AWS Lambda designed to make these cold starts faster, specifically for functions written in Java. Instead of starting from scratch every time a function is called, SnapStart pre-warms the environment. It's like getting things ready in a dvance so that when your function is called, it can start quickly without much delay."
+      "explanation": "Lambda Cold Start:\nWhen a Lambda function is invoked, it may take a bit of time for the system to set up everything needed to run the function. This initial setup time is called a \"cold start.\" Cold starts can Add some delay, especially if the function hasn't been used recently.\nLambda SnapStart:\nSnapStart is a feature in AWS Lambda designed to make these cold starts faster, specifically for functions written in Java. Instead of starting from scratch every time a function is called, SnapStart pre-warms the environment. It's like getting things ready in advance so that when your function is called, it can start quickly without much delay."
     },
     {
       "id": "574",
@@ -288,11 +288,11 @@
         "D": "Migrate the existing RDS for MySQL database to An Amazon Elastic Container Service (Amazon ECS) cluster that uses MySQL container images to run tasks."
       },
       "correct_answer": "A",
-      "explanation": "Aurora Serverless allows the database to automatically start up, shut down, And scale capacity based on a ctual usage. With Aurora Serverless v2, you can set a minimum And maximum capacity for the cluster. This is suitable for intermittent workloads, such as the Application that is only operated for 2 hours at the end of each week."
+      "explanation": "Aurora Serverless allows the database to automatically start up, shut down, And scale capacity based on actual usage. With Aurora Serverless v2, you can set a minimum And maximum capacity for the cluster. This is suitable for intermittent workloads, such as the Application that is only operated for 2 hours at the end of each week."
     },
     {
       "id": "575",
-      "question": "A company deploys its applications on Amazon Elastic Kubernetes Service (Amazon EKS) behind An Application Load Balancer in An AWS Region. The Application needs to store data in a PostgreSQL database engine. The company wants the data in the database to be highly available. The company also needs increased capacity for read workloads. Which solution will meet these requirements with the MOST operational eficiency?",
+      "question": "A company deploys its applications on Amazon Elastic Kubernetes Service (Amazon EKS) behind An Application Load Balancer in An AWS Region. The Application needs to store data in a PostgreSQL database engine. The company wants the data in the database to be highly available. The company also needs increased capacity for read workloads. Which solution will meet these requirements with the MOST operational efficiency?",
       "options": {
         "A": "Create An Amazon DynamoDB database table conFigured with global tables.",
         "B": "Create An Amazon RDS database with Multi-AZ deployments.",
@@ -316,7 +316,7 @@
     },
     {
       "id": "577",
-      "question": "A company uses An Amazon Cloudfront distribution to serve content pages for its website. The company needs to ensure that clients use a TLS certificate when accessing the company's website. The company wants to a utomate the creation And renewal of the TLS certificates. Which solution will meet these requirements with the MOST operational eficiency?",
+      "question": "A company uses An Amazon Cloudfront distribution to serve content pages for its website. The company needs to ensure that clients use a TLS certificate when accessing the company's website. The company wants to automate the creation And renewal of the TLS certificates. Which solution will meet these requirements with the MOST operational efficiency?",
       "options": {
         "A": "Use a CloudFront security policy to create a certiFicate.",
         "B": "Use a CloudFront origin Access control (OAC) to create a certiFicate.",
@@ -324,7 +324,7 @@
         "D": "Use AWS CertiFicate Manager (ACM) to create a certiFicate. Use email validation for the domain."
       },
       "correct_answer": "C",
-      "explanation": "AWS Certificate Manager (ACM): A CM is a fully managed service that allows you to easily provision, manage, And deploy public And private Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificates for use with AWS services And your internal connected resources. It is designed for a utomation And ease of use.\nDNS Validation: DNS validation involves a dding a DNS record to your domain's DNS configuration. This method is more suitable for a utomation as it does not require manual intervention, And it can be easily integrated into automated certificate issuance And renewal processes."
+      "explanation": "AWS Certificate Manager (ACM): A CM is a fully managed service that allows you to easily provision, manage, And deploy public And private Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificates for use with AWS services And your internal connected resources. It is designed for automation And ease of use.\nDNS Validation: DNS validation involves a dding a DNS record to your domain's DNS configuration. This method is more suitable for automation as it does not require manual intervention, And it can be easily integrated into automated certificate issuance And renewal processes."
     },
     {
       "id": "578",
@@ -364,7 +364,7 @@
     },
     {
       "id": "581",
-      "question": "A company runs a stateful production Application on Amazon EC2 instances. The Application requires at least two EC2 instances to a lways be running. A solutions architect needs to design a highly available And fault-tolerant architecture for the application. The solutions architect creates An Auto Scaling group of EC2 instances. Which set of additional steps should the solutions architect take to meet these requirements?",
+      "question": "A company runs a stateful production Application on Amazon EC2 instances. The Application requires at least two EC2 instances to always be running. A solutions architect needs to design a highly available And fault-tolerant architecture for the application. The solutions architect creates An Auto Scaling group of EC2 instances. Which set of additional steps should the solutions architect take to meet these requirements?",
       "options": {
         "A": "Set the Auto Scaling group's minimum capacity to two. Deploy one On-Demand Instance in one Availability Zone And one On-Demand Instance in a second Availability Zone.",
         "B": "Set the Auto Scaling group's minimum capacity to four. Deploy two On-Demand Instances in one Availability Zone And two On-Demand Instances in a second Availability Zone.",
@@ -384,7 +384,7 @@
         "D": "Set up a weighted routing policy. Split the traffic evenly between eu-central-1 And the on-premises data center."
       },
       "correct_answer": "A",
-      "explanation": "Geolocation routing directs traffic based on the geographic location of the user. This option would send users near us-west-1 to the on-premises data center And users near eu-central-1 to eu-central-1. While this approach considers geographic location, it might not a lways result in the lowest latency."
+      "explanation": "Geolocation routing directs traffic based on the geographic location of the user. This option would send users near us-west-1 to the on-premises data center And users near eu-central-1 to eu-central-1. While this approach considers geographic location, it might not always result in the lowest latency."
     },
     {
       "id": "583",
@@ -420,7 +420,7 @@
         "D": "Purchase a Capacity Reservation in the failover Region."
       },
       "correct_answer": "D",
-      "explanation": "A Capacity Reservation allows you to reserve a specific amount of EC2 instance capacity in a given region without purchasing specific instances. This reserved capacity is dedicated to your account And can be utilized for launching instances when needed. Capacity Reservations offer flexibility, a llowing you to launch different instance types And sizes within the reserved capacity."
+      "explanation": "A Capacity Reservation allows you to reserve a specific amount of EC2 instance capacity in a given region without purchasing specific instances. This reserved capacity is dedicated to your account And can be utilized for launching instances when needed. Capacity Reservations offer flexibility, allowing you to launch different instance types And sizes within the reserved capacity."
     },
     {
       "id": "586",
@@ -436,15 +436,15 @@
     },
     {
       "id": "587",
-      "question": "A company is designing a solution to capture customer a ctivity in different web applications to process Analytics And make predictions. Customer a ctivity in the web applications is unpredictable And can increase suddenly. The company requires a solution that integrates with other web applications. The solution must include An authorization step for security purposes. Which solution will meet these requirements?",
+      "question": "A company is designing a solution to capture customer activity in different web applications to process Analytics And make predictions. Customer activity in the web applications is unpredictable And can increase suddenly. The company requires a solution that integrates with other web applications. The solution must include An authorization step for security purposes. Which solution will meet these requirements?",
       "options": {
-        "A": "Configure a Gateway Load Balancer (GWLB) in front of An Amazon Elastic Container Service (Amazon ECS) container instance that stores the information that the company receives in An Amazon Elastic File System (Amazon EFS) File system. A uthorization is resolved at the GWLB.",
+        "A": "Configure a Gateway Load Balancer (GWLB) in front of An Amazon Elastic Container Service (Amazon ECS) container instance that stores the information that the company receives in An Amazon Elastic File System (Amazon EFS) File system. Authorization is resolved at the GWLB.",
         "B": "Configure An Amazon API Gateway endpoint in front of An Amazon Kinesis data stream that stores the information that the company receives in An Amazon S3 bucket. Use An AWS Lambda function to resolve authorization.",
         "C": "Configure An Amazon API Gateway endpoint in front of An Amazon Kinesis Data Firehose that stores the information that the company receives in An Amazon S3 bucket. Use An API Gateway Lambda Authorizer to resolve authorization.",
         "D": "Configure a Gateway Load Balancer (GWLB) in front of An Amazon Elastic Container Service (Amazon ECS) container instance that stores the information that the company receives on An Amazon Elastic File System (Amazon EFS) File system. Use An AWS Lambda function to resolve authorization."
       },
       "correct_answer": "C",
-      "explanation": "Amazon API Gateway: It provides a fully managed service for creating, publishing, maintaining, monitoring, And securing APIs at Any scale. It allows you to expose the capabilities of your backend services as APIs.\nAmazon Kinesis Data Firehose: It can capture And load streaming data into storage services such as Amazon S3. It is well-suited for scenarios where you need to ingest And store large volumes of streaming data.\nAPI Gateway Lambda Authorizer: It allows you to control Access to your APIs using Lambda functions. It's used to resolve authorization before a llowing Access to the API "
+      "explanation": "Amazon API Gateway: It provides a fully managed service for creating, publishing, maintaining, monitoring, And securing APIs at Any scale. It allows you to expose the capabilities of your backend services as APIs.\nAmazon Kinesis Data Firehose: It can capture And load streaming data into storage services such as Amazon S3. It is well-suited for scenarios where you need to ingest And store large volumes of streaming data.\nAPI Gateway Lambda Authorizer: It allows you to control Access to your APIs using Lambda functions. It's used to resolve authorization before allowing Access to the API "
     },
     {
       "id": "588",
@@ -472,21 +472,21 @@
     },
     {
       "id": "590",
-      "question": "A company migrated a MySQL database from the company's on-premises data center to An Amazon RDS for MySQL DB instance. The company sized the RDS DB instance to meet the company's a verage daily workload. Once a month, the database performs slowly when the company runs queries for a report. The company wants to have the a bility to run reports And maintain the performance of the daily workloads. Which solution will meet these requirements?",
+      "question": "A company migrated a MySQL database from the company's on-premises data center to An Amazon RDS for MySQL DB instance. The company sized the RDS DB instance to meet the company's average daily workload. Once a month, the database performs slowly when the company runs queries for a report. The company wants to have the ability to run reports And maintain the performance of the daily workloads. Which solution will meet these requirements?",
       "options": {
         "A": "Create a read replica of the database. Direct the queries to the read replica.",
         "B": "Create a backup of the database. Restore the backup to Another DB instance. Direct the queries to the new database.",
         "C": "Export the data to Amazon S3. Use Amazon Athena to query the S3 bucket.",
-        "D": "Resize the DB instance to a ccommodate the additional workload."
+        "D": "Resize the DB instance to accommodate the additional workload."
       },
       "correct_answer": "A",
-      "explanation": "Read Replica: Creating a read replica of the database allows you to offload read queries to a replica instance. This helps in distributing the workload And prevents the additional load from impacting the performance of the primary database.\nDirect Queries to the Read Replica: By directing the queries for the monthly reports to the read replica, you ensure that the heavy reporting workload doesn't a ffect the performance of the primary database handling daily workloads. Read replicas are designed to handle read-intensive workloads, providing a scalable solution."
+      "explanation": "Read Replica: Creating a read replica of the database allows you to offload read queries to a replica instance. This helps in distributing the workload And prevents the additional load from impacting the performance of the primary database.\nDirect Queries to the Read Replica: By directing the queries for the monthly reports to the read replica, you ensure that the heavy reporting workload doesn't affect the performance of the primary database handling daily workloads. Read replicas are designed to handle read-intensive workloads, providing a scalable solution."
     },
     {
       "id": "591",
       "question": "A company runs a container Application by using Amazon Elastic Kubernetes Service (Amazon EKS). The Application includes microservices that manage customers And place orders. The company needs to route incoming requests to the appropriate microservices. Which solution will meet this requirement MOST cost-effectively?",
       "options": {
-        "A": "Use the AWS Load Balancer Controller to provision Anetwork Load Balancer.",
+        "A": "Use the AWS Load Balancer Controller to provision A network Load Balancer.",
         "B": "Use the AWS Load Balancer Controller to provision An Application Load Balancer.",
         "C": "Use An AWS Lambda function to connect the requests to Amazon EKS.",
         "D": "Use Amazon API Gateway to connect the requests to Amazon EKS."
@@ -511,7 +511,7 @@
       "question": "A solutions architect is designing a highly available Amazon Elasticache for Redis based solution. The solutions architect needs to ensure that failures do not result in performance degradation or loss of data locally And within An AWS Region. The solution needs to provide high Availability at the node level And at the Region level. Which solution will meet these requirements?",
       "options": {
         "A": "Use Multi-AZ Redis replication groups with shards that contain multiple nodes.",
-        "B": "Use Redis shards that contain multiple nodes with Redis a ppend only Files (A OF) turned on.",
+        "B": "Use Redis shards that contain multiple nodes with Redis append only Files (A OF) turned on.",
         "C": "Use a Multi-AZ Redis cluster with more than one read replica in the replication group.",
         "D": "Use Redis shards that contain multiple nodes with Auto Scaling turned on."
       },
@@ -540,19 +540,19 @@
         "D": "Use schedule scaling to change the size of the Auto Scaling group."
       },
       "correct_answer": "C",
-      "explanation": "Dynamic Scaling: With dynamic scaling, the Auto Scaling group automatically a djusts its capacity based on real-time demand. It scales out during traffic spikes And scales in during periods of lower demand. This ensures that your Application can handle sudden increases in traffic without manual intervention."
+      "explanation": "Dynamic Scaling: With dynamic scaling, the Auto Scaling group automatically adjusts its capacity based on real-time demand. It scales out during traffic spikes And scales in during periods of lower demand. This ensures that your Application can handle sudden increases in traffic without manual intervention."
     },
     {
       "id": "596",
       "question": "An ecommerce Application uses a PostgreSQL database that runs on An Amazon EC2 instance. During a monthly sales event, database usage increases And causes database connection issues for the application. The traffic is unpredictable for subsequent monthly sales events, which impacts the sales forecast. The company needs to maintain performance when there is An unpredictable increase in traffic. Which solution resolves this issue in the MOST cost-effective way?",
       "options": {
         "A": "Migrate the PostgreSQL database to Amazon Aurora Serverless v2.",
-        "B": "Enable Auto scaling for the PostgreSQL database on the EC2 instance to a ccommodate increased usage.",
+        "B": "Enable Auto scaling for the PostgreSQL database on the EC2 instance to accommodate increased usage.",
         "C": "Migrate the PostgreSQL database to Amazon RDS for PostgreSQL with a larger instance type.",
-        "D": "Migrate the PostgreSQL database to Amazon Redshift to a ccommodate increased usage."
+        "D": "Migrate the PostgreSQL database to Amazon Redshift to accommodate increased usage."
       },
       "correct_answer": "A",
-      "explanation": "Aurora Serverless is a serverless relational database engine provided by Amazon. It automatically a djusts its capacity based on a ctual usage, a llowing it to scale up or down as needed. Aurora Serverless v2 builds upon the original Aurora Serverless model with additional features for even more efficient scaling."
+      "explanation": "Aurora Serverless is a serverless relational database engine provided by Amazon. It automatically adjusts its capacity based on actual usage, allowing it to scale up or down as needed. Aurora Serverless v2 builds upon the original Aurora Serverless model with additional features for even more efficient scaling."
     },
     {
       "id": "597",
@@ -560,7 +560,7 @@
       "options": {
         "A": "Increase the API Gateway throttling limit.",
         "B": "Set up a scheduled scaling to increase Lambda provisioned concurrency before employees begin to use the Application each day.",
-        "C": "Create An Amazon CloudWatch a larm to initiate a Lambda function as a target for the a larm at the beginning of each day.",
+        "C": "Create An Amazon CloudWatch alarm to initiate a Lambda function as a target for the alarm at the beginning of each day.",
         "D": "Increase the Lambda function memory."
       },
       "correct_answer": "B",
@@ -581,7 +581,7 @@
     },
     {
       "id": "599",
-      "question": "A company wants to use Amazon Elastic Container Service (Amazon ECS) clusters And Amazon RDS DB instances to build And run a payment processing application. The company will run the Application in its on-premises data center for compliance purposes. A solutions architect wants to use AWS Outposts as part of the solution. The solutions architect is working with the company's operational team to build the application. Which a ctivities are the responsibility of the company's operational team? (Choose three.)",
+      "question": "A company wants to use Amazon Elastic Container Service (Amazon ECS) clusters And Amazon RDS DB instances to build And run a payment processing application. The company will run the Application in its on-premises data center for compliance purposes. A solutions architect wants to use AWS Outposts as part of the solution. The solutions architect is working with the company's operational team to build the application. Which activities are the responsibility of the company's operational team? (Choose three.)",
       "options": {
         "A": "Providing resilient power And network connectivity to the Outposts racks",
         "B": "Managing the virtualization hypervisor, storage systems, And the AWS services that run on Outposts",
@@ -596,7 +596,7 @@
       "id": "600",
       "question": "A company is planning to migrate a TCP-based Application into the company's VPC. The Application is publicly accessible on Anonstandard TCP port through a hardware appliance in the company's data center. This public endpoint can process up to 3 million requests per second with low latency. The company requires the same level of performance for the new public endpoint in AWS. What should A solutions architect recommend to meet this requirement?",
       "options": {
-        "A": "Deploy Anetwork Load Balancer (NLB). Configure the NLB to be publicly accessible over the TCP port that the Application requires.",
+        "A": "Deploy A network Load Balancer (NLB). Configure the NLB to be publicly accessible over the TCP port that the Application requires.",
         "B": "Deploy An Application Load Balancer (ALB). Configure the ALBto be publicly accessible over the TCP port that the Application requires.",
         "C": "Deploy An Amazon CloudFront distribution that listens on the TCP port that the Application requires. Use An Application Load Balancer as the origin.",
         "D": "Deploy An Amazon API Gateway API that is conFigured with the TCP port that the Application requires. Configure AWS Lambda functions with provisioned concurrency to process the requests."
