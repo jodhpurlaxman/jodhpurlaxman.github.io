@@ -516,6 +516,11 @@ function examLoadedFromReview(reviewArr) {
   document.getElementById('welcomeSection').style.display = 'none';
   document.getElementById('questionText').style.display = 'block';
   document.querySelector('.answerBox').classList.add('visible');
+  // ensure controls and options are visible in review mode
+  const controls = document.querySelector('.controls');
+  const options = document.getElementById('optionsList');
+  if (controls) controls.classList.add('visible');
+  if (options) options.style.display = '';
   if (metaBar) metaBar.style.display = 'flex';
   loadQuestion(currentIndex || 0);
   startExamBtn.style.display = 'inline-block';
