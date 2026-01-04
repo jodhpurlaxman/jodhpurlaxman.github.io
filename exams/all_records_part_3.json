@@ -95,8 +95,8 @@
         "C": "Subscribe to an RDS event notiFication and send an Amazon Simple Queue Service (Amazon SQS) queue fanned out to multiple Amazon Simple Notification Service (Amazon SNS) topics. Use AWS Lambda functions to update the targets.",
         "D": "Subscribe to an RDS event notiFication and send an Amazon Simple Notification Service (Amazon SNS) topic fanned out to multiple Amazon Simple Queue Service (Amazon SQS) queues. Use AWS Lambda functions to update the targets."
       },
-      "correct_answer": "A",
-      "explanation": "Create an AWS Lambda function triggered when the database on Amazon RDS is updated to send the information to an Amazon Simple\nQueue Service (Amazon SQS) queue for the targets to consume."
+      "correct_answer": "D",
+      "explanation": "Subscribe to an RDS event notiFication and send an Amazon Simple Notification Service (Amazon SNS) topic fanned out to multiple Amazon Simple Queue Service (Amazon SQS) queues. Use AWS Lambda functions to update the targets."
     },
     {
       "id": "109",
