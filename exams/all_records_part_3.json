@@ -47,7 +47,7 @@
         "D": "Use an AWS Lambda function to automatically add attacker IP addresses to VPC network ACLs.",
         "E": "Use EC2 Spot Instances in an Auto Scaling group with a target tracking scaling policy that is set to 80% CPU utilization."
       },
-      "correct_answer": "A,C",
+      "correct_answer": "AC",
       "explanation": "A. Use AWS Shield Advanced to stop the DDoS attack.\nC. Configure the website to use Amazon CloudFront for both static and dynamic content."
     },
     {
