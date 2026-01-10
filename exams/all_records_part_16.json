@@ -90,7 +90,7 @@
       "options": {
         "A": "Amazon S3 Transfer Acceleration over the Internet.",
         "B": "AWS Database Migration Service over the Internet.",
-        "C": "Multiple AWS Snowcone devices.",
+        "C": "Multiple AWS Snowball devices.",
         "D": "AWS DataSync over AWS Direct Connect."
       },
       "correct_answer": "D",
@@ -449,7 +449,7 @@
       "question": "A healthcare organization operates multiple applications on virtual machines (VMs) in its on-premises data center. Due to increasing demand for its services, the data center can no longer scale quickly enough to meet business needs. The organization has decided to migrate its non-critical workloads to AWS using a lift-and-shift strategy to expedite the process. Which combination of steps will meet these requirements? (Select THREE.)",
       "options": {
         "A": "Use AWS App Runner to containerize the workloads before migrating them to AWS.",
-        "B": "Stop all operations on the VMs. Perform a cutover by launching the migrated instances in AWS.",
+        "B": "Stop all operations on the VMs. Perform a cut over by launching the migrated instances in AWS.",
         "C": "Use AWS Application Migration Service to replicate the VMs to AWS. Install the AWS Replication Agent on each VM.",
         "D": "Install the AWS Systems Manager Agent on the VMs to streamline operational management during migration."
       },

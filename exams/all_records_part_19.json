@@ -578,7 +578,7 @@
     },
     {
       "id": "994",
-      "question": "A Solutions Architect is rearchitecting an application with decoupling. The application will send batches of up to 1000 messages per second that must be received in the correct order by the consumers. Which action should the Solutions Architect take?",
+      "question": "A Solutions Architect is re architecting an application with decoupling. The application will send batches of up to 1000 messages per second that must be received in the correct order by the consumers. Which action should the Solutions Architect take?",
       "options": {
         "A": "Create an Amazon SNS topic",
         "B": "Create an AWS Step Functions state machine",
@@ -748,7 +748,7 @@
       "id": "1008",
       "question": "A company hosts an application on Amazon EC2 instances behind Application Load Balancers in several AWS Regions. Distribution rights for the content require that users in different geographies must be served content from specific regions. Which configuration meets these requirements?",
       "options": {
-        "A": "Create Amazon Route 53 records with a geoproximity routing policy.",
+        "A": "Create Amazon Route 53 records with a geo proximity routing policy.",
         "B": "Configure Application Load Balancers with multi-Region routing.",
         "C": "Configure Amazon CloudFront with multiple origins and AWS WAF.",
         "D": "Create Amazon Route 53 records with a geolocation routing policy."
