@@ -82,7 +82,7 @@
         "D": "Publish the messages to an Amazon Simple Notification Service (Amazon SNS) topic with multiple Amazon Simple Queue Service (Amazon SOS) subscriptions. Configure the consumer applications to process the messages from the queues."
       },
       "correct_answer": "D",
-      "explanation": "A good practice is to also add message attributes when publishing to SNS. Each SQS subscription can have a filter policy that matches only the messages it cares about, so that only relevant messages are delivered to each SQS queue, and consumers only see/process what they need.\nan SQS queue can handle a maximum of 3,000 messages per second. However, you can request higher throughput by contacting AWS Support. AWS can increase the message throughput for your queue beyond the default limits in increments of 300 messages per second, up to a maximum of 10,000 messages per second.\nIt's important to note that the maximum number of messages per second that a queue can handle is not the same as the maximum number of requests per second that the SQS API can handle. The SQS API is designed to handle a high volume of requests per second, so it can be used to send messages to your queue at a rate that exceeds the maximum message throughput of the queue."
+      "explanation": "A good practice is to also add message attributes when publishing to SNS. Each SQS subscription can have a filter policy that matches only the messages it cares about, so that only relevant messages are delivered to each SQS queue, and consumers only see/process what they need.\nan SQS queue can handle a maximum of 3,000 messages per second. However, you can request higher throughput by contacting AWS Support. AWS can increase the message throughput for your queue beyond the default limits in increments of 300 messages per second, up to a maximum of 10,000 messages per second.\nIt\'s important to note that the maximum number of messages per second that a queue can handle is not the same as the maximum number of requests per second that the SQS API can handle. The SQS API is designed to handle a high volume of requests per second, so it can be used to send messages to your queue at a rate that exceeds the maximum message throughput of the queue."
     },
     {
       "id": "8",
@@ -98,12 +98,12 @@
     },
     {
       "id": "9",
-      "question": "A company is running an SMB File server in its data center. The File server stores large files that are accessed frequently for the First few days after the files are created. After 7 days the files are rarely accessed. The total data size is increasing and is close to the company's total storage capacity. A solutions architect must increase the company's available storage space without losing low-latency access to the most recently accessed files. The solutions architect must also provide File lifecycle management to avoid future storage issues. Which solution will meet these requirements?",
+      "question": "A company is running an SMB File server in its data center. The File server stores large files that are accessed frequently for the First few days after the files are created. After 7 days the files are rarely accessed. The total data size is increasing and is close to the company\'s total storage capacity. A solutions architect must increase the company\'s available storage space without losing low-latency access to the most recently accessed files. The solutions architect must also provide File lifecycle management to avoid future storage issues. Which solution will meet these requirements?",
       "options": {
         "A": "Use AWS DataSync to copy data that is older than 7 days from the SMB File server to AWS.",
-        "B": "Create an Amazon S3 File Gateway to extend the company's storage space. Create an S3 Lifecycle policy to transition the data to S3 Glacier Deep Archive after 7 days.",
-        "C": "Create an Amazon FSx for Windows File Server file system to extend the company's storage space.",
-        "D": "Install a utility on each user's computer to access Amazon S3. Create an S3 Lifecycle policy to transition the data to S3 Glacier Flexible Retrieval after 7 days."
+        "B": "Create an Amazon S3 File Gateway to extend the company\'s storage space. Create an S3 Lifecycle policy to transition the data to S3 Glacier Deep Archive after 7 days.",
+        "C": "Create an Amazon FSx for Windows File Server file system to extend the company\'s storage space.",
+        "D": "Install a utility on each user\'s computer to access Amazon S3. Create an S3 Lifecycle policy to transition the data to S3 Glacier Flexible Retrieval after 7 days."
       },
       "correct_answer": "B",
       "explanation": "Option B: Amazon S3 File Gateway provides a hybrid cloud storage solution, integrating on-premises environments with cloud storage. files written to the file share are automatically saved as S3 objects. With S3 Lifecycle policies, you can transition objects between storage classes. Transitioning to Glacier Deep Archive is suitable for rarely accessed files. This solution addresses both the storage capacity and lifecycle management requirements."
@@ -158,7 +158,7 @@
     },
     {
       "id": "14",
-      "question": "A company runs an ecommerce application on Amazon EC2 instances behind an Application Load Balancer. The instances run in an Amazon EC2 Auto Scaling group across multiple Availability Zones. The Auto Scaling group scales based on CPU utilization metrics. The ecommerce application stores the transaction data in a MySQL 8.0 database that is hosted on a large EC2 instance. The database's performance degrades quickly as application load increases. The application handles more read requests than write transactions. The company wants a solution that will automatically scale the database to meet the demand of unpredictable read workloads while maintaining high availability. Which solution will meet these requirements?",
+      "question": "A company runs an ecommerce application on Amazon EC2 instances behind an Application Load Balancer. The instances run in an Amazon EC2 Auto Scaling group across multiple Availability Zones. The Auto Scaling group scales based on CPU utilization metrics. The ecommerce application stores the transaction data in a MySQL 8.0 database that is hosted on a large EC2 instance. The database\'s performance degrades quickly as application load increases. The application handles more read requests than write transactions. The company wants a solution that will automatically scale the database to meet the demand of unpredictable read workloads while maintaining high availability. Which solution will meet these requirements?",
       "options": {
         "A": "Use Amazon Redshift with a single node for leader and compute functionality.",
         "B": "Use Amazon RDS with a Single-AZdeployment Configure Amazon RDS to add reader instances in a different Availability Zone.",
@@ -182,7 +182,7 @@
     },
     {
       "id": "16",
-      "question": "A company hosts a data lake on AWS. The data lake consists of data in Amazon S3 and Amazon RDS for PostgreSQL. The company needs a reporting solution that provides data visualization and includes all the data sources within the data lake. Only the company's management team should have full access to all the visualizations. The rest of the company should have only limited access. Which solution will meet these requirements?",
+      "question": "A company hosts a data lake on AWS. The data lake consists of data in Amazon S3 and Amazon RDS for PostgreSQL. The company needs a reporting solution that provides data visualization and includes all the data sources within the data lake. Only the company\'s management team should have full access to all the visualizations. The rest of the company should have only limited access. Which solution will meet these requirements?",
       "options": {
         "A": "Create an analysis in Amazon QuickSight. Connect all the data sources and create new datasets. Publish dashboards to visualize the data. Share the dashboards with the appropriate IAM roles.",
         "B": "Create an analysis in Amazon QuickSight. Connect all the data sources and create new datasets. Publish dashboards to visualize the data. Share the dashboards with the appropriate users and groups.",
@@ -212,7 +212,7 @@
         "B": "Configure the Lambda function to use the Amazon Simple Queue Service (Amazon SQS) queue as the invocation source. When the SQS message is successfully processed, delete the message in the queue.",
         "C": "Configure the Lambda function to monitor the S3 bucket for new uploads. When an uploaded image is detected, write the File name to a text File in memory and use the text File to keep track of the images that were processed.",
         "D": "Launch an Amazon EC2 instance to monitor an Amazon Simple Queue Service (Amazon SQS) queue. When items are added to the queue, log the File name in a text File on the EC2 instance and invoke the Lambda function.",
-        "E": "Configure an Amazon EventBridge (Amazon CloudWatch Events) event to monitor the S3 bucket. When an image is uploaded, send an alert to an Amazon ample Notification Service (Amazon SNS) topic with the application owner's email address for further processing."
+        "E": "Configure an Amazon EventBridge (Amazon CloudWatch Events) event to monitor the S3 bucket. When an image is uploaded, send an alert to an Amazon ample Notification Service (Amazon SNS) topic with the application owner\'s email address for further processing."
       },
       "correct_answer": "AB",
       "explanation": "B. Configure the Lambda function to use the Amazon Simple Queue Service (Amazon SQS) queue as the invocation source. When the SQS message is successfully processed, delete the message in the queue\nOption A: By creating an Amazon SQS queue and configuring the S3 bucket to send A notification to the SQS queue when an image is uploaded, the system establishes a durable and scalable way to handle incoming image processing tasks.\nOption B: Configuring the Lambda function to use the SQS queue as the invocation source allows it to retrieve messages from the queue and process them in a stateless manner. After successfully processing the image, the Lambda function can delete the message from the queue to avoid duplicate processing."
@@ -221,8 +221,8 @@
       "id": "19",
       "question": "A company has a three-tier web application that is deployed on AWS. The web servers are deployed in a public subnet in a VPC. The application servers and database servers are deployed in private subnets in the same VPC. The company has deployed a third-party virtual Firewall appliance from AWS Marketplace in an inspection VPC. The appliance is configured with an IP interface that can accept IP packets. A solutions architect needs to integrate the web application with the appliance to inspect all traffic to the application before the traffic reaches the web server. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Create A network Load Balancer in the public subnet of the application's VPC to route the traffic to the appliance for packet inspection.",
-        "B": "Create an Application Load Balancer in the public subnet of the application's VPC to route the traffic to the appliance for packet inspection.",
+        "A": "Create A network Load Balancer in the public subnet of the application\'s VPC to route the traffic to the appliance for packet inspection.",
+        "B": "Create an Application Load Balancer in the public subnet of the application\'s VPC to route the traffic to the appliance for packet inspection.",
         "C": "Deploy a transit gateway in the inspection VPConfigure route tables to route the incoming packets through the transit gateway.",
         "D": "Deploy a Gateway Load Balancer in the inspection VPC. Create a Gateway Load Balancer endpoint to receive the incoming packets and forward the packets to the appliance."
       },
@@ -248,10 +248,10 @@
         "A": "Use Amazon S3 to host the full website in different S3 buckets. Add Amazon CloudFront distributions. Set the S3 buckets as origins for the distributions. Store the order data in Amazon S3.",
         "B": "Deploy the full website on Amazon EC2 instances that run in Auto Scaling groups across multiple Availability Zones. Add an Application Load Balancer (ALB) to distribute the website traffic. Add another ALBfor the backend APIs. Store the data in Amazon RDS for MySQL.",
         "C": "Migrate the full application to run in containers. Host the containers on Amazon Elastic Kubernetes Service (Amazon EKS). Use the Kubernetes Cluster Autoscaler to increase and decrease the number of pods to process bursts in traffic. Store the data in Amazon RDS for MySQL.",
-        "D": "Use an Amazon S3 bucket to host the website's static content. Deploy an Amazon CloudFront distribution. Set the S3 bucket as the origin. Use Amazon API Gateway and AWS Lambda functions for the backend APIs. Store the data in Amazon DynamoDB."
+        "D": "Use an Amazon S3 bucket to host the website\'s static content. Deploy an Amazon CloudFront distribution. Set the S3 bucket as the origin. Use Amazon API Gateway and AWS Lambda functions for the backend APIs. Store the data in Amazon DynamoDB."
       },
       "correct_answer": "D",
-      "explanation": "Use an Amazon S3 bucket to host the website's static content, deploy an Amazon CloudFront distribution, set the S3 bucket as the origin, and use Amazon API Gateway and AWS Lambda functions for the backend APIs. Store the data in Amazon DynamoDB.\nUsing Amazon S3 to host static content and Amazon CloudFront to distribute the content can provide high performance and scale for websites with millions of requests each hour. Amazon API Gateway and AWS Lambda can be used to build scalable and highly available backend APIs to support the website, and Amazon DynamoDB can be used to store the data. This solution requires minimal operational overhead as it leverages fully managed services that automatically scale to meet demand."
+      "explanation": "Use an Amazon S3 bucket to host the website\'s static content, deploy an Amazon CloudFront distribution, set the S3 bucket as the origin, and use Amazon API Gateway and AWS Lambda functions for the backend APIs. Store the data in Amazon DynamoDB.\nUsing Amazon S3 to host static content and Amazon CloudFront to distribute the content can provide high performance and scale for websites with millions of requests each hour. Amazon API Gateway and AWS Lambda can be used to build scalable and highly available backend APIs to support the website, and Amazon DynamoDB can be used to store the data. This solution requires minimal operational overhead as it leverages fully managed services that automatically scale to meet demand."
     },
     {
       "id": "22",
@@ -282,7 +282,7 @@
       "question": "A company observes an increase in Amazon EC2 costs in its most recent bill. The billing team notices unwanted vertical scaling of instance types for a couple of EC2 instances. A solutions architect needs to create a graph comparing the last 2 months of EC2 costs and perform an in-depth analysis to identify the root cause of the vertical scaling. How should the solutions architect generate the information with the LEAST operational overhead?",
       "options": {
         "A": "Use AWS Budgets to create a budget report and compare EC2 costs based on instance types.",
-        "B": "Use Cost Explorer's granular Filtering feature to perform an in-depth analysis of EC2 costs based on instance types.",
+        "B": "Use Cost Explorer\'s granular Filtering feature to perform an in-depth analysis of EC2 costs based on instance types.",
         "C": "Use graphs from the AWS Billing and Cost Management dashboard to compare EC2 costs based on instance types for the last 2 months.",
         "D": "Use AWS Cost and Usage Reports to create a report and send it to an Amazon S3 bucket. Use Amazon QuickSight with Amazon S3 as a source to generate an interactive graph based on instance types."
       },
@@ -315,11 +315,11 @@
     },
     {
       "id": "27",
-      "question": "A company is launching A new application and will display application metrics on an Amazon Cloudwatch dashboard. The company's product manager needs to access this dashboard periodically. The product manager does not have an AWS account. A solutions architect must provide access to the product manager by following the principle of least privilege. Which solution will meet these requirements?",
+      "question": "A company is launching A new application and will display application metrics on an Amazon Cloudwatch dashboard. The company\'s product manager needs to access this dashboard periodically. The product manager does not have an AWS account. A solutions architect must provide access to the product manager by following the principle of least privilege. Which solution will meet these requirements?",
       "options": {
-        "A": "Share the dashboard from the CloudWatch console. Enter the product manager's email address, and complete the sharing steps. Provide a shareable link for the dashboard to the product manager.",
+        "A": "Share the dashboard from the CloudWatch console. Enter the product manager\'s email address, and complete the sharing steps. Provide a shareable link for the dashboard to the product manager.",
         "B": "Create an IAM user speciFically for the product manager. Attach the CloudWatchReadOnlyAccess AWS managed policy to the user. Share the new login credentials with the product manager. Share the browser URL of the correct dashboard with the product manager.",
-        "C": "Create an IAM user for the company's employees. Attach the ViewOnlyAccess AWS managed policy to the IAM user. Share the new login credentials with the product manager. A sk the product manager to navigate to the CloudWatch console and locate the dashboard by name in the Dashboards section.",
+        "C": "Create an IAM user for the company\'s employees. Attach the ViewOnlyAccess AWS managed policy to the IAM user. Share the new login credentials with the product manager. A sk the product manager to navigate to the CloudWatch console and locate the dashboard by name in the Dashboards section.",
         "D": "Deploy a bastion server in a public subnet. When the product manager requires access to the dashboard, start the server and share the RDP credentials. On the bastion server, ensure that the browser is conFigured to open the dashboard URL with cached AWS credentials that have appropriate permissions to view the dashboard."
       },
       "correct_answer": "A",
@@ -327,11 +327,11 @@
     },
     {
       "id": "28",
-      "question": "A company is migrating applications to AWS. The applications are deployed in different accounts. The company manages the accounts centrally by using AWS Organizations. The company's security team needs a single sign-on (SSO) solution across all the company's accounts. The company must continue managing the users and groups in its on-premises self-managed Microsoft Active Directory. Which solution will meet these requirements?",
+      "question": "A company is migrating applications to AWS. The applications are deployed in different accounts. The company manages the accounts centrally by using AWS Organizations. The company\'s security team needs a single sign-on (SSO) solution across all the company\'s accounts. The company must continue managing the users and groups in its on-premises self-managed Microsoft Active Directory. Which solution will meet these requirements?",
       "options": {
-        "A": "Enable AWS Single Sign-On (AWS SSO) from the AWS SSO console. Create a one-way forest trust or a one-way domain trust to connect the company's self-managed Microsoft Active Directory with AWS SSO by using AWS Directory Service for Microsoft Active Directory.",
-        "B": "Enable AWS Single Sign-On (AWS SSO) from the AWS SSO console. Create a two-way forest trust to connect the company's self-managed Microsoft Active Directory with AWS SSO by using AWS Directory Service for Microsoft Active Directory.",
-        "C": "Use AWS Directory Service. Create a two-way trust relationship with the company's self-managed Microsoft Active Directory.",
+        "A": "Enable AWS Single Sign-On (AWS SSO) from the AWS SSO console. Create a one-way forest trust or a one-way domain trust to connect the company\'s self-managed Microsoft Active Directory with AWS SSO by using AWS Directory Service for Microsoft Active Directory.",
+        "B": "Enable AWS Single Sign-On (AWS SSO) from the AWS SSO console. Create a two-way forest trust to connect the company\'s self-managed Microsoft Active Directory with AWS SSO by using AWS Directory Service for Microsoft Active Directory.",
+        "C": "Use AWS Directory Service. Create a two-way trust relationship with the company\'s self-managed Microsoft Active Directory.",
         "D": "Deploy an identity provider (IdP) on premises. Enable AWS Single Sign-On (AWS SSO) from the AWS SSO console."
       },
       "correct_answer": "A",
@@ -411,7 +411,7 @@
     },
     {
       "id": "35",
-      "question": "A company is preparing to launch a public-facing web application in the AWS Cloud. The architecture consists of Amazon EC2 instances within a VPC behind an Elastic Load Balancer (ELB). A third-party service is used for the DNS. The company's solutions architect must recommend a solution to detect and protect against large-scale DDoS attacks. Which solution meets these requirements?",
+      "question": "A company is preparing to launch a public-facing web application in the AWS Cloud. The architecture consists of Amazon EC2 instances within a VPC behind an Elastic Load Balancer (ELB). A third-party service is used for the DNS. The company\'s solutions architect must recommend a solution to detect and protect against large-scale DDoS attacks. Which solution meets these requirements?",
       "options": {
         "A": "Enable Amazon GuardDuty on the account.",
         "B": "Enable Amazon Inspector on the EC2 instances.",
@@ -459,7 +459,7 @@
     },
     {
       "id": "39",
-      "question": "A company maintains a searchable repository of items on its website. The data is stored in an Amazon RDS for MySQL database table that contains more than 10 million rows. The database has 2 TB of General Purpose SSD storage. There are millions of updates against this data every day through the company's website. The company has noticed that some insert operations are taking 10 seconds or longer. The company has determined that the database storage performance is the problem. Which solution addresses this performance issue?",
+      "question": "A company maintains a searchable repository of items on its website. The data is stored in an Amazon RDS for MySQL database table that contains more than 10 million rows. The database has 2 TB of General Purpose SSD storage. There are millions of updates against this data every day through the company\'s website. The company has noticed that some insert operations are taking 10 seconds or longer. The company has determined that the database storage performance is the problem. Which solution addresses this performance issue?",
       "options": {
         "A": "Change the storage type to Provisioned IOPS SSD.",
         "B": "Change the DB instance to a memory optimized instance class.",
@@ -483,11 +483,11 @@
     },
     {
       "id": "41",
-      "question": "A company's application integrates with multiple software-as-a-service (SaaS) sources for data collection. The company runs Amazon EC2 instances to receive the data and to upload the data to an Amazon S3 bucket for analysis. The same EC2 instance that receives and uploads the data also sends anotification to the user when an upload is complete. The company has noticed slow application performance and wants to improve the performance as much as possible. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company\'s application integrates with multiple software-as-a-service (SaaS) sources for data collection. The company runs Amazon EC2 instances to receive the data and to upload the data to an Amazon S3 bucket for analysis. The same EC2 instance that receives and uploads the data also sends anotification to the user when an upload is complete. The company has noticed slow application performance and wants to improve the performance as much as possible. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Create an Auto Scaling group so that EC2 instances can scale out. Configure an S3 event notiFication to send events to an Amazon Simple Notification Service (Amazon SNS) topic when the upload to the S3 bucket is complete.",
         "B": "Create an Amazon AppFlow Flow to transfer data between each SaaS source and the S3 bucket. Configure an S3 event notiFication to send events to an Amazon Simple Notification Service (Amazon SNS) topic when the upload to the S3 bucket is complete.",
-        "C": "Create an Amazon EventBridge (Amazon CloudWatch Events) rule for each SaaS source to send output data. Configure the S3 bucket as the rule's target. Create a second EventBridge (Cloud Watch Events) rule to send events when the upload to the S3 bucket is complete. Configure an Amazon Simple Notification Service (Amazon SNS) topic as the second rule's target.",
+        "C": "Create an Amazon EventBridge (Amazon CloudWatch Events) rule for each SaaS source to send output data. Configure the S3 bucket as the rule\'s target. Create a second EventBridge (Cloud Watch Events) rule to send events when the upload to the S3 bucket is complete. Configure an Amazon Simple Notification Service (Amazon SNS) topic as the second rule\'s target.",
         "D": "Create a Docker container to use instead of an EC2 instance. Host the containerized application on Amazon Elastic Container Service (Amazon ECS). Configure Amazon CloudWatch Container Insights to send events to an Amazon Simple Notification Service (Amazon SNS) topic when the upload to the S3 bucket is complete."
       },
       "correct_answer": "B",
@@ -503,7 +503,7 @@
         "D": "Provision an EC2 Dedicated Host to run the EC2 instances."
       },
       "correct_answer": "C",
-      "explanation": "S3 VPC endpoint provides a way for an S3 request to be routed through to the Amazon S3 service, without having to connect a subnet to an internet gateway. The S3 VPC endpoint is what's known as a gateway endpoint."
+      "explanation": "S3 VPC endpoint provides a way for an S3 request to be routed through to the Amazon S3 service, without having to connect a subnet to an internet gateway. The S3 VPC endpoint is what\'s known as a gateway endpoint."
     },
     {
       "id": "43",
@@ -569,7 +569,7 @@
     },
     {
       "id": "48",
-      "question": "A company's website uses an Amazon EC2 instance store for its catalog of items. The company wants to make sure that the catalog is highly available and that the catalog is stored in adurable location. What should A solutions architect do to meet these requirements?",
+      "question": "A company\'s website uses an Amazon EC2 instance store for its catalog of items. The company wants to make sure that the catalog is highly available and that the catalog is stored in adurable location. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Move the catalog to Amazon ElastiCache for Redis.",
         "B": "Deploy a larger EC2 instance with a larger instance store.",

@@ -100,10 +100,10 @@
     },
     {
       "id": "109",
-      "question": "A company needs to store data in Amazon S3 and must prevent the data from being changed. The company wants new objects that are uploaded to Amazon S3 to remain unchangeable for A non specific amount of time until the company decides to modify the objects. Only specific users in the company's AWS account can have the ability to delete the objects. What should A solutions architect do to meet these requirements?",
+      "question": "A company needs to store data in Amazon S3 and must prevent the data from being changed. The company wants new objects that are uploaded to Amazon S3 to remain unchangeable for A non specific amount of time until the company decides to modify the objects. Only specific users in the company\'s AWS account can have the ability to delete the objects. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Create an S3 Glacier vault. Apply a write-once, read-many (WORM) vault lock policy to the objects.",
-        "B": "Create an S3 bucket with S3 Object Lock enabled. Enable versioning. Set a retention period of 100 years. Use governance mode as the S3 bucket's default retention mode for new objects.",
+        "B": "Create an S3 bucket with S3 Object Lock enabled. Enable versioning. Set a retention period of 100 years. Use governance mode as the S3 bucket\'s default retention mode for new objects.",
         "C": "Create an S3 bucket. Use AWS CloudTrail to track any S3 API events that modify the objects. Upon notiFication, restore the modiFied objects from any backup versions that the company has.",
         "D": "Create an S3 bucket with S3 Object Lock enabled. Enable versioning. Add a legal hold to the objects. Add the s3:PutObjectLegalHold permission to the IAM policies of users who need to delete the objects."
       },
@@ -116,7 +116,7 @@
       "options": {
         "A": "Configure the application to upload images to S3 Glacier.",
         "B": "Configure the web server to upload the original images to Amazon S3.",
-        "C": "Configure the application to upload images directly from each user's browser to Amazon S3 through the use of a presigned URL",
+        "C": "Configure the application to upload images directly from each user\'s browser to Amazon S3 through the use of a presigned URL",
         "D": "Configure S3 Event Notifications to invoke an AWS Lambda function when an image is uploaded. Use the function to resize the image.",
         "E": "Create an Amazon EventBridge (Amazon CloudWatch Events) rule that invokes an AWS Lambda function on a schedule to resize uploaded images."
       },
@@ -149,7 +149,7 @@
     },
     {
       "id": "113",
-      "question": "A company uses 50 TB of data for reporting. The company wants to move this data from on premises to AWS. A custom application in the company's data center runs a weekly data transformation job. The company plans to pause the application until the data transfer is complete and needs to begin the transfer process as soon as possible. The data center does not have any available network bandwidth for additional workloads. A solutions architect must transfer the data and must configure the transformation job to continue to run in the AWS Cloud. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company uses 50 TB of data for reporting. The company wants to move this data from on premises to AWS. A custom application in the company\'s data center runs a weekly data transformation job. The company plans to pause the application until the data transfer is complete and needs to begin the transfer process as soon as possible. The data center does not have any available network bandwidth for additional workloads. A solutions architect must transfer the data and must configure the transformation job to continue to run in the AWS Cloud. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Use AWS DataSync to move the data. Create a custom transformation job by using AWS Glue.",
         "B": "Order an AWS Snowcone device to move the data. Deploy the transformation application to the device.",
@@ -202,11 +202,11 @@
       "options": {
         "A": "Configure a CloudWatch Logs subscription to stream the logs to Amazon OpenSearch Service (Amazon Elasticsearch Service).",
         "B": "Create an AWS Lambda function. Use the log group to invoke the function to write the logs to Amazon OpenSearch Service (Amazon Elasticsearch Service).",
-        "C": "Create an Amazon Kinesis Data Firehose delivery stream. Configure the log group as the delivery streams sources. Configure Amazon OpenSearch Service (Amazon Elasticsearch Service) as the delivery stream's destination.",
+        "C": "Create an Amazon Kinesis Data Firehose delivery stream. Configure the log group as the delivery streams sources. Configure Amazon OpenSearch Service (Amazon Elasticsearch Service) as the delivery stream\'s destination.",
         "D": "Install and conFigure Amazon Kinesis agent on each application server to deliver the logs to Amazon Kinesis Data Streams. Configure Kinesis Data Streams to deliver the logs to Amazon OpenSearch Service (Amazon Elasticsearch Service)."
       },
       "correct_answer": "C",
-      "explanation": "Create an Amazon Kinesis Data Firehose delivery stream. Configure the log group as the delivery streams sources. Configure Amazon OpenSearch Service (Amazon Elasticsearch Service) as the delivery stream's destination."
+      "explanation": "Create an Amazon Kinesis Data Firehose delivery stream. Configure the log group as the delivery streams sources. Configure Amazon OpenSearch Service (Amazon Elasticsearch Service) as the delivery stream\'s destination."
     },
     {
       "id": "118",
@@ -234,15 +234,15 @@
     },
     {
       "id": "120",
-      "question": "A company has implemented a self-managed DNS solution on three Amazon EC2 instances behind A network Load Balancer (NLB) in the us-west- 2 Region. Most of the company's users are located in the United States and Europe. The company wants to improve the performance and availability of the solution. The company launches and configures three EC2 instances in the eu-west-1 Region and adds the EC2 instances as targets for A new NLB. Which solution can the company use to route traffic to all the EC2 instances?",
+      "question": "A company has implemented a self-managed DNS solution on three Amazon EC2 instances behind A network Load Balancer (NLB) in the us-west- 2 Region. Most of the company\'s users are located in the United States and Europe. The company wants to improve the performance and availability of the solution. The company launches and configures three EC2 instances in the eu-west-1 Region and adds the EC2 instances as targets for A new NLB. Which solution can the company use to route traffic to all the EC2 instances?",
       "options": {
-        "A": "Create an Amazon Route 53 geolocation routing policy to route requests to one of the two NLBs. Create an Amazon CloudFront distribution. Use the Route 53 record as the distribution's origin.",
+        "A": "Create an Amazon Route 53 geolocation routing policy to route requests to one of the two NLBs. Create an Amazon CloudFront distribution. Use the Route 53 record as the distribution\'s origin.",
         "B": "Create a standard accelerator in AWS Global Accelerator Create endpoint groups in us-west-2 and eu-west-1. Add the two NLBs as endpoints for the endpoint groups.",
-        "C": "Attach Elastic IP addresses to the six EC2 instances. Create an Amazon Route 53 geolocation routing policy to route requests to one of the six EC2 instances. Create an Amazon CloudFront distribution. Use the Route 53 record as the distribution's origin.",
-        "D": "Replace the two NLBs with two Application Load Balancers (ALBs). Create an Amazon Route 53 latency routing policy to route requests to one of the two ALBs. Create an Amazon CloudFront distribution. Use the Route 53 record as the distribution's origin."
+        "C": "Attach Elastic IP addresses to the six EC2 instances. Create an Amazon Route 53 geolocation routing policy to route requests to one of the six EC2 instances. Create an Amazon CloudFront distribution. Use the Route 53 record as the distribution\'s origin.",
+        "D": "Replace the two NLBs with two Application Load Balancers (ALBs). Create an Amazon Route 53 latency routing policy to route requests to one of the two ALBs. Create an Amazon CloudFront distribution. Use the Route 53 record as the distribution\'s origin."
       },
       "correct_answer": "A",
-      "explanation": "Create an Amazon Route 53 geolocation routing policy to route requests to one of the two NLBs. Create an Amazon CloudFront distribution. Use the Route 53 record as the distribution's origin."
+      "explanation": "Create an Amazon Route 53 geolocation routing policy to route requests to one of the two NLBs. Create an Amazon CloudFront distribution. Use the Route 53 record as the distribution\'s origin."
     },
     {
       "id": "121",
@@ -270,7 +270,7 @@
     },
     {
       "id": "123",
-      "question": "A company has a dynamic web application hosted on two Amazon EC2 instances. The company has its own SSL certificate, which is on each instance to perform SSL termination. There has been an increase in traffic recently, and the operations team determined that SSL encryption and decryption is causing the compute capacity of the web servers to reach their maximum limit. What should A solutions architect do to increase the application's performance?",
+      "question": "A company has a dynamic web application hosted on two Amazon EC2 instances. The company has its own SSL certificate, which is on each instance to perform SSL termination. There has been an increase in traffic recently, and the operations team determined that SSL encryption and decryption is causing the compute capacity of the web servers to reach their maximum limit. What should A solutions architect do to increase the application\'s performance?",
       "options": {
         "A": "Create A new SSL certiFicate using AWS CertiFicate Manager (ACM). Install the A CM certiFicate on each instance.",
         "B": "Create an Amazon S3 bucket Migrate the SSL certiFicate to the S3 bucket. Configure the EC2 instances to reference the bucket for SSL termination.",
@@ -306,7 +306,7 @@
     },
     {
       "id": "126",
-      "question": "A solutions architect needs to implement a solution to reduce A company's storage costs. All the company's data is in the Amazon S3 Standard storage class. The company must keep all data for at least 25 years. Data from the most recent 2 years must be highly available and immediately retrievable. Which solution will meet these requirements?",
+      "question": "A solutions architect needs to implement a solution to reduce A company\'s storage costs. All the company\'s data is in the Amazon S3 Standard storage class. The company must keep all data for at least 25 years. Data from the most recent 2 years must be highly available and immediately retrievable. Which solution will meet these requirements?",
       "options": {
         "A": "Set up an S3 Lifecycle policy to transition objects to S3 Glacier Deep Archive immediately.",
         "B": "Set up an S3 Lifecycle policy to transition objects to S3 Glacier Deep Archive after 2 years.",
@@ -342,7 +342,7 @@
     },
     {
       "id": "129",
-      "question": "A company is running a multi-tier web application on premises. The web application is containerized and runs on a number of Linux hosts connected to a PostgreSQL database that contains user records. The operational overhead of maintaining the infrastructure and capacity planning is limiting the company's growth. A solutions architect must improve the application's infrastructure. Which combination of actions should the solutions architect take to accomplish this? (Choose two.)",
+      "question": "A company is running a multi-tier web application on premises. The web application is containerized and runs on a number of Linux hosts connected to a PostgreSQL database that contains user records. The operational overhead of maintaining the infrastructure and capacity planning is limiting the company\'s growth. A solutions architect must improve the application\'s infrastructure. Which combination of actions should the solutions architect take to accomplish this? (Choose two.)",
       "options": {
         "A": "Migrate the PostgreSQL database to Amazon Aurora.",
         "B": "Migrate the web application to be hosted on Amazon EC2 instances.",
@@ -379,7 +379,7 @@
     },
     {
       "id": "132",
-      "question": "A company's website provides users with downloadable historical performance reports. The website needs a solution that will scale to meet the company's website demands globally. The solution should be cost-effective, limit the provisioning of infrastructure resources, and provide the fastest possible response time. Which combination should A solutions architect recommend to meet these requirements?",
+      "question": "A company\'s website provides users with downloadable historical performance reports. The website needs a solution that will scale to meet the company\'s website demands globally. The solution should be cost-effective, limit the provisioning of infrastructure resources, and provide the fastest possible response time. Which combination should A solutions architect recommend to meet these requirements?",
       "options": {
         "A": "Amazon CloudFront and Amazon S3",
         "B": "AWS Lambda and Amazon DynamoDB",
@@ -391,7 +391,7 @@
     },
     {
       "id": "133",
-      "question": "A company runs an Oracle database on premises. As part of the company's migration to AWS, the company wants to upgrade the database to the most recent available version. The company also wants to set up disaster recovery (DR) for the database. The company needs to minimize the operational overhead for normal operations and DR setup. The company also needs to maintain access to the database's underlying operating system. Which solution will meet these requirements?",
+      "question": "A company runs an Oracle database on premises. As part of the company\'s migration to AWS, the company wants to upgrade the database to the most recent available version. The company also wants to set up disaster recovery (DR) for the database. The company needs to minimize the operational overhead for normal operations and DR setup. The company also needs to maintain access to the database\'s underlying operating system. Which solution will meet these requirements?",
       "options": {
         "A": "Migrate the Oracle database to an Amazon EC2 instance. Set up database replication to a different AWS Region.",
         "B": "Migrate the Oracle database to Amazon RDS for Oracle. Activate Cross-Region automated backups to replicate the snapshots to another AWS Region.",
@@ -415,11 +415,11 @@
     },
     {
       "id": "135",
-      "question": "A company runs workloads on AWS. The company needs to connect to a service from an external provider. The service is hosted in the provider's VPC. According to the company's security team, the connectivity must be private and must be restricted to the target service. The connection must be initiated only from the company's VPC. Which solution will mast these requirements?",
+      "question": "A company runs workloads on AWS. The company needs to connect to a service from an external provider. The service is hosted in the provider\'s VPC. According to the company\'s security team, the connectivity must be private and must be restricted to the target service. The connection must be initiated only from the company\'s VPC. Which solution will mast these requirements?",
       "options": {
-        "A": "Create a VPC peering connection between the company's VPC and the provider's VPC. Update the route table to connect to the target service.",
+        "A": "Create a VPC peering connection between the company\'s VPC and the provider\'s VPC. Update the route table to connect to the target service.",
         "B": "A sk the provider to create a virtual private gateway in its VPC. Use AWS PrivateLink to connect to the target service.",
-        "C": "Create A NAT gateway in a public subnet of the company's VPUpdate the route table to connect to the target service.",
+        "C": "Create A NAT gateway in a public subnet of the company\'s VPUpdate the route table to connect to the target service.",
         "D": "A sk the provider to create a VPC endpoint for the target service. Use AWS PrivateLink to connect to the target service."
       },
       "correct_answer": "D",
@@ -440,9 +440,9 @@
     },
     {
       "id": "137",
-      "question": "A company uses AWS Organizations to create dedicated AWS accounts for each business unit to manage each business unit's account independently upon request. The root email recipient missed a notification that was sent to the root user email address of one account. The company wants to ensure that all future notifications are not missed. Future notifications must be limited to account administrators. Which solution will meet these requirements?",
+      "question": "A company uses AWS Organizations to create dedicated AWS accounts for each business unit to manage each business unit\'s account independently upon request. The root email recipient missed a notification that was sent to the root user email address of one account. The company wants to ensure that all future notifications are not missed. Future notifications must be limited to account administrators. Which solution will meet these requirements?",
       "options": {
-        "A": "Configure the company's email server to forward notiFication email messages that are sent to the AWS account root user email address to all users in the organization.",
+        "A": "Configure the company\'s email server to forward notiFication email messages that are sent to the AWS account root user email address to all users in the organization.",
         "B": "Configure all AWS account root user email addresses as distribution lists that go to a few administrators who can respond to alerts. Configure AWS account alternate contacts in the AWS Organizations console or programmatically.",
         "C": "Configure all AWS account root user email messages to be sent to one administrator who is responsible for monitoring alerts and forwarding those alerts to the appropriate groups.",
         "D": "Configure all existing AWS accounts and all newly created accounts to use the same root user email address. Configure AWS account alternate contacts in the AWS Organizations console or programmatically."
@@ -576,8 +576,8 @@
       "question": "A company has a data ingestion workflow that includes the following components: An Amazon Simple Notification Service (Amazon SNS) topic that receives notifications about new data deliveries An AWS Lambda function that processes and stores the data The ingestion workflow occasionally fails because of network connectivity issues. When failure occurs, the corresponding data is not ingested unless the company manually reruns the job. What should A solutions architect do to ensure that all notifications are eventually processed?",
       "options": {
         "A": "Configure the Lambda function for deployment across multiple Availability Zones.",
-        "B": "Modify the Lambda function's  configuration to increase the CPU and memory allocations for the function.",
-        "C": "Configure the SNS topic's retry strategy to increase both the number of retries and the wait time between retries.",
+        "B": "Modify the Lambda function\'s  configuration to increase the CPU and memory allocations for the function.",
+        "C": "Configure the SNS topic\'s retry strategy to increase both the number of retries and the wait time between retries.",
         "D": "Configure an Amazon Simple Queue Service (Amazon SQS) queue as the on-failure destination. Modify the Lambda function to process messages in the queue."
       },
       "correct_answer": "D",

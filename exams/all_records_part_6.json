@@ -10,7 +10,7 @@
         "D": "Create an internet gateway, and attach it to the VPC. Create A NAT instance, and place it in the same subnet where the EC2 instance is located. Configure the private subnet route table to use the internet gateway as the default route."
       },
       "correct_answer": "B",
-      "explanation": "NAT gateways are designed to provide outbound internet access for instances in private subnets. Placing A NAT gateway in a public subnet and configuring the private subnet's route table to use the NAT gateway as the default route allows the EC2 instance to download security updates while maintaining security."
+      "explanation": "NAT gateways are designed to provide outbound internet access for instances in private subnets. Placing A NAT gateway in a public subnet and configuring the private subnet\'s route table to use the NAT gateway as the default route allows the EC2 instance to download security updates while maintaining security."
     },
     {
       "id": "252",
@@ -111,7 +111,7 @@
     },
     {
       "id": "260",
-      "question": "A company's compliance team needs to move its File shares to AWS. The shares run on aWindows Server SMB File share. A self-managed on- premises Active Directory controls access to the files and folders. The company wants to use Amazon FSx for Windows File Server as part of the solution. The company must ensure that the on-premises Active Directory groups restrict access to the FSx for Windows File Server SMB compliance shares, folders, and files after the move to AWS. The company has created an FSx for Windows File Server file system. Which solution will meet these requirements?",
+      "question": "A company\'s compliance team needs to move its File shares to AWS. The shares run on aWindows Server SMB File share. A self-managed on- premises Active Directory controls access to the files and folders. The company wants to use Amazon FSx for Windows File Server as part of the solution. The company must ensure that the on-premises Active Directory groups restrict access to the FSx for Windows File Server SMB compliance shares, folders, and files after the move to AWS. The company has created an FSx for Windows File Server file system. Which solution will meet these requirements?",
       "options": {
         "A": "Create an Active Directory Connector to connect to the Active Directory. Map the Active Directory groups to IAM groups to restrict access.",
         "B": "Assign a tag with a Restrict tag key and a Compliance tag value. Map the Active Directory groups to IAM groups to restrict access.",
@@ -136,15 +136,15 @@
     },
     {
       "id": "262",
-      "question": "A company plans to use Amazon Elasticache for its multi-tier web application. A solutions architect creates aCache VPC for the Elasticache cluster and an App VPC for the application's Amazon EC2 instances. Both VPCs are in the us-east-1 Region. The solutions architect must implement a solution to provide the application's EC2 instances with access to the Elasticache cluster. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company plans to use Amazon Elasticache for its multi-tier web application. A solutions architect creates aCache VPC for the Elasticache cluster and an App VPC for the application\'s Amazon EC2 instances. Both VPCs are in the us-east-1 Region. The solutions architect must implement a solution to provide the application\'s EC2 instances with access to the Elasticache cluster. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
-        "A": "Create a peering connection between the VPCs. Add a route table entry for the peering connection in both VPCs. Configure an inbound rule for the ElastiCache cluster's security group to allow inbound connection from the application's security group.",
-        "B": "Create a Transit VPC. Update the VPC route tables in the Cache VPC and the App VPC to route traffic through the Transit VPC. Configure an inbound rule for the ElastiCache cluster's security group to allow inbound connection from the application's security group.",
-        "C": "Create a peering connection between the VPCs. Add a route table entry for the peering connection in both VPCs. Configure an inbound rule for the peering connection's security group to allow inbound connection from the application's security group.",
-        "D": "Create a Transit VPC. Update the VPC route tables in the Cache VPC and the App VPC to route traffic through the Transit VPC. Configure an inbound rule for the Transit VPC's security group to allow inbound connection from the application's security group."
+        "A": "Create a peering connection between the VPCs. Add a route table entry for the peering connection in both VPCs. Configure an inbound rule for the ElastiCache cluster\'s security group to allow inbound connection from the application\'s security group.",
+        "B": "Create a Transit VPC. Update the VPC route tables in the Cache VPC and the App VPC to route traffic through the Transit VPC. Configure an inbound rule for the ElastiCache cluster\'s security group to allow inbound connection from the application\'s security group.",
+        "C": "Create a peering connection between the VPCs. Add a route table entry for the peering connection in both VPCs. Configure an inbound rule for the peering connection\'s security group to allow inbound connection from the application\'s security group.",
+        "D": "Create a Transit VPC. Update the VPC route tables in the Cache VPC and the App VPC to route traffic through the Transit VPC. Configure an inbound rule for the Transit VPC\'s security group to allow inbound connection from the application\'s security group."
       },
       "correct_answer": "A",
-      "explanation": "Creating a peering connection allows communication between the Cache VPC and the App VPC.\nAdding a route table entry in both VPCs for the peering connection ensures that traffic can flow between them.\nInbound Rule in ElastiCache Security Group:\nConfiguring an inbound rule in the ElastiCache cluster's security group to allow connections from the application's security group enables the EC2 instances in the App VPC to access the ElastiCache cluster."
+      "explanation": "Creating a peering connection allows communication between the Cache VPC and the App VPC.\nAdding a route table entry in both VPCs for the peering connection ensures that traffic can flow between them.\nInbound Rule in ElastiCache Security Group:\nConfiguring an inbound rule in the ElastiCache cluster\'s security group to allow connections from the application\'s security group enables the EC2 instances in the App VPC to access the ElastiCache cluster."
     },
     {
       "id": "263",
@@ -209,7 +209,7 @@
     },
     {
       "id": "268",
-      "question": "A gaming company has a web application that displays scores. The application runs on Amazon EC2 instances behind an Application Load Balancer. The application stores data in an Amazon RDS for MySQL database. Users are starting to experience long delays and interruptions that are caused by database read performance. The company wants to improve the user experience while minimizing changes to the application's architecture. What should A solutions architect do to meet these requirements?",
+      "question": "A gaming company has a web application that displays scores. The application runs on Amazon EC2 instances behind an Application Load Balancer. The application stores data in an Amazon RDS for MySQL database. Users are starting to experience long delays and interruptions that are caused by database read performance. The company wants to improve the user experience while minimizing changes to the application\'s architecture. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Use Amazon ElastiCache in front of the database.",
         "B": "Use RDS Proxy between the application and the database.",
@@ -253,11 +253,11 @@
         "D": "Change the scaling policy to add more EC2 instances during each scaling operation."
       },
       "correct_answer": "C",
-      "explanation": "Scheduled scaling allows you to define specific times when your Auto Scaling group's desired capacity should be increased or decreased.\nIn this case, you can schedule the scaling action to increase the capacity just before the nightly batch processing job starts at 1 A M and then scale it down after the job completes."
+      "explanation": "Scheduled scaling allows you to define specific times when your Auto Scaling group\'s desired capacity should be increased or decreased.\nIn this case, you can schedule the scaling action to increase the capacity just before the nightly batch processing job starts at 1 A M and then scale it down after the job completes."
     },
     {
       "id": "272",
-      "question": "A company serves a dynamic website from aFleet of Amazon EC2 instances behind an Application Load Balancer (ALB). The website needs to support multiple languages to serve customers around the world. The website's architecture is running in the us-west-1 Region and is exhibiting high request latency for users that are located in other parts of the world. The website needs to serve requests quickly and efficiently regardless of a user's location. However, the company does not want to recreate the existing architecture across multiple Regions. What should A solutions architect do to meet these requirements?",
+      "question": "A company serves a dynamic website from aFleet of Amazon EC2 instances behind an Application Load Balancer (ALB). The website needs to support multiple languages to serve customers around the world. The website\'s architecture is running in the us-west-1 Region and is exhibiting high request latency for users that are located in other parts of the world. The website needs to serve requests quickly and efficiently regardless of a user\'s location. However, the company does not want to recreate the existing architecture across multiple Regions. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Replace the existing architecture with a website that is served from an Amazon S3 bucket. Configure an Amazon CloudFront distribution with the S3 bucket as the origin. Set the cache behavior settings to cache based on the Accept-Language request header.",
         "B": "Configure an Amazon CloudFront distribution with the ALBas the origin. Set the cache behavior settings to cache based on the Accept- Language request header.",
@@ -314,7 +314,7 @@
         "E": "Configure the Auto Scaling group to use the average free memory as the scaling metric."
       },
       "correct_answer": "AD",
-      "explanation": "This option allows the RDS instance to automatically scale its storage based on the actual storage usage, ensuring that you don't run out of storage.\nD. Configure the Auto Scaling group to use the average CPU as the scaling metric.\nBy using CPU utilization as a scaling metric, the Auto Scaling group can dynamically adjust the number of EC2 instances based on the application's demand. This helps in handling increased traffic and preventing overload on existing instances."
+      "explanation": "This option allows the RDS instance to automatically scale its storage based on the actual storage usage, ensuring that you don't run out of storage.\nD. Configure the Auto Scaling group to use the average CPU as the scaling metric.\nBy using CPU utilization as a scaling metric, the Auto Scaling group can dynamically adjust the number of EC2 instances based on the application\'s demand. This helps in handling increased traffic and preventing overload on existing instances."
     },
     {
       "id": "277",
@@ -343,7 +343,7 @@
     },
     {
       "id": "279",
-      "question": "A company has an application that is backed by an Amazon DynamoDB table. The company's compliance requirements specify that database backups must be taken every month, must be available for 6 months, and must be retained for 7 years. Which solution will meet these requirements?",
+      "question": "A company has an application that is backed by an Amazon DynamoDB table. The company\'s compliance requirements specify that database backups must be taken every month, must be available for 6 months, and must be retained for 7 years. Which solution will meet these requirements?",
       "options": {
         "A": "Create an AWS Backup plan to back up the DynamoDB table on the First day of each month. Specify a lifecycle policy that transitions the backup to cold storage after 6 months. Set the retention period for each backup to 7 years.",
         "B": "Create a DynamoDB on-demand backup of the DynamoDB table on the First day of each month. Transition the backup to Amazon S3 Glacier Flexible Retrieval after 6 months. Create an S3 Lifecycle policy to delete backups that are older than 7 years.",
@@ -355,7 +355,7 @@
     },
     {
       "id": "280",
-      "question": "A company is using Amazon Cloudfront with its website. The company has enabled logging on the Cloudfront distribution, and logs are saved in one of the company's Amazon S3 buckets. The company needs to perform advanced analyses on the logs and build visualizations. What should A solutions architect do to meet these requirements?",
+      "question": "A company is using Amazon Cloudfront with its website. The company has enabled logging on the Cloudfront distribution, and logs are saved in one of the company\'s Amazon S3 buckets. The company needs to perform advanced analyses on the logs and build visualizations. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Use standard SQL queries in Amazon Athena to analyze the CloudFront logs in the S3 bucket. Visualize the results with AWS Glue.",
         "B": "Use standard SQL queries in Amazon Athena to analyze the CloudFront logs in the S3 bucket. Visualize the results with Amazon QuickSight.",
@@ -403,7 +403,7 @@
     },
     {
       "id": "284",
-      "question": "A's part of budget planning, management wants a report of AWS billed items listed by user. The data will be used to create department budgets. A solutions architect needs to determine the most efficient way to obtain this report information. Which solution meets these requirements?",
+      "question": "A\'s part of budget planning, management wants a report of AWS billed items listed by user. The data will be used to create department budgets. A solutions architect needs to determine the most efficient way to obtain this report information. Which solution meets these requirements?",
       "options": {
         "A": "Run a query with Amazon Athena to generate the report.",
         "B": "Create a report in Cost Explorer and download the report.",
@@ -427,15 +427,15 @@
     },
     {
       "id": "286",
-      "question": "A company has astatic website that is hosted on Amazon Cloudfront in front of Amazon S3. The static website uses a database backend. The company notices that the website does not reflect updates that have been made in the website's Git repository. The company checks the continuous integration and continuous delivery (CI/CD) pipeline between the Git repository and Amazon S3. The company verifies that the webhooks are configured properly and that the CI/CD pipeline is sending messages that indicate successful deployments. A solutions architect needs to implement a solution that displays the updates on the website. Which solution will meet these requirements?",
+      "question": "A company has astatic website that is hosted on Amazon Cloudfront in front of Amazon S3. The static website uses a database backend. The company notices that the website does not reflect updates that have been made in the website\'s Git repository. The company checks the continuous integration and continuous delivery (CI/CD) pipeline between the Git repository and Amazon S3. The company verifies that the webhooks are configured properly and that the CI/CD pipeline is sending messages that indicate successful deployments. A solutions architect needs to implement a solution that displays the updates on the website. Which solution will meet these requirements?",
       "options": {
         "A": "Add an Application Load Balancer.",
         "B": "Add Amazon ElastiCache for Redis or Memcached to the database layer of the web application.",
         "C": "Invalidate the CloudFront cache.",
-        "D": "Use AWS CertiFicate Manager (ACM) to validate the website's SSL certiFicate."
+        "D": "Use AWS CertiFicate Manager (ACM) to validate the website\'s SSL certiFicate."
       },
       "correct_answer": "C",
-      "explanation": "When the website does not reflect updates that have been made in the Git repository, and the CI/CD pipeline is sending messages indicating successful deployments, it's likely that the issue is related to caching. Amazon CloudFront caches content to improve performance and reduce latency, and if the cache is not updated, it may serve stale content.\nBy invalidating the CloudFront cache, you ensure that the next request to CloudFront fetches the latest content from the origin (in this case, Amazon S3). This process forces CloudFront to re-fetch the content and update its cache."
+      "explanation": "When the website does not reflect updates that have been made in the Git repository, and the CI/CD pipeline is sending messages indicating successful deployments, it\'s likely that the issue is related to caching. Amazon CloudFront caches content to improve performance and reduce latency, and if the cache is not updated, it may serve stale content.\nBy invalidating the CloudFront cache, you ensure that the next request to CloudFront fetches the latest content from the origin (in this case, Amazon S3). This process forces CloudFront to re-fetch the content and update its cache."
     },
     {
       "id": "287",
@@ -467,7 +467,7 @@
       "options": {
         "A": "Apply an S3 bucket policy that grants read access to the S3 bucket.",
         "B": "Apply an IAM role to the Lambda function. Apply an IAM policy to the role to grant read access to the S3 bucket.",
-        "C": "Embed an access key and a secret key in the Lambda function's code to grant the required IAM permissions for read access to the S3 bucket.",
+        "C": "Embed an access key and a secret key in the Lambda function\'s code to grant the required IAM permissions for read access to the S3 bucket.",
         "D": "Apply an IAM role to the Lambda function. Apply an IAM policy to the role to grant read access to all S3 buckets in the account."
       },
       "correct_answer": "B",
@@ -487,7 +487,7 @@
     },
     {
       "id": "291",
-      "question": "A media company uses Amazon Cloudfront for its publicly available streaming video content. The company wants to secure the video content that is hosted in Amazon S3 by controlling who has access. Some of the company's users are using a custom HTTP client that does not support cookies. Some of the company's users are unable to change the hardcoded URLs that they are using for access. Which services or methods will meet these requirements with the LEAST impact to the users? (Choose two.)",
+      "question": "A media company uses Amazon Cloudfront for its publicly available streaming video content. The company wants to secure the video content that is hosted in Amazon S3 by controlling who has access. Some of the company\'s users are using a custom HTTP client that does not support cookies. Some of the company\'s users are unable to change the hardcoded URLs that they are using for access. Which services or methods will meet these requirements with the LEAST impact to the users? (Choose two.)",
       "options": {
         "A": "Signed cookies",
         "B": "Signed URLs",
@@ -590,14 +590,14 @@
         "A": "Create an Amazon FSx for NetApp ONTAP file system. Sat each volume tiering policy to ALL. Import the raw data into the file system. Mount the Fila system on the EC2 instances.",
         "B": "Create an Amazon S3 bucket to store the raw data. Create an Amazon FSx for Lustre file system that uses persistent SSD storage. Select the option to import data from and export data to Amazon S3. Mount the file system on the EC2 instances.",
         "C": "Create an Amazon S3 bucket to store the raw data. Create an Amazon FSx for Lustre file system that uses persistent HDD storage. Select the option to import data from and export data to Amazon S3. Mount the file system on the EC2 instances.",
-        "D": "Create an Amazon FSx for NetApp ONTAP file system. Set each volume's tiering policy to NONE. Import the raw data into the file system. Mount the file system on the EC2 instances."
+        "D": "Create an Amazon FSx for NetApp ONTAP file system. Set each volume\'s tiering policy to NONE. Import the raw data into the file system. Mount the file system on the EC2 instances."
       },
       "correct_answer": "B",
       "explanation": "Amazon FSx for Lustre is a high-performance file system designed for use with compute-intensive workloads. It provides sub-millisecond latencies and is well-suited for scenarios where high throughput is required.\nUsing persistent SSD storage for the Amazon FSx for Lustre file system ensures that it meets the minimum throughput requirement of 6 GBps.\nStoring the raw data in an Amazon S3 bucket allows for scalable and durable storage, and the integration with FSx for Lustre allows seamless importing and exporting of data to and from S3.\nThis solution is designed to provide the required performance characteristics for processing large amounts of data with hundreds of EC2 instances."
     },
     {
       "id": "300",
-      "question": "A company needs to migrate a legacy application from an on-premises data center to the AWS Cloud because of hardware capacity constraints. The application runs 24 hours a day, 7 days a week. The application's database storage continues to grow over time. What should A solutions architect do to meet these requirements MOST cost-effectively?",
+      "question": "A company needs to migrate a legacy application from an on-premises data center to the AWS Cloud because of hardware capacity constraints. The application runs 24 hours a day, 7 days a week. The application\'s database storage continues to grow over time. What should A solutions architect do to meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Migrate the application layer to Amazon EC2 Spot Instances. Migrate the data storage layer to Amazon S3.",
         "B": "Migrate the application layer to Amazon EC2 Reserved Instances. Migrate the data storage layer to Amazon RDS On-Demand Instances.",

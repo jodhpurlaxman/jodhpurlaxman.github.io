@@ -2,7 +2,7 @@
   "questions": [
     {
       "id": "401",
-      "question": "A company wants to use the AWS Cloud to make An existing Application highly available And resilient. The current version of the Application resides in the company's data center. The Application recently experienced data loss after a database server crashed because of An unexpected power outage. The company needs a solution that a voids Any single points of failure. The solution must give the Application the ability to scale to meet user demand. Which solution will meet these requirements?",
+      "question": "A company wants to use the AWS Cloud to make An existing Application highly available And resilient. The current version of the Application resides in the company\'s data center. The Application recently experienced data loss after a database server crashed because of An unexpected power outage. The company needs a solution that a voids Any single points of failure. The solution must give the Application the ability to scale to meet user demand. Which solution will meet these requirements?",
       "options": {
         "A": "Deploy the Application servers by using Amazon EC2 instances in An Auto Scaling group across multiple Availability Zones. Use An Amazon RDS DB instance in a Multi-AZ  configuration.",
         "B": "Deploy the Application servers by using Amazon EC2 instances in An Auto Scaling group in a single Availability Zone. Deploy the database on An EC2 instance. Enable EC2 Auto Recovery.",
@@ -40,7 +40,7 @@
       "id": "404",
       "question": "A company has deployed a serverless Application that invokes An AWS Lambda function when new documents are uploaded to An Amazon S3 bucket. The Application uses the Lambda function to process the documents. After a recent marketing campaign, the company noticed that the Application did not process many of the documents. What should A solutions architect do to improve the architecture of this application?",
       "options": {
-        "A": "Set the Lambda function's runtime timeout value to 15 minutes.",
+        "A": "Set the Lambda function\'s runtime timeout value to 15 minutes.",
         "B": "Configure An S3 bucket replication policy. Stage the documents in the S3 bucket for later processing.",
         "C": "Deploy An additional Lambda function. Load balance the processing of the documents across the two Lambda functions.",
         "D": "Create An Amazon Simple Queue Service (Amazon SQS) queue. Send the requests to the queue. Configure the queue as An event source for Lambda."
@@ -96,11 +96,11 @@
         "D": "Configure An Amazon Route 53 failover routing policy. Create An Application Load Balancer (ALB) in each of the two Regions. Create An Amazon Elastic Container Service (Amazon ECS) cluster with the Fargate launch type. Create An ECS service on the cluster. Set the ECS service as the target for the ALB. Process the data in Amazon ECS."
       },
       "correct_answer": "B",
-      "explanation": "AWS Global Accelerator: AWS Global Accelerator provides static IP addresses that a ct as a fixed entry point to your application. It routes traffic over the AWS global network to the optimal AWS endpoint based on health, geography, And routing policies.\nNetwork Load Balancer (NLB): NLB is well-suited for UDP-based traffic, And it's designed for high-performance, low-latency applications. In this case, it can efficiently handle the thousands of geographically dispersed remote devices sending UDP traffic.\nAmazon ECS with Fargate Launch Type: Using ECS with Fargate allows you to deploy And run containers without managing the underlying infrastructure. This setup can efficiently handle the immediate processing of data without the need to manage the underlying servers."
+      "explanation": "AWS Global Accelerator: AWS Global Accelerator provides static IP addresses that a ct as a fixed entry point to your application. It routes traffic over the AWS global network to the optimal AWS endpoint based on health, geography, And routing policies.\nNetwork Load Balancer (NLB): NLB is well-suited for UDP-based traffic, And it\'s designed for high-performance, low-latency applications. In this case, it can efficiently handle the thousands of geographically dispersed remote devices sending UDP traffic.\nAmazon ECS with Fargate Launch Type: Using ECS with Fargate allows you to deploy And run containers without managing the underlying infrastructure. This setup can efficiently handle the immediate processing of data without the need to manage the underlying servers."
     },
     {
       "id": "409",
-      "question": "A solutions architect must migrate a Windows Internet Information Services (IIS) web Application to AWS. The Application currently relies on a File share hosted in the user's on-premises network-attached storage (NAS). The solutions architect has proposed migrating the IIS web servers to Amazon EC2 instances in multiple Availability Zones that are connected to the storage solution, And configuring An Elastic Load Balancer attached to the instances. Which replacement to the on-premises File share is MOST resilient And durable?",
+      "question": "A solutions architect must migrate a Windows Internet Information Services (IIS) web Application to AWS. The Application currently relies on a File share hosted in the user\'s on-premises network-attached storage (NAS). The solutions architect has proposed migrating the IIS web servers to Amazon EC2 instances in multiple Availability Zones that are connected to the storage solution, And configuring An Elastic Load Balancer attached to the instances. Which replacement to the on-premises File share is MOST resilient And durable?",
       "options": {
         "A": "Migrate the File share to Amazon RDS.",
         "B": "Migrate the File share to AWS Storage Gateway.",
@@ -148,7 +148,7 @@
     },
     {
       "id": "413",
-      "question": "An ecommerce company is experiencing An increase in user traffic. The company's store is deployed on Amazon EC2 instances as a two-tier web Application consisting of a web tier And a separate database tier. As traffic increases, the company notices that the architecture is causing significant delays in sending timely marketing And order confirmation email to users. The company wants to reduce the time it spends resolving complex email delivery issues And minimize operational overhead. What should A solutions architect do to meet these requirements?",
+      "question": "An ecommerce company is experiencing An increase in user traffic. The company\'s store is deployed on Amazon EC2 instances as a two-tier web Application consisting of a web tier And a separate database tier. As traffic increases, the company notices that the architecture is causing significant delays in sending timely marketing And order confirmation email to users. The company wants to reduce the time it spends resolving complex email delivery issues And minimize operational overhead. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Create a separate Application tier using EC2 instances dedicated to email processing.",
         "B": "Configure the web instance to send email through Amazon Simple Email Service (Amazon SES).",
@@ -184,7 +184,7 @@
     },
     {
       "id": "416",
-      "question": "A rapidly growing global ecommerce company is hosting its web Application on AWS. The web Application includes static content And dynamic content. The website stores online transaction processing (OLTP) data in An Amazon RDS database The website's users are experiencing slow page loads. Which combination of actions should A solutions architect take to resolve this issue? (Choose two.)",
+      "question": "A rapidly growing global ecommerce company is hosting its web Application on AWS. The web Application includes static content And dynamic content. The website stores online transaction processing (OLTP) data in An Amazon RDS database The website\'s users are experiencing slow page loads. Which combination of actions should A solutions architect take to resolve this issue? (Choose two.)",
       "options": {
         "A": "Configure An Amazon Redshift cluster.",
         "B": "Set up An Amazon CloudFront distribution.",
@@ -295,7 +295,7 @@
     },
     {
       "id": "425",
-      "question": "A company uses high block storage capacity to runs its workloads on premises. The company's daily peak input And output transactions per second are not more than 15,000 IOPS. The company wants to migrate the workloads to Amazon EC2 And to provision disk performance independent of storage capacity. Which Amazon Elastic Block Store (Amazon EBS) volume type will meet these requirements MOST cost-effectively?",
+      "question": "A company uses high block storage capacity to runs its workloads on premises. The company\'s daily peak input And output transactions per second are not more than 15,000 IOPS. The company wants to migrate the workloads to Amazon EC2 And to provision disk performance independent of storage capacity. Which Amazon Elastic Block Store (Amazon EBS) volume type will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "GP2 volume type",
         "B": "io2 volume type",
@@ -307,7 +307,7 @@
     },
     {
       "id": "426",
-      "question": "A company needs to store data from its healthcare application. The application's data frequently changes. A new regulation requires audit Access at All levels of the stored data. The company hosts the Application on An on-premises infrastructure that is running out of storage capacity. A solutions architect must securely migrate the existing data to AWS while satisfying the new regulation. Which solution will meet these requirements?",
+      "question": "A company needs to store data from its healthcare application. The application\'s data frequently changes. A new regulation requires audit Access at All levels of the stored data. The company hosts the Application on An on-premises infrastructure that is running out of storage capacity. A solutions architect must securely migrate the existing data to AWS while satisfying the new regulation. Which solution will meet these requirements?",
       "options": {
         "A": "Use AWS DataSync to move the existing data to Amazon S3. Use AWS CloudTrail to log data events.",
         "B": "Use AWS Snowcone to move the existing data to Amazon S3. Use AWS CloudTrail to log management events.",
@@ -368,7 +368,7 @@
     },
     {
       "id": "431",
-      "question": "A company has developed A new video game as a web application. The Application is in a three-tier architecture in a VPC with Amazon RDS for MySQL in the database layer. Several players will compete concurrently online. The game's developers want to display a top-10 scoreboard in near- real time And offer the ability to stop And restore the game while preserving the current scores. What should A solutions architect do to meet these requirements?",
+      "question": "A company has developed A new video game as a web application. The Application is in a three-tier architecture in a VPC with Amazon RDS for MySQL in the database layer. Several players will compete concurrently online. The game\'s developers want to display a top-10 scoreboard in near- real time And offer the ability to stop And restore the game while preserving the current scores. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Set up An Amazon ElastiCache for Memcached cluster to cache the scores for the web Application to display.",
         "B": "Set up An Amazon ElastiCache for Redis cluster to compute And cache the scores for the web Application to display.",
@@ -406,9 +406,9 @@
       "id": "434",
       "question": "A company hosts its Application in the AWS Cloud. The Application runs on Amazon EC2 instances behind An Elastic Load Balancer in An Auto Scaling group And with An Amazon DynamoDB table. The company wants to ensure the Application can be made available in AnotherAWS Region with minimal downtime. What should A solutions architect do to meet these requirements with the LEAST amount of downtime?",
       "options": {
-        "A": "Create An Auto Scaling group And a load balancer in the disaster recovery Region. Configure the DynamoDB table as a global table. Configure DNS failover to point to the new disaster recovery Region's load balancer.",
-        "B": "Create An AWS CloudFormation template to create EC2 instances, load balancers, And DynamoDB tables to be launched when needed Configure DNS failover to point to the new disaster recovery Region's load balancer.",
-        "C": "Create An AWS CloudFormation template to create EC2 instances And a load balancer to be launched when needed. Configure the DynamoDB table as a global table. Configure DNS failover to point to the new disaster recovery Region's load balancer.",
+        "A": "Create An Auto Scaling group And a load balancer in the disaster recovery Region. Configure the DynamoDB table as a global table. Configure DNS failover to point to the new disaster recovery Region\'s load balancer.",
+        "B": "Create An AWS CloudFormation template to create EC2 instances, load balancers, And DynamoDB tables to be launched when needed Configure DNS failover to point to the new disaster recovery Region\'s load balancer.",
+        "C": "Create An AWS CloudFormation template to create EC2 instances And a load balancer to be launched when needed. Configure the DynamoDB table as a global table. Configure DNS failover to point to the new disaster recovery Region\'s load balancer.",
         "D": "Create An Auto Scaling group And load balancer in the disaster recovery Region. Configure the DynamoDB table as a global table. Create An Amazon CloudWatch a larm to trigger An AWS Lambda function that updates Amazon Route 53 pointing to the disaster recovery load balancer."
       },
       "correct_answer": "A",
@@ -456,7 +456,7 @@
       "options": {
         "A": "Create a read replica of the database. Configure IAM standard database authentication to grant the auditor access.",
         "B": "Export the database contents to text Files. Store the Files in An Amazon S3 bucket. Create A new IAM user for the auditor. Grant the user Access to the S3 bucket.",
-        "C": "Copy a snapshot of the database to An Amazon S3 bucket. Create An IAM user. Share the user's keys with the auditor to grant Access to the object in the S3 bucket.",
+        "C": "Copy a snapshot of the database to An Amazon S3 bucket. Create An IAM user. Share the user\'s keys with the auditor to grant Access to the object in the S3 bucket.",
         "D": "Create An encrypted snapshot of the database. Share the snapshot with the auditor. Allow Access to the AWS Key Management Service (AWS KMS) encryption key."
       },
       "correct_answer": "D",
@@ -489,7 +489,7 @@
     },
     {
       "id": "441",
-      "question": "A company hosts a multi-tier web Application on Amazon Linux Amazon EC2 instances behind An Application Load Balancer. The instances run in An Auto Scaling group across multiple Availability Zones. The company observes that the Auto Scaling group launches more On-Demand Instances when the application's end users Access high volumes of static web content. The company wants to optimize cost. What should A solutions architect do to redesign the Application MOST cost-effectively?",
+      "question": "A company hosts a multi-tier web Application on Amazon Linux Amazon EC2 instances behind An Application Load Balancer. The instances run in An Auto Scaling group across multiple Availability Zones. The company observes that the Auto Scaling group launches more On-Demand Instances when the application\'s end users Access high volumes of static web content. The company wants to optimize cost. What should A solutions architect do to redesign the Application MOST cost-effectively?",
       "options": {
         "A": "Update the Auto Scaling group to use Reserved Instances instead of On-Demand Instances.",
         "B": "Update the Auto Scaling group to scale by launching Spot Instances instead of On-Demand Instances.",
@@ -501,7 +501,7 @@
     },
     {
       "id": "442",
-      "question": "A company stores several petabytes of data across multiple AWS accounts. The company uses AWS Lake Formation to manage its data lake. The company's data science team wants to securely share selective data from its accounts with the company's engineering team for Analytical purposes. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company stores several petabytes of data across multiple AWS accounts. The company uses AWS Lake Formation to manage its data lake. The company\'s data science team wants to securely share selective data from its accounts with the company\'s engineering team for Analytical purposes. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Copy the required data to a common account. Create An IAM Access role in that account. Grant Access by specifying a permission policy that includes users from the engineering team accounts as trusted entities.",
         "B": "Use the Lake Formation permissions Grant command in each account where the data is stored to Allow the required engineering team users to Access the data.",
@@ -525,7 +525,7 @@
     },
     {
       "id": "444",
-      "question": "A company has hired A solutions architect to design a reliable architecture for its application. The Application consists of one Amazon RDS DB instance And two manually provisioned Amazon EC2 instances that run web servers. The EC2 instances are located in a single Availability Zone. An employee recently deleted the DB instance, And the Application was unavailable for 24 hours as a result. The company is concerned with the overall reliability of its environment. What should the solutions architect do to maximize reliability of the application's infrastructure?",
+      "question": "A company has hired A solutions architect to design a reliable architecture for its application. The Application consists of one Amazon RDS DB instance And two manually provisioned Amazon EC2 instances that run web servers. The EC2 instances are located in a single Availability Zone. An employee recently deleted the DB instance, And the Application was unavailable for 24 hours as a result. The company is concerned with the overall reliability of its environment. What should the solutions architect do to maximize reliability of the application\'s infrastructure?",
       "options": {
         "A": "Delete one EC2 instance And enable termination protection on the other EC2 instance. Update the DB instance to be Multi-AZ, And enable deletion protection.",
         "B": "Update the DB instance to be Multi-AZ, And enable deletion protection. Place the EC2 instances behind An Application Load Balancer, And run them in An EC2 Auto Scaling group across multiple Availability Zones.",
@@ -599,14 +599,14 @@
       "id": "450",
       "question": "A company has a three-tier web Application that is in a single server. The company wants to migrate the Application to the AWS Cloud. The company also wants the Application to align with the AWS Well-Architected Framework And to be consistent with AWS recommended best practices for security, scalability, And resiliency. Which combination of solutions will meet these requirements? (Choose three.)",
       "options": {
-        "A": "Create a VPC across two Availability Zones with the application's existing architecture. Host the Application with existing architecture on An Amazon EC2 instance in a private subnet in each Availability Zone with EC2 Auto Scaling groups. Secure the EC2 instance with security groups And network Access control lists (network ACLs).",
+        "A": "Create a VPC across two Availability Zones with the application\'s existing architecture. Host the Application with existing architecture on An Amazon EC2 instance in a private subnet in each Availability Zone with EC2 Auto Scaling groups. Secure the EC2 instance with security groups And network Access control lists (network ACLs).",
         "B": "Set up security groups And network Access control lists (network ACLs) to control Access to the database layer. Set up a single Amazon RDS database in a private subnet.",
         "C": "Create a VPC across two Availability Zones. Refactor the Application to host the web tier, Application tier, And database tier. Host each tier on its own private subnet with Auto Scaling groups for the web tier And Application tier.",
         "D": "Use a single Amazon RDS database. Allow database Access only from the Application tier security group.",
-        "E": "Use Elastic Load Balancers in front of the web tier. Control Access by using security groups containing references to each layer's security groups. F. Use An Amazon RDS database Multi-AZ cluster deployment in private subnets. Allow database Access only from Application tier security groups."
+        "E": "Use Elastic Load Balancers in front of the web tier. Control Access by using security groups containing references to each layer\'s security groups. F. Use An Amazon RDS database Multi-AZ cluster deployment in private subnets. Allow database Access only from Application tier security groups."
       },
       "correct_answer": "C",
-      "explanation": "This choice aligns with best practices by using separate subnets for each tier, allowing for better security And scalability. Auto Scaling groups provide elasticity And resiliency.\nE. Use Elastic Load Balancers in front of the web tier. Control Access by using security groups containing references to each layer's security groups.\nThis option introduces An Elastic Load Balancer (ELB) for the web tier, which enhances scalability And resiliency. Using security groups to control Access a dds An additional layer of security.\nF. Use An Amazon RDS database Multi-AZ cluster deployment in private subnets. Allow database Access only from Application tier security groups.\nThis option leverages Amazon RDS for the database tier, utilizing Multi-AZ for high Availability. Placing the RDS database in private subnets And restricting Access to the Application tier security groups enhances security."
+      "explanation": "This choice aligns with best practices by using separate subnets for each tier, allowing for better security And scalability. Auto Scaling groups provide elasticity And resiliency.\nE. Use Elastic Load Balancers in front of the web tier. Control Access by using security groups containing references to each layer\'s security groups.\nThis option introduces An Elastic Load Balancer (ELB) for the web tier, which enhances scalability And resiliency. Using security groups to control Access a dds An additional layer of security.\nF. Use An Amazon RDS database Multi-AZ cluster deployment in private subnets. Allow database Access only from Application tier security groups.\nThis option leverages Amazon RDS for the database tier, utilizing Multi-AZ for high Availability. Placing the RDS database in private subnets And restricting Access to the Application tier security groups enhances security."
     }
   ]
 }

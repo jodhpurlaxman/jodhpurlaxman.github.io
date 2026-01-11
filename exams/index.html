@@ -292,7 +292,7 @@ function updateBookmarkBtn() {
 }
 
 function updateTimerDisplay() {
-  const's = Math.max(0, Math.floor(examTimeLeft));
+  const\'s = Math.max(0, Math.floor(examTimeLeft));
   const mm = String(Math.floor(s/60)).padStart(2,'0');
   const ss = String(s%60).padStart(2,'0');
   timerDisplay.textContent = `${mm}:${ss}`;
@@ -349,7 +349,7 @@ function ensureExamTimer(resumeSeconds, restored){
       stopTimer();
     } else {
       examPaused = false;
-      // if an interval already exists, restart it to ensure it's active with correct time
+      // if an interval already exists, restart it to ensure it\'s active with correct time
       if (examTimerInterval) {
         stopTimer();
       }
