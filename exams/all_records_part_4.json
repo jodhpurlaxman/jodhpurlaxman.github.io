@@ -301,7 +301,7 @@
         "D": "Migrate the data from Aurora PostgreSQL to Amazon DynamoDB by using AWS Database Migration Service (AWS DMS). Modify the Lambda function to use the DynamoDB table."
       },
       "correct_answer": "A",
-      "explanation": "solutions architect determined that the CPU utilization and memory utilization were high on the database because of a large number of open connections. The solutions architect needs to prevent the timeout errors while making the least possible changes to the application.\nWhich solution will meet these requirements?\nB. Use Amazon RDS Proxy to create a proxy for the database. Modify the Lambda function to use the RDS Proxy endpoint instead of the database endpoint."
+      "explanation": "Configure provisioned concurrency for the Lambda function."
     },
     {
       "id": "176",
