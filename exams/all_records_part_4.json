@@ -96,8 +96,8 @@
         "C": "Amazon Route 53",
         "D": "Amazon S3 Transfer Acceleration"
       },
-      "correct_answer": "B",
-      "explanation": "A solutions architect is optimizing a website for an upcoming musical event. Videos of the performances will be streamed in real time and then will be available on demand. The event is expected to attract a global online audience.\n\nWhich service will improve the performance of both the real-time and on-demand streaming?\n A. Amazon CloudFront\nB. AWS Global Accelerator"
+      "correct_answer": "A",
+      "explanation": "A. Amazon CloudFront"
     },
     {
       "id": "159",
