@@ -174,7 +174,7 @@
     },
     {
       "id": "165",
-      "question": "A solutions architect must design a solution that uses Amazon Cloudfront with an Amazon S3 origin to store astatic website. The company s security policy requires that all website traffic be inspected by AWS WAF. How should the solutions architect comply with these requirements?",
+      "question": "A solutions architect must design a solution that uses Amazon Cloudfront with an Amazon S3 origin to store a static website. The company s security policy requires that all website traffic be inspected by AWS WAF. How should the solutions architect comply with these requirements?",
       "options": {
         "A": "Configure an S3 bucket policy to accept requests coming from the AWS WAF Amazon Resource Name (ARN) only.",
         "B": "Configure Amazon CloudFront to forward all incoming requests to AWS WAF before requesting content from the S3 origin.",
@@ -198,15 +198,15 @@
     },
     {
       "id": "167",
-      "question": "A company runs a production application on aFleet of Amazon EC2 instances. The application reads the data from an Amazon SQS queue and processes the messages in parallel. The message volume is unpredictable and often has intermittent traffic. This application should continually process messages without any downtime. Which solution meets these requirements MOST cost-effectively?",
+      "question": "A company runs a production application on a Fleet of Amazon EC2 instances. The application reads the data from an Amazon SQS queue and processes the messages in parallel. The message volume is unpredictable and often has intermittent traffic. This application should continually process messages without any downtime. Which solution meets these requirements MOST cost-effectively?",
       "options": {
         "A": "Use Spot Instances exclusively to handle the maximum capacity required.",
         "B": "Use Reserved Instances exclusively to handle the maximum capacity required.",
         "C": "Use Reserved Instances for the baseline capacity and use Spot Instances to handle additional capacity.",
         "D": "Use Reserved Instances for the baseline capacity and use On-Demand Instances to handle additional capacity."
       },
-      "correct_answer": "C",
-      "explanation": "Use Reserved Instances for the baseline capacity and use Spot Instances to handle additional capacity."
+      "correct_answer": "D",
+      "explanation": "Use Reserved Instances for the baseline capacity and use On-Demand Instances to handle additional capacity."
     },
     {
       "id": "168",
