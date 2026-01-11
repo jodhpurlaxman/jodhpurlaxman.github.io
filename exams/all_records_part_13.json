@@ -4,10 +4,10 @@
       "id": "601",
       "question": "A company runs its critical database on An Amazon RDS for PostgreSQL DB instance. The company wants to migrate to Amazon Aurora PostgreSQL with minimal downtime And data loss. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Create a DB snapshot of the RDS for PostgreSQL DB instance to populate Anew Aurora PostgreSQL DB cluster.",
-        "B": "Create An Aurora read replica of the RDS for PostgreSQL DB instance. Promote the Aurora read replicate to Anew Aurora PostgreSQL DB cluster.",
+        "A": "Create a DB snapshot of the RDS for PostgreSQL DB instance to populate A new Aurora PostgreSQL DB cluster.",
+        "B": "Create An Aurora read replica of the RDS for PostgreSQL DB instance. Promote the Aurora read replicate to A new Aurora PostgreSQL DB cluster.",
         "C": "Use data import from Amazon S3 to migrate the database to An Aurora PostgreSQL DB cluster.",
-        "D": "Use the pg_dump utility to back up the RDS for PostgreSQL database. Restore the backup to Anew Aurora PostgreSQL DB cluster."
+        "D": "Use the pg_dump utility to back up the RDS for PostgreSQL database. Restore the backup to A new Aurora PostgreSQL DB cluster."
       },
       "correct_answer": "B",
       "explanation": "Aurora Read Replica: Creating An Aurora read replica from the RDS for PostgreSQL DB instance is a low-impact operation that allows you to replicate the data to Aurora with minimal downtime.\nPromote to Aurora PostgreSQL DB Cluster: Once the read replica is in sync with the primary RDS instance, you can promote the Aurora read replica to become the new primary cluster."
@@ -158,7 +158,7 @@
     },
     {
       "id": "614",
-      "question": "A company is designing Anew multi-tier web Application that consists of the following components: \u2022 Web And Application servers that run on Amazon EC2 instances as part of Auto Scaling groups \u2022 An Amazon RDS DB instance for data storage A solutions architect needs to limit Access to the Application servers so that only the web servers can Access them. Which solution will meet these requirements?",
+      "question": "A company is designing A new multi-tier web Application that consists of the following components: \u2022 Web And Application servers that run on Amazon EC2 instances as part of Auto Scaling groups \u2022 An Amazon RDS DB instance for data storage A solutions architect needs to limit Access to the Application servers so that only the web servers can Access them. Which solution will meet these requirements?",
       "options": {
         "A": "Deploy AWS PrivateLink in front of the Application servers. Configure the network ACL to Allow only the web servers to Access the Application servers.",
         "B": "Deploy a VPC endpoint in front of the Application servers. Configure the security group to Allow only the web servers to Access the Application servers.",
@@ -222,7 +222,7 @@
       "question": "A solutions architect is designing a security solution for A company that wants to provide developers with individual AWS accounts through AWS Organizations, while also maintaining standard security controls. Because the individual developers will have AWS account root user-level Access to their own accounts, the solutions architect wants to ensure that the mandatory AWS Cloudtrail configuration that is applied to new developer accounts is not modified. Which action meets these requirements?",
       "options": {
         "A": "Create An IAM policy that prohibits changes to CloudTrail. And Attach it to the root user.",
-        "B": "Create Anew trail in CloudTrail from within the developer accounts with the organization trails option enabled.",
+        "B": "Create A new trail in CloudTrail from within the developer accounts with the organization trails option enabled.",
         "C": "Create a service control policy (SCP) that prohibits changes to CloudTrail, And Attach it the developer accounts.",
         "D": "Create a service-linked role for CloudTrail with a policy condition that allows changes only from An Amazon Resource Name (ARN) in the management account."
       },
@@ -255,7 +255,7 @@
     },
     {
       "id": "622",
-      "question": "A company is creating Anew web Application for its subscribers. The Application will consist of a static single page And a persistent database layer. The Application will have millions of users for 4 hours in the morning, but the Application will have only a few thousand users during the rest of the day. The company's data architects have requested the ability to rapidly evolve their schema. Which solutions will meet these requirements And provide the MOST scalability? (Choose two.)",
+      "question": "A company is creating A new web Application for its subscribers. The Application will consist of a static single page And a persistent database layer. The Application will have millions of users for 4 hours in the morning, but the Application will have only a few thousand users during the rest of the day. The company's data architects have requested the ability to rapidly evolve their schema. Which solutions will meet these requirements And provide the MOST scalability? (Choose two.)",
       "options": {
         "A": "Deploy Amazon DynamoDB as the database solution. Provision on-demand capacity.",
         "B": "Deploy Amazon Aurora as the database solution. Choose the serverless DB engine mode.",
@@ -376,7 +376,7 @@
     },
     {
       "id": "632",
-      "question": "A company is creating Anew Application that will store a large amount of data. The data will be Analyzed hourly And will be modified by several Amazon EC2 Linux instances that are deployed across multiple Availability Zones. The needed amount of storage space will continue to grow for the next 6 months. Which storage solution should A solutions architect recommend to meet these requirements?",
+      "question": "A company is creating A new Application that will store a large amount of data. The data will be Analyzed hourly And will be modified by several Amazon EC2 Linux instances that are deployed across multiple Availability Zones. The needed amount of storage space will continue to grow for the next 6 months. Which storage solution should A solutions architect recommend to meet these requirements?",
       "options": {
         "A": "Store the data in Amazon S3 Glacier. Update the S3 Glacier vault policy to Allow Access to the Application instances.",
         "B": "Store the data in An Amazon Elastic Block Store (Amazon EBS) volume. Mount the EBS volume on the Application instances.",
@@ -415,7 +415,7 @@
       "question": "A company uses Amazon FSx for Netapp ONTAP in its primary AWS Region for CIFS And NFS File shares. Applications that run on Amazon EC2 instances Access the File shares. The company needs a storage disaster recovery (DR) solution in a secondary Region. The data that is replicated in the secondary Region needs to be accessed by using the same protocols as the primary Region. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Create An AWS Lambda function to copy the data to An Amazon S3 bucket. Replicate the S3 bucket to the secondary Region.",
-        "B": "Create a backup of the FSx for ONTAP volumes by using AWS Backup. Copy the volumes to the secondary Region. Create Anew FSx for ONTAP instance from the backup.",
+        "B": "Create a backup of the FSx for ONTAP volumes by using AWS Backup. Copy the volumes to the secondary Region. Create A new FSx for ONTAP instance from the backup.",
         "C": "Create An FSx for ONTAP instance in the secondary Region. Use NetApp SnapMirror to replicate data from the primary Region to the secondary Region.",
         "D": "Create An Amazon Elastic File System (Amazon EFS) volume. Migrate the current data to the volume. Replicate the volume to the secondary Region."
       },
@@ -436,7 +436,7 @@
     },
     {
       "id": "637",
-      "question": "A solutions architect is designing Anew service behind Amazon API Gateway. The request patterns for the service will be unpredictable And can change suddenly from 0 requests to over 500 per second. The total size of the data that needs to be persisted in a backend database is currently less than 1 GB with unpredictable future growth. Data can be queried using simple key-value requests. Which combination ofAWS services would meet these requirements? (Choose two.)",
+      "question": "A solutions architect is designing A new service behind Amazon API Gateway. The request patterns for the service will be unpredictable And can change suddenly from 0 requests to over 500 per second. The total size of the data that needs to be persisted in a backend database is currently less than 1 GB with unpredictable future growth. Data can be queried using simple key-value requests. Which combination ofAWS services would meet these requirements? (Choose two.)",
       "options": {
         "A": "AWS Fargate",
         "B": "AWS Lambda",
@@ -461,7 +461,7 @@
     },
     {
       "id": "639",
-      "question": "A company is building Anew furniture inventory application. The company has deployed the Application on a Fleet ofamazon EC2 instances across multiple Availability Zones. The EC2 instances run behind An Application Load Balancer (ALB) in their VPC. A solutions architect has observed that incoming traffic seems to favor one EC2 instance, resulting in latency for some requests. What should the solutions architect do to resolve this issue?",
+      "question": "A company is building A new furniture inventory application. The company has deployed the Application on a Fleet ofamazon EC2 instances across multiple Availability Zones. The EC2 instances run behind An Application Load Balancer (ALB) in their VPC. A solutions architect has observed that incoming traffic seems to favor one EC2 instance, resulting in latency for some requests. What should the solutions architect do to resolve this issue?",
       "options": {
         "A": "Disable session affinity (sticky sessions) on the ALB",
         "B": "Replace the ALBwith A network Load Balancer",
@@ -478,11 +478,11 @@
         "A": "Attach the kms:decrypt permission to the Lambda function's resource policy",
         "B": "Grant the decrypt permission for the Lambda IAM role in the KMS key's policy",
         "C": "Grant the decrypt permission for the Lambda resource policy in the KMS key's policy.",
-        "D": "Create Anew IAM policy with the kms:decrypt permission And Attach the policy to the Lambda function.",
-        "E": "Create Anew IAM role with the kms:decrypt permission And Attach the execution role to the Lambda function."
+        "D": "Create A new IAM policy with the kms:decrypt permission And Attach the policy to the Lambda function.",
+        "E": "Create A new IAM role with the kms:decrypt permission And Attach the execution role to the Lambda function."
       },
       "correct_answer": "BE",
-      "explanation": "E. Create Anew IAM role with the kms:decrypt permission And Attach the execution role to the Lambda function."
+      "explanation": "E. Create A new IAM role with the kms:decrypt permission And Attach the execution role to the Lambda function."
     },
     {
       "id": "641",

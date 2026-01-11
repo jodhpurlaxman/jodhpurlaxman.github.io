@@ -53,10 +53,10 @@
       "id": "55",
       "question": "A solutions architect is developing a VPC architecture that includes multiple subnets. The architecture will host applications that use Amazon EC2 instances and Amazon RDS DB instances. The architecture consists of six subnets in two Availability Zones. Each Availability Zone includes a public subnet, a private subnet, and a dedicated subnet for databases. Only EC2 instances that run in the private subnets can have access to the RDS databases. Which solution will meet these requirements?",
       "options": {
-        "A": "Create Anew route table that excludes the route to the public subnets' CIDR blocks. Associate the route table with the database subnets.",
+        "A": "Create A new route table that excludes the route to the public subnets' CIDR blocks. Associate the route table with the database subnets.",
         "B": "Create a security group that denies inbound traffic from the security group that is assigned to instances in the public subnets. Attach the security group to the DB instances.",
         "C": "Create a security group that allows inbound traffic from the security group that is assigned to instances in the private subnets. Attach the security group to the DB instances.",
-        "D": "Create Anew peering connection between the public subnets and the private subnets. Create a different peering connection between the private subnets and the database subnets."
+        "D": "Create A new peering connection between the public subnets and the private subnets. Create a different peering connection between the private subnets and the database subnets."
       },
       "correct_answer": "C",
       "explanation": "Create a security group that allows inbound traffic from the security group that is assigned to instances in the private subnets. Attach the security group to the DB instances."
@@ -135,7 +135,7 @@
     },
     {
       "id": "62",
-      "question": "A company is deploying Anew public web application to AWS. The application will run behind an Application Load Balancer (ALB). The application needs to be encrypted at the edge with an SSL/TLS certificate that is issued by an external certificate authority (CA). The certificate must be rotated each year before the certificate expires. What should A solutions architect do to meet these requirements?",
+      "question": "A company is deploying A new public web application to AWS. The application will run behind an Application Load Balancer (ALB). The application needs to be encrypted at the edge with an SSL/TLS certificate that is issued by an external certificate authority (CA). The certificate must be rotated each year before the certificate expires. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Use AWS CertiFicate Manager (ACM) to issue an SSL/TLS certiFicate. Apply the certiFicate to the ALB. Use the managed renewal feature to automatically rotate the certiFicate.",
         "B": "Use AWS CertiFicate Manager (ACM) to issue an SSL/TLS certiFicate. Import the key material from the certiFicate. Apply the certiFicate to the A LUse the managed renewal feature to automatically rotate the certiFicate.",
@@ -197,7 +197,7 @@
       "id": "67",
       "question": "A company hosts an application on multiple Amazon EC2 instances. The application processes messages from an Amazon SQS queue, writes to an Amazon RDS table, and deletes the message from the queue. Occasional duplicate records are found in the RDS table. The SQS queue does not contain any duplicate messages. What should A solutions architect do to ensure messages are being processed once only?",
       "options": {
-        "A": "Use the CreateQueue API call to create Anew queue.",
+        "A": "Use the CreateQueue API call to create A new queue.",
         "B": "Use the A ddPermission API call to add appropriate permissions.",
         "C": "Use the ReceiveMessage API call to set an appropriate wait time.",
         "D": "Use the ChangeMessageVisibility API call to increase the visibility timeout."
@@ -207,7 +207,7 @@
     },
     {
       "id": "68",
-      "question": "A solutions architect is designing Anew hybrid architecture to extend A company's on-premises infrastructure to AWS. The company requires a highly available connection with consistent low latency to an AWS Region. The company needs to minimize costs and is willing to accept slower traffic if the primary connection fails. What should the solutions architect do to meet these requirements?",
+      "question": "A solutions architect is designing A new hybrid architecture to extend A company's on-premises infrastructure to AWS. The company requires a highly available connection with consistent low latency to an AWS Region. The company needs to minimize costs and is willing to accept slower traffic if the primary connection fails. What should the solutions architect do to meet these requirements?",
       "options": {
         "A": "Provision an AWS Direct Connect connection to a Region. Provision a VPN connection as a backup if the primary Direct Connect connection fails.",
         "B": "Provision a VPN tunnel connection to a Region for private connectivity. Provision a second VPN tunnel for private connectivity and as a backup if the primary VPN connection fails.",
@@ -357,15 +357,15 @@
       "options": {
         "A": "Make the encrypted AMI and snapshots publicly available. Modify the key policy to allow the MSP Partner's AWS account to use the key.",
         "B": "Modify the launchPermission property of the A MI. Share the AMI with the MSP Partner's AWS account only. Modify the key policy to allow the MSP Partner's AWS account to use the key.",
-        "C": "Modify the launchPermission property of the A MI. Share the AMI with the MSP Partner's AWS account only. Modify the key policy to trust Anew KMS key that is owned by the MSP Partner for encryption.",
-        "D": "Export the AMI from the source account to an Amazon S3 bucket in the MSP Partner's AWS account, Encrypt the S3 bucket with Anew KMS key that is owned by the MSP Partner. Copy and launch the AMI in the MSP Partner's AWS account."
+        "C": "Modify the launchPermission property of the A MI. Share the AMI with the MSP Partner's AWS account only. Modify the key policy to trust A new KMS key that is owned by the MSP Partner for encryption.",
+        "D": "Export the AMI from the source account to an Amazon S3 bucket in the MSP Partner's AWS account, Encrypt the S3 bucket with A new KMS key that is owned by the MSP Partner. Copy and launch the AMI in the MSP Partner's AWS account."
       },
       "correct_answer": "B",
       "explanation": ""
     },
     {
       "id": "81",
-      "question": "A solutions architect is designing the cloud architecture for Anew application being deployed on AWS. The process should run in parallel while adding and removing application nodes as needed based on the number of jobs to be processed. The processor application is stateless. The solutions architect must ensure that the application is loosely coupled and the job items are durably stored. Which design should the solutions architect use?",
+      "question": "A solutions architect is designing the cloud architecture for A new application being deployed on AWS. The process should run in parallel while adding and removing application nodes as needed based on the number of jobs to be processed. The processor application is stateless. The solutions architect must ensure that the application is loosely coupled and the job items are durably stored. Which design should the solutions architect use?",
       "options": {
         "A": "Create an Amazon SNS topic to send the jobs that need to be processed. Create an Amazon Machine Image (AMI) that consists of the processor application. Create a launch  configuration that uses the A MI. Create an Auto Scaling group using the launch  configuration. Set the scaling policy for the Auto Scaling group to add and remove nodes based on CPU usage.",
         "B": "Create an Amazon SQS queue to hold the jobs that need to be processed. Create an Amazon Machine Image (AMI) that consists of the processor application. Create a launch  configuration that uses the A MI. Create an Auto Scaling group using the launch  configuration. Set the scaling policy for the Auto Scaling group to add and remove nodes based on network usage.",
@@ -413,7 +413,7 @@
     },
     {
       "id": "85",
-      "question": "A company has a production web application in which users upload documents through a web interface or a mobile app. According to Anew regulatory requirement. new documents cannot be modified or deleted after they are stored. What should A solutions architect do to meet this requirement?",
+      "question": "A company has a production web application in which users upload documents through a web interface or a mobile app. According to A new regulatory requirement. new documents cannot be modified or deleted after they are stored. What should A solutions architect do to meet this requirement?",
       "options": {
         "A": "Store the uploaded documents in an Amazon S3 bucket with S3 Versioning and S3 Object Lock enabled.",
         "B": "Store the uploaded documents in an Amazon S3 bucket. Configure an S3 Lifecycle policy to archive the documents periodically.",
@@ -442,10 +442,10 @@
         "A": "Provision an Amazon RDS proxy to sit between the Lambda functions and the database. Configure the Lambda functions to connect to the RDS proxy.",
         "B": "Increase the run time of the Lambda functions to the maximum. Create a retry mechanism in the code that stores the customer data in the database.",
         "C": "Persist the customer data to Lambda local storage. Configure new Lambda functions to scan the local storage to save the customer data to the database.",
-        "D": "Store the customer data in an Amazon Simple Queue Service (Amazon SQS) FIFO queue. Create Anew Lambda function that polls the queue and stores the customer data in the database."
+        "D": "Store the customer data in an Amazon Simple Queue Service (Amazon SQS) FIFO queue. Create A new Lambda function that polls the queue and stores the customer data in the database."
       },
       "correct_answer": "A",
-      "explanation": "solutions architect needs to design a solution that stores customer data that is created during database upgrades.\nWhich solution will meet these requirements? \nD. Store the customer data in an Amazon Simple Queue Service (Amazon SQS) FIFO queue. Create Anew Lambda function that polls the queue and stores the customer data in the database."
+      "explanation": "solutions architect needs to design a solution that stores customer data that is created during database upgrades.\nWhich solution will meet these requirements? \nD. Store the customer data in an Amazon Simple Queue Service (Amazon SQS) FIFO queue. Create A new Lambda function that polls the queue and stores the customer data in the database."
     },
     {
       "id": "88",
@@ -527,7 +527,7 @@
         "A": "Configure Amazon EMR to read text files from Amazon S3. Run processing scripts to transform the data. Store the resulting JSON File in an Amazon Aurora DB cluster.",
         "B": "Configure Amazon S3 to send an event notiFication to an Amazon Simple Queue Service (Amazon SQS) queue. Use Amazon EC2 instances to read from the queue and process the data. Store the resulting JSON File in Amazon DynamoDB.",
         "C": "Configure Amazon S3 to send an event notiFication to an Amazon Simple Queue Service (Amazon SQS) queue. Use an AWS Lambda function to read from the queue and process the data. Store the resulting JSON File in Amazon DynamoDB.",
-        "D": "Configure Amazon EventBridge (Amazon CloudWatch Events) to send an event to Amazon Kinesis Data Streams when Anew File is uploaded. Use an AWS Lambda function to consume the event from the stream and process the data. Store the resulting JSON File in an Amazon Aurora DB cluster."
+        "D": "Configure Amazon EventBridge (Amazon CloudWatch Events) to send an event to Amazon Kinesis Data Streams when A new File is uploaded. Use an AWS Lambda function to consume the event from the stream and process the data. Store the resulting JSON File in an Amazon Aurora DB cluster."
       },
       "correct_answer": "C",
       "explanation": "Configure Amazon S3 to send an event notification to an Amazon Simple Queue Service (Amazon SQS) queue. Use an AWS Lambda function to read from the queue and process the data. Store the resulting JSON file in Amazon DynamoDB."

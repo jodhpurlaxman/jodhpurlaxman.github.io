@@ -208,7 +208,7 @@
     },
     {
       "id": "568",
-      "question": "A solutions architect is designing the storage architecture for Anew web Application used for storing And viewing engineering drawings. All Application components will be deployed on the AWS infrastructure. The Application design must support caching to minimize the amount of time that users wait for the engineering drawings to load. The Application must be able to store petabytes of data. Which combination of storage And caching should the solutions architect use?",
+      "question": "A solutions architect is designing the storage architecture for A new web Application used for storing And viewing engineering drawings. All Application components will be deployed on the AWS infrastructure. The Application design must support caching to minimize the amount of time that users wait for the engineering drawings to load. The Application must be able to store petabytes of data. Which combination of storage And caching should the solutions architect use?",
       "options": {
         "A": "Amazon S3 with Amazon CloudFront",
         "B": "Amazon S3 Glacier with Amazon ElastiCache",
@@ -280,7 +280,7 @@
     },
     {
       "id": "574",
-      "question": "A Financial services company launched Anew Application that uses An Amazon RDS for MySQL database. The company uses the Application to track stock market trends. The company needs to operate the Application for only 2 hours at the end of each week. The company needs to optimize the cost of running the database. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A Financial services company launched A new Application that uses An Amazon RDS for MySQL database. The company uses the Application to track stock market trends. The company needs to operate the Application for only 2 hours at the end of each week. The company needs to optimize the cost of running the database. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Migrate the existing RDS for MySQL database to An Aurora Serverless v2 MySQL database cluster.",
         "B": "Migrate the existing RDS for MySQL database to An Aurora MySQL database cluster.",
@@ -428,7 +428,7 @@
       "options": {
         "A": "Have the R&D AWS account be part of both organizations during the transition.",
         "B": "Invite the R&D AWS account to be part of the new organization after the R&D AWS account has left the prior organization.",
-        "C": "Create Anew R&D AWS account in the new organization. Migrate resources from the prior R&D AWS account to the new R&D AWS account.",
+        "C": "Create A new R&D AWS account in the new organization. Migrate resources from the prior R&D AWS account to the new R&D AWS account.",
         "D": "Have the R&D AWS account join the new organization. Make the new management account a member of the prior organization."
       },
       "correct_answer": "B",

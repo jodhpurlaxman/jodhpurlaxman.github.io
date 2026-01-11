@@ -27,7 +27,7 @@
     },
     {
       "id": "503",
-      "question": "A company runs An infrastructure monitoring service. The company is building Anew feature that will enable the service to monitor data in customer AWS accounts. The new feature will call AWS APIs in customer accounts to describe Amazon EC2 instances And read Amazon Cloudwatch metrics. What should the company do to obtain Access to customer accounts in the MOST secure way?",
+      "question": "A company runs An infrastructure monitoring service. The company is building A new feature that will enable the service to monitor data in customer AWS accounts. The new feature will call AWS APIs in customer accounts to describe Amazon EC2 instances And read Amazon Cloudwatch metrics. What should the company do to obtain Access to customer accounts in the MOST secure way?",
       "options": {
         "A": "Ensure that the customers create An IAM role in their account with read-only EC2 And CloudWatch permissions And a trust policy to the company's account.",
         "B": "Create a serverless API that implements a token vending machine to provide temporary AWS credentials for a role with read-only EC2 And CloudWatch permissions.",
@@ -55,8 +55,8 @@
       "options": {
         "A": "Purchase a 1-year Savings Plan for Amazon EC2 that covers the instance family of the Auto Scaling group that the batch job uses.",
         "B": "Purchase a 1-year Reserved Instance for the speciFic instance type And operating system of the instances in the Auto Scaling group that the batch job uses.",
-        "C": "Create Anew launch template for the Auto Scaling group. Set the instances to Spot Instances. Set a policy to scale out based on CPU usage.",
-        "D": "Create Anew launch template for the Auto Scaling group. Increase the instance size. Set a policy to scale out based on CPU usage."
+        "C": "Create A new launch template for the Auto Scaling group. Set the instances to Spot Instances. Set a policy to scale out based on CPU usage.",
+        "D": "Create A new launch template for the Auto Scaling group. Increase the instance size. Set a policy to scale out based on CPU usage."
       },
       "correct_answer": "C",
       "explanation": "Spot Instances: Spot Instances Allow you to bid for unused EC2 capacity at a potentially lower cost than On-Demand pricing. This can result in significant cost savings for batch jobs that are fault-tolerant And can be interrupted or retried.\nScaling Policy: Setting a policy to scale out based on CPU usage ensures that additional Spot Instances are launched when the demand for processing power increases during batch job execution. This helps in handling varying workloads efficiently."
@@ -233,7 +233,7 @@
     },
     {
       "id": "520",
-      "question": "A company is designing Anew web Application that will run on Amazon EC2 Instances. The Application will use Amazon DynamoDB for backend data storage. The Application traffic will be unpredictable. The company expects that the Application read And write throughput to the database will be moderate to high. The company needs to scale in response to Application traffic. Which DynamoDB table configuration will meet these requirements MOST cost-effectively?",
+      "question": "A company is designing A new web Application that will run on Amazon EC2 Instances. The Application will use Amazon DynamoDB for backend data storage. The Application traffic will be unpredictable. The company expects that the Application read And write throughput to the database will be moderate to high. The company needs to scale in response to Application traffic. Which DynamoDB table configuration will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Configure DynamoDB with provisioned read And write by using the DynamoDB Standard table class. Set DynamoDB Auto scaling to a maximum deFined capacity.",
         "B": "Configure DynamoDB in on-demand mode by using the DynamoDB Standard table class.",
@@ -417,10 +417,10 @@
       "id": "535",
       "question": "A company is building An Amazon Elastic Kubernetes Service (Amazon EKS) cluster for its workloads. All secrets that are stored in Amazon EKS must be encrypted in the Kubernetes etcd key-value store. Which solution will meet these requirements?",
       "options": {
-        "A": "Create Anew AWS Key Management Service (AWS KMS) key. Use AWS Secrets Manager to manage, rotate, And store All secrets in Amazon EKS.",
-        "B": "Create Anew AWS Key Management Service (AWS KMS) key. Enable Amazon EKS KMS secrets encryption on the Amazon EKS cluster.",
+        "A": "Create A new AWS Key Management Service (AWS KMS) key. Use AWS Secrets Manager to manage, rotate, And store All secrets in Amazon EKS.",
+        "B": "Create A new AWS Key Management Service (AWS KMS) key. Enable Amazon EKS KMS secrets encryption on the Amazon EKS cluster.",
         "C": "Create the Amazon EKS cluster with default options. Use the Amazon Elastic Block Store (Amazon EBS) Container Storage Interface (CSI) driver as An a dd-on.",
-        "D": "Create Anew AWS Key Management Service (AWS KMS) key with the alias/AWS/ebs alias. Enable default Amazon Elastic Block Store (Amazon EBS) volume encryption for the account."
+        "D": "Create A new AWS Key Management Service (AWS KMS) key with the alias/AWS/ebs alias. Enable default Amazon Elastic Block Store (Amazon EBS) volume encryption for the account."
       },
       "correct_answer": "B",
       "explanation": "B. This option is the most appropriate for encrypting secrets stored in the Kubernetes etcd key-value store within Amazon EKS. Amazon EKS KMS secrets encryption allows you to encrypt secrets in etcd using An AWS Key Management Service (KMS) key. This enhances security by ensuring that the secrets are encrypted at rest."
@@ -454,9 +454,9 @@
       "question": "A global video streaming company uses Amazon Cloudfront as a content distribution network (CDN). The company wants to roll out content in a phased manner across multiple countries. The company needs to ensure that viewers who are outside the countries to which the company rolls out content are not able to view the content. Which solution will meet these requirements?",
       "options": {
         "A": "Add geographic restrictions to the content in CloudFront by using An Allow list. Set up a custom error message.",
-        "B": "Set up Anew URL tor restricted content. Authorize Access by using a signed URL And cookies. Set up a custom error message.",
+        "B": "Set up A new URL tor restricted content. Authorize Access by using a signed URL And cookies. Set up a custom error message.",
         "C": "Encrypt the data for the content that the company distributes. Set up a custom error message.",
-        "D": "Create Anew URL for restricted content. Set up a time-restricted Access policy for signed URLs."
+        "D": "Create A new URL for restricted content. Set up a time-restricted Access policy for signed URLs."
       },
       "correct_answer": "A",
       "explanation": "CloudFront allows you to set up geographic restrictions by creating An Allow list. This allows you to specify the countries from which viewers are allowed to Access your content. Viewers from countries not in the Allow list will be restricted from accessing the content."
@@ -517,7 +517,7 @@
         "A": "From the AWS Account Management Console of the management account, turn on discount sharing from the billing preferences section.",
         "B": "From the AWS Account Management Console of the account that purchased the existing Savings Plan, turn on discount sharing from the billing preferences section. Include All accounts.",
         "C": "From the AWS Organizations management account, use AWS Resource Access Manager (AWS RAM) to share the Savings Plan with other accounts.",
-        "D": "Create An organization in AWS Organizations in Anew payer account. Invite the other AWS accounts to join the organization from the management account.",
+        "D": "Create An organization in AWS Organizations in A new payer account. Invite the other AWS accounts to join the organization from the management account.",
         "E": "Create An organization in AWS Organizations in the existing AWS account with the existing EC2 instances And Savings Plan. Invite the other AWS accounts to join the organization from the management account."
       },
       "correct_answer": "AD",
@@ -528,12 +528,12 @@
       "question": "A retail company uses a regional Amazon API Gateway API for its public REST APIs. The API Gateway endpoint is a custom domain name that points to An Amazon Route 53 alias record. A solutions architect needs to create a solution that has minimal effects on customers And minimal data loss to release the new version of APIs. Which solution will meet these requirements?",
       "options": {
         "A": "Create a canary release deployment stage for API Gateway. Deploy the latest API version. Point An appropriate percentage of traffic to the canary stage. After API veriFication, promote the canary stage to the production stage.",
-        "B": "Create Anew API Gateway endpoint with Anew version of the API in OpenAPI YAML File format. Use the import-to-update operation in merge mode into the API in API Gateway. Deploy the new version of the API to the production stage.",
-        "C": "Create Anew API Gateway endpoint with Anew version of the API in OpenAPI JSON File format. Use the import-to-update operation in overwrite mode into the API in API Gateway. Deploy the new version of the API to the production stage.",
-        "D": "Create Anew API Gateway endpoint with new versions of the API deFinitions. Create a custom domain name for the new API Gateway API  Point the Route 53 alias record to the new API Gateway API custom domain name."
+        "B": "Create A new API Gateway endpoint with A new version of the API in OpenAPI YAML File format. Use the import-to-update operation in merge mode into the API in API Gateway. Deploy the new version of the API to the production stage.",
+        "C": "Create A new API Gateway endpoint with A new version of the API in OpenAPI JSON File format. Use the import-to-update operation in overwrite mode into the API in API Gateway. Deploy the new version of the API to the production stage.",
+        "D": "Create A new API Gateway endpoint with new versions of the API deFinitions. Create a custom domain name for the new API Gateway API  Point the Route 53 alias record to the new API Gateway API custom domain name."
       },
       "correct_answer": "A",
-      "explanation": "A canary release deployment is a strategy in software development And release management where Anew version of a software Application or service is gradually rolled out to a small subset of users before making it available to the entire user base."
+      "explanation": "A canary release deployment is a strategy in software development And release management where A new version of a software Application or service is gradually rolled out to a small subset of users before making it available to the entire user base."
     },
     {
       "id": "545",

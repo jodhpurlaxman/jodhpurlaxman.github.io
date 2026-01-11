@@ -2,7 +2,7 @@
   "questions": [
     {
       "id": "251",
-      "question": "An Amazon EC2 instance is located in a private subnet in Anew VPC. This subnet does not have outbound internet access, but the EC2 instance needs the ability to download monthly security updates from an outside vendor. What should A solutions architect do to meet these requirements?",
+      "question": "An Amazon EC2 instance is located in a private subnet in A new VPC. This subnet does not have outbound internet access, but the EC2 instance needs the ability to download monthly security updates from an outside vendor. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Create an internet gateway, and attach it to the VPC. Configure the private subnet route table to use the internet gateway as the default route.",
         "B": "Create An AT gateway, and place it in a public subnet. Configure the private subnet route table to use the NAT gateway as the default route.",
@@ -95,13 +95,13 @@
         "D": "Create an AWS Glue extract, transform, and load (ETL) job to convert the .csv files to Parquet format and place the output files into an S3 bucket. Create an AWS Lambda function for each S3 PUT event to invoke the ETL job."
       },
       "correct_answer": "D",
-      "explanation": "AWS Glue ETL Job:\nAWS Glue is a fully managed extract, transform, and load (ETL) service that can be used to convert data formats.\nBy creating an AWS Glue ETL job, you can offload the conversion process to a fully managed service, reducing operational overhead.\nAWS Lambda for S3 PUT Events:\nAWS Lambda can be configured to trigger on S3 PUT events. This ensures that the ETL job is invoked automatically each time Anew .csv file is uploaded to the S3 bucket.\nThe Lambda function acts as a glue between the S3 events and the Glue ETL job."
+      "explanation": "AWS Glue ETL Job:\nAWS Glue is a fully managed extract, transform, and load (ETL) service that can be used to convert data formats.\nBy creating an AWS Glue ETL job, you can offload the conversion process to a fully managed service, reducing operational overhead.\nAWS Lambda for S3 PUT Events:\nAWS Lambda can be configured to trigger on S3 PUT events. This ensures that the ETL job is invoked automatically each time A new .csv file is uploaded to the S3 bucket.\nThe Lambda function acts as a glue between the S3 events and the Glue ETL job."
     },
     {
       "id": "259",
       "question": "A company is implementing new data retention policies for all databases that run on Amazon RDS DB instances. The company must retain daily backups for a minimum period of 2 years. The backups must be consistent and restorable. Which solution should A solutions architect recommend to meet these requirements?",
       "options": {
-        "A": "Create a backup vault in AWS Backup to retain RDS backups. Create Anew backup plan with a daily schedule and an expiration period of 2 years after creation. Assign the RDS DB instances to the backup plan.",
+        "A": "Create a backup vault in AWS Backup to retain RDS backups. Create A new backup plan with a daily schedule and an expiration period of 2 years after creation. Assign the RDS DB instances to the backup plan.",
         "B": "Configure a backup window for the RDS DB instances for daily snapshots. Assign a snapshot retention policy of 2 years to each RDS DB instance. Use Amazon Data Lifecycle Manager (Amazon DLM) to schedule snapshot deletions.",
         "C": "Configure database transaction logs to be automatically backed up to Amazon CloudWatch Logs with an expiration period of 2 years.",
         "D": "Configure an AWS Database Migration Service (AWS DMS) replication task. Deploy a replication instance, and conFigure a change data capture (CDC) task to stream database changes to Amazon S3 as the target. Configure S3 Lifecycle policies to delete the snapshots after 2 years."
@@ -500,7 +500,7 @@
     },
     {
       "id": "292",
-      "question": "A company is preparing Anew data platform that will ingest real-time streaming data from multiple sources. The company needs to transform the data before writing the data to Amazon S3. The company needs the ability to use SQL to query the transformed data. Which solutions will meet these requirements? (Choose two.)",
+      "question": "A company is preparing A new data platform that will ingest real-time streaming data from multiple sources. The company needs to transform the data before writing the data to Amazon S3. The company needs the ability to use SQL to query the transformed data. Which solutions will meet these requirements? (Choose two.)",
       "options": {
         "A": "Use Amazon Kinesis Data Streams to stream the data. Use Amazon Kinesis Data Analytics to transform the data. Use Amazon Kinesis Data Firehose to write the data to Amazon S3. Use Amazon Athena to query the transformed data from Amazon S3.",
         "B": "Use Amazon Managed Streaming for Apache Kafka (Amazon MSK) to stream the data. Use AWS Glue to transform the data and to write the data to Amazon S3. Use Amazon Athena to query the transformed data from Amazon S3.",
@@ -513,7 +513,7 @@
     },
     {
       "id": "293",
-      "question": "A company has an on-premises volume backup solution that has reached its end of life. The company wants to use AWS as part of Anew backup solution and wants to maintain local access to all the data while it is backed up on AWS. The company wants to ensure that the data backed up on AWS is automatically and securely transferred. Which solution meets these requirements?",
+      "question": "A company has an on-premises volume backup solution that has reached its end of life. The company wants to use AWS as part of A new backup solution and wants to maintain local access to all the data while it is backed up on AWS. The company wants to ensure that the data backed up on AWS is automatically and securely transferred. Which solution meets these requirements?",
       "options": {
         "A": "Use AWS Snowball to migrate data out of the on-premises solution to Amazon S3. Configure on-premises systems to mount the Snowball S3 endpoint to provide local access to the data.",
         "B": "Use AWS Snowball Edge to migrate data out of the on-premises solution to Amazon S3. Use the Snowball Edge File interface to provide on- premises systems with local access to the data.",
@@ -549,7 +549,7 @@
     },
     {
       "id": "296",
-      "question": "A development team has launched Anew application that is hosted on Amazon EC2 instances inside adevelopment VPC. A solutions architect needs to create Anew VPC in the same account. The new VPC will be peered with the development VPC. The VPC CIDR block for the development VPC is 192.168.0.0/24. The solutions architect needs to create aCIDR block for the new VPC. The CIDR block must be valid for a VPC peering connection to the development VPC. What is the SMALLEST CIDR block that meets these requirements?",
+      "question": "A development team has launched A new application that is hosted on Amazon EC2 instances inside adevelopment VPC. A solutions architect needs to create A new VPC in the same account. The new VPC will be peered with the development VPC. The VPC CIDR block for the development VPC is 192.168.0.0/24. The solutions architect needs to create aCIDR block for the new VPC. The CIDR block must be valid for a VPC peering connection to the development VPC. What is the SMALLEST CIDR block that meets these requirements?",
       "options": {
         "A": "10.0.1.0/32",
         "B": "192.168.0.0/24",

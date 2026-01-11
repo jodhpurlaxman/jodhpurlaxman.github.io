@@ -469,7 +469,7 @@
         "A": "Create a route table entry for the endpoint",
         "B": "Create a gateway endpoint for DynamoDB",
         "C": "Create an interface endpoint for DynamoDB",
-        "D": "Create Anew private DynamoDB table",
+        "D": "Create A new private DynamoDB table",
         "E": "Create VPC peering between VPC and DynamoDB"
       },
       "correct_answer": "AB",

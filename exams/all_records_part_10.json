@@ -164,7 +164,7 @@
       "question": "A company hosts An online shopping Application that stores All orders in An Amazon RDS for PostgreSQL Single-AZ DB instance. Management wants to eliminate single points of failure And has asked A solutions architect to recommend An approach to minimize database downtime without requiring Any changes to the Application code. Which solution meets these requirements?",
       "options": {
         "A": "Convert the existing database instance to a Multi-AZ deployment by modifying the database instance And specifying the Multi-AZ option.",
-        "B": "Create Anew RDS Multi-AZ deployment. Take a snapshot of the current RDS instance And restore the new Multi-AZ deployment with the snapshot.",
+        "B": "Create A new RDS Multi-AZ deployment. Take a snapshot of the current RDS instance And restore the new Multi-AZ deployment with the snapshot.",
         "C": "Create a read-only replica of the PostgreSQL database in Another Availability Zone. Use Amazon Route 53 weighted record sets to distribute requests across the databases.",
         "D": "Place the RDS for PostgreSQL database in An Amazon EC2 Auto Scaling group with a minimum group size of two. Use Amazon Route 53 weighted record sets to distribute requests across instances."
       },
@@ -332,8 +332,8 @@
       "question": "A law Firm needs to share information with the public. The information includes hundreds of Files that must be publicly readable. Modifications or deletions of the Files by Anyone before a designated future date are prohibited. Which solution will meet these requirements in the MOST secure way?",
       "options": {
         "A": "Upload All Files to An Amazon S3 bucket that is conFigured for static website hosting. Grant read-only IAM permissions to Any AWS principals that Access the S3 bucket until the designated date.",
-        "B": "Create Anew Amazon S3 bucket with S3 Versioning enabled. Use S3 Object Lock with a retention period in accordance with the designated date. Configure the S3 bucket for static website hosting. Set An S3 bucket policy to Allow read-only Access to the objects.",
-        "C": "Create Anew Amazon S3 bucket with S3 Versioning enabled. Configure An event trigger to run An AWS Lambda function in case of object modiFication or deletion. Configure the Lambda function to replace the objects with the original versions from a private S3 bucket.",
+        "B": "Create A new Amazon S3 bucket with S3 Versioning enabled. Use S3 Object Lock with a retention period in accordance with the designated date. Configure the S3 bucket for static website hosting. Set An S3 bucket policy to Allow read-only Access to the objects.",
+        "C": "Create A new Amazon S3 bucket with S3 Versioning enabled. Configure An event trigger to run An AWS Lambda function in case of object modiFication or deletion. Configure the Lambda function to replace the objects with the original versions from a private S3 bucket.",
         "D": "Upload All Files to An Amazon S3 bucket that is conFigured for static website hosting. Select the folder that contains the Files. Use S3 Object Lock with a retention period in accordance with the designated date. Grant read-only IAM permissions to Any AWS principals that Access the S3 bucket."
       },
       "correct_answer": "B",
@@ -403,14 +403,14 @@
       "id": "484",
       "question": "A company wants to move from many standalone AWS accounts to a consolidated, multi-account architecture. The company plans to create many new AWS accounts for different business units. The company needs to authenticate Access to these AWS accounts by using a centralized corporate directory service. Which combination of actions should A solutions architect recommend to meet these requirements? (Choose two.)",
       "options": {
-        "A": "Create Anew organization in AWS Organizations with All features turned on. Create the new AWS accounts in the organization.",
+        "A": "Create A new organization in AWS Organizations with All features turned on. Create the new AWS accounts in the organization.",
         "B": "Set up An Amazon Cognito identity pool. Configure AWS IAM Identity Center (AWS Single Sign-On) to accept Amazon Cognito authentication.",
         "C": "Configure a service control policy (SCP) to manage the AWS accounts. Add AWS IAM Identity Center (AWS Single Sign-On) to AWS Directory Service.",
-        "D": "Create Anew organization in AWS Organizations. Configure the organization's authentication mechanism to use AWS Directory Service directly.",
+        "D": "Create A new organization in AWS Organizations. Configure the organization's authentication mechanism to use AWS Directory Service directly.",
         "E": "Set up AWS IAM Identity Center (AWS Single Sign-On) in the organization. Configure IAM Identity Center, And integrate it with the company's corporate directory service."
       },
       "correct_answer": "AE",
-      "explanation": "E. Set up AWS IAM Identity Center (AWS Single Sign-On) in the organization. Configure IAM Identity Center, And integrate it with the company's corporate directory service.\nCreate Anew organization in AWS Organizations with All features turned on. Create the new AWS accounts in the organization. This is a foundational step for managing multiple AWS accounts in a consolidated manner.\nOption E: Set up AWS IAM Identity Center (AWS Single Sign-On) in the organization. Configure IAM Identity Center, And integrate it with the company's corporate directory service. AWS Single Sign-On (SSO) is designed to simplify And centralize authentication across multiple AWS accounts."
+      "explanation": "E. Set up AWS IAM Identity Center (AWS Single Sign-On) in the organization. Configure IAM Identity Center, And integrate it with the company's corporate directory service.\nCreate A new organization in AWS Organizations with All features turned on. Create the new AWS accounts in the organization. This is a foundational step for managing multiple AWS accounts in a consolidated manner.\nOption E: Set up AWS IAM Identity Center (AWS Single Sign-On) in the organization. Configure IAM Identity Center, And integrate it with the company's corporate directory service. AWS Single Sign-On (SSO) is designed to simplify And centralize authentication across multiple AWS accounts."
     },
     {
       "id": "485",
@@ -586,8 +586,8 @@
       "id": "499",
       "question": "A company needs to minimize the cost of its 1 Gbps AWS Direct Connect connection. The company's average connection utilization is less than 10%. A solutions architect must recommend a solution that will reduce the cost without compromising security. Which solution will meet these requirements?",
       "options": {
-        "A": "Set up Anew 1 Gbps Direct Connect connection. Share the connection with Another AWS account.",
-        "B": "Set up Anew 200 Mbps Direct Connect connection in the AWS Management Console.",
+        "A": "Set up A new 1 Gbps Direct Connect connection. Share the connection with Another AWS account.",
+        "B": "Set up A new 200 Mbps Direct Connect connection in the AWS Management Console.",
         "C": "Contact An AWS Direct Connect Partner to order a 1 Gbps connection. Share the connection with Another AWS account.",
         "D": "Contact An AWS Direct Connect Partner to order a 200 Mbps hosted connection for An existing AWS account."
       },

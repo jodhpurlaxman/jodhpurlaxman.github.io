@@ -28,7 +28,7 @@
       "id": "653",
       "question": "A company maintains An Amazon RDS database that maps users to cost centers. The company has accounts in An organization in AWS Organizations. The company needs a solution that will tag All resources that are created in a specific AWS account in the organization. The solution must tag each resource with the cost center ID of the user who created the resource. Which solution will meet these requirements?",
       "options": {
-        "A": "Move the speciFic AWS account to Anew organizational unit (OU) in Organizations from the management account. Create a service control policy (SCP) that requires All existing resources to have the correct cost center tag before the resources are created. Apply the SCP to the new OU.",
+        "A": "Move the speciFic AWS account to A new organizational unit (OU) in Organizations from the management account. Create a service control policy (SCP) that requires All existing resources to have the correct cost center tag before the resources are created. Apply the SCP to the new OU.",
         "B": "Create An AWS Lambda function to tag the resources after the Lambda function looks up the appropriate cost center from the RDS database. Configure An Amazon EventBridge rule that reacts to AWS CloudTrail events to invoke the Lambda function.",
         "C": "Create An AWS CloudFormation stack to deploy An AWS Lambda function. Configure the Lambda function to look up the appropriate cost center from the RDS database And to tag resources. Create An Amazon EventBridge scheduled rule to invoke the CloudFormation stack.",
         "D": "Create An AWS Lambda function to tag the resources with a default value. Configure An Amazon EventBridge rule that reacts to AWS CloudTrail events to invoke the Lambda function when a resource is missing the cost center tag."
@@ -148,9 +148,9 @@
     },
     {
       "id": "663",
-      "question": "A company is developing Anew Application on AWS. The Application consists of An Amazon Elastic Container Service (Amazon ECS) cluster, An Amazon S3 bucket that contains assets for the application, And An Amazon RDS for MySQL database that contains the dataset for the application. The dataset contains sensitive information. The company wants to ensure that only the ECS cluster can Access the data in the RDS for MySQL database And the data in the S3 bucket. Which solution will meet these requirements?",
+      "question": "A company is developing A new Application on AWS. The Application consists of An Amazon Elastic Container Service (Amazon ECS) cluster, An Amazon S3 bucket that contains assets for the application, And An Amazon RDS for MySQL database that contains the dataset for the application. The dataset contains sensitive information. The company wants to ensure that only the ECS cluster can Access the data in the RDS for MySQL database And the data in the S3 bucket. Which solution will meet these requirements?",
       "options": {
-        "A": "Create Anew AWS Key Management Service (AWS KMS) customer managed key to encrypt both the S3 bucket And the RDS for MySQL database. Ensure that the KMS key policy includes encrypt And decrypt permissions for the ECS task execution role.",
+        "A": "Create A new AWS Key Management Service (AWS KMS) customer managed key to encrypt both the S3 bucket And the RDS for MySQL database. Ensure that the KMS key policy includes encrypt And decrypt permissions for the ECS task execution role.",
         "B": "Create An AWS Key Management Service (AWS KMS) AWS managed key to encrypt both the S3 bucket And the RDS for MySQL database. Ensure that the S3 bucket policy speciFies the ECS task execution role as a user.",
         "C": "Create An S3 bucket policy that restricts bucket Access to the ECS task execution role. Create a VPC endpoint for Amazon RDS for MySQL. Update the RDS for MySQL security group to Allow Access from only the subnets that the ECS cluster will generate tasks in.",
         "D": "Create a VPC endpoint for Amazon RDS for MySQL. Update the RDS for MySQL security group to Allow Access from only the subnets that the ECS cluster will generate tasks in. Create a VPC endpoint for Amazon S3. Update the S3 bucket policy to Allow Access from only the S3 VPC endpoint."
@@ -209,7 +209,7 @@
     },
     {
       "id": "668",
-      "question": "A company created Anew organization in AWS Organizations. The organization has multiple accounts for the company's development teams. The development team members use AWS IAM Identity Center (AWS Single Sign-On) to Access the accounts. For each of the company's applications, the development teams must use a predefined Application name to tag resources that are created. A solutions architect needs to design a solution that gives the development team the ability to create resources only if the Application name tag has An approved value. Which solution will meet these requirements?",
+      "question": "A company created A new organization in AWS Organizations. The organization has multiple accounts for the company's development teams. The development team members use AWS IAM Identity Center (AWS Single Sign-On) to Access the accounts. For each of the company's applications, the development teams must use a predefined Application name to tag resources that are created. A solutions architect needs to design a solution that gives the development team the ability to create resources only if the Application name tag has An approved value. Which solution will meet these requirements?",
       "options": {
         "A": "Create An IAM group that has a conditional Allow policy that requires the Application name tag to be speciFied for resources to be created.",
         "B": "Create a cross-account role that has a Deny policy for Any resource that has the Application name tag.",
@@ -296,7 +296,7 @@
       "id": "675",
       "question": "A company uses Amazon EC2 instances And Amazon Elastic Block Store (Amazon EBS) volumes to run An application. The company creates one snapshot of each EBS volume every day to meet compliance requirements. The company wants to implement An architecture that prevents the accidental deletion of EBS volume snapshots. The solution must not change the administrative rights of the storage administrator user. Which solution will meet these requirements with the LEAST administrative effort?",
       "options": {
-        "A": "Create An IAM role that has permission to delete snapshots. Attach the role to Anew EC2 instance. Use the AWS CLI from the new EC2 instance to delete snapshots.",
+        "A": "Create An IAM role that has permission to delete snapshots. Attach the role to A new EC2 instance. Use the AWS CLI from the new EC2 instance to delete snapshots.",
         "B": "Create An IAM policy that denies snapshot deletion. Attach the policy to the storage administrator user.",
         "C": "Add tags to the snapshots. Create retention rules in Recycle Bin for EBS snapshots that have the tags.",
         "D": "Lock the EBS snapshots to prevent deletion."

@@ -30,7 +30,7 @@
       "options": {
         "A": "Add required IAM permissions in the resource policy of the Lambda function.",
         "B": "Create a signed request using the existing IAM credentials in the Lambda function.",
-        "C": "Create Anew IAM user And use the existing IAM credentials in the Lambda function.",
+        "C": "Create A new IAM user And use the existing IAM credentials in the Lambda function.",
         "D": "Create An IAM execution role with the required permissions And Attach the IAM role to the Lambda function."
       },
       "correct_answer": "D",
@@ -112,7 +112,7 @@
     },
     {
       "id": "410",
-      "question": "A company is deploying Anew Application on Amazon EC2 instances. The Application writes data to Amazon Elastic Block Store (Amazon EBS) volumes. The company needs to ensure that All data that is written to the EBS volumes is encrypted at rest. Which solution will meet this requirement?",
+      "question": "A company is deploying A new Application on Amazon EC2 instances. The Application writes data to Amazon Elastic Block Store (Amazon EBS) volumes. The company needs to ensure that All data that is written to the EBS volumes is encrypted at rest. Which solution will meet this requirement?",
       "options": {
         "A": "Create An IAM role that speciFies EBS encryption. Attach the role to the EC2 instances.",
         "B": "Create the EBS volumes as encrypted volumes. Attach the EBS volumes to the EC2 instances.",
@@ -163,7 +163,7 @@
       "question": "A company has a business system that generates hundreds of reports each day. The business system saves the reports to A network share in CSV format. The company needs to store this data in the AWS Cloud in near-real time for Analysis. Which solution will meet these requirements with the LEAST administrative overhead?",
       "options": {
         "A": "Use AWS DataSync to transfer the Files to Amazon S3. Create a scheduled task that runs at the end of each day.",
-        "B": "Create An Amazon S3 File Gateway. Update the business system to use Anew network share from the S3 File Gateway.",
+        "B": "Create An Amazon S3 File Gateway. Update the business system to use A new network share from the S3 File Gateway.",
         "C": "Use AWS DataSync to transfer the Files to Amazon S3. Create An Application that uses the DataSync API in the automation workflow.",
         "D": "Deploy An AWS Transfer for SFTP endpoint. Create a script that checks for new Files on the network share And uploads the new Files by using SFTP."
       },
@@ -258,7 +258,7 @@
     },
     {
       "id": "422",
-      "question": "A company is developing Anew machine learning (ML) model solution on AWS. The models are developed as independent microservices that fetch approximately 1 GB of model data from Amazon S3 at startup And load the data into memory. Users Access the models through An a synchronous API  Users can send a request or a batch of requests And specify where the results should be sent. The company provides models to hundreds of users. The usage patterns for the models are irregular. Some models could be unused for days or weeks. Other models could receive batches of thousands of requests at a time. Which design should A solutions architect recommend to meet these requirements?",
+      "question": "A company is developing A new machine learning (ML) model solution on AWS. The models are developed as independent microservices that fetch approximately 1 GB of model data from Amazon S3 at startup And load the data into memory. Users Access the models through An a synchronous API  Users can send a request or a batch of requests And specify where the results should be sent. The company provides models to hundreds of users. The usage patterns for the models are irregular. Some models could be unused for days or weeks. Other models could receive batches of thousands of requests at a time. Which design should A solutions architect recommend to meet these requirements?",
       "options": {
         "A": "Direct the requests from the API to A network Load Balancer (NLB). Deploy the models as AWS Lambda functions that are invoked by the NLB.",
         "B": "Direct the requests from the API to An Application Load Balancer (ALB). Deploy the models as Amazon Elastic Container Service (Amazon ECS) services that read from An Amazon Simple Queue Service (Amazon SQS) queue. Use AWS App Mesh to scale the instances of the ECS cluster based on the SQS queue size.",
@@ -307,7 +307,7 @@
     },
     {
       "id": "426",
-      "question": "A company needs to store data from its healthcare application. The application's data frequently changes. Anew regulation requires audit Access at All levels of the stored data. The company hosts the Application on An on-premises infrastructure that is running out of storage capacity. A solutions architect must securely migrate the existing data to AWS while satisfying the new regulation. Which solution will meet these requirements?",
+      "question": "A company needs to store data from its healthcare application. The application's data frequently changes. A new regulation requires audit Access at All levels of the stored data. The company hosts the Application on An on-premises infrastructure that is running out of storage capacity. A solutions architect must securely migrate the existing data to AWS while satisfying the new regulation. Which solution will meet these requirements?",
       "options": {
         "A": "Use AWS DataSync to move the existing data to Amazon S3. Use AWS CloudTrail to log data events.",
         "B": "Use AWS Snowcone to move the existing data to Amazon S3. Use AWS CloudTrail to log management events.",
@@ -368,7 +368,7 @@
     },
     {
       "id": "431",
-      "question": "A company has developed Anew video game as a web application. The Application is in a three-tier architecture in a VPC with Amazon RDS for MySQL in the database layer. Several players will compete concurrently online. The game's developers want to display a top-10 scoreboard in near- real time And offer the ability to stop And restore the game while preserving the current scores. What should A solutions architect do to meet these requirements?",
+      "question": "A company has developed A new video game as a web application. The Application is in a three-tier architecture in a VPC with Amazon RDS for MySQL in the database layer. Several players will compete concurrently online. The game's developers want to display a top-10 scoreboard in near- real time And offer the ability to stop And restore the game while preserving the current scores. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Set up An Amazon ElastiCache for Memcached cluster to cache the scores for the web Application to display.",
         "B": "Set up An Amazon ElastiCache for Redis cluster to compute And cache the scores for the web Application to display.",
@@ -428,7 +428,7 @@
     },
     {
       "id": "436",
-      "question": "A company moved its on-premises PostgreSQL database to An Amazon RDS for PostgreSQL DB instance. The company successfully launched Anew product. The workload on the database has increased. The company wants to accommodate the larger workload without a dding infrastructure. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company moved its on-premises PostgreSQL database to An Amazon RDS for PostgreSQL DB instance. The company successfully launched A new product. The workload on the database has increased. The company wants to accommodate the larger workload without a dding infrastructure. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Buy reserved DB instances for the total workload. Make the Amazon RDS for PostgreSQL DB instance larger.",
         "B": "Make the Amazon RDS for PostgreSQL DB instance a Multi-AZ DB instance.",
@@ -455,7 +455,7 @@
       "question": "A company wants to share accounting data with An external auditor. The data is stored in An Amazon RDS DB instance that resides in a private subnet. The auditor has its own AWS account And requires its own copy of the database. What is the MOST secure way for the company to share the database with the auditor?",
       "options": {
         "A": "Create a read replica of the database. Configure IAM standard database authentication to grant the auditor access.",
-        "B": "Export the database contents to text Files. Store the Files in An Amazon S3 bucket. Create Anew IAM user for the auditor. Grant the user Access to the S3 bucket.",
+        "B": "Export the database contents to text Files. Store the Files in An Amazon S3 bucket. Create A new IAM user for the auditor. Grant the user Access to the S3 bucket.",
         "C": "Copy a snapshot of the database to An Amazon S3 bucket. Create An IAM user. Share the user's keys with the auditor to grant Access to the object in the S3 bucket.",
         "D": "Create An encrypted snapshot of the database. Share the snapshot with the auditor. Allow Access to the AWS Key Management Service (AWS KMS) encryption key."
       },
@@ -476,7 +476,7 @@
     },
     {
       "id": "440",
-      "question": "A company used An Amazon RDS for MySQL DB instance during Application testing. Before terminating the DB instance at the end of the test cycle, A solutions architect created two backups. The solutions architect created the First backup by using the mysqldump utility to create a database dump. The solutions architect created the second backup by enabling the Final DB snapshot option on RDS termination. The company is now planning for Anew test cycle And wants to create Anew DB instance from the most recent backup. The company has chosen a MySQL-compatible edition of amazon Aurora to host the DB instance. Which solutions will create the new DB instance? (Choose two.)",
+      "question": "A company used An Amazon RDS for MySQL DB instance during Application testing. Before terminating the DB instance at the end of the test cycle, A solutions architect created two backups. The solutions architect created the First backup by using the mysqldump utility to create a database dump. The solutions architect created the second backup by enabling the Final DB snapshot option on RDS termination. The company is now planning for A new test cycle And wants to create A new DB instance from the most recent backup. The company has chosen a MySQL-compatible edition of amazon Aurora to host the DB instance. Which solutions will create the new DB instance? (Choose two.)",
       "options": {
         "A": "Import the RDS snapshot directly into Aurora.",
         "B": "Upload the RDS snapshot to Amazon S3. Then import the RDS snapshot into Aurora.",

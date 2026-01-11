@@ -258,7 +258,7 @@
     },
     {
       "id": "172",
-      "question": "A solutions architect is creating Anew Amazon Cloudfront distribution for an application. Some of the information submitted by users is sensitive. The application uses HTTPS but needs another layer of security. The sensitive information should.be protected throughout the entire application stack, and access to the information should be restricted to certain applications. Which action should the solutions architect take?",
+      "question": "A solutions architect is creating A new Amazon Cloudfront distribution for an application. Some of the information submitted by users is sensitive. The application uses HTTPS but needs another layer of security. The sensitive information should be protected throughout the entire application stack, and access to the information should be restricted to certain applications. Which action should the solutions architect take?",
       "options": {
         "A": "Configure a CloudFront signed URL.",
         "B": "Configure a CloudFront signed cookie.",
@@ -266,7 +266,7 @@
         "D": "Configure CloudFront and set the Origin Protocol Policy setting to HTTPS Only for the Viewer Protocol Policy."
       },
       "correct_answer": "D",
-      "explanation": "A solutions architect is creating Anew Amazon CloudFront distribution for an application. Some of the information submitted by users is sensitive. The application uses HTTPS but needs another layer of security. The sensitive information should.be protected throughout the entire application stack, and access to the information should be restricted to certain applications.\nWhich action should the solutions architect take? \n\n    A. Configure a CloudFront signed URL.\n    B. Configure a CloudFront signed cookie.\n    C. Configure a CloudFront field-level encryption profile.\n    D. Configure CloudFront and set the Origin Protocol Policy setting to HTTPS Only for the Viewer Protocol Policy."
+      "explanation": "A solutions architect is creating A new Amazon CloudFront distribution for an application. Some of the information submitted by users is sensitive. The application uses HTTPS but needs another layer of security. The sensitive information should be protected throughout the entire application stack, and access to the information should be restricted to certain applications.\nWhich action should the solutions architect take? \n\n    A. Configure a CloudFront signed URL.\n    B. Configure a CloudFront signed cookie.\n    C. Configure a CloudFront field-level encryption profile.\n    D. Configure CloudFront and set the Origin Protocol Policy setting to HTTPS Only for the Viewer Protocol Policy."
     },
     {
       "id": "173",
@@ -391,7 +391,7 @@
     },
     {
       "id": "183",
-      "question": "A company is building Anew dynamic ordering website. The company wants to minimize server maintenance and patching. The website must be highly available and must scale read and write capacity as quickly as possible to meet changes in user demand. Which solution will meet these requirements?",
+      "question": "A company is building A new dynamic ordering website. The company wants to minimize server maintenance and patching. The website must be highly available and must scale read and write capacity as quickly as possible to meet changes in user demand. Which solution will meet these requirements?",
       "options": {
         "A": "Host static content in Amazon S3. Host dynamic content by using Amazon API Gateway and AWS Lambda. Use Amazon DynamoDB with on-demand capacity for the database. Configure Amazon CloudFront to deliver the website content.",
         "B": "Host static content in Amazon S3. Host dynamic content by using Amazon API Gateway and AWS Lambda. Use Amazon Aurora with Aurora Auto Scaling for the database. Configure Amazon CloudFront to deliver the website content.",
@@ -452,7 +452,7 @@
     },
     {
       "id": "188",
-      "question": "A company uses Amazon S3 as its data lake. The company has Anew partner that must use SFTP to upload data files. A solutions architect needs to implement a highly available SFTP solution that minimizes operational overhead. Which solution will meet these requirements?",
+      "question": "A company uses Amazon S3 as its data lake. The company has A new partner that must use SFTP to upload data files. A solutions architect needs to implement a highly available SFTP solution that minimizes operational overhead. Which solution will meet these requirements?",
       "options": {
         "A": "Use AWS Transfer Family to conFigure an SFTP-enabled server with a publicly accessible endpoint. Choose the S3 data lake as the destination.",
         "B": "Use Amazon S3 File Gateway as an SFTP server. Expose the S3 File Gateway endpoint URL to the new partner. Share the S3 File Gateway endpoint with the new partner.",
@@ -485,7 +485,7 @@
         "D": "Containerize the web application. Deploy the web application to Amazon EC2 instances. Use the AWS Load Balancer Controller to dynamically route traffic between containers that contain the new site features for testing."
       },
       "correct_answer": "B",
-      "explanation": "Elastic Beanstalk allows you to perform blue-green deployments, which involve creating Anew environment (green) with the updated code, testing it, and then swapping the URLs to direct traffic to the new environment. This enables you to test new features without affecting the production environment."
+      "explanation": "Elastic Beanstalk allows you to perform blue-green deployments, which involve creating A new environment (green) with the updated code, testing it, and then swapping the URLs to direct traffic to the new environment. This enables you to test new features without affecting the production environment."
     },
     {
       "id": "191",
@@ -553,8 +553,8 @@
       "question": "A company runs an application on a large Fleet of Amazon EC2 instances. The application reads and writes entries into an Amazon DynamoDB table. The size of the DynamoDB table continuously grows, but the application needs only data from the last 30 days. The company needs a solution that minimizes cost and development effort. Which solution meets these requirements?",
       "options": {
         "A": "Use an AWS CloudFormation template to deploy the complete solution. Redeploy the CloudFormation stack every 30 days, and delete the original stack.",
-        "B": "Use an EC2 instance that runs a monitoring application from AWS Marketplace. Configure the monitoring application to use Amazon DynamoDB Streams to store the timestamp when Anew item is created in the table. Use a script that runs on the EC2 instance to delete items that have a timestamp that is older than 30 days.",
-        "C": "Configure Amazon DynamoDB Streams to invoke an AWS Lambda function when Anew item is created in the table. Configure the Lambda function to delete items in the table that are older than 30 days.",
+        "B": "Use an EC2 instance that runs a monitoring application from AWS Marketplace. Configure the monitoring application to use Amazon DynamoDB Streams to store the timestamp when A new item is created in the table. Use a script that runs on the EC2 instance to delete items that have a timestamp that is older than 30 days.",
+        "C": "Configure Amazon DynamoDB Streams to invoke an AWS Lambda function when A new item is created in the table. Configure the Lambda function to delete items in the table that are older than 30 days.",
         "D": "Extend the application to add an attribute that has a value of the current timestamp plus 30 days to each new item that is created in the table. Configure DynamoDB to use the attribute as the TTL attribute."
       },
       "correct_answer": "D",

@@ -52,7 +52,7 @@
     },
     {
       "id": "105",
-      "question": "A company is preparing to deploy Anew serverless workload. A solutions architect must use the principle of least privilege to configure permissions that will be used to run an AWS Lambda function. An Amazon Eventbridge (Amazon Cloudwatch Events) rule will invoke the function. Which solution meets these requirements?",
+      "question": "A company is preparing to deploy A new serverless workload. A solutions architect must use the principle of least privilege to configure permissions that will be used to run an AWS Lambda function. An Amazon Eventbridge (Amazon Cloudwatch Events) rule will invoke the function. Which solution meets these requirements?",
       "options": {
         "A": "Add an execution role to the function with lambda:InvokeFunction as the action and * as the principal.",
         "B": "Add an execution role to the function with lambda:InvokeFunction as the action and Service: lambda.amazonaws.com as the principal.",
@@ -141,7 +141,7 @@
       "options": {
         "A": "Use AWS Fargate on Amazon Elastic Container Service (Amazon ECS) to run the containerized web application with Service Auto Scaling. Use an Application Load Balancer to distribute the incoming requests.",
         "B": "Use two Amazon EC2 instances to host the containerized web application. Use an Application Load Balancer to distribute the incoming requests.",
-        "C": "Use AWS Lambda with Anew code that uses one of the supported languages. Create multiple Lambda functions to support the load. Use Amazon API Gateway as an entry point to the Lambda functions.",
+        "C": "Use AWS Lambda with A new code that uses one of the supported languages. Create multiple Lambda functions to support the load. Use Amazon API Gateway as an entry point to the Lambda functions.",
         "D": "Use a high performance computing (HPC) solution such as AWS ParallelCluster to establish an HPC cluster that can process the incoming requests at the appropriate scale."
       },
       "correct_answer": "A",
@@ -154,7 +154,7 @@
         "A": "Use AWS DataSync to move the data. Create a custom transformation job by using AWS Glue.",
         "B": "Order an AWS Snowcone device to move the data. Deploy the transformation application to the device.",
         "C": "Order an AWS Snowball Edge Storage Optimized device. Copy the data to the device. Create a custom transformation job by using AWS Glue.",
-        "D": "Order an AWS Snowball Edge Storage Optimized device that includes Amazon EC2 compute. Copy the data to the device. Create Anew EC2 instance on AWS to run the transformation application."
+        "D": "Order an AWS Snowball Edge Storage Optimized device that includes Amazon EC2 compute. Copy the data to the device. Create A new EC2 instance on AWS to run the transformation application."
       },
       "correct_answer": "C",
       "explanation": "Order an AWS Snowball Edge Storage Optimized device. Copy the data to the device. Create a custom transformation job by using AWS Glue."
@@ -173,7 +173,7 @@
     },
     {
       "id": "115",
-      "question": "A medical records company is hosting an application on Amazon EC2 instances. The application processes customer data files that are stored on Amazon S3. The EC2 instances are hosted in public subnets. The EC2 instances access Amazon S3 over the internet, but they do not require any other network access. Anew requirement mandates that the network traffic for File transfers take a private route and not be sent over the internet. Which change to the network architecture should A solutions architect recommend to meet this requirement?",
+      "question": "A medical records company is hosting an application on Amazon EC2 instances. The application processes customer data files that are stored on Amazon S3. The EC2 instances are hosted in public subnets. The EC2 instances access Amazon S3 over the internet, but they do not require any other network access. A new requirement mandates that the network traffic for File transfers take a private route and not be sent over the internet. Which change to the network architecture should A solutions architect recommend to meet this requirement?",
       "options": {
         "A": "Create An AT gateway. Configure the route table for the public subnets to send traffic to Amazon S3 through the NAT gateway.",
         "B": "Configure the security group for the EC2 instances to restrict outbound traffic so that only traffic to the S3 preFix list is permitted.",
@@ -185,7 +185,7 @@
     },
     {
       "id": "116",
-      "question": "A company uses a popular content management system (CMS) for its corporate website. However, the required patching and maintenance are burdensome. The company is redesigning its website and wants Anew solution. The website will be updated four times a year and does not need to have any dynamic content available. The solution must provide high scalability and enhanced security. Which combination of changes will meet these requirements with the LEAST operational overhead? (Choose two.)",
+      "question": "A company uses a popular content management system (CMS) for its corporate website. However, the required patching and maintenance are burdensome. The company is redesigning its website and wants A new solution. The website will be updated four times a year and does not need to have any dynamic content available. The solution must provide high scalability and enhanced security. Which combination of changes will meet these requirements with the LEAST operational overhead? (Choose two.)",
       "options": {
         "A": "Configure Amazon CloudFront in front of the website to use HTTPS functionality.",
         "B": "Deploy an AWS WAF web ACL in front of the website to provide HTTPS functionality.",
@@ -198,7 +198,7 @@
     },
     {
       "id": "117",
-      "question": "A company stores its application logs in an Amazon Cloudwatch Logs log group. Anew policy requires the company to store all application logs in Amazon Opensearch Service (Amazon Elasticsearch Service) in near-real time. Which solution will meet this requirement with the LEAST operational overhead?",
+      "question": "A company stores its application logs in an Amazon Cloudwatch Logs log group. A new policy requires the company to store all application logs in Amazon Opensearch Service (Amazon Elasticsearch Service) in near-real time. Which solution will meet this requirement with the LEAST operational overhead?",
       "options": {
         "A": "Configure a CloudWatch Logs subscription to stream the logs to Amazon OpenSearch Service (Amazon Elasticsearch Service).",
         "B": "Create an AWS Lambda function. Use the log group to invoke the function to write the logs to Amazon OpenSearch Service (Amazon Elasticsearch Service).",
@@ -234,7 +234,7 @@
     },
     {
       "id": "120",
-      "question": "A company has implemented a self-managed DNS solution on three Amazon EC2 instances behind A network Load Balancer (NLB) in the us-west- 2 Region. Most of the company's users are located in the United States and Europe. The company wants to improve the performance and availability of the solution. The company launches and configures three EC2 instances in the eu-west-1 Region and adds the EC2 instances as targets for Anew NLB. Which solution can the company use to route traffic to all the EC2 instances?",
+      "question": "A company has implemented a self-managed DNS solution on three Amazon EC2 instances behind A network Load Balancer (NLB) in the us-west- 2 Region. Most of the company's users are located in the United States and Europe. The company wants to improve the performance and availability of the solution. The company launches and configures three EC2 instances in the eu-west-1 Region and adds the EC2 instances as targets for A new NLB. Which solution can the company use to route traffic to all the EC2 instances?",
       "options": {
         "A": "Create an Amazon Route 53 geolocation routing policy to route requests to one of the two NLBs. Create an Amazon CloudFront distribution. Use the Route 53 record as the distribution's origin.",
         "B": "Create a standard accelerator in AWS Global Accelerator Create endpoint groups in us-west-2 and eu-west-1. Add the two NLBs as endpoints for the endpoint groups.",
@@ -249,7 +249,7 @@
       "question": "A company is running an online transaction processing (OLTP) workload on AWS. This workload uses an unencrypted Amazon RDS DB instance in a Multi-AZ deployment. Daily database snapshots are taken from this instance. What should A solutions architect do to ensure the database and snapshots are always encrypted moving forward?",
       "options": {
         "A": "Encrypt a copy of the latest DB snapshot. Replace existing DB instance by restoring the encrypted snapshot.",
-        "B": "Create Anew encrypted Amazon Elastic Block Store (Amazon EBS) volume and copy the snapshots to it. Enable encryption on the DB instance.",
+        "B": "Create A new encrypted Amazon Elastic Block Store (Amazon EBS) volume and copy the snapshots to it. Enable encryption on the DB instance.",
         "C": "Copy the snapshots and enable encryption using AWS Key Management Service (AWS KMS) Restore encrypted snapshot to an existing DB instance.",
         "D": "Copy the snapshots to an Amazon S3 bucket that is encrypted using server-side encryption with AWS Key Management Service (AWS KMS) managed keys (SSE-KMS)."
       },
@@ -272,7 +272,7 @@
       "id": "123",
       "question": "A company has a dynamic web application hosted on two Amazon EC2 instances. The company has its own SSL certificate, which is on each instance to perform SSL termination. There has been an increase in traffic recently, and the operations team determined that SSL encryption and decryption is causing the compute capacity of the web servers to reach their maximum limit. What should A solutions architect do to increase the application's performance?",
       "options": {
-        "A": "Create Anew SSL certiFicate using AWS CertiFicate Manager (ACM). Install the A CM certiFicate on each instance.",
+        "A": "Create A new SSL certiFicate using AWS CertiFicate Manager (ACM). Install the A CM certiFicate on each instance.",
         "B": "Create an Amazon S3 bucket Migrate the SSL certiFicate to the S3 bucket. Configure the EC2 instances to reference the bucket for SSL termination.",
         "C": "Create another EC2 instance as a proxy server. Migrate the SSL certiFicate to the new instance and conFigure it to direct connections to the existing EC2 instances.",
         "D": "Import the SSL certiFicate into AWS CertiFicate Manager (ACM). Create an Application Load Balancer with an HTTPS listener that uses the SSL certiFicate from A CM."
@@ -405,13 +405,13 @@
       "id": "134",
       "question": "A company wants to move its application to a serverless solution. The serverless solution needs to analyze existing and new data by using SL. The company stores the data in an Amazon S3 bucket. The data requires encryption and must be replicated to a different AWS Region. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Create Anew S3 bucket. Load the data into the new S3 bucket. Use S3 Cross-Region Replication (CRR) to replicate encrypted objects to an S3 bucket in another Region. Use server-side encryption with AWS KMS multi-Region kays (SSE-KMS). Use Amazon Athena to query the data.",
-        "B": "Create Anew S3 bucket. Load the data into the new S3 bucket. Use S3 Cross-Region Replication (CRR) to replicate encrypted objects to an S3 bucket in another Region. Use server-side encryption with AWS KMS multi-Region keys (SSE-KMS). Use Amazon RDS to query the data.",
+        "A": "Create A new S3 bucket. Load the data into the new S3 bucket. Use S3 Cross-Region Replication (CRR) to replicate encrypted objects to an S3 bucket in another Region. Use server-side encryption with AWS KMS multi-Region kays (SSE-KMS). Use Amazon Athena to query the data.",
+        "B": "Create A new S3 bucket. Load the data into the new S3 bucket. Use S3 Cross-Region Replication (CRR) to replicate encrypted objects to an S3 bucket in another Region. Use server-side encryption with AWS KMS multi-Region keys (SSE-KMS). Use Amazon RDS to query the data.",
         "C": "Load the data into the existing S3 bucket. Use S3 Cross-Region Replication (CRR) to replicate encrypted objects to an S3 bucket in another Region. Use server-side encryption with Amazon S3 managed encryption keys (SSE-S3). Use Amazon Athena to query the data.",
         "D": "Load the data into the existing S3 bucket. Use S3 Cross-Region Replication (CRR) to replicate encrypted objects to an S3 bucket in another Region. Use server-side encryption with Amazon S3 managed encryption keys (SSE-S3). Use Amazon RDS to query the data."
       },
       "correct_answer": "A",
-      "explanation": "Create Anew S3 bucket. Load the data into the new S3 bucket. Use S3 Cross-Region Replication (CRR) to replicate encrypted objects to an S3 bucket in another Region. Use server-side encryption with AWS KMS multi-Region kays (SSE-KMS). Use Amazon Athena to query the data."
+      "explanation": "Create A new S3 bucket. Load the data into the new S3 bucket. Use S3 Cross-Region Replication (CRR) to replicate encrypted objects to an S3 bucket in another Region. Use server-side encryption with AWS KMS multi-Region kays (SSE-KMS). Use Amazon Athena to query the data."
     },
     {
       "id": "135",

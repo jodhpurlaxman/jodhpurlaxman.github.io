@@ -65,7 +65,7 @@
       "question": "A company wants to manage Amazon Machine Images (AMIs). The company currently copies AMIs to the same AWS Region where the AMIs were created. The company needs to design an application that captures AWS API calls and sends alerts whenever the Amazon EC2 Createimage API operation is called within the company's account. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Create an AWS Lambda function to query AWS CloudTrail logs and to send an alert when a CreateImage API call is detected.",
-        "B": "Configure AWS CloudTrail with an Amazon Simple Notification Service (Amazon SNS) notiFication that occurs when updated logs are sent to Amazon S3. Use Amazon Athena to create Anew table and to query on CreateImage when an API call is detected.",
+        "B": "Configure AWS CloudTrail with an Amazon Simple Notification Service (Amazon SNS) notiFication that occurs when updated logs are sent to Amazon S3. Use Amazon Athena to create A new table and to query on CreateImage when an API call is detected.",
         "C": "Create an Amazon EventBridge (Amazon CloudWatch Events) rule for the CreateImage API call. Configure the target as an Amazon Simple Notification Service (Amazon SNS) topic to send an alert when a CreateImage API call is detected.",
         "D": "Configure an Amazon Simple Queue Service (Amazon SQS) FIFO queue as a target for AWS CloudTrail logs. Create an AWS Lambda function to send an alert to an Amazon Simple Notification Service (Amazon SNS) topic when a CreateImage API call is detected."
       },
@@ -98,7 +98,7 @@
     },
     {
       "id": "209",
-      "question": "A solutions architect is designing the architecture of Anew application being deployed to the AWS Cloud. The application will run on Amazon EC2 On-Demand Instances and will automatically scale across multiple Availability Zones. The EC2 instances will scale up and down frequently throughout the day. An Application Load Balancer (ALB) will handle the load distribution. The architecture needs to support distributed session data management. The company is willing to make changes to code if needed. What should the solutions architect do to ensure that the architecture supports distributed session data management?",
+      "question": "A solutions architect is designing the architecture of A new application being deployed to the AWS Cloud. The application will run on Amazon EC2 On-Demand Instances and will automatically scale across multiple Availability Zones. The EC2 instances will scale up and down frequently throughout the day. An Application Load Balancer (ALB) will handle the load distribution. The architecture needs to support distributed session data management. The company is willing to make changes to code if needed. What should the solutions architect do to ensure that the architecture supports distributed session data management?",
       "options": {
         "A": "Use Amazon ElastiCache to manage and store session data.",
         "B": "Use session affinity (sticky sessions) of the ALBto manage session data.",
@@ -146,12 +146,12 @@
     },
     {
       "id": "213",
-      "question": "A company is developing Anew mobile app. The company must implement proper traffic Filtering to protect its Application Load Balancer (ALB) against common application-level attacks, such as cross-site scripting or SQL injection. The company has minimal infrastructure and operational staff. The company needs to reduce its share of the responsibility in managing, updating, and securing servers for its AWS environment. What should A solutions architect recommend to meet these requirements?",
+      "question": "A company is developing A new mobile app. The company must implement proper traffic Filtering to protect its Application Load Balancer (ALB) against common application-level attacks, such as cross-site scripting or SQL injection. The company has minimal infrastructure and operational staff. The company needs to reduce its share of the responsibility in managing, updating, and securing servers for its AWS environment. What should A solutions architect recommend to meet these requirements?",
       "options": {
         "A": "Configure AWS WAF rules and associate them with the ALB.",
         "B": "Deploy the application using Amazon S3 with public hosting enabled.",
         "C": "Deploy AWS Shield Advanced and add the ALBas a protected resource.",
-        "D": "Create Anew ALBthat directs traffic to an Amazon EC2 instance running a third-party Firewall, which then passes the traffic to the current ALB."
+        "D": "Create A new ALBthat directs traffic to an Amazon EC2 instance running a third-party Firewall, which then passes the traffic to the current ALB."
       },
       "correct_answer": "A",
       "explanation": "AWS WAF (Web Application Firewall) is a service that helps protect web applications from common web exploits by allowing you to define customizable web security rules. It can be associated with an Application Load Balancer (ALB) to filter and block malicious traffic before it reaches the application.\nAWS WAF is a managed service, which means it reduces the operational burden on the company by handling the infrastructure, updates, and security configurations."
@@ -184,9 +184,9 @@
       "id": "216",
       "question": "A company has a serverless website with millions of objects in an Amazon S3 bucket. The company uses the S3 bucket as the origin for an Amazon Cloudfront distribution. The company did not set encryption on the S3 bucket before the objects were loaded. A solutions architect needs to enable encryption for all existing objects and for all objects that are added to the S3 bucket in the future. Which solution will meet these requirements with the LEAST amount of effort?",
       "options": {
-        "A": "Create Anew S3 bucket. Turn on the default encryption settings for the new S3 bucket. Download all existing objects to temporary local storage. Upload the objects to the new S3 bucket.",
+        "A": "Create A new S3 bucket. Turn on the default encryption settings for the new S3 bucket. Download all existing objects to temporary local storage. Upload the objects to the new S3 bucket.",
         "B": "Turn on the default encryption settings for the S3 bucket. Use the S3 Inventory feature to create a .csv File that lists the unencrypted objects. Run an S3 Batch Operations job that uses the copy command to encrypt those objects.",
-        "C": "Create Anew encryption key by using AWS Key Management Service (AWS KMS). Change the settings on the S3 bucket to use server-side encryption with AWS KMS managed encryption keys (SSE-KMS). Turn on versioning for the S3 bucket.",
+        "C": "Create A new encryption key by using AWS Key Management Service (AWS KMS). Change the settings on the S3 bucket to use server-side encryption with AWS KMS managed encryption keys (SSE-KMS). Turn on versioning for the S3 bucket.",
         "D": "Navigate to Amazon S3 in the AWS Management Console. Browse the S3 bucket's objects. Sort by the encryption Field. Select each unencrypted object. Use the Modify button to apply default encryption settings to every unencrypted object in the S3 bucket."
       },
       "correct_answer": "B",
@@ -231,7 +231,7 @@
     },
     {
       "id": "220",
-      "question": "A solutions architect is designing Anew API using Amazon API Gateway that will receive requests from users. The volume of requests is highly variable; several hours can pass without receiving a single request. The data processing will take place asynchronously, but should be completed within a few seconds after a request is made. Which compute service should the solutions architect have the API invoke to deliver the requirements at the lowest cost?",
+      "question": "A solutions architect is designing A new API using Amazon API Gateway that will receive requests from users. The volume of requests is highly variable; several hours can pass without receiving a single request. The data processing will take place asynchronously, but should be completed within a few seconds after a request is made. Which compute service should the solutions architect have the API invoke to deliver the requirements at the lowest cost?",
       "options": {
         "A": "An AWS Glue job",
         "B": "An AWS Lambda function",
@@ -260,7 +260,7 @@
         "A": "Create an IAM role in the company's account to delegate access to the vendor's IAM role. Attach the appropriate IAM policies to the role for the permissions that the vendor requires.",
         "B": "Create an IAM user in the company's account with a password that meets the password complexity requirements. Attach the appropriate IAM policies to the user for the permissions that the vendor requires.",
         "C": "Create an IAM group in the company's account. Add the tool's IAM user from the vendor account to the group. Attach the appropriate IAM policies to the group for the permissions that the vendor requires.",
-        "D": "Create Anew identity provider by choosing \u201cAWS account\u201d as the provider type in the IAM console. Supply the vendor's AWS account ID and user name. Attach the appropriate IAM policies to the new provider for the permissions that the vendor requires."
+        "D": "Create A new identity provider by choosing \u201cAWS account\u201d as the provider type in the IAM console. Supply the vendor's AWS account ID and user name. Attach the appropriate IAM policies to the new provider for the permissions that the vendor requires."
       },
       "correct_answer": "A",
       "explanation": "IAM roles allow you to delegate access to resources in your AWS account to another AWS account. In this case, you can create a role in your account and grant the vendor's IAM role permission to assume that role.\nBy doing this, the vendor can use temporary security credentials obtained by assuming the role to access resources in your account. This ensures that the vendor doesn't need IAM credentials from your account."
@@ -342,7 +342,7 @@
     },
     {
       "id": "229",
-      "question": "A company manages its own Amazon EC2 instances that run MySQL databases. The company is manually managing replication and scaling as demand increases or decreases. The company needs Anew solution that simplifies the process of adding or removing compute capacity to or from its database tier as needed. The solution also must offer improved performance, scaling, and durability with minimal effort from operations. Which solution meets these requirements?",
+      "question": "A company manages its own Amazon EC2 instances that run MySQL databases. The company is manually managing replication and scaling as demand increases or decreases. The company needs A new solution that simplifies the process of adding or removing compute capacity to or from its database tier as needed. The solution also must offer improved performance, scaling, and durability with minimal effort from operations. Which solution meets these requirements?",
       "options": {
         "A": "Migrate the databases to Amazon Aurora Serverless for Aurora MySQL.",
         "B": "Migrate the databases to Amazon Aurora Serverless for Aurora PostgreSQL.",
@@ -390,7 +390,7 @@
     },
     {
       "id": "233",
-      "question": "A solutions architect has created Anew AWS account and must secure AWS account root user access. Which combination of actions will accomplish this? (Choose two.)",
+      "question": "A solutions architect has created A new AWS account and must secure AWS account root user access. Which combination of actions will accomplish this? (Choose two.)",
       "options": {
         "A": "Ensure the root user uses a strong password.",
         "B": "Enable multi-factor authentication to the root user.",
@@ -403,7 +403,7 @@
     },
     {
       "id": "234",
-      "question": "A company is building Anew web-based customer relationship management application. The application will use several Amazon EC2 instances that are backed by Amazon Elastic Block Store (Amazon EBS) volumes behind an Application Load Balancer (ALB). The application will also use an Amazon Aurora database. All data for the application must be encrypted at rest and in transit. Which solution will meet these requirements?",
+      "question": "A company is building A new web-based customer relationship management application. The application will use several Amazon EC2 instances that are backed by Amazon Elastic Block Store (Amazon EBS) volumes behind an Application Load Balancer (ALB). The application will also use an Amazon Aurora database. All data for the application must be encrypted at rest and in transit. Which solution will meet these requirements?",
       "options": {
         "A": "Use AWS Key Management Service (AWS KMS) certiFicates on the ALBto encrypt data in transit. Use AWS CertiFicate Manager (ACM) to encrypt the EBS volumes and Aurora database storage at rest.",
         "B": "Use the AWS root account to log in to the AWS Management Console. Upload the company's encryption certiFicates. While in the root account, select the option to turn on encryption for all data at rest and in transit for the account.",
@@ -463,7 +463,7 @@
     },
     {
       "id": "239",
-      "question": "A solutions architect needs to design Anew microservice for A company's application. Clients must be able to call an HTTPS endpoint to reach the microservice. The microservice also must use AWS Identity and Access Management (IAM) to authenticate calls. The solutions architect will write the logic for this microservice by using a single AWS Lambda function that is written in Go 1.x. Which solution will deploy the function in the MOST operationally efficient way?",
+      "question": "A solutions architect needs to design A new microservice for A company's application. Clients must be able to call an HTTPS endpoint to reach the microservice. The microservice also must use AWS Identity and Access Management (IAM) to authenticate calls. The solutions architect will write the logic for this microservice by using a single AWS Lambda function that is written in Go 1.x. Which solution will deploy the function in the MOST operationally efficient way?",
       "options": {
         "A": "Create an Amazon API Gateway REST API  Configure the method to use the Lambda function. Enable IAM authentication on the API ",
         "B": "Create a Lambda function URL for the function. Specify AWS_IAM as the authentication type.",
@@ -511,7 +511,7 @@
     },
     {
       "id": "243",
-      "question": "A medical research lab produces data that is related to Anew study. The lab wants to make the data available with minimum latency to clinics across the country for their on-premises, File-based applications. The data files are stored in an Amazon S3 bucket that has read-only permissions for each clinic. What should A solutions architect recommend to meet these requirements?",
+      "question": "A medical research lab produces data that is related to A new study. The lab wants to make the data available with minimum latency to clinics across the country for their on-premises, File-based applications. The data files are stored in an Amazon S3 bucket that has read-only permissions for each clinic. What should A solutions architect recommend to meet these requirements?",
       "options": {
         "A": "Deploy an AWS Storage Gateway File gateway as a virtual machine (VM) on premises at each clinic",
         "B": "Migrate the files to each clinic's on-premises applications by using AWS DataSync for processing.",

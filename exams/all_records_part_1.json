@@ -66,8 +66,8 @@
       "options": {
         "A": "Create an S3 bucket. Create an IAM role that has permissions to write to the S3 bucket. Use the AWS CLI to copy all files locally to the S3 bucket.",
         "B": "Create an AWS Snowball Edge job. Receive a Snowball Edge device on premises. Use the Snowball Edge client to transfer data to the device. Return the device so that AWS can import the data into Amazon S3.",
-        "C": "Deploy an S3 File Gateway on premises. Create a public service endpoint to connect to the S3 File Gateway. Create an S3 bucket. Create Anew NFS File share on the S3 File Gateway. Point the new File share to the S3 bucket. Transfer the data from the existing NFS File share to the S3 File Gateway.",
-        "D": "Set up an AWS Direct Connect connection between the on-premises network and AWS. Deploy an S3 File Gateway on premises. Create a public virtual interface (VIF) to connect to the S3 File Gateway. Create an S3 bucket. Create Anew NFS File share on the S3 File Gateway. Point the new File share to the S3 bucket. Transfer the data from the existing NFS File share to the S3 File Gateway."
+        "C": "Deploy an S3 File Gateway on premises. Create a public service endpoint to connect to the S3 File Gateway. Create an S3 bucket. Create A new NFS File share on the S3 File Gateway. Point the new File share to the S3 bucket. Transfer the data from the existing NFS File share to the S3 File Gateway.",
+        "D": "Set up an AWS Direct Connect connection between the on-premises network and AWS. Deploy an S3 File Gateway on premises. Create a public virtual interface (VIF) to connect to the S3 File Gateway. Create an S3 bucket. Create A new NFS File share on the S3 File Gateway. Point the new File share to the S3 bucket. Transfer the data from the existing NFS File share to the S3 File Gateway."
       },
       "correct_answer": "B",
       "explanation": ""
@@ -194,7 +194,7 @@
     },
     {
       "id": "17",
-      "question": "A company is implementing Anew business application. The application runs on two Amazon EC2 instances and uses an Amazon S3 bucket for document storage. A solutions architect needs to ensure that the EC2 instances can access the S3 bucket. What should the solutions architect do to meet this requirement?",
+      "question": "A company is implementing A new business application. The application runs on two Amazon EC2 instances and uses an Amazon S3 bucket for document storage. A solutions architect needs to ensure that the EC2 instances can access the S3 bucket. What should the solutions architect do to meet this requirement?",
       "options": {
         "A": "Create an IAM role that grants access to the S3 bucket. Attach the role to the EC2 instances.",
         "B": "Create an IAM policy that grants access to the S3 bucket. Attach the policy to the EC2 instances.",
@@ -255,7 +255,7 @@
     },
     {
       "id": "22",
-      "question": "A solutions architect is using Amazon S3 to design the storage architecture of Anew digital media application. The media files must be resilient to the loss of an Availability Zone. Some files are accessed frequently while other files are rarely accessed in an unpredictable pattern. The solutions architect must minimize the costs of storing and retrieving the media files. Which storage option meets these requirements?",
+      "question": "A solutions architect is using Amazon S3 to design the storage architecture of A new digital media application. The media files must be resilient to the loss of an Availability Zone. Some files are accessed frequently while other files are rarely accessed in an unpredictable pattern. The solutions architect must minimize the costs of storing and retrieving the media files. Which storage option meets these requirements?",
       "options": {
         "A": "S3 Standard",
         "B": "S3 Intelligent-Tiering",
@@ -291,7 +291,7 @@
     },
     {
       "id": "25",
-      "question": "A company is designing an application. The application uses an AWS Lambda function to receive information through Amazon API Gateway and to store the information in an Amazon Aurora PostgreSQL database. During the proof-of-concept stage, the company has to increase the Lambda quotas significantly to handle the high volumes of data that the company needs to load into the database. A solutions architect must recommend Anew design to improve scalability and minimize the configuration effort. Which solution will meet these requirements?",
+      "question": "A company is designing an application. The application uses an AWS Lambda function to receive information through Amazon API Gateway and to store the information in an Amazon Aurora PostgreSQL database. During the proof-of-concept stage, the company has to increase the Lambda quotas significantly to handle the high volumes of data that the company needs to load into the database. A solutions architect must recommend A new design to improve scalability and minimize the configuration effort. Which solution will meet these requirements?",
       "options": {
         "A": "Refactor the Lambda function code to Apache Tomcat code that runs on Amazon EC2 instances. Connect the database by using native Java Database Connectivity (JDBC) drivers.",
         "B": "Change the platform from Aurora to Amazon DynamoDProvision a DynamoDB Accelerator (DAX) cluster. Use the DAX client SDK to point the existing DynamoDB API calls at the DAX cluster.",
@@ -315,7 +315,7 @@
     },
     {
       "id": "27",
-      "question": "A company is launching Anew application and will display application metrics on an Amazon Cloudwatch dashboard. The company's product manager needs to access this dashboard periodically. The product manager does not have an AWS account. A solutions architect must provide access to the product manager by following the principle of least privilege. Which solution will meet these requirements?",
+      "question": "A company is launching A new application and will display application metrics on an Amazon Cloudwatch dashboard. The company's product manager needs to access this dashboard periodically. The product manager does not have an AWS account. A solutions architect must provide access to the product manager by following the principle of least privilege. Which solution will meet these requirements?",
       "options": {
         "A": "Share the dashboard from the CloudWatch console. Enter the product manager's email address, and complete the sharing steps. Provide a shareable link for the dashboard to the product manager.",
         "B": "Create an IAM user speciFically for the product manager. Attach the CloudWatchReadOnlyAccess AWS managed policy to the user. Share the new login credentials with the product manager. Share the browser URL of the correct dashboard with the product manager.",
@@ -359,7 +359,7 @@
         "D": "Modify the DB instance to a low-capacity instance when tests are completed. Modify the DB instance again when required."
       },
       "correct_answer": "C",
-      "explanation": "By creating a snapshot and terminating the DB instance, you effectively stop incurring costs for the running instance. When you need to run the tests again, you can restore the snapshot to create Anew instance and resume testing. This approach allows you to save costs during the periods when the tests are not running."
+      "explanation": "By creating a snapshot and terminating the DB instance, you effectively stop incurring costs for the running instance. When you need to run the tests again, you can restore the snapshot to create A new instance and resume testing. This approach allows you to save costs during the periods when the tests are not running."
     },
     {
       "id": "31",
@@ -510,7 +510,7 @@
       "question": "A company has an on-premises application that generates a large amount of time-sensitive data that is backed up to Amazon S3. The application has grown and there are user complaints about internet bandwidth limitations. A solutions architect needs to design along-term solution that allows for both timely backups to Amazon S3 and with minimal impact on internet connectivity for internal users. Which solution meets these requirements?",
       "options": {
         "A": "Establish AWS VPN connections and proxy all traffic through a VPC gateway endpoint.",
-        "B": "Establish Anew AWS Direct Connect connection and direct backup traffic through this new connection.",
+        "B": "Establish A new AWS Direct Connect connection and direct backup traffic through this new connection.",
         "C": "Order daily AWS Snowball devices. Load the data onto the Snowball devices and return the devices to AWS each day.",
         "D": "Submit a support ticket through the AWS Management Console. Request the removal of S3 service limits from the account."
       },

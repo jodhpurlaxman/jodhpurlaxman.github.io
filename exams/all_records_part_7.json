@@ -27,7 +27,7 @@
     },
     {
       "id": "303",
-      "question": "A company is launching Anew application deployed on an Amazon Elastic Container Service (Amazon ECS) cluster and is using the Fargate launch type for ECS tasks. The company is monitoring CPU and memory usage because it is expecting high traffic to the application upon its launch. However, the company wants to reduce costs when utilization decreases. What should A solutions architect recommend?",
+      "question": "A company is launching A new application deployed on an Amazon Elastic Container Service (Amazon ECS) cluster and is using the Fargate launch type for ECS tasks. The company is monitoring CPU and memory usage because it is expecting high traffic to the application upon its launch. However, the company wants to reduce costs when utilization decreases. What should A solutions architect recommend?",
       "options": {
         "A": "Use Amazon EC2 Auto Scaling to scale at certain periods based on previous traffic patterns.",
         "B": "Use an AWS Lambda function to scale Amazon ECS based on metric breaches that trigger an Amazon CloudWatch alarm.",
@@ -196,7 +196,7 @@
     },
     {
       "id": "317",
-      "question": "A company uses a legacy application to produce data in CSV format. The legacy application stores the output data in Amazon S3. The company is deploying Anew commercial off-the-shelf (COTS) application that can perform complex SQL queries to analyze data that is stored in Amazon Redshift and Amazon S3 only. However, the COTS application cannot process the .csv files that the legacy application produces. The company cannot update the legacy application to produce data in another format. The company needs to implement a solution so that the COTS application can use the data that the legacy application produces. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company uses a legacy application to produce data in CSV format. The legacy application stores the output data in Amazon S3. The company is deploying A new commercial off-the-shelf (COTS) application that can perform complex SQL queries to analyze data that is stored in Amazon Redshift and Amazon S3 only. However, the COTS application cannot process the .csv files that the legacy application produces. The company cannot update the legacy application to produce data in another format. The company needs to implement a solution so that the COTS application can use the data that the legacy application produces. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Create an AWS Glue extract, transform, and load (ETL) job that runs on a schedule. Configure the ETL job to process the .csv files and store the processed data in Amazon Redshift.",
         "B": "Develop a Python script that runs on Amazon EC2 instances to convert the .csv files to .sql files. Invoke the Python script on a cron schedule to store the output files in Amazon S3.",
@@ -428,13 +428,13 @@
       "id": "336",
       "question": "A company hosts a multi-tier web application that uses an Amazon Aurora MySQL DB cluster for storage. The application tier is hosted on Amazon EC2 instances. The company's IT security guidelines mandate that the database credentials be encrypted and rotated every 14 days. What should A solutions architect do to meet this requirement with the LEAST operational effort?",
       "options": {
-        "A": "Create Anew AWS Key Management Service (AWS KMS) encryption key. Use AWS Secrets Manager to create Anew secret that uses the KMS key with the appropriate credentials. Associate the secret with the Aurora DB cluster. Configure a custom rotation period of 14 days.",
+        "A": "Create A new AWS Key Management Service (AWS KMS) encryption key. Use AWS Secrets Manager to create A new secret that uses the KMS key with the appropriate credentials. Associate the secret with the Aurora DB cluster. Configure a custom rotation period of 14 days.",
         "B": "Create two parameters in AWS Systems Manager Parameter Store: one for the user name as a string parameter and one that uses the SecureString type for the password. Select AWS Key Management Service (AWS KMS) encryption for the password parameter, and load these parameters in the application tier. Implement an AWS Lambda function that rotates the password every 14 days.",
         "C": "Store a File that contains the credentials in an AWS Key Management Service (AWS KMS) encrypted Amazon Elastic File System (Amazon EFS) file system. Mount the EFS file system in all EC2 instances of the application tier. Restrict the access to the File on the file system so that the application can read the File and that only super users can modify the File. Implement an AWS Lambda function that rotates the key in Aurora every 14 days and writes new credentials into the File.",
         "D": "Store a File that contains the credentials in an AWS Key Management Service (AWS KMS) encrypted Amazon S3 bucket that the application uses to load the credentials. Download the File to the application regularly to ensure that the correct credentials are used. Implement an AWS Lambda function that rotates the Aurora credentials every 14 days and uploads these credentials to the File in the S3 bucket."
       },
       "correct_answer": "A",
-      "explanation": "A proposes to create Anew AWS KMS encryption key and use AWS Secrets Manager to create Anew secret that uses the KMS key with the appropriate credentials. Then, the secret will be associated with the Aurora DB cluster, and a custom rotation period of 14 days will be configured. AWS Secrets Manager will automate the process of rotating the database credentials, which will reduce the operational effort required to meet the IT security guidelines."
+      "explanation": "A proposes to create A new AWS KMS encryption key and use AWS Secrets Manager to create A new secret that uses the KMS key with the appropriate credentials. Then, the secret will be associated with the Aurora DB cluster, and a custom rotation period of 14 days will be configured. AWS Secrets Manager will automate the process of rotating the database credentials, which will reduce the operational effort required to meet the IT security guidelines."
     },
     {
       "id": "337",
@@ -546,7 +546,7 @@
     },
     {
       "id": "346",
-      "question": "A company has an aging network-attached storage (NAS) array in its data center. The NAS array presents SMB shares and NFS shares to client workstations. The company does not want to purchase Anew NAS array. The company also does not want to incur the cost of renewing the NAS array's support contract. Some of the data is accessed frequently, but much of the data is inactive. A solutions architect needs to implement a solution that migrates the data to Amazon S3, uses S3 Lifecycle policies, and maintains the same look and feel for the client workstations. The solutions architect has identified AWS Storage Gateway as part of the solution. Which type of storage gateway should the solutions architect provision to meet these requirements?",
+      "question": "A company has an aging network-attached storage (NAS) array in its data center. The NAS array presents SMB shares and NFS shares to client workstations. The company does not want to purchase A new NAS array. The company also does not want to incur the cost of renewing the NAS array's support contract. Some of the data is accessed frequently, but much of the data is inactive. A solutions architect needs to implement a solution that migrates the data to Amazon S3, uses S3 Lifecycle policies, and maintains the same look and feel for the client workstations. The solutions architect has identified AWS Storage Gateway as part of the solution. Which type of storage gateway should the solutions architect provision to meet these requirements?",
       "options": {
         "A": "Volume Gateway",
         "B": "Tape Gateway",
@@ -584,7 +584,7 @@
       "id": "349",
       "question": "A company stores confidential data in an Amazon Aurora PostgreSQL database in the ap-southeast-3 Region. The database is encrypted with an AWS Key Management Service (AWS KMS) customer managed key. The company was recently acquired and must securely share a backup of the database with the acquiring company's AWS account in ap-southeast-3. What should A solutions architect do to meet these requirements?",
       "options": {
-        "A": "Create a database snapshot. Copy the snapshot to Anew unencrypted snapshot. Share the new snapshot with the acquiring company's AWS account.",
+        "A": "Create a database snapshot. Copy the snapshot to A new unencrypted snapshot. Share the new snapshot with the acquiring company's AWS account.",
         "B": "Create a database snapshot. Add the acquiring company's AWS account to the KMS key policy. Share the snapshot with the acquiring company's AWS account.",
         "C": "Create a database snapshot that uses a different AWS managed KMS key. Add the acquiring company's AWS account to the KMS key alias. Share the snapshot with the acquiring company's AWS account.",
         "D": "Create a database snapshot. Download the database snapshot. Upload the database snapshot to an Amazon S3 bucket. Update the S3 bucket policy to allow access from the acquiring company's AWS account."
@@ -597,7 +597,7 @@
       "question": "A company uses a 100 GB Amazon RDS for Microsoft SQL Server Single-AZ DB instance in the us-east-1 Region to store customer transactions. The company needs high availability and automatic recovery for the DB instance. The company must also run reports on the RDS database several times a year. The report process causes transactions to take longer than usual to post to the customers accounts. The company needs a solution that will improve the performance of the report process. Which combination of steps will meet these requirements? (Choose two.)",
       "options": {
         "A": "Modify the DB instance from a Single-AZ DB instance to a Multi-AZ deployment.",
-        "B": "Take a snapshot of the current DB instance. Restore the snapshot to Anew RDS deployment in another Availability Zone.",
+        "B": "Take a snapshot of the current DB instance. Restore the snapshot to A new RDS deployment in another Availability Zone.",
         "C": "Create a read replica of the DB instance in a different Availability Zone. Point all requests for reports to the read replica.",
         "D": "Migrate the database to RDS Custom.",
         "E": "Use RDS Proxy to limit reporting requests to the maintenance window."

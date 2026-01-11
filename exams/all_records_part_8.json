@@ -160,7 +160,7 @@
     },
     {
       "id": "364",
-      "question": "A hospital is designing Anew Application that gathers symptoms from patients. The hospital has decided to use Amazon Simple Queue Service (Amazon SQS) And Amazon Simple Notification Service (Amazon SNS) in the architecture. A solutions architect is reviewing the infrastructure design. Data must be encrypted at rest And in transit. Only authorized personnel of the hospital should be able to Access the data. Which combination of steps should the solutions architect take to meet these requirements? (Choose two.)",
+      "question": "A hospital is designing A new Application that gathers symptoms from patients. The hospital has decided to use Amazon Simple Queue Service (Amazon SQS) And Amazon Simple Notification Service (Amazon SNS) in the architecture. A solutions architect is reviewing the infrastructure design. Data must be encrypted at rest And in transit. Only authorized personnel of the hospital should be able to Access the data. Which combination of steps should the solutions architect take to meet these requirements? (Choose two.)",
       "options": {
         "A": "Turn on server-side encryption on the SQS components. Update the default key policy to restrict key usage to a set of authorized principals.",
         "B": "Turn on server-side encryption on the SNS components by using An AWS Key Management Service (AWS KMS) customer managed key. Apply a key policy to restrict key usage to a set of authorized principals.",
@@ -173,7 +173,7 @@
     },
     {
       "id": "365",
-      "question": "A company runs a web Application that is backed by Amazon RDS. Anew database administrator caused data loss by accidentally editing information in a database table. To help recover from this type of incident, the company wants the ability to restore the database to its state from 5 minutes before Any change within the last 30 days. Which feature should the solutions architect include in the design to meet this requirement?",
+      "question": "A company runs a web Application that is backed by Amazon RDS. A new database administrator caused data loss by accidentally editing information in a database table. To help recover from this type of incident, the company wants the ability to restore the database to its state from 5 minutes before Any change within the last 30 days. Which feature should the solutions architect include in the design to meet this requirement?",
       "options": {
         "A": "Read replicas",
         "B": "Manual snapshots",
@@ -318,7 +318,7 @@
     },
     {
       "id": "377",
-      "question": "A company recently deployed Anew auditing system to centralize information a bout operating system versions, patching, And installed software for Amazon EC2 instances. A solutions architect must ensure All instances provisioned through EC2 Auto Scaling groups successfully send reports to the auditing system as soon as they are launched And terminated. Which solution achieves these goals MOST efficiently?",
+      "question": "A company recently deployed A new auditing system to centralize information a bout operating system versions, patching, And installed software for Amazon EC2 instances. A solutions architect must ensure All instances provisioned through EC2 Auto Scaling groups successfully send reports to the auditing system as soon as they are launched And terminated. Which solution achieves these goals MOST efficiently?",
       "options": {
         "A": "Use a scheduled AWS Lambda function And run a script remotely on All EC2 instances to send data to the audit system.",
         "B": "Use EC2 Auto Scaling lifecycle hooks to run a custom script to send data to the audit system when instances are launched And terminated.",
@@ -368,10 +368,10 @@
       "id": "381",
       "question": "A company hosts a three-tier web Application that includes a PostgreSQL database. The database stores the metadata from documents. The company searches the metadata for key terms to retrieve documents that the company reviews in a report each month. The documents are stored in Amazon S3. The documents are usually written only once, but they are updated frequently. The reporting process takes a few hours with the use of relational queries. The reporting process must not prevent Any document modifications or the addition of new documents. A solutions architect needs to implement a solution to speed up the reporting process. Which solution will meet these requirements with the LEAST amount of change to the Application code?",
       "options": {
-        "A": "Set up Anew Amazon DocumentDB (with MongoDB compatibility) cluster that includes a read replica. Scale the read replica to generate the reports.",
-        "B": "Set up Anew Amazon Aurora PostgreSQL DB cluster that includes An Aurora Replica. Issue queries to the Aurora Replica to generate the reports.",
-        "C": "Set up Anew Amazon RDS for PostgreSQL Multi-AZ DB instance. Configure the reporting module to query the secondary RDS node so that the reporting module does not affect the primary node.",
-        "D": "Set up Anew Amazon DynamoDB table to store the documents. Use a Fixed write capacity to support new document entries. Automatically scale the read capacity to support the reports."
+        "A": "Set up A new Amazon DocumentDB (with MongoDB compatibility) cluster that includes a read replica. Scale the read replica to generate the reports.",
+        "B": "Set up A new Amazon Aurora PostgreSQL DB cluster that includes An Aurora Replica. Issue queries to the Aurora Replica to generate the reports.",
+        "C": "Set up A new Amazon RDS for PostgreSQL Multi-AZ DB instance. Configure the reporting module to query the secondary RDS node so that the reporting module does not affect the primary node.",
+        "D": "Set up A new Amazon DynamoDB table to store the documents. Use a Fixed write capacity to support new document entries. Automatically scale the read capacity to support the reports."
       },
       "correct_answer": "B",
       "explanation": "Amazon Aurora PostgreSQL DB cluster that includes An Aurora Replica. Issue queries to the Aurora Replica to generate the reports) is the best option for speeding up the reporting process for a three-tier web Application that includes a PostgreSQL database storing metadata from documents, while not impacting document modifications or additions, with the least amount of change to the Application code."
@@ -414,7 +414,7 @@
     },
     {
       "id": "385",
-      "question": "A solutions architect is creating Anew VPC design. There are two public subnets for the load balancer, two private subnets for web servers, And two private subnets for MySQL. The web servers use only HTTPS. The solutions architect has already created a security group for the load balancer allowing port 443 from 0.0.0.0/0. Company policy requires that each resource has the least Access required to still be able to perform its tasks. Which additional configuration strategy should the solutions architect use to meet these requirements?",
+      "question": "A solutions architect is creating A new VPC design. There are two public subnets for the load balancer, two private subnets for web servers, And two private subnets for MySQL. The web servers use only HTTPS. The solutions architect has already created a security group for the load balancer allowing port 443 from 0.0.0.0/0. Company policy requires that each resource has the least Access required to still be able to perform its tasks. Which additional configuration strategy should the solutions architect use to meet these requirements?",
       "options": {
         "A": "Create a security group for the web servers And Allow port 443 from 0.0.0.0/0. Create a security group for the MySQL servers And Allow port 3306 from the web servers security group.",
         "B": "Create A network ACL for the web servers And Allow port 443 from 0.0.0.0/0. Create A network ACL for the MySQL servers And Allow port 3306 from the web servers security group.",
@@ -438,12 +438,12 @@
     },
     {
       "id": "387",
-      "question": "Anew employee has joined A company as a deployment engineer. The deployment engineer will be using AWS Cloudformation templates to create multiple AWS resources. A solutions architect wants the deployment engineer to perform job activities while following the principle of least privilege. Which combination of actions should the solutions architect take to accomplish this goal? (Choose two.)",
+      "question": "A new employee has joined A company as a deployment engineer. The deployment engineer will be using AWS Cloudformation templates to create multiple AWS resources. A solutions architect wants the deployment engineer to perform job activities while following the principle of least privilege. Which combination of actions should the solutions architect take to accomplish this goal? (Choose two.)",
       "options": {
         "A": "Have the deployment engineer use AWS account root user credentials for performing AWS CloudFormation stack operations.",
-        "B": "Create Anew IAM user for the deployment engineer And Add the IAM user to a group that has the PowerUsers IAM policy attached.",
-        "C": "Create Anew IAM user for the deployment engineer And Add the IAM user to a group that has the AdministratorAccess IAM policy attached.",
-        "D": "Create Anew IAM user for the deployment engineer And Add the IAM user to a group that has An IAM policy that allows AWS CloudFormation actions only.",
+        "B": "Create A new IAM user for the deployment engineer And Add the IAM user to a group that has the PowerUsers IAM policy attached.",
+        "C": "Create A new IAM user for the deployment engineer And Add the IAM user to a group that has the AdministratorAccess IAM policy attached.",
+        "D": "Create A new IAM user for the deployment engineer And Add the IAM user to a group that has An IAM policy that allows AWS CloudFormation actions only.",
         "E": "Create An IAM role for the deployment engineer to explicitly deFine the permissions speciFic to the AWS CloudFormation stack And launch stacks using that IAM role."
       },
       "correct_answer": "DE",
@@ -500,7 +500,7 @@
     },
     {
       "id": "392",
-      "question": "A company wants to deploy Anew public web Application on AWS. The Application includes a web server tier that uses Amazon EC2 instances. The Application also includes a database tier that uses An Amazon RDS for MySQL DB instance. The Application must be secure And accessible for global customers that have dynamic IP addresses. How should A solutions architect configure the security groups to meet these requirements?",
+      "question": "A company wants to deploy A new public web Application on AWS. The Application includes a web server tier that uses Amazon EC2 instances. The Application also includes a database tier that uses An Amazon RDS for MySQL DB instance. The Application must be secure And accessible for global customers that have dynamic IP addresses. How should A solutions architect configure the security groups to meet these requirements?",
       "options": {
         "A": "Configure the security group for the web servers to Allow inbound traffic on port 443 from 0.0.0.0/0. Configure the security group for the DB instance to Allow inbound traffic on port 3306 from the security group of the web servers.",
         "B": "Configure the security group for the web servers to Allow inbound traffic on port 443 from the IP addresses of the customers. Configure the security group for the DB instance to Allow inbound traffic on port 3306 from the security group of the web servers.",
@@ -596,7 +596,7 @@
     },
     {
       "id": "400",
-      "question": "A meteorological startup company has a custom web Application to sell weather data to its users online. The company uses Amazon DynamoDB to store its data And wants to build Anew service that sends An alert to the managers of four internal teams every time Anew weather event is recorded. The company does not want this new service to affect the performance of the current application. What should A solutions architect do to meet these requirements with the LEAST amount of operational overhead?",
+      "question": "A meteorological startup company has a custom web Application to sell weather data to its users online. The company uses Amazon DynamoDB to store its data And wants to build A new service that sends An alert to the managers of four internal teams every time A new weather event is recorded. The company does not want this new service to affect the performance of the current application. What should A solutions architect do to meet these requirements with the LEAST amount of operational overhead?",
       "options": {
         "A": "Use DynamoDB transactions to write new event data to the table. Configure the transactions to notify internal teams.",
         "B": "Have the current Application publish a message to four Amazon Simple NotiFication Service (Amazon SNS) topics. Have each team subscribe to one topic.",
