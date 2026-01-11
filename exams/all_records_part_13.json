@@ -138,7 +138,7 @@
       "options": {
         "A": "Configure An internet gateway. Update the S3 bucket policy to Allow Access from the internet gateway. Update the Application to use the new internet gateway.",
         "B": "Configure a VPN connection. Update the S3 bucket policy to Allow Access from the VPN connection. Update the Application to use the new VPN connection.",
-        "C": "Configure An AT gateway. Update the S3 bucket policy to Allow Access from the NAT gateway. Update the Application to use the new NAT gateway.",
+        "C": "Configure A NAT gateway. Update the S3 bucket policy to Allow Access from the NAT gateway. Update the Application to use the new NAT gateway.",
         "D": "Configure a VPC endpoint. Update the S3 bucket policy to Allow Access from the VPC endpoint. Update the Application to use the new VPC endpoint."
       },
       "correct_answer": "D",
@@ -503,7 +503,7 @@
         "A": "Attach A network Load Balancer to the Auto Scaling group.",
         "B": "Attach An Application Load Balancer to the Auto Scaling group.",
         "C": "Deploy An Amazon Route 53 record set with a weighted policy to route traffic appropriately.",
-        "D": "Deploy An AT instance that is conFigured with port forwarding to the EC2 instances in the Auto Scaling group."
+        "D": "Deploy A NAT instance that is conFigured with port forwarding to the EC2 instances in the Auto Scaling group."
       },
       "correct_answer": "A",
       "explanation": "UDP is a connectionless protocol, And Network Load Balancers (NLB) support UDP, making them suitable for applications that use UDP for transmitting data."

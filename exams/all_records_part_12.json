@@ -55,7 +55,7 @@
         "A": "Implement An interface VPC endpoint for Amazon SQS. Configure the endpoint to use the private subnets. Add to the endpoint a security group that has An inbound Access rule that allows traffic from the EC2 instances that are in the private subnets.",
         "B": "Implement An interface VPC endpoint for Amazon SQS. Configure the endpoint to use the public subnets. Attach to the interface endpoint a VPC endpoint policy that allows Access from the EC2 instances that are in the private subnets.",
         "C": "Implement An interface VPC endpoint for Amazon SQS. Configure the endpoint to use the public subnets. Attach An Amazon SQS Access policy to the interface VPC endpoint that allows requests from only a speciFied VPC endpoint.",
-        "D": "Implement a gateway endpoint for Amazon SQS. Add An AT gateway to the private subnets. Attach An IAM role to the EC2 instances that allows Access to the SQS queue."
+        "D": "Implement a gateway endpoint for Amazon SQS. Add A NAT gateway to the private subnets. Attach An IAM role to the EC2 instances that allows Access to the SQS queue."
       },
       "correct_answer": "A",
       "explanation": "Interface VPC endpoints are used for services that are accessed over the Internet, And in this case, it's Amazon SQS. By implementing An interface VPC endpoint for SQS, you can ensure that the traffic stays within the Amazon network."

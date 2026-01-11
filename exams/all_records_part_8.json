@@ -235,13 +235,13 @@
       "id": "370",
       "question": "A company runs a public three-tier web Application in a VPC. The Application runs on Amazon EC2 instances across multiple Availability Zones. The EC2 instances that run in private subnets need to communicate with a license server over the internet. The company needs a managed solution that minimizes operational maintenance. Which solution meets these requirements?",
       "options": {
-        "A": "Provision An AT instance in a public subnet. Modify each private subnet's route table with a default route that points to the NAT instance.",
-        "B": "Provision An AT instance in a private subnet. Modify each private subnet's route table with a default route that points to the NAT instance.",
-        "C": "Provision An AT gateway in a public subnet. Modify each private subnet's route table with a default route that points to the NAT gateway.",
-        "D": "Provision An AT gateway in a private subnet. Modify each private subnet's route table with a default route that points to the NAT gateway."
+        "A": "Provision A NAT instance in a public subnet. Modify each private subnet's route table with a default route that points to the NAT instance.",
+        "B": "Provision A NAT instance in a private subnet. Modify each private subnet's route table with a default route that points to the NAT instance.",
+        "C": "Provision A NAT gateway in a public subnet. Modify each private subnet's route table with a default route that points to the NAT gateway.",
+        "D": "Provision A NAT gateway in a private subnet. Modify each private subnet's route table with a default route that points to the NAT gateway."
       },
       "correct_answer": "C",
-      "explanation": "NAT Gateway: An AT gateway is a managed service provided by AWS that allows EC2 instances in private subnets to initiate outbound traffic to the internet while preventing unsolicited inbound traffic from reaching those instances. NAT gateways are fully managed, highly available, And require minimal maintenance.\nPublic Subnet: Placing the NAT gateway in a public subnet allows it to have Access to the internet, fulfilling the requirement for private instances to communicate with a license server over the internet.\nDefault Route: Modifying each private subnet's route table with a default route that points to the NAT gateway ensures that traffic from private instances is directed through the NAT gateway for outbound communication."
+      "explanation": "NAT Gateway: A NAT gateway is a managed service provided by AWS that allows EC2 instances in private subnets to initiate outbound traffic to the internet while preventing unsolicited inbound traffic from reaching those instances. NAT gateways are fully managed, highly available, And require minimal maintenance.\nPublic Subnet: Placing the NAT gateway in a public subnet allows it to have Access to the internet, fulfilling the requirement for private instances to communicate with a license server over the internet.\nDefault Route: Modifying each private subnet's route table with a default route that points to the NAT gateway ensures that traffic from private instances is directed through the NAT gateway for outbound communication."
     },
     {
       "id": "371",

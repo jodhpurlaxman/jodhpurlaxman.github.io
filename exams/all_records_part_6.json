@@ -5,12 +5,12 @@
       "question": "An Amazon EC2 instance is located in a private subnet in A new VPC. This subnet does not have outbound internet access, but the EC2 instance needs the ability to download monthly security updates from an outside vendor. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Create an internet gateway, and attach it to the VPC. Configure the private subnet route table to use the internet gateway as the default route.",
-        "B": "Create An AT gateway, and place it in a public subnet. Configure the private subnet route table to use the NAT gateway as the default route.",
-        "C": "Create An AT instance, and place it in the same subnet where the EC2 instance is located. Configure the private subnet route table to use the NAT instance as the default route.",
-        "D": "Create an internet gateway, and attach it to the VPC. Create An AT instance, and place it in the same subnet where the EC2 instance is located. Configure the private subnet route table to use the internet gateway as the default route."
+        "B": "Create A NAT gateway, and place it in a public subnet. Configure the private subnet route table to use the NAT gateway as the default route.",
+        "C": "Create A NAT instance, and place it in the same subnet where the EC2 instance is located. Configure the private subnet route table to use the NAT instance as the default route.",
+        "D": "Create an internet gateway, and attach it to the VPC. Create A NAT instance, and place it in the same subnet where the EC2 instance is located. Configure the private subnet route table to use the internet gateway as the default route."
       },
       "correct_answer": "B",
-      "explanation": "NAT gateways are designed to provide outbound internet access for instances in private subnets. Placing An AT gateway in a public subnet and configuring the private subnet's route table to use the NAT gateway as the default route allows the EC2 instance to download security updates while maintaining security."
+      "explanation": "NAT gateways are designed to provide outbound internet access for instances in private subnets. Placing A NAT gateway in a public subnet and configuring the private subnet's route table to use the NAT gateway as the default route allows the EC2 instance to download security updates while maintaining security."
     },
     {
       "id": "252",
@@ -529,7 +529,7 @@
       "options": {
         "A": "Create a private hosted zone by using Amazon Route 53.",
         "B": "Set up a gateway VPC endpoint for Amazon S3 in the VPC.",
-        "C": "Configure the EC2 instances to use An AT gateway to access the S3 bucket.",
+        "C": "Configure the EC2 instances to use A NAT gateway to access the S3 bucket.",
         "D": "Establish an AWS Site-to-Site VPN connection between the VPC and the S3 bucket."
       },
       "correct_answer": "B",

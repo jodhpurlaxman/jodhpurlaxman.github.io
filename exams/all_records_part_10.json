@@ -235,7 +235,7 @@
       "id": "470",
       "question": "A company has applications hosted on Amazon EC2 instances with IPv6 addresses. The applications must initiate communications with other external applications using the internet. However the company's security policy states that Any external service cannot initiate a connection to the EC2 instances. What should A solutions architect recommend to resolve this issue?",
       "options": {
-        "A": "Create An AT gateway And make it the destination of the subnet's route table",
+        "A": "Create A NAT gateway And make it the destination of the subnet's route table",
         "B": "Create An internet gateway And make it the destination of the subnet's route table",
         "C": "Create a virtual private gateway And make it the destination of the subnet's route table",
         "D": "Create An egress-only internet gateway And make it the destination of the subnet's route table"
@@ -560,7 +560,7 @@
     },
     {
       "id": "497",
-      "question": "A company has a service that reads And writes large amounts of data from An Amazon S3 bucket in the same AWS Region. The service is deployed on Amazon EC2 instances within the private subnet of a VPC. The service communicates with Amazon S3 over An AT gateway in the public subnet. However, the company wants a solution that will reduce the data output costs. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company has a service that reads And writes large amounts of data from An Amazon S3 bucket in the same AWS Region. The service is deployed on Amazon EC2 instances within the private subnet of a VPC. The service communicates with Amazon S3 over A NAT gateway in the public subnet. However, the company wants a solution that will reduce the data output costs. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Provision a dedicated EC2 NAT instance in the public subnet. Configure the route table for the private subnet to use the elastic network interface of this instance as the destination for All S3 traffic.",
         "B": "Provision a dedicated EC2 NAT instance in the private subnet. Configure the route table for the public subnet to use the elastic network interface of this instance as the destination for All S3 traffic.",

@@ -42,7 +42,7 @@
       "question": "A company needs to connect several VPCs in the us-east-1 Region that span hundreds of AWS accounts. The company's networking team has its own AWS account to manage the cloud network. What is the MOST operationally efficient solution to connect the VPCs?",
       "options": {
         "A": "Set up VPC peering connections between each VPC. Update each associated subnet's route table",
-        "B": "Configure An AT gateway And An internet gateway in each VPC to connect each VPC through the internet",
+        "B": "Configure A NAT gateway And An internet gateway in each VPC to connect each VPC through the internet",
         "C": "Create An AWS Transit Gateway in the networking team's AWS account. Configure static routes from each VPC.",
         "D": "Deploy VPN gateways in each VPC. Create a transit VPC in the networking team's AWS account to connect to each VPC."
       },
@@ -587,13 +587,13 @@
       "id": "549",
       "question": "A company has created a multi-tier Application for its ecommerce website. The website uses An Application Load Balancer that resides in the public subnets, a web tier in the public subnets, And a MySQL cluster hosted on Amazon EC2 instances in the private subnets. The MySQL database needs to retrieve product catalog And pricing information that is hosted on the internet by a third-party provider. A solutions architect must devise a strategy that maximizes security without increasing operational overhead. What should the solutions architect do to meet these requirements?",
       "options": {
-        "A": "Deploy An AT instance in the VPC. Route All the internet-based traffic through the NAT instance.",
-        "B": "Deploy An AT gateway in the public subnets. Modify the private subnet route table to direct All internet-bound traffic to the NAT gateway.",
+        "A": "Deploy A NAT instance in the VPC. Route All the internet-based traffic through the NAT instance.",
+        "B": "Deploy A NAT gateway in the public subnets. Modify the private subnet route table to direct All internet-bound traffic to the NAT gateway.",
         "C": "Configure An internet gateway And Attach it to the VPModify the private subnet route table to direct internet-bound traffic to the internet gateway.",
         "D": "Configure a virtual private gateway And Attach it to the VPC. Modify the private subnet route table to direct internet-bound traffic to the virtual private gateway."
       },
       "correct_answer": "B",
-      "explanation": "An AT gateway is a fully managed service provided by AWS that allows instances in a private subnet to initiate outbound traffic to the internet while preventing inbound traffic from reaching those instances. It simplifies the process of enabling internet Access for instances in private subnets without the need for managing a separate NAT instance."
+      "explanation": "A NAT gateway is a fully managed service provided by AWS that allows instances in a private subnet to initiate outbound traffic to the internet while preventing inbound traffic from reaching those instances. It simplifies the process of enabling internet Access for instances in private subnets without the need for managing a separate NAT instance."
     },
     {
       "id": "550",

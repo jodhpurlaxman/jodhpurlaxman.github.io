@@ -419,7 +419,7 @@
       "question": "A fleet of EC2 instances running in a private subnet needs to connect to the Internet using the IPv6 protocol. What service should we configure to enable this connectivity?",
       "options": {
         "A": "Connect the instances to Route 53",
-        "B": "An AT Instance",
+        "B": "A NAT Instance",
         "C": "An Egress-Only Internet Gateway",
         "D": "AWS Direct Connect"
       },
@@ -587,13 +587,13 @@
       "id": "699",
       "question": "An application runs on EC2 instances in an Auto Scaling group in a private subnet. How can the application download software updates from the Internet with minimal systems management effort?",
       "options": {
-        "A": "Create An AT gateway",
-        "B": "Launch An AT instance",
+        "A": "Create A NAT gateway",
+        "B": "Launch A NAT instance",
         "C": "Attach Elastic IP addresses",
         "D": "Create a Virtual Private Gateway"
       },
       "correct_answer": "A",
-      "explanation": "An AT Gateway is a fully managed service providing outbound internet connectivity with minimal ongoing management, unlike NAT instances which require manual management."
+      "explanation": "A NAT Gateway is a fully managed service providing outbound internet connectivity with minimal ongoing management, unlike NAT instances which require manual management."
     },
     {
       "id": "700",
