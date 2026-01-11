@@ -182,7 +182,7 @@
     },
     {
       "id": "616",
-      "question": "A company has deployed its newest product on AWS. The product runs in An Auto Scaling group behind A network Load Balancer. The company stores the product s objects in An Amazon S3 bucket. The company recently experienced malicious attacks a gainst its systems. The company needs a solution that continuously monitors for malicious activity in the AWS account, workloads, And Access patterns to the S3 bucket. The solution must also report suspicious activity And display the information on a dashboard. Which solution will meet these requirements?",
+      "question": "A company has deployed its newest product on AWS. The product runs in An Auto Scaling group behind A network Load Balancer. The company stores the product's objects in An Amazon S3 bucket. The company recently experienced malicious attacks a gainst its systems. The company needs a solution that continuously monitors for malicious activity in the AWS account, workloads, And Access patterns to the S3 bucket. The solution must also report suspicious activity And display the information on a dashboard. Which solution will meet these requirements?",
       "options": {
         "A": "Configure Amazon Macie to monitor And report Findings to AWS ConFig.",
         "B": "Configure Amazon Inspector to monitor And report Findings to AWS CloudTrail.",
@@ -475,7 +475,7 @@
       "id": "640",
       "question": "A company has An Application workflow that uses An AWS Lambda function to download And decrypt Files from Amazon S3. These Files are encrypted using AWS Key Management Service (AWS KMS) keys. A solutions architect needs to design a solution that will ensure the required permissions are set correctly. Which combination of actions accomplish this? (Choose two.)",
       "options": {
-        "A": "Attach the kms:decrypt permission to the Lambda function s resource policy",
+        "A": "Attach the kms:decrypt permission to the Lambda function's resource policy",
         "B": "Grant the decrypt permission for the Lambda IAM role in the KMS key's policy",
         "C": "Grant the decrypt permission for the Lambda resource policy in the KMS key's policy.",
         "D": "Create Anew IAM policy with the kms:decrypt permission And Attach the policy to the Lambda function.",

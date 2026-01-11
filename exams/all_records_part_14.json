@@ -71,7 +71,7 @@
         "D": "Store images in Amazon S3 Standard-Infrequent Access (S3 Standard-IA). Use S3 Standard-IA to directly deliver images by using a static website."
       },
       "correct_answer": "D",
-      "explanation": "Standard-IA is cost-effective for rarely accessed images. Static websites simplify delivery.\nEBS/EFS (Options A/B) are expensive And lack S3 s durability."
+      "explanation": "Standard-IA is cost-effective for rarely accessed images. Static websites simplify delivery.\nEBS/EFS (Options A/B) are expensive And lack S3's durability."
     },
     {
       "id": "657",
@@ -406,10 +406,10 @@
       "id": "684",
       "question": "A company wants to migrate its web applications from on premises to AWS. The company is located close to the eu-central-1 Region. Because of regulations, the company cannot launch some of its applications in eu-central-1. The company wants to achieve single-digit millisecond latency. Which solution will meet these requirements?",
       "options": {
-        "A": "Deploy the applications in eu-central-1. Extend the company s VPC from eu-central-1 to An edge location in Amazon CloudFront.",
+        "A": "Deploy the applications in eu-central-1. Extend the company's VPC from eu-central-1 to An edge location in Amazon CloudFront.",
         "B": "Deploy the applications in AWS Local Zones by extending the company's VPC from eu-central-1 to the chosen Local Zone.",
-        "C": "Deploy the applications in eu-central-1. Extend the company s VPC from eu-central-1 to the regional edge caches in Amazon CloudFront.",
-        "D": "Deploy the applications in AWS Wavelength Zones by extending the company s VPC from eu-central-1 to the chosen Wavelength Zone."
+        "C": "Deploy the applications in eu-central-1. Extend the company's VPC from eu-central-1 to the regional edge caches in Amazon CloudFront.",
+        "D": "Deploy the applications in AWS Wavelength Zones by extending the company's VPC from eu-central-1 to the chosen Wavelength Zone."
       },
       "correct_answer": "B",
       "explanation": "Local Zones provide single-digit latency near eu-central-1 while complying with regulations.\nCloudFront (Option A) is for caching, not app hosting."

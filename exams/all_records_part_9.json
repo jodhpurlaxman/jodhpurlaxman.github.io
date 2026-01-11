@@ -148,7 +148,7 @@
     },
     {
       "id": "413",
-      "question": "An ecommerce company is experiencing An increase in user traffic. The company s store is deployed on Amazon EC2 instances as a two-tier web Application consisting of a web tier And a separate database tier. As traffic increases, the company notices that the architecture is causing significant delays in sending timely marketing And order confirmation email to users. The company wants to reduce the time it spends resolving complex email delivery issues And minimize operational overhead. What should A solutions architect do to meet these requirements?",
+      "question": "An ecommerce company is experiencing An increase in user traffic. The company's store is deployed on Amazon EC2 instances as a two-tier web Application consisting of a web tier And a separate database tier. As traffic increases, the company notices that the architecture is causing significant delays in sending timely marketing And order confirmation email to users. The company wants to reduce the time it spends resolving complex email delivery issues And minimize operational overhead. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Create a separate Application tier using EC2 instances dedicated to email processing.",
         "B": "Configure the web instance to send email through Amazon Simple Email Service (Amazon SES).",
@@ -184,7 +184,7 @@
     },
     {
       "id": "416",
-      "question": "A rapidly growing global ecommerce company is hosting its web Application on AWS. The web Application includes static content And dynamic content. The website stores online transaction processing (OLTP) data in An Amazon RDS database The website s users are experiencing slow page loads. Which combination of actions should A solutions architect take to resolve this issue? (Choose two.)",
+      "question": "A rapidly growing global ecommerce company is hosting its web Application on AWS. The web Application includes static content And dynamic content. The website stores online transaction processing (OLTP) data in An Amazon RDS database The website's users are experiencing slow page loads. Which combination of actions should A solutions architect take to resolve this issue? (Choose two.)",
       "options": {
         "A": "Configure An Amazon Redshift cluster.",
         "B": "Set up An Amazon CloudFront distribution.",
@@ -307,7 +307,7 @@
     },
     {
       "id": "426",
-      "question": "A company needs to store data from its healthcare application. The application s data frequently changes. Anew regulation requires audit Access at All levels of the stored data. The company hosts the Application on An on-premises infrastructure that is running out of storage capacity. A solutions architect must securely migrate the existing data to AWS while satisfying the new regulation. Which solution will meet these requirements?",
+      "question": "A company needs to store data from its healthcare application. The application's data frequently changes. Anew regulation requires audit Access at All levels of the stored data. The company hosts the Application on An on-premises infrastructure that is running out of storage capacity. A solutions architect must securely migrate the existing data to AWS while satisfying the new regulation. Which solution will meet these requirements?",
       "options": {
         "A": "Use AWS DataSync to move the existing data to Amazon S3. Use AWS CloudTrail to log data events.",
         "B": "Use AWS Snowcone to move the existing data to Amazon S3. Use AWS CloudTrail to log management events.",
@@ -368,7 +368,7 @@
     },
     {
       "id": "431",
-      "question": "A company has developed Anew video game as a web application. The Application is in a three-tier architecture in a VPC with Amazon RDS for MySQL in the database layer. Several players will compete concurrently online. The game s developers want to display a top-10 scoreboard in near- real time And offer the ability to stop And restore the game while preserving the current scores. What should A solutions architect do to meet these requirements?",
+      "question": "A company has developed Anew video game as a web application. The Application is in a three-tier architecture in a VPC with Amazon RDS for MySQL in the database layer. Several players will compete concurrently online. The game's developers want to display a top-10 scoreboard in near- real time And offer the ability to stop And restore the game while preserving the current scores. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Set up An Amazon ElastiCache for Memcached cluster to cache the scores for the web Application to display.",
         "B": "Set up An Amazon ElastiCache for Redis cluster to compute And cache the scores for the web Application to display.",

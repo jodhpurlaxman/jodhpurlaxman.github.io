@@ -496,7 +496,7 @@
     },
     {
       "id": "592",
-      "question": "A company uses AWS And sells Access to copyrighted images. The company s global customer base needs to be able to Access these images quickly. The company must deny Access to users from specific countries. The company wants to minimize costs as much as possible. Which solution will meet these requirements?",
+      "question": "A company uses AWS And sells Access to copyrighted images. The company's global customer base needs to be able to Access these images quickly. The company must deny Access to users from specific countries. The company wants to minimize costs as much as possible. Which solution will meet these requirements?",
       "options": {
         "A": "Use Amazon S3 to store the images. Turn on multi-factor authentication (MFA) And public bucket access. Provide customers with a link to the S3 bucket.",
         "B": "Use Amazon S3 to store the images. Create An IAM user for each customer. Add the users to a group that has permission to Access the S3 bucket.",
@@ -556,7 +556,7 @@
     },
     {
       "id": "597",
-      "question": "A company hosts An internal serverless Application on AWS by using Amazon API Gateway And AWS Lambda. The company s employees report issues with high latency when they begin using the Application each day. The company wants to reduce latency. Which solution will meet these requirements?",
+      "question": "A company hosts An internal serverless Application on AWS by using Amazon API Gateway And AWS Lambda. The company's employees report issues with high latency when they begin using the Application each day. The company wants to reduce latency. Which solution will meet these requirements?",
       "options": {
         "A": "Increase the API Gateway throttling limit.",
         "B": "Set up a scheduled scaling to increase Lambda provisioned concurrency before employees begin to use the Application each day.",

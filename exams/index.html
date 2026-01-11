@@ -292,7 +292,7 @@ function updateBookmarkBtn() {
 }
 
 function updateTimerDisplay() {
-  const s = Math.max(0, Math.floor(examTimeLeft));
+  const's = Math.max(0, Math.floor(examTimeLeft));
   const mm = String(Math.floor(s/60)).padStart(2,'0');
   const ss = String(s%60).padStart(2,'0');
   timerDisplay.textContent = `${mm}:${ss}`;

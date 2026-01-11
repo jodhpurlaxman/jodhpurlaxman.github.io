@@ -29,7 +29,7 @@
       "id": "503",
       "question": "A company runs An infrastructure monitoring service. The company is building Anew feature that will enable the service to monitor data in customer AWS accounts. The new feature will call AWS APIs in customer accounts to describe Amazon EC2 instances And read Amazon Cloudwatch metrics. What should the company do to obtain Access to customer accounts in the MOST secure way?",
       "options": {
-        "A": "Ensure that the customers create An IAM role in their account with read-only EC2 And CloudWatch permissions And a trust policy to the company s account.",
+        "A": "Ensure that the customers create An IAM role in their account with read-only EC2 And CloudWatch permissions And a trust policy to the company's account.",
         "B": "Create a serverless API that implements a token vending machine to provide temporary AWS credentials for a role with read-only EC2 And CloudWatch permissions.",
         "C": "Ensure that the customers create An IAM user in their account with read-only EC2 And CloudWatch permissions. Encrypt And store customer Access And secret keys in a secrets management system.",
         "D": "Ensure that the customers create An Amazon Cognito user in their account to use An IAM role with read-only EC2 And CloudWatch permissions. Encrypt And store the Amazon Cognito user And password in a secrets management system."
@@ -41,10 +41,10 @@
       "id": "504",
       "question": "A company needs to connect several VPCs in the us-east-1 Region that span hundreds of AWS accounts. The company's networking team has its own AWS account to manage the cloud network. What is the MOST operationally efficient solution to connect the VPCs?",
       "options": {
-        "A": "Set up VPC peering connections between each VPC. Update each associated subnet s route table",
+        "A": "Set up VPC peering connections between each VPC. Update each associated subnet's route table",
         "B": "Configure An AT gateway And An internet gateway in each VPC to connect each VPC through the internet",
-        "C": "Create An AWS Transit Gateway in the networking team s AWS account. Configure static routes from each VPC.",
-        "D": "Deploy VPN gateways in each VPC. Create a transit VPC in the networking team s AWS account to connect to each VPC."
+        "C": "Create An AWS Transit Gateway in the networking team's AWS account. Configure static routes from each VPC.",
+        "D": "Deploy VPN gateways in each VPC. Create a transit VPC in the networking team's AWS account to connect to each VPC."
       },
       "correct_answer": "C",
       "explanation": "AWS Transit Gateway: It is designed to simplify the connectivity between multiple VPCs. It a cts as a central hub that allows you to connect multiple VPCs And on-premises networks. This approach reduces the complexity of managing peering connections individually."
@@ -391,7 +391,7 @@
     },
     {
       "id": "533",
-      "question": "A company stores data in Amazon S3. According to regulations, the data must not contain personally identifiable information (PII). The company recently discovered that S3 buckets have some objects that contain PII. The company needs to automatically detect PII in S3 buckets And to notify the company s security team. Which solution will meet these requirements?",
+      "question": "A company stores data in Amazon S3. According to regulations, the data must not contain personally identifiable information (PII). The company recently discovered that S3 buckets have some objects that contain PII. The company needs to automatically detect PII in S3 buckets And to notify the company's security team. Which solution will meet these requirements?",
       "options": {
         "A": "Use Amazon Macie. Create An Amazon EventBridge rule to Filter the SensitiveData event type from Macie Findings And to send An Amazon Simple NotiFication Service (Amazon SNS) notiFication to the security team.",
         "B": "Use Amazon GuardDuty. Create An Amazon EventBridge rule to Filter the CRITICAL event type from GuardDuty Findings And to send An Amazon Simple NotiFication Service (Amazon SNS) notiFication to the security team.",
@@ -512,7 +512,7 @@
     },
     {
       "id": "543",
-      "question": "A company runs Amazon EC2 instances in multiple AWS accounts that are individually bled. The company recently purchased a Savings Plan. Because of changes in the company s business requirements, the company has decommissioned a large number of EC2 instances. The company wants to use its Savings Plan discounts on its other AWS accounts. Which combination of steps will meet these requirements? (Choose two.)",
+      "question": "A company runs Amazon EC2 instances in multiple AWS accounts that are individually bled. The company recently purchased a Savings Plan. Because of changes in the company's business requirements, the company has decommissioned a large number of EC2 instances. The company wants to use its Savings Plan discounts on its other AWS accounts. Which combination of steps will meet these requirements? (Choose two.)",
       "options": {
         "A": "From the AWS Account Management Console of the management account, turn on discount sharing from the billing preferences section.",
         "B": "From the AWS Account Management Console of the account that purchased the existing Savings Plan, turn on discount sharing from the billing preferences section. Include All accounts.",
