@@ -2,7 +2,7 @@
   "questions": [
     {
       "id": "501",
-      "question": "A company wants to ingest customer payment data into the company\'s data lake in Amazon S3. The company receives payment data every minute on average. The company wants to Analyze the payment data in real time. Then the company wants to ingest the data into the data lake. Which solution will meet these requirements with the MOST operational efficiency?",
+      "question": "A company wants to ingest customer payment data into the company's data lake in Amazon S3. The company receives payment data every minute on average. The company wants to Analyze the payment data in real time. Then the company wants to ingest the data into the data lake. Which solution will meet these requirements with the MOST operational efficiency?",
       "options": {
         "A": "Use Amazon Kinesis Data Streams to ingest data. Use AWS Lambda to Analyze the data in real time.",
         "B": "Use AWS Glue to ingest data. Use Amazon Kinesis Data Analytics to Analyze the data in real time.",
@@ -23,13 +23,13 @@
         "E": "Create An Amazon Machine Image (AMI) from the existing EC2 instance. Use the AMI to provision new instances behind An Application Load Balancer as part of An Auto Scaling group. Configure the Auto Scaling group to maintain a minimum of two instances. Configure An Amazon CloudFront distribution for the website."
       },
       "correct_answer": "CE",
-      "explanation": "E. Create An Amazon Machine Image (AMI) from the existing EC2 instance. Use the AMI to provision new instances behind An Application Load Balancer as part of An Auto Scaling group. Configure the Auto Scaling group to maintain a minimum of two instances. Configure An Amazon CloudFront distribution for the website.\nOption C provides moving the website images onto An Amazon EFS file system that is mounted on every EC2 instance. Amazon EFS provides a scalable And fully managed file storage solution that can be accessed concurrently from multiple EC2 instances. This ensures that the website images can be accessed efficiently And consistently by All instances, improving performance.\nIn Option E The Auto Scaling group maintains a minimum of two instances, ensuring resilience by automatically replacing Any unhealthy instances. Additionally, configuring An Amazon CloudFront distribution for the website further improves performance by caching content at edge locations closer to the end-users, reducing latency And improving content delivery.\nHence combining these actions, the website\'s performance is improved through efficient image storage And content delivery"
+      "explanation": "E. Create An Amazon Machine Image (AMI) from the existing EC2 instance. Use the AMI to provision new instances behind An Application Load Balancer as part of An Auto Scaling group. Configure the Auto Scaling group to maintain a minimum of two instances. Configure An Amazon CloudFront distribution for the website.\nOption C provides moving the website images onto An Amazon EFS file system that is mounted on every EC2 instance. Amazon EFS provides a scalable And fully managed file storage solution that can be accessed concurrently from multiple EC2 instances. This ensures that the website images can be accessed efficiently And consistently by All instances, improving performance.\nIn Option E The Auto Scaling group maintains a minimum of two instances, ensuring resilience by automatically replacing Any unhealthy instances. Additionally, configuring An Amazon CloudFront distribution for the website further improves performance by caching content at edge locations closer to the end-users, reducing latency And improving content delivery.\nHence combining these actions, the website's performance is improved through efficient image storage And content delivery"
     },
     {
       "id": "503",
       "question": "A company runs An infrastructure monitoring service. The company is building A new feature that will enable the service to monitor data in customer AWS accounts. The new feature will call AWS APIs in customer accounts to describe Amazon EC2 instances And read Amazon Cloudwatch metrics. What should the company do to obtain Access to customer accounts in the MOST secure way?",
       "options": {
-        "A": "Ensure that the customers create An IAM role in their account with read-only EC2 And CloudWatch permissions And a trust policy to the company\'s account.",
+        "A": "Ensure that the customers create An IAM role in their account with read-only EC2 And CloudWatch permissions And a trust policy to the company's account.",
         "B": "Create a serverless API that implements a token vending machine to provide temporary AWS credentials for a role with read-only EC2 And CloudWatch permissions.",
         "C": "Ensure that the customers create An IAM user in their account with read-only EC2 And CloudWatch permissions. Encrypt And store customer Access And secret keys in a secrets management system.",
         "D": "Ensure that the customers create An Amazon Cognito user in their account to use An IAM role with read-only EC2 And CloudWatch permissions. Encrypt And store the Amazon Cognito user And password in a secrets management system."
@@ -39,12 +39,12 @@
     },
     {
       "id": "504",
-      "question": "A company needs to connect several VPCs in the us-east-1 Region that span hundreds of AWS accounts. The company\'s networking team has its own AWS account to manage the cloud network. What is the MOST operationally efficient solution to connect the VPCs?",
+      "question": "A company needs to connect several VPCs in the us-east-1 Region that span hundreds of AWS accounts. The company's networking team has its own AWS account to manage the cloud network. What is the MOST operationally efficient solution to connect the VPCs?",
       "options": {
-        "A": "Set up VPC peering connections between each VPC. Update each associated subnet\'s route table",
+        "A": "Set up VPC peering connections between each VPC. Update each associated subnet's route table",
         "B": "Configure A NAT gateway And An internet gateway in each VPC to connect each VPC through the internet",
-        "C": "Create An AWS Transit Gateway in the networking team\'s AWS account. Configure static routes from each VPC.",
-        "D": "Deploy VPN gateways in each VPC. Create a transit VPC in the networking team\'s AWS account to connect to each VPC."
+        "C": "Create An AWS Transit Gateway in the networking team's AWS account. Configure static routes from each VPC.",
+        "D": "Deploy VPN gateways in each VPC. Create a transit VPC in the networking team's AWS account to connect to each VPC."
       },
       "correct_answer": "C",
       "explanation": "AWS Transit Gateway: It is designed to simplify the connectivity between multiple VPCs. It a cts as a central hub that allows you to connect multiple VPCs And on-premises networks. This approach reduces the complexity of managing peering connections individually."
@@ -65,13 +65,13 @@
       "id": "506",
       "question": "A social media company is building a feature for its website. The feature will give users the ability to upload photos. The company expects significant increases in demand during large events And must ensure that the website can handle the upload traffic from users. Which solution meets these requirements with the MOST scalability?",
       "options": {
-        "A": "Upload Files from the user\'s browser to the Application servers. Transfer the Files to An Amazon S3 bucket.",
-        "B": "Provision An AWS Storage Gateway File gateway. Upload Files directly from the user\'s browser to the File gateway.",
-        "C": "Generate Amazon S3 presigned URLs in the application. Upload Files directly from the user\'s browser into An S3 bucket.",
-        "D": "Provision An Amazon Elastic File System (Amazon EFS) File system. Upload Files directly from the user\'s browser to the File system."
+        "A": "Upload Files from the user's browser to the Application servers. Transfer the Files to An Amazon S3 bucket.",
+        "B": "Provision An AWS Storage Gateway File gateway. Upload Files directly from the user's browser to the File gateway.",
+        "C": "Generate Amazon S3 presigned URLs in the application. Upload Files directly from the user's browser into An S3 bucket.",
+        "D": "Provision An Amazon Elastic File System (Amazon EFS) File system. Upload Files directly from the user's browser to the File system."
       },
       "correct_answer": "C",
-      "explanation": "Amazon S3 Presigned URLs: This approach allows the client (user\'s browser) to directly upload files to Amazon S3 using a presigned URL generated by the server. This offloads the file transfer process from the Application servers And enables a direct upload to S3 from the client side."
+      "explanation": "Amazon S3 Presigned URLs: This approach allows the client (user's browser) to directly upload files to Amazon S3 using a presigned URL generated by the server. This offloads the file transfer process from the Application servers And enables a direct upload to S3 from the client side."
     },
     {
       "id": "507",
@@ -83,7 +83,7 @@
         "D": "Migrate the Application to An Amazon Aurora Serverless database. Deploy instances of the database to each Region. Use the correct Regional endpoint in each Regional deployment to Access the database. Use AWS Lambda functions to process event streams in each Region to synchronize the databases."
       },
       "correct_answer": "A",
-      "explanation": "Using DynamoDB\'s global tables feature, you can achieve a globally consistent reservation database with low latency on updates, making it suitable for serving a global user base. The automatic replication provided by DynamoDB eliminates the need for manual synchronization between Regions."
+      "explanation": "Using DynamoDB's global tables feature, you can achieve a globally consistent reservation database with low latency on updates, making it suitable for serving a global user base. The automatic replication provided by DynamoDB eliminates the need for manual synchronization between Regions."
     },
     {
       "id": "508",
@@ -124,7 +124,7 @@
     },
     {
       "id": "511",
-      "question": "A company is developing software that uses a PostgreSQL database schema. The company needs to configure multiple development environments And databases for the company\'s developers. On average, each development environment is used for half of the 8-hour workday. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company is developing software that uses a PostgreSQL database schema. The company needs to configure multiple development environments And databases for the company's developers. On average, each development environment is used for half of the 8-hour workday. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Configure each development environment with its own Amazon Aurora PostgreSQL database",
         "B": "Configure each development environment with its own Amazon RDS for PostgreSQL Single-AZ DB instances",
@@ -181,7 +181,7 @@
         "E": "Scaling globally to support petabytes of data And tens of millions of requests per minute F. Creating a secondary replica of the cluster by using the AWS Management Console"
       },
       "correct_answer": "B",
-      "explanation": "C. Building Analytics workloads during specified hours And when the Application is not active\nE. Scaling globally to support petabytes of data And tens of millions of requests per minute\nAmazon Redshift supports encryption for data at rest And in transit, providing security features for sensitive data. This makes it suitable for scenarios where encryption is a requirement.\nAmazon Redshift is a fully managed data warehouse service optimized for Analytical queries. Running Analytics workloads during specified hours aligns with Redshift\'s strengths, allowing for efficient query processing And Analysis."
+      "explanation": "C. Building Analytics workloads during specified hours And when the Application is not active\nE. Scaling globally to support petabytes of data And tens of millions of requests per minute\nAmazon Redshift supports encryption for data at rest And in transit, providing security features for sensitive data. This makes it suitable for scenarios where encryption is a requirement.\nAmazon Redshift is a fully managed data warehouse service optimized for Analytical queries. Running Analytics workloads during specified hours aligns with Redshift's strengths, allowing for efficient query processing And Analysis."
     },
     {
       "id": "516",
@@ -241,11 +241,11 @@
         "D": "Configure DynamoDB in on-demand mode by using the DynamoDB Standard Infrequent Access (DynamoDB Standard-IA) table class."
       },
       "correct_answer": "B",
-      "explanation": "On-demand capacity mode allows DynamoDB to automatically scale read And write capacity based on actual Application traffic.\nIt eliminates the need for manual provisioning of read And write capacity, making it well-suited for unpredictable workloads.\nDynamoDB Standard Table Class:\nThe DynamoDB Standard table class provides general-purpose storage with consistent, single-digit millisecond latency. It\'s suitable for a wide range of applications, including those with unpredictable traffic"
+      "explanation": "On-demand capacity mode allows DynamoDB to automatically scale read And write capacity based on actual Application traffic.\nIt eliminates the need for manual provisioning of read And write capacity, making it well-suited for unpredictable workloads.\nDynamoDB Standard Table Class:\nThe DynamoDB Standard table class provides general-purpose storage with consistent, single-digit millisecond latency. It's suitable for a wide range of applications, including those with unpredictable traffic"
     },
     {
       "id": "521",
-      "question": "A retail company has several businesses. The IT team for each business manages its own AWS account. Each team account is part of An organization in AWS Organizations. Each team monitors its product inventory levels in An Amazon DynamoDB table in the team\'s own AWS account. The company is deploying a central inventory reporting Application into a shared AWS account. The Application must be able to read items from All the teams' DynamoDB tables. Which authentication option will meet these requirements MOST securely?",
+      "question": "A retail company has several businesses. The IT team for each business manages its own AWS account. Each team account is part of An organization in AWS Organizations. Each team monitors its product inventory levels in An Amazon DynamoDB table in the team's own AWS account. The company is deploying a central inventory reporting Application into a shared AWS account. The Application must be able to read items from All the teams' DynamoDB tables. Which authentication option will meet these requirements MOST securely?",
       "options": {
         "A": "Integrate DynamoDB with AWS Secrets Manager in the inventory Application account. Configure the Application to use the correct secret from Secrets Manager to authenticate And read the DynamoDB table. Schedule secret rotation for every 30 days.",
         "B": "In every business account, create An IAM user that has programmatic access. Configure the Application to use the correct IAM user Access key ID And secret Access key to authenticate And read the DynamoDB table. Manually rotate IAM Access keys every 30 days.",
@@ -257,7 +257,7 @@
     },
     {
       "id": "522",
-      "question": "A company runs container applications by using Amazon Elastic Kubernetes Service (Amazon EKS). The company\'s workload is not consistent throughout the day. The company wants Amazon EKS to scale in And out According to the workload. Which combination of steps will meet these requirements with the LEAST operational overhead? (Choose two.)",
+      "question": "A company runs container applications by using Amazon Elastic Kubernetes Service (Amazon EKS). The company's workload is not consistent throughout the day. The company wants Amazon EKS to scale in And out According to the workload. Which combination of steps will meet these requirements with the LEAST operational overhead? (Choose two.)",
       "options": {
         "A": "Use An AWS Lambda function to resize the EKS cluster.",
         "B": "Use the Kubernetes Metrics Server to activate horizontal pod autoscaling.",
@@ -306,10 +306,10 @@
     },
     {
       "id": "526",
-      "question": "A solutions architect is reviewing the resilience of An application. The solutions architect notices that a database administrator recently failed over the application\'s Amazon Aurora PostgreSQL database writer instance as part of a scaling exercise. The failover resulted in 3 minutes of downtime for the application. Which solution will reduce the downtime for scaling exercises with the LEAST operational overhead?",
+      "question": "A solutions architect is reviewing the resilience of An application. The solutions architect notices that a database administrator recently failed over the application's Amazon Aurora PostgreSQL database writer instance as part of a scaling exercise. The failover resulted in 3 minutes of downtime for the application. Which solution will reduce the downtime for scaling exercises with the LEAST operational overhead?",
       "options": {
         "A": "Create more Aurora PostgreSQL read replicas in the cluster to handle the load during failover.",
-        "B": "Set up a secondary Aurora PostgreSQL cluster in the same AWS Region. During failover, update the Application to use the secondary cluster\'s writer endpoint.",
+        "B": "Set up a secondary Aurora PostgreSQL cluster in the same AWS Region. During failover, update the Application to use the secondary cluster's writer endpoint.",
         "C": "Create An Amazon ElastiCache for Memcached cluster to handle the load during failover.",
         "D": "Set up An Amazon RDS proxy for the database. Update the Application to use the proxy endpoint."
       },
@@ -391,7 +391,7 @@
     },
     {
       "id": "533",
-      "question": "A company stores data in Amazon S3. According to regulations, the data must not contain personally identifiable information (PII). The company recently discovered that S3 buckets have some objects that contain PII. The company needs to automatically detect PII in S3 buckets And to notify the company\'s security team. Which solution will meet these requirements?",
+      "question": "A company stores data in Amazon S3. According to regulations, the data must not contain personally identifiable information (PII). The company recently discovered that S3 buckets have some objects that contain PII. The company needs to automatically detect PII in S3 buckets And to notify the company's security team. Which solution will meet these requirements?",
       "options": {
         "A": "Use Amazon Macie. Create An Amazon EventBridge rule to Filter the SensitiveData event type from Macie Findings And to send An Amazon Simple NotiFication Service (Amazon SNS) notiFication to the security team.",
         "B": "Use Amazon GuardDuty. Create An Amazon EventBridge rule to Filter the CRITICAL event type from GuardDuty Findings And to send An Amazon Simple NotiFication Service (Amazon SNS) notiFication to the security team.",
@@ -427,7 +427,7 @@
     },
     {
       "id": "536",
-      "question": "A company wants to provide data scientists with near real-time read-only Access to the company\'s production Amazon RDS for PostgreSQL database. The database is currently configured as a Single-AZdatabase. The data scientists use complex queries that will not affect the production database. The company needs a solution that is highly available. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company wants to provide data scientists with near real-time read-only Access to the company's production Amazon RDS for PostgreSQL database. The database is currently configured as a Single-AZdatabase. The data scientists use complex queries that will not affect the production database. The company needs a solution that is highly available. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Scale the existing production database in a maintenance window to provide enough power for the data scientists.",
         "B": "Change the setup from a Single-AZto a Multi-AZ instance deployment with a larger secondary standby instance. Provide the data scientists Access to the secondary instance.",
@@ -463,7 +463,7 @@
     },
     {
       "id": "539",
-      "question": "A company wants to use the AWS Cloud to improve its on-premises disaster recovery (DR) configuration. The company\'s core production business Application uses Microsoft SQL Server Standard, which runs on a virtual machine (VM). The Application has a recovery point objective (RPO) of 30 seconds or fewer And a recovery time objective (RTO) of 60 minutes. The DR solution needs to minimize costs wherever possible. Which solution will meet these requirements?",
+      "question": "A company wants to use the AWS Cloud to improve its on-premises disaster recovery (DR) configuration. The company's core production business Application uses Microsoft SQL Server Standard, which runs on a virtual machine (VM). The Application has a recovery point objective (RPO) of 30 seconds or fewer And a recovery time objective (RTO) of 60 minutes. The DR solution needs to minimize costs wherever possible. Which solution will meet these requirements?",
       "options": {
         "A": "Configure a multi-site active/active setup between the on-premises server And AWS by using Microsoft SQL Server Enterprise with Always On Availability groups.",
         "B": "Configure a warm standby Amazon RDS for SQL Server database on AWS. Configure AWS Database Migration Service (AWS DMS) to use change data capture (CDC).",
@@ -512,7 +512,7 @@
     },
     {
       "id": "543",
-      "question": "A company runs Amazon EC2 instances in multiple AWS accounts that are individually bled. The company recently purchased a Savings Plan. Because of changes in the company\'s business requirements, the company has decommissioned a large number of EC2 instances. The company wants to use its Savings Plan discounts on its other AWS accounts. Which combination of steps will meet these requirements? (Choose two.)",
+      "question": "A company runs Amazon EC2 instances in multiple AWS accounts that are individually bled. The company recently purchased a Savings Plan. Because of changes in the company's business requirements, the company has decommissioned a large number of EC2 instances. The company wants to use its Savings Plan discounts on its other AWS accounts. Which combination of steps will meet these requirements? (Choose two.)",
       "options": {
         "A": "From the AWS Account Management Console of the management account, turn on discount sharing from the billing preferences section.",
         "B": "From the AWS Account Management Console of the account that purchased the existing Savings Plan, turn on discount sharing from the billing preferences section. Include All accounts.",
@@ -537,7 +537,7 @@
     },
     {
       "id": "545",
-      "question": "A company wants to direct its users to a backup static error page if the company\'s primary website is unavailable. The primary website\'s DNS records are hosted in Amazon Route 53. The domain is pointing to An Application Load Balancer (ALB). The company needs a solution that minimizes changes And infrastructure overhead. Which solution will meet these requirements?",
+      "question": "A company wants to direct its users to a backup static error page if the company's primary website is unavailable. The primary website's DNS records are hosted in Amazon Route 53. The domain is pointing to An Application Load Balancer (ALB). The company needs a solution that minimizes changes And infrastructure overhead. Which solution will meet these requirements?",
       "options": {
         "A": "Update the Route 53 records to use a latency routing policy. Add a static error page that is hosted in An Amazon S3 bucket to the records so that the traffic is sent to the most responsive endpoints.",
         "B": "Set up a Route 53 active-passive failover  configuration. Direct traffic to a static error page that is hosted in An Amazon S3 bucket when Route 53 health checks determine that the ALBendpoint is unhealthy.",
@@ -549,7 +549,7 @@
     },
     {
       "id": "546",
-      "question": "A recent Analysis of A company\'s IT expenses highlights the need to reduce backup costs. The company\'s chief information officer wants to simplify the on-premises backup infrastructure And reduce costs by eliminating the use of physical backup tapes. The company must preserve the existing investment in the on-premises backup applications And workflows. What should A solutions architect recommend?",
+      "question": "A recent Analysis of A company's IT expenses highlights the need to reduce backup costs. The company's chief information officer wants to simplify the on-premises backup infrastructure And reduce costs by eliminating the use of physical backup tapes. The company must preserve the existing investment in the on-premises backup applications And workflows. What should A solutions architect recommend?",
       "options": {
         "A": "Set up AWS Storage Gateway to connect with the backup applications using the NFS interface.",
         "B": "Set up An Amazon EFS File system that connects with the backup applications using the NFS interface.",
@@ -581,7 +581,7 @@
         "D": "Set up a list of products in AWS Service Catalog in the AWS accounts to manage And control the usage of speciFic AWS services."
       },
       "correct_answer": "B",
-      "explanation": "AWS Organizations And Service Control Policies (SCPs): AWS Organizations provides a way to centrally manage And organize multiple AWS accounts. By creating separate organizational units (OUs) for each department, you can apply Service Control Policies (SCPs) to control which AWS services each department\'s accounts can access."
+      "explanation": "AWS Organizations And Service Control Policies (SCPs): AWS Organizations provides a way to centrally manage And organize multiple AWS accounts. By creating separate organizational units (OUs) for each department, you can apply Service Control Policies (SCPs) to control which AWS services each department's accounts can access."
     },
     {
       "id": "549",

@@ -71,13 +71,13 @@
         "D": "Store images in Amazon S3 Standard-Infrequent Access (S3 Standard-IA). Use S3 Standard-IA to directly deliver images by using a static website."
       },
       "correct_answer": "D",
-      "explanation": "Standard-IA is cost-effective for rarely accessed images. Static websites simplify delivery.\nEBS/EFS (Options A/B) are expensive And lack S3\'s durability."
+      "explanation": "Standard-IA is cost-effective for rarely accessed images. Static websites simplify delivery.\nEBS/EFS (Options A/B) are expensive And lack S3's durability."
     },
     {
       "id": "657",
       "question": "A company has multiple AWS accounts in An organization in AWS Organizations that different business units use. The company has multiple offices around the world. The company needs to update security group rules to Allow new office CIDR ranges or to remove old CIDR ranges across the organization. The company wants to centralize the management of security group rules to minimize the administrative overhead that updating CIDR ranges requires. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
-        "A": "Create VPC security groups in the organization\'s management account. Update the security groups when a CIDR range update is necessary.",
+        "A": "Create VPC security groups in the organization's management account. Update the security groups when a CIDR range update is necessary.",
         "B": "Create a VPC customer managed preFix list that contains the list of CIDRs. Use AWS Resource Access Manager (AWS RAM) to share the preFix list across the organization. Use the preFix list in the security groups across the organization.",
         "C": "Create An AWS managed preFix list. Use An AWS Security Hub policy to enforce the security group update across the organization. Use An AWS Lambda function to update the preFix list automatically when the CIDR ranges change.",
         "D": "Create security groups in a central administrative AWS account. Create An AWS Firewall Manager common security group policy for the whole organization. Select the previously created security groups as primary groups in the policy."
@@ -124,7 +124,7 @@
     },
     {
       "id": "661",
-      "question": "A company runs applications on AWS that connect to the company\'s Amazon RDS database. The applications scale on weekends And at peak times of the year. The company wants to scale the database more effectively for its applications that connect to the database. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company runs applications on AWS that connect to the company's Amazon RDS database. The applications scale on weekends And at peak times of the year. The company wants to scale the database more effectively for its applications that connect to the database. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Use Amazon DynamoDB with connection pooling with a target group  configuration for the database. Change the applications to use the DynamoDB endpoint.",
         "B": "Use Amazon RDS Proxy with a target group for the database. Change the applications to use the RDS Proxy endpoint.",
@@ -141,7 +141,7 @@
         "A": "Use logs in Amazon CloudWatch Logs to monitor the storage utilization of Amazon EBS. Use Amazon EBS Elastic Volumes to reduce the size of the EBS volumes.",
         "B": "Use a custom script to monitor space usage. Use Amazon EBS Elastic Volumes to reduce the size of the EBS volumes.",
         "C": "Delete All expired And unused snapshots to reduce snapshot costs.",
-        "D": "Delete All nonessential snapshots. Use Amazon Data Lifecycle Manager to create And manage the snapshots According to the company\'s snapshot policy requirements."
+        "D": "Delete All nonessential snapshots. Use Amazon Data Lifecycle Manager to create And manage the snapshots According to the company's snapshot policy requirements."
       },
       "correct_answer": "D",
       "explanation": "Automates snapshot retention per policy, reducing costs.\nManual resizing (Options A/B) a dds overhead."
@@ -160,7 +160,7 @@
     },
     {
       "id": "664",
-      "question": "A company has a web Application that runs on premises. The Application experiences latency issues during peak hours. The latency issues occur twice each month. A t the start of a latency issue, the application\'s CPU utilization immediately increases to 10 times its normal amount. The company wants to migrate the Application to AWS to improve latency. The company also wants to scale the Application automatically when Application demand increases. The company will use AWS Elastic Beanstalk for Application deployment. Which solution will meet these requirements?",
+      "question": "A company has a web Application that runs on premises. The Application experiences latency issues during peak hours. The latency issues occur twice each month. A t the start of a latency issue, the application's CPU utilization immediately increases to 10 times its normal amount. The company wants to migrate the Application to AWS to improve latency. The company also wants to scale the Application automatically when Application demand increases. The company will use AWS Elastic Beanstalk for Application deployment. Which solution will meet these requirements?",
       "options": {
         "A": "Configure An Elastic Beanstalk environment to use burstable performance instances in unlimited mode. Configure the environment to scale based on requests.",
         "B": "Configure An Elastic Beanstalk environment to use compute optimized instances. Configure the environment to scale based on requests.",
@@ -172,7 +172,7 @@
     },
     {
       "id": "665",
-      "question": "A company has customers located across the world. The company wants to use automation to secure its systems And network infrastructure. The company\'s security team must be able to track And audit All incremental changes to the infrastructure. Which solution will meet these requirements?",
+      "question": "A company has customers located across the world. The company wants to use automation to secure its systems And network infrastructure. The company's security team must be able to track And audit All incremental changes to the infrastructure. Which solution will meet these requirements?",
       "options": {
         "A": "Use AWS Organizations to set up the infrastructure. Use AWS ConFig to track changes.",
         "B": "Use AWS CloudFormation to set up the infrastructure. Use AWS ConFig to track changes.",
@@ -197,7 +197,7 @@
     },
     {
       "id": "667",
-      "question": "A company is moving its data And applications to AWS during a multiyear migration project. The company wants to securely Access data on Amazon S3 from the company\'s AWS Region And from the company\'s on-premises location. The data must not traverse the internet. The company has established An AWS Direct Connect connection between its Region And its on-premises location. Which solution will meet these requirements?",
+      "question": "A company is moving its data And applications to AWS during a multiyear migration project. The company wants to securely Access data on Amazon S3 from the company's AWS Region And from the company's on-premises location. The data must not traverse the internet. The company has established An AWS Direct Connect connection between its Region And its on-premises location. Which solution will meet these requirements?",
       "options": {
         "A": "Create gateway endpoints for Amazon S3. Use the gateway endpoints to securely Access the data from the Region And the on-premises location.",
         "B": "Create a gateway in AWS Transit Gateway to Access Amazon S3 securely from the Region And the on-premises location.",
@@ -209,7 +209,7 @@
     },
     {
       "id": "668",
-      "question": "A company created A new organization in AWS Organizations. The organization has multiple accounts for the company\'s development teams. The development team members use AWS IAM Identity Center (AWS Single Sign-On) to Access the accounts. For each of the company\'s applications, the development teams must use a predefined Application name to tag resources that are created. A solutions architect needs to design a solution that gives the development team the ability to create resources only if the Application name tag has An approved value. Which solution will meet these requirements?",
+      "question": "A company created A new organization in AWS Organizations. The organization has multiple accounts for the company's development teams. The development team members use AWS IAM Identity Center (AWS Single Sign-On) to Access the accounts. For each of the company's applications, the development teams must use a predefined Application name to tag resources that are created. A solutions architect needs to design a solution that gives the development team the ability to create resources only if the Application name tag has An approved value. Which solution will meet these requirements?",
       "options": {
         "A": "Create An IAM group that has a conditional Allow policy that requires the Application name tag to be speciFied for resources to be created.",
         "B": "Create a cross-account role that has a Deny policy for Any resource that has the Application name tag.",
@@ -272,8 +272,8 @@
       "question": "A company runs An SMB File server in its data center. The File server stores large Files that the company frequently accesses for up to 7 days after the File creation date. After 7 days, the company needs to be able to Access the Files with a maximum retrieval time of 24 hours. Which solution will meet these requirements?",
       "options": {
         "A": "Use AWS DataSync to copy data that is older than 7 days from the SMB File server to AWS.",
-        "B": "Create An Amazon S3 File Gateway to increase the company\'s storage space. Create An S3 Lifecycle policy to transition the data to S3 Glacier Deep Archive after 7 days.",
-        "C": "Create An Amazon FSx File Gateway to increase the company\'s storage space. Create An Amazon S3 Lifecycle policy to transition the data after 7 days.",
+        "B": "Create An Amazon S3 File Gateway to increase the company's storage space. Create An S3 Lifecycle policy to transition the data to S3 Glacier Deep Archive after 7 days.",
+        "C": "Create An Amazon FSx File Gateway to increase the company's storage space. Create An Amazon S3 Lifecycle policy to transition the data after 7 days.",
         "D": "Configure Access to Amazon S3 for each user. Create An S3 Lifecycle policy to transition the data to S3 Glacier Flexible Retrieval after 7 days."
       },
       "correct_answer": "B",
@@ -306,7 +306,7 @@
     },
     {
       "id": "676",
-      "question": "A company\'s Application uses Network Load Balancers, Auto Scaling groups, Amazon EC2 instances, And databases that are deployed in An Amazon VPC. The company wants to capture information a bout traffic to And from the network interfaces in near real time in its Amazon VPC. The company wants to send the information to Amazon Opensearch Service for Analysis. Which solution will meet these requirements?",
+      "question": "A company's Application uses Network Load Balancers, Auto Scaling groups, Amazon EC2 instances, And databases that are deployed in An Amazon VPC. The company wants to capture information a bout traffic to And from the network interfaces in near real time in its Amazon VPC. The company wants to send the information to Amazon Opensearch Service for Analysis. Which solution will meet these requirements?",
       "options": {
         "A": "Create a log group in Amazon CloudWatch Logs. Configure VPC Flow Logs to send the log data to the log group. Use Amazon Kinesis Data Streams to stream the logs from the log group to OpenSearch Service.",
         "B": "Create a log group in Amazon CloudWatch Logs. Configure VPC Flow Logs to send the log data to the log group. Use Amazon Kinesis Data Firehose to stream the logs from the log group to OpenSearch Service.",
@@ -342,7 +342,7 @@
     },
     {
       "id": "679",
-      "question": "A company wants to back up its on-premises virtual machines (VMs) to AWS. The company\'s backup solution exports on-premises backups to An Amazon S3 bucket as objects. The S3 backups must be retained for 30 days And must be automatically deleted after 30 days. Which combination of steps will meet these requirements? (Choose three.)",
+      "question": "A company wants to back up its on-premises virtual machines (VMs) to AWS. The company's backup solution exports on-premises backups to An Amazon S3 bucket as objects. The S3 backups must be retained for 30 days And must be automatically deleted after 30 days. Which combination of steps will meet these requirements? (Choose three.)",
       "options": {
         "A": "Create An S3 bucket that has S3 Object Lock enabled.",
         "B": "Create An S3 bucket that has object versioning enabled.",
@@ -406,10 +406,10 @@
       "id": "684",
       "question": "A company wants to migrate its web applications from on premises to AWS. The company is located close to the eu-central-1 Region. Because of regulations, the company cannot launch some of its applications in eu-central-1. The company wants to achieve single-digit millisecond latency. Which solution will meet these requirements?",
       "options": {
-        "A": "Deploy the applications in eu-central-1. Extend the company\'s VPC from eu-central-1 to An edge location in Amazon CloudFront.",
-        "B": "Deploy the applications in AWS Local Zones by extending the company\'s VPC from eu-central-1 to the chosen Local Zone.",
-        "C": "Deploy the applications in eu-central-1. Extend the company\'s VPC from eu-central-1 to the regional edge caches in Amazon CloudFront.",
-        "D": "Deploy the applications in AWS Wavelength Zones by extending the company\'s VPC from eu-central-1 to the chosen Wavelength Zone."
+        "A": "Deploy the applications in eu-central-1. Extend the company's VPC from eu-central-1 to An edge location in Amazon CloudFront.",
+        "B": "Deploy the applications in AWS Local Zones by extending the company's VPC from eu-central-1 to the chosen Local Zone.",
+        "C": "Deploy the applications in eu-central-1. Extend the company's VPC from eu-central-1 to the regional edge caches in Amazon CloudFront.",
+        "D": "Deploy the applications in AWS Wavelength Zones by extending the company's VPC from eu-central-1 to the chosen Wavelength Zone."
       },
       "correct_answer": "B",
       "explanation": "Local Zones provide single-digit latency near eu-central-1 while complying with regulations.\nCloudFront (Option A) is for caching, not app hosting."
@@ -449,7 +449,7 @@
         "D": "Use a CloudFront distribution with multiple custom origins in each region and configure it for high availability"
       },
       "correct_answer": "B",
-      "explanation": "AWS Global Accelerator improves performance by up to 60% using Amazon\'s global network infrastructure. It connects users to an Edge Location, which routes directly to your service with automatic failover."
+      "explanation": "AWS Global Accelerator improves performance by up to 60% using Amazon's global network infrastructure. It connects users to an Edge Location, which routes directly to your service with automatic failover."
     },
     {
       "id": "688",
@@ -497,7 +497,7 @@
         "D": "OpsWorks Stacks"
       },
       "correct_answer": "C",
-      "explanation": "AWS OpsWorks for Chef Automate is a fully managed configuration management service that hosts Chef Automate. It\'s the AWS service specifically for Chef configuration management."
+      "explanation": "AWS OpsWorks for Chef Automate is a fully managed configuration management service that hosts Chef Automate. It's the AWS service specifically for Chef configuration management."
     },
     {
       "id": "692",
@@ -509,7 +509,7 @@
         "D": "Amazon EFS"
       },
       "correct_answer": "A",
-      "explanation": "S3 Standard-IA is designed for infrequently accessed data that requires rapid access when needed. It\'s more cost-effective than S3 Standard for infrequent access patterns."
+      "explanation": "S3 Standard-IA is designed for infrequently accessed data that requires rapid access when needed. It's more cost-effective than S3 Standard for infrequent access patterns."
     },
     {
       "id": "693",
@@ -557,7 +557,7 @@
         "D": "Amazon Aurora Serverless"
       },
       "correct_answer": "D",
-      "explanation": "Amazon Aurora Serverless automatically starts, shuts down, and scales based on application needs. It\'s cost-effective for infrequent, intermittent workloads."
+      "explanation": "Amazon Aurora Serverless automatically starts, shuts down, and scales based on application needs. It's cost-effective for infrequent, intermittent workloads."
     },
     {
       "id": "697",

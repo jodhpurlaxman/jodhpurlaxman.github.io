@@ -35,7 +35,7 @@
         "D": "Use AWS Application Auto Scaling with target tracking policies to scale when ECS metric breaches trigger an Amazon CloudWatch alarm."
       },
       "correct_answer": "D",
-      "explanation": "AWS Application Auto Scaling is a service that can automatically adjust the number of running ECS tasks or services based on specified CloudWatch metrics.\nTarget tracking policies allow you to set a target value for a specific metric, and AWS Application Auto Scaling automatically adjusts the desired task count to maintain the target.\nBy using target tracking policies, you can ensure that the ECS cluster scales up or down based on the application\'s demand while maintaining a balance between cost efficiency and performance."
+      "explanation": "AWS Application Auto Scaling is a service that can automatically adjust the number of running ECS tasks or services based on specified CloudWatch metrics.\nTarget tracking policies allow you to set a target value for a specific metric, and AWS Application Auto Scaling automatically adjusts the desired task count to maintain the target.\nBy using target tracking policies, you can ensure that the ECS cluster scales up or down based on the application's demand while maintaining a balance between cost efficiency and performance."
     },
     {
       "id": "304",
@@ -87,7 +87,7 @@
     },
     {
       "id": "308",
-      "question": "A company has multiple AWS accounts that use consolidated billing. The company runs several active high performance Amazon RDS for Oracle On-Demand DB instances for 90 days. The company\'s Finance team has access to AWS Trusted Advisor in the consolidated billing account and all other AWS accounts. The Finance team needs to use the appropriate AWS account to access the Trusted Advisor check recommendations for RDS. The Finance team must review the appropriate Trusted Advisor check to reduce RDS costs. Which combination of steps should the Finance team take to meet these requirements? (Choose two.)",
+      "question": "A company has multiple AWS accounts that use consolidated billing. The company runs several active high performance Amazon RDS for Oracle On-Demand DB instances for 90 days. The company's Finance team has access to AWS Trusted Advisor in the consolidated billing account and all other AWS accounts. The Finance team needs to use the appropriate AWS account to access the Trusted Advisor check recommendations for RDS. The Finance team must review the appropriate Trusted Advisor check to reduce RDS costs. Which combination of steps should the Finance team take to meet these requirements? (Choose two.)",
       "options": {
         "A": "Use the Trusted Advisor recommendations from the account where the RDS instances are running.",
         "B": "Use the Trusted Advisor recommendations from the consolidated billing account to see all RDS instance checks at the same time.",
@@ -136,19 +136,19 @@
     },
     {
       "id": "312",
-      "question": "A company has an application that runs on several Amazon EC2 instances. Each EC2 instance has multiple Amazon Elastic Block Store (Amazon EBS) data volumes attached to it. The application\'s EC2 instance configuration and datAneed to be backed up nightly. The application also needs to be recoverable in adifferent AWS Region. Which solution will meet these requirements in the MOST operationally efficient way?",
+      "question": "A company has an application that runs on several Amazon EC2 instances. Each EC2 instance has multiple Amazon Elastic Block Store (Amazon EBS) data volumes attached to it. The application's EC2 instance configuration and datAneed to be backed up nightly. The application also needs to be recoverable in adifferent AWS Region. Which solution will meet these requirements in the MOST operationally efficient way?",
       "options": {
-        "A": "Write an AWS Lambda function that schedules nightly snapshots of the application\'s EBS volumes and copies the snapshots to a different Region.",
-        "B": "Create a backup plan by using AWS Backup to perform nightly backups. Copy the backups to another Region. Add the application\'s EC2 instances as resources.",
-        "C": "Create a backup plan by using AWS Backup to perform nightly backups. Copy the backups to another Region. Add the application\'s EBS volumes as resources.",
-        "D": "Write an AWS Lambda function that schedules nightly snapshots of the application\'s EBS volumes and copies the snapshots to a different Availability Zone."
+        "A": "Write an AWS Lambda function that schedules nightly snapshots of the application's EBS volumes and copies the snapshots to a different Region.",
+        "B": "Create a backup plan by using AWS Backup to perform nightly backups. Copy the backups to another Region. Add the application's EC2 instances as resources.",
+        "C": "Create a backup plan by using AWS Backup to perform nightly backups. Copy the backups to another Region. Add the application's EBS volumes as resources.",
+        "D": "Write an AWS Lambda function that schedules nightly snapshots of the application's EBS volumes and copies the snapshots to a different Availability Zone."
       },
       "correct_answer": "C",
       "explanation": "AWS Backup: AWS Backup is a fully managed backup service that centralizes and automates the backup of data across AWS services. It provides a simple and efficient way to back up your EC2 instances and their associated EBS volumes.\nBackup Plan: With AWS Backup, you can create backup plans to define when and how your backups are performed. Backup plans allow you to schedule nightly backups and define retention policies."
     },
     {
       "id": "313",
-      "question": "A company is building a mobile app on AWS. The company wants to expand its reach to millions of users. The company needs to build a platform so that authorized users can watch the company\'s content on their mobile devices. What should A solutions architect recommend to meet these requirements?",
+      "question": "A company is building a mobile app on AWS. The company wants to expand its reach to millions of users. The company needs to build a platform so that authorized users can watch the company's content on their mobile devices. What should A solutions architect recommend to meet these requirements?",
       "options": {
         "A": "Publish content to a public Amazon S3 bucket. Use AWS Key Management Service (AWS KMS) keys to stream content.",
         "B": "Set up IPsec VPN between the mobile app and the AWS environment to stream content.",
@@ -221,7 +221,7 @@
     },
     {
       "id": "319",
-      "question": "A company has hundreds of Amazon EC2 Linux-based instances in the AWS Cloud. Systems administrators have used shared SSH keys to manage the instances. After a recent audit, the company\'s security team is mandating the removal of all shared keys. A solutions architect must design a solution that provides secure access to the EC2 instances. Which solution will meet this requirement with the LEAST amount of administrative overhead?",
+      "question": "A company has hundreds of Amazon EC2 Linux-based instances in the AWS Cloud. Systems administrators have used shared SSH keys to manage the instances. After a recent audit, the company's security team is mandating the removal of all shared keys. A solutions architect must design a solution that provides secure access to the EC2 instances. Which solution will meet this requirement with the LEAST amount of administrative overhead?",
       "options": {
         "A": "Use AWS Systems Manager Session Manager to connect to the EC2 instances.",
         "B": "Use AWS Security Token Service (AWS STS) to generate one-time SSH keys on demand.",
@@ -233,7 +233,7 @@
     },
     {
       "id": "320",
-      "question": "A company is using aFleet of Amazon EC2 instances to ingest data from on-premises data sources. The data is in JSON format and ingestion rates can be as high as 1 MB/s. When an EC2 instance is rebooted, the data in-Flight is lost. The company\'s data science team wants to query ingested data in near-real time. Which solution provides near-real-time data querying that is scalable with minimal data loss?",
+      "question": "A company is using aFleet of Amazon EC2 instances to ingest data from on-premises data sources. The data is in JSON format and ingestion rates can be as high as 1 MB/s. When an EC2 instance is rebooted, the data in-Flight is lost. The company's data science team wants to query ingested data in near-real time. Which solution provides near-real-time data querying that is scalable with minimal data loss?",
       "options": {
         "A": "Publish data to Amazon Kinesis Data Streams, Use Kinesis Data Analytics to query the data.",
         "B": "Publish data to Amazon Kinesis Data Firehose with Amazon Redshift as the destination. Use Amazon Redshift to query the data.",
@@ -257,19 +257,19 @@
     },
     {
       "id": "322",
-      "question": "A solutions architect is designing a multi-tier application for A company. The application\'s users upload images from a mobile device. The application generates a thumbnail of each image and returns a message to the user to confirm that the image was uploaded successfully. The thumbnail generation can take up to 60 seconds, but the company wants to provide a faster response time to its users to notify them that the original image was received. The solutions architect must design the application to asynchronously dispatch requests to the different application tiers. What should the solutions architect do to meet these requirements?",
+      "question": "A solutions architect is designing a multi-tier application for A company. The application's users upload images from a mobile device. The application generates a thumbnail of each image and returns a message to the user to confirm that the image was uploaded successfully. The thumbnail generation can take up to 60 seconds, but the company wants to provide a faster response time to its users to notify them that the original image was received. The solutions architect must design the application to asynchronously dispatch requests to the different application tiers. What should the solutions architect do to meet these requirements?",
       "options": {
         "A": "Write a custom AWS Lambda function to generate the thumbnail and alert the user. Use the image upload process as an event source to invoke the Lambda function.",
         "B": "Create an AWS Step Functions workflow. Configure Step Functions to handle the orchestration between the application tiers and alert the user when thumbnail generation is complete.",
         "C": "Create an Amazon Simple Queue Service (Amazon SQS) message queue. As images are uploaded, place a message on the SQS queue for thumbnail generation. alert the user through an application message that the image was received.",
-        "D": "Create Amazon Simple Notification Service (Amazon SNS) notiFication topics and subscriptions. Use one subscription with the application to generate the thumbnail after the image upload is complete. Use a second subscription to message the user\'s mobile app by way of a push notiFication after thumbnail generation is complete."
+        "D": "Create Amazon Simple Notification Service (Amazon SNS) notiFication topics and subscriptions. Use one subscription with the application to generate the thumbnail after the image upload is complete. Use a second subscription to message the user's mobile app by way of a push notiFication after thumbnail generation is complete."
       },
       "correct_answer": "C",
       "explanation": "Amazon SQS (Simple Queue Service): SQS is a fully managed message queuing service that enables decoupling of the components of a cloud application. By creating an SQS message queue, the image upload process can place messages in the queue for thumbnail generation."
     },
     {
       "id": "323",
-      "question": "A company\'s facility has badge readers at every entrance throughout the building. When badges are scanned, the readers send a message over HTTPS to indicate who attempted to access that particular entrance. A solutions architect must design a system to process these messages from the sensors. The solution must be highly available, and the results must be made available for the company\'s security team to analyze. Which system architecture should the solutions architect recommend?",
+      "question": "A company's facility has badge readers at every entrance throughout the building. When badges are scanned, the readers send a message over HTTPS to indicate who attempted to access that particular entrance. A solutions architect must design a system to process these messages from the sensors. The solution must be highly available, and the results must be made available for the company's security team to analyze. Which system architecture should the solutions architect recommend?",
       "options": {
         "A": "Launch an Amazon EC2 instance to serve as the HTTPS endpoint and to process the messages. Configure the EC2 instance to save the results to an Amazon S3 bucket.",
         "B": "Create an HTTPS endpoint in Amazon API Gateway. Configure the API Gateway endpoint to invoke an AWS Lambda function to process the messages and save the results to an Amazon DynamoDB table.",
@@ -281,7 +281,7 @@
     },
     {
       "id": "324",
-      "question": "A company wants to implement a disaster recovery plan for its primary on-premises File storage volume. The File storage volume is mounted from an Internet Small Computer Systems Interface (iSCSI) device on a local storage server. The File storage volume holds hundreds of terabytes (TB) of data. The company wants to ensure that end users retain immediate access to all File types from the on-premises systems without experiencing latency. Which solution will meet these requirements with the LEAST amount of change to the company\'s existing infrastructure?",
+      "question": "A company wants to implement a disaster recovery plan for its primary on-premises File storage volume. The File storage volume is mounted from an Internet Small Computer Systems Interface (iSCSI) device on a local storage server. The File storage volume holds hundreds of terabytes (TB) of data. The company wants to ensure that end users retain immediate access to all File types from the on-premises systems without experiencing latency. Which solution will meet these requirements with the LEAST amount of change to the company's existing infrastructure?",
       "options": {
         "A": "Provision an Amazon S3 File Gateway as a virtual machine (VM) that is hosted on premises. Set the local cache to 10 TB. Modify existing applications to access the files through the NFS protocol. To recover from a disaster, provision an Amazon EC2 instance and mount the S3 bucket that contains the files.",
         "B": "Provision an AWS Storage Gateway tape gateway. Use a data backup solution to back up all existing data to a virtual tape library. Configure the data backup solution to run nightly after the initial backup is complete. To recover from a disaster, provision an Amazon EC2 instance and restore the data to an Amazon Elastic Block Store (Amazon EBS) volume from the volumes in the virtual tape library.",
@@ -318,12 +318,12 @@
     },
     {
       "id": "327",
-      "question": "A solutions architect must secure a VPC network that hosts Amazon EC2 instances. The EC2 instances contain highly sensitive data and run in a private subnet. According to company policy, the EC2 instances that run in the VPC can access only approved third-party software repositories on the internet for software product updates that use the third party\'s URL. Other internet traffic must be blocked. Which solution meets these requirements?",
+      "question": "A solutions architect must secure a VPC network that hosts Amazon EC2 instances. The EC2 instances contain highly sensitive data and run in a private subnet. According to company policy, the EC2 instances that run in the VPC can access only approved third-party software repositories on the internet for software product updates that use the third party's URL. Other internet traffic must be blocked. Which solution meets these requirements?",
       "options": {
         "A": "Update the route table for the private subnet to route the outbound traffic to an AWS Network Firewall Firewall. Configure domain list rule groups.",
         "B": "Set up an AWS WAF web  ACL Create a custom set of rules that Filter traffic requests based on source and destination IP address range sets.",
         "C": "Implement strict inbound security group rules. Configure an outbound rule that allows traffic only to the authorized software repositories on the internet by specifying the URLs.",
-        "D": "Configure an Application Load Balancer (ALB) in front of the EC2 instances. Direct all outbound traffic to the ALB. Use a URL-based rule listener in the ALB\'s target group for outbound access to the internet."
+        "D": "Configure an Application Load Balancer (ALB) in front of the EC2 instances. Direct all outbound traffic to the ALB. Use a URL-based rule listener in the ALB's target group for outbound access to the internet."
       },
       "correct_answer": "A",
       "explanation": ""
@@ -342,7 +342,7 @@
     },
     {
       "id": "329",
-      "question": "A security audit reveals that Amazon EC2 instances are not being patched regularly. A solutions architect needs to provide a solution that will run regular security scans across a large Fleet of EC2 instances. The solution should also patch the EC2 instances on a regular schedule and provide a report of each instance\'s patch status. Which solution will meet these requirements?",
+      "question": "A security audit reveals that Amazon EC2 instances are not being patched regularly. A solutions architect needs to provide a solution that will run regular security scans across a large Fleet of EC2 instances. The solution should also patch the EC2 instances on a regular schedule and provide a report of each instance's patch status. Which solution will meet these requirements?",
       "options": {
         "A": "Set up Amazon Macie to scan the EC2 instances for software vulnerabilities. Set up a cron job on each EC2 instance to patch the instance on a regular schedule.",
         "B": "Turn on Amazon GuardDuty in the account. Configure GuardDuty to scan the EC2 instances for software vulnerabilities. Set up AWS Systems Manager Session Manager to patch the EC2 instances on a regular schedule.",
@@ -366,7 +366,7 @@
     },
     {
       "id": "331",
-      "question": "A company must migrate 20 TB of data from a data center to the AWS Cloud within 30 days. The company\'s network bandwidth is limited to 15 Mbps and cannot exceed 70% utilization. What should A solutions architect do to meet these requirements?",
+      "question": "A company must migrate 20 TB of data from a data center to the AWS Cloud within 30 days. The company's network bandwidth is limited to 15 Mbps and cannot exceed 70% utilization. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Use AWS Snowball.",
         "B": "Use AWS DataSync.",
@@ -390,7 +390,7 @@
     },
     {
       "id": "333",
-      "question": "A company\'s application runs on Amazon EC2 instances behind an Application Load Balancer (ALB). The instances run in an Amazon EC2 Auto Scaling group across multiple Availability Zones. On the First day of every month at midnight, the application becomes much slower when the month-end Financial calculation batch runs. This causes the CPU utilization of the EC2 instances to immediately peak to 100%, which disrupts the application. What should A solutions architect recommend to ensure the application is able to handle the workload and avoid downtime?",
+      "question": "A company's application runs on Amazon EC2 instances behind an Application Load Balancer (ALB). The instances run in an Amazon EC2 Auto Scaling group across multiple Availability Zones. On the First day of every month at midnight, the application becomes much slower when the month-end Financial calculation batch runs. This causes the CPU utilization of the EC2 instances to immediately peak to 100%, which disrupts the application. What should A solutions architect recommend to ensure the application is able to handle the workload and avoid downtime?",
       "options": {
         "A": "Configure an Amazon CloudFront distribution in front of the ALB.",
         "B": "Configure an EC2 Auto Scaling simple scaling policy based on CPU utilization.",
@@ -402,7 +402,7 @@
     },
     {
       "id": "334",
-      "question": "A company wants to give a customer the ability to use on-premises Microsoft Active Directory to download files that are stored in Amazon S3. The customer\'s application uses an SFTP client to download the files. Which solution will meet these requirements with the LEAST operational overhead and no changes to the customer\'s application?",
+      "question": "A company wants to give a customer the ability to use on-premises Microsoft Active Directory to download files that are stored in Amazon S3. The customer's application uses an SFTP client to download the files. Which solution will meet these requirements with the LEAST operational overhead and no changes to the customer's application?",
       "options": {
         "A": "Set up AWS Transfer Family with SFTP for Amazon S3. Configure integrated Active Directory authentication.",
         "B": "Set up AWS Database Migration Service (AWS DMS) to synchronize the on-premises client with Amazon S3. Configure integrated Active Directory authentication.",
@@ -426,7 +426,7 @@
     },
     {
       "id": "336",
-      "question": "A company hosts a multi-tier web application that uses an Amazon Aurora MySQL DB cluster for storage. The application tier is hosted on Amazon EC2 instances. The company\'s IT security guidelines mandate that the database credentials be encrypted and rotated every 14 days. What should A solutions architect do to meet this requirement with the LEAST operational effort?",
+      "question": "A company hosts a multi-tier web application that uses an Amazon Aurora MySQL DB cluster for storage. The application tier is hosted on Amazon EC2 instances. The company's IT security guidelines mandate that the database credentials be encrypted and rotated every 14 days. What should A solutions architect do to meet this requirement with the LEAST operational effort?",
       "options": {
         "A": "Create A new AWS Key Management Service (AWS KMS) encryption key. Use AWS Secrets Manager to create A new secret that uses the KMS key with the appropriate credentials. Associate the secret with the Aurora DB cluster. Configure a custom rotation period of 14 days.",
         "B": "Create two parameters in AWS Systems Manager Parameter Store: one for the user name as a string parameter and one that uses the SecureString type for the password. Select AWS Key Management Service (AWS KMS) encryption for the password parameter, and load these parameters in the application tier. Implement an AWS Lambda function that rotates the password every 14 days.",
@@ -474,7 +474,7 @@
     },
     {
       "id": "340",
-      "question": "A media company hosts its website on AWS. The website application\'s architecture includes aFleet of Amazon EC2 instances behind an Application Load Balancer (ALB) and a database that is hosted on Amazon Aurora. The company\'s cybersecurity team reports that the application is vulnerable to SQL injection. How should the company resolve this issue?",
+      "question": "A media company hosts its website on AWS. The website application's architecture includes aFleet of Amazon EC2 instances behind an Application Load Balancer (ALB) and a database that is hosted on Amazon Aurora. The company's cybersecurity team reports that the application is vulnerable to SQL injection. How should the company resolve this issue?",
       "options": {
         "A": "Use AWS WAF in front of the ALB. Associate the appropriate web ACLs with AWS WAF.",
         "B": "Create an ALBlistener rule to reply to SQL injections with a Fixed response.",
@@ -486,7 +486,7 @@
     },
     {
       "id": "341",
-      "question": "A company has an Amazon S3 data lake that is governed by AWS Lake Formation. The company wants to create a visualization in Amazon Quicksight by joining the data in the data lake with operational data that is stored in an Amazon Aurora MySQL database. The company wants to enforce column-level authorization so that the company\'s marketing team can access only a subset of columns in the database. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company has an Amazon S3 data lake that is governed by AWS Lake Formation. The company wants to create a visualization in Amazon Quicksight by joining the data in the data lake with operational data that is stored in an Amazon Aurora MySQL database. The company wants to enforce column-level authorization so that the company's marketing team can access only a subset of columns in the database. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Use Amazon EMR to ingest the data directly from the database to the QuickSight SPICE engine. Include only the required columns.",
         "B": "Use AWS Glue Studio to ingest the data from the database to the S3 data lake. Attach an IAM policy to the QuickSight users to enforce column-level access control. Use Amazon S3 as the data source in QuickSight.",
@@ -498,19 +498,19 @@
     },
     {
       "id": "342",
-      "question": "A transaction processing company has weekly scripted batch jobs that run on Amazon EC2 instances. The EC2 instances are in an Auto Scaling group. The number of transactions can vary, but the baseline CPU utilization that is noted on each run is at least 60%. The company needs to provision the capacity 30 minutes before the jobs run. Currently, engineers complete this task by manually modifying the Auto Scaling group parameters. The company does not have the resources to analyze the required capacity trends for the Auto Scaling group counts. The company needs an automated way to modify the Auto Scaling group\'s desired capacity. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A transaction processing company has weekly scripted batch jobs that run on Amazon EC2 instances. The EC2 instances are in an Auto Scaling group. The number of transactions can vary, but the baseline CPU utilization that is noted on each run is at least 60%. The company needs to provision the capacity 30 minutes before the jobs run. Currently, engineers complete this task by manually modifying the Auto Scaling group parameters. The company does not have the resources to analyze the required capacity trends for the Auto Scaling group counts. The company needs an automated way to modify the Auto Scaling group's desired capacity. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Create a dynamic scaling policy for the Auto Scaling group. Configure the policy to scale based on the CPU utilization metric. Set the target value for the metric to 60%.",
         "B": "Create a scheduled scaling policy for the Auto Scaling group. Set the appropriate desired capacity, minimum capacity, and maximum capacity. Set the recurrence to weekly. Set the start time to 30 minutes before the batch jobs run.",
         "C": "Create a predictive scaling policy for the Auto Scaling group. Configure the policy to scale based on forecast. Set the scaling metric to CPU utilization. Set the target value for the metric to 60%. In the policy, set the instances to pre-launch 30 minutes before the jobs run.",
-        "D": "Create an Amazon EventBridge event to invoke an AWS Lambda function when the CPU utilization metric value for the Auto Scaling group reaches 60%. Configure the Lambda function to increase the Auto Scaling group\'s desired capacity and maximum capacity by 20%."
+        "D": "Create an Amazon EventBridge event to invoke an AWS Lambda function when the CPU utilization metric value for the Auto Scaling group reaches 60%. Configure the Lambda function to increase the Auto Scaling group's desired capacity and maximum capacity by 20%."
       },
       "correct_answer": "C",
       "explanation": "In general, if you have regular patterns of traffic increases and applications that take a long time to initialize, you should consider using predictive scaling. Predictive scaling can help you scale faster by launching capacity in advance of forecasted load, compared to using only dynamic scaling, which is reactive in nature."
     },
     {
       "id": "343",
-      "question": "A solutions architect is designing A company\'s disaster recovery (DR) architecture. The company has aMySQL database that runs on an Amazon EC2 instance in a private subnet with scheduled backup. The DR design needs to include multiple AWS Regions. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A solutions architect is designing A company's disaster recovery (DR) architecture. The company has aMySQL database that runs on an Amazon EC2 instance in a private subnet with scheduled backup. The DR design needs to include multiple AWS Regions. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Migrate the MySQL database to multiple EC2 instances. Configure a standby EC2 instance in the DR Region. Turn on replication.",
         "B": "Migrate the MySQL database to Amazon RDS. Use a Multi-AZ deployment. Turn on read replication for the primary DB instance in the different Availability Zones.",
@@ -534,7 +534,7 @@
     },
     {
       "id": "345",
-      "question": "A company wants to restrict access to the content of one of its main web applications and to protect the content by using authorization techniques available on AWS. The company wants to implement a serverless architecture and an authentication solution for fewer than 100 users. The solution needs to integrate with the main web application and serve web content globally. The solution must also scale as the company\'s user base grows while providing the lowest login latency possible. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company wants to restrict access to the content of one of its main web applications and to protect the content by using authorization techniques available on AWS. The company wants to implement a serverless architecture and an authentication solution for fewer than 100 users. The solution needs to integrate with the main web application and serve web content globally. The solution must also scale as the company's user base grows while providing the lowest login latency possible. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Use Amazon Cognito for authentication. Use Lambda@Edge for authorization. Use Amazon CloudFront to serve the web application globally.",
         "B": "Use AWS Directory Service for Microsoft Active Directory for authentication. Use AWS Lambda for authorization. Use an Application Load Balancer to serve the web application globally.",
@@ -546,7 +546,7 @@
     },
     {
       "id": "346",
-      "question": "A company has an aging network-attached storage (NAS) array in its data center. The NAS array presents SMB shares and NFS shares to client workstations. The company does not want to purchase A new NAS array. The company also does not want to incur the cost of renewing the NAS array\'s support contract. Some of the data is accessed frequently, but much of the data is inactive. A solutions architect needs to implement a solution that migrates the data to Amazon S3, uses S3 Lifecycle policies, and maintains the same look and feel for the client workstations. The solutions architect has identified AWS Storage Gateway as part of the solution. Which type of storage gateway should the solutions architect provision to meet these requirements?",
+      "question": "A company has an aging network-attached storage (NAS) array in its data center. The NAS array presents SMB shares and NFS shares to client workstations. The company does not want to purchase A new NAS array. The company also does not want to incur the cost of renewing the NAS array's support contract. Some of the data is accessed frequently, but much of the data is inactive. A solutions architect needs to implement a solution that migrates the data to Amazon S3, uses S3 Lifecycle policies, and maintains the same look and feel for the client workstations. The solutions architect has identified AWS Storage Gateway as part of the solution. Which type of storage gateway should the solutions architect provision to meet these requirements?",
       "options": {
         "A": "Volume Gateway",
         "B": "Tape Gateway",
@@ -566,7 +566,7 @@
         "D": "Standard Reserved Instances"
       },
       "correct_answer": "A",
-      "explanation": "Compute Savings Plans provide significant cost savings over On-Demand pricing in exchange for a commitment to a consistent amount of compute usage (measured in $/hr) for a 1 or 3 year period. They offer flexibility by allowing you to switch between instance families, sizes, and AZs (Availability Zones) while still benefiting from the savings plan pricing. This aligns well with the company\'s requirement to change instance family and sizes based on application needs."
+      "explanation": "Compute Savings Plans provide significant cost savings over On-Demand pricing in exchange for a commitment to a consistent amount of compute usage (measured in $/hr) for a 1 or 3 year period. They offer flexibility by allowing you to switch between instance families, sizes, and AZs (Availability Zones) while still benefiting from the savings plan pricing. This aligns well with the company's requirement to change instance family and sizes based on application needs."
     },
     {
       "id": "348",
@@ -582,15 +582,15 @@
     },
     {
       "id": "349",
-      "question": "A company stores confidential data in an Amazon Aurora PostgreSQL database in the ap-southeast-3 Region. The database is encrypted with an AWS Key Management Service (AWS KMS) customer managed key. The company was recently acquired and must securely share a backup of the database with the acquiring company\'s AWS account in ap-southeast-3. What should A solutions architect do to meet these requirements?",
+      "question": "A company stores confidential data in an Amazon Aurora PostgreSQL database in the ap-southeast-3 Region. The database is encrypted with an AWS Key Management Service (AWS KMS) customer managed key. The company was recently acquired and must securely share a backup of the database with the acquiring company's AWS account in ap-southeast-3. What should A solutions architect do to meet these requirements?",
       "options": {
-        "A": "Create a database snapshot. Copy the snapshot to A new unencrypted snapshot. Share the new snapshot with the acquiring company\'s AWS account.",
-        "B": "Create a database snapshot. Add the acquiring company\'s AWS account to the KMS key policy. Share the snapshot with the acquiring company\'s AWS account.",
-        "C": "Create a database snapshot that uses a different AWS managed KMS key. Add the acquiring company\'s AWS account to the KMS key alias. Share the snapshot with the acquiring company\'s AWS account.",
-        "D": "Create a database snapshot. Download the database snapshot. Upload the database snapshot to an Amazon S3 bucket. Update the S3 bucket policy to allow access from the acquiring company\'s AWS account."
+        "A": "Create a database snapshot. Copy the snapshot to A new unencrypted snapshot. Share the new snapshot with the acquiring company's AWS account.",
+        "B": "Create a database snapshot. Add the acquiring company's AWS account to the KMS key policy. Share the snapshot with the acquiring company's AWS account.",
+        "C": "Create a database snapshot that uses a different AWS managed KMS key. Add the acquiring company's AWS account to the KMS key alias. Share the snapshot with the acquiring company's AWS account.",
+        "D": "Create a database snapshot. Download the database snapshot. Upload the database snapshot to an Amazon S3 bucket. Update the S3 bucket policy to allow access from the acquiring company's AWS account."
       },
       "correct_answer": "B",
-      "explanation": "sharing encrypted snapshots involves granting permission not only on the snapshot itself but also on the underlying AWS Key Management Service (KMS) key used for encryption.\nBy adding the acquiring company\'s AWS account to the KMS key policy, you ensure that they have the necessary permissions to decrypt and access the snapshot.\nSharing the snapshot with the acquiring company\'s AWS account completes the process, allowing them to restore the database from the shared snapshot."
+      "explanation": "sharing encrypted snapshots involves granting permission not only on the snapshot itself but also on the underlying AWS Key Management Service (KMS) key used for encryption.\nBy adding the acquiring company's AWS account to the KMS key policy, you ensure that they have the necessary permissions to decrypt and access the snapshot.\nSharing the snapshot with the acquiring company's AWS account completes the process, allowing them to restore the database from the shared snapshot."
     },
     {
       "id": "350",

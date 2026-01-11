@@ -5,7 +5,7 @@
       "question": "An Auto Scaling group of EC2 instances runs behind an Elastic Load Balancer. Web servers must be accessible only through the ELB, not directly from the Internet. How should this be configured?",
       "options": {
         "A": "With a CloudFront distribution in front of the Elastic Load Balancer",
-        "B": "Denying traffic from the Internet in the web server\'s security group",
+        "B": "Denying traffic from the Internet in the web server's security group",
         "C": "Configure the web tier security group to allow only traffic from the Elastic Load Balancer",
         "D": "Install a Load Balancer on an Amazon EC2 instance"
       },
@@ -50,7 +50,7 @@
     },
     {
       "id": "705",
-      "question": "Your Business Intelligence team uses SQL tools to analyze data. What\'s the best solution for performing queries on structured data received at high velocity?",
+      "question": "Your Business Intelligence team uses SQL tools to analyze data. What's the best solution for performing queries on structured data received at high velocity?",
       "options": {
         "A": "EMR using Hive",
         "B": "Kinesis Data Streams with RDS",
@@ -94,7 +94,7 @@
         "D": "Use AWS Elastic Beanstalk"
       },
       "correct_answer": "C",
-      "explanation": "AWS Lambda is serverless with a 15-minute maximum execution time. It\'s the most cost-effective solution as you only pay for compute time consumed."
+      "explanation": "AWS Lambda is serverless with a 15-minute maximum execution time. It's the most cost-effective solution as you only pay for compute time consumed."
     },
     {
       "id": "709",
@@ -192,7 +192,7 @@
         "D": "Implement read throttling for the Kinesis data stream"
       },
       "correct_answer": "A",
-      "explanation": "Each shard has limited capacity. Adding more shards increases the stream\'s capacity to handle more data volume and transactions."
+      "explanation": "Each shard has limited capacity. Adding more shards increases the stream's capacity to handle more data volume and transactions."
     },
     {
       "id": "717",
@@ -257,7 +257,7 @@
     },
     {
       "id": "722",
-      "question": "What\'s the most efficient service to establish network connectivity from on-premise to multiple VPCs in different AWS regions?",
+      "question": "What's the most efficient service to establish network connectivity from on-premise to multiple VPCs in different AWS regions?",
       "options": {
         "A": "AWS Direct Connect",
         "B": "AWS VPC Endpoints",
@@ -269,7 +269,7 @@
     },
     {
       "id": "723",
-      "question": "An HPC application needs 135,000 IOPS with replicated storage across all cluster instances. What\'s the most optimal and cost-effective storage?",
+      "question": "An HPC application needs 135,000 IOPS with replicated storage across all cluster instances. What's the most optimal and cost-effective storage?",
       "options": {
         "A": "Use EBS Provisioned IOPS volume with 135,000 IOPS",
         "B": "Use Amazon Instance Store",
@@ -326,11 +326,11 @@
         "E": "Put container images in ECR"
       },
       "correct_answer": "AE",
-      "explanation": "ECR is AWS\'s managed container registry. ECS with Fargate is serverless, eliminating EC2 instance management. You only pay for running tasks."
+      "explanation": "ECR is AWS's managed container registry. ECS with Fargate is serverless, eliminating EC2 instance management. You only pay for running tasks."
     },
     {
       "id": "728",
-      "question": "An application processes 4GB files with sporadic uploads. Metadata extraction takes seconds. What\'s the most cost-efficient architecture?",
+      "question": "An application processes 4GB files with sporadic uploads. Metadata extraction takes seconds. What's the most cost-efficient architecture?",
       "options": {
         "A": "Use RDS to store files, Lambda for processing",
         "B": "Store in S3, use EC2 to extract metadata",
@@ -440,7 +440,7 @@
     },
     {
       "id": "737",
-      "question": "Incoming billing reports in CSV format need storage and infrequent analysis, then discard after 30 days. What\'s MOST cost-effective?",
+      "question": "Incoming billing reports in CSV format need storage and infrequent analysis, then discard after 30 days. What's MOST cost-effective?",
       "options": {
         "A": "Write files to S3 and use Amazon Athena to query",
         "B": "Import logs to Amazon Redshift cluster",
@@ -464,7 +464,7 @@
     },
     {
       "id": "739",
-      "question": "EC2 instances in a VPC need to make API calls to DynamoDB without using public endpoints. What\'s the MOST efficient secure method? (Select TWO)",
+      "question": "EC2 instances in a VPC need to make API calls to DynamoDB without using public endpoints. What's the MOST efficient secure method? (Select TWO)",
       "options": {
         "A": "Create a route table entry for the endpoint",
         "B": "Create a gateway endpoint for DynamoDB",
@@ -477,7 +477,7 @@
     },
     {
       "id": "740",
-      "question": "An extremely popular application\'s DynamoDB database may not perform as required. How to enable microsecond in-memory read performance?",
+      "question": "An extremely popular application's DynamoDB database may not perform as required. How to enable microsecond in-memory read performance?",
       "options": {
         "A": "Enable read replicas",
         "B": "Configure DynamoDB Auto Scaling",
@@ -539,7 +539,7 @@
     },
     {
       "id": "745",
-      "question": "Three AWS accounts in different regions. Account Z has two Direct Connect connections. Accounts A and B need routing through account Z\'s Direct Connect. How to configure?",
+      "question": "Three AWS accounts in different regions. Account Z has two Direct Connect connections. Accounts A and B need routing through account Z's Direct Connect. How to configure?",
       "options": {
         "A": "Associate Direct Connect gateway to transit gateway in each region",
         "B": "Associate Direct Connect gateway to one transit gateway",

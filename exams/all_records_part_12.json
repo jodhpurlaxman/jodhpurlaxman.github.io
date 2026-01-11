@@ -22,11 +22,11 @@
         "D": "Purchase An All Upfront EC2 Instance Savings Plan for a 1-year term."
       },
       "correct_answer": "B",
-      "explanation": "WHat is Upfront  You don't pay Anything upfront. You receive a smaller discount, but you free up capital for other projects.\nAno Upfront option means no upfront payment is required, which provides flexibility.\n1-year Term: A 1-year term aligns with the company\'s need to change the type And family of its EC2 instances every 2-3 months. While Compute Savings Plans have a commitment term, choosing a 1-year term allows for more frequent adjustments compared to a 3-year term."
+      "explanation": "WHat is Upfront  You don't pay Anything upfront. You receive a smaller discount, but you free up capital for other projects.\nAno Upfront option means no upfront payment is required, which provides flexibility.\n1-year Term: A 1-year term aligns with the company's need to change the type And family of its EC2 instances every 2-3 months. While Compute Savings Plans have a commitment term, choosing a 1-year term allows for more frequent adjustments compared to a 3-year term."
     },
     {
       "id": "553",
-      "question": "A solutions architect needs to review A company\'s Amazon S3 buckets to discover personally identifiable information (PII). The company stores the PII data in the us-east-1 Region And us-west-2 Region. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A solutions architect needs to review A company's Amazon S3 buckets to discover personally identifiable information (PII). The company stores the PII data in the us-east-1 Region And us-west-2 Region. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Configure Amazon Macie in each Region. Create a job to Analyze the data that is in Amazon S3.",
         "B": "Configure AWS Security Hub for All Regions. Create An AWS ConFig rule to Analyze the data that is in Amazon S3.",
@@ -38,7 +38,7 @@
     },
     {
       "id": "554",
-      "question": "A company\'s SAP Application has a backend SQL Server database in An on-premises environment. The company wants to migrate its on-premises Application And database server to AWS. The company needs An instance type that meets the high demands of its SAP database. On-premises performance data shows that both the SAP Application And the database have high memory utilization. Which solution will meet these requirements?",
+      "question": "A company's SAP Application has a backend SQL Server database in An on-premises environment. The company wants to migrate its on-premises Application And database server to AWS. The company needs An instance type that meets the high demands of its SAP database. On-premises performance data shows that both the SAP Application And the database have high memory utilization. Which solution will meet these requirements?",
       "options": {
         "A": "Use the compute optimized instance family for the application. Use the memory optimized instance family for the database.",
         "B": "Use the storage optimized instance family for both the Application And the database.",
@@ -58,7 +58,7 @@
         "D": "Implement a gateway endpoint for Amazon SQS. Add A NAT gateway to the private subnets. Attach An IAM role to the EC2 instances that allows Access to the SQS queue."
       },
       "correct_answer": "A",
-      "explanation": "Interface VPC endpoints are used for services that are accessed over the Internet, And in this case, it\'s Amazon SQS. By implementing An interface VPC endpoint for SQS, you can ensure that the traffic stays within the Amazon network."
+      "explanation": "Interface VPC endpoints are used for services that are accessed over the Internet, And in this case, it's Amazon SQS. By implementing An interface VPC endpoint for SQS, you can ensure that the traffic stays within the Amazon network."
     },
     {
       "id": "556",
@@ -111,7 +111,7 @@
     },
     {
       "id": "560",
-      "question": "A company\'s solutions architect is designing An AWS multi-account solution that uses AWS Organizations. The solutions architect has organized the company\'s accounts into organizational units (OUs). The solutions architect needs a solution that will identify Any changes to the OU hierarchy. The solution also needs to notify the company\'s operations team of Any changes. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company's solutions architect is designing An AWS multi-account solution that uses AWS Organizations. The solutions architect has organized the company's accounts into organizational units (OUs). The solutions architect needs a solution that will identify Any changes to the OU hierarchy. The solution also needs to notify the company's operations team of Any changes. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Provision the AWS accounts by using AWS Control Tower. Use account drift notiFications to identify the changes to the OU hierarchy.",
         "B": "Provision the AWS accounts by using AWS Control Tower. Use AWS ConFig aggregated rules to identify the changes to the OU hierarchy.",
@@ -123,7 +123,7 @@
     },
     {
       "id": "561",
-      "question": "A company\'s website handles millions of requests each day, And the number of requests continues to increase. A solutions architect needs to improve the response time of the web application. The solutions architect determines that the Application needs to decrease latency when retrieving product details from the Amazon DynamoDB table. Which solution will meet these requirements with the LEAST amount of operational overhead?",
+      "question": "A company's website handles millions of requests each day, And the number of requests continues to increase. A solutions architect needs to improve the response time of the web application. The solutions architect determines that the Application needs to decrease latency when retrieving product details from the Amazon DynamoDB table. Which solution will meet these requirements with the LEAST amount of operational overhead?",
       "options": {
         "A": "Set up a DynamoDB Accelerator (DAX) cluster. Route All read requests through DAX.",
         "B": "Set up Amazon ElastiCache for Redis between the DynamoDB table And the web application. Route All read requests through Redis.",
@@ -141,7 +141,7 @@
         "B": "Create a gateway endpoint for DynamoDB.",
         "C": "Create An interface endpoint for Amazon EC2.",
         "D": "Create An elastic network interface for the endpoint in each of the subnets of the VPC.",
-        "E": "Create a security group entry in the endpoint\'s security group to provide access."
+        "E": "Create a security group entry in the endpoint's security group to provide access."
       },
       "correct_answer": "BE",
       "explanation": "B. Create a gateway endpoint for DynamoDB."
@@ -172,7 +172,7 @@
     },
     {
       "id": "565",
-      "question": "A company has An on-premises MySQL database that handles transactional data. The company is migrating the database to the AWS Cloud. The migrated database must maintain compatibility with the company\'s applications that use the database. The migrated database also must scale automatically during periods of increased demand. Which migration solution will meet these requirements?",
+      "question": "A company has An on-premises MySQL database that handles transactional data. The company is migrating the database to the AWS Cloud. The migrated database must maintain compatibility with the company's applications that use the database. The migrated database also must scale automatically during periods of increased demand. Which migration solution will meet these requirements?",
       "options": {
         "A": "Use native MySQL tools to migrate the database to Amazon RDS for MySQL. Configure elastic storage scaling.",
         "B": "Migrate the database to Amazon Redshift by using the mysqldump utility. Turn on Auto Scaling for the Amazon Redshift cluster.",
@@ -220,7 +220,7 @@
     },
     {
       "id": "569",
-      "question": "An Amazon Eventbridge rule targets a third-party API  The third-party API has not received Any incoming traffic. A solutions architect needs to determine whether the rule conditions are being met And if the rule\'s target is being invoked. Which solution will meet these requirements?",
+      "question": "An Amazon Eventbridge rule targets a third-party API  The third-party API has not received Any incoming traffic. A solutions architect needs to determine whether the rule conditions are being met And if the rule's target is being invoked. Which solution will meet these requirements?",
       "options": {
         "A": "Check for metrics in Amazon CloudWatch in the namespace for AWS/Events.",
         "B": "Review events in the Amazon Simple Queue Service (Amazon SQS) dead-letter queue.",
@@ -276,7 +276,7 @@
         "D": "Configure Lambda SnapStart."
       },
       "correct_answer": "D",
-      "explanation": "Lambda Cold Start:\nWhen a Lambda function is invoked, it may take a bit of time for the system to set up everything needed to run the function. This initial setup time is called a \"cold start.\" Cold starts can Add some delay, especially if the function hasn't been used recently.\nLambda SnapStart:\nSnapStart is a feature in AWS Lambda designed to make these cold starts faster, specifically for functions written in Java. Instead of starting from scratch every time a function is called, SnapStart pre-warms the environment. It\'s like getting things ready in advance so that when your function is called, it can start quickly without much delay."
+      "explanation": "Lambda Cold Start:\nWhen a Lambda function is invoked, it may take a bit of time for the system to set up everything needed to run the function. This initial setup time is called a \"cold start.\" Cold starts can Add some delay, especially if the function hasn't been used recently.\nLambda SnapStart:\nSnapStart is a feature in AWS Lambda designed to make these cold starts faster, specifically for functions written in Java. Instead of starting from scratch every time a function is called, SnapStart pre-warms the environment. It's like getting things ready in advance so that when your function is called, it can start quickly without much delay."
     },
     {
       "id": "574",
@@ -316,7 +316,7 @@
     },
     {
       "id": "577",
-      "question": "A company uses An Amazon Cloudfront distribution to serve content pages for its website. The company needs to ensure that clients use a TLS certificate when accessing the company\'s website. The company wants to automate the creation And renewal of the TLS certificates. Which solution will meet these requirements with the MOST operational efficiency?",
+      "question": "A company uses An Amazon Cloudfront distribution to serve content pages for its website. The company needs to ensure that clients use a TLS certificate when accessing the company's website. The company wants to automate the creation And renewal of the TLS certificates. Which solution will meet these requirements with the MOST operational efficiency?",
       "options": {
         "A": "Use a CloudFront security policy to create a certiFicate.",
         "B": "Use a CloudFront origin Access control (OAC) to create a certiFicate.",
@@ -324,7 +324,7 @@
         "D": "Use AWS CertiFicate Manager (ACM) to create a certiFicate. Use email validation for the domain."
       },
       "correct_answer": "C",
-      "explanation": "AWS Certificate Manager (ACM): A CM is a fully managed service that allows you to easily provision, manage, And deploy public And private Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificates for use with AWS services And your internal connected resources. It is designed for automation And ease of use.\nDNS Validation: DNS validation involves a dding a DNS record to your domain\'s DNS configuration. This method is more suitable for automation as it does not require manual intervention, And it can be easily integrated into automated certificate issuance And renewal processes."
+      "explanation": "AWS Certificate Manager (ACM): A CM is a fully managed service that allows you to easily provision, manage, And deploy public And private Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificates for use with AWS services And your internal connected resources. It is designed for automation And ease of use.\nDNS Validation: DNS validation involves a dding a DNS record to your domain's DNS configuration. This method is more suitable for automation as it does not require manual intervention, And it can be easily integrated into automated certificate issuance And renewal processes."
     },
     {
       "id": "578",
@@ -366,17 +366,17 @@
       "id": "581",
       "question": "A company runs a stateful production Application on Amazon EC2 instances. The Application requires at least two EC2 instances to always be running. A solutions architect needs to design a highly available And fault-tolerant architecture for the application. The solutions architect creates An Auto Scaling group of EC2 instances. Which set of additional steps should the solutions architect take to meet these requirements?",
       "options": {
-        "A": "Set the Auto Scaling group\'s minimum capacity to two. Deploy one On-Demand Instance in one Availability Zone And one On-Demand Instance in a second Availability Zone.",
-        "B": "Set the Auto Scaling group\'s minimum capacity to four. Deploy two On-Demand Instances in one Availability Zone And two On-Demand Instances in a second Availability Zone.",
-        "C": "Set the Auto Scaling group\'s minimum capacity to two. Deploy four Spot Instances in one Availability Zone.",
-        "D": "Set the Auto Scaling group\'s minimum capacity to four. Deploy two On-Demand Instances in one Availability Zone And two Spot Instances in a second Availability Zone."
+        "A": "Set the Auto Scaling group's minimum capacity to two. Deploy one On-Demand Instance in one Availability Zone And one On-Demand Instance in a second Availability Zone.",
+        "B": "Set the Auto Scaling group's minimum capacity to four. Deploy two On-Demand Instances in one Availability Zone And two On-Demand Instances in a second Availability Zone.",
+        "C": "Set the Auto Scaling group's minimum capacity to two. Deploy four Spot Instances in one Availability Zone.",
+        "D": "Set the Auto Scaling group's minimum capacity to four. Deploy two On-Demand Instances in one Availability Zone And two Spot Instances in a second Availability Zone."
       },
       "correct_answer": "B",
       "explanation": ""
     },
     {
       "id": "582",
-      "question": "An ecommerce company uses Amazon Route 53 as its DNS provider. The company hosts its website on premises And in the AWS Cloud. The company\'s on-premises data center is near the us-west-1 Region. The company uses the eu-central-1 Region to host the website. The company wants to minimize load time for the website as much as possible. Which solution will meet these requirements?",
+      "question": "An ecommerce company uses Amazon Route 53 as its DNS provider. The company hosts its website on premises And in the AWS Cloud. The company's on-premises data center is near the us-west-1 Region. The company uses the eu-central-1 Region to host the website. The company wants to minimize load time for the website as much as possible. Which solution will meet these requirements?",
       "options": {
         "A": "Set up a geolocation routing policy. Send the traffic that is near us-west-1 to the on-premises data center. Send the traffic that is near eu- central-1 to eu-central-1.",
         "B": "Set up a simple routing policy that routes All traffic that is near eu-central-1 to eu-central-1 And routes All traffic that is near the on-premises datacenter to the on-premises data center.",
@@ -424,7 +424,7 @@
     },
     {
       "id": "586",
-      "question": "A company has Five organizational units (OUs) as part of its organization in AWS Organizations. Each OU correlates to the Five businesses that the company owns. The company\'s research And development (R&D) business is separating from the company And will need its own organization. A solutions architect creates a separate new management account for this purpose. What should the solutions architect do next in the new management account?",
+      "question": "A company has Five organizational units (OUs) as part of its organization in AWS Organizations. Each OU correlates to the Five businesses that the company owns. The company's research And development (R&D) business is separating from the company And will need its own organization. A solutions architect creates a separate new management account for this purpose. What should the solutions architect do next in the new management account?",
       "options": {
         "A": "Have the R&D AWS account be part of both organizations during the transition.",
         "B": "Invite the R&D AWS account to be part of the new organization after the R&D AWS account has left the prior organization.",
@@ -444,11 +444,11 @@
         "D": "Configure a Gateway Load Balancer (GWLB) in front of An Amazon Elastic Container Service (Amazon ECS) container instance that stores the information that the company receives on An Amazon Elastic File System (Amazon EFS) File system. Use An AWS Lambda function to resolve authorization."
       },
       "correct_answer": "C",
-      "explanation": "Amazon API Gateway: It provides a fully managed service for creating, publishing, maintaining, monitoring, And securing APIs at Any scale. It allows you to expose the capabilities of your backend services as APIs.\nAmazon Kinesis Data Firehose: It can capture And load streaming data into storage services such as Amazon S3. It is well-suited for scenarios where you need to ingest And store large volumes of streaming data.\nAPI Gateway Lambda Authorizer: It allows you to control Access to your APIs using Lambda functions. It\'s used to resolve authorization before allowing Access to the API "
+      "explanation": "Amazon API Gateway: It provides a fully managed service for creating, publishing, maintaining, monitoring, And securing APIs at Any scale. It allows you to expose the capabilities of your backend services as APIs.\nAmazon Kinesis Data Firehose: It can capture And load streaming data into storage services such as Amazon S3. It is well-suited for scenarios where you need to ingest And store large volumes of streaming data.\nAPI Gateway Lambda Authorizer: It allows you to control Access to your APIs using Lambda functions. It's used to resolve authorization before allowing Access to the API "
     },
     {
       "id": "588",
-      "question": "An ecommerce company wants a disaster recovery solution for its Amazon RDS DB instances that run Microsoft SQL Server Enterprise Edition. The company\'s current recovery point objective (RPO) And recovery time objective (RTO) are 24 hours. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "An ecommerce company wants a disaster recovery solution for its Amazon RDS DB instances that run Microsoft SQL Server Enterprise Edition. The company's current recovery point objective (RPO) And recovery time objective (RTO) are 24 hours. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Create a cross-Region read replica And promote the read replica to the primary instance.",
         "B": "Use AWS Database Migration Service (AWS DMS) to create RDS cross-Region replication.",
@@ -456,7 +456,7 @@
         "D": "Copy automatic snapshots to Another Region every 24 hours."
       },
       "correct_answer": "D",
-      "explanation": "RDS automatically takes snapshots of your database instances. These snapshots capture the entire DB instance, including the data And the DB instance\'s metadata."
+      "explanation": "RDS automatically takes snapshots of your database instances. These snapshots capture the entire DB instance, including the data And the DB instance's metadata."
     },
     {
       "id": "589",
@@ -472,7 +472,7 @@
     },
     {
       "id": "590",
-      "question": "A company migrated a MySQL database from the company\'s on-premises data center to An Amazon RDS for MySQL DB instance. The company sized the RDS DB instance to meet the company\'s average daily workload. Once a month, the database performs slowly when the company runs queries for a report. The company wants to have the ability to run reports And maintain the performance of the daily workloads. Which solution will meet these requirements?",
+      "question": "A company migrated a MySQL database from the company's on-premises data center to An Amazon RDS for MySQL DB instance. The company sized the RDS DB instance to meet the company's average daily workload. Once a month, the database performs slowly when the company runs queries for a report. The company wants to have the ability to run reports And maintain the performance of the daily workloads. Which solution will meet these requirements?",
       "options": {
         "A": "Create a read replica of the database. Direct the queries to the read replica.",
         "B": "Create a backup of the database. Restore the backup to Another DB instance. Direct the queries to the new database.",
@@ -496,11 +496,11 @@
     },
     {
       "id": "592",
-      "question": "A company uses AWS And sells Access to copyrighted images. The company\'s global customer base needs to be able to Access these images quickly. The company must deny Access to users from specific countries. The company wants to minimize costs as much as possible. Which solution will meet these requirements?",
+      "question": "A company uses AWS And sells Access to copyrighted images. The company's global customer base needs to be able to Access these images quickly. The company must deny Access to users from specific countries. The company wants to minimize costs as much as possible. Which solution will meet these requirements?",
       "options": {
         "A": "Use Amazon S3 to store the images. Turn on multi-factor authentication (MFA) And public bucket access. Provide customers with a link to the S3 bucket.",
         "B": "Use Amazon S3 to store the images. Create An IAM user for each customer. Add the users to a group that has permission to Access the S3 bucket.",
-        "C": "Use Amazon EC2 instances that are behind Application Load Balancers (ALBs) to store the images. Deploy the instances only in the countries the company services. Provide customers with links to the ALBs for their speciFic country\'s instances.",
+        "C": "Use Amazon EC2 instances that are behind Application Load Balancers (ALBs) to store the images. Deploy the instances only in the countries the company services. Provide customers with links to the ALBs for their speciFic country's instances.",
         "D": "Use Amazon S3 to store the images. Use Amazon CloudFront to distribute the images with geographic restrictions. Provide a signed URL for each customer to Access the data in CloudFront."
       },
       "correct_answer": "D",
@@ -532,7 +532,7 @@
     },
     {
       "id": "595",
-      "question": "A company\'s applications run on Amazon EC2 instances in Auto Scaling groups. The company notices that its applications experience sudden traffic increases on random days of the week. The company wants to maintain Application performance during sudden traffic increases. Which solution will meet these requirements MOST cost-effectively?",
+      "question": "A company's applications run on Amazon EC2 instances in Auto Scaling groups. The company notices that its applications experience sudden traffic increases on random days of the week. The company wants to maintain Application performance during sudden traffic increases. Which solution will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Use manual scaling to change the size of the Auto Scaling group.",
         "B": "Use predictive scaling to change the size of the Auto Scaling group.",
@@ -556,7 +556,7 @@
     },
     {
       "id": "597",
-      "question": "A company hosts An internal serverless Application on AWS by using Amazon API Gateway And AWS Lambda. The company\'s employees report issues with high latency when they begin using the Application each day. The company wants to reduce latency. Which solution will meet these requirements?",
+      "question": "A company hosts An internal serverless Application on AWS by using Amazon API Gateway And AWS Lambda. The company's employees report issues with high latency when they begin using the Application each day. The company wants to reduce latency. Which solution will meet these requirements?",
       "options": {
         "A": "Increase the API Gateway throttling limit.",
         "B": "Set up a scheduled scaling to increase Lambda provisioned concurrency before employees begin to use the Application each day.",
@@ -581,7 +581,7 @@
     },
     {
       "id": "599",
-      "question": "A company wants to use Amazon Elastic Container Service (Amazon ECS) clusters And Amazon RDS DB instances to build And run a payment processing application. The company will run the Application in its on-premises data center for compliance purposes. A solutions architect wants to use AWS Outposts as part of the solution. The solutions architect is working with the company\'s operational team to build the application. Which activities are the responsibility of the company\'s operational team? (Choose three.)",
+      "question": "A company wants to use Amazon Elastic Container Service (Amazon ECS) clusters And Amazon RDS DB instances to build And run a payment processing application. The company will run the Application in its on-premises data center for compliance purposes. A solutions architect wants to use AWS Outposts as part of the solution. The solutions architect is working with the company's operational team to build the application. Which activities are the responsibility of the company's operational team? (Choose three.)",
       "options": {
         "A": "Providing resilient power And network connectivity to the Outposts racks",
         "B": "Managing the virtualization hypervisor, storage systems, And the AWS services that run on Outposts",
@@ -594,7 +594,7 @@
     },
     {
       "id": "600",
-      "question": "A company is planning to migrate a TCP-based Application into the company\'s VPC. The Application is publicly accessible on Anonstandard TCP port through a hardware appliance in the company\'s data center. This public endpoint can process up to 3 million requests per second with low latency. The company requires the same level of performance for the new public endpoint in AWS. What should A solutions architect recommend to meet this requirement?",
+      "question": "A company is planning to migrate a TCP-based Application into the company's VPC. The Application is publicly accessible on Anonstandard TCP port through a hardware appliance in the company's data center. This public endpoint can process up to 3 million requests per second with low latency. The company requires the same level of performance for the new public endpoint in AWS. What should A solutions architect recommend to meet this requirement?",
       "options": {
         "A": "Deploy A network Load Balancer (NLB). Configure the NLB to be publicly accessible over the TCP port that the Application requires.",
         "B": "Deploy An Application Load Balancer (ALB). Configure the ALBto be publicly accessible over the TCP port that the Application requires.",

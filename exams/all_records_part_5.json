@@ -17,8 +17,8 @@
       "question": "A company is planning to move its data to an Amazon S3 bucket. The data must be encrypted when it is stored in the S3 bucket. Additionally, the encryption key must be automatically rotated every year. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Move the data to the S3 bucket. Use server-side encryption with Amazon S3 managed encryption keys (SSE-S3). Use the built-in key rotation behavior of SSE-S3 encryption keys.",
-        "B": "Create an AWS Key Management Service (AWS KMS) customer managed key. Enable automatic key rotation. Set the S3 bucket\'s default encryption behavior to use the customer managed KMS key. Move the data to the S3 bucket.",
-        "C": "Create an AWS Key Management Service (AWS KMS) customer managed key. Set the S3 bucket\'s default encryption behavior to use the customer managed KMS key. Move the data to the S3 bucket. Manually rotate the KMS key every year.",
+        "B": "Create an AWS Key Management Service (AWS KMS) customer managed key. Enable automatic key rotation. Set the S3 bucket's default encryption behavior to use the customer managed KMS key. Move the data to the S3 bucket.",
+        "C": "Create an AWS Key Management Service (AWS KMS) customer managed key. Set the S3 bucket's default encryption behavior to use the customer managed KMS key. Move the data to the S3 bucket. Manually rotate the KMS key every year.",
         "D": "Encrypt the data with customer key material before moving the data to the S3 bucket. Create an AWS Key Management Service (AWS KMS) key without key material. Import the customer key material into the KMS key. Enable automatic key rotation."
       },
       "correct_answer": "B",
@@ -50,7 +50,7 @@
     },
     {
       "id": "205",
-      "question": "A company hosts a marketing website in an on-premises data center. The website consists of static documents and runs on a single server. An administrator updates the website content infrequently and uses an SFTP client to upload new documents. The company decides to host its website on AWS and to use Amazon Cloudfront. The company\'s solutions architect creates aCloudfront distribution. The solutions architect must design the most cost-effective and resilient architecture for website hosting to serve as the Cloudfront origin. Which solution will meet these requirements?",
+      "question": "A company hosts a marketing website in an on-premises data center. The website consists of static documents and runs on a single server. An administrator updates the website content infrequently and uses an SFTP client to upload new documents. The company decides to host its website on AWS and to use Amazon Cloudfront. The company's solutions architect creates aCloudfront distribution. The solutions architect must design the most cost-effective and resilient architecture for website hosting to serve as the Cloudfront origin. Which solution will meet these requirements?",
       "options": {
         "A": "Create a virtual server by using Amazon Lightsail. Configure the web server in the Lightsail instance. Upload website content by using an SFTP client.",
         "B": "Create an AWS Auto Scaling group for Amazon EC2 instances. Use an Application Load Balancer. Upload website content by using an SFTP client.",
@@ -62,7 +62,7 @@
     },
     {
       "id": "206",
-      "question": "A company wants to manage Amazon Machine Images (AMIs). The company currently copies AMIs to the same AWS Region where the AMIs were created. The company needs to design an application that captures AWS API calls and sends alerts whenever the Amazon EC2 Createimage API operation is called within the company\'s account. Which solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company wants to manage Amazon Machine Images (AMIs). The company currently copies AMIs to the same AWS Region where the AMIs were created. The company needs to design an application that captures AWS API calls and sends alerts whenever the Amazon EC2 Createimage API operation is called within the company's account. Which solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Create an AWS Lambda function to query AWS CloudTrail logs and to send an alert when a CreateImage API call is detected.",
         "B": "Configure AWS CloudTrail with an Amazon Simple Notification Service (Amazon SNS) notiFication that occurs when updated logs are sent to Amazon S3. Use Amazon Athena to create A new table and to query on CreateImage when an API call is detected.",
@@ -88,10 +88,10 @@
       "id": "208",
       "question": "A company needs to move data from an Amazon EC2 instance to an Amazon S3 bucket. The company must ensure that no API calls and no data are routed through public internet routes. Only the EC2 instance can have access to upload data to the S3 bucket. Which solution will meet these requirements?",
       "options": {
-        "A": "Create an interface VPC endpoint for Amazon S3 in the subnet where the EC2 instance is located. Attach a resource policy to the S3 bucket to only allow the EC2 instance\'s IAM role for access.",
-        "B": "Create a gateway VPC endpoint for Amazon S3 in the Availability Zone where the EC2 instance is located. Attach appropriate security groups to the endpoint. Attach a resource policy to the S3 bucket to only allow the EC2 instance\'s IAM role for access.",
-        "C": "Run the nslookup tool from inside the EC2 instance to obtain the private IP address of the S3 bucket\'s service API endpoint. Create a route in the VPC route table to provide the EC2 instance with access to the S3 bucket. Attach a resource policy to the S3 bucket to only allow the EC2 instance\'s IAM role for access.",
-        "D": "Use the AWS provided, publicly available ip-ranges.json File to obtain the private IP address of the S3 bucket\'s service API endpoint. Create a route in the VPC route table to provide the EC2 instance with access to the S3 bucket. Attach a resource policy to the S3 bucket to only allow the EC2 instance\'s IAM role for access."
+        "A": "Create an interface VPC endpoint for Amazon S3 in the subnet where the EC2 instance is located. Attach a resource policy to the S3 bucket to only allow the EC2 instance's IAM role for access.",
+        "B": "Create a gateway VPC endpoint for Amazon S3 in the Availability Zone where the EC2 instance is located. Attach appropriate security groups to the endpoint. Attach a resource policy to the S3 bucket to only allow the EC2 instance's IAM role for access.",
+        "C": "Run the nslookup tool from inside the EC2 instance to obtain the private IP address of the S3 bucket's service API endpoint. Create a route in the VPC route table to provide the EC2 instance with access to the S3 bucket. Attach a resource policy to the S3 bucket to only allow the EC2 instance's IAM role for access.",
+        "D": "Use the AWS provided, publicly available ip-ranges.json File to obtain the private IP address of the S3 bucket's service API endpoint. Create a route in the VPC route table to provide the EC2 instance with access to the S3 bucket. Attach a resource policy to the S3 bucket to only allow the EC2 instance's IAM role for access."
       },
       "correct_answer": "A",
       "explanation": "Interface VPC endpoints for Amazon S3 (powered by AWS PrivateLink) allow communication between resources in your VPC and Amazon S3 without relying on public internet routes. It provides a secure and private connection.\nBy creating an interface VPC endpoint for Amazon S3 in the subnet where the EC2 instance is located, you ensure that the data doesn't travel over the public internet.\nAttaching a resource policy to the S3 bucket allows you to control access and restrict it to the IAM role associated with the EC2 instance, ensuring only authorized entities can upload data to the bucket."
@@ -110,9 +110,9 @@
     },
     {
       "id": "210",
-      "question": "A company offers a food delivery service that is growing rapidly. Because of the growth, the company\'s order processing system is experiencing scaling problems during peak traffic hours. The current architecture includes the following: \u2022 A group of Amazon EC2 instances that run in an Amazon EC2 Auto Scaling group to collect orders from the application \u2022 Another group of EC2 instances that run in an Amazon EC2 Auto Scaling group to fulfill orders The order collection process occurs quickly, but the order  fulfillment process can take longer. Data must not be lost because of a scaling event. A solutions architect must ensure that the order collection process and the order  fulfillment process can both scale properly during peak traffic hours. The solution must optimize utilization of the company\'s AWS resources. Which solution meets these requirements?",
+      "question": "A company offers a food delivery service that is growing rapidly. Because of the growth, the company's order processing system is experiencing scaling problems during peak traffic hours. The current architecture includes the following: \u2022 A group of Amazon EC2 instances that run in an Amazon EC2 Auto Scaling group to collect orders from the application \u2022 Another group of EC2 instances that run in an Amazon EC2 Auto Scaling group to fulfill orders The order collection process occurs quickly, but the order  fulfillment process can take longer. Data must not be lost because of a scaling event. A solutions architect must ensure that the order collection process and the order  fulfillment process can both scale properly during peak traffic hours. The solution must optimize utilization of the company's AWS resources. Which solution meets these requirements?",
       "options": {
-        "A": "Use Amazon CloudWatch metrics to monitor the CPU of each instance in the Auto Scaling groups. Configure each Auto Scaling group\'s minimum capacity according to peak workload values.",
+        "A": "Use Amazon CloudWatch metrics to monitor the CPU of each instance in the Auto Scaling groups. Configure each Auto Scaling group's minimum capacity according to peak workload values.",
         "B": "Use Amazon CloudWatch metrics to monitor the CPU of each instance in the Auto Scaling groups. Configure a CloudWatch alarm to invoke an Amazon Simple Notification Service (Amazon SNS) topic that creates additional Auto Scaling groups on demand.",
         "C": "Provision two Amazon Simple Queue Service (Amazon SQS) queues: one for order collection and another for order  fulfillment. Configure the EC2 instances to poll their respective queue. Scale the Auto Scaling groups based on notiFications that the queues send.",
         "D": "Provision two Amazon Simple Queue Service (Amazon SQS) queues: one for order collection and another for order  fulfillment. Configure the EC2 instances to poll their respective queue. Create a metric based on a backlog per instance calculation. Scale the Auto Scaling groups based on this metric."
@@ -158,7 +158,7 @@
     },
     {
       "id": "214",
-      "question": "A company\'s reporting system delivers hundreds of .csv files to an Amazon S3 bucket each day. The company must convert these files to Apache Parquet format and must store the files in a transformed data bucket. Which solution will meet these requirements with the LEAST development effort?",
+      "question": "A company's reporting system delivers hundreds of .csv files to an Amazon S3 bucket each day. The company must convert these files to Apache Parquet format and must store the files in a transformed data bucket. Which solution will meet these requirements with the LEAST development effort?",
       "options": {
         "A": "Create an Amazon EMR cluster with Apache Spark installed. Write a Spark application to transform the data. Use EMR File System (EMRFS) to write files to the transformed data bucket.",
         "B": "Create an AWS Glue crawler to discover the data. Create an AWS Glue extract, transform, and load (ETL) job to transform the data. Specify the transformed data bucket in the output step.",
@@ -187,7 +187,7 @@
         "A": "Create A new S3 bucket. Turn on the default encryption settings for the new S3 bucket. Download all existing objects to temporary local storage. Upload the objects to the new S3 bucket.",
         "B": "Turn on the default encryption settings for the S3 bucket. Use the S3 Inventory feature to create a .csv File that lists the unencrypted objects. Run an S3 Batch Operations job that uses the copy command to encrypt those objects.",
         "C": "Create A new encryption key by using AWS Key Management Service (AWS KMS). Change the settings on the S3 bucket to use server-side encryption with AWS KMS managed encryption keys (SSE-KMS). Turn on versioning for the S3 bucket.",
-        "D": "Navigate to Amazon S3 in the AWS Management Console. Browse the S3 bucket\'s objects. Sort by the encryption Field. Select each unencrypted object. Use the Modify button to apply default encryption settings to every unencrypted object in the S3 bucket."
+        "D": "Navigate to Amazon S3 in the AWS Management Console. Browse the S3 bucket's objects. Sort by the encryption Field. Select each unencrypted object. Use the Modify button to apply default encryption settings to every unencrypted object in the S3 bucket."
       },
       "correct_answer": "B",
       "explanation": "This option utilizes the S3 Inventory feature to generate a list of unencrypted objects in the S3 bucket. It then leverages S3 Batch Operations to perform a copy operation, allowing the encryption of the objects during the copy process. This approach is efficient and does not require downloading and re-uploading all existing objects."
@@ -219,7 +219,7 @@
     },
     {
       "id": "219",
-      "question": "A company\'s application is having performance issues. The application is stateful and needs to complete in-memory tasks on Amazon EC2 instances. The company used AWS Cloudformation to deploy infrastructure and used the M5 EC2 instance family. As traffic increased, the application performance degraded. Users are reporting delays when the users attempt to access the application. Which solution will resolve these issues in the MOST operationally efficient way?",
+      "question": "A company's application is having performance issues. The application is stateful and needs to complete in-memory tasks on Amazon EC2 instances. The company used AWS Cloudformation to deploy infrastructure and used the M5 EC2 instance family. As traffic increased, the application performance degraded. Users are reporting delays when the users attempt to access the application. Which solution will resolve these issues in the MOST operationally efficient way?",
       "options": {
         "A": "Replace the EC2 instances with T3 EC2 instances that run in an Auto Scaling group. Make the changes by using the AWS Management Console.",
         "B": "Modify the CloudFormation templates to run the EC2 instances in an Auto Scaling group. Increase the desired capacity and the maximum capacity of the Auto Scaling group manually when an increase is necessary.",
@@ -255,15 +255,15 @@
     },
     {
       "id": "222",
-      "question": "A company has hired an external vendor to perform work in the company\'s AWS account. The vendor uses an automated tool that is hosted in an AWS account that the vendor owns. The vendor does not have IAM access to the company\'s AWS account. How should A solutions architect grant this access to the vendor?",
+      "question": "A company has hired an external vendor to perform work in the company's AWS account. The vendor uses an automated tool that is hosted in an AWS account that the vendor owns. The vendor does not have IAM access to the company's AWS account. How should A solutions architect grant this access to the vendor?",
       "options": {
-        "A": "Create an IAM role in the company\'s account to delegate access to the vendor\'s IAM role. Attach the appropriate IAM policies to the role for the permissions that the vendor requires.",
-        "B": "Create an IAM user in the company\'s account with a password that meets the password complexity requirements. Attach the appropriate IAM policies to the user for the permissions that the vendor requires.",
-        "C": "Create an IAM group in the company\'s account. Add the tool\'s IAM user from the vendor account to the group. Attach the appropriate IAM policies to the group for the permissions that the vendor requires.",
-        "D": "Create A new identity provider by choosing \u201cAWS account\u201d as the provider type in the IAM console. Supply the vendor\'s AWS account ID and user name. Attach the appropriate IAM policies to the new provider for the permissions that the vendor requires."
+        "A": "Create an IAM role in the company's account to delegate access to the vendor's IAM role. Attach the appropriate IAM policies to the role for the permissions that the vendor requires.",
+        "B": "Create an IAM user in the company's account with a password that meets the password complexity requirements. Attach the appropriate IAM policies to the user for the permissions that the vendor requires.",
+        "C": "Create an IAM group in the company's account. Add the tool's IAM user from the vendor account to the group. Attach the appropriate IAM policies to the group for the permissions that the vendor requires.",
+        "D": "Create A new identity provider by choosing \u201cAWS account\u201d as the provider type in the IAM console. Supply the vendor's AWS account ID and user name. Attach the appropriate IAM policies to the new provider for the permissions that the vendor requires."
       },
       "correct_answer": "A",
-      "explanation": "IAM roles allow you to delegate access to resources in your AWS account to another AWS account. In this case, you can create a role in your account and grant the vendor\'s IAM role permission to assume that role.\nBy doing this, the vendor can use temporary security credentials obtained by assuming the role to access resources in your account. This ensures that the vendor doesn't need IAM credentials from your account."
+      "explanation": "IAM roles allow you to delegate access to resources in your AWS account to another AWS account. In this case, you can create a role in your account and grant the vendor's IAM role permission to assume that role.\nBy doing this, the vendor can use temporary security credentials obtained by assuming the role to access resources in your account. This ensures that the vendor doesn't need IAM credentials from your account."
     },
     {
       "id": "223",
@@ -320,7 +320,7 @@
       "id": "227",
       "question": "A company needs to retain its AWS Cloudtrail logs for 3 years. The company is enforcing Cloudtrail across a set of AWS accounts by using AWS Organizations from the parent account. The Cloudtrail target S3 bucket is configured with S3 Versioning enabled. An S3 Lifecycle policy is in place to delete current objects after 3 years. After the fourth year of use of the S3 bucket, the S3 bucket metrics show that the number of objects has continued to rise. However, the number of new Cloudtrail logs that are delivered to the S3 bucket has remained consistent. Which solution will delete objects that are older than 3 years in the MOST cost-effective manner?",
       "options": {
-        "A": "Configure the organization\'s centralized CloudTrail trail to expire objects after 3 years.",
+        "A": "Configure the organization's centralized CloudTrail trail to expire objects after 3 years.",
         "B": "Configure the S3 Lifecycle policy to delete previous versions as well as current versions.",
         "C": "Create an AWS Lambda function to enumerate and delete objects from Amazon S3 that are older than 3 years.",
         "D": "Configure the parent account as the owner of all objects that are delivered to the S3 bucket."
@@ -354,7 +354,7 @@
     },
     {
       "id": "230",
-      "question": "A company is concerned that two NAT instances in use will no longer be able to support the traffic needed for the company\'s application. A solutions architect wants to implement a solution that is highly available, fault tolerant, and automatically scalable. What should the solutions architect recommend?",
+      "question": "A company is concerned that two NAT instances in use will no longer be able to support the traffic needed for the company's application. A solutions architect wants to implement a solution that is highly available, fault tolerant, and automatically scalable. What should the solutions architect recommend?",
       "options": {
         "A": "Remove the two NAT instances and replace them with two NAT gateways in the same Availability Zone.",
         "B": "Use Auto Scaling groups with Network Load Balancers for the NAT instances in different Availability Zones.",
@@ -378,7 +378,7 @@
     },
     {
       "id": "232",
-      "question": "A company runs demonstration environments for its customers on Amazon EC2 instances. Each environment is isolated in its own VPC. The company\'s operations team needs to be notified when RDP or SSH access to an environment has been established.",
+      "question": "A company runs demonstration environments for its customers on Amazon EC2 instances. Each environment is isolated in its own VPC. The company's operations team needs to be notified when RDP or SSH access to an environment has been established.",
       "options": {
         "A": "Configure Amazon CloudWatch Application Insights to create AWS Systems Manager OpsItems when RDP or SSH access is detected.",
         "B": "Configure the EC2 instances with an IAM instance proFile that has an IAM role with the AmazonSSMManagedInstanceCore policy attached.",
@@ -386,7 +386,7 @@
         "D": "Configure an Amazon EventBridge rule to listen for events of type EC2 Instance State-change Notification. Configure an Amazon Simple Notification Service (Amazon SNS) topic as a target. Subscribe the operations team to the topic."
       },
       "correct_answer": "B",
-      "explanation": "The correct option for notifying the operations team when RDP or SSH access to an environment has been established is:\nC. Publish VPC flow logs to Amazon CloudWatch Logs. Create required metric filters. Create an Amazon CloudWatch metric alarm with A notification action for when the alarm is in the ALARM state.\nHere\'s why:\nVPC Flow Logs:** VPC flow logs capture information about the IP traffic going to and from network interfaces in your VPC. This includes information about accepted and rejected connections. To monitor RDP or SSH access, you can analyze these logs.\nCloudWatch Logs:** By publishing VPC flow logs to CloudWatch Logs, you can analyze the logs using metric filters to extract relevant information.\nMetric Filters:** Create metric filters to match the patterns corresponding to RDP or SSH access in the CloudWatch Logs. For example, you can create metric filters that look for specific keywords or patterns related to RDP or SSH connections.\nCloudWatch Metric Alarm:** Set up CloudWatch metric alarms based on the metric filters. When the alarm is triggered (indicating that RDP or SSH access has been detected), it can take A notification action, such as sending A notification to the operations team via Amazon SNS."
+      "explanation": "The correct option for notifying the operations team when RDP or SSH access to an environment has been established is:\nC. Publish VPC flow logs to Amazon CloudWatch Logs. Create required metric filters. Create an Amazon CloudWatch metric alarm with A notification action for when the alarm is in the ALARM state.\nHere's why:\nVPC Flow Logs:** VPC flow logs capture information about the IP traffic going to and from network interfaces in your VPC. This includes information about accepted and rejected connections. To monitor RDP or SSH access, you can analyze these logs.\nCloudWatch Logs:** By publishing VPC flow logs to CloudWatch Logs, you can analyze the logs using metric filters to extract relevant information.\nMetric Filters:** Create metric filters to match the patterns corresponding to RDP or SSH access in the CloudWatch Logs. For example, you can create metric filters that look for specific keywords or patterns related to RDP or SSH connections.\nCloudWatch Metric Alarm:** Set up CloudWatch metric alarms based on the metric filters. When the alarm is triggered (indicating that RDP or SSH access has been detected), it can take A notification action, such as sending A notification to the operations team via Amazon SNS."
     },
     {
       "id": "233",
@@ -399,16 +399,16 @@
         "E": "Apply the required permissions to the root user with an inline policy document."
       },
       "correct_answer": "AB",
-      "explanation": "B. Enable multi-factor authentication to the root user.\nUsing a strong, complex password for the root user is a fundamental security practice. This helps protect the account from unauthorized access.\nEnabling MFA adds an additional layer of security. Even if someone manages to obtain the root user\'s password, they would still need the second factor (e.g., a mobile device or hardware token) to successfully authenticate."
+      "explanation": "B. Enable multi-factor authentication to the root user.\nUsing a strong, complex password for the root user is a fundamental security practice. This helps protect the account from unauthorized access.\nEnabling MFA adds an additional layer of security. Even if someone manages to obtain the root user's password, they would still need the second factor (e.g., a mobile device or hardware token) to successfully authenticate."
     },
     {
       "id": "234",
       "question": "A company is building A new web-based customer relationship management application. The application will use several Amazon EC2 instances that are backed by Amazon Elastic Block Store (Amazon EBS) volumes behind an Application Load Balancer (ALB). The application will also use an Amazon Aurora database. All data for the application must be encrypted at rest and in transit. Which solution will meet these requirements?",
       "options": {
         "A": "Use AWS Key Management Service (AWS KMS) certiFicates on the ALBto encrypt data in transit. Use AWS CertiFicate Manager (ACM) to encrypt the EBS volumes and Aurora database storage at rest.",
-        "B": "Use the AWS root account to log in to the AWS Management Console. Upload the company\'s encryption certiFicates. While in the root account, select the option to turn on encryption for all data at rest and in transit for the account.",
+        "B": "Use the AWS root account to log in to the AWS Management Console. Upload the company's encryption certiFicates. While in the root account, select the option to turn on encryption for all data at rest and in transit for the account.",
         "C": "Use AWS Key Management Service (AWS KMS) to encrypt the EBS volumes and Aurora database storage at rest. Attach an AWS CertiFicate Manager (ACM) certiFicate to the ALBto encrypt data in transit.",
-        "D": "Use BitLocker to encrypt all data at rest. Import the company\'s TLS certiFicate keys to AWS Key Management Service (AWS KMS) Attach the KMS keys to the ALBto encrypt data in transit."
+        "D": "Use BitLocker to encrypt all data at rest. Import the company's TLS certiFicate keys to AWS Key Management Service (AWS KMS) Attach the KMS keys to the ALBto encrypt data in transit."
       },
       "correct_answer": "C",
       "explanation": "Using AWS KMS to encrypt EBS volumes and Aurora database storage at rest is a good practice. You can specify a KMS key when creating these resources to ensure data encryption.\nAttaching an A CM certificate to the ALBallows you to use HTTPS, which encrypts data in transit between clients and the ALB. This ensures secure communication over the network."
@@ -463,7 +463,7 @@
     },
     {
       "id": "239",
-      "question": "A solutions architect needs to design A new microservice for A company\'s application. Clients must be able to call an HTTPS endpoint to reach the microservice. The microservice also must use AWS Identity and Access Management (IAM) to authenticate calls. The solutions architect will write the logic for this microservice by using a single AWS Lambda function that is written in Go 1.x. Which solution will deploy the function in the MOST operationally efficient way?",
+      "question": "A solutions architect needs to design A new microservice for A company's application. Clients must be able to call an HTTPS endpoint to reach the microservice. The microservice also must use AWS Identity and Access Management (IAM) to authenticate calls. The solutions architect will write the logic for this microservice by using a single AWS Lambda function that is written in Go 1.x. Which solution will deploy the function in the MOST operationally efficient way?",
       "options": {
         "A": "Create an Amazon API Gateway REST API  Configure the method to use the Lambda function. Enable IAM authentication on the API ",
         "B": "Create a Lambda function URL for the function. Specify AWS_IAM as the authentication type.",
@@ -514,9 +514,9 @@
       "question": "A medical research lab produces data that is related to A new study. The lab wants to make the data available with minimum latency to clinics across the country for their on-premises, File-based applications. The data files are stored in an Amazon S3 bucket that has read-only permissions for each clinic. What should A solutions architect recommend to meet these requirements?",
       "options": {
         "A": "Deploy an AWS Storage Gateway File gateway as a virtual machine (VM) on premises at each clinic",
-        "B": "Migrate the files to each clinic\'s on-premises applications by using AWS DataSync for processing.",
+        "B": "Migrate the files to each clinic's on-premises applications by using AWS DataSync for processing.",
         "C": "Deploy an AWS Storage Gateway volume gateway as a virtual machine (VM) on premises at each clinic.",
-        "D": "Attach an Amazon Elastic File System (Amazon EFS) file system to each clinic\'s on-premises servers."
+        "D": "Attach an Amazon Elastic File System (Amazon EFS) file system to each clinic's on-premises servers."
       },
       "correct_answer": "A",
       "explanation": "This option provides a way to present an S3 bucket as a file system to on-premises applications. Each clinic can deploy an AWS Storage Gateway file gateway as a VM on-premises, allowing them to access the data in the S3 bucket as if it were local files. It minimizes latency because the data is cached locally, and read-only permissions can be controlled at the S3 bucket level."
@@ -540,7 +540,7 @@
         "A": "ReconFigure the target group in the development environment to have only one EC2 instance as a target.",
         "B": "Change the ALBbalancing algorithm to least outstanding requests.",
         "C": "Reduce the size of the EC2 instances in both environments.",
-        "D": "Reduce the maximum number of EC2 instances in the development environment\'s Auto Scaling group."
+        "D": "Reduce the maximum number of EC2 instances in the development environment's Auto Scaling group."
       },
       "correct_answer": "A",
       "explanation": "For a development environment, where high availability and scalability might not be as critical as in production, having only one EC2 instance as a target in the target group could be a cost-effective solution. This reduces the number of running instances in the development environment when compared to production."
@@ -596,7 +596,7 @@
     },
     {
       "id": "250",
-      "question": "A company\'s security team requests that network traffic be captured in VPC Flow Logs. The logs will be frequently accessed for 90 days and then accessed intermittently. What should A solutions architect do to meet these requirements when configuring the logs?",
+      "question": "A company's security team requests that network traffic be captured in VPC Flow Logs. The logs will be frequently accessed for 90 days and then accessed intermittently. What should A solutions architect do to meet these requirements when configuring the logs?",
       "options": {
         "A": "Use Amazon CloudWatch as the target. Set the CloudWatch log group with an expiration of 90 days",
         "B": "Use Amazon Kinesis as the target. Configure the Kinesis stream to always retain the logs for 90 days.",

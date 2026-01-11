@@ -99,7 +99,7 @@
     },
     {
       "id": "359",
-      "question": "A hospital needs to store patient records in An Amazon S3 bucket. The hospital\'s compliance team must ensure that All protected health information (PHI) is encrypted in transit And at rest. The compliance team must administer the encryption key for data at rest. Which solution will meet these requirements?",
+      "question": "A hospital needs to store patient records in An Amazon S3 bucket. The hospital's compliance team must ensure that All protected health information (PHI) is encrypted in transit And at rest. The compliance team must administer the encryption key for data at rest. Which solution will meet these requirements?",
       "options": {
         "A": "Create a public SSL/TLS certiFicate in AWS CertiFicate Manager (ACM). Associate the certiFicate with Amazon S3. Configure default encryption for each S3 bucket to use server-side encryption with AWS KMS keys (SSE-KMS). Assign the compliance team to manage the KMS keys.",
         "B": "Use the AWS:SecureTransport condition on S3 bucket policies to Allow only encrypted connections over HTTPS (TLS). Configure default encryption for each S3 bucket to use server-side encryption with S3 managed encryption keys (SSE-S3). Assign the compliance team to manage the SSE-S3 keys.",
@@ -185,7 +185,7 @@
     },
     {
       "id": "366",
-      "question": "A company\'s web Application consists of An Amazon API Gateway API in front of An AWS Lambda function And An Amazon DynamoDB database. The Lambda function handles the business logic, And the DynamoDB table hosts the data. The Application uses Amazon Cognito user pools to identify the individual users of the application. A solutions architect needs to update the Application so that only users who have a subscription can Access premium content. Which solution will meet this requirement with the LEAST operational overhead?",
+      "question": "A company's web Application consists of An Amazon API Gateway API in front of An AWS Lambda function And An Amazon DynamoDB database. The Lambda function handles the business logic, And the DynamoDB table hosts the data. The Application uses Amazon Cognito user pools to identify the individual users of the application. A solutions architect needs to update the Application so that only users who have a subscription can Access premium content. Which solution will meet this requirement with the LEAST operational overhead?",
       "options": {
         "A": "Enable API caching And throttling on the API Gateway API ",
         "B": "Set up AWS WAF on the API Gateway API  Create a rule to Filter users who have a subscription.",
@@ -197,7 +197,7 @@
     },
     {
       "id": "367",
-      "question": "A company is using Amazon Route 53 latency-based routing to route requests to its UDP-based Application for users around the world. The Application is hosted on redundant servers in the company\'s on-premises data centers in the United States, A sia, And Europe. The company\'s compliance requirements state that the Application must be hosted on premises. The company wants to improve the performance And Availability of the application. What should A solutions architect do to meet these requirements?",
+      "question": "A company is using Amazon Route 53 latency-based routing to route requests to its UDP-based Application for users around the world. The Application is hosted on redundant servers in the company's on-premises data centers in the United States, A sia, And Europe. The company's compliance requirements state that the Application must be hosted on premises. The company wants to improve the performance And Availability of the application. What should A solutions architect do to meet these requirements?",
       "options": {
         "A": "Configure three Network Load Balancers (NLBs) in the three AWS Regions to addresses the on-premises endpoints. Create An Accelerator by using AWS Global Accelerator, And register the NLBs as its endpoints. Provide Access to the Application by using a CNAME that points to the Accelerator DNS.",
         "B": "Configure three Application Load Balancers (ALBs) in the three AWS Regions to addresses the on-premises endpoints. Create An Accelerator by using AWS Global Accelerator, And register the ALBs as its endpoints. Provide Access to the Application by using a CNAME that points to the Accelerator DNS.",
@@ -217,7 +217,7 @@
         "D": "Attach An Amazon CloudWatch rule to the Create_newuser event to set the password with the appropriate requirements."
       },
       "correct_answer": "A",
-      "explanation": "Amazon Web Services (AWS) allows you to set An account-wide password policy using AWS Identity And Access Management (IAM). This policy defines the rules And requirements for All IAM users in the AWS account. It\'s a centralized approach to enforce security measures consistently across All users. In this case, the solutions architect can set the specific complexity requirements And mandatory rotation periods by configuring the password policy at the AWS account level."
+      "explanation": "Amazon Web Services (AWS) allows you to set An account-wide password policy using AWS Identity And Access Management (IAM). This policy defines the rules And requirements for All IAM users in the AWS account. It's a centralized approach to enforce security measures consistently across All users. In this case, the solutions architect can set the specific complexity requirements And mandatory rotation periods by configuring the password policy at the AWS account level."
     },
     {
       "id": "369",
@@ -235,13 +235,13 @@
       "id": "370",
       "question": "A company runs a public three-tier web Application in a VPC. The Application runs on Amazon EC2 instances across multiple Availability Zones. The EC2 instances that run in private subnets need to communicate with a license server over the internet. The company needs a managed solution that minimizes operational maintenance. Which solution meets these requirements?",
       "options": {
-        "A": "Provision A NAT instance in a public subnet. Modify each private subnet\'s route table with a default route that points to the NAT instance.",
-        "B": "Provision A NAT instance in a private subnet. Modify each private subnet\'s route table with a default route that points to the NAT instance.",
-        "C": "Provision A NAT gateway in a public subnet. Modify each private subnet\'s route table with a default route that points to the NAT gateway.",
-        "D": "Provision A NAT gateway in a private subnet. Modify each private subnet\'s route table with a default route that points to the NAT gateway."
+        "A": "Provision A NAT instance in a public subnet. Modify each private subnet's route table with a default route that points to the NAT instance.",
+        "B": "Provision A NAT instance in a private subnet. Modify each private subnet's route table with a default route that points to the NAT instance.",
+        "C": "Provision A NAT gateway in a public subnet. Modify each private subnet's route table with a default route that points to the NAT gateway.",
+        "D": "Provision A NAT gateway in a private subnet. Modify each private subnet's route table with a default route that points to the NAT gateway."
       },
       "correct_answer": "C",
-      "explanation": "NAT Gateway: A NAT gateway is a managed service provided by AWS that allows EC2 instances in private subnets to initiate outbound traffic to the internet while preventing unsolicited inbound traffic from reaching those instances. NAT gateways are fully managed, highly available, And require minimal maintenance.\nPublic Subnet: Placing the NAT gateway in a public subnet allows it to have Access to the internet, fulfilling the requirement for private instances to communicate with a license server over the internet.\nDefault Route: Modifying each private subnet\'s route table with a default route that points to the NAT gateway ensures that traffic from private instances is directed through the NAT gateway for outbound communication."
+      "explanation": "NAT Gateway: A NAT gateway is a managed service provided by AWS that allows EC2 instances in private subnets to initiate outbound traffic to the internet while preventing unsolicited inbound traffic from reaching those instances. NAT gateways are fully managed, highly available, And require minimal maintenance.\nPublic Subnet: Placing the NAT gateway in a public subnet allows it to have Access to the internet, fulfilling the requirement for private instances to communicate with a license server over the internet.\nDefault Route: Modifying each private subnet's route table with a default route that points to the NAT gateway ensures that traffic from private instances is directed through the NAT gateway for outbound communication."
     },
     {
       "id": "371",
@@ -278,7 +278,7 @@
         "D": "Use the S3 Standard storage class. Create An S3 Lifecycle policy to transition objects to S3 Standard-Infrequent Access (S3 Standard-IA) after 30 days, And then to S3 Glacier Deep Archive after 1 year."
       },
       "correct_answer": "D",
-      "explanation": "S3 Standard Storage Class:\nUse S3 Standard for the first 30 days because it\'s the default storage class for frequently accessed data.\nThis is suitable for the initial period when you need quick And frequent Access to your data.\nS3 Standard-Infrequent Access (S3 Standard-IA) Storage Class:\nAfter the initial 30 days, transition the data to S3 Standard-IA.\nS3 Standard-IA is designed for data that is accessed less frequently but still requires quick retrieval when needed.\nIt\'s more cost-effective for data that is accessed less often compared to S3 Standard.\nS3 Glacier Deep Archive:\nAfter 1 year, transition the data from S3 Standard-IA to S3 Glacier Deep Archive using An S3 Lifecycle policy.\nS3 Glacier Deep Archive is the most cost-effective option for long-term archival storage.\nThis is suitable for storing data that you need to retain for compliance or archival purposes but don't need to Access frequently."
+      "explanation": "S3 Standard Storage Class:\nUse S3 Standard for the first 30 days because it's the default storage class for frequently accessed data.\nThis is suitable for the initial period when you need quick And frequent Access to your data.\nS3 Standard-Infrequent Access (S3 Standard-IA) Storage Class:\nAfter the initial 30 days, transition the data to S3 Standard-IA.\nS3 Standard-IA is designed for data that is accessed less frequently but still requires quick retrieval when needed.\nIt's more cost-effective for data that is accessed less often compared to S3 Standard.\nS3 Glacier Deep Archive:\nAfter 1 year, transition the data from S3 Standard-IA to S3 Glacier Deep Archive using An S3 Lifecycle policy.\nS3 Glacier Deep Archive is the most cost-effective option for long-term archival storage.\nThis is suitable for storing data that you need to retain for compliance or archival purposes but don't need to Access frequently."
     },
     {
       "id": "374",
@@ -342,7 +342,7 @@
     },
     {
       "id": "379",
-      "question": "A company hosts a frontend Application that uses An Amazon API Gateway API backend that is integrated with AWS Lambda. When the API receives requests, the Lambda function loads many libraries. Then the Lambda function connects to An Amazon RDS database, processes the data, And returns the data to the frontend application. The company wants to ensure that response latency is as low as possible for All its users with the fewest number of changes to the company\'s operations. Which solution will meet these requirements?",
+      "question": "A company hosts a frontend Application that uses An Amazon API Gateway API backend that is integrated with AWS Lambda. When the API receives requests, the Lambda function loads many libraries. Then the Lambda function connects to An Amazon RDS database, processes the data, And returns the data to the frontend application. The company wants to ensure that response latency is as low as possible for All its users with the fewest number of changes to the company's operations. Which solution will meet these requirements?",
       "options": {
         "A": "Establish a connection between the frontend Application And the database to make queries faster by bypassing the API ",
         "B": "Configure provisioned concurrency for the Lambda function that handles the requests.",
@@ -453,13 +453,13 @@
       "id": "388",
       "question": "A company is deploying a two-tier web Application in a VPC. The web tier is using An Amazon EC2 Auto Scaling group with public subnets that span multiple Availability Zones. The database tier consists of An Amazon RDS for MySQL DB instance in separate private subnets. The web tier requires Access to the database to retrieve product information. The web Application is not working as intended. The web Application reports that it cannot connect to the database. The database is confirmed to be up And running. All configurations for the network ACLs, security groups, And route tables are still in their default states. What should A solutions architect recommend to Fix the application?",
       "options": {
-        "A": "Add An explicit rule to the private subnet\'s network ACL to Allow traffic from the web tier\'s EC2 instances.",
-        "B": "Add a route in the VPC route table to Allow traffic between the web tier\'s EC2 instances And the database tier.",
-        "C": "Deploy the web tier\'s EC2 instances And the database tier\'s RDS instance into two separate VPCs, And conFigure VPC peering.",
-        "D": "Add An inbound rule to the security group of the database tier\'s RDS instance to Allow traffic from the web tiers security group."
+        "A": "Add An explicit rule to the private subnet's network ACL to Allow traffic from the web tier's EC2 instances.",
+        "B": "Add a route in the VPC route table to Allow traffic between the web tier's EC2 instances And the database tier.",
+        "C": "Deploy the web tier's EC2 instances And the database tier's RDS instance into two separate VPCs, And conFigure VPC peering.",
+        "D": "Add An inbound rule to the security group of the database tier's RDS instance to Allow traffic from the web tiers security group."
       },
       "correct_answer": "D",
-      "explanation": "Security Groups: Security groups a ct as virtual firewalls for your instances to control inbound And outbound traffic. By default, they deny All inbound traffic. In this scenario, the default security group associated with the RDS instance is likely denying incoming traffic from the web tier.\nInbound Rule: To Allow traffic from the web tier\'s EC2 instances to the database tier\'s RDS instance, you need to Add An inbound rule to the security group associated with the RDS instance. This rule should permit traffic from the security group associated with the web tier\'s EC2 instances."
+      "explanation": "Security Groups: Security groups a ct as virtual firewalls for your instances to control inbound And outbound traffic. By default, they deny All inbound traffic. In this scenario, the default security group associated with the RDS instance is likely denying incoming traffic from the web tier.\nInbound Rule: To Allow traffic from the web tier's EC2 instances to the database tier's RDS instance, you need to Add An inbound rule to the security group associated with the RDS instance. This rule should permit traffic from the security group associated with the web tier's EC2 instances."
     },
     {
       "id": "389",
@@ -488,7 +488,7 @@
     },
     {
       "id": "391",
-      "question": "A company needs a backup strategy for its three-tier stateless web application. The web Application runs on Amazon EC2 instances in An Auto Scaling group with a dynamic scaling policy that is configured to respond to scaling events. The database tier runs on Amazon RDS for PostgreSQL. The web Application does not require temporary local storage on the EC2 instances. The company\'s recovery point objective (RPO) is 2 hours. The backup strategy must maximize scalability And optimize resource utilization for this environment. Which solution will meet these requirements?",
+      "question": "A company needs a backup strategy for its three-tier stateless web application. The web Application runs on Amazon EC2 instances in An Auto Scaling group with a dynamic scaling policy that is configured to respond to scaling events. The database tier runs on Amazon RDS for PostgreSQL. The web Application does not require temporary local storage on the EC2 instances. The company's recovery point objective (RPO) is 2 hours. The backup strategy must maximize scalability And optimize resource utilization for this environment. Which solution will meet these requirements?",
       "options": {
         "A": "Take snapshots of Amazon Elastic Block Store (Amazon EBS) volumes of the EC2 instances And database every 2 hours to meet the RPO.",
         "B": "Configure a snapshot lifecycle policy to take Amazon Elastic Block Store (Amazon EBS) snapshots. Enable automated backups in Amazon RDS to meet the RPO.",
@@ -536,7 +536,7 @@
     },
     {
       "id": "395",
-      "question": "An IAM user made several configuration changes to AWS resources in their company\'s account during a production deployment last week. A solutions architect learned that a couple of security group rules are not configured as desired. The solutions architect wants to confirm which IAM user was responsible for making changes. Which service should the solutions architect use to Find the desired information?",
+      "question": "An IAM user made several configuration changes to AWS resources in their company's account during a production deployment last week. A solutions architect learned that a couple of security group rules are not configured as desired. The solutions architect wants to confirm which IAM user was responsible for making changes. Which service should the solutions architect use to Find the desired information?",
       "options": {
         "A": "Amazon GuardDuty",
         "B": "Amazon Inspector",
@@ -572,7 +572,7 @@
     },
     {
       "id": "398",
-      "question": "A company needs to transfer 600 TB of data from its on-premises network-attached storage (NAS) system to the AWS Cloud. The data transfer must be complete within 2 weeks. The data is sensitive And must be encrypted in transit. The company\'s internet connection can support An upload speed of 100 Mbps. Which solution meets these requirements MOST cost-effectively?",
+      "question": "A company needs to transfer 600 TB of data from its on-premises network-attached storage (NAS) system to the AWS Cloud. The data transfer must be complete within 2 weeks. The data is sensitive And must be encrypted in transit. The company's internet connection can support An upload speed of 100 Mbps. Which solution meets these requirements MOST cost-effectively?",
       "options": {
         "A": "Use Amazon S3 multi-part upload functionality to transfer the Files over HTTPS.",
         "B": "Create a VPN connection between the on-premises NAS system And the nearest AWS Region. Transfer the data over the VPN connection.",
@@ -584,7 +584,7 @@
     },
     {
       "id": "399",
-      "question": "A Financial company hosts a web Application on AWS. The Application uses An Amazon API Gateway Regional API endpoint to give users the ability to retrieve current stock prices. The company\'s security team has noticed An increase in the number of API requests. The security team is concerned that HTTP flood attacks might take the Application offline. A solutions architect must design a solution to protect the Application from this type of attack. Which solution meets these requirements with the LEAST operational overhead?",
+      "question": "A Financial company hosts a web Application on AWS. The Application uses An Amazon API Gateway Regional API endpoint to give users the ability to retrieve current stock prices. The company's security team has noticed An increase in the number of API requests. The security team is concerned that HTTP flood attacks might take the Application offline. A solutions architect must design a solution to protect the Application from this type of attack. Which solution meets these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Create An Amazon CloudFront distribution in front of the API Gateway Regional API endpoint with a maximum TTL of 24 hours.",
         "B": "Create a Regional AWS WAF web ACL with a rate-based rule. Associate the web ACL with the API Gateway stage.",
