@@ -300,8 +300,8 @@
         "C": "Create a read replica for the database in a different AWS Region. Use query string parameters in API Gateway to route traffic to the read replica.",
         "D": "Migrate the data from Aurora PostgreSQL to Amazon DynamoDB by using AWS Database Migration Service (AWS DMS). Modify the Lambda function to use the DynamoDB table."
       },
-      "correct_answer": "A",
-      "explanation": "Configure provisioned concurrency for the Lambda function."
+      "correct_answer": "B",
+      "explanation": "The most effective solution with the least possible changes to the application is to use Amazon RDS Proxy.."
     },
     {
       "id": "176",
